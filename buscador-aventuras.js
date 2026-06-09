@@ -34,12 +34,8 @@
 
     var hayFiltro = txt || isla || tipo || dif || dur;
 
-    if (btnLimpiarIn) {
-      btnLimpiarIn.classList.toggle('visible', !!txt);
-    }
-    if (btnLimpiarTd) {
-      btnLimpiarTd.classList.toggle('visible', !!hayFiltro);
-    }
+    btnLimpiarIn.classList.toggle('visible', !!txt);
+    btnLimpiarTd.classList.toggle('visible', !!hayFiltro);
 
     var visibles = 0;
 
@@ -107,21 +103,13 @@
   filtroDif.addEventListener('change', filtrar);
   filtroDur.addEventListener('change', filtrar);
 
-  if (btnLimpiarIn) {
-    btnLimpiarIn.addEventListener('click', function (event) {
-      event.preventDefault();
-      input.value = '';
-      input.focus();
-      filtrar();
-    });
-  }
+  btnLimpiarIn.addEventListener('click', function () {
+    input.value = '';
+    input.focus();
+    filtrar();
+  });
 
-  if (btnLimpiarTd) {
-    btnLimpiarTd.addEventListener('click', function (event) {
-      event.preventDefault();
-      limpiarTodo();
-    });
-  }
+  btnLimpiarTd.addEventListener('click', limpiarTodo);
 
   filtrar();
 

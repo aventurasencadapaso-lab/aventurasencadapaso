@@ -119,31 +119,67 @@ function renderCarreras(){
 
     if(!lista) return;
 
+    const texto =
+    searchInput?.value.toLowerCase() || "";
+
+    const isla =
+    islaFilter?.value || "";
+
     lista.innerHTML = "";
 
-    const busqueda = searchInput?.value.toLowerCase() || "";
-    const islaSeleccionada = islaFilter?.value || "";
+    carreras
 
-    const carrerasFiltradas = carreras.filter(carrera => {
-        const matchNombre = carrera.nombre.toLowerCase().includes(busqueda);
-        const matchIsla = islaSeleccionada === "" || carrera.isla === islaSeleccionada;
-        return matchNombre && matchIsla;
+    .filter(c=>{
+
+        const okNombre =
+        c.nombre.toLowerCase().includes(texto);
+
+        const okIsla =
+        isla === "" || c.isla === isla;
+
+        return okNombre && okIsla;
+
+    })
+
+    .sort((a,b)=>
+        new Date(a.fecha)-new Date(b.fecha)
+    )
+
+    .forEach(c=>{
+
+        lista.innerHTML += `
+
+        <div class="race-card" id="${c.id}">
+
+            <h3>${c.nombre}</h3>
+
+            <p>📅 ${c.fecha}</p>
+
+            <p>📍 ${c.isla}</p>
+
+            <p>📏 ${c.distancia} km</p>
+
+            <a href="${c.web}" target="_blank" rel="noopener">
+                Ver carrera
+            </a>
+
+        </div>
+
+        `;
+
     });
 
-    if(carrerasFiltradas.length === 0){
-        lista.innerHTML = `<p>No se encontraron carreras para la búsqueda.</p>`;
-        return;
-    }
-
-    carrerasFiltradas.forEach(carrera => {
-        const item = document.createElement("li");
-        item.innerHTML = `<strong>${carrera.nombre}</strong> - ${carrera.isla} - ${carrera.distancia} km`;
-        lista.appendChild(item);
-    });
 }
 
-searchInput?.addEventListener("input", renderCarreras);
-islaFilter?.addEventListener("change", renderCarreras);
+searchInput?.addEventListener(
+    "input",
+    renderCarreras
+);
+
+islaFilter?.addEventListener(
+    "change",
+    renderCarreras
+);
 
 renderCarreras();
 
