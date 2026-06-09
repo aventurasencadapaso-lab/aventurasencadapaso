@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Aventuras – Aventuras en Cada Paso</title>
+  <link rel="icon" type="image/png" href="logo-aventuras.png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/buscador-aventuras.css">
+</head>
+<body>
+
+<!-- ================================
+     BARRA SUPERIOR / NAVBAR
+================================ -->
+<header class="barra-superior" role="banner">
+
+  <nav class="menu-top" aria-label="Navegación principal">
+
+    <div class="dropdown">
+      <a href="index.html">Inicio</a>
+      <div class="submenu">
+        <a href="index.html">Página Principal</a>
+        <a href="recomendado.html">Recomendado</a>
+        <a href="senderismo-extremo.html">Senderismo Extremo</a>
+        <a href="buscador-aventuras.html">Exploración</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="momentos-epicos.html">Momentos épicos</a>
+      </div>
+    </div>
+
+    <a href="quienes.html">Nuestro Fin</a>
+
+    <div class="dropdown">
+      <a href="buscador-aventuras.html">Descubre</a>
+      <div class="submenu">
+        <a href="tenerife.html">Tenerife</a>
+        <a href="grancanaria.html">Gran Canaria</a>
+        <a href="lanzarote.html">Lanzarote</a>
+        <a href="fuerteventura.html">Fuerteventura</a>
+        <a href="lapalma.html">La Palma</a>
+        <a href="lagraciosa.html">La Graciosa</a>
+        <a href="lobos.html">Isla de Lobos</a>
+        <a href="elhierro.html">El Hierro</a>
+        <a href="lagomera.html">La Gomera</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="submenu">
+        <a href="https://www.prozis.com/es/es/" target="_blank" rel="noopener">Prozis</a>
+        <a href="https://www.decathlon.es/" target="_blank" rel="noopener">Decathlon</a>
+        <a href="https://www.barrabes.com/" target="_blank" rel="noopener">Barrabes</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+    <a href="contacto.html">Contacto</a>
+      <div class="submenu">
+        <a href="aventureros.html">Aventureros</a>
+        <a href="empresas.html">Empresas</a>
+        <a href="colaboradores.html">Colaboradores</a>
+      </div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="banner-logo">
+      <a href="index.html">
+        <img src="logo-aventuras.png" alt="Aventuras en Cada Paso - Inicio">
+      </a>
+    </div>
+
+    <div class="extras-top">
+      <a href="buscador-aventuras.html" class="search-link">🔍 Buscar aventuras...</a>
+      <div class="idiomas dropdown">
+        <span class="icono-idioma">🌎</span>
+        <span class="idioma-label">Idioma</span>
+        <div class="submenu idioma-submenu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="fr">Français</a>
+          <a href="#" data-lang="it">Italiano</a>
+          <a href="#" data-lang="pt">Portugués</a>
+        </div>
+        <div id="google_translate_element"></div>
+      </div>
+      <div class="share-menu">
+        <button class="share-btn" aria-label="Compartir">
+          <img src="compartir.png" class="share-icon" alt="Compartir">
+        </button>
+        <div class="share-links">
+          <a href="https://wa.me/?text=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://twitter.com/intent/tweet?url=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+      <div class="redes-sociales">
+        <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">
+          <img src="instagram.png" class="social-icon" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">
+          <img src="tiktok.png" class="social-icon" alt="TikTok">
+        </a>
+        <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">
+          <img src="youtube.png" class="social-icon" alt="YouTube">
+        </a>
+      </div>
+    </div><!-- /extras-top -->
+
+  </nav><!-- /menu-top -->
+
+</header><!-- /barra-superior -->
+
+<!-- CABECERA -->
+<div class="search-header">
+  <h1><i class="fas fa-compass"></i> Busca tu Aventura</h1>
+  <p>Encuentra la experiencia perfecta entre todas las islas Canarias</p>
+</div>
+
+<!-- PANEL BUSCADOR + FILTROS -->
+<div class="search-panel">
+
+  <div class="search-input-wrap">
+    <i class="fas fa-search"></i>
+    <input type="text" id="txtBuscador" placeholder="Buscar: teide, barranco, playa, familiar, kayak...">
+    <button id="btnLimpiarInput" title="Limpiar busqueda"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="filtros-grid">
+
+    <div class="filtro-select">
+      <i class="fas fa-map-marker-alt"></i>
+      <select id="filtroIsla">
+        <option value="">Todas las islas</option>
+        <option>Tenerife</option>
+        <option>Gran Canaria</option>
+        <option>Lanzarote</option>
+        <option>Fuerteventura</option>
+        <option>La Palma</option>
+        <option>La Gomera</option>
+        <option>El Hierro</option>
+        <option>La Graciosa</option>
+        <option>Isla de Lobos</option>
+      </select>
+    </div>
+
+    <div class="filtro-select">
+      <i class="fas fa-running"></i>
+      <select id="filtroTipo">
+        <option value="">Tipo de actividad</option>
+        <option>Senderismo</option>
+        <option>Kayak</option>
+        <option>Escalada</option>
+        <option>Submarinismo</option>
+        <option>Ciclismo</option>
+        <option>Paragliding</option>
+        <option>Surf</option>
+        <option>Espeleología</option>
+        <option>Fotografía</option>
+      </select>
+    </div>
+
+    <div class="filtro-select">
+      <i class="fas fa-fire"></i>
+      <select id="filtroDificultad">
+        <option value="">Dificultad</option>
+        <option>Fácil</option>
+        <option>Media</option>
+        <option>Difícil</option>
+        <option>Extrema</option>
+      </select>
+    </div>
+
+    <div class="filtro-select">
+      <i class="fas fa-clock"></i>
+      <select id="filtroDuracion">
+        <option value="">Duración</option>
+        <option>Menos de 2h</option>
+        <option>2-4 horas</option>
+        <option>4-8 horas</option>
+        <option>Día completo</option>
+        <option>Varios días</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="search-meta">
+    <span class="resultado-count" id="contadorResultados"></span>
+    <button id="btnLimpiarTodo" type="button" class="btn-secundario">Limpiar filtros</button>
+  </div>
+
+</div>
+
+<!-- RESULTADOS -->
+<!-- 
+  IMPORTANTE PARA INTEGRAR EN TU WEB:
+  Cada aventura lleva estos atributos data-* para que el buscador funcione.
+  El contenido sigue visible en el HTML para Google (SEO).
+-->
+<div id="resultados">
+
+  <article class="aventura-card"
+    data-isla="Tenerife"
+    data-tipo="Senderismo"
+    data-dificultad="Difícil"
+    data-duracion="Día completo"
+    data-tags="teide volcan cumbre respiración nevada pico nacional parque">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?teide,tenerife" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Ascensión al Pico del Teide"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Tenerife</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-dificil">Difícil</span>
+      </div>
+      <h3>Ascensión al Pico del Teide</h3>
+      <p>Sube al techo de España a 3.718 metros. Paisajes volcánicos, amanecer sobre las nubes y una experiencia que pocos olvidan.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> Día completo</span>
+      <a href="tenerife.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Tenerife"
+    data-tipo="Senderismo"
+    data-dificultad="Media"
+    data-duracion="4-8 horas"
+    data-tags="anaga bosque laurisilva niebla familiar sendero secreto">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?anaga,tenerife,forest" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Bosque de Anaga"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Tenerife</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-media">Media</span>
+      </div>
+      <h3>Bosque de Anaga</h3>
+      <p>Selva de laurisilva entre niebla eterna. Uno de los bosques más antiguos de Europa, lleno de senderos con vistas al océano.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 4-8 horas</span>
+      <a href="tenerife.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Gran Canaria"
+    data-tipo="Senderismo"
+    data-dificultad="Media"
+    data-duracion="4-8 horas"
+    data-tags="barranco maspalomas risco caído roque nublo naturaleza">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?guayadeque,gran+canaria,barranco" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Barranco de Guayadeque"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Gran Canaria</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-media">Media</span>
+      </div>
+      <h3>Barranco de Guayadeque</h3>
+      <p>Un camino espectacular con cuevas habitadas, vegetación y pueblos rupestres. Senderismo con historia y naturaleza a partes iguales.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 4-8 horas</span>
+      <a href="grancanaria.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Lanzarote"
+    data-tipo="Kayak"
+    data-dificultad="Fácil"
+    data-duracion="2-4 horas"
+    data-tags="kayak costa mar cueva familiar playa cristal agua">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?los+jameos,lanzarote,kayak" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Kayak por Los Jameos"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Lanzarote</span>
+        <span class="badge badge-tipo">Kayak</span>
+        <span class="badge badge-dificultad-facil">Fácil</span>
+      </div>
+      <h3>Kayak por Los Jameos</h3>
+      <p>Navega entre acantilados volcánicos negros y aguas de un azul imposible. Apto para toda la familia, sin experiencia previa necesaria.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 horas</span>
+      <a href="lanzarote.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Fuerteventura"
+    data-tipo="Surf"
+    data-dificultad="Media"
+    data-duracion="2-4 horas"
+    data-tags="surf olas viento kitesurf playa arena windsurf corralejo">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?corralejo,fuerteventura,surf" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Surf en Corralejo"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Fuerteventura</span>
+        <span class="badge badge-tipo">Surf</span>
+        <span class="badge badge-dificultad-media">Media</span>
+      </div>
+      <h3>Surf en Corralejo</h3>
+      <p>Olas perfectas para todos los niveles. Las dunas de Corralejo y el viento constante hacen de Fuerteventura la capital del surf en Canarias.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 horas</span>
+      <a href="fuerteventura.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="La Palma"
+    data-tipo="Senderismo"
+    data-dificultad="Difícil"
+    data-duracion="Día completo"
+    data-tags="caldera volcán crater ruta integral palma senderismo cumbre">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?caldera+de+taburiente,la+palma" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Caldera de Taburiente"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">La Palma</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-dificil">Difícil</span>
+      </div>
+      <h3>Caldera de Taburiente</h3>
+      <p>Una de las mayores calderas del mundo. Cascadas, pinos canarios gigantes y vistas que hacen entender por qué La Palma es la isla bonita.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> Día completo</span>
+      <a href="lapalma.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="La Gomera"
+    data-tipo="Senderismo"
+    data-dificultad="Media"
+    data-duracion="4-8 horas"
+    data-tags="garajonay laurisilva niebla bosque primario verde selva">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?garajonay,la+gomera,forest" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Parque Nacional de Garajonay"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">La Gomera</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-media">Media</span>
+      </div>
+      <h3>Parque Nacional de Garajonay</h3>
+      <p>Patrimonio Mundial de la UNESCO. Bosque de laurisilva que parece sacado de un cuento, siempre envuelto en una niebla magica.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 4-8 horas</span>
+      <a href="lagomera.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="El Hierro"
+    data-tipo="Submarinismo"
+    data-dificultad="Media"
+    data-duracion="2-4 horas"
+    data-tags="buceo submarinismo fondo marino reserva biosfera peces coral">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?la+restinga,elhierro,diving" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Submarinismo en La Restinga"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">El Hierro</span>
+        <span class="badge badge-tipo">Submarinismo</span>
+        <span class="badge badge-dificultad-media">Media</span>
+      </div>
+      <h3>Submarinismo en La Restinga</h3>
+      <p>Reserva Marina con visibilidad de 40 metros. Tortugas, rayas y barracudas en uno de los fondos marinos más puros del Atlántico.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 horas</span>
+      <a href="elhierro.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Gran Canaria"
+    data-tipo="Escalada"
+    data-dificultad="Extrema"
+    data-duracion="Día completo"
+    data-tags="escalada roque nublo vertical roca adrenalina cima altura">
+
+    <div class="card-img"><img src="https://source.unsplash.com/featured/?roque+nublo,gran+canaria,climbing" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Escalada al Roque Nublo"></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Gran Canaria</span>
+        <span class="badge badge-tipo">Escalada</span>
+        <span class="badge badge-dificultad-extrema">Extrema</span>
+      </div>
+      <h3>Escalada al Roque Nublo</h3>
+      <p>El monolito volcánico más icónico de Canarias. Escalada vertical con vistas de 360° que incluyen el Teide en días claros.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> Día completo</span>
+      <a href="grancanaria.html" class="card-link">Ver más</a>
+    </div>
+  </article>
+
+  <!-- Mensaje vacío (se muestra desde JS) -->
+  <div id="msgVacio">
+    <i class="fas fa-compass"></i>
+    <h3>No se encontraron aventuras</h3>
+    <p>Prueba con otras palabras o cambia los filtros</p>
+  </div>
+
+</div><!-- /resultados -->
+
+  <div class="hero-buttons">
+     <a href="buscador-aventuras.html" class="btn-principal">Explora Aventuras</a>
+    </div>
+    <div class="page-nav">
+         <a href="index.html" class="btn-secundario">Volver al Inicio</a>
+      <a href="contacto.html" class="btn-secundario">Contacta con nosotros</a>
+    </div>
+  </section>
+
+    <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>aventurasencadapaso@gmail.com</p>
+        <p>+34 655 67 93 07</p>
+      </div>
+      <div class="footer-col">
+        <h3>Redes</h3>
+        <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <a href="index.html">Inicio</a>
+        <a href="recomendado.html">Recomendado</a>
+        <a href="quienes.html">Nuestro Fin</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Aventuras en Cada Paso. Vive Canarias al máximo.</p>
+  </footer>
+</body>
+
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,de,fr,it,pt',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  function changeLanguage(lang) {
+    var combo = document.querySelector('#google_translate_element select.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+      return;
+    }
+    try {
+      var cookieValue = '/es/' + lang;
+      document.cookie = 'googtrans=' + cookieValue + ';path=/;';
+      if (location.hostname) {
+        document.cookie = 'googtrans=' + cookieValue + ';path=/;domain=.' + location.hostname + ';';
+      }
+    } catch (e) {}
+    setTimeout(function() { location.reload(); }, 200);
+  }
+window.addEventListener('load', function() {
+  document.querySelectorAll('.idiomas .submenu a[data-lang]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      changeLanguage(this.dataset.lang);
+    });
+  });
+});
+</script>
+<script src="js/main.js"></script>
+<script src="js/buscador-aventuras.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

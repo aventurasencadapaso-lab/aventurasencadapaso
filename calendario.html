@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vive aventuras y adrenalina al aire libre en las Islas Canarias: senderismo extremo, exploración, deportes acuáticos y experiencias únicas con Aventuras en Cada Paso.">
+  <title>Aventuras en Cada Paso - Explora las Islas Canarias</title>
+  <link rel="icon" type="image/png" href="logo-aventuras.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+
+<body>
+
+<main class="calendar-pro">
+
+<!-- ================================
+     BARRA SUPERIOR / NAVBAR
+================================ -->
+<header class="barra-superior" role="banner">
+
+  <nav class="menu-top" aria-label="Navegación principal">
+
+    <div class="dropdown">
+      <a href="index.html">Inicio ▼</a>
+      <div class="submenu">
+        <a href="index.html">Página Principal</a>
+        <a href="recomendado.html">Recomendado</a>
+        <a href="senderismo-extremo.html">Senderismo Extremo</a>
+        <a href="buscador-aventuras.html">Exploración</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="momentos-epicos.html">Momentos Épicos</a>
+      </div>
+    </div>
+
+    <a href="quienes.html">Nuestro Fin</a>
+
+    <div class="dropdown">
+      <a href="buscador-aventuras.html">Descubre ▼</a>
+      <div class="submenu">
+        <a href="tenerife.html">Tenerife</a>
+        <a href="grancanaria.html">Gran Canaria</a>
+        <a href="lanzarote.html">Lanzarote</a>
+        <a href="fuerteventura.html">Fuerteventura</a>
+        <a href="lapalma.html">La Palma</a>
+        <a href="lagraciosa.html">La Graciosa</a>
+        <a href="lobos.html">Isla de Lobos</a>
+        <a href="elhierro.html">El Hierro</a>
+        <a href="lagomera.html">La Gomera</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="submenu">
+        <a href="https://www.prozis.com/es/es/" target="_blank" rel="noopener">Prozis</a>
+        <a href="https://www.decathlon.es/" target="_blank" rel="noopener">Decathlon</a>
+        <a href="https://www.barrabes.com/" target="_blank" rel="noopener">Barrabes</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+    <a href="contacto.html">Contacto ▼</a>
+      <div class="submenu">
+        <a href="aventureros.html">Aventureros</a>
+        <a href="empresas.html">Empresas</a>
+        <a href="colaboradores.html">Colaboradores</a>
+      </div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="banner-logo">
+      <a href="index.html">
+        <img src="logo-aventuras.png" alt="Aventuras en Cada Paso - Inicio">
+      </a>
+    </div>
+
+    <div class="extras-top">
+      <a href="buscador-aventuras.html" class="search-link">🔍 Buscar aventuras...</a>
+      <div class="idiomas dropdown">
+        <span class="icono-idioma">🌍</span>
+        <span class="idioma-label">Idioma</span>
+        <div class="submenu idioma-submenu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="fr">Français</a>
+          <a href="#" data-lang="it">Italiano</a>
+          <a href="#" data-lang="pt">Português</a>
+        </div>
+        <div id="google_translate_element"></div>
+      </div>
+      <div class="share-menu">
+        <button class="share-btn" aria-label="Compartir">
+          <img src="compartir.png" class="share-icon" alt="Compartir">
+        </button>
+        <div class="share-links">
+          <a href="https://wa.me/?text=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://twitter.com/intent/tweet?url=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+      <div class="redes-sociales">
+        <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">
+          <img src="instagram.png" class="social-icon" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">
+          <img src="tiktok.png" class="social-icon" alt="TikTok">
+        </a>
+        <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">
+          <img src="youtube.png" class="social-icon" alt="YouTube">
+        </a>
+      </div>
+    </div><!-- /extras-top -->
+
+  </nav><!-- /menu-top -->
+
+</header><!-- /barra-superior -->
+<!-- BUSCADOR + MINI CALENDARIO -->
+
+<section class="top-panel">
+
+    <div class="search-panel">
+
+        <h1>🏔 Eventos Outdoor Canarias</h1>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar carrera..."
+        >
+
+        <select id="islaFilter">
+            <option value="">Todas las islas</option>
+            <option value="Tenerife">Tenerife</option>
+            <option value="Gran Canaria">Gran Canaria</option>
+            <option value="La Palma">La Palma</option>
+            <option value="La Gomera">La Gomera</option>
+            <option value="Lanzarote">Lanzarote</option>
+            <option value="Fuerteventura">Fuerteventura</option>
+            <option value="El Hierro">El Hierro</option>
+        </select>
+
+        <select id="distanciaFilter">
+            <option value="">Todas las distancias</option>
+            <option value="0-15">0-15 km</option>
+            <option value="15-30">15-30 km</option>
+            <option value="30-50">30-50 km</option>
+            <option value="50+">50+ km</option>
+        </select>
+        
+        <button id="clearFilters" class="btn-clear">
+    Limpiar filtros
+</button>
+
+        <div id="autocomplete"></div>
+
+    </div>
+
+    <div class="mini-calendar">
+
+        <h3>📅 Calendario</h3>
+
+        <div id="miniCalendar"></div>
+
+        <button id="openCalendar">
+            Ver calendario completo
+        </button>
+
+    </div>
+
+</section>
+
+<!-- LISTADO DE CARRERAS -->
+
+<section class="eventos-section">
+
+    <h2 class="section-title">
+        Próximos Eventos
+    </h2>
+
+    <div id="listaCarreras"></div>
+
+</section>
+
+<!-- MAPA -->
+
+<section class="mapa-carreras">
+
+    <h2>🗺️ Mapa de Carreras Canarias</h2>
+
+    <div id="mapaCanarias"></div>
+
+</section>
+
+<!-- MODAL CALENDARIO -->
+
+<div id="calendarModal" class="hidden">
+
+    <div class="calendar-modal-content">
+
+        <button id="closeCalendar">
+            ✕
+        </button>
+
+        <div class="calendar-header">
+
+            <button id="prevMes">◀</button>
+
+            <h2 id="monthTitle"></h2>
+
+            <button id="nextMes">▶</button>
+
+        </div>
+
+        <div id="fullCalendar" class="calendar-grid"></div>
+
+    </div>
+
+</div>
+
+<!-- MAPA -->
+
+<section class="mapa-section">
+
+    <h2 class="section-title">
+        🗺 Buscar carreras por ubicación
+    </h2>
+
+    <div id="map"></div>
+
+</section>
+
+<!-- ================================
+     FOOTER
+================================ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>aventurasencadapaso@gmail.com</p>
+        <p>+34 655 67 93 07</p>
+      </div>
+      <div class="footer-col">
+        <h3>Redes</h3>
+        <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <a href="index.html">Inicio</a>
+        <a href="recomendado.html">Recomendado</a>
+        <a href="quienes.html">Nuestro Fin</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Aventuras en Cada Paso. Vive Canarias al máximo.</p>
+  </footer>
+
+
+<!-- ================================
+     SCRIPTS
+================================ -->
+
+<!-- Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'en,de,fr,it,pt',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+// â”€â”€ Google Translate helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function changeLanguage(lang) {
+  var combo = document.querySelector('#google_translate_element select.goog-te-combo');
+  if (combo) {
+    combo.value = lang;
+    combo.dispatchEvent(new Event('change'));
+    return;
+  }
+  try {
+    var cookieValue = '/es/' + lang;
+    document.cookie = 'googtrans=' + cookieValue + ';path=/;';
+    if (location.hostname) {
+      document.cookie = 'googtrans=' + cookieValue + ';path=/;domain=.' + location.hostname + ';';
+    }
+  } catch (e) {}
+  setTimeout(function () { location.reload(); }, 200);
+}
+
+window.addEventListener('load', function () {
+  document.querySelectorAll('.idiomas .submenu a[data-lang]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      changeLanguage(this.dataset.lang);
+    });
+  });
+});
+
+// â”€â”€ Hamburger menu â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+(function () {
+  var toggle   = document.querySelector('.menu-toggle');
+  var menuTop  = document.querySelector('.menu-top');
+  var extrasTop = document.querySelector('.extras-top');
+
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function () {
+    var isOpen = toggle.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    menuTop.classList.toggle('open', isOpen);
+    extrasTop.classList.toggle('open', isOpen);
+  });
+
+  // Submenús en móvil: abrir/cerrar con tap
+  document.querySelectorAll('.menu-top .dropdown > a, .menu-top .dropdown > span').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (window.innerWidth > 900) return; // desktop usa hover
+      e.preventDefault();
+      var parent = link.closest('.dropdown');
+      var wasOpen = parent.classList.contains('open');
+      // cerrar todos
+      document.querySelectorAll('.menu-top .dropdown').forEach(function (d) { d.classList.remove('open'); });
+      if (!wasOpen) parent.classList.add('open');
+    });
+  });
+
+  // Share button en móvil
+  var shareBtn  = document.querySelector('.share-btn');
+  var shareMenu = document.querySelector('.share-menu');
+  if (shareBtn && shareMenu) {
+    shareBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      shareMenu.classList.toggle('open');
+    });
+    document.addEventListener('click', function () {
+      shareMenu.classList.remove('open');
+    });
+  }
+})();
+</script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+</script>
+</body>
+
+</html>

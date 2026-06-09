@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senderismo Extremo | Aventuras en Cada Paso</title>
+  <link rel="icon" type="image/png" href="logo-aventuras.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!-- BARRA SUPERIOR -->
+<!-- ================================
+     BARRA SUPERIOR / NAVBAR
+================================ -->
+<header class="barra-superior" role="banner">
+
+  <nav class="menu-top" aria-label="Navegación principal">
+
+    <div class="dropdown">
+      <a href="index.html">Inicio ?</a>
+      <div class="submenu">
+        <a href="index.html">Página Principal</a>
+        <a href="recomendado.html">Recomendado</a>
+        <a href="senderismo-extremo.html">Senderismo Extremo</a>
+        <a href="buscador-aventuras.html">Exploración</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="momentos-epicos.html">Momentos Épicos</a>
+      </div>
+    </div>
+
+    <a href="quienes.html">Nuestro Fin</a>
+
+    <div class="dropdown">
+      <a href="buscador-aventuras.html">Descubre ?</a>
+      <div class="submenu">
+        <a href="tenerife.html">Tenerife</a>
+        <a href="grancanaria.html">Gran Canaria</a>
+        <a href="lanzarote.html">Lanzarote</a>
+        <a href="fuerteventura.html">Fuerteventura</a>
+        <a href="lapalma.html">La Palma</a>
+        <a href="lagraciosa.html">La Graciosa</a>
+        <a href="lobos.html">Isla de Lobos</a>
+        <a href="elhierro.html">El Hierro</a>
+        <a href="lagomera.html">La Gomera</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      <div class="submenu">
+        <a href="https://www.prozis.com/es/es/" target="_blank" rel="noopener">Prozis</a>
+        <a href="https://www.decathlon.es/" target="_blank" rel="noopener">Decathlon</a>
+        <a href="https://www.barrabes.com/" target="_blank" rel="noopener">Barrabes</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+    <a href="contacto.html">Contacto ?</a>
+      <div class="submenu">
+        <a href="aventureros.html">Aventureros</a>
+        <a href="empresas.html">Empresas</a>
+        <a href="colaboradores.html">Colaboradores</a>
+      </div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="banner-logo">
+      <a href="index.html">
+        <img src="logo-aventuras.png" alt="Aventuras en Cada Paso - Inicio">
+      </a>
+    </div>
+
+    <div class="extras-top">
+      <a href="buscador-aventuras.html" class="search-link">?? Buscar aventuras...</a>
+      <div class="idiomas dropdown">
+        <span class="icono-idioma">??</span>
+        <span class="idioma-label">Idioma</span>
+        <div class="submenu idioma-submenu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="fr">Français</a>
+          <a href="#" data-lang="it">Italiano</a>
+          <a href="#" data-lang="pt">Português</a>
+        </div>
+        <div id="google_translate_element"></div>
+      </div>
+      <div class="share-menu">
+        <button class="share-btn" aria-label="Compartir">
+          <img src="compartir.png" class="share-icon" alt="Compartir">
+        </button>
+        <div class="share-links">
+          <a href="https://wa.me/?text=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://twitter.com/intent/tweet?url=https://aventurasencadapaso-lab.github.io/aventuras-web/" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+      <div class="redes-sociales">
+        <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">
+          <img src="instagram.png" class="social-icon" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">
+          <img src="tiktok.png" class="social-icon" alt="TikTok">
+        </a>
+        <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">
+          <img src="youtube.png" class="social-icon" alt="YouTube">
+        </a>
+      </div>
+    </div><!-- /extras-top -->
+
+  </nav><!-- /menu-top -->
+
+</header><!-- /barra-superior -->>
+  <section class="inspiracion">
+    <h2>Los 8 Senderos más Extremo</h2>
+   <p>Rutas montañosas desafiantes con vistas espectaculares. Ideal para aventureros que buscan una experiencia intensa en la naturaleza.</p>
+    <div class="hero-buttons">
+    </div>
+    <section class="aventuras-grid">
+
+  <article class="aventura-card"
+    data-isla="Tenerife"
+    data-tipo="Senderismo"
+    data-dificultad="Extrema"
+    data-duracion="10-16 horas">
+
+    <div class="card-img"><i class="fas fa-mountain"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Tenerife</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-extrema">Extrema</span>
+      </div>
+      <h3>Ruta 0-4-0 Teide</h3>
+      <p>Desde la Playa del Socorro hasta la cima del Teide y regreso al mar. La ruta más dura de Canarias.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 10-16 horas</span>
+      <a href="gpx/ruta-040-teide.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="La Palma"
+    data-tipo="Senderismo"
+    data-dificultad="Extrema"
+    data-duracion="8-10 horas">
+
+    <div class="card-img"><i class="fas fa-volcano"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">La Palma</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-extrema">Extrema</span>
+      </div>
+      <h3>Tazacorte - Roque de los Muchachos</h3>
+      <p>Más de 2.400 metros de ascenso continuo desde el nivel del mar hasta la cima de La Palma.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 8-10 horas</span>
+    <a href="gpx/tazacorte-roque-muchachos.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Gran Canaria"
+    data-tipo="Senderismo"
+    data-dificultad="Alta"
+    data-duracion="2-4 días">
+
+    <div class="card-img"><i class="fas fa-route"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Gran Canaria</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-alta">Alta</span>
+      </div>
+      <h3>Camino Entre Volcanes</h3>
+      <p>Travesía de larga distancia atravesando barrancos, montañas y el corazón de Gran Canaria.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 días</span>
+  <a href="gpx/camino-entre-volcanes-grancanaria.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="La Gomera"
+    data-tipo="Senderismo"
+    data-dificultad="Alta"
+    data-duracion="10-12 horas">
+
+    <div class="card-img"><i class="fas fa-tree"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">La Gomera</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-alta">Alta</span>
+      </div>
+      <h3>GR131 La Gomera</h3>
+      <p>Atraviesa Garajonay y los barrancos más profundos de la isla en una jornada exigente.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 10-12 horas</span>
+<a href="gpx/gr131-lagomera.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="El Hierro"
+    data-tipo="Senderismo"
+    data-dificultad="Alta"
+    data-duracion="8-12 horas">
+
+    <div class="card-img"><i class="fas fa-hiking"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">El Hierro</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-alta">Alta</span>
+      </div>
+      <h3>Camino de Jinama</h3>
+      <p>Una de las subidas más duras de Canarias por pendiente y desnivel acumulado.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 8-12 horas</span>
+<a href="gpx/camino-jinama-elhierro.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Fuerteventura"
+    data-tipo="Senderismo"
+    data-dificultad="Alta"
+    data-duracion="7-9 días">
+
+    <div class="card-img"><i class="fas fa-sun"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Fuerteventura</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-alta">Alta</span>
+      </div>
+      <h3>GR131 Fuerteventura</h3>
+      <p>164 km atravesando toda la isla entre volcanes, viento y largas etapas sin sombra.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 7-9 días</span>
+<a href="gpx/gr131-fuerteventura.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="Lanzarote"
+    data-tipo="Senderismo"
+    data-dificultad="Alta"
+    data-duracion="3-5 días">
+
+    <div class="card-img"><i class="fas fa-fire"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">Lanzarote</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-alta">Alta</span>
+      </div>
+      <h3>GR131 Lanzarote</h3>
+      <p>Volcanes, malpaíses y paisajes lunares durante toda la travesía de la isla.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 3-5 días</span>
+<a href="gpx/gr131-lanzarote.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+  <article class="aventura-card"
+    data-isla="La Graciosa"
+    data-tipo="Senderismo"
+    data-dificultad="Media"
+    data-duracion="5-7 horas">
+
+    <div class="card-img"><i class="fas fa-water"></i></div>
+    <div class="card-body">
+      <div class="card-badges">
+        <span class="badge badge-isla">La Graciosa</span>
+        <span class="badge badge-tipo">Senderismo</span>
+        <span class="badge badge-dificultad-media">Media</span>
+      </div>
+      <h3>Vuelta Integral a La Graciosa</h3>
+      <p>Playas vírgenes, volcanes y senderos costeros en la isla más salvaje del archipiélago.</p>
+    </div>
+    <div class="card-footer">
+      <span class="card-duracion"><i class="fas fa-clock"></i> 5-7 horas</span>
+<a href="gpx/vuelta-lagraciosa.gpx" download class="card-link">
+  <i class="fas fa-download"></i> Descargar GPX
+</a>
+    </div>
+  </article>
+
+</section>
+  
+
+  </section>
+ 
+  <div class="hero-buttons">
+     <a href="buscador-aventuras.html" class="btn-principal">Explora Aventuras</a>
+    </div>
+    <div class="page-nav">
+         <a href="index.html" class="btn-secundario">Volver al Inicio</a>
+      <a href="contacto.html" class="btn-secundario">Contacta con nosotros</a>
+    </div>
+  </section>
+
+    <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <p>aventurasencadapaso@gmail.com</p>
+        <p>+34 655 67 93 07</p>
+      </div>
+      <div class="footer-col">
+        <h3>Redes</h3>
+        <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <a href="index.html">Inicio</a>
+        <a href="recomendado.html">Recomendado</a>
+        <a href="quienes.html">Nuestro Fin</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Aventuras en Cada Paso. Vive Canarias al máximo.</p>
+  </footer>
+</body>
+
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,de,fr,it,pt',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  function changeLanguage(lang) {
+    var combo = document.querySelector('#google_translate_element select.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+      return;
+    }
+    try {
+      var cookieValue = '/es/' + lang;
+      document.cookie = 'googtrans=' + cookieValue + ';path=/;';
+      if (location.hostname) {
+        document.cookie = 'googtrans=' + cookieValue + ';path=/;domain=.' + location.hostname + ';';
+      }
+    } catch (e) {}
+    setTimeout(function() { location.reload(); }, 200);
+  }
+window.addEventListener('load', function() {
+  document.querySelectorAll('.idiomas .submenu a[data-lang]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      changeLanguage(this.dataset.lang);
+    });
+  });
+});
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
