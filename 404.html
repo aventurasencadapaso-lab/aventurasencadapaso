@@ -41,6 +41,59 @@ if('serviceWorker' in navigator){window.addEventListener('load',function(){navig
 </script>
 <style>#btn-top{position:fixed;bottom:24px;right:24px;z-index:999;width:46px;height:46px;border-radius:50%;background:rgba(28,255,107,.12);border:1px solid rgba(28,255,107,.3);color:#1cff6b;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none;min-height:unset!important;}#btn-top.visible{opacity:1;transform:translateY(0);pointer-events:auto;}#btn-top:hover{background:rgba(28,255,107,.25);}</style>
 <style>.skip-link{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}</style>
+<style>
+/* Ocultar barra de Google Translate */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* Evitar que el body se desplace hacia abajo */
+body {
+  top: 0 !important;
+  position: relative !important;
+}
+/* Ocultar el iframe de translate */
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+/* Compensar el desplazamiento que causa Google */
+.skiptranslate {
+  display: none !important;
+}
+</style>
+<script>
+/* Ocultar barra de Google Translate dinámicamente */
+(function(){
+  function ocultarBarra(){
+    var barra = document.querySelector('.goog-te-banner-frame');
+    if(barra){ barra.style.display='none'; }
+    // Restaurar posición del body
+    if(document.body.style.top){
+      document.body.style.top = '0';
+    }
+    // Ocultar el iframe
+    var iframes = document.querySelectorAll('iframe');
+    iframes.forEach(function(f){
+      if(f.src && f.src.indexOf('translate.google') > -1){
+        f.style.display = 'none';
+      }
+    });
+  }
+  // Ejecutar varias veces para pillar cuando carga
+  setTimeout(ocultarBarra, 500);
+  setTimeout(ocultarBarra, 1000);
+  setTimeout(ocultarBarra, 2000);
+  // Observer para detectar cuando aparece
+  var obs = new MutationObserver(ocultarBarra);
+  obs.observe(document.body, {childList:true, subtree:true});
+})();
+</script>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>

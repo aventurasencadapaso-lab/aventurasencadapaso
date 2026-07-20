@@ -223,6 +223,59 @@ if('serviceWorker' in navigator){
 }
 </style>
 <style>.skip-link{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}</style>
+<style>
+/* Ocultar barra de Google Translate */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* Evitar que el body se desplace hacia abajo */
+body {
+  top: 0 !important;
+  position: relative !important;
+}
+/* Ocultar el iframe de translate */
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+/* Compensar el desplazamiento que causa Google */
+.skiptranslate {
+  display: none !important;
+}
+</style>
+<script>
+/* Ocultar barra de Google Translate dinámicamente */
+(function(){
+  function ocultarBarra(){
+    var barra = document.querySelector('.goog-te-banner-frame');
+    if(barra){ barra.style.display='none'; }
+    // Restaurar posición del body
+    if(document.body.style.top){
+      document.body.style.top = '0';
+    }
+    // Ocultar el iframe
+    var iframes = document.querySelectorAll('iframe');
+    iframes.forEach(function(f){
+      if(f.src && f.src.indexOf('translate.google') > -1){
+        f.style.display = 'none';
+      }
+    });
+  }
+  // Ejecutar varias veces para pillar cuando carga
+  setTimeout(ocultarBarra, 500);
+  setTimeout(ocultarBarra, 1000);
+  setTimeout(ocultarBarra, 2000);
+  // Observer para detectar cuando aparece
+  var obs = new MutationObserver(ocultarBarra);
+  obs.observe(document.body, {childList:true, subtree:true});
+})();
+</script>
 </head>
 
 <body>
