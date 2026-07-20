@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
+</script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Busca entre más de 230 rutas de senderismo, kayak, escalada y deportes acuáticos en todas las Islas Canarias. Filtra por isla, dificultad y tipo de actividad. Mapa interactivo.">
+ <meta name="robots" content="index, follow">
+ <meta name="author" content="Aventuras en Cada Paso">
+
+ <!-- Open Graph -->
+ <meta property="og:type" content="website">
+ <meta property="og:site_name" content="Aventuras en Cada Paso">
+ <meta property="og:title" content="Buscador de Rutas Outdoor en Canarias – 236 Rutas">
+ <meta property="og:description" content="Busca entre más de 230 rutas de senderismo, kayak, escalada y deportes acuáticos en todas las Islas Canarias. Filtra por isla, dificultad y tipo de actividad. Mapa interactivo.">
+ <meta property="og:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/logo-aventuras.png">
+ <meta property="og:url" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Buscador de Rutas y Aventuras en Canarias – Mapa Interactivo 2026">
+ <meta name="twitter:description" content="Busca entre más de 230 rutas de senderismo, kayak, escalada y deportes acuáticos en todas las Islas Canarias. Filtra por isla, dificultad y tipo de actividad. Mapa interactivo.">
+ <meta name="twitter:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/logo-aventuras.png">
+
+ <title>Buscador de Rutas Outdoor en Canarias – 236 Rutas</title>
+ <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
+ <!-- Preload recursos críticos -->
+ <link rel="preload" href="logo-aventuras.png" as="image" fetchpriority="high">
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" as="style">
+ <link rel="preload" href="style.min.css" as="style">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+ <link rel="stylesheet" href="style.min.css">
+
+<style id="cookie-banner-styles">
+#cookie-banner {
+ position: fixed;
+ bottom: 0; left: 0; right: 0;
+ z-index: 999999;
+ background: rgba(2, 7, 15, 0.97);
+ border-top: 2px solid #1cff6b;
+ padding: 16px 24px;
+ backdrop-filter: blur(10px);
+}
+.cookie-banner__inner {
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ flex-wrap: wrap;
+}
+.cookie-banner__text {
+ flex: 1;
+ min-width: 260px;
+}
+.cookie-banner__text p {
+ margin: 0;
+ color: #c8ccd8;
+ font-family: 'Roboto', sans-serif;
+ font-size: 13px;
+ line-height: 1.6;
+}
+.cookie-banner__text a {
+ color: #1cff6b;
+ text-decoration: underline;
+}
+.cookie-banner__actions {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+ flex-shrink: 0;
+}
+.cookie-btn {
+ padding: 9px 18px;
+ border-radius: 10px;
+ font-family: 'Orbitron', sans-serif;
+ font-size: 10px;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ cursor: pointer;
+ text-decoration: none;
+ display: inline-flex;
+ align-items: center;
+ border: none;
+ transition: background .2s, color .2s;
+}
+.cookie-btn--accept {
+ background: #1cff6b;
+ color: #02070f;
+}
+.cookie-btn--accept:hover { background: #00e05a; }
+.cookie-btn--reject {
+ background: transparent;
+ border: 1px solid rgba(28,255,107,0.4);
+ color: #e8eaf0;
+}
+.cookie-btn--reject:hover { border-color: #1cff6b; color: #1cff6b; }
+.cookie-btn--info {
+ background: transparent;
+ border: 1px solid rgba(200,204,216,0.3);
+ color: #c8ccd8;
+ font-size: 10px;
+}
+.cookie-btn--info:hover { color: #1cff6b; border-color: #1cff6b; }
+
+@media (max-width: 600px) {
+ .cookie-banner__inner { flex-direction: column; align-items: stretch; }
+ .cookie-banner__actions { justify-content: stretch; }
+ .cookie-btn { justify-content: center; text-align: center; }
+}
+</style><style>
+.footer-legal{display:flex;justify-content:center;gap:24px;margin-bottom:10px;flex-wrap:wrap}
+.footer-legal a{color:#666;font-size:12px;text-decoration:none;font-family:'Orbitron',sans-serif;letter-spacing:1px;transition:color .2s}
+.footer-legal a:hover{color:#1cff6b}
+</style>
+ <!-- PWA -->
+ <meta name="theme-color" content="#1cff6b">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <meta name="apple-mobile-web-app-title" content="Aventuras">
+ <link rel="manifest" href="manifest.json">
+ <link rel="apple-touch-icon" href="logo-aventuras.png">
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "Event",
+ "name": "Eventos Outdoor Canarias 2026",
+ "description": "Calendario de eventos de trail running y aventura en las Islas Canarias.",
+ "location": {
+ "@type": "Place",
+ "name": "Islas Canarias",
+ "address": {
+ "@type": "PostalAddress",
+ "addressCountry": "ES",
+ "addressRegion": "Canarias"
+ }
+ },
+ "organizer": {
+ "@type": "Organization",
+ "name": "Aventuras en Cada Paso",
+ "url": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso"
+ }
+ },
+ {
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Inicio",
+ "item": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso/index.html"
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "name": "Buscador de Aventuras",
+ "item": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html"
+ }
+ ]
+ }
+ ]
+}
+ </script>
+ <!-- DNS prefetch para recursos externos -->
+ <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+ <link rel="dns-prefetch" href="//fonts.googleapis.com">
+ <link rel="dns-prefetch" href="//fonts.gstatic.com">
+ <link rel="dns-prefetch" href="//translate.google.com">
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "¿Cuáles son las principales carreras de trail en Canarias?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Las más importantes son la Transgrancanaria (Gran Canaria, 126 km), la Transvulcania (La Palma, 74 km) y el Tenerife Bluetrail (73 km). Todas forman parte del circuito UTMB y atraen corredores de todo el mundo."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "¿Cuándo es la Transgrancanaria?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "La Transgrancanaria se celebra en febrero. Es una de las carreras de ultra trail más importantes de Europa con distancias desde 36 hasta 128 km. Sale desde Agaete y termina en Maspalomas."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "¿Qué eventos outdoor hay en Canarias en 2026?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "En 2026 destacan la Transgrancanaria (febrero), el Tenerife Bluetrail (marzo) y la Transvulcania (mayo). Usa nuestro buscador para filtrar por isla, distancia y fecha y encontrar el evento perfecto para ti."
+ }
+ }
+ ]
+}
+ </script>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "SportsEvent",
+ "name": "Eventos Outdoor Canarias 2026",
+ "description": "Calendario de carreras de trail running y eventos de aventura en las Islas Canarias 2026.",
+ "url": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html",
+ "sport": "Trail Running",
+ "location": {
+ "@type": "Place",
+ "name": "Islas Canarias",
+ "address": {
+ "@type": "PostalAddress",
+ "addressCountry": "ES",
+ "addressRegion": "Canarias"
+ }
+ },
+ "organizer": {
+ "@type": "Organization",
+ "name": "Aventuras en Cada Paso",
+ "url": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso"
+ }
+}
+ </script>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Buscador de Rutas Outdoor en Canarias",
+ "url": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html",
+ "description": "Buscador interactivo con mapa de más de 230 rutas de senderismo, kayak, surf y aventuras outdoor en todas las Islas Canarias.",
+ "applicationCategory": "TravelApplication",
+ "operatingSystem": "All",
+ "offers": {
+ "@type": "Offer",
+ "price": "0",
+ "priceCurrency": "EUR"
+ }
+}
+ </script>
+<style>
+/* Forzar fondo oscuro */
+html, body { background: #02070f !important; color: #c8ccd8 !important; }
+</style>
+<script>
+if('serviceWorker' in navigator){
+ window.addEventListener('load',function(){
+ navigator.serviceWorker.register('sw.js')
+ .then(function(r){ console.log('SW registrado'); })
+ .catch(function(e){ console.log('SW error:', e); });
+ });
+}
+</script>
+<style>
+ /* Hero buscador */
+ .bus-hero {
+ padding: 110px 28px 48px;
+ text-align: center;
+ max-width: 800px;
+ margin: 0 auto;
+ }
+ .bus-hero__label {
+ font-family: Orbitron, sans-serif;
+ font-size: 10px;
+ color: #1cff6b;
+ letter-spacing: 4px;
+ text-transform: uppercase;
+ display: block;
+ margin-bottom: 14px;
+ }
+ .bus-hero__titulo {
+ font-family: Orbitron, sans-serif;
+ font-size: clamp(1rem, 3vw, 1.7rem);
+ color: #e8eaf0;
+ letter-spacing: 2px;
+ margin: 0 0 12px;
+ font-weight: 900;
+ }
+ .bus-hero__desc {
+ color: #8a8fa0;
+ font-size: 14px;
+ line-height: 1.75;
+ margin: 0 0 28px;
+ }
+ .bus-hero__stats {
+ display: flex;
+ gap: 36px;
+ justify-content: center;
+ flex-wrap: wrap;
+ }
+ .bus-stat__num {
+ font-family: Orbitron, sans-serif;
+ font-size: 2rem;
+ font-weight: 900;
+ color: #1cff6b;
+ display: block;
+ line-height: 1;
+ }
+ .bus-stat__lbl {
+ font-size: 12px;
+ color: #5a6070;
+ display: block;
+ margin-top: 5px;
+ }
+</style>
+<style>
+.pub-banner{max-width:1200px;margin:40px auto;padding:0 28px;}
+.pub-banner__inner{background:linear-gradient(135deg,#0c1624,#0d1f0d);border:1px solid rgba(28,255,107,.2);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden;}
+.pub-banner__tag{position:absolute;top:0;left:0;background:#1cff6b;color:#02070f;font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:0 0 8px 0;}
+.pub-banner__txt{flex:1;min-width:200px;margin-top:8px;}
+.pub-banner__sup{font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:5px;}
+.pub-banner__desc{color:#c8ccd8;font-size:13px;margin:0;line-height:1.5;}
+.pub-banner__btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#1cff6b;color:#02070f!important;border-radius:12px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:.2s;}
+.pub-banner__btn:hover{background:#00e05a;transform:translateY(-2px);}
+</style>
+<style>.skip-link{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}</style>
+</head>
+<body>
+<a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+
+<!-- ================================
+ BARRA SUPERIOR / NAVBAR
+================================ -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Busca y filtra eventos outdoor, carreras de trail, actividades y aventuras en todas las islas Canarias. Calendario actualizado de eventos deportivos.">
+ <meta name="robots" content="index, follow">
+ <meta name="author" content="Aventuras en Cada Paso">
+
+ <!-- Open Graph -->
+ <meta property="og:type" content="website">
+ <meta property="og:site_name" content="Aventuras en Cada Paso">
+ <meta property="og:title" content="Buscador de Aventuras Canarias – Eventos y carreras outdoor">
+ <meta property="og:description" content="Filtra por isla, distancia y fecha. Encuentra tu próxima aventura en Canarias.">
+ <meta property="og:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/logo-aventuras.png">
+ <meta property="og:url" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="630">
+
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Buscador de Aventuras Canarias – Eventos y carreras outdoor">
+ <meta name="twitter:description" content="Filtra por isla, distancia y fecha. Encuentra tu próxima aventura en Canarias.">
+ <meta name="twitter:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/logo-aventuras.png">
+
+ <title>Buscador de Rutas Outdoor en Canarias – 236 Rutas con Mapa</title>
+ <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.min.css">
+<style>
+.footer-legal{display:flex;justify-content:center;gap:24px;margin-bottom:10px;flex-wrap:wrap}
+.footer-legal a{color:#666;font-size:12px;text-decoration:none;font-family:'Orbitron',sans-serif;letter-spacing:1px;transition:color .2s}
+.footer-legal a:hover{color:#1cff6b}
+</style>
+</head>
+
+<body>
+
+<!-- ================================
+ BARRA SUPERIOR / NAVBAR
+================================ -->
+<!-- ============================================================
+ HEADER / NAVBAR
+============================================================ -->
+<!-- ============================================================
+ HEADER / NAVBAR
+============================================================ -->
+<header class="site-header" role="banner">
+ <div class="site-header__inner">
+
+ <!-- LOGO -->
+ <a href="index.html" class="site-logo" aria-label="Aventuras en Cada Paso – Inicio">
+ <img fetchpriority="high" src="logo-aventuras.png"
+ alt="Aventuras en Cada Paso – Aventuras y senderismo en Canarias"
+ class="site-logo__img"
+ width="120" height="60">
+ </a>
+
+ <!-- NAV PRINCIPAL -->
+ <nav class="nav-main" aria-label="Navegación principal">
+ <ul class="nav-main__list" role="list">
+
+ <li class="nav-main__item nav-main__item--drop">
+ <a href="index.html" class="nav-main__link">
+ Inicio <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
+ </a>
+ <ul class="nav-main__submenu" role="list">
+            <li><a href="index.html">Página principal</a></li>
+            <li><a href="recomendado.html">Recomendado</a></li>
+            <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i> Blog</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
+          </ul>
+ </li>
+
+ <li class="nav-main__item nav-main__item--drop">
+ <a href="buscador-aventuras.html" class="nav-main__link">
+ Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
+ </a>
+ <ul class="nav-main__submenu" role="list">
+ <li><a href="tenerife.html">Tenerife</a></li>
+ <li><a href="grancanaria.html">Gran Canaria</a></li>
+ <li><a href="lanzarote.html">Lanzarote</a></li>
+ <li><a href="fuerteventura.html">Fuerteventura</a></li>
+ <li><a href="lapalma.html">La Palma</a></li>
+ <li><a href="lagraciosa.html">La Graciosa</a></li>
+ <li><a href="lobos.html">Isla de Lobos</a></li>
+ <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador</a></li>
+ <li><a href="elhierro.html">El Hierro</a></li>
+ <li><a href="lagomera.html">La Gomera</a></li>
+ </ul>
+ </li>
+
+ 
+
+ <li class="nav-main__item">
+ <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
+ </li>
+
+ <li class="nav-main__item nav-main__item--drop">
+ <a href="contacto.html" class="nav-main__link">
+ Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
+ </a>
+ <ul class="nav-main__submenu" role="list">
+ <li><a href="aventureros.html">Aventureros</a></li>
+ <li><a href="empresas.html">Empresas</a></li>
+ <li><a href="colaboradores.html">Colaboradores</a></li>
+ </ul>
+ </li>
+
+ </ul>
+ </nav>
+
+ <!-- ACCIONES -->
+ <div class="nav-actions">
+
+ <!-- Buscar — dropdown -->
+ <div class="nav-actions__drop" id="drop-buscar">
+          <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
+             id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+             aria-controls="panel-buscar" aria-label="Buscar">
+            <i class="fas fa-compass" aria-hidden="true"></i>
+            <span class="nav-actions__label">Buscar</span>
+          </a>
+          <ul class="nav-actions__panel" id="panel-buscar" role="list">
+            <li><a href="buscador-aventuras.html"><i class="fas fa-compass" style="color:#1cff6b;width:16px;"></i><span>Buscador de Rutas</span></a></li>
+            <li><a href="ruleta.html"><i class="fas fa-compass" style="color:#ff6f00;width:16px;"></i><span>Ruleta de Aventuras</span></a></li>
+            <li><a href="calendario.html"><i class="fas fa-calendar-alt" style="color:#ffc107;width:16px;"></i><span>Calendario de Eventos</span></a></li>
+            <li><a href="comparador.html"><i class="fas fa-balance-scale" style="color:#a855f7;width:16px;"></i><span>Comparador de Islas</span></a></li>
+            <li><a href="tiendas.html"><i class="fas fa-store" style="color:#1cff6b;width:16px;"></i><span>Tiendas Outdoor</span></a></li>
+          </ul>
+        </div>
+
+ <div class="nav-actions__drop" id="drop-redes">
+ <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
+ <i class="fas fa-share-nodes" aria-hidden="true"></i>
+ <span class="nav-actions__label">Redes</span>
+ </button>
+ <ul class="nav-actions__panel" id="panel-redes" role="list">
+ <li><a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre en nueva pestaña)"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+ <li><a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="TikTok (abre en nueva pestaña)"><i class="fab fa-tiktok" aria-hidden="true"></i> TikTok</a></li>
+ <li><a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener noreferrer" aria-label="YouTube (abre en nueva pestaña)"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+ </ul>
+ </div>
+
+ <div class="nav-actions__drop" id="drop-lang">
+ <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-lang" aria-label="Cambiar idioma">
+ <i class="fas fa-globe" aria-hidden="true"></i>
+ <span class="nav-actions__label">Idioma</span>
+ </button>
+ <ul class="nav-actions__panel" id="panel-lang" role="list">
+ <li><a href="#" data-lang="es" hreflang="es"> Español</a></li>
+ <li><a href="#" data-lang="en" hreflang="en"> English</a></li>
+ <li><a href="#" data-lang="de" hreflang="de"> Deutsch</a></li>
+ <li><a href="#" data-lang="fr" hreflang="fr"> Français</a></li>
+ <li><a href="#" data-lang="it" hreflang="it"> Italiano</a></li>
+ <li><a href="#" data-lang="pt" hreflang="pt"> Português</a></li>
+ </ul>
+ <div id="google_translate_element" hidden></div>
+ </div>
+
+ <a href="tiendas.html" class="nav-actions__btn" aria-label="Equipamiento y tiendas">
+ <i class="fas fa-cart-shopping" aria-hidden="true"></i>
+ <span class="nav-actions__label">Tienda</span>
+ </a>
+ <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-main-list">
+ <span aria-hidden="true"></span>
+ <span aria-hidden="true"></span>
+ <span aria-hidden="true"></span>
+ </button>
+
+ </div>
+
+ </div>
+</header>
+<nav class="breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Buscador de Rutas</span></nav>
+
+
+<!-- CABECERA -->
+<section class="bus-hero">
+ <span class="bus-hero__label"><i class="fas fa-compass"></i> Buscador de Rutas</span>
+ <h1 class="bus-hero__titulo">Rutas Outdoor en Canarias</h1>
+ <p class="bus-hero__desc">236 rutas verificadas en 9 islas — senderismo, trail, kayak, escalada, barranquismo y mucho más.</p>
+ <div class="bus-hero__stats">
+ <div><span class="bus-stat__num">236</span><span class="bus-stat__lbl">Rutas</span></div>
+ <div><span class="bus-stat__num">9</span><span class="bus-stat__lbl">Islas</span></div>
+ <div><span class="bus-stat__num">12</span><span class="bus-stat__lbl">Deportes</span></div>
+ <div><span class="bus-stat__num">GPS</span><span class="bus-stat__lbl">En todas</span></div>
+ </div>
+</section>
+
+<!-- PANEL BUSCADOR + FILTROS -->
+
+
+<!-- BANNER RULETA -->
+<a href="ruleta.html" class="rul-banner-link">
+ <div class="rul-banner">
+ <div class="rul-banner__dado"><i class="fas fa-compass" style="animation:rul-giro 2s linear infinite;display:inline-block;"></i></div>
+ <div class="rul-banner__texto">
+ <span class="rul-banner__sup">¿Sin ideas? Prueba esto</span>
+ <span class="rul-banner__titulo">Ruleta de Aventuras</span>
+ <span class="rul-banner__desc">Elige filtros y te lanzamos una ruta aleatoria entre las 236 de Canarias</span>
+ </div>
+ <div class="rul-banner__cta">
+ <span class="rul-banner__btn">¡Lanzar! <i class="fas fa-arrow-right"></i></span>
+ </div>
+ </div>
+</a>
+<style>
+ .rul-banner-link {
+ text-decoration: none; display: block;
+ max-width: 1300px; margin: 0 auto 28px; padding: 0 28px;
+ opacity: 0;
+ transform: translateY(-30px);
+ animation: rul-entrada 0.7s cubic-bezier(.22,1,.36,1) 0.8s forwards;
+ }
+ @keyframes rul-entrada {
+ from { opacity: 0; transform: translateY(-30px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ .rul-banner {
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ background: linear-gradient(135deg, #1a0a00, #0c1624);
+ border: 2px solid #ff6f00;
+ border-radius: 18px;
+ padding: 22px 28px;
+ position: relative;
+ overflow: hidden;
+ transition: transform .2s, box-shadow .2s;
+ cursor: pointer;
+ }
+ .rul-banner::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(90deg, rgba(255,111,0,.08) 0%, transparent 60%);
+ pointer-events: none;
+ }
+ .rul-banner:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 12px 40px rgba(255,111,0,.25);
+ }
+ .rul-banner__dado {
+ font-size: 3rem;
+ flex-shrink: 0;
+ animation: rul-dado 1.5s ease infinite;
+ line-height: 1;
+ }
+ @keyframes rul-dado {
+ 0%,100% { transform: rotate(-15deg) scale(1); }
+ 50% { transform: rotate(15deg) scale(1.2); }
+ }
+ .rul-banner__texto {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
+ }
+ .rul-banner__sup {
+ font-family: Orbitron, sans-serif;
+ font-size: 9px;
+ color: #ff6f00;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ font-weight: 700;
+ }
+ .rul-banner__titulo {
+ font-family: Orbitron, sans-serif;
+ font-size: clamp(1rem, 2.5vw, 1.3rem);
+ font-weight: 900;
+ color: #e8eaf0;
+ letter-spacing: 1px;
+ line-height: 1.2;
+ }
+ .rul-banner__desc {
+ font-size: 13px;
+ color: #8a8fa0;
+ line-height: 1.5;
+ }
+ .rul-banner__cta { flex-shrink: 0; }
+ .rul-banner__btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding: 12px 24px;
+ background: #ff6f00;
+ border-radius: 12px;
+ color: #fff;
+ font-family: Orbitron, sans-serif;
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ white-space: nowrap;
+ transition: background .2s;
+ }
+ .rul-banner:hover .rul-banner__btn { background: #e65c00; }
+ @media(max-width:600px){
+ .rul-banner { flex-wrap: wrap; gap: 14px; padding: 18px; }
+ .rul-banner__cta { width: 100%; }
+ .rul-banner__btn { width: 100%; justify-content: center; }
+ }
+</style>
+<div class="search-panel">
+ <div id="filtrosActivos" class="filtros-activos"></div>
+
+ <div class="search-input-wrap">
+ <i class="fas fa-search"></i>
+ <input aria-label="Buscar rutas" type="text" id="txtBuscador" placeholder="Buscar: Teide, barranco, kayak, senderismo, familiar...">
+ <button id="btnLimpiarInput" title="Limpiar búsqueda" aria-label="Limpiar búsqueda"><i class="fas fa-times"></i></button>
+ </div>
+
+ <div class="filtros-grid">
+
+ <div class="filtro-select">
+ <i class="fas fa-map-marker-alt"></i>
+ <select id="filtroIsla">
+ <option value="">Todas las islas</option>
+ <option>Tenerife</option>
+ <option>Gran Canaria</option>
+ <option>Lanzarote</option>
+ <option>Fuerteventura</option>
+ <option>La Palma</option>
+ <option>La Gomera</option>
+ <option>El Hierro</option>
+ <option>La Graciosa</option>
+ <option>Isla de Lobos</option>
+ </select>
+ </div>
+
+ <div class="filtro-select">
+ <i class="fas fa-running"></i>
+ <select id="filtroTipo">
+ <option value="">Tipo de actividad</option>
+ <option>Senderismo</option>
+ <option>Kayak</option>
+ <option>Escalada</option>
+ <option>Submarinismo</option>
+ <option>Ciclismo</option>
+ <option>Paragliding</option>
+ <option>Surf</option>
+ <option>Espeleología</option>
+ <option>Fotografía</option>
+ </select>
+ </div>
+
+ <div class="filtro-select">
+ <i class="fas fa-fire"></i>
+ <select id="filtroDificultad">
+ <option value="">Dificultad</option>
+ <option>Fícil</option>
+ <option>Media</option>
+ <option>Difícil</option>
+ <option>Extrema</option>
+ </select>
+ </div>
+
+ <div class="filtro-select">
+ <i class="fas fa-clock"></i>
+ <select id="filtroDuracion">
+ <option value="">Duración</option>
+ <option>Menos de 2h</option>
+ <option>2-4 horas</option>
+ <option>4-8 horas</option>
+ <option>Día completo</option>
+ <option>Varios dias</option>
+ </select>
+ </div>
+
+ </div>
+
+ <div class="search-meta">
+ <span class="resultado-count" id="contadorResultados"></span>
+ <button id="btnLimpiarTodo" type="button" aria-label="Limpiar todos los filtros"><i class="fas fa-undo"></i> Limpiar filtros</button>
+ </div>
+
+</div>
+
+<!-- LAYOUT MAPA + LISTA -->
+<div class="buscador-layout">
+
+ <!-- COLUMNA IZQUIERDA: lista de rutas -->
+ <div class="buscador-lista" id="buscador-lista">
+ <div id="listaRutas"></div>
+ </div>
+
+ <!-- COLUMNA DERECHA: mapa interactivo -->
+ <div class="buscador-mapa-wrap">
+ <div id="mapa-rutas"></div>
+ <div class="mapa-leyenda">
+ <span class="mapa-leyenda__item mapa-leyenda__item--facil">Fácil</span>
+ <span class="mapa-leyenda__item mapa-leyenda__item--media">Media</span>
+ <span class="mapa-leyenda__item mapa-leyenda__item--dificil">Difícil</span>
+ <span class="mapa-leyenda__item mapa-leyenda__item--extrema">Extrema</span>
+ </div>
+ </div>
+
+</div>
+
+<!-- SEO oculto para Google -->
+<div style="display:none" aria-hidden="true">
+<div id="resultados">
+
+ <article class="aventura-card"
+ data-isla="Tenerife"
+ data-tipo="Senderismo"
+ data-dificultad="Difícil"
+ data-duracion="Día completo"
+ data-tags="teide volcan cumbre respiraci0n nevada pico nacional parque">
+
+ <div> class="card-img"><img loading="lazy" src="imagenes/ascensoal-teide.jpg" onerror="this.onerror=null;this.src='fondo-aventuras.jpg';" alt="Ascensiín al Pico del Teide"></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">Tenerife</span>
+ <span class="badge badge-tipo">Senderismo</span>
+ <span class="badge badge-dificultad-dificil">Difícil</span>
+ </div>
+ <h3>Ascensiín al Pico del Teide</h3>
+ <p>Sube al techo de Espaía a 3.718 metros. Paisajes volcínicos, amanecer sobre las nubes y una experiencia que pocos olvidan.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> Día completo</span>
+ <a href="tenerife.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="Tenerife"
+ data-tipo="Senderismo"
+ data-dificultad="Media"
+ data-duracion="4-8 horas"
+ data-tags="anaga bosque laurisilva niebla familiar sendero secreto">
+
+ <div class="card-img"><i class="fas fa-tree"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">Tenerife</span>
+ <span class="badge badge-tipo">Senderismo</span>
+ <span class="badge badge-dificultad-media">Media</span>
+ </div>
+ <h3>Bosque de Anaga</h3>
+ <p>Selva de laurisilva entre niebla eterna. Uno de los bosques mís antiguos de Europa, lleno de senderos con vistas al ocíano.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> 4-8 horas</span>
+ <a href="tenerife.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="Gran Canaria"
+ data-tipo="Senderismo"
+ data-dificultad="Media"
+ data-duracion="4-8 horas"
+ data-tags="barranco maspalomas risco caído roque nublo naturaleza">
+
+ <div class="card-img"><i class="fas fa-hiking"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">Gran Canaria</span>
+ <span class="badge badge-tipo">Senderismo</span>
+ <span class="badge badge-dificultad-media">Media</span>
+ </div>
+ <h3>Barranco de Guayadeque</h3>
+ <p>Un camino espectacular con cuevas habitadas, vegetaciín y pueblos rupestres. Senderismo con historia y naturaleza a partes iguales.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> 4-8 horas</span>
+ <a href="grancanaria.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="Lanzarote"
+ data-tipo="Kayak"
+ data-dificultad="Fícil"
+ data-duracion="2-4 horas"
+ data-tags="kayak costa mar cueva familiar playa cristal agua">
+
+ <div class="card-img"><i class="fas fa-water"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">Lanzarote</span>
+ <span class="badge badge-tipo">Kayak</span>
+ <span class="badge badge-dificultad-facil">Fícil</span>
+ </div>
+ <h3>Kayak por Los Jameos</h3>
+ <p>Navega entre acantilados volcínicos negros y aguas de un azul imposible. Apto para toda la familia, sin experiencia previa necesaria.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 horas</span>
+ <a href="lanzarote.html" class="card-link">Ver más</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="Fuerteventura"
+ data-tipo="Surf"
+ data-dificultad="Media"
+ data-duracion="2-4 horas"
+ data-tags="surf olas viento kitesurf playa arena windsurf corralejo">
+
+ <div class="card-img"><i class="fas fa-wind"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">Fuerteventura</span>
+ <span class="badge badge-tipo">Surf</span>
+ <span class="badge badge-dificultad-media">Media</span>
+ </div>
+ <h3>Surf en Corralejo</h3>
+ <p>Olas perfectas para todos los niveles. Las dunas de Corralejo y el viento constante hacen de Fuerteventura la capital del surf en Canarias.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 horas</span>
+ <a href="fuerteventura.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="La Palma"
+ data-tipo="Senderismo"
+ data-dificultad="Difícil"
+ data-duracion="Día completo"
+ data-tags="caldera volcín crater ruta integral palma senderismo cumbre">
+
+ <div class="card-img"><i class="fas fa-fire-alt"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">La Palma</span>
+ <span class="badge badge-tipo">Senderismo</span>
+ <span class="badge badge-dificultad-dificil">Difícil</span>
+ </div>
+ <h3>Caldera de Taburiente</h3>
+ <p>Una de las mayores calderas del mundo. Cascadas, pinos canarios gigantes y vistas que hacen entender por quí La Palma es la isla bonita.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> Día completo</span>
+ <a href="lapalma.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="La Gomera"
+ data-tipo="Senderismo"
+ data-dificultad="Media"
+ data-duracion="4-8 horas"
+ data-tags="garajonay laurisilva niebla bosque primario verde selva">
+
+ <div class="card-img"><i class="fas fa-leaf"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">La Gomera</span>
+ <span class="badge badge-tipo">Senderismo</span>
+ <span class="badge badge-dificultad-media">Media</span>
+ </div>
+ <h3>Parque Nacional de Garajonay</h3>
+ <p>Patrimonio Mundial de la UNESCO. Bosque de laurisilva que parece sacado de un cuento, siempre envuelto en una niebla magica.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> 4-8 horas</span>
+ <a href="lagomera.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="El Hierro"
+ data-tipo="Submarinismo"
+ data-dificultad="Media"
+ data-duracion="2-4 horas"
+ data-tags="buceo submarinismo fondo marino reserva biosfera peces coral">
+
+ <div class="card-img"><i class="fas fa-fish"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">El Hierro</span>
+ <span class="badge badge-tipo">Submarinismo</span>
+ <span class="badge badge-dificultad-media">Media</span>
+ </div>
+ <h3>Submarinismo en La Restinga</h3>
+ <p>Reserva Marina con visibilidad de 40 metros. Tortugas, rayas y barracudas en uno de los fondos marinos mís puros del Atlíntico.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> 2-4 horas</span>
+ <a href="elhierro.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <article class="aventura-card"
+ data-isla="Gran Canaria"
+ data-tipo="Escalada"
+ data-dificultad="Extrema"
+ data-duracion="Día completo"
+ data-tags="escalada roque nublo vertical roca adrenalina cima altura">
+
+ <div class="card-img"><i class="fas fa-arrows-alt-v"></i></div>
+ <div class="card-body">
+ <div class="card-badges">
+ <span class="badge badge-isla">Gran Canaria</span>
+ <span class="badge badge-tipo">Escalada</span>
+ <span class="badge badge-dificultad-extrema">Extrema</span>
+ </div>
+ <h3>Escalada al Roque Nublo</h3>
+ <p>El monolito volcínico mís icínico de Canarias. Escalada vertical con vistas de 360í que incluyen el Teide en días claros.</p>
+ </div>
+ <div class="card-footer">
+ <span class="card-duracion"><i class="fas fa-clock"></i> Día completo</span>
+ <a href="grancanaria.html" class="card-link">Ver mís</a>
+ </div>
+ </article>
+
+ <!-- Mensaje vacío (se muestra desde JS) -->
+ <div id="msgVacio">
+ <i class="fas fa-compass"></i>
+ <h3>No se encontraron aventuras</h3>
+ <p>Prueba con otras palabras o cambia los filtros</p>
+ </div>
+
+</div><!-- /seo-oculto -->
+
+
+
+<!-- ============================================================
+ BANNER DE COOKIES
+============================================================ -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+ <div class="cookie-banner__inner">
+ <div class="cookie-banner__text">
+ <p>
+ Usamos cookies propias y de terceros (Google Translate) para mejorar tu experiencia.
+ Puedes aceptar todas, rechazar las no esenciales o leer más en nuestra
+ <a href="politica-cookies.html">Política de Cookies</a> y
+ <a href="politica-privacidad.html">Política de Privacidad</a>.
+ </p>
+ </div>
+ <div class="cookie-banner__actions">
+ <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
+ <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
+ <a href="politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
+ </div>
+ </div>
+</div>
+
+
+<!-- Script banner de cookies -->
+
+
+<!-- Botón volver arriba -->
+<button id="btn-top" aria-label="Volver arriba" title="Volver arriba">
+ <i class="fas fa-chevron-up" aria-hidden="true"></i>
+</button>
+<style>
+#btn-top {
+ position: fixed;
+ bottom: 28px;
+ right: 24px;
+ width: 46px;
+ height: 46px;
+ background: #1cff6b;
+ color: #02070f;
+ border: none;
+ border-radius: 50%;
+ font-size: 16px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 18px rgba(28,255,107,.4);
+ opacity: 0;
+ transform: translateY(12px);
+ transition: opacity .3s, transform .3s;
+ z-index: 9998;
+ pointer-events: none;
+}
+#btn-top.visible {
+ opacity: 1;
+ transform: translateY(0);
+ pointer-events: all;
+}
+#btn-top:hover {
+ background: #00e05a;
+ transform: translateY(-2px);
+ box-shadow: 0 6px 24px rgba(28,255,107,.6);
+}
+@media (max-width: 600px) {
+ #btn-top { bottom: 80px; right: 16px; width: 42px; height: 42px; }
+}
+</style>
+
+
+
+
+
+<script>
+function googleTranslateElementInit() {
+ if (typeof google !== 'undefined' && google.translate) {
+ new google.translate.TranslateElement({
+ pageLanguage: 'es',
+ includedLanguages: 'en,de,fr,it,pt',
+ layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+ autoDisplay: false
+ }, 'google_translate_element');
+
+ // Si había un idioma pendiente de aplicar, aplicarlo ahora
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c && window._pendingLang) {
+ c.value = window._pendingLang;
+ c.dispatchEvent(new Event('change'));
+ window._pendingLang = null;
+ }
+ }, 600);
+ }
+}
+// Cargar Google Translate siempre (es funcionalidad, no tracking)
+(function(){
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ }
+})();
+</script>
+<!-- ============================================================
+ BANNER DE COOKIES
+============================================================ -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+ <div class="cookie-banner__inner">
+ <div class="cookie-banner__text">
+ <p>
+ Usamos cookies propias y de terceros (Google Translate) para mejorar tu experiencia.
+ Puedes aceptar todas, rechazar las no esenciales o leer más en nuestra
+ <a href="politica-cookies.html">Política de Cookies</a> y
+ <a href="politica-privacidad.html">Política de Privacidad</a>.
+ </p>
+ </div>
+ <div class="cookie-banner__actions">
+ <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
+ <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
+ <a href="politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
+ </div>
+ </div>
+</div>
+
+
+<!-- Script banner de cookies -->
+
+
+<!-- Botón volver arriba -->
+<button id="btn-top" aria-label="Volver arriba" title="Volver arriba">
+ <i class="fas fa-chevron-up" aria-hidden="true"></i>
+</button>
+<style>
+#btn-top {
+ position: fixed;
+ bottom: 28px;
+ right: 24px;
+ width: 46px;
+ height: 46px;
+ background: #1cff6b;
+ color: #02070f;
+ border: none;
+ border-radius: 50%;
+ font-size: 16px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 18px rgba(28,255,107,.4);
+ opacity: 0;
+ transform: translateY(12px);
+ transition: opacity .3s, transform .3s;
+ z-index: 9998;
+ pointer-events: none;
+}
+#btn-top.visible {
+ opacity: 1;
+ transform: translateY(0);
+ pointer-events: all;
+}
+#btn-top:hover {
+ background: #00e05a;
+ transform: translateY(-2px);
+ box-shadow: 0 6px 24px rgba(28,255,107,.6);
+}
+@media (max-width: 600px) {
+ #btn-top { bottom: 80px; right: 16px; width: 42px; height: 42px; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var link = document.getElementById('btn-buscar-link');
+  if(!link) return;
+  link.addEventListener('click', function(e){
+    if(window.innerWidth <= 900){
+      e.stopImmediatePropagation();
+      window.location.href = 'descubre.html';
+    }
+  }, true); // captura en fase de captura, antes que cualquier otro handler
+});
+</script>
+</body>
+</html>
+
+
+
+

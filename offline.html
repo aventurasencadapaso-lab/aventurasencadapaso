@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sin conexión – Aventuras en Cada Paso</title>
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <meta name="theme-color" content="#1cff6b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{background:#02070f;color:#c8ccd8;font-family:Roboto,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;}
+    .wrap{max-width:480px;}
+    .ico{font-size:4rem;color:rgba(28,255,107,.2);margin-bottom:24px;display:block;animation:pulso 2s ease infinite;}
+    @keyframes pulso{0%,100%{transform:scale(1);}50%{transform:scale(1.1);}}
+    .label{font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:16px;}
+    h1{font-family:Orbitron,sans-serif;font-size:clamp(1rem,4vw,1.5rem);color:#e8eaf0;letter-spacing:1px;margin-bottom:12px;}
+    p{color:#8a8fa0;font-size:14px;line-height:1.75;margin-bottom:28px;}
+    .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:.2s;}
+    .btn-p{background:#1cff6b;color:#02070f;}
+    .btn-p:hover{background:#00e05a;}
+    .btn-s{background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.25);color:#1cff6b;}
+    .btn-s:hover{background:rgba(28,255,107,.15);}
+    .pages{margin-top:40px;border-top:1px solid rgba(28,255,107,.1);padding-top:28px;}
+    .pages h2{font-family:Orbitron,sans-serif;font-size:10px;color:#5a6070;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+    .pages-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;}
+    .page-link{background:#0c1624;border:1px solid rgba(28,255,107,.1);border-radius:12px;padding:14px;text-decoration:none;color:#c8ccd8;font-size:12px;transition:.2s;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    .page-link i{color:#1cff6b;font-size:1.1rem;}
+    .page-link:hover{border-color:#1cff6b;color:#1cff6b;}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <i class="fas fa-compass ico"></i>
+  <span class="label">Sin conexión</span>
+  <h1>La aventura espera conexión</h1>
+  <p>Parece que estás sin internet. Las páginas que ya visitaste están disponibles en caché. Conéctate para ver las rutas y eventos más recientes.</p>
+  <div class="btns">
+    <button class="btn btn-p" onclick="window.location.reload()">
+      <i class="fas fa-redo"></i> Reintentar
+    </button>
+    <a href="index.html" class="btn btn-s">
+      <i class="fas fa-home"></i> Inicio
+    </a>
+  </div>
+  <div class="pages">
+    <h2>Páginas disponibles offline</h2>
+    <div class="pages-grid">
+      <a href="buscador-aventuras.html" class="page-link"><i class="fas fa-compass"></i>Buscador</a>
+      <a href="ruleta.html" class="page-link"><i class="fas fa-compass"></i>Ruleta</a>
+      <a href="calendario.html" class="page-link"><i class="fas fa-calendar-alt"></i>Calendario</a>
+      <a href="comparador.html" class="page-link"><i class="fas fa-balance-scale"></i>Comparador</a>
+      <a href="tenerife.html" class="page-link"><i class="fas fa-mountain"></i>Tenerife</a>
+      <a href="grancanaria.html" class="page-link"><i class="fas fa-mountain"></i>Gran Canaria</a>
+      <a href="lanzarote.html" class="page-link"><i class="fas fa-fire"></i>Lanzarote</a>
+      <a href="tiendas.html" class="page-link"><i class="fas fa-store"></i>Tiendas</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

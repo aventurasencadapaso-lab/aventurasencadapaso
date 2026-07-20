@@ -1,0 +1,124 @@
+{
+  "name": "Aventuras en Cada Paso",
+  "short_name": "Aventuras",
+  "description": "La plataforma outdoor más completa de Canarias. 236 rutas, 9 islas, eventos y tiendas.",
+  "start_url": "/aventurasencadapaso/index.html",
+  "scope": "/aventurasencadapaso/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#02070f",
+  "theme_color": "#1cff6b",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["travel", "sports", "lifestyle", "navigation"],
+  "icons": [
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Buscador de Rutas",
+      "short_name": "Rutas",
+      "description": "Busca entre 236 rutas outdoor en Canarias",
+      "url": "/aventurasencadapaso/buscador-aventuras.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ruleta de Aventuras",
+      "short_name": "Ruleta",
+      "description": "Ruta aleatoria sorpresa en Canarias",
+      "url": "/aventurasencadapaso/ruleta.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Calendario de Eventos",
+      "short_name": "Eventos",
+      "description": "107 eventos outdoor 2025-2027",
+      "url": "/aventurasencadapaso/calendario.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Comparador de Islas",
+      "short_name": "Islas",
+      "description": "Descubre qué isla es la tuya",
+      "url": "/aventurasencadapaso/comparador.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "imagenes/screenshot-movil.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Buscador de rutas outdoor en Canarias"
+    },
+    {
+      "src": "imagenes/screenshot-desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Aventuras en Cada Paso — Inicio"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
