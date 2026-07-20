@@ -74,6 +74,31 @@
 }
 </style>
 <style>.skip-link{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}</style>
+<style>
+/* Cuándo ir — tabla con estrellas */
+.rec-cuando{max-width:1100px;margin:0 auto;padding:0 28px 48px;}
+.rec-cuando__titulo{font-family:Orbitron,sans-serif;font-size:11px;color:#1cff6b;letter-spacing:3px;text-transform:uppercase;margin:0 0 8px;display:flex;align-items:center;gap:10px;}
+.rec-cuando__sub{color:#8a8fa0;font-size:14px;margin:0 0 24px;}
+.rec-tabla{width:100%;border-collapse:collapse;font-size:12px;}
+.rec-tabla th{font-family:Orbitron,sans-serif;font-size:8px;color:#5a6070;letter-spacing:1px;text-transform:uppercase;padding:8px 6px;text-align:center;border-bottom:1px solid rgba(28,255,107,.1);}
+.rec-tabla th:first-child{text-align:left;}
+.rec-tabla td{padding:10px 6px;text-align:center;border-bottom:1px solid rgba(28,255,107,.05);}
+.rec-tabla td:first-child{text-align:left;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;color:#e8eaf0;white-space:nowrap;}
+.rec-tabla tr:hover td{background:rgba(28,255,107,.03);}
+.est{font-size:.85rem;line-height:1;}
+.est--5{color:#1cff6b;}
+.est--4{color:#1cff6b;}
+.est--3{color:#ffc107;}
+.est--2{color:#ff6f00;}
+.est--1{color:#5a6070;}
+.rec-leyenda{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;}
+.rec-leyenda__item{display:flex;align-items:center;gap:6px;font-size:11px;color:#8a8fa0;}
+@media(max-width:700px){
+  .rec-tabla{font-size:10px;}
+  .rec-tabla th,.rec-tabla td{padding:6px 3px;}
+  .est{font-size:.7rem;}
+}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -357,6 +382,40 @@
  <span style="font-size:10px;color:#5a6070;">Gratis</span>
  </div>
  </div>
+</div>
+
+<!-- CUÁNDO IR -->
+<div class="rec-cuando">
+  <h2 class="rec-cuando__titulo"><i class="fas fa-calendar-alt"></i> Cuándo ir a cada isla</h2>
+  <p class="rec-cuando__sub">Valoración por mes según clima, temperatura y condiciones para senderismo y aventura outdoor.</p>
+  <div style="overflow-x:auto;">
+    <table class="rec-tabla">
+      <thead>
+        <tr>
+          <th>Isla</th>
+          <th>Ene</th><th>Feb</th><th>Mar</th><th>Abr</th><th>May</th><th>Jun</th><th>Jul</th><th>Ago</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dic</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Tenerife</td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td></tr>
+<tr><td>Gran Canaria</td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td></tr>
+<tr><td>Lanzarote</td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td></tr>
+<tr><td>Fuerteventura</td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#5a6070;">★☆☆☆☆</span></td><td><span class="est" style="color:#5a6070;">★☆☆☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td></tr>
+<tr><td>La Palma</td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td></tr>
+<tr><td>La Gomera</td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td></tr>
+<tr><td>El Hierro</td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td></tr>
+<tr><td>La Graciosa</td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#ff6f00;">★★☆☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td></tr>
+<tr><td>Isla de Lobos</td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#1cff6b;">★★★★★</span></td><td><span class="est" style="color:#1cff6b;">★★★★☆</span></td><td><span class="est" style="color:#ffc107;">★★★☆☆</span></td></tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="rec-leyenda">
+    <span class="rec-leyenda__item"><span style="color:#1cff6b;">★★★★★</span> Temporada perfecta</span>
+    <span class="rec-leyenda__item"><span style="color:#ffc107;">★★★</span> Buena época</span>
+    <span class="rec-leyenda__item"><span style="color:#ff6f00;">★★</span> Aceptable</span>
+    <span class="rec-leyenda__item"><span style="color:#5a6070;">★</span> Evitar</span>
+  </div>
 </div>
 <footer class="site-footer">
  <div class="footer-grid">

@@ -471,19 +471,19 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  <h2 class="send-titulo"><i class="fas fa-question-circle"></i> Preguntas frecuentes</h2>
  <div class="send-faqs">
  <div class="send-faq">
- <button class="send-faq__preg">Cual es la ruta mas dificil de Canarias? <i class="fas fa-plus send-faq__ico"></i></button>
+ <button class="send-faq__preg">¿Cuál es la ruta más difícil de Canarias? <i class="fas fa-plus send-faq__ico"></i></button>
  <div class="send-faq__resp"><p>La Transvulcania en La Palma (83 km, 8.800 m+) es considerada una de las 10 carreras de montana mas duras del mundo. Para senderistas, la ascension al Teide desde el nivel del mar por el sendero 7 o la ruta integral de la Caldera de Taburiente son las mas exigentes. En El Hierro, el Camino de Jinama baja 1.000 m en solo 4 km.</p></div>
  </div>
  <div class="send-faq">
- <button class="send-faq__preg">Necesito permiso para hacer rutas extremas en Canarias? <i class="fas fa-plus send-faq__ico"></i></button>
+ <button class="send-faq__preg">¿Necesito permiso para hacer rutas extremas en Canarias? <i class="fas fa-plus send-faq__ico"></i></button>
  <div class="send-faq__resp"><p>Para subir al crater del Teide (los ultimos 200 m) necesitas permiso gratuito del Parque Nacional. Para el Barranco de Masca necesitas reserva previa y el barco de vuelta. El resto de rutas dificiles no requieren permiso especial aunque algunas tienen aforo limitado. Consulta siempre la web del parque antes de salir.</p></div>
  </div>
  <div class="send-faq">
- <button class="send-faq__preg">Que nivel de forma fisica necesito para una ruta extrema? <i class="fas fa-plus send-faq__ico"></i></button>
+ <button class="send-faq__preg">¿Qué nivel de forma física necesito para una ruta extrema? <i class="fas fa-plus send-faq__ico"></i></button>
  <div class="send-faq__resp"><p>Para rutas Dificil debes ser capaz de caminar 6-8 horas con mochila de 10 kg sin problemas. Para rutas Extrema necesitas experiencia previa en alta montana, conocimiento de orientacion y capacidad de reaccion ante emergencias. Si no has hecho nada parecido antes, empieza por rutas de nivel Medio.</p></div>
  </div>
  <div class="send-faq">
- <button class="send-faq__preg">Cual es la mejor epoca para rutas extremas en Canarias? <i class="fas fa-plus send-faq__ico"></i></button>
+ <button class="send-faq__preg">¿Cuál es la mejor época para rutas extremas en Canarias? <i class="fas fa-plus send-faq__ico"></i></button>
  <div class="send-faq__resp"><p>Primavera (marzo-mayo) y otono (septiembre-noviembre) son las epocas ideales. En verano el calor en cotas bajas es extremo — sal antes de las 7:00. En invierno puede haber nieve en cumbres del Teide y La Palma. En cualquier epoca consulta AEMET antes de salir.</p></div>
  </div>
  </div>
@@ -635,6 +635,34 @@ document.addEventListener('DOMContentLoaded', function(){
       window.location.href = 'descubre.html';
     }
   }, true); // captura en fase de captura, antes que cualquier otro handler
+});
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.send-faq__preg').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var resp = this.parentElement.querySelector('.send-faq__resp');
+      var open = resp.classList.contains('open');
+      document.querySelectorAll('.send-faq__resp').forEach(function(r){ r.classList.remove('open'); });
+      document.querySelectorAll('.send-faq__preg').forEach(function(b){ b.classList.remove('open'); });
+      if(!open){ resp.classList.add('open'); this.classList.add('open'); }
+    });
+  });
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var link = document.getElementById('btn-buscar-link') ||
+             document.querySelector('[aria-controls="panel-buscar"]') ||
+             document.querySelector('.nav-actions__btn--cta');
+  if(!link) return;
+  link.addEventListener('click', function(e){
+    if(window.innerWidth <= 900){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.location.href = 'descubre.html';
+    }
+  }, true);
 });
 </script>
 </body>
