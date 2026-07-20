@@ -665,5 +665,164 @@ document.addEventListener('DOMContentLoaded', function(){
   }, true);
 });
 </script>
+<script>
+(function () {
+ function changeLanguage(lang) {
+ // 1) Intentar usar el widget ya cargado
+ var combo = document.querySelector('select.goog-te-combo');
+ if (combo) {
+ combo.value = lang;
+ combo.dispatchEvent(new Event('change'));
+ return;
+ }
+
+ // 2) Guardar la cookie de idioma (funciona aunque el widget no esté cargado)
+ try {
+ var v = '/es/' + lang;
+ document.cookie = 'googtrans=' + v + ';path=/;';
+ if (location.hostname) {
+ document.cookie = 'googtrans=' + v + ';path=/;domain=.' + location.hostname + ';';
+ }
+ } catch(e) {}
+
+ // 3) Si Google Translate no está cargado, cargarlo ahora sin esperar cookies
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ window._pendingLang = lang;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ // Cuando cargue, aplicar el idioma
+ var orig = window.googleTranslateElementInit;
+ window.googleTranslateElementInit = function() {
+ if (orig) orig();
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c && window._pendingLang) {
+ c.value = window._pendingLang;
+ c.dispatchEvent(new Event('change'));
+ window._pendingLang = null;
+ }
+ }, 800);
+ };
+ } else {
+ // Widget ya cargado pero combo no encontrado aún, reintentar
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c) { c.value = lang; c.dispatchEvent(new Event('change')); }
+ else { location.reload(); }
+ }, 500);
+ }
+ }
+ document.querySelectorAll('a[data-lang]').forEach(function(a) {
+ a.addEventListener('click', function(e) { e.preventDefault(); changeLanguage(this.dataset.lang); });
+ });
+ /* Dropdowns acciones con delay */
+ var actionTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-actions__drop:not(#drop-buscar)').forEach(function(drop) {
+ var btn = drop.querySelector('[aria-haspopup]');
+ var panel = drop.querySelector('.nav-actions__panel');
+ if (!btn || !panel) return;
+
+ drop.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(actionTimers.get(drop));
+ open(drop, btn);
+ });
+
+ drop.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() { close(drop, btn); }, 200);
+ actionTimers.set(drop, t);
+ });
+
+ btn.addEventListener('click', function(e) {
+ e.stopPropagation();
+ var isOpen = drop.classList.contains('open');
+ closeAll();
+ if (!isOpen) open(drop, btn);
+ });
+ });
+ function open(drop, btn) { drop.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+ function close(drop, btn) { drop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+ function closeAll() {
+ document.querySelectorAll('.nav-actions__drop.open').forEach(function(d) {
+ close(d, d.querySelector('[aria-haspopup]'));
+ });
+ }
+ document.addEventListener('click', function() { closeAll(); });
+ /* Submenús desktop con delay para no cerrarse al bajar el ratón */
+ var hoverTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(li) {
+ var link = li.querySelector('.nav-main__link');
+ if (!link) return;
+
+ // Desktop: hover con delay de cierre
+ li.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ li.classList.add('open');
+ });
+
+ li.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 200); // 200ms de gracia para mover el ratón al submenú
+ hoverTimers.set(li, t);
+ });
+
+ // Submenú también mantiene el menú abierto si el ratón entra en él
+ var sub = li.querySelector('.nav-main__submenu');
+ if (sub) {
+ sub.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ });
+ sub.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 150);
+ hoverTimers.set(li, t);
+ });
+ }
+
+ // Móvil: tap para abrir/cerrar
+ link.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ e.preventDefault();
+ var was = li.classList.contains('open');
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ if (!was) li.classList.add('open');
+ });
+ });
+ var burger = document.querySelector('.nav-burger');
+ var navMain = document.querySelector('.nav-main');
+ if (burger && navMain) {
+ burger.addEventListener('click', function() {
+ var isOpen = burger.classList.toggle('open');
+ burger.setAttribute('aria-expanded', isOpen);
+ navMain.classList.toggle('open', isOpen);
+ });
+ }
+ window.addEventListener('resize', function() {
+ if (window.innerWidth > 900) {
+ if (navMain) navMain.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ }
+ });
+ document.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ if (!e.target.closest('.site-header') && navMain) {
+ navMain.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ }
+ });
+})();
+</script>
 </body>
 </html>
