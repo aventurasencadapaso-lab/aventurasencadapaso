@@ -118,6 +118,56 @@ iframe.goog-te-banner-frame {
   obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
+<style>
+@media(max-width:900px){
+  /* Logo más pequeño */
+  .site-logo img{height:32px!important;width:auto!important;}
+  /* Ocultar labels de los botones de acción en móvil */
+  .nav-actions__label{display:none!important;}
+  /* Botones de acción más pequeños */
+  .nav-actions__btn{padding:8px!important;min-width:36px!important;justify-content:center!important;}
+  /* Reducir gap entre botones */
+  .nav-actions{gap:4px!important;}
+  /* Ocultar texto Idiomas en móvil */
+  .nav-actions__drop:last-child .nav-actions__label{display:none!important;}
+}
+</style>
+<script>
+(function(){
+  // Guardar idioma cuando cambia
+  function guardarIdioma(lang){
+    try{ localStorage.setItem('av_lang', lang); }catch(e){}
+  }
+  // Aplicar idioma guardado al cargar
+  function aplicarIdioma(){
+    var lang = '';
+    try{ lang = localStorage.getItem('av_lang'); }catch(e){}
+    if(!lang || lang === 'es') return;
+    // Esperar a que Google Translate cargue
+    var intentos = 0;
+    var timer = setInterval(function(){
+      var combo = document.querySelector('select.goog-te-combo');
+      if(combo){
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+        clearInterval(timer);
+      }
+      if(++intentos > 20) clearInterval(timer);
+    }, 300);
+  }
+  // Interceptar clicks en idiomas
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-lang]');
+    if(a) guardarIdioma(a.dataset.lang);
+  });
+  // Aplicar al cargar
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', aplicarIdioma);
+  } else {
+    setTimeout(aplicarIdioma, 500);
+  }
+})();
+</script>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -524,6 +574,24 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }, true); // captura en fase de captura, antes que cualquier otro handler
 });
+</script>
+<script>
+(function(){
+  // Añadir botón compartir en móvil
+  if(!navigator.share) return;
+  var btn = document.createElement('button');
+  btn.innerHTML = '<i class="fas fa-share-alt"></i>';
+  btn.style.cssText = 'position:fixed;bottom:80px;right:24px;z-index:999;width:46px;height:46px;border-radius:50%;background:rgba(28,255,107,.12);border:1px solid rgba(28,255,107,.3);color:#1cff6b;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;min-height:unset!important;';
+  btn.setAttribute('aria-label','Compartir página');
+  btn.addEventListener('click', function(){
+    navigator.share({
+      title: document.title,
+      text: document.querySelector('meta[name="description"]') ? document.querySelector('meta[name="description"]').content : document.title,
+      url: window.location.href
+    }).catch(function(){});
+  });
+  document.body.appendChild(btn);
+})();
 </script>
 </body>
 </html>

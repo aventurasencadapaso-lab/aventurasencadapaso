@@ -53,6 +53,56 @@ iframe.goog-te-banner-frame {
   obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
+<style>
+@media(max-width:900px){
+  /* Logo más pequeño */
+  .site-logo img{height:32px!important;width:auto!important;}
+  /* Ocultar labels de los botones de acción en móvil */
+  .nav-actions__label{display:none!important;}
+  /* Botones de acción más pequeños */
+  .nav-actions__btn{padding:8px!important;min-width:36px!important;justify-content:center!important;}
+  /* Reducir gap entre botones */
+  .nav-actions{gap:4px!important;}
+  /* Ocultar texto Idiomas en móvil */
+  .nav-actions__drop:last-child .nav-actions__label{display:none!important;}
+}
+</style>
+<script>
+(function(){
+  // Guardar idioma cuando cambia
+  function guardarIdioma(lang){
+    try{ localStorage.setItem('av_lang', lang); }catch(e){}
+  }
+  // Aplicar idioma guardado al cargar
+  function aplicarIdioma(){
+    var lang = '';
+    try{ lang = localStorage.getItem('av_lang'); }catch(e){}
+    if(!lang || lang === 'es') return;
+    // Esperar a que Google Translate cargue
+    var intentos = 0;
+    var timer = setInterval(function(){
+      var combo = document.querySelector('select.goog-te-combo');
+      if(combo){
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+        clearInterval(timer);
+      }
+      if(++intentos > 20) clearInterval(timer);
+    }, 300);
+  }
+  // Interceptar clicks en idiomas
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-lang]');
+    if(a) guardarIdioma(a.dataset.lang);
+  });
+  // Aplicar al cargar
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', aplicarIdioma);
+  } else {
+    setTimeout(aplicarIdioma, 500);
+  }
+})();
+</script>
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
  <div class="site-header__inner">
