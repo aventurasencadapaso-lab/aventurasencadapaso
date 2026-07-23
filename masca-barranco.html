@@ -103,6 +103,60 @@ iframe.goog-te-banner-frame {
   }
 })();
 </script>
+<style>
+@media(max-width:900px){
+  /* ── OCULTAR barra superior de acciones en móvil ── */
+  .nav-actions{display:none!important;}
+  
+  /* ── BARRA INFERIOR FIJA ── */
+  .app-bar{
+    display:flex;
+    position:fixed;bottom:0;left:0;right:0;
+    background:#080f1a;
+    border-top:1px solid rgba(28,255,107,.15);
+    z-index:1000;
+    height:60px;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .app-bar__btn{
+    flex:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;
+    background:transparent;border:none;
+    color:#5a6070;
+    font-size:10px;font-family:Orbitron,sans-serif;
+    letter-spacing:.5px;cursor:pointer;
+    text-decoration:none;
+    transition:color .15s;
+    padding:8px 4px;
+    min-height:unset!important;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .app-bar__btn i{font-size:1.2rem;transition:color .15s;}
+  .app-bar__btn span{font-size:8px;line-height:1;}
+  .app-bar__btn.active,
+  .app-bar__btn:active{color:#1cff6b!important;}
+  .app-bar__btn.active i,
+  .app-bar__btn:active i{color:#1cff6b!important;}
+
+  /* Añadir padding al body para que el contenido no quede detrás de la barra */
+  body{padding-bottom:70px!important;}
+  
+  /* Ocultar btn-top flotante en móvil (lo reemplaza la barra) */
+  #btn-top{display:none!important;}
+
+  /* ── BARRA SUPERIOR SOLO LOGO + HAMBURGUESA ── */
+  .site-header{padding:0 16px!important;}
+  .nav-burger{
+    width:44px!important;height:44px!important;
+    background:transparent!important;border:none!important;
+    color:#e8eaf0!important;font-size:1.4rem!important;
+  }
+}
+@media(min-width:901px){
+  .app-bar{display:none!important;}
+}
+</style>
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
  <div class="site-header__inner">
@@ -180,7 +234,7 @@ iframe.goog-te-banner-frame {
  <!-- Redes sociales -->
  <div class="nav-actions__drop" id="drop-redes">
  <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
- <i class="fas fa-share-nodes" aria-hidden="true"></i>
+ <i class="fab fa-instagram" aria-hidden="true"></i>
  <span class="nav-actions__label">Redes</span>
  </button>
  <ul class="nav-actions__panel" id="panel-redes" role="list">
@@ -576,4 +630,49 @@ iframe.goog-te-banner-frame {
  });
 
 })();
-</script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>(function(){var mp=L.map("mr",{center:[28.0994,-15.7094],zoom:13});L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"© CARTO",subdomains:"abcd",maxZoom:17}).addTo(mp);var sv='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.67 14 22 14 22S28 23.67 28 14C28 6.27 21.73 0 14 0z" fill="#ff6f00"/><circle cx="14" cy="14" r="6" fill="#02070f"/></svg>';L.marker([28.0994,-15.7094],{icon:L.divIcon({html:sv,className:"",iconSize:[28,36],iconAnchor:[14,36],popupAnchor:[0,-36]})}).addTo(mp).bindPopup("Agaete – Tamadaba (Lineal)").openPopup();})();</script><script>document.getElementById("bs").addEventListener("click",function(){var u="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html",t="Agaete – Tamadaba (Lineal) en Gran Canaria | Aventuras en Cada Paso";if(navigator.share){navigator.share({title:"Agaete – Tamadaba (Lineal)",text:t,url:u}).catch(function(){});return;}var o=document.getElementById("sp");if(o)o.remove();var d=document.createElement("div");d.id="sp";d.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#0c1624;border:1px solid rgba(28,255,107,.3);border-radius:16px;padding:20px 24px;min-width:280px;max-width:90vw;box-shadow:0 12px 40px rgba(0,0,0,.6)";d.innerHTML="<p style='font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:2px;margin:0 0 12px'>COMPARTIR</p><div style='display:flex;flex-wrap:wrap;gap:8px'>"+"<a href='https://wa.me/?text="+encodeURIComponent(t+" "+u)+"' target='_blank' style='padding:9px 14px;background:#25d366;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-whatsapp'></i>WhatsApp</a>"+"<a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(u)+"' target='_blank' style='padding:9px 14px;background:#1da1f2;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-twitter'></i>Twitter</a>"+"<button onclick='navigator.clipboard.writeText(\"https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html\").then(function(){this.textContent=\" OK\";}.bind(this))' style='padding:9px 14px;background:rgba(28,255,107,.15);color:#1cff6b;border:1px solid rgba(28,255,107,.3);border-radius:10px;font-size:12px;cursor:pointer'><i class='fas fa-link'></i>Copiar</button>"+"<button onclick='document.getElementById(\"sp\").remove()' style='padding:9px 12px;background:rgba(255,255,255,.06);color:#8a8fa0;border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:12px;cursor:pointer'></button></div>";document.body.appendChild(d);});if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=="undefined"&&google.translate){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,de,fr,it,pt",autoDisplay:false},"google_translate_element");}};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";document.head.appendChild(s);}(function(){var t=localStorage.getItem("aventuras-theme");if(t==="light")document.body.classList.add("light-mode");})();</script></body></html>
+</script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>(function(){var mp=L.map("mr",{center:[28.0994,-15.7094],zoom:13});L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"© CARTO",subdomains:"abcd",maxZoom:17}).addTo(mp);var sv='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.67 14 22 14 22S28 23.67 28 14C28 6.27 21.73 0 14 0z" fill="#ff6f00"/><circle cx="14" cy="14" r="6" fill="#02070f"/></svg>';L.marker([28.0994,-15.7094],{icon:L.divIcon({html:sv,className:"",iconSize:[28,36],iconAnchor:[14,36],popupAnchor:[0,-36]})}).addTo(mp).bindPopup("Agaete – Tamadaba (Lineal)").openPopup();})();</script><script>document.getElementById("bs").addEventListener("click",function(){var u="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html",t="Agaete – Tamadaba (Lineal) en Gran Canaria | Aventuras en Cada Paso";if(navigator.share){navigator.share({title:"Agaete – Tamadaba (Lineal)",text:t,url:u}).catch(function(){});return;}var o=document.getElementById("sp");if(o)o.remove();var d=document.createElement("div");d.id="sp";d.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#0c1624;border:1px solid rgba(28,255,107,.3);border-radius:16px;padding:20px 24px;min-width:280px;max-width:90vw;box-shadow:0 12px 40px rgba(0,0,0,.6)";d.innerHTML="<p style='font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:2px;margin:0 0 12px'>COMPARTIR</p><div style='display:flex;flex-wrap:wrap;gap:8px'>"+"<a href='https://wa.me/?text="+encodeURIComponent(t+" "+u)+"' target='_blank' style='padding:9px 14px;background:#25d366;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-whatsapp'></i>WhatsApp</a>"+"<a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(u)+"' target='_blank' style='padding:9px 14px;background:#1da1f2;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-twitter'></i>Twitter</a>"+"<button onclick='navigator.clipboard.writeText(\"https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html\").then(function(){this.textContent=\" OK\";}.bind(this))' style='padding:9px 14px;background:rgba(28,255,107,.15);color:#1cff6b;border:1px solid rgba(28,255,107,.3);border-radius:10px;font-size:12px;cursor:pointer'><i class='fas fa-link'></i>Copiar</button>"+"<button onclick='document.getElementById(\"sp\").remove()' style='padding:9px 12px;background:rgba(255,255,255,.06);color:#8a8fa0;border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:12px;cursor:pointer'></button></div>";document.body.appendChild(d);});if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=="undefined"&&google.translate){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,de,fr,it,pt",autoDisplay:false},"google_translate_element");}};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";document.head.appendChild(s);}(function(){var t=localStorage.getItem("aventuras-theme");if(t==="light")document.body.classList.add("light-mode");})();</script><script>
+(function(){
+  if(window.innerWidth > 900) return;
+  
+  // Marcar botón activo según la página actual
+  var path = window.location.pathname;
+  var btns = {
+    'appbar-inicio': ['index.html', '/aventurasencadapaso/', '/aventurasencadapaso'],
+    'appbar-buscar': ['descubre.html'],
+    'appbar-rutas':  ['buscador-aventuras.html'],
+  };
+  Object.keys(btns).forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    btns[id].forEach(function(p){
+      if(path.endsWith(p)) el.classList.add('active');
+    });
+  });
+
+  // Compartir — Web Share API nativa
+  var btnCompartir = document.getElementById('appbar-compartir');
+  if(btnCompartir){
+    btnCompartir.addEventListener('click', function(){
+      if(navigator.share){
+        navigator.share({
+          title: document.title,
+          text: document.querySelector('meta[name="description"]') ?
+                document.querySelector('meta[name="description"]').content : document.title,
+          url: window.location.href
+        }).catch(function(){});
+      }
+    });
+  }
+
+  // Menú — abrir hamburguesa
+  var btnMenu = document.getElementById('appbar-menu');
+  if(btnMenu){
+    btnMenu.addEventListener('click', function(){
+      var burger = document.querySelector('.nav-burger');
+      if(burger) burger.click();
+      this.classList.toggle('active');
+    });
+  }
+})();
+</script>
+</body></html>

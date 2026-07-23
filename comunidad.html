@@ -187,6 +187,60 @@ iframe.goog-te-banner-frame {
   }
 })();
 </script>
+<style>
+@media(max-width:900px){
+  /* ── OCULTAR barra superior de acciones en móvil ── */
+  .nav-actions{display:none!important;}
+  
+  /* ── BARRA INFERIOR FIJA ── */
+  .app-bar{
+    display:flex;
+    position:fixed;bottom:0;left:0;right:0;
+    background:#080f1a;
+    border-top:1px solid rgba(28,255,107,.15);
+    z-index:1000;
+    height:60px;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .app-bar__btn{
+    flex:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;
+    background:transparent;border:none;
+    color:#5a6070;
+    font-size:10px;font-family:Orbitron,sans-serif;
+    letter-spacing:.5px;cursor:pointer;
+    text-decoration:none;
+    transition:color .15s;
+    padding:8px 4px;
+    min-height:unset!important;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .app-bar__btn i{font-size:1.2rem;transition:color .15s;}
+  .app-bar__btn span{font-size:8px;line-height:1;}
+  .app-bar__btn.active,
+  .app-bar__btn:active{color:#1cff6b!important;}
+  .app-bar__btn.active i,
+  .app-bar__btn:active i{color:#1cff6b!important;}
+
+  /* Añadir padding al body para que el contenido no quede detrás de la barra */
+  body{padding-bottom:70px!important;}
+  
+  /* Ocultar btn-top flotante en móvil (lo reemplaza la barra) */
+  #btn-top{display:none!important;}
+
+  /* ── BARRA SUPERIOR SOLO LOGO + HAMBURGUESA ── */
+  .site-header{padding:0 16px!important;}
+  .nav-burger{
+    width:44px!important;height:44px!important;
+    background:transparent!important;border:none!important;
+    color:#e8eaf0!important;font-size:1.4rem!important;
+  }
+}
+@media(min-width:901px){
+  .app-bar{display:none!important;}
+}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -281,7 +335,7 @@ iframe.goog-te-banner-frame {
         <!-- Redes sociales -->
  <div class="nav-actions__drop" id="drop-redes">
  <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
- <i class="fas fa-share-nodes" aria-hidden="true"></i>
+ <i class="fab fa-instagram" aria-hidden="true"></i>
  <span class="nav-actions__label">Redes</span>
  </button>
  <ul class="nav-actions__panel" id="panel-redes" role="list">
@@ -739,20 +793,47 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 <script>
 (function(){
-  // Añadir botón compartir en móvil
-  if(!navigator.share) return;
-  var btn = document.createElement('button');
-  btn.innerHTML = '<i class="fas fa-share-alt"></i>';
-  btn.style.cssText = 'position:fixed;bottom:80px;right:24px;z-index:999;width:46px;height:46px;border-radius:50%;background:rgba(28,255,107,.12);border:1px solid rgba(28,255,107,.3);color:#1cff6b;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;min-height:unset!important;';
-  btn.setAttribute('aria-label','Compartir página');
-  btn.addEventListener('click', function(){
-    navigator.share({
-      title: document.title,
-      text: document.querySelector('meta[name="description"]') ? document.querySelector('meta[name="description"]').content : document.title,
-      url: window.location.href
-    }).catch(function(){});
+  if(window.innerWidth > 900) return;
+  
+  // Marcar botón activo según la página actual
+  var path = window.location.pathname;
+  var btns = {
+    'appbar-inicio': ['index.html', '/aventurasencadapaso/', '/aventurasencadapaso'],
+    'appbar-buscar': ['descubre.html'],
+    'appbar-rutas':  ['buscador-aventuras.html'],
+  };
+  Object.keys(btns).forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    btns[id].forEach(function(p){
+      if(path.endsWith(p)) el.classList.add('active');
+    });
   });
-  document.body.appendChild(btn);
+
+  // Compartir — Web Share API nativa
+  var btnCompartir = document.getElementById('appbar-compartir');
+  if(btnCompartir){
+    btnCompartir.addEventListener('click', function(){
+      if(navigator.share){
+        navigator.share({
+          title: document.title,
+          text: document.querySelector('meta[name="description"]') ?
+                document.querySelector('meta[name="description"]').content : document.title,
+          url: window.location.href
+        }).catch(function(){});
+      }
+    });
+  }
+
+  // Menú — abrir hamburguesa
+  var btnMenu = document.getElementById('appbar-menu');
+  if(btnMenu){
+    btnMenu.addEventListener('click', function(){
+      var burger = document.querySelector('.nav-burger');
+      if(burger) burger.click();
+      this.classList.toggle('active');
+    });
+  }
 })();
 </script>
 </body>
