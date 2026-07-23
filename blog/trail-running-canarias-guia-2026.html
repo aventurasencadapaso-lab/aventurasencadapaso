@@ -163,6 +163,76 @@
   }
 })();
 </script>
+<style id="nav-sin-recuadros">
+@media(max-width:900px){
+  /* Restaurar barra superior */
+  .nav-actions{display:flex!important;}
+  /* Quitar recuadros verdes de los botones */
+  .nav-actions__btn{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    outline:none!important;
+  }
+  .nav-actions__btn--cta{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    color:#e8eaf0!important;
+  }
+  .nav-actions__btn:hover,
+  .nav-actions__btn:focus,
+  .nav-actions__btn--cta:hover,
+  .nav-actions__btn--cta:focus{
+    background:transparent!important;
+    border:none!important;
+    color:#1cff6b!important;
+  }
+}
+/* También en escritorio quitar recuadros */
+.nav-actions__btn{
+  background:transparent!important;
+  border:none!important;
+}
+.nav-actions__btn--cta{
+  background:#1cff6b!important;
+  color:#02070f!important;
+}
+</style>
+<style id="nav-labels-fix">
+/* Quitar barra inferior */
+.app-bar{display:none!important;}
+body{padding-bottom:0!important;}
+
+/* Mostrar labels debajo de los iconos en TODOS los tamaños */
+.nav-actions__label{
+  display:block!important;
+  font-size:8px!important;
+  font-family:Orbitron,sans-serif!important;
+  letter-spacing:.5px!important;
+  text-transform:uppercase!important;
+  line-height:1!important;
+  margin-top:3px!important;
+}
+.nav-actions__btn{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  padding:6px 10px!important;
+  min-height:unset!important;
+}
+.nav-actions__btn i{
+  font-size:1.1rem!important;
+  line-height:1!important;
+}
+@media(max-width:900px){
+  .nav-actions__label{display:block!important;}
+  .nav-actions{gap:2px!important;}
+  .nav-actions__btn{padding:5px 7px!important;}
+}
+</style>
 </head>
 <body>
 <header class="site-header" role="banner">
@@ -251,7 +321,7 @@
       <!-- Redes sociales -->
       <div class="nav-actions__drop" id="drop-redes">
         <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
-          <i class="fas fa-share-nodes" aria-hidden="true"></i>
+          <i class="fab fa-instagram" aria-hidden="true"></i>
           <span class="nav-actions__label">Redes</span>
         </button>
         <ul class="nav-actions__panel" id="panel-redes" role="list">
@@ -618,5 +688,41 @@ if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googl
   });
 })();
 </script>
+
+<!-- Botón flotante compartir -->
+<button id="btn-compartir-flotante" aria-label="Compartir página"
+  style="position:fixed;bottom:80px;right:20px;z-index:998;
+         width:50px;height:50px;border-radius:50%;
+         background:#1cff6b;color:#02070f;border:none;
+         font-size:1.1rem;cursor:pointer;
+         display:flex;align-items:center;justify-content:center;
+         box-shadow:0 4px 16px rgba(28,255,107,.4);
+         transition:.2s;min-height:unset!important;">
+  <i class="fas fa-share-alt"></i>
+</button>
+<script>
+(function(){
+  var btn = document.getElementById('btn-compartir-flotante');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    if(navigator.share){
+      navigator.share({
+        title: document.title,
+        text: document.querySelector('meta[name="description"]') ?
+              document.querySelector('meta[name="description"]').content : document.title,
+        url: window.location.href
+      }).catch(function(){});
+    } else {
+      // Fallback: copiar URL
+      navigator.clipboard && navigator.clipboard.writeText(window.location.href);
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
+<button id="btn-top" aria-label="Volver arriba" style="position:fixed;bottom:140px;right:20px;z-index:997;width:46px;height:46px;border-radius:50%;background:rgba(28,255,107,.12);border:1px solid rgba(28,255,107,.3);color:#1cff6b;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none;min-height:unset!important;"><i class="fas fa-chevron-up"></i></button>
+<script>(function(){var b=document.getElementById('btn-top');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>400);b.style.opacity=window.scrollY>400?'1':'0';b.style.pointerEvents=window.scrollY>400?'auto':'none';},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}());</script>
+
 </body>
 </html>

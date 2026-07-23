@@ -448,6 +448,40 @@ iframe.goog-te-banner-frame {
   color:#02070f!important;
 }
 </style>
+<style id="nav-labels-fix">
+/* Quitar barra inferior */
+.app-bar{display:none!important;}
+body{padding-bottom:0!important;}
+
+/* Mostrar labels debajo de los iconos en TODOS los tamaños */
+.nav-actions__label{
+  display:block!important;
+  font-size:8px!important;
+  font-family:Orbitron,sans-serif!important;
+  letter-spacing:.5px!important;
+  text-transform:uppercase!important;
+  line-height:1!important;
+  margin-top:3px!important;
+}
+.nav-actions__btn{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  padding:6px 10px!important;
+  min-height:unset!important;
+}
+.nav-actions__btn i{
+  font-size:1.1rem!important;
+  line-height:1!important;
+}
+@media(max-width:900px){
+  .nav-actions__label{display:block!important;}
+  .nav-actions{gap:2px!important;}
+  .nav-actions__btn{padding:5px 7px!important;}
+}
+</style>
 </head>
 <body>
 
