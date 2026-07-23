@@ -1,149 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
-</script>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Política de Cookies de Aventuras en Cada Paso. Información sobre las cookies utilizadas en la web conforme a la normativa española y europea.">
- <meta name="robots" content="noindex, follow">
- <title>Política de Cookies – Aventuras en Cada Paso</title>
- <!-- Preload recursos críticos -->
- <link rel="preload" href="logo-aventuras.png" as="image" fetchpriority="high">
- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" as="style">
- <link rel="preload" href="style.min.css" as="style">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.min.css">
- <style>
- .legal-page { max-width:860px; margin:0 auto; padding:120px 28px 80px; color:#c8ccd8; line-height:1.8; }
- .legal-page h1 { font-family:'Orbitron',sans-serif; color:#1cff6b; font-size:1.6rem; margin-bottom:8px; }
- .legal-page h2 { color:#e8eaf0; font-family:'Orbitron',sans-serif; font-size:1rem; margin:36px 0 12px; padding-bottom:6px; border-bottom:1px solid rgba(28,255,107,.15); }
- .legal-page p, .legal-page li { margin-bottom:10px; }
- .legal-page ul { margin:12px 0 12px 24px; }
- .legal-page a { color:#1cff6b; }
- .legal-date { color:#8a8fa0; font-size:13px; margin-bottom:40px; }
- .legal-back { display:inline-block; margin-top:48px; color:#1cff6b; font-family:'Orbitron',sans-serif; font-size:12px; text-decoration:none; letter-spacing:1px; }
- .cookie-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13px; }
- .cookie-table th { background:rgba(28,255,107,.1); color:#1cff6b; font-family:'Orbitron',sans-serif; font-size:11px; padding:10px 12px; text-align:left; border:1px solid rgba(28,255,107,.2); }
- .cookie-table td { padding:10px 12px; border:1px solid rgba(255,255,255,.08); color:#c8ccd8; vertical-align:top; }
- .cookie-table tr:hover td { background:rgba(28,255,107,.03); }
- .btn-reset-cookies { display:inline-block; margin-top:16px; padding:10px 20px; background:transparent; border:1px solid #1cff6b; color:#1cff6b; border-radius:10px; font-family:'Orbitron',sans-serif; font-size:11px; cursor:pointer; letter-spacing:1px; transition:.2s; }
- .btn-reset-cookies:hover { background:#1cff6b; color:#02070f; }
- </style>
- <!-- PWA -->
- <meta name="theme-color" content="#1cff6b">
- <meta name="mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
- <meta name="apple-mobile-web-app-title" content="Aventuras">
- <link rel="manifest" href="manifest.json">
- <link rel="apple-touch-icon" href="logo-aventuras.png">
- <!-- DNS prefetch para recursos externos -->
- <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
- <link rel="dns-prefetch" href="//fonts.googleapis.com">
- <link rel="dns-prefetch" href="//fonts.gstatic.com">
- <link rel="dns-prefetch" href="//translate.google.com">
-<style>
-/* Forzar fondo oscuro */
-html, body { background: #02070f !important; color: #c8ccd8 !important; }
-</style>
-<script>
-if('serviceWorker' in navigator){
- window.addEventListener('load',function(){
- navigator.serviceWorker.register('sw.js')
- .then(function(r){ console.log('SW registrado'); })
- .catch(function(e){ console.log('SW error:', e); });
- });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Cookies de Aventuras en Cada Paso. Información sobre las cookies utilizadas en la web conforme a la normativa española y europea.">
+  <title>Política de Cookies – Aventuras en Cada Paso</title>
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <meta name="theme-color" content="#1cff6b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.min.css">
+  <style id="cookie-banner-styles">
+#cookie-banner {
+ position: fixed;
+ bottom: 0; left: 0; right: 0;
+ z-index: 999999;
+ background: rgba(2, 7, 15, 0.97);
+ border-top: 2px solid #1cff6b;
+ padding: 16px 24px;
+ backdrop-filter: blur(10px);
 }
-</script>
- <meta name="robots" content="noindex,nofollow">
- <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/politica-cookies.html">
- <meta property="og:type" content="website">
- <meta property="og:site_name" content="Aventuras en Cada Paso">
- <meta property="og:url" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/politica-cookies.html">
- <meta property="og:title" content="Política de Cookies – Aventuras en Cada Paso">
- <meta property="og:description" content="Política de cookies de Aventuras en Cada Paso. Información sobre el uso de cookies en el sitio web.">
- <meta property="og:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/imagenes/og-default.jpg">
- <meta property="og:locale" content="es_ES">
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="Política de Cookies – Aventuras en Cada Paso">
- <meta name="twitter:description" content="Política de cookies de Aventuras en Cada Paso. Información sobre el uso de cookies en el sitio web.">
- <meta name="twitter:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/imagenes/og-default.jpg">
-<style>.skip-link{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}</style>
-<style>
-/* Ocultar barra de Google Translate */
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-#goog-gt-tt,
-.goog-te-balloon-frame,
-.goog-tooltip,
-.goog-tooltip:hover,
-.goog-text-highlight {
-  display: none !important;
-  visibility: hidden !important;
+.cookie-banner__inner {
+ max-width: 1200px;
+ margin: 0 auto;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ flex-wrap: wrap;
 }
-/* Evitar que el body se desplace hacia abajo */
-body {
-  top: 0 !important;
-  position: relative !important;
+.cookie-banner__text {
+ flex: 1;
+ min-width: 260px;
 }
-/* Ocultar el iframe de translate */
-iframe.goog-te-banner-frame {
-  display: none !important;
+.cookie-banner__text p {
+ margin: 0;
+ color: #c8ccd8;
+ font-family: 'Roboto', sans-serif;
+ font-size: 13px;
+ line-height: 1.6;
 }
-/* Compensar el desplazamiento que causa Google */
-.skiptranslate {
-  display: none !important;
+.cookie-banner__text a {
+ color: #1cff6b;
+ text-decoration: underline;
 }
-</style>
-<script>
-/* Ocultar barra de Google Translate dinámicamente */
-(function(){
-  function ocultarBarra(){
-    var barra = document.querySelector('.goog-te-banner-frame');
-    if(barra){ barra.style.display='none'; }
-    // Restaurar posición del body
-    if(document.body.style.top){
-      document.body.style.top = '0';
-    }
-    // Ocultar el iframe
-    var iframes = document.querySelectorAll('iframe');
-    iframes.forEach(function(f){
-      if(f.src && f.src.indexOf('translate.google') > -1){
-        f.style.display = 'none';
-      }
-    });
-  }
-  // Ejecutar varias veces para pillar cuando carga
-  setTimeout(ocultarBarra, 500);
-  setTimeout(ocultarBarra, 1000);
-  setTimeout(ocultarBarra, 2000);
-  // Observer para detectar cuando aparece
-  var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
-})();
-</script>
-<style>
-@media(max-width:900px){
-  /* Logo más pequeño */
-  .site-logo img{height:32px!important;width:auto!important;}
-  /* Ocultar labels de los botones de acción en móvil */
-  .nav-actions__label{display:none!important;}
-  /* Botones de acción más pequeños */
-  .nav-actions__btn{padding:8px!important;min-width:36px!important;justify-content:center!important;}
-  /* Reducir gap entre botones */
-  .nav-actions{gap:4px!important;}
-  /* Ocultar texto Idiomas en móvil */
-  .nav-actions__drop:last-child .nav-actions__label{display:none!important;}
+.cookie-banner__actions {
+ display: flex;
+ gap: 10px;
+ flex-wrap: wrap;
+ flex-shrink: 0;
+}
+.cookie-btn {
+ padding: 9px 18px;
+ border-radius: 10px;
+ font-family: 'Orbitron', sans-serif;
+ font-size: 10px;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ cursor: pointer;
+ text-decoration: none;
+ display: inline-flex;
+ align-items: center;
+ border: none;
+ transition: background .2s, color .2s;
+}
+.cookie-btn--accept {
+ background: #1cff6b;
+ color: #02070f;
+}
+.cookie-btn--accept:hover { background: #00e05a; }
+.cookie-btn--reject {
+ background: transparent;
+ border: 1px solid rgba(28,255,107,0.4);
+ color: #e8eaf0;
+}
+.cookie-btn--reject:hover { border-color: #1cff6b; color: #1cff6b; }
+.cookie-btn--info {
+ background: transparent;
+ border: 1px solid rgba(200,204,216,0.3);
+ color: #c8ccd8;
+ font-size: 10px;
+}
+.cookie-btn--info:hover { color: #1cff6b; border-color: #1cff6b; }
+
+@media (max-width: 600px) {
+ .cookie-banner__inner { flex-direction: column; align-items: stretch; }
+ .cookie-banner__actions { justify-content: stretch; }
+ .cookie-btn { justify-content: center; text-align: center; }
 }
 </style>
 <style id="nav-sin-recuadros">
@@ -216,11 +160,48 @@ body{padding-bottom:0!important;}
   .nav-actions__btn{padding:5px 7px!important;}
 }
 </style>
+  <style>
+.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.goog-te-banner-frame,
+#goog-gt-tt,.skiptranslate{display:none!important;visibility:hidden!important;height:0!important;}
+body{top:0!important;margin-top:0!important;}
+</style>
+  <style>
+ .legal-page { max-width:860px; margin:0 auto; padding:120px 28px 80px; color:#c8ccd8; line-height:1.8; }
+ .legal-page h1 { font-family:'Orbitron',sans-serif; color:#1cff6b; font-size:1.6rem; margin-bottom:8px; }
+ .legal-page h2 { color:#e8eaf0; font-family:'Orbitron',sans-serif; font-size:1rem; margin:36px 0 12px; padding-bottom:6px; border-bottom:1px solid rgba(28,255,107,.15); }
+ .legal-page p, .legal-page li { margin-bottom:10px; }
+ .legal-page ul { margin:12px 0 12px 24px; }
+ .legal-page a { color:#1cff6b; }
+ .legal-date { color:#8a8fa0; font-size:13px; margin-bottom:40px; }
+ .legal-back { display:inline-block; margin-top:48px; color:#1cff6b; font-family:'Orbitron',sans-serif; font-size:12px; text-decoration:none; letter-spacing:1px; }
+ .cookie-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13px; }
+ .cookie-table th { background:rgba(28,255,107,.1); color:#1cff6b; font-family:'Orbitron',sans-serif; font-size:11px; padding:10px 12px; text-align:left; border:1px solid rgba(28,255,107,.2); }
+ .cookie-table td { padding:10px 12px; border:1px solid rgba(255,255,255,.08); color:#c8ccd8; vertical-align:top; }
+ .cookie-table tr:hover td { background:rgba(28,255,107,.03); }
+ .btn-reset-cookies { display:inline-block; margin-top:16px; padding:10px 20px; background:transparent; border:1px solid #1cff6b; color:#1cff6b; border-radius:10px; font-family:'Orbitron',sans-serif; font-size:11px; cursor:pointer; letter-spacing:1px; transition:.2s; }
+ .btn-reset-cookies:hover { background:#1cff6b; color:#02070f; }
+ </style>
+  <style>.skip-link{position:absolute;left:-9999px;opacity:0;pointer-events:none;}</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
+</script>
+  <script>
+if('serviceWorker' in navigator){
+ window.addEventListener('load',function(){
+ navigator.serviceWorker.register('sw.js')
+ .then(function(r){ console.log('SW registrado'); })
+ .catch(function(e){ console.log('SW error:', e); });
+ });
+}
+</script>
 </head>
 <body>
-<a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
-
-
+<a href="index.html" class="skip-link">Saltar al contenido</a>
+<div id="google_translate_element" hidden></div>
 <header class="site-header" role="banner">
  <div class="site-header__inner">
 
@@ -335,7 +316,7 @@ body{padding-bottom:0!important;}
  <li><a href="#" data-lang="it" hreflang="it"> Italiano</a></li>
  <li><a href="#" data-lang="pt" hreflang="pt"> Português</a></li>
  </ul>
- 
+ <div id="google_translate_element" hidden></div>
  </div>
 
  <a href="tiendas.html" class="nav-actions__btn" aria-label="Equipamiento y tiendas">
@@ -352,7 +333,6 @@ body{padding-bottom:0!important;}
 
  </div>
 </header>
-
 <main id="contenido-principal" class="legal-page">
  <h1>Política de Cookies</h1>
  <p class="legal-date">Última actualización: junio 2026</p>
@@ -421,286 +401,33 @@ body{padding-bottom:0!important;}
  <a href="index.html" class="legal-back">← Volver al inicio</a>
 </main>
 
-<footer class="site-footer">
- <div class="footer-grid">
- <div class="footer-col"><h3>Contacto</h3><p>aventurasencadapaso@gmail.com</p><p>+34 655 67 93 07</p></div>
- <div class="footer-col"><h3>Redes</h3><a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">Instagram</a><a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">TikTok</a><a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">YouTube</a></div>
- <div class="footer-col"><h3>Legal</h3><a href="politica-privacidad.html">Política de Privacidad</a><a href="politica-cookies.html">Política de Cookies</a><a href="aviso-legal.html">Aviso Legal</a></div>
- </div>
- <p class="footer-copy">© 2026 Aventuras en Cada Paso. Vive Canarias al máximo.</p>
-</footer>
-
-<!-- Botón volver arriba -->
-<button id="btn-top" aria-label="Volver arriba" title="Volver arriba">
- <i class="fas fa-chevron-up" aria-hidden="true"></i>
-</button>
-<style>
-#btn-top {
- position: fixed;
- bottom: 28px;
- right: 24px;
- width: 46px;
- height: 46px;
- background: #1cff6b;
- color: #02070f;
- border: none;
- border-radius: 50%;
- font-size: 16px;
- cursor: pointer;
- display: flex;
- align-items: center;
- justify-content: center;
- box-shadow: 0 4px 18px rgba(28,255,107,.4);
- opacity: 0;
- transform: translateY(12px);
- transition: opacity .3s, transform .3s;
- z-index: 9998;
- pointer-events: none;
-}
-#btn-top.visible {
- opacity: 1;
- transform: translateY(0);
- pointer-events: all;
-}
-#btn-top:hover {
- background: #00e05a;
- transform: translateY(-2px);
- box-shadow: 0 6px 24px rgba(28,255,107,.6);
-}
-@media (max-width: 600px) {
- #btn-top { bottom: 80px; right: 16px; width: 42px; height: 42px; }
-}
-</style>
 <script>
+/* Ocultar barra de Google Translate dinámicamente */
 (function(){
- var btn = document.getElementById('btn-top');
- if (!btn) return;
- window.addEventListener('scroll', function(){
- btn.classList.toggle('visible', window.scrollY > 400);
- }, { passive: true });
- btn.addEventListener('click', function(){
- window.scrollTo({ top: 0, behavior: 'smooth' });
- });
-})();
-</script>
-<script>
-/* === BANNER DE COOKIES === */
-(function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
-
- // Si ya hay consentimiento guardado, ocultar
- if (localStorage.getItem(KEY)) {
- banner.style.display = 'none';
- if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
- return;
- }
-
- // Mostrar banner
- banner.style.display = 'block';
-
- // Aceptar
- var btnAccept = document.getElementById('cookie-accept') ||
- document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- localStorage.setItem(KEY, 'accepted');
- banner.style.display = 'none';
- loadGoogleTranslate();
- });
- }
-
- // Rechazar
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- localStorage.setItem(KEY, 'rejected');
- banner.style.display = 'none';
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-})();
-</script>
-
-<!-- Animaciones scroll -->
-<style>
-.reveal {
- opacity: 0;
- transform: translateY(28px);
- transition: opacity .55s ease, transform .55s ease;
-}
-.reveal.visible {
- opacity: 1;
- transform: translateY(0);
-}
-.reveal-left { opacity:0; transform:translateX(-30px); transition:opacity .55s ease,transform .55s ease; }
-.reveal-right { opacity:0; transform:translateX(30px); transition:opacity .55s ease,transform .55s ease; }
-.reveal-left.visible,
-.reveal-right.visible { opacity:1; transform:translateX(0); }
-@media (prefers-reduced-motion: reduce) {
- .reveal, .reveal-left, .reveal-right { opacity:1 !important; transform:none !important; transition:none !important; }
-}
-</style>
-<script>
-(function(){
- var els = document.querySelectorAll(
- '.card-aventura, .isla-card, .empresa-card, .ruta-card, '
- + '.ruta-mini, .related-card, .recomendacion-card, '
- + '.beneficio, .colab-card, .beneficio-box, '
- + '.social-card, .aventura-card, .galeria-item, '
- + '.isla-foto-hero, .galeria-portada__item, '
- + '.inspiracion h2, .hero-content, .cta-seccion, '
- + '.empresas-seccion, .islas-seccion'
- );
- if (!els.length || !('IntersectionObserver' in window)) {
- els.forEach(function(el){ el.style.opacity=1; el.style.transform='none'; });
- return;
- }
- els.forEach(function(el){ el.classList.add('reveal'); });
- var obs = new IntersectionObserver(function(entries){
- entries.forEach(function(e){
- if(e.isIntersecting){
- e.target.classList.add('visible');
- obs.unobserve(e.target);
- }
- });
- }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
- els.forEach(function(el){ obs.observe(el); });
-
- 
-
-})();
-</script>
-
-<script>
-/* Google Translate – siempre disponible */
-if (typeof googleTranslateElementInit === 'undefined') {
- window.googleTranslateElementInit = function() {
- if (typeof google !== 'undefined' && google.translate) {
- new google.translate.TranslateElement({
- pageLanguage: 'es',
- includedLanguages: 'en,de,fr,it,pt',
- layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
- autoDisplay: false
- }, 'google_translate_element');
- setTimeout(function() {
- var c = document.querySelector('select.goog-te-combo');
- if (c && window._pendingLang) { c.value = window._pendingLang; c.dispatchEvent(new Event('change')); window._pendingLang = null; }
- }, 600);
- }
- };
-}
-if (!window.googleTranslateLoaded) {
- window.googleTranslateLoaded = true;
- var _s = document.createElement('script');
- _s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(_s);
-}
-</script>
-
-<script>
-/* Animaciones de entrada al scroll */
-(function(){
- if (typeof IntersectionObserver === 'undefined') return;
- var obs = new IntersectionObserver(function(entries){
- entries.forEach(function(e){
- if(e.isIntersecting){
- e.target.classList.add('visible');
- obs.unobserve(e.target);
- }
- });
- }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
- var selectores = [
- '.aventura-card', '.tienda-card', '.ruta-card', '.ruta-mini',
- '.related-card', '.isla-card', '.empresa-card', '.card-aventura',
- '.galeria-portada__item', '.isla-foto-hero',
- '.rutas-isla-section', '.cta-seccion',
- '.empresa-card', '.testimonial-card',
- '.form-moderno', '.aventuras-section'
- ].join(',');
-
- document.querySelectorAll(selectores).forEach(function(el){
- if(!el.classList.contains('fade-in')){
- el.classList.add('fade-in');
- }
- obs.observe(el);
- });
-})();
-</script>
-<script>
-(function(){
-  if(window.innerWidth > 900) return;
-  
-  // Marcar botón activo según la página actual
-  var path = window.location.pathname;
-  var btns = {
-    'appbar-inicio': ['index.html', '/aventurasencadapaso/', '/aventurasencadapaso'],
-    'appbar-buscar': ['descubre.html'],
-    'appbar-rutas':  ['buscador-aventuras.html'],
-  };
-  Object.keys(btns).forEach(function(id){
-    var el = document.getElementById(id);
-    if(!el) return;
-    btns[id].forEach(function(p){
-      if(path.endsWith(p)) el.classList.add('active');
-    });
-  });
-
-  // Compartir — Web Share API nativa
-  var btnCompartir = document.getElementById('appbar-compartir');
-  if(btnCompartir){
-    btnCompartir.addEventListener('click', function(){
-      if(navigator.share){
-        navigator.share({
-          title: document.title,
-          text: document.querySelector('meta[name="description"]') ?
-                document.querySelector('meta[name="description"]').content : document.title,
-          url: window.location.href
-        }).catch(function(){});
+  function ocultarBarra(){
+    var barra = document.querySelector('.goog-te-banner-frame');
+    if(barra){ barra.style.display='none'; }
+    // Restaurar posición del body
+    if(document.body.style.top){
+      document.body.style.top = '0';
+    }
+    // Ocultar el iframe
+    var iframes = document.querySelectorAll('iframe');
+    iframes.forEach(function(f){
+      if(f.src && f.src.indexOf('translate.google') > -1){
+        f.style.display = 'none';
       }
     });
   }
-
-  // Menú — abrir hamburguesa
-  var btnMenu = document.getElementById('appbar-menu');
-  if(btnMenu){
-    btnMenu.addEventListener('click', function(){
-      var burger = document.querySelector('.nav-burger');
-      if(burger) burger.click();
-      this.classList.toggle('active');
-    });
-  }
+  // Ejecutar varias veces para pillar cuando carga
+  setTimeout(ocultarBarra, 500);
+  setTimeout(ocultarBarra, 1000);
+  setTimeout(ocultarBarra, 2000);
+  // Observer para detectar cuando aparece
+  var obs = new MutationObserver(ocultarBarra);
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  var link = document.getElementById('btn-buscar-link') ||
-             document.querySelector('[aria-controls="panel-buscar"]') ||
-             document.querySelector('.nav-actions__btn--cta');
-  if(!link) return;
-  link.addEventListener('click', function(e){
-    if(window.innerWidth <= 900){
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      window.location.href = 'descubre.html';
-    }
-  }, true);
-});
-</script>
-
-
-<div id="google_translate_element" hidden></div>
 <script>
 (function(){
   // Guardar idioma cuando cambia
@@ -736,6 +463,18 @@ document.addEventListener('DOMContentLoaded', function(){
     setTimeout(aplicarIdioma, 500);
   }
 })();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var link = document.getElementById('btn-buscar-link');
+  if(!link) return;
+  link.addEventListener('click', function(e){
+    if(window.innerWidth <= 900){
+      e.stopImmediatePropagation();
+      window.location.href = 'descubre.html';
+    }
+  }, true); // captura en fase de captura, antes que cualquier otro handler
+});
 </script>
 <script>
 (function () {
@@ -896,18 +635,5 @@ document.addEventListener('DOMContentLoaded', function(){
  });
 })();
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  var link = document.getElementById('btn-buscar-link');
-  if(!link) return;
-  link.addEventListener('click', function(e){
-    if(window.innerWidth <= 900){
-      e.stopImmediatePropagation();
-      window.location.href = 'descubre.html';
-    }
-  }, true); // captura en fase de captura, antes que cualquier otro handler
-});
-</script>
-<script></script>
 </body>
 </html>
