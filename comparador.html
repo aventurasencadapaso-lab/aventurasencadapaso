@@ -221,42 +221,7 @@ iframe.goog-te-banner-frame {
   .nav-actions__drop:last-child .nav-actions__label{display:none!important;}
 }
 </style>
-<script>
-(function(){
-  // Guardar idioma cuando cambia
-  function guardarIdioma(lang){
-    try{ localStorage.setItem('av_lang', lang); }catch(e){}
-  }
-  // Aplicar idioma guardado al cargar
-  function aplicarIdioma(){
-    var lang = '';
-    try{ lang = localStorage.getItem('av_lang'); }catch(e){}
-    if(!lang || lang === 'es') return;
-    // Esperar a que Google Translate cargue
-    var intentos = 0;
-    var timer = setInterval(function(){
-      var combo = document.querySelector('select.goog-te-combo');
-      if(combo){
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change'));
-        clearInterval(timer);
-      }
-      if(++intentos > 20) clearInterval(timer);
-    }, 300);
-  }
-  // Interceptar clicks en idiomas
-  document.addEventListener('click', function(e){
-    var a = e.target.closest('a[data-lang]');
-    if(a) guardarIdioma(a.dataset.lang);
-  });
-  // Aplicar al cargar
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', aplicarIdioma);
-  } else {
-    setTimeout(aplicarIdioma, 500);
-  }
-})();
-</script>
+
 <style>
 @media(max-width:900px){
   /* ── OCULTAR barra superior de acciones en móvil ── */
@@ -512,7 +477,7 @@ body{padding-bottom:0!important;}
  <li><a href="#" data-lang="it" hreflang="it"> Italiano</a></li>
  <li><a href="#" data-lang="pt" hreflang="pt"> Português</a></li>
  </ul>
- <div id="google_translate_element" hidden></div>
+ 
  </div>
 
  <!-- Carrito -->
@@ -699,180 +664,7 @@ body{padding-bottom:0!important;}
 
 
 
-<script>
-/* =====================================================
- NAVBAR – scripts unificados
-===================================================== */
-(function () {
 
- /* Google Translate */
- function changeLanguage(lang) {
- // 1) Intentar usar el widget ya cargado
- var combo = document.querySelector('select.goog-te-combo');
- if (combo) {
- combo.value = lang;
- combo.dispatchEvent(new Event('change'));
- return;
- }
-
- // 2) Guardar la cookie de idioma (funciona aunque el widget no esté cargado)
- try {
- var v = '/es/' + lang;
- document.cookie = 'googtrans=' + v + ';path=/;';
- if (location.hostname) {
- document.cookie = 'googtrans=' + v + ';path=/;domain=.' + location.hostname + ';';
- }
- } catch(e) {}
-
- // 3) Si Google Translate no está cargado, cargarlo ahora sin esperar cookies
- if (!window.googleTranslateLoaded) {
- window.googleTranslateLoaded = true;
- window._pendingLang = lang;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- // Cuando cargue, aplicar el idioma
- var orig = window.googleTranslateElementInit;
- window.googleTranslateElementInit = function() {
- if (orig) orig();
- setTimeout(function() {
- var c = document.querySelector('select.goog-te-combo');
- if (c && window._pendingLang) {
- c.value = window._pendingLang;
- c.dispatchEvent(new Event('change'));
- window._pendingLang = null;
- }
- }, 800);
- };
- } else {
- // Widget ya cargado pero combo no encontrado aún, reintentar
- setTimeout(function() {
- var c = document.querySelector('select.goog-te-combo');
- if (c) { c.value = lang; c.dispatchEvent(new Event('change')); }
- else { location.reload(); }
- }, 500);
- }
- }
-
- document.querySelectorAll('a[data-lang]').forEach(function(a) {
- a.addEventListener('click', function(e) { e.preventDefault(); changeLanguage(this.dataset.lang); });
- });
-
- /* Dropdowns de acciones (redes, idioma, carrito) */
- document.querySelectorAll('.nav-actions__drop:not(#drop-buscar)').forEach(function(drop) {
- var btn = drop.querySelector('[aria-haspopup]');
- var panel = drop.querySelector('.nav-actions__panel');
- if (!btn || !panel) return;
-
- // Desktop: hover
- drop.addEventListener('mouseenter', function() {
- if (window.innerWidth <= 900) return;
- open(drop, btn);
- });
- drop.addEventListener('mouseleave', function() {
- if (window.innerWidth <= 900) return;
- close(drop, btn);
- });
-
- // Móvil: tap
- btn.addEventListener('click', function(e) {
- e.stopPropagation();
- var isOpen = drop.classList.contains('open');
- closeAll();
- if (!isOpen) open(drop, btn);
- });
- });
-
- function open(drop, btn) { drop.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
- function close(drop, btn) { drop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
- function closeAll() {
- document.querySelectorAll('.nav-actions__drop.open').forEach(function(d) {
- close(d, d.querySelector('[aria-haspopup]'));
- });
- }
-
- document.addEventListener('click', function() { closeAll(); });
-
- /* Dropdowns del nav principal (solo móvil) */
- /* Submenús desktop con delay para no cerrarse al bajar el ratón */
- var hoverTimers = new WeakMap();
-
- document.querySelectorAll('.nav-main__item--drop').forEach(function(li) {
- var link = li.querySelector('.nav-main__link');
- if (!link) return;
-
- // Desktop: hover con delay de cierre
- li.addEventListener('mouseenter', function() {
- if (window.innerWidth <= 900) return;
- clearTimeout(hoverTimers.get(li));
- li.classList.add('open');
- });
-
- li.addEventListener('mouseleave', function() {
- if (window.innerWidth <= 900) return;
- var t = setTimeout(function() {
- li.classList.remove('open');
- }, 200); // 200ms de gracia para mover el ratón al submenú
- hoverTimers.set(li, t);
- });
-
- // Submenú también mantiene el menú abierto si el ratón entra en él
- var sub = li.querySelector('.nav-main__submenu');
- if (sub) {
- sub.addEventListener('mouseenter', function() {
- if (window.innerWidth <= 900) return;
- clearTimeout(hoverTimers.get(li));
- });
- sub.addEventListener('mouseleave', function() {
- if (window.innerWidth <= 900) return;
- var t = setTimeout(function() {
- li.classList.remove('open');
- }, 150);
- hoverTimers.set(li, t);
- });
- }
-
- // Móvil: tap para abrir/cerrar
- link.addEventListener('click', function(e) {
- if (window.innerWidth > 900) return;
- e.preventDefault();
- var was = li.classList.contains('open');
- document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
- if (!was) li.classList.add('open');
- });
- });
-
- /* Hamburguesa */
- var burger = document.querySelector('.nav-burger');
- var navList = document.querySelector('.nav-main');
- if (burger && navList) {
- burger.addEventListener('click', function() {
- var open = burger.classList.toggle('open');
- burger.setAttribute('aria-expanded', open);
- navList.classList.toggle('open', open);
- });
- }
-
- /* Cerrar menú al hacer resize a desktop */
- window.addEventListener('resize', function() {
- if (window.innerWidth > 900) {
- if (navList) navList.classList.remove('open');
- if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
- document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
- }
- });
-
- /* Cerrar menú al click fuera */
- document.addEventListener('click', function(e) {
- if (window.innerWidth > 900) return;
- if (!e.target.closest('.site-header') && navList) {
- navList.classList.remove('open');
- if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
- }
- });
-
-})();
-</script>
 
 <script>
 var ISLAS = [{"id": "tenerife", "nombre": "Tenerife", "sub": "La isla del Teide", "icono": "", "url": "tenerife.html", "buscador": "Tenerife", "desc": "La más completa. Volcán Teide a 3.715 m, laurisilva de Anaga, surf en El Médano, barranquismo en Masca, trail de élite y la ciudad de La Laguna UNESCO.", "puntos": ["Teide — punto más alto de España", "Anaga — Patrimonio UNESCO", "Masca — el barranco más famoso", "El Médano — surf y kitesurf", "Bluetrail 107km — trail de élite mundial"], "s": {"senderismo": 10, "trail": 10, "escalada": 8, "barranquismo": 9, "surf": 8, "kitesurf": 7, "kayak": 7, "buceo": 5, "ciclismo": 7, "naturaleza": 9, "familia": 8, "turistas": 4, "tranquilidad": 3, "presupuesto": 6, "verano": 9, "invierno": 8, "primavera": 10, "otono": 9}}, {"id": "grancanaria", "nombre": "Gran Canaria", "sub": "El continente en miniatura", "icono": "", "url": "grancanaria.html", "buscador": "Gran Canaria", "desc": "La mayor variedad de paisajes por km² de España. Dunas de Maspalomas, cumbres de 1.949 m, barrancos profundos y el mejor buceo urbano en el Cabrón.", "puntos": ["Roque Nublo — monumento natural", "Dunas de Maspalomas — Reserva Natural", "Güigüi — playa virgen más salvaje", "GR 131 travesía norte-sur", "Cabrón — top 10 buceo Europa"], "s": {"senderismo": 9, "trail": 8, "escalada": 8, "barranquismo": 7, "surf": 7, "kitesurf": 5, "kayak": 7, "buceo": 9, "ciclismo": 8, "naturaleza": 9, "familia": 8, "turistas": 5, "tranquilidad": 5, "presupuesto": 6, "verano": 8, "invierno": 8, "primavera": 9, "otono": 8}}, {"id": "lanzarote", "nombre": "Lanzarote", "sub": "Volcanes y arte", "icono": "", "url": "lanzarote.html", "buscador": "Lanzarote", "desc": "La isla más volcánica y lunar. Timanfaya, kayak en Papagayo, ciclismo por la Geria y el IRONMAN más duro del mundo. Patrimonio de la Biosfera.", "puntos": ["Timanfaya — volcanes activos", "Caldera Blanca — ruta libre épica", "Papagayo — kayak en calas vírgenes", "Geria — viñedos volcánicos únicos", "IRONMAN Lanzarote — el más duro del mundo"], "s": {"senderismo": 8, "trail": 6, "escalada": 3, "barranquismo": 2, "surf": 7, "kitesurf": 8, "kayak": 10, "buceo": 7, "ciclismo": 9, "naturaleza": 8, "familia": 7, "turistas": 6, "tranquilidad": 6, "presupuesto": 7, "verano": 6, "invierno": 9, "primavera": 9, "otono": 8}}, {"id": "fuerteventura", "nombre": "Fuerteventura", "sub": "La isla del viento", "icono": "", "url": "fuerteventura.html", "buscador": "Fuerteventura", "desc": "El mejor destino mundial de kitesurf y windsurf. Playas de arena blanca infinitas, el GR 131 de 152 km y Cofete, la playa más virgen de España.", "puntos": ["Sotavento — Campeonato del Mundo Kitesurf", "Cofete — 12 km de playa virgen salvaje", "GR 131 — 152 km de travesía completa", "Corralejo — dunas y surf", "Lobos — islote virgen a 15 min"], "s": {"senderismo": 7, "trail": 7, "escalada": 2, "barranquismo": 2, "surf": 9, "kitesurf": 10, "kayak": 7, "buceo": 6, "ciclismo": 9, "naturaleza": 7, "familia": 8, "turistas": 5, "tranquilidad": 6, "presupuesto": 7, "verano": 7, "invierno": 8, "primavera": 9, "otono": 8}}, {"id": "lapalma", "nombre": "La Palma", "sub": "La isla más verde", "icono": "", "url": "lapalma.html", "buscador": "La Palma", "desc": "La isla más montañosa y técnica. Caldera de Taburiente, volcán Tajogaite 2021, Transvulcania de 83 km y el mejor cielo estrellado de Europa.", "puntos": ["Transvulcania 83km — top 3 trail mundial", "Tajogaite 2021 — lava más joven de Europa", "Caldera de Taburiente — 8km de diámetro", "Roque de los Muchachos — cielo Starlight", "Nacientes de Marcos — 13 túneles de agua"], "s": {"senderismo": 10, "trail": 10, "escalada": 7, "barranquismo": 8, "surf": 4, "kitesurf": 3, "kayak": 5, "buceo": 4, "ciclismo": 7, "naturaleza": 10, "familia": 6, "turistas": 9, "tranquilidad": 9, "presupuesto": 8, "verano": 7, "invierno": 7, "primavera": 10, "otono": 9}}, {"id": "lagomera", "nombre": "La Gomera", "sub": "Laurisilva milenaria", "icono": "", "url": "lagomera.html", "buscador": "La Gomera", "desc": "Garajonay, el bosque de laurisilva más antiguo de Europa. Barrancos verticales imposibles, Valle Gran Rey y el mejor senderismo de invierno de Canarias.", "puntos": ["Garajonay — Patrimonio UNESCO", "Valle Gran Rey — el más fotogénico", "GR 132 — vuelta completa a la isla", "Chipude-Valle Gran Rey — ruta legendaria", "Silbo gomero — lenguaje silbado único en el mundo"], "s": {"senderismo": 10, "trail": 8, "escalada": 5, "barranquismo": 7, "surf": 3, "kitesurf": 2, "kayak": 6, "buceo": 4, "ciclismo": 5, "naturaleza": 10, "familia": 7, "turistas": 10, "tranquilidad": 9, "presupuesto": 8, "verano": 6, "invierno": 10, "primavera": 9, "otono": 8}}, {"id": "elhierro", "nombre": "El Hierro", "sub": "100% renovable", "icono": "", "url": "elhierro.html", "buscador": "El Hierro", "desc": "La isla más sostenible del mundo. Mejor buceo de España en La Restinga, sabinas de 1.000 años, el Camino de Jinama y casi cero masificación.", "puntos": ["La Restinga — mejor buceo de España", "Jinama — 1.000m desnivel en 4 km", "Sabinar — árboles de 1.000 años", "Julan — grabados rupestres prehistóricos", "100% energía renovable"], "s": {"senderismo": 8, "trail": 7, "escalada": 5, "barranquismo": 5, "surf": 4, "kitesurf": 3, "kayak": 5, "buceo": 10, "ciclismo": 5, "naturaleza": 10, "familia": 6, "turistas": 10, "tranquilidad": 10, "presupuesto": 9, "verano": 8, "invierno": 7, "primavera": 9, "otono": 9}}, {"id": "lagraciosa", "nombre": "La Graciosa", "sub": "Sin asfalto", "icono": "", "url": "lagraciosa.html", "buscador": "La Graciosa", "desc": "La única isla habitada de Europa sin asfalto. Playa de Las Conchas, snorkel en Montaña Amarilla, bici por arena y el silencio más absoluto.", "puntos": ["Las Conchas — top 5 playas de España", "Montaña Amarilla — snorkel en laguna volcánica", "En bici por pistas de arena", "Vuelta integral — 28 km sin asfalto", "Máx. 200 visitantes al Archipiélago Chinijo"], "s": {"senderismo": 6, "trail": 4, "escalada": 1, "barranquismo": 1, "surf": 3, "kitesurf": 3, "kayak": 8, "buceo": 9, "ciclismo": 7, "naturaleza": 9, "familia": 7, "turistas": 10, "tranquilidad": 10, "presupuesto": 7, "verano": 8, "invierno": 6, "primavera": 8, "otono": 8}}, {"id": "lobos", "nombre": "Isla de Lobos", "sub": "El islote virgen", "icono": "", "url": "lobos.html", "buscador": "Isla de Lobos", "desc": "Solo 4,58 km² de naturaleza protegida a 15 min de Corralejo. El mejor snorkel del archipiélago y máximo 200 visitantes por día.", "puntos": ["El Puertito — mejor snorkel del archipiélago", "La Caldera — volcán de 127m, vistas 360°", "La Concha — bahía virgen protegida", "15 min en ferry desde Corralejo", "Máx. 200 visitantes/día"], "s": {"senderismo": 5, "trail": 2, "escalada": 1, "barranquismo": 1, "surf": 2, "kitesurf": 2, "kayak": 9, "buceo": 10, "ciclismo": 1, "naturaleza": 9, "familia": 8, "turistas": 10, "tranquilidad": 10, "presupuesto": 8, "verano": 8, "invierno": 5, "primavera": 8, "otono": 7}}];
@@ -1162,6 +954,248 @@ document.addEventListener('DOMContentLoaded', function(){
       this.classList.toggle('active');
     });
   }
+})();
+</script>
+<script>
+(function(){
+  // Guardar idioma cuando cambia
+  function guardarIdioma(lang){
+    try{ localStorage.setItem('av_lang', lang); }catch(e){}
+  }
+  // Aplicar idioma guardado al cargar
+  function aplicarIdioma(){
+    var lang = '';
+    try{ lang = localStorage.getItem('av_lang'); }catch(e){}
+    if(!lang || lang === 'es') return;
+    // Esperar a que Google Translate cargue
+    var intentos = 0;
+    var timer = setInterval(function(){
+      var combo = document.querySelector('select.goog-te-combo');
+      if(combo){
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+        clearInterval(timer);
+      }
+      if(++intentos > 20) clearInterval(timer);
+    }, 300);
+  }
+  // Interceptar clicks en idiomas
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-lang]');
+    if(a) guardarIdioma(a.dataset.lang);
+  });
+  // Aplicar al cargar
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', aplicarIdioma);
+  } else {
+    setTimeout(aplicarIdioma, 500);
+  }
+})();
+</script>
+<script>
+/* =====================================================
+ NAVBAR – scripts unificados
+===================================================== */
+(function () {
+
+ /* Google Translate */
+ function changeLanguage(lang) {
+ // 1) Intentar usar el widget ya cargado
+ var combo = document.querySelector('select.goog-te-combo');
+ if (combo) {
+ combo.value = lang;
+ combo.dispatchEvent(new Event('change'));
+ return;
+ }
+
+ // 2) Guardar la cookie de idioma (funciona aunque el widget no esté cargado)
+ try {
+ var v = '/es/' + lang;
+ document.cookie = 'googtrans=' + v + ';path=/;';
+ if (location.hostname) {
+ document.cookie = 'googtrans=' + v + ';path=/;domain=.' + location.hostname + ';';
+ }
+ } catch(e) {}
+
+ // 3) Si Google Translate no está cargado, cargarlo ahora sin esperar cookies
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ window._pendingLang = lang;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ // Cuando cargue, aplicar el idioma
+ var orig = window.googleTranslateElementInit;
+ window.googleTranslateElementInit = function() {
+ if (orig) orig();
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c && window._pendingLang) {
+ c.value = window._pendingLang;
+ c.dispatchEvent(new Event('change'));
+ window._pendingLang = null;
+ }
+ }, 800);
+ };
+ } else {
+ // Widget ya cargado pero combo no encontrado aún, reintentar
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c) { c.value = lang; c.dispatchEvent(new Event('change')); }
+ else { location.reload(); }
+ }, 500);
+ }
+ }
+
+ document.querySelectorAll('a[data-lang]').forEach(function(a) {
+ a.addEventListener('click', function(e) { e.preventDefault(); changeLanguage(this.dataset.lang); });
+ });
+
+ /* Dropdowns de acciones (redes, idioma, carrito) */
+ document.querySelectorAll('.nav-actions__drop:not(#drop-buscar)').forEach(function(drop) {
+ var btn = drop.querySelector('[aria-haspopup]');
+ var panel = drop.querySelector('.nav-actions__panel');
+ if (!btn || !panel) return;
+
+ // Desktop: hover
+ drop.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ open(drop, btn);
+ });
+ drop.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ close(drop, btn);
+ });
+
+ // Móvil: tap
+ btn.addEventListener('click', function(e) {
+ e.stopPropagation();
+ var isOpen = drop.classList.contains('open');
+ closeAll();
+ if (!isOpen) open(drop, btn);
+ });
+ });
+
+ function open(drop, btn) { drop.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+ function close(drop, btn) { drop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+ function closeAll() {
+ document.querySelectorAll('.nav-actions__drop.open').forEach(function(d) {
+ close(d, d.querySelector('[aria-haspopup]'));
+ });
+ }
+
+ document.addEventListener('click', function() { closeAll(); });
+
+ /* Dropdowns del nav principal (solo móvil) */
+ /* Submenús desktop con delay para no cerrarse al bajar el ratón */
+ var hoverTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(li) {
+ var link = li.querySelector('.nav-main__link');
+ if (!link) return;
+
+ // Desktop: hover con delay de cierre
+ li.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ li.classList.add('open');
+ });
+
+ li.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 200); // 200ms de gracia para mover el ratón al submenú
+ hoverTimers.set(li, t);
+ });
+
+ // Submenú también mantiene el menú abierto si el ratón entra en él
+ var sub = li.querySelector('.nav-main__submenu');
+ if (sub) {
+ sub.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ });
+ sub.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 150);
+ hoverTimers.set(li, t);
+ });
+ }
+
+ // Móvil: tap para abrir/cerrar
+ link.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ e.preventDefault();
+ var was = li.classList.contains('open');
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ if (!was) li.classList.add('open');
+ });
+ });
+
+ /* Hamburguesa */
+ var burger = document.querySelector('.nav-burger');
+ var navList = document.querySelector('.nav-main');
+ if (burger && navList) {
+ burger.addEventListener('click', function() {
+ var open = burger.classList.toggle('open');
+ burger.setAttribute('aria-expanded', open);
+ navList.classList.toggle('open', open);
+ });
+ }
+
+ /* Cerrar menú al hacer resize a desktop */
+ window.addEventListener('resize', function() {
+ if (window.innerWidth > 900) {
+ if (navList) navList.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ }
+ });
+
+ /* Cerrar menú al click fuera */
+ document.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ if (!e.target.closest('.site-header') && navList) {
+ navList.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ }
+ });
+
+})();
+</script>
+<div id="google_translate_element" hidden></div>
+<script>
+function googleTranslateElementInit() {
+ if (typeof google !== 'undefined' && google.translate) {
+ new google.translate.TranslateElement({
+ pageLanguage: 'es',
+ includedLanguages: 'en,de,fr,it,pt',
+ layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+ autoDisplay: false
+ }, 'google_translate_element');
+
+ // Si había un idioma pendiente de aplicar, aplicarlo ahora
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c && window._pendingLang) {
+ c.value = window._pendingLang;
+ c.dispatchEvent(new Event('change'));
+ window._pendingLang = null;
+ }
+ }, 600);
+ }
+}
+// Cargar Google Translate siempre (es funcionalidad, no tracking)
+(function(){
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ }
 })();
 </script>
 </body>
