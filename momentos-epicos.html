@@ -530,6 +530,42 @@ iframe.goog-te-banner-frame {
   .app-bar{display:none!important;}
 }
 </style>
+<style id="nav-sin-recuadros">
+@media(max-width:900px){
+  /* Restaurar barra superior */
+  .nav-actions{display:flex!important;}
+  /* Quitar recuadros verdes de los botones */
+  .nav-actions__btn{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    outline:none!important;
+  }
+  .nav-actions__btn--cta{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    color:#e8eaf0!important;
+  }
+  .nav-actions__btn:hover,
+  .nav-actions__btn:focus,
+  .nav-actions__btn--cta:hover,
+  .nav-actions__btn--cta:focus{
+    background:transparent!important;
+    border:none!important;
+    color:#1cff6b!important;
+  }
+}
+/* También en escritorio quitar recuadros */
+.nav-actions__btn{
+  background:transparent!important;
+  border:none!important;
+}
+.nav-actions__btn--cta{
+  background:#1cff6b!important;
+  color:#02070f!important;
+}
+</style>
 </head>
 <body>
 
@@ -625,13 +661,13 @@ iframe.goog-te-banner-frame {
         <!-- Redes sociales -->
  <div class="nav-actions__drop" id="drop-redes">
  <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
- <i class="fab fa-instagram" aria-hidden="true"></i>
+ <i class="fas fa-share-alt" aria-hidden="true"></i>
  <span class="nav-actions__label">Redes</span>
  </button>
  <ul class="nav-actions__panel" id="panel-redes" role="list">
  <li>
  <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre en nueva pestaña)">
- <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+ <i class="fas fa-share-alt" aria-hidden="true"></i> Instagram
  </a>
  </li>
  <li>

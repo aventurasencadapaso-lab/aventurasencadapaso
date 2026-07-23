@@ -195,6 +195,42 @@ iframe.goog-te-banner-frame {
   .app-bar{display:none!important;}
 }
 </style>
+<style id="nav-sin-recuadros">
+@media(max-width:900px){
+  /* Restaurar barra superior */
+  .nav-actions{display:flex!important;}
+  /* Quitar recuadros verdes de los botones */
+  .nav-actions__btn{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    outline:none!important;
+  }
+  .nav-actions__btn--cta{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    color:#e8eaf0!important;
+  }
+  .nav-actions__btn:hover,
+  .nav-actions__btn:focus,
+  .nav-actions__btn--cta:hover,
+  .nav-actions__btn--cta:focus{
+    background:transparent!important;
+    border:none!important;
+    color:#1cff6b!important;
+  }
+}
+/* También en escritorio quitar recuadros */
+.nav-actions__btn{
+  background:transparent!important;
+  border:none!important;
+}
+.nav-actions__btn--cta{
+  background:#1cff6b!important;
+  color:#02070f!important;
+}
+</style>
 </head>
 <body>
 <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
