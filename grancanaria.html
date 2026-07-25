@@ -802,6 +802,30 @@ img, video, iframe, table { max-width: 100% !important; }
   #mapa, [id*="mapa"], [class*="mapa"] { max-width:100% !important; }
 }
 </style>
+<style id="nav-chevron-fix">
+/* Mostrar flecha en menú móvil */
+.nav-main__chevron {
+  display:inline-block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  font-size:10px !important;
+  margin-left:5px !important;
+  transition:transform .25s !important;
+  color:inherit !important;
+}
+.nav-main__item--drop.open > a .nav-main__chevron,
+.nav-main__item--drop > a[aria-expanded="true"] .nav-main__chevron {
+  transform:rotate(180deg) !important;
+}
+@media(max-width:900px){
+  .nav-main__chevron { display:inline-block !important; }
+  .nav-main__item--drop > a {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+  }
+}
+</style>
 </head>
 
 <body>
