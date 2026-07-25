@@ -35,7 +35,7 @@ var RUTAS = [
     id: "teide-montana-blanca",
     nombre: "Ascensión al Teide – Montaña Blanca (Sendero 7)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "Día completo", distancia: 18,
+    duracion: "Día completo", distancia: 9.0,
     descripcion: "La ruta más icónica de España. Desde Montaña Blanca (2.300 m) hasta La Rambleta (3.555 m). Requiere permiso para subir los últimos 200 m hasta la cima.",
     enlace: "https://www.alltrails.com/es/sendero/spain/santa-cruz-de-tenerife/montana-blanca-pico-del-teide",
     lat: 28.2743, lng: -16.6426
@@ -44,7 +44,7 @@ var RUTAS = [
     id: "roques-garcia-teide",
     nombre: "Roques de García – Sendero 3 Teide",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 4,
+    duracion: "2-4 horas", distancia: 3.6,
     descripcion: "Circular por las formaciones volcánicas más espectaculares del Teide: Roque Cinchado, El Torrotito y el Llano de Ucanca. Apta para familias.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.2253, lng: -16.6139
@@ -53,7 +53,7 @@ var RUTAS = [
     id: "pico-viejo-teide",
     nombre: "Pico Viejo – Sendero 13",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12,
+    duracion: "4-8 horas", distancia: 10.1,
     descripcion: "Ascenso al volcán hermano del Teide con vistas únicas al cráter de Pico Viejo. Pinar canario milenario y panorámicas de los conos volcánicos.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.2636, lng: -16.6819
@@ -62,7 +62,7 @@ var RUTAS = [
     id: "ruta-040-teide",
     nombre: "Ruta 0-4-0 Teide",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Extrema",
-    duracion: "Día completo", distancia: 42,
+    duracion: "Día completo", distancia: 50.7,
     descripcion: "Del nivel del mar en Playa del Socorro hasta la cima del Teide y vuelta al mar. La ruta más extrema de Canarias: más de 3.700 m de desnivel.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/santa-cruz-de-tenerife",
     lat: 28.5022, lng: -16.7044
@@ -71,7 +71,7 @@ var RUTAS = [
     id: "paisaje-lunar-vilaflor",
     nombre: "Vilaflor – Paisaje Lunar (PR-TF 72)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 13,
+    duracion: "4-8 horas", distancia: 12.9,
     descripcion: "Circular desde Vilaflor por pinares hasta el Paisaje Lunar, formaciones de piedra pómez erosionada que parecen de otro planeta. Impresionante.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
     lat: 28.1582, lng: -16.6419
@@ -80,7 +80,7 @@ var RUTAS = [
     id: "volcan-fasnia",
     nombre: "Volcán de Fasnia – Siete Fuentes",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 11.0,
     descripcion: "Sendero 20 del Teide por los conos volcánicos de la erupción de 1705. Negro intenso de la lava con tajinastes rojos y azules en primavera.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/fasnia",
     lat: 28.2369, lng: -16.4569
@@ -89,7 +89,7 @@ var RUTAS = [
     id: "chinyero-san-jose",
     nombre: "San José de los Llanos – Chinyero",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 4,
+    duracion: "2-4 horas", distancia: 16.2,
     descripcion: "Ruta por las coladas del último volcán en erupción de Tenerife (1909). Lava negra entre pinos centenarios. Ideal para familias y niños.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
     lat: 28.3469, lng: -16.7944
@@ -100,7 +100,7 @@ var RUTAS = [
     id: "anaga-afur-taganana",
     nombre: "Anaga – Afur a Taganana (Circular)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 12.2,
     descripcion: "Una de las mejores rutas de Canarias. Laurisilva salvaje, barrancos profundos y la playa virgen del Tamadite. Joya del Macizo de Anaga.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
     lat: 28.5667, lng: -16.1833
@@ -109,7 +109,7 @@ var RUTAS = [
     id: "anaga-roque-taborno",
     nombre: "Anaga – Roque Taborno",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 4,
+    duracion: "2-4 horas", distancia: 5.8,
     descripcion: "Sendero corto pero espectacular hasta el Roque Taborno. No apto para vértigo. Vistas únicas al Atlántico Norte y la costa salvaje de Anaga.",
     enlace: "https://www.webtenerife.com/elblog/2026/02/cuales-son-las-mejores-rutas-de-senderismo-en-tenerife-para-descubrir-su-naturaleza",
     lat: 28.5720, lng: -16.1956
@@ -118,7 +118,7 @@ var RUTAS = [
     id: "anaga-cruz-carmen-hidalgo",
     nombre: "Cruz del Carmen – Punta del Hidalgo",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 11.4,
     descripcion: "Ruta lineal desde el corazón de Anaga hasta la costa. Pasa por Chinamada, pueblo de casas-cueva habitadas y acantilados de Punta del Hidalgo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-laguna",
     lat: 28.5642, lng: -16.2817
@@ -127,7 +127,7 @@ var RUTAS = [
     id: "anaga-bosque-enigmas",
     nombre: "Bosque de los Enigmas – Anaga",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 5.7,
     descripcion: "Circular sencilla desde el Mirador de Zapata por laurisilva bien señalizada. Perfecta para familias. Llevar ropa de abrigo por la humedad.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.5511, lng: -16.2378
@@ -136,7 +136,7 @@ var RUTAS = [
     id: "anaga-taganana-tamadite",
     nombre: "Taganana – Playa del Tamadite",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 12.4,
     descripcion: "Ruta lineal hasta la playa del Tamadite, arena negra volcánica solo accesible a pie. La marea baja revela la playa en todo su esplendor.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.5594, lng: -16.1633
@@ -145,7 +145,7 @@ var RUTAS = [
     id: "pijaral-tenerife",
     nombre: "Sendero de El Pijaral – Anaga",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12,
+    duracion: "4-8 horas", distancia: 6.6,
     descripcion: "La laurisilva más protegida de Tenerife. Reserva Natural Integral de El Pijaral. Requiere permiso del Cabildo. Experiencia única e irrepetible.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/santa-cruz-de-tenerife",
     lat: 28.5780, lng: -16.1620
@@ -154,7 +154,7 @@ var RUTAS = [
     id: "anaga-benijo-draguillo",
     nombre: "Benijo – Cruz del Draguillo (PR-TF 6.3)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 5.2,
     descripcion: "Precioso recorrido con vistas a la costa de Anaga y al caserío del Draguillo. Iniciar pronto por el aparcamiento limitado. Arquitectura rural única.",
     enlace: "https://www.alltrails.com/es/spain/tenerife",
     lat: 28.5811, lng: -16.1619
@@ -165,7 +165,7 @@ var RUTAS = [
     id: "masca-barranco",
     nombre: "Barranco de Masca",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 6,
+    duracion: "4-8 horas", distancia: 6.9,
     descripcion: "Descenso espectacular por el barranco más famoso de Tenerife hasta la playa. Requiere reserva previa en el Cabildo y regreso en barco.",
     enlace: "https://es.wikiloc.com/planet/discovery-es/rutas-senderismo-tenerife/",
     lat: 28.3483, lng: -16.8469
@@ -174,7 +174,7 @@ var RUTAS = [
     id: "teno-risco-verde",
     nombre: "Teno – Monte del Agua – Risco Verde",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 8.3,
     descripcion: "Laurisilva del Monte del Agua hasta los miradores únicos del Risco Verde. Vistas a Masca, Santiago del Teide y el Teide al fondo.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
     lat: 28.3619, lng: -16.8533
@@ -183,7 +183,7 @@ var RUTAS = [
     id: "teno-erjos-circular",
     nombre: "Erjos – Circular Parque Rural de Teno",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 11.2,
     descripcion: "Agradable circular por el Parque Rural de Teno con dos paisajes distintos: bosque húmedo y zona más árida. Cruz de Gala con vistas panorámicas.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
     lat: 28.3467, lng: -16.8028
@@ -192,7 +192,7 @@ var RUTAS = [
     id: "teno-palmar-circular",
     nombre: "Valle de El Palmar – Teno Alto",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 11,
+    duracion: "4-8 horas", distancia: 9.9,
     descripcion: "Circular por el Valle de El Palmar hasta Teno Alto por bosque de brezos y laurisilva única en altura. Vistas excepcionales al norte de la isla.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
     lat: 28.3658, lng: -16.8250
@@ -203,7 +203,7 @@ var RUTAS = [
     id: "barranco-infierno-adeje",
     nombre: "Barranco del Infierno – Adeje",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 6.9,
     descripcion: "Reserva Natural Especial. Sendero hasta cascada de 80 m con cuevas aborígenes y grabados rupestres. Requiere reserva previa obligatoria.",
     enlace: "https://www.barrancodelinfierno.es",
     lat: 28.1064, lng: -16.7261
@@ -212,7 +212,7 @@ var RUTAS = [
     id: "roque-conde-arona",
     nombre: "Roque del Conde – Arona",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 5.3,
     descripcion: "Ascenso al Roque del Conde (1.001 m) con vistas de la Caldera del Rey y en días despejados La Palma, La Gomera y El Hierro.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/arona",
     lat: 28.1342, lng: -16.6831
@@ -221,7 +221,7 @@ var RUTAS = [
     id: "malpais-guimar",
     nombre: "Malpaís de Güímar",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 9.5,
     descripcion: "Reserva Natural Especial con paisaje desértico volcánico rojizo. Tubos y cuevas volcánicas, miradores y flora endémica. Muy fotografiable.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/guimar",
     lat: 28.3139, lng: -16.3994
@@ -230,7 +230,7 @@ var RUTAS = [
     id: "montana-roja-medano",
     nombre: "Montaña Roja – El Médano",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 4,
+    duracion: "Menos de 2h", distancia: 8.2,
     descripcion: "Circular corta al volcán de 171 m que separa las mejores playas naturales del sur. Referente en el horizonte y vistas a Gran Canaria.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
     lat: 28.0453, lng: -16.5344
@@ -239,7 +239,7 @@ var RUTAS = [
     id: "rambla-castro",
     nombre: "Rambla de Castro – Costa Norte",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 8.5,
     descripcion: "Espacio protegido con bancales agrícolas históricos sobre los acantilados del norte. Playas de arena negra y vistas únicas al Atlántico.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.3856, lng: -16.6189
@@ -248,7 +248,7 @@ var RUTAS = [
     id: "los-organos-orotava",
     nombre: "Los Órganos – La Orotava",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 16,
+    duracion: "4-8 horas", distancia: 10.8,
     descripcion: "Espectacular circular por la Caldera y Los Órganos, columnas basálticas únicas. Gran variedad de paisajes, flora y desnivel considerable.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-orotava",
     lat: 28.3912, lng: -16.5264
@@ -257,7 +257,7 @@ var RUTAS = [
     id: "anaga-sendero-sentidos",
     nombre: "Sendero de los Sentidos – Anaga",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 7.6,
     descripcion: "Triple ruta desde Cruz del Carmen con experiencia sensorial única entre laurisilva. Une Anaga con La Laguna. Muy didáctica y bien señalizada.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.5578, lng: -16.2778
@@ -266,7 +266,7 @@ var RUTAS = [
     id: "garachico-pr-tf-43",
     nombre: "Circular Garachico – PR-TF 43",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 8.5,
     descripcion: "Circular bien señalizada desde el pueblo histórico de Garachico. Restos de lava volcánica, costa norte y pinar. Apto para todos los niveles.",
     enlace: "https://www.alltrails.com/es/spain/tenerife",
     lat: 28.3728, lng: -16.7700
@@ -275,7 +275,7 @@ var RUTAS = [
     id: "corona-forestal-las-raices",
     nombre: "Las Raíces – Corona Forestal (PR-TF 25.1)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 13.0,
     descripcion: "Agradable ruta por el bosque de Las Esperanzas en la Corona Forestal. Pino canario y eucalipto en la zona donde Franco planificó el alzamiento.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
     lat: 28.4333, lng: -16.4253
@@ -284,7 +284,7 @@ var RUTAS = [
     id: "taborno-circular-anaga",
     nombre: "Taborno – Carboneras – Llano Frío",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 17,
+    duracion: "4-8 horas", distancia: 11.8,
     descripcion: "Circular completa por el corazón de Anaga: Taborno, Carboneras, Chinamada, Llano Frío y vuelta por el PR-TF 2. Exige orientación y buen calzado.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/santa-cruz-de-tenerife",
     lat: 28.5742, lng: -16.2003
@@ -293,7 +293,7 @@ var RUTAS = [
     id: "montana-amarilla-sur",
     nombre: "Montaña Amarilla – Punta de Panete",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 8.9,
     descripcion: "Circular corta al Monumento Natural de Montaña Amarilla. Capas de colores volcánicos entre la montaña y el océano. Puesta de sol espectacular.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
     lat: 28.0044, lng: -16.6911
