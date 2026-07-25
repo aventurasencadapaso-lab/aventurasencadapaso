@@ -290,6 +290,26 @@ body{padding-bottom:0!important;}
   .nav-actions__btn{padding:5px 7px!important;}
 }
 </style>
+<style id="emp-responsive-fix">
+/* Fix responsive empresas */
+html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+* { box-sizing: border-box !important; }
+.emp-hero, .emp-section, .emp-grid, .emp-banner, .emp-redes,
+.av-form, .emp-stats { max-width: 100% !important; }
+img { max-width: 100% !important; height: auto !important; }
+
+@media(max-width:900px){
+  .emp-hero { padding: 90px 16px 40px !important; }
+  .emp-section { padding: 0 16px 40px !important; }
+  .emp-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .emp-redes { grid-template-columns: 1fr !important; }
+  .emp-banner { padding: 24px 16px !important; }
+  .emp-card { padding: 20px 16px !important; }
+  .av-form { padding: 0 !important; }
+  .av-form__grid { grid-template-columns: 1fr !important; }
+  .emp-hero__stats { flex-direction: column !important; }
+}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -298,10 +318,7 @@ body{padding-bottom:0!important;}
 
  <!-- LOGO -->
  <a href="index.html" class="site-logo" aria-label="Aventuras en Cada Paso – Inicio">
- <img fetchpriority="high" src="logo-aventuras.png"
- alt="Aventuras en Cada Paso – Aventuras y senderismo en Canarias"
- class="site-logo__img"
- width="120" height="60">
+ <img fetchpriority="high" src="logo-aventuras.png" alt="Aventuras en Cada Paso" class="site-logo__img" style="height:44px!important;width:auto!important;max-width:160px!important;max-height:44px!important;" width="120" height="60">
  </a>
 
  <!-- NAV PRINCIPAL -->
@@ -454,60 +471,79 @@ body{padding-bottom:0!important;}
  <p class="emp-sub">Diferentes formas de dar visibilidad a tu empresa entre la comunidad aventurera de Canarias</p>
 
  <div class="emp-grid">
- <div class="emp-card">
- <div class="emp-card__head">
- <div class="emp-card__ico" style="background:rgba(28,255,107,.1);"></div>
- <h3 class="emp-card__titulo">Ficha en nuestra web</h3>
- </div>
- <p class="emp-card__desc">Incluimos tu empresa en el directorio de tiendas y actividades de Canarias. Con descripción, contacto, mapa y link directo a tu web o redes.</p>
- <span class="emp-card__badge" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.2);">Web · Directorio</span>
- </div>
 
- <div class="emp-card">
- <div class="emp-card__head">
- <div class="emp-card__ico" style="background:rgba(232,62,140,.1);"></div>
- <h3 class="emp-card__titulo">Publicidad en Instagram</h3>
- </div>
- <p class="emp-card__desc">Post y stories en @aventurasencadapaso presentando tu empresa, actividades o productos a nuestra comunidad de seguidores apasionados del outdoor.</p>
- <span class="emp-card__badge" style="background:rgba(232,62,140,.1);color:#e83e8c;border:1px solid rgba(232,62,140,.2);">Instagram · Redes</span>
- </div>
+  <!-- Ficha en nuestra web -->
+  <div class="emp-card">
+    <div class="emp-card__head">
+      <div class="emp-card__ico" style="background:rgba(28,255,107,.1);width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;"><i class="fas fa-map-marked-alt" style="font-size:1.4rem;color:#1cff6b;"></i></div>
+      <h3 class="emp-card__titulo">Ficha en nuestra web</h3>
+    </div>
+    <p class="emp-card__desc">Incluimos tu empresa en el directorio de tiendas y actividades de Canarias. Con descripción, contacto, mapa y link directo a tu web o redes.</p>
+    <span class="emp-card__badge" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.2);">Web · Directorio</span>
+  </div>
 
- <div class="emp-card">
- <div class="emp-card__head">
- <div class="emp-card__ico" style="background:rgba(0,0,0,.3);"></div>
- <h3 class="emp-card__titulo">Contenido en TikTok</h3>
- </div>
- <p class="emp-card__desc">Vídeos cortos mostrando tus actividades, rutas o productos a una audiencia joven y activa que busca su próxima aventura en Canarias.</p>
- <span class="emp-card__badge" style="background:rgba(255,255,255,.05);color:#e8eaf0;border:1px solid rgba(255,255,255,.1);">TikTok · Vídeo</span>
- </div>
+  <!-- Instagram -->
+  <div class="emp-card">
+    <div class="emp-card__head">
+      <div class="emp-card__ico" style="background:linear-gradient(135deg,rgba(193,53,132,.2),rgba(253,29,29,.1));">
+        <i class="fab fa-instagram" style="font-size:1.6rem;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"></i>
+      </div>
+      <h3 class="emp-card__titulo">Publicidad en Instagram</h3>
+    </div>
+    <p class="emp-card__desc">Post y stories en @aventurasencadapaso presentando tu empresa, actividades o productos a nuestra comunidad de seguidores apasionados del outdoor.</p>
+    <span class="emp-card__badge" style="background:rgba(221,42,123,.1);color:#dd2a7b;border:1px solid rgba(221,42,123,.2);">Instagram · Redes</span>
+  </div>
 
- <div class="emp-card">
- <div class="emp-card__head">
- <div class="emp-card__ico" style="background:rgba(255,0,0,.1);"></div>
- <h3 class="emp-card__titulo">Vídeos en YouTube</h3>
- </div>
- <p class="emp-card__desc">Reviews, guías o reportajes sobre tu empresa o actividades publicados en nuestro canal. Contenido que posiciona y permanece en el tiempo.</p>
- <span class="emp-card__badge" style="background:rgba(255,0,0,.1);color:#ff4444;border:1px solid rgba(255,0,0,.2);">YouTube · Vídeo</span>
- </div>
+  <!-- TikTok -->
+  <div class="emp-card">
+    <div class="emp-card__head">
+      <div class="emp-card__ico" style="background:rgba(255,255,255,.05);">
+        <i class="fab fa-tiktok" style="font-size:1.6rem;color:#e8eaf0;"></i>
+      </div>
+      <h3 class="emp-card__titulo">Contenido en TikTok</h3>
+    </div>
+    <p class="emp-card__desc">Vídeos cortos mostrando tus actividades, rutas o productos a una audiencia joven y activa que busca su próxima aventura en Canarias.</p>
+    <span class="emp-card__badge" style="background:rgba(255,255,255,.05);color:#e8eaf0;border:1px solid rgba(255,255,255,.1);">TikTok · Vídeo</span>
+  </div>
 
- <div class="emp-card">
- <div class="emp-card__head">
- <div class="emp-card__ico" style="background:rgba(28,255,107,.1);"></div>
- <h3 class="emp-card__titulo">Artículo en el blog</h3>
- </div>
- <p class="emp-card__desc">Publicamos un artículo sobre tu empresa, una ruta guiada que ofreces o una experiencia que organizas. Contenido SEO que trae visitas orgánicas.</p>
- <span class="emp-card__badge" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.2);">Blog · SEO</span>
- </div>
+  <!-- YouTube -->
+  <div class="emp-card">
+    <div class="emp-card__head">
+      <div class="emp-card__ico" style="background:rgba(255,0,0,.1);">
+        <i class="fab fa-youtube" style="font-size:1.6rem;color:#ff0000;"></i>
+      </div>
+      <h3 class="emp-card__titulo">Vídeos en YouTube</h3>
+    </div>
+    <p class="emp-card__desc">Reviews, guías o reportajes sobre tu empresa o actividades publicados en nuestro canal. Contenido que posiciona y permanece en el tiempo.</p>
+    <span class="emp-card__badge" style="background:rgba(255,0,0,.1);color:#ff4444;border:1px solid rgba(255,0,0,.2);">YouTube · Vídeo</span>
+  </div>
 
- <div class="emp-card">
- <div class="emp-card__head">
- <div class="emp-card__ico" style="background:rgba(255,193,7,.1);"></div>
- <h3 class="emp-card__titulo">Colaboración a medida</h3>
- </div>
- <p class="emp-card__desc">¿Tienes otra idea? Cuéntanosla. Estamos abiertos a propuestas de patrocinio, intercambio de servicios, afiliación o cualquier tipo de colaboración creativa.</p>
- <span class="emp-card__badge" style="background:rgba(255,193,7,.1);color:#ffc107;border:1px solid rgba(255,193,7,.2);">A medida · Flexible</span>
- </div>
- </div>
+  <!-- Blog -->
+  <div class="emp-card">
+    <div class="emp-card__head">
+      <div class="emp-card__ico" style="background:rgba(28,255,107,.08);">
+        <i class="fas fa-pen-nib" style="font-size:1.4rem;color:#1cff6b;"></i>
+      </div>
+      <h3 class="emp-card__titulo">Artículo en el blog</h3>
+    </div>
+    <p class="emp-card__desc">Publicamos un artículo sobre tu empresa, una ruta guiada que ofreces o una experiencia que organizas. Contenido SEO que atrae visitas orgánicas mes a mes.</p>
+    <span class="emp-card__badge" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.2);">Blog · SEO</span>
+  </div>
+
+  <!-- Colaboración a medida -->
+  <div class="emp-card">
+    <div class="emp-card__head">
+      <div class="emp-card__ico" style="background:rgba(255,193,7,.1);">
+        <i class="fas fa-handshake" style="font-size:1.4rem;color:#ffc107;"></i>
+      </div>
+      <h3 class="emp-card__titulo">Colaboración a medida</h3>
+    </div>
+    <p class="emp-card__desc">¿Tienes otra idea? Cuéntanosla. Estamos abiertos a propuestas de patrocinio, intercambio de servicios, afiliación o cualquier tipo de colaboración creativa.</p>
+    <span class="emp-card__badge" style="background:rgba(255,193,7,.1);color:#ffc107;border:1px solid rgba(255,193,7,.2);">Colaboración · Flexible</span>
+  </div>
+
+</div>
+
 
  <!-- REDES SOCIALES -->
  <h2 class="emp-titulo" style="margin-top:12px;"><i class="fab fa-instagram"></i> Nuestras redes sociales</h2>
