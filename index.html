@@ -45,172 +45,7 @@ gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="style.min.css">
 
-<style id="cookie-banner-styles">
-#cookie-banner {
- position: fixed;
- bottom: 0; left: 0; right: 0;
- z-index: 999999;
- background: rgba(2, 7, 15, 0.97);
- border-top: 2px solid #1cff6b;
- padding: 16px 24px;
- backdrop-filter: blur(10px);
-}
-.cookie-banner__inner {
- max-width: 1200px;
- margin: 0 auto;
- display: flex;
- align-items: center;
- gap: 20px;
- flex-wrap: wrap;
-}
-.cookie-banner__text {
- flex: 1;
- min-width: 260px;
-}
-.cookie-banner__text p {
- margin: 0;
- color: #c8ccd8;
- font-family: 'Roboto', sans-serif;
- font-size: 13px;
- line-height: 1.6;
-}
-.cookie-banner__text a {
- color: #1cff6b;
- text-decoration: underline;
-}
-.cookie-banner__actions {
- display: flex;
- gap: 10px;
- flex-wrap: wrap;
- flex-shrink: 0;
-}
-.cookie-btn {
- padding: 9px 18px;
- border-radius: 10px;
- font-family: 'Orbitron', sans-serif;
- font-size: 10px;
- font-weight: 700;
- text-transform: uppercase;
- letter-spacing: 1px;
- cursor: pointer;
- text-decoration: none;
- display: inline-flex;
- align-items: center;
- border: none;
- transition: background .2s, color .2s;
-}
-.cookie-btn--accept {
- background: #1cff6b;
- color: #02070f;
-}
-.cookie-btn--accept:hover { background: #00e05a; }
-.cookie-btn--reject {
- background: transparent;
- border: 1px solid rgba(28,255,107,0.4);
- color: #e8eaf0;
-}
-.cookie-btn--reject:hover { border-color: #1cff6b; color: #1cff6b; }
-.cookie-btn--info {
- background: transparent;
- border: 1px solid rgba(200,204,216,0.3);
- color: #c8ccd8;
- font-size: 10px;
-}
-.cookie-btn--info:hover { color: #1cff6b; border-color: #1cff6b; }
-
-@media (max-width: 600px) {
- .cookie-banner__inner { flex-direction: column; align-items: stretch; }
- .cookie-banner__actions { justify-content: stretch; }
- .cookie-btn { justify-content: center; text-align: center; }
-}
-
-/* Foto debajo del hero */
-.idx-foto-strip{
- position:relative;height:420px;overflow:hidden;
-}
-.idx-foto-strip img{
- width:100%;height:100%;object-fit:cover;object-position:center;
- display:block;filter:brightness(.55);
-}
-.idx-foto-strip__overlay{
- position:absolute;inset:0;
- background:linear-gradient(to bottom,#02070f 0%,transparent 20%,transparent 80%,#02070f 100%);
-}
-.idx-foto-strip__texto{
- position:absolute;inset:0;
- display:flex;flex-direction:column;align-items:center;justify-content:center;
- text-align:center;padding:28px;
-}
-.idx-foto-strip__sup{
- font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;
- letter-spacing:4px;text-transform:uppercase;
- background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.2);
- border-radius:20px;padding:5px 14px;margin-bottom:16px;
-}
-.idx-foto-strip__h2{
- font-family:Orbitron,sans-serif;
- font-size:clamp(1.2rem,3.5vw,2rem);
- color:#e8eaf0;font-weight:900;letter-spacing:2px;
- margin:0 0 14px;text-shadow:0 2px 20px rgba(0,0,0,.8);
-}
-.idx-foto-strip__h2 em{color:#1cff6b;font-style:normal;}
-.idx-foto-strip__desc{
- color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;
- max-width:560px;margin:0 0 24px;
- text-shadow:0 1px 8px rgba(0,0,0,.8);
-}
-
-/* Features sin emoji — profesionales */
-.idx-feat{
- background:#0c1624;border:1px solid rgba(28,255,107,.1);
- border-radius:18px;padding:0;overflow:hidden;
- transition:border-color .2s,transform .2s,box-shadow .2s;
- text-decoration:none;display:flex;flex-direction:column;
-}
-.idx-feat:hover{border-color:#1cff6b;transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
-.idx-feat__foto{
- height:140px;display:flex;align-items:center;justify-content:center;
- position:relative;overflow:hidden;
-}
-.idx-feat__foto img{
- width:100%;height:100%;object-fit:cover;
- filter:brightness(.6);transition:transform .3s;
-}
-.idx-feat:hover .idx-feat__foto img{transform:scale(1.05);}
-.idx-feat__foto-grad{
- position:absolute;inset:0;
- display:flex;align-items:flex-end;padding:12px 14px;
-}
-.idx-feat__num{
- font-family:Orbitron,sans-serif;font-size:1.6rem;font-weight:900;
- color:rgba(255,255,255,.9);text-shadow:0 2px 8px rgba(0,0,0,.8);
- line-height:1;margin-left:auto;
-}
-.idx-feat__body{padding:16px 18px;display:flex;flex-direction:column;gap:6px;flex:1;}
-.idx-feat__titulo{font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;color:#e8eaf0;margin:0;}
-.idx-feat__desc{color:#8a8fa0;font-size:12px;line-height:1.6;margin:0;flex:1;}
-
-/* Islas con foto */
-.idx-isla__img{
- height:120px;overflow:hidden;position:relative;
-}
-.idx-isla__img img{
- width:100%;height:100%;object-fit:cover;
- filter:brightness(.65);transition:transform .3s;
-}
-.idx-isla:hover .idx-isla__img img{transform:scale(1.07);}
-.idx-isla__img-overlay{
- position:absolute;inset:0;
- background:linear-gradient(to bottom,transparent 40%,rgba(12,22,36,.8) 100%);
- display:flex;align-items:flex-end;padding:8px 10px;
-}
-.idx-isla__emoji-abs{font-size:1.4rem;line-height:1;}
-
-@media(max-width:600px){
- .idx-foto-strip{height:320px;}
-}
-</style>
- <!-- PWA -->
+<!-- PWA -->
  <meta name="theme-color" content="#1cff6b">
  <meta name="mobile-web-app-capable" content="yes">
  <meta name="apple-mobile-web-app-capable" content="yes">
@@ -308,6 +143,179 @@ if('serviceWorker' in navigator){
 </script>
 
 
+<script>
+/* Ocultar barra de Google Translate dinámicamente */
+(function(){
+  function ocultarBarra(){
+    var barra = document.querySelector('.goog-te-banner-frame');
+    if(barra){ barra.style.display='none'; }
+    // Restaurar posición del body
+    if(document.body.style.top){
+      document.body.style.top = '0';
+    }
+    // Ocultar el iframe
+    var iframes = document.querySelectorAll('iframe');
+    iframes.forEach(function(f){
+      if(f.src && f.src.indexOf('translate.google') > -1){
+        f.style.display = 'none';
+      }
+    });
+  }
+  // Ejecutar varias veces para pillar cuando carga
+  setTimeout(ocultarBarra, 500);
+  setTimeout(ocultarBarra, 1000);
+  setTimeout(ocultarBarra, 2000);
+  // Observer para detectar cuando aparece
+  var obs = new MutationObserver(ocultarBarra);
+  obs.observe(document.body, {childList:true, subtree:true});
+})();
+</script>
+<script>
+(function(){
+  // Guardar idioma cuando cambia
+  function guardarIdioma(lang){
+    try{ localStorage.setItem('av_lang', lang); }catch(e){}
+  }
+  // Aplicar idioma guardado al cargar
+  function aplicarIdioma(){
+    var lang = '';
+    try{ lang = localStorage.getItem('av_lang'); }catch(e){}
+    if(!lang || lang === 'es') return;
+    // Esperar a que Google Translate cargue
+    var intentos = 0;
+    var timer = setInterval(function(){
+      var combo = document.querySelector('select.goog-te-combo');
+      if(combo){
+        combo.value = lang;
+        combo.dispatchEvent(new Event('change'));
+        clearInterval(timer);
+      }
+      if(++intentos > 20) clearInterval(timer);
+    }, 300);
+  }
+  // Interceptar clicks en idiomas
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[data-lang]');
+    if(a) guardarIdioma(a.dataset.lang);
+  });
+  // Aplicar al cargar
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', aplicarIdioma);
+  } else {
+    setTimeout(aplicarIdioma, 500);
+  }
+})();
+</script>
+
+<style id="hide-google-bar">
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.skiptranslate > iframe,
+div#goog-gt- { display:none!important; visibility:hidden!important; height:0!important; }
+body { top:0!important; margin-top:0!important; position:relative!important; }
+</style>
+<style>html,body{background:#02070f!important;color:#c8ccd8!important;}</style>
+<style id="nav-sin-recuadros">
+@media(max-width:900px){
+  /* Restaurar barra superior */
+  .nav-actions{display:flex!important;}
+  /* Quitar recuadros verdes de los botones */
+  .nav-actions__btn{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    outline:none!important;
+  }
+  .nav-actions__btn--cta{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    color:#e8eaf0!important;
+  }
+  .nav-actions__btn:hover,
+  .nav-actions__btn:focus,
+  .nav-actions__btn--cta:hover,
+  .nav-actions__btn--cta:focus{
+    background:transparent!important;
+    border:none!important;
+    color:#1cff6b!important;
+  }
+}
+/* También en escritorio quitar recuadros */
+.nav-actions__btn{
+  background:transparent!important;
+  border:none!important;
+}
+.nav-actions__btn--cta{
+  background:#1cff6b!important;
+  color:#02070f!important;
+}
+</style>
+<style id="nav-labels-fix">
+/* Quitar barra inferior */
+.app-bar{display:none!important;}
+body{padding-bottom:0!important;}
+
+/* Mostrar labels debajo de los iconos en TODOS los tamaños */
+.nav-actions__label{
+  display:block!important;
+  font-size:8px!important;
+  font-family:Orbitron,sans-serif!important;
+  letter-spacing:.5px!important;
+  text-transform:uppercase!important;
+  line-height:1!important;
+  margin-top:3px!important;
+}
+.nav-actions__btn{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  padding:6px 10px!important;
+  min-height:unset!important;
+}
+.nav-actions__btn i{
+  font-size:1.1rem!important;
+  line-height:1!important;
+}
+@media(max-width:900px){
+  .nav-actions__label{display:block!important;}
+  .nav-actions{gap:2px!important;}
+  .nav-actions__btn{padding:5px 7px!important;}
+}
+</style>
+<style>.skip-link{position:absolute;left:-9999px;opacity:0;pointer-events:none;}</style>
+<style>
+.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,#goog-gt-tt,.skiptranslate{display:none!important;visibility:hidden!important;}
+body{top:0!important;position:relative!important;}
+iframe.goog-te-banner-frame{display:none!important;}
+</style>
+<style id="logo-size-fix">
+.site-logo__img{height:44px!important;width:auto!important;max-width:160px!important;max-height:44px!important;}
+</style>
+<style id="overflow-fix">
+html { overflow-x: hidden !important; }
+body { overflow-x: hidden !important; max-width: 100vw !important; }
+img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
+</style>
+<style id="chevron-fix2">
+.nav-main__chevron {
+  display:inline-block !important;
+  font-size:12px !important;
+  color:#e8eaf0 !important;
+  margin-left:4px !important;
+  transition:transform .25s !important;
+}
+.nav-main__item.open > .nav-main__link .nav-main__chevron,
+.nav-main__item--drop.open > .nav-main__link .nav-main__chevron {
+  transform:rotate(180deg) !important;
+  color:#1cff6b !important;
+}
+</style>
 <style>
 html,body{background:#02070f!important;color:#c8ccd8!important;}
 .idx-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 28px 80px;position:relative;overflow:hidden;}
@@ -384,420 +392,146 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 @media(max-width:768px){.idx-hero__h1{font-size:clamp(1.6rem,8vw,2.5rem);}.idx-hero__btns{flex-direction:column;align-items:center;}.idx-btn{width:100%;max-width:280px;justify-content:center;}.idx-section{padding:48px 16px;}.idx-feat-grid{grid-template-columns:1fr 1fr;}.idx-islas-grid{grid-template-columns:repeat(3,1fr);}.idx-cta{padding:40px 20px;}}
 @media(max-width:480px){.idx-feat-grid{grid-template-columns:1fr;}.idx-islas-grid{grid-template-columns:repeat(2,1fr);}}
 </style>
-<style>.skip-link{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}</style>
-<style>
-/* Ocultar barra de Google Translate */
-.goog-te-banner-frame,
-.goog-te-banner-frame.skiptranslate,
-#goog-gt-tt,
-.goog-te-balloon-frame,
-.goog-tooltip,
-.goog-tooltip:hover,
-.goog-text-highlight {
-  display: none !important;
-  visibility: hidden !important;
-}
-/* Evitar que el body se desplace hacia abajo */
-body {
-  top: 0 !important;
-  position: relative !important;
-}
-/* Ocultar el iframe de translate */
-iframe.goog-te-banner-frame {
-  display: none !important;
-}
-/* Compensar el desplazamiento que causa Google */
-.skiptranslate {
-  display: none !important;
-}
-</style>
-<script>
-/* Ocultar barra de Google Translate dinámicamente */
-(function(){
-  function ocultarBarra(){
-    var barra = document.querySelector('.goog-te-banner-frame');
-    if(barra){ barra.style.display='none'; }
-    // Restaurar posición del body
-    if(document.body.style.top){
-      document.body.style.top = '0';
-    }
-    // Ocultar el iframe
-    var iframes = document.querySelectorAll('iframe');
-    iframes.forEach(function(f){
-      if(f.src && f.src.indexOf('translate.google') > -1){
-        f.style.display = 'none';
-      }
-    });
-  }
-  // Ejecutar varias veces para pillar cuando carga
-  setTimeout(ocultarBarra, 500);
-  setTimeout(ocultarBarra, 1000);
-  setTimeout(ocultarBarra, 2000);
-  // Observer para detectar cuando aparece
-  var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
-})();
-</script>
-<style>
-@media(max-width:900px){
-  /* Logo más pequeño */
-  .site-logo img{height:32px!important;width:auto!important;}
-  /* Ocultar labels de los botones de acción en móvil */
-  .nav-actions__label{display:none!important;}
-  /* Botones de acción más pequeños */
-  .nav-actions__btn{padding:8px!important;min-width:36px!important;justify-content:center!important;}
-  /* Reducir gap entre botones */
-  .nav-actions{gap:4px!important;}
-  /* Ocultar texto Idiomas en móvil */
-  .nav-actions__drop:last-child .nav-actions__label{display:none!important;}
-}
-</style>
-<script>
-(function(){
-  // Guardar idioma cuando cambia
-  function guardarIdioma(lang){
-    try{ localStorage.setItem('av_lang', lang); }catch(e){}
-  }
-  // Aplicar idioma guardado al cargar
-  function aplicarIdioma(){
-    var lang = '';
-    try{ lang = localStorage.getItem('av_lang'); }catch(e){}
-    if(!lang || lang === 'es') return;
-    // Esperar a que Google Translate cargue
-    var intentos = 0;
-    var timer = setInterval(function(){
-      var combo = document.querySelector('select.goog-te-combo');
-      if(combo){
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change'));
-        clearInterval(timer);
-      }
-      if(++intentos > 20) clearInterval(timer);
-    }, 300);
-  }
-  // Interceptar clicks en idiomas
-  document.addEventListener('click', function(e){
-    var a = e.target.closest('a[data-lang]');
-    if(a) guardarIdioma(a.dataset.lang);
-  });
-  // Aplicar al cargar
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', aplicarIdioma);
-  } else {
-    setTimeout(aplicarIdioma, 500);
-  }
-})();
-</script>
-<style>
-@media(max-width:900px){
-  /* ── OCULTAR barra superior de acciones en móvil ── */
-  .nav-actions{display:none!important;}
-  
-  /* ── BARRA INFERIOR FIJA ── */
-  .app-bar{
-    display:flex;
-    position:fixed;bottom:0;left:0;right:0;
-    background:#080f1a;
-    border-top:1px solid rgba(28,255,107,.15);
-    z-index:1000;
-    height:60px;
-    padding-bottom:env(safe-area-inset-bottom);
-  }
-  .app-bar__btn{
-    flex:1;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:3px;
-    background:transparent;border:none;
-    color:#5a6070;
-    font-size:10px;font-family:Orbitron,sans-serif;
-    letter-spacing:.5px;cursor:pointer;
-    text-decoration:none;
-    transition:color .15s;
-    padding:8px 4px;
-    min-height:unset!important;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .app-bar__btn i{font-size:1.2rem;transition:color .15s;}
-  .app-bar__btn span{font-size:8px;line-height:1;}
-  .app-bar__btn.active,
-  .app-bar__btn:active{color:#1cff6b!important;}
-  .app-bar__btn.active i,
-  .app-bar__btn:active i{color:#1cff6b!important;}
-
-  /* Añadir padding al body para que el contenido no quede detrás de la barra */
-  body{padding-bottom:70px!important;}
-  
-  /* Ocultar btn-top flotante en móvil (lo reemplaza la barra) */
-  #btn-top{display:none!important;}
-
-  /* ── BARRA SUPERIOR SOLO LOGO + HAMBURGUESA ── */
-  .site-header{padding:0 16px!important;}
-  .nav-burger{
-    width:44px!important;height:44px!important;
-    background:transparent!important;border:none!important;
-    color:#e8eaf0!important;font-size:1.4rem!important;
-  }
-}
-@media(min-width:901px){
-  .app-bar{display:none!important;}
-}
-</style>
-<style id="nav-sin-recuadros">
-@media(max-width:900px){
-  /* Restaurar barra superior */
-  .nav-actions{display:flex!important;}
-  /* Quitar recuadros verdes de los botones */
-  .nav-actions__btn{
-    background:transparent!important;
-    border:none!important;
-    box-shadow:none!important;
-    outline:none!important;
-  }
-  .nav-actions__btn--cta{
-    background:transparent!important;
-    border:none!important;
-    box-shadow:none!important;
-    color:#e8eaf0!important;
-  }
-  .nav-actions__btn:hover,
-  .nav-actions__btn:focus,
-  .nav-actions__btn--cta:hover,
-  .nav-actions__btn--cta:focus{
-    background:transparent!important;
-    border:none!important;
-    color:#1cff6b!important;
-  }
-}
-/* También en escritorio quitar recuadros */
-.nav-actions__btn{
-  background:transparent!important;
-  border:none!important;
-}
-.nav-actions__btn--cta{
-  background:#1cff6b!important;
-  color:#02070f!important;
-}
-</style>
-<style id="nav-labels-fix">
-/* Quitar barra inferior */
-.app-bar{display:none!important;}
-body{padding-bottom:0!important;}
-
-/* Mostrar labels debajo de los iconos en TODOS los tamaños */
-.nav-actions__label{
-  display:block!important;
-  font-size:8px!important;
-  font-family:Orbitron,sans-serif!important;
-  letter-spacing:.5px!important;
-  text-transform:uppercase!important;
-  line-height:1!important;
-  margin-top:3px!important;
-}
-.nav-actions__btn{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:2px!important;
-  padding:6px 10px!important;
-  min-height:unset!important;
-}
-.nav-actions__btn i{
-  font-size:1.1rem!important;
-  line-height:1!important;
-}
-@media(max-width:900px){
-  .nav-actions__label{display:block!important;}
-  .nav-actions{gap:2px!important;}
-  .nav-actions__btn{padding:5px 7px!important;}
-}
-</style>
-<style id="logo-size-fix">
-.site-logo__img {
-  height: 44px !important;
-  width: auto !important;
-  max-width: 160px !important;
-  max-height: 44px !important;
-}
-</style>
-<style id="overflow-fix">
-html { overflow-x: hidden !important; }
-body { overflow-x: hidden !important; max-width: 100vw !important; }
-img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
-</style>
-<style id="nav-chevron-fix">
-/* Mostrar flecha en menú móvil */
-.nav-main__chevron {
-  display:inline-block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-  font-size:10px !important;
-  margin-left:5px !important;
-  transition:transform .25s !important;
-  color:inherit !important;
-}
-.nav-main__item--drop.open > a .nav-main__chevron,
-.nav-main__item--drop > a[aria-expanded="true"] .nav-main__chevron {
-  transform:rotate(180deg) !important;
-}
-@media(max-width:900px){
-  .nav-main__chevron { display:inline-block !important; }
-  .nav-main__item--drop > a {
-    display:flex !important;
-    align-items:center !important;
-    justify-content:space-between !important;
-  }
-}
-</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
 <header class="site-header" role="banner">
- <div class="site-header__inner">
+  <div class="site-header__inner">
 
- <!-- LOGO (izquierda) -->
- <a href="index.html" class="site-logo" aria-label="Aventuras en Cada Paso – Inicio">
- <img fetchpriority="high" src="logo-aventuras.png"
- alt="Aventuras en Cada Paso – Aventuras y senderismo en Canarias"
- class="site-logo__img"
- width="120" height="60" style="height:44px!important;width:auto!important;max-width:160px!important;max-height:44px!important;">
- </a>
+    <!-- ── LOGO (izquierda) ── -->
+    <a href="index.html" class="site-logo" aria-label="Aventuras en Cada Paso – Inicio">
+      <img fetchpriority="high" src="logo-aventuras.png"
+           alt="Aventuras en Cada Paso – Aventuras y senderismo en Canarias"
+           class="site-logo__img"
+           width="120" height="60" style="height:44px!important;width:auto!important;max-width:160px!important;max-height:44px!important;">
+    </a>
 
- <!-- NAV PRINCIPAL (centro) -->
- <nav class="nav-main" aria-label="Navegación principal">
- <ul class="nav-main__list" role="list">
+    <!-- ── NAV PRINCIPAL (centro) ── -->
+    <nav class="nav-main" aria-label="Navegación principal">
+      <ul class="nav-main__list" role="list">
 
- <li class="nav-main__item nav-main__item--drop">
- <a href="index.html" class="nav-main__link">
- Inicio <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
- </a>
- <ul class="nav-main__submenu" role="list">
+        <li class="nav-main__item nav-main__item--drop">
+          <a href="index.html" class="nav-main__link">
+            Inicio <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
+          </a>
+          <ul class="nav-main__submenu" role="list">
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
-            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i> Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
- </li>
+        </li>
 
- <li class="nav-main__item nav-main__item--drop">
- <a href="buscador-aventuras.html" class="nav-main__link">
- Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
- </a>
- <ul class="nav-main__submenu" role="list">
- <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
- <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
- <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
- <li><a href="grancanaria.html">Gran Canaria</a></li>
- <li><a href="lanzarote.html">Lanzarote</a></li>
- <li><a href="fuerteventura.html">Fuerteventura</a></li>
- <li><a href="lapalma.html">La Palma</a></li>
- <li><a href="lagomera.html">La Gomera</a></li>
- <li><a href="elhierro.html">El Hierro</a></li>
- <li><a href="lagraciosa.html">La Graciosa</a></li>
- <li><a href="lobos.html">Isla de Lobos</a></li>
- <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
- </ul>
- </li>
-
- 
-
- <li class="nav-main__item">
- <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
- </li>
-
- <li class="nav-main__item nav-main__item--drop">
- <a href="contacto.html" class="nav-main__link">
- Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
- </a>
- <ul class="nav-main__submenu" role="list">
- <li><a href="aventureros.html">Aventureros</a></li>
- <li><a href="empresas.html">Empresas</a></li>
- <li><a href="colaboradores.html">Colaboradores</a></li>
- </ul>
- </li>
-
- </ul>
- </nav><!-- /nav-main -->
-
- <!-- ACCIONES (derecha) -->
- <div class="nav-actions">
-
- <!-- Buscar — dropdown -->
- <div class="nav-actions__drop" id="drop-buscar">
-          <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-             id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
-             aria-controls="panel-buscar" aria-label="Buscar">
-            <i class="fas fa-compass" aria-hidden="true"></i>
-            <span class="nav-actions__label">Buscar</span>
+        <li class="nav-main__item nav-main__item--drop">
+          <a href="buscador-aventuras.html" class="nav-main__link">
+            Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
-          <ul class="nav-actions__panel" id="panel-buscar" role="list">
-            <li><a href="buscador-aventuras.html"><i class="fas fa-compass" style="color:#1cff6b;width:16px;"></i><span>Buscador de Rutas</span></a></li>
-            <li><a href="ruleta.html"><i class="fas fa-compass" style="color:#ff6f00;width:16px;"></i><span>Ruleta de Aventuras</span></a></li>
-            <li><a href="calendario.html"><i class="fas fa-calendar-alt" style="color:#ffc107;width:16px;"></i><span>Calendario de Eventos</span></a></li>
-            <li><a href="comparador.html"><i class="fas fa-balance-scale" style="color:#a855f7;width:16px;"></i><span>Comparador de Islas</span></a></li>
-            <li><a href="tiendas.html"><i class="fas fa-store" style="color:#1cff6b;width:16px;"></i><span>Tiendas Outdoor</span></a></li>
+          <ul class="nav-main__submenu" role="list">
+            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="grancanaria.html">Gran Canaria</a></li>
+            <li><a href="lanzarote.html">Lanzarote</a></li>
+            <li><a href="fuerteventura.html">Fuerteventura</a></li>
+            <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagraciosa.html">La Graciosa</a></li>
+            <li><a href="lobos.html">Isla de Lobos</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
           </ul>
-        </div>
+        </li>
 
-        <!-- Redes sociales -->
- <div class="nav-actions__drop" id="drop-redes">
- <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
- <i class="fab fa-instagram" aria-hidden="true"></i>
- <span class="nav-actions__label">Redes</span>
- </button>
- <ul class="nav-actions__panel" id="panel-redes" role="list">
- <li>
- <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre en nueva pestaña)">
- <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
- </a>
- </li>
- <li>
- <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="TikTok (abre en nueva pestaña)">
- <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
- </a>
- </li>
- <li>
- <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener noreferrer" aria-label="YouTube (abre en nueva pestaña)">
- <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
- </a>
- </li>
- </ul>
- </div>
+        <li class="nav-main__item">
+          <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
+        </li>
 
- <!-- Idioma -->
- <div class="nav-actions__drop" id="drop-lang">
- <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-lang" aria-label="Cambiar idioma">
- <i class="fas fa-globe" aria-hidden="true"></i>
- <span class="nav-actions__label">Idioma</span>
- </button>
- <ul class="nav-actions__panel" id="panel-lang" role="list">
- <li><a href="#" data-lang="es" hreflang="es"> Español</a></li>
- <li><a href="#" data-lang="en" hreflang="en"> English</a></li>
- <li><a href="#" data-lang="de" hreflang="de"> Deutsch</a></li>
- <li><a href="#" data-lang="fr" hreflang="fr"> Français</a></li>
- <li><a href="#" data-lang="it" hreflang="it"> Italiano</a></li>
- <li><a href="#" data-lang="pt" hreflang="pt"> Português</a></li>
- </ul>
- <div id="google_translate_element" hidden></div>
- </div>
+        <li class="nav-main__item nav-main__item--drop">
+          <a href="contacto.html" class="nav-main__link">
+            Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
+          </a>
+          <ul class="nav-main__submenu" role="list">
+            <li><a href="aventureros.html">Aventureros</a></li>
+            <li><a href="empresas.html">Empresas</a></li>
+            <li><a href="colaboradores.html">Colaboradores</a></li>
+          </ul>
+        </li>
 
- <!-- Carrito -->
- <a href="tiendas.html" class="nav-actions__btn" aria-label="Equipamiento y tiendas">
- <i class="fas fa-cart-shopping" aria-hidden="true"></i>
- <span class="nav-actions__label">Tienda</span>
- </a>
- <!-- Hamburguesa (solo móvil) -->
- <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-main-list">
- <span aria-hidden="true"></span>
- <span aria-hidden="true"></span>
- <span aria-hidden="true"></span>
- </button>
+      </ul>
+    </nav><!-- /nav-main -->
 
- </div><!-- /nav-actions -->
+    <!-- ── ACCIONES (derecha) ── -->
+    <div class="nav-actions">
 
- </div><!-- /site-header__inner -->
+      <!-- Buscar -->
+      <div class="nav-actions__drop" id="drop-buscar">
+        <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
+           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-controls="panel-buscar" aria-label="Buscar">
+          <i class="fas fa-compass" aria-hidden="true"></i>
+          <span class="nav-actions__label">Buscar</span>
+        </a>
+        <ul class="nav-actions__panel" id="panel-buscar" role="list">
+          <li><a href="buscador-aventuras.html"><i class="fas fa-compass" style="color:#1cff6b;width:16px;"></i><span>Buscador de Rutas</span></a></li>
+          <li><a href="ruleta.html"><i class="fas fa-compass" style="color:#ff6f00;width:16px;"></i><span>Ruleta de Aventuras</span></a></li>
+          <li><a href="calendario.html"><i class="fas fa-calendar-alt" style="color:#ffc107;width:16px;"></i><span>Calendario de Eventos</span></a></li>
+          <li><a href="comparador.html"><i class="fas fa-balance-scale" style="color:#a855f7;width:16px;"></i><span>Comparador de Islas</span></a></li>
+          <li><a href="tiendas.html"><i class="fas fa-store" style="color:#1cff6b;width:16px;"></i><span>Tiendas Outdoor</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="nav-actions__drop" id="drop-redes">
+        <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+          <span class="nav-actions__label">Redes</span>
+        </button>
+        <ul class="nav-actions__panel" id="panel-redes" role="list">
+          <li>
+            <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre en nueva pestaña)">
+              <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="TikTok (abre en nueva pestaña)">
+              <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
+            </a>
+          </li>
+          <li>
+            <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener noreferrer" aria-label="YouTube (abre en nueva pestaña)">
+              <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Idioma -->
+      <div class="nav-actions__drop" id="drop-lang">
+        <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-lang" aria-label="Cambiar idioma">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          <span class="nav-actions__label">Idioma</span>
+        </button>
+        <ul class="nav-actions__panel" id="panel-lang" role="list">
+          <li><a href="#" data-lang="es" hreflang="es">🇪🇸 Español</a></li>
+          <li><a href="#" data-lang="en" hreflang="en">🇬🇧 English</a></li>
+          <li><a href="#" data-lang="de" hreflang="de">🇩🇪 Deutsch</a></li>
+          <li><a href="#" data-lang="fr" hreflang="fr">🇫🇷 Français</a></li>
+          <li><a href="#" data-lang="it" hreflang="it">🇮🇹 Italiano</a></li>
+          <li><a href="#" data-lang="pt" hreflang="pt">🇵🇹 Português</a></li>
+        </ul>
+        
+      </div>
+
+      <!-- Carrito -->
+      <a href="tiendas.html" class="nav-actions__btn"><i class="fas fa-cart-shopping"></i><span class="nav-actions__label">Tienda</span></a>
+      <!-- Hamburguesa (solo móvil) -->
+      <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-main-list">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+    </div><!-- /nav-actions -->
+
+  </div><!-- /site-header__inner -->
 </header>
 <main id="cp">
 
@@ -1119,7 +853,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 </div>
 
 </main>
-<style>@keyframes spin{to{transform:rotate(360deg);}}</style>
 <footer class="site-footer">
  <div class="footer-grid">
  <div class="footer-col">
