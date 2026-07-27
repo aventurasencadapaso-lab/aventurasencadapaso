@@ -1952,5 +1952,33 @@ function googleTranslateElementInit() {
  }
 })();
 </script>
+
+<script>
+(function(){
+  document.querySelectorAll('.fin-faq__preg').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var faq = this.closest('.fin-faq');
+      var resp = faq.querySelector('.fin-faq__resp');
+      var ico = this.querySelector('.fin-faq__ico');
+      var abierto = resp.classList.contains('abierto');
+
+      // Cerrar todos
+      document.querySelectorAll('.fin-faq__resp').forEach(function(r){ r.classList.remove('abierto'); });
+      document.querySelectorAll('.fin-faq__ico').forEach(function(i){
+        i.classList.remove('fa-minus');
+        i.classList.add('fa-plus');
+      });
+      document.querySelectorAll('.fin-faq__preg').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+
+      // Abrir el pulsado si estaba cerrado
+      if(!abierto){
+        resp.classList.add('abierto');
+        if(ico){ ico.classList.remove('fa-plus'); ico.classList.add('fa-minus'); }
+        this.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

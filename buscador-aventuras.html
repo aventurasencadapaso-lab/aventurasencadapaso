@@ -6,7 +6,7 @@
   <meta name="description" content="Buscador de 236 rutas outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
   <title>Buscador de Rutas Outdoor en Canarias | Aventuras en Cada Paso</title>
   <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
-  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" href="logo-aventuras.png">
   <meta name="theme-color" content="#1cff6b">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,145 +64,11 @@
     @media(max-width:600px){.bus-filtros{flex-direction:column;}.bus-filtros input,.bus-filtros select{width:100%;}}
   </style>
   <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
-<style>
-@media(max-width:900px){
-  /* Logo más pequeño */
-  .site-logo img{height:32px!important;width:auto!important;}
-  /* Ocultar labels de los botones de acción en móvil */
-  .nav-actions__label{display:none!important;}
-  /* Botones de acción más pequeños */
-  .nav-actions__btn{padding:8px!important;min-width:36px!important;justify-content:center!important;}
-  /* Reducir gap entre botones */
-  .nav-actions{gap:4px!important;}
-  /* Ocultar texto Idiomas en móvil */
-  .nav-actions__drop:last-child .nav-actions__label{display:none!important;}
-}
-</style>
 
-<style>
-@media(max-width:900px){
-  /* ── OCULTAR barra superior de acciones en móvil ── */
-  .nav-actions{display:none!important;}
-  
-  /* ── BARRA INFERIOR FIJA ── */
-  .app-bar{
-    display:flex;
-    position:fixed;bottom:0;left:0;right:0;
-    background:#080f1a;
-    border-top:1px solid rgba(28,255,107,.15);
-    z-index:1000;
-    height:60px;
-    padding-bottom:env(safe-area-inset-bottom);
-  }
-  .app-bar__btn{
-    flex:1;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:3px;
-    background:transparent;border:none;
-    color:#5a6070;
-    font-size:10px;font-family:Orbitron,sans-serif;
-    letter-spacing:.5px;cursor:pointer;
-    text-decoration:none;
-    transition:color .15s;
-    padding:8px 4px;
-    min-height:unset!important;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .app-bar__btn i{font-size:1.2rem;transition:color .15s;}
-  .app-bar__btn span{font-size:8px;line-height:1;}
-  .app-bar__btn.active,
-  .app-bar__btn:active{color:#1cff6b!important;}
-  .app-bar__btn.active i,
-  .app-bar__btn:active i{color:#1cff6b!important;}
 
-  /* Añadir padding al body para que el contenido no quede detrás de la barra */
-  body{padding-bottom:70px!important;}
-  
-  /* Ocultar btn-top flotante en móvil (lo reemplaza la barra) */
-  #btn-top{display:none!important;}
 
-  /* ── BARRA SUPERIOR SOLO LOGO + HAMBURGUESA ── */
-  .site-header{padding:0 16px!important;}
-  .nav-burger{
-    width:44px!important;height:44px!important;
-    background:transparent!important;border:none!important;
-    color:#e8eaf0!important;font-size:1.4rem!important;
-  }
-}
-@media(min-width:901px){
-  .app-bar{display:none!important;}
-}
-</style>
-<style id="nav-sin-recuadros">
-@media(max-width:900px){
-  /* Restaurar barra superior */
-  .nav-actions{display:flex!important;}
-  /* Quitar recuadros verdes de los botones */
-  .nav-actions__btn{
-    background:transparent!important;
-    border:none!important;
-    box-shadow:none!important;
-    outline:none!important;
-  }
-  .nav-actions__btn--cta{
-    background:transparent!important;
-    border:none!important;
-    box-shadow:none!important;
-    color:#e8eaf0!important;
-  }
-  .nav-actions__btn:hover,
-  .nav-actions__btn:focus,
-  .nav-actions__btn--cta:hover,
-  .nav-actions__btn--cta:focus{
-    background:transparent!important;
-    border:none!important;
-    color:#1cff6b!important;
-  }
-}
-/* También en escritorio quitar recuadros */
-.nav-actions__btn{
-  background:transparent!important;
-  border:none!important;
-}
-.nav-actions__btn--cta{
-  background:#1cff6b!important;
-  color:#02070f!important;
-}
-</style>
-<style id="nav-labels-fix">
-/* Quitar barra inferior */
-.app-bar{display:none!important;}
-body{padding-bottom:0!important;}
 
-/* Mostrar labels debajo de los iconos en TODOS los tamaños */
-.nav-actions__label{
-  display:block!important;
-  font-size:8px!important;
-  font-family:Orbitron,sans-serif!important;
-  letter-spacing:.5px!important;
-  text-transform:uppercase!important;
-  line-height:1!important;
-  margin-top:3px!important;
-}
-.nav-actions__btn{
-  display:flex!important;
-  flex-direction:column!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:2px!important;
-  padding:6px 10px!important;
-  min-height:unset!important;
-}
-.nav-actions__btn i{
-  font-size:1.1rem!important;
-  line-height:1!important;
-}
-@media(max-width:900px){
-  .nav-actions__label{display:block!important;}
-  .nav-actions{gap:2px!important;}
-  .nav-actions__btn{padding:5px 7px!important;}
-}
-</style>
+
 <style id="logo-size-fix">
 .site-logo__img {
   height: 44px !important;
@@ -240,6 +106,15 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   }
 }
 </style>
+<style id="nav-labels-fix">
+.app-bar{display:none!important;}
+body{padding-bottom:0!important;}
+.nav-actions__label{display:block!important;font-size:8px!important;font-family:Orbitron,sans-serif!important;letter-spacing:.5px!important;text-transform:uppercase!important;line-height:1!important;margin-top:3px!important;}
+.nav-actions__btn{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;padding:6px 10px!important;min-height:unset!important;}
+.nav-actions__btn i{font-size:1.1rem!important;line-height:1!important;}
+.nav-actions__btn{background:transparent!important;border:none!important;}
+.nav-actions__btn--cta{background:#1cff6b!important;color:#02070f!important;}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -247,7 +122,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 <header class="site-header" role="banner">
  <div class="site-header__inner">
 
- <!-- LOGO -->
+ <!-- LOGO (izquierda) -->
  <a href="index.html" class="site-logo" aria-label="Aventuras en Cada Paso – Inicio">
  <img fetchpriority="high" src="logo-aventuras.png"
  alt="Aventuras en Cada Paso – Aventuras y senderismo en Canarias"
@@ -255,7 +130,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  width="120" height="60" style="height:44px!important;width:auto!important;max-width:160px!important;max-height:44px!important;">
  </a>
 
- <!-- NAV PRINCIPAL -->
+ <!-- NAV PRINCIPAL (centro) -->
  <nav class="nav-main" aria-label="Navegación principal">
  <ul class="nav-main__list" role="list">
 
@@ -278,16 +153,18 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
  </a>
  <ul class="nav-main__submenu" role="list">
- <li><a href="tenerife.html">Tenerife</a></li>
+ <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+ <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+ <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
  <li><a href="grancanaria.html">Gran Canaria</a></li>
  <li><a href="lanzarote.html">Lanzarote</a></li>
  <li><a href="fuerteventura.html">Fuerteventura</a></li>
  <li><a href="lapalma.html">La Palma</a></li>
+ <li><a href="lagomera.html">La Gomera</a></li>
+ <li><a href="elhierro.html">El Hierro</a></li>
  <li><a href="lagraciosa.html">La Graciosa</a></li>
  <li><a href="lobos.html">Isla de Lobos</a></li>
- <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador</a></li>
- <li><a href="elhierro.html">El Hierro</a></li>
- <li><a href="lagomera.html">La Gomera</a></li>
+ <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
  </ul>
  </li>
 
@@ -309,9 +186,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  </li>
 
  </ul>
- </nav>
+ </nav><!-- /nav-main -->
 
- <!-- ACCIONES -->
+ <!-- ACCIONES (derecha) -->
  <div class="nav-actions">
 
  <!-- Buscar — dropdown -->
@@ -331,18 +208,32 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           </ul>
         </div>
 
+        <!-- Redes sociales -->
  <div class="nav-actions__drop" id="drop-redes">
  <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-redes" aria-label="Redes sociales">
  <i class="fab fa-instagram" aria-hidden="true"></i>
  <span class="nav-actions__label">Redes</span>
  </button>
  <ul class="nav-actions__panel" id="panel-redes" role="list">
- <li><a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre en nueva pestaña)"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
- <li><a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="TikTok (abre en nueva pestaña)"><i class="fab fa-tiktok" aria-hidden="true"></i> TikTok</a></li>
- <li><a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener noreferrer" aria-label="YouTube (abre en nueva pestaña)"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+ <li>
+ <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre en nueva pestaña)">
+ <i class="fab fa-instagram" aria-hidden="true"></i> Instagram
+ </a>
+ </li>
+ <li>
+ <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener noreferrer" aria-label="TikTok (abre en nueva pestaña)">
+ <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
+ </a>
+ </li>
+ <li>
+ <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener noreferrer" aria-label="YouTube (abre en nueva pestaña)">
+ <i class="fab fa-youtube" aria-hidden="true"></i> YouTube
+ </a>
+ </li>
  </ul>
  </div>
 
+ <!-- Idioma -->
  <div class="nav-actions__drop" id="drop-lang">
  <button class="nav-actions__btn" aria-haspopup="true" aria-expanded="false" aria-controls="panel-lang" aria-label="Cambiar idioma">
  <i class="fas fa-globe" aria-hidden="true"></i>
@@ -359,19 +250,18 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  
  </div>
 
- <a href="tiendas.html" class="nav-actions__btn" aria-label="Equipamiento y tiendas">
- <i class="fas fa-cart-shopping" aria-hidden="true"></i>
- <span class="nav-actions__label">Tienda</span>
- </a>
+ <!-- Carrito -->
+ <a href="tiendas.html" class="nav-actions__btn"><i class="fas fa-cart-shopping"></i><span class="nav-actions__label">Tienda</span></a>
+ <!-- Hamburguesa (solo móvil) -->
  <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-main-list">
  <span aria-hidden="true"></span>
  <span aria-hidden="true"></span>
  <span aria-hidden="true"></span>
  </button>
 
- </div>
+ </div><!-- /nav-actions -->
 
- </div>
+ </div><!-- /site-header__inner -->
 </header>
 
 <main id="cp">
