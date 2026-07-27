@@ -63,7 +63,7 @@ var TIENDAS = [
   {
     id: "grlimits",
     nombre: "GRLimits",
-    isla: "Tenerife", tipo: "Suplementación",
+    isla: "Tenerife", tipo: "Comprar",
     deporte: ["Trail Running","Senderismo","Multideporte"],
     zona: "Norte",
     descripcion: "Nutrición deportiva para atletas de resistencia. Proteínas, geles energéticos, creatina y suplementos para trail running y aventuras largas. Envío a toda Canarias.",
@@ -771,6 +771,86 @@ var TIENDAS = [
     lat: null, lng: null
   }
 
+  // ── NUEVAS TIENDAS TENERIFE ──
+  {
+    id: "canary-runner",
+    nombre: "Canary Runner",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Senderismo","Running"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en Trail Running, Running y Trekking en el norte de Tenerife. Calzado técnico, ropa, accesorios y suplementación de las mejores marcas.",
+    direccion: "C. La Longuera 28, 38418 Los Realejos, Tenerife",
+    telefono: "+34 613 604 714",
+    web: "https://canaryrunner.com",
+    foto: "",
+    lat: 28.3841, lng: -16.5925
+  },
+  {
+    id: "bikila-los-realejos",
+    nombre: "Bikila Los Realejos",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en febrero 2026. Sección Trail 100%, pista de tartán para probar zapatillas de clavos.",
+    direccion: "Calle La Longuera 46, 38418 Los Realejos, Tenerife",
+    telefono: "+34 922 224 525",
+    web: "https://bikila.com/pages/bikila-los-realejos",
+    foto: "",
+    lat: 28.3838, lng: -16.5921
+  },
+  {
+    id: "bikila-la-laguna",
+    nombre: "Bikila La Laguna",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda de atletismo, running y trail en La Laguna, junto a la Pista de Las Peras. Abierta desde agosto 2024, continuando el legado de Guzmán Sport.",
+    direccion: "Calle El Juego 14, 38204 La Laguna, Tenerife",
+    telefono: "+34 922 251 186",
+    web: "https://bikila.com/pages/bikila-la-laguna",
+    foto: "",
+    lat: 28.4879, lng: -16.3187
+  },
+  {
+    id: "tenerife-climbing-house",
+    nombre: "Tenerife Climbing House",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Escalada","Barranquismo"],
+    zona: "Sur",
+    descripcion: "Albergue, escuela de escalada, tienda y alquiler de material de escalada en Arico. El punto neurálgico de la escalada en Tenerife, cerca de las mejores paredes.",
+    direccion: "C/ La Asomadita 8, 38580 Villa de Arico, Tenerife",
+    telefono: "",
+    web: "https://tenerifeclimbinghouse.com",
+    foto: "",
+    lat: 28.1641, lng: -16.4826
+  },
+  // ── NUEVAS TIENDAS GRAN CANARIA ──
+  {
+    id: "bikila-las-palmas",
+    nombre: "Bikila Las Palmas",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en agosto 2025. Sección Trail 100% exclusiva, pista de tartán y atención de atletas en activo.",
+    direccion: "Av. Pintor Felo Monzón 39, Las Palmas de Gran Canaria",
+    telefono: "+34 928 76 83 51",
+    web: "https://bikila.com/pages/bikila-las-palmas-gran-canaria",
+    foto: "",
+    lat: 28.1033, lng: -15.4372
+  },
+  {
+    id: "lima-sport-canarias",
+    nombre: "Lima Sport Canarias",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo, barranquismo y trabajos en altura. Referente en Gran Canaria para deportes de aventura.",
+    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
+    telefono: "+34 928 791 529",
+    web: "https://limasportcanarias.com",
+    foto: "",
+    lat: 28.0813, lng: -15.4694
+  },
 ]; // ← No borres este corchete trail running y trabajos verticales. Marcas como Petzl, Black Diamond, La Sportiva y The North Face.",
     direccion: "Camino la Rúa 12, 38201 La Laguna, Tenerife",
     telefono: "+34 922 259 000",
@@ -1528,6 +1608,86 @@ var TIENDAS = [
     lat: null, lng: null
   }
 
+  // ── NUEVAS TIENDAS TENERIFE ──
+  {
+    id: "canary-runner",
+    nombre: "Canary Runner",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Senderismo","Running"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en Trail Running, Running y Trekking en el norte de Tenerife. Calzado técnico, ropa, accesorios y suplementación de las mejores marcas.",
+    direccion: "C. La Longuera 28, 38418 Los Realejos, Tenerife",
+    telefono: "+34 613 604 714",
+    web: "https://canaryrunner.com",
+    foto: "",
+    lat: 28.3841, lng: -16.5925
+  },
+  {
+    id: "bikila-los-realejos",
+    nombre: "Bikila Los Realejos",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en febrero 2026. Sección Trail 100%, pista de tartán para probar zapatillas de clavos.",
+    direccion: "Calle La Longuera 46, 38418 Los Realejos, Tenerife",
+    telefono: "+34 922 224 525",
+    web: "https://bikila.com/pages/bikila-los-realejos",
+    foto: "",
+    lat: 28.3838, lng: -16.5921
+  },
+  {
+    id: "bikila-la-laguna",
+    nombre: "Bikila La Laguna",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda de atletismo, running y trail en La Laguna, junto a la Pista de Las Peras. Abierta desde agosto 2024, continuando el legado de Guzmán Sport.",
+    direccion: "Calle El Juego 14, 38204 La Laguna, Tenerife",
+    telefono: "+34 922 251 186",
+    web: "https://bikila.com/pages/bikila-la-laguna",
+    foto: "",
+    lat: 28.4879, lng: -16.3187
+  },
+  {
+    id: "tenerife-climbing-house",
+    nombre: "Tenerife Climbing House",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Escalada","Barranquismo"],
+    zona: "Sur",
+    descripcion: "Albergue, escuela de escalada, tienda y alquiler de material de escalada en Arico. El punto neurálgico de la escalada en Tenerife, cerca de las mejores paredes.",
+    direccion: "C/ La Asomadita 8, 38580 Villa de Arico, Tenerife",
+    telefono: "",
+    web: "https://tenerifeclimbinghouse.com",
+    foto: "",
+    lat: 28.1641, lng: -16.4826
+  },
+  // ── NUEVAS TIENDAS GRAN CANARIA ──
+  {
+    id: "bikila-las-palmas",
+    nombre: "Bikila Las Palmas",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en agosto 2025. Sección Trail 100% exclusiva, pista de tartán y atención de atletas en activo.",
+    direccion: "Av. Pintor Felo Monzón 39, Las Palmas de Gran Canaria",
+    telefono: "+34 928 76 83 51",
+    web: "https://bikila.com/pages/bikila-las-palmas-gran-canaria",
+    foto: "",
+    lat: 28.1033, lng: -15.4372
+  },
+  {
+    id: "lima-sport-canarias",
+    nombre: "Lima Sport Canarias",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo, barranquismo y trabajos en altura. Referente en Gran Canaria para deportes de aventura.",
+    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
+    telefono: "+34 928 791 529",
+    web: "https://limasportcanarias.com",
+    foto: "",
+    lat: 28.0813, lng: -15.4694
+  },
 ]; // ← No borres este corchete trail running y trabajos verticales. Marcas como Petzl, Black Diamond, La Sportiva y The North Face.",
     direccion: "Camino la Rúa 12, 38201 La Laguna, Tenerife",
     telefono: "+34 922 259 000",
@@ -2285,6 +2445,86 @@ var TIENDAS = [
     lat: null, lng: null
   }
 
+  // ── NUEVAS TIENDAS TENERIFE ──
+  {
+    id: "canary-runner",
+    nombre: "Canary Runner",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Senderismo","Running"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en Trail Running, Running y Trekking en el norte de Tenerife. Calzado técnico, ropa, accesorios y suplementación de las mejores marcas.",
+    direccion: "C. La Longuera 28, 38418 Los Realejos, Tenerife",
+    telefono: "+34 613 604 714",
+    web: "https://canaryrunner.com",
+    foto: "",
+    lat: 28.3841, lng: -16.5925
+  },
+  {
+    id: "bikila-los-realejos",
+    nombre: "Bikila Los Realejos",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en febrero 2026. Sección Trail 100%, pista de tartán para probar zapatillas de clavos.",
+    direccion: "Calle La Longuera 46, 38418 Los Realejos, Tenerife",
+    telefono: "+34 922 224 525",
+    web: "https://bikila.com/pages/bikila-los-realejos",
+    foto: "",
+    lat: 28.3838, lng: -16.5921
+  },
+  {
+    id: "bikila-la-laguna",
+    nombre: "Bikila La Laguna",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda de atletismo, running y trail en La Laguna, junto a la Pista de Las Peras. Abierta desde agosto 2024, continuando el legado de Guzmán Sport.",
+    direccion: "Calle El Juego 14, 38204 La Laguna, Tenerife",
+    telefono: "+34 922 251 186",
+    web: "https://bikila.com/pages/bikila-la-laguna",
+    foto: "",
+    lat: 28.4879, lng: -16.3187
+  },
+  {
+    id: "tenerife-climbing-house",
+    nombre: "Tenerife Climbing House",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Escalada","Barranquismo"],
+    zona: "Sur",
+    descripcion: "Albergue, escuela de escalada, tienda y alquiler de material de escalada en Arico. El punto neurálgico de la escalada en Tenerife, cerca de las mejores paredes.",
+    direccion: "C/ La Asomadita 8, 38580 Villa de Arico, Tenerife",
+    telefono: "",
+    web: "https://tenerifeclimbinghouse.com",
+    foto: "",
+    lat: 28.1641, lng: -16.4826
+  },
+  // ── NUEVAS TIENDAS GRAN CANARIA ──
+  {
+    id: "bikila-las-palmas",
+    nombre: "Bikila Las Palmas",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en agosto 2025. Sección Trail 100% exclusiva, pista de tartán y atención de atletas en activo.",
+    direccion: "Av. Pintor Felo Monzón 39, Las Palmas de Gran Canaria",
+    telefono: "+34 928 76 83 51",
+    web: "https://bikila.com/pages/bikila-las-palmas-gran-canaria",
+    foto: "",
+    lat: 28.1033, lng: -15.4372
+  },
+  {
+    id: "lima-sport-canarias",
+    nombre: "Lima Sport Canarias",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo, barranquismo y trabajos en altura. Referente en Gran Canaria para deportes de aventura.",
+    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
+    telefono: "+34 928 791 529",
+    web: "https://limasportcanarias.com",
+    foto: "",
+    lat: 28.0813, lng: -15.4694
+  },
 ]; // ← No borres este corchete trail running y trabajos verticales. Marcas como Petzl, Black Diamond, La Sportiva y The North Face.",
     direccion: "Camino la Rúa 12, 38201 La Laguna, Tenerife",
     telefono: "+34 922 259 000",
@@ -3042,4 +3282,84 @@ var TIENDAS = [
     lat: null, lng: null
   }
 
+  // ── NUEVAS TIENDAS TENERIFE ──
+  {
+    id: "canary-runner",
+    nombre: "Canary Runner",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Senderismo","Running"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en Trail Running, Running y Trekking en el norte de Tenerife. Calzado técnico, ropa, accesorios y suplementación de las mejores marcas.",
+    direccion: "C. La Longuera 28, 38418 Los Realejos, Tenerife",
+    telefono: "+34 613 604 714",
+    web: "https://canaryrunner.com",
+    foto: "",
+    lat: 28.3841, lng: -16.5925
+  },
+  {
+    id: "bikila-los-realejos",
+    nombre: "Bikila Los Realejos",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en febrero 2026. Sección Trail 100%, pista de tartán para probar zapatillas de clavos.",
+    direccion: "Calle La Longuera 46, 38418 Los Realejos, Tenerife",
+    telefono: "+34 922 224 525",
+    web: "https://bikila.com/pages/bikila-los-realejos",
+    foto: "",
+    lat: 28.3838, lng: -16.5921
+  },
+  {
+    id: "bikila-la-laguna",
+    nombre: "Bikila La Laguna",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda de atletismo, running y trail en La Laguna, junto a la Pista de Las Peras. Abierta desde agosto 2024, continuando el legado de Guzmán Sport.",
+    direccion: "Calle El Juego 14, 38204 La Laguna, Tenerife",
+    telefono: "+34 922 251 186",
+    web: "https://bikila.com/pages/bikila-la-laguna",
+    foto: "",
+    lat: 28.4879, lng: -16.3187
+  },
+  {
+    id: "tenerife-climbing-house",
+    nombre: "Tenerife Climbing House",
+    isla: "Tenerife", tipo: "Comprar",
+    deporte: ["Escalada","Barranquismo"],
+    zona: "Sur",
+    descripcion: "Albergue, escuela de escalada, tienda y alquiler de material de escalada en Arico. El punto neurálgico de la escalada en Tenerife, cerca de las mejores paredes.",
+    direccion: "C/ La Asomadita 8, 38580 Villa de Arico, Tenerife",
+    telefono: "",
+    web: "https://tenerifeclimbinghouse.com",
+    foto: "",
+    lat: 28.1641, lng: -16.4826
+  },
+  // ── NUEVAS TIENDAS GRAN CANARIA ──
+  {
+    id: "bikila-las-palmas",
+    nombre: "Bikila Las Palmas",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Trail Running","Running","Atletismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en atletismo, running y trail abierta en agosto 2025. Sección Trail 100% exclusiva, pista de tartán y atención de atletas en activo.",
+    direccion: "Av. Pintor Felo Monzón 39, Las Palmas de Gran Canaria",
+    telefono: "+34 928 76 83 51",
+    web: "https://bikila.com/pages/bikila-las-palmas-gran-canaria",
+    foto: "",
+    lat: 28.1033, lng: -15.4372
+  },
+  {
+    id: "lima-sport-canarias",
+    nombre: "Lima Sport Canarias",
+    isla: "Gran Canaria", tipo: "Comprar",
+    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
+    zona: "Norte",
+    descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo, barranquismo y trabajos en altura. Referente en Gran Canaria para deportes de aventura.",
+    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
+    telefono: "+34 928 791 529",
+    web: "https://limasportcanarias.com",
+    foto: "",
+    lat: 28.0813, lng: -15.4694
+  },
 ]; // ← No borres este corchete
