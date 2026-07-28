@@ -392,6 +392,60 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 @media(max-width:768px){.idx-hero__h1{font-size:clamp(1.6rem,8vw,2.5rem);}.idx-hero__btns{flex-direction:column;align-items:center;}.idx-btn{width:100%;max-width:280px;justify-content:center;}.idx-section{padding:48px 16px;}.idx-feat-grid{grid-template-columns:1fr 1fr;}.idx-islas-grid{grid-template-columns:repeat(3,1fr);}.idx-cta{padding:40px 20px;}}
 @media(max-width:480px){.idx-feat-grid{grid-template-columns:1fr;}.idx-islas-grid{grid-template-columns:repeat(2,1fr);}}
 </style>
+<style id="idx-foto-strip-fix">
+.idx-foto-strip {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin: 40px 0;
+}
+.idx-foto-strip img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.idx-foto-strip__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(2,7,15,.85) 0%, rgba(2,7,15,.4) 60%, transparent 100%);
+  z-index: 1;
+}
+.idx-foto-strip__texto {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 500px;
+  z-index: 2;
+}
+.idx-foto-strip__sup { font-family:Orbitron,sans-serif; font-size:9px; color:#1cff6b; letter-spacing:3px; text-transform:uppercase; display:block; margin-bottom:12px; }
+.idx-foto-strip__h2 { font-family:Orbitron,sans-serif; font-size:clamp(1.4rem,3.5vw,2.2rem); color:#e8eaf0; font-weight:900; margin:0 0 12px; line-height:1.2; }
+.idx-foto-strip__h2 em { color:#1cff6b; font-style:normal; }
+.idx-foto-strip__desc { color:rgba(255,255,255,.75); font-size:14px; line-height:1.7; margin:0 0 20px; }
+@media(max-width:900px){
+  .idx-foto-strip { height:300px; }
+  .idx-foto-strip__texto { left:16px; right:16px; max-width:100%; }
+}
+</style>
+<style id="idx-feat-foto-fix">
+.idx-feat__foto {
+  height: 160px !important;
+  overflow: hidden !important;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+}
+.idx-feat__foto img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -418,25 +472,30 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i>Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
-          <a href="buscador-aventuras.html" class="nav-main__link">
+          <a href="comparador.html" class="nav-main__link">
             Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
           <ul class="nav-main__submenu" role="list">
-            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+            <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+            <li><a href="ruleta.html" style="color:#ff6f00;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Ruleta de Aventuras</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
             <li><a href="grancanaria.html">Gran Canaria</a></li>
             <li><a href="lanzarote.html">Lanzarote</a></li>
             <li><a href="fuerteventura.html">Fuerteventura</a></li>
             <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
             <li><a href="lagraciosa.html">La Graciosa</a></li>
             <li><a href="lobos.html">Isla de Lobos</a></li>
-            <li><a href="elhierro.html">El Hierro</a></li>
-            <li><a href="lagomera.html">La Gomera</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
           </ul>
         </li>
 
@@ -464,7 +523,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
       <!-- Buscar -->
       <div class="nav-actions__drop" id="drop-buscar">
         <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-haspopup="true" aria-expanded="false"
            aria-controls="panel-buscar" aria-label="Buscar">
           <i class="fas fa-compass" aria-hidden="true"></i>
           <span class="nav-actions__label">Buscar</span>
@@ -597,17 +656,18 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 </a>
 
 
+<!-- TITULO ENTRE RULETA Y FOTO -->
+<div style="text-align:center;padding:48px 28px 32px;max-width:860px;margin:0 auto;">
+  <span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:16px;"><i class="fas fa-compass"></i> Canarias te espera</span>
+  <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.6rem,4vw,2.8rem);color:#e8eaf0;font-weight:900;margin:0 0 16px;line-height:1.2;">236 rutas.<br><em style="color:#1cff6b;font-style:normal;">9 islas. 0 euros.</em></h2>
+  <p style="color:#8a8fa0;font-size:15px;line-height:1.75;margin:0 0 24px;">Desde el Teide hasta el fondo del mar. Senderismo, kayak, buceo, trail y mucho más en el archipiélago más aventurero de Europa.</p>
+  <a href="buscador-aventuras.html" class="idx-btn idx-btn--p"><i class="fas fa-compass"></i> Explorar rutas</a>
+</div>
 <!-- FOTO DEBAJO DEL HERO -->
 <div class="idx-foto-strip">
  <img src="imagenes/portada-senderismo.jpg" alt="Aventuras en Canarias" loading="lazy"
  onerror="this.style.display='none'">
- <div class="idx-foto-strip__overlay"></div>
- <div class="idx-foto-strip__texto">
- <span class="idx-foto-strip__sup"><i class="fas fa-compass"></i> Canarias te espera</span>
- <h2 class="idx-foto-strip__h2">236 rutas.<br><em>9 islas. 0 euros.</em></h2>
- <p class="idx-foto-strip__desc">Desde el Teide hasta el fondo del mar. Senderismo, kayak, buceo, trail y mucho más en el archipiélago más aventurero de Europa.</p>
- <a href="buscador-aventuras.html" class="idx-btn idx-btn--p"><i class="fas fa-compass"></i> Explorar rutas</a>
- </div>
+ <div style="position:absolute;inset:0;background:linear-gradient(to bottom,#02070f 0%,transparent 25%,transparent 75%,#02070f 100%);z-index:1;pointer-events:none;"></div>
 </div>
 
 <!-- FUNCIONALIDADES -->

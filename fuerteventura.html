@@ -416,6 +416,181 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 .isla-info-box p { color:#8a8fa0; font-size:13px; line-height:1.6; margin:0; }
 @media(max-width:600px){ .isla-info-grid{grid-template-columns:1fr;} }
 </style>
+<style id="isla-page-css">
+/* ── HERO ── */
+.isla-hero { padding:110px 28px 56px; text-align:center; background:linear-gradient(180deg,rgba(28,255,107,.04) 0%,transparent 100%); }
+.isla-hero__inner { max-width:780px; margin:0 auto; }
+.isla-hero__label { font-family:Orbitron,sans-serif; font-size:10px; color:#1cff6b; letter-spacing:4px; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; background:rgba(28,255,107,.08); border:1px solid rgba(28,255,107,.2); border-radius:20px; padding:6px 16px; margin-bottom:18px; }
+.isla-hero__h1 { font-family:Orbitron,sans-serif; font-size:clamp(1.2rem,3.5vw,2rem); color:#e8eaf0; font-weight:900; letter-spacing:2px; margin:0 0 14px; }
+.isla-hero__desc { color:#8a8fa0; font-size:15px; line-height:1.75; margin:0 0 28px; }
+.isla-hero__stats { display:flex; gap:0; justify-content:center; background:#0c1624; border:1px solid rgba(28,255,107,.12); border-radius:14px; overflow:hidden; max-width:480px; margin:0 auto; }
+.isla-stat { flex:1; padding:14px 10px; text-align:center; border-right:1px solid rgba(28,255,107,.08); }
+.isla-stat:last-child { border-right:none; }
+.isla-stat__num { font-family:Orbitron,sans-serif; font-size:1.2rem; font-weight:900; color:#1cff6b; display:block; line-height:1; }
+.isla-stat__lbl { font-size:9px; color:#5a6070; display:block; margin-top:3px; font-family:Orbitron,sans-serif; letter-spacing:1px; }
+
+/* ── FOTO HERO ── */
+.isla-foto-hero {
+  position:relative; width:100vw; margin-left:calc(-50vw + 50%); padding:0; overflow:hidden; height:420px;
+}
+.isla-foto-hero::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:40%;
+  background:linear-gradient(to bottom,#02070f,transparent); pointer-events:none; z-index:1;
+}
+.isla-foto-hero::after {
+  content:""; position:absolute; bottom:0; left:0; right:0; height:50%;
+  background:linear-gradient(to bottom,transparent,#02070f); pointer-events:none; z-index:1;
+}
+.isla-foto-hero__img {
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  display:block; border-radius:0 !important; border:none !important;
+}
+@media(max-width:900px){ .isla-foto-hero { height:260px; } }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { max-width:1100px; margin:0 auto; padding:8px 28px; font-size:12px; color:#5a6070; display:flex; align-items:center; gap:6px; }
+.breadcrumb a { color:#5a6070; text-decoration:none; }
+.breadcrumb a:hover { color:#1cff6b; }
+.bc-sep { color:#3a4050; }
+
+/* ── CONTENIDO ── */
+.isla-contenido { max-width:1100px; margin:0 auto 60px; padding:0 28px; }
+.isla-intro { max-width:800px; margin:0 auto 50px; }
+.isla-intro p { color:#c8ccd8; font-size:15px; line-height:1.85; }
+.isla-zonas { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; margin-bottom:40px; }
+.isla-zona { background:#0c1624; border:1px solid rgba(28,255,107,.12); border-radius:16px; padding:20px; transition:border-color .2s,transform .2s; }
+.isla-zona:hover { border-color:#1cff6b; transform:translateY(-3px); }
+.isla-zona h3 { font-family:Orbitron,sans-serif; font-size:12px; color:#1cff6b; margin:0 0 8px; }
+.isla-zona p { color:#8a8fa0; font-size:13px; line-height:1.6; margin:0; }
+
+/* ── RUTAS GRID ── */
+.isla-rutas { max-width:1100px; margin:0 auto 60px; padding:0 28px; }
+.isla-rutas__titulo { font-family:Orbitron,sans-serif; font-size:11px; color:#1cff6b; letter-spacing:3px; text-transform:uppercase; margin:0 0 20px; display:flex; align-items:center; gap:10px; }
+.rut-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+.rut-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:18px; text-decoration:none; display:flex; flex-direction:column; gap:8px; transition:border-color .2s,transform .15s; }
+.rut-card:hover { border-color:rgba(28,255,107,.4); transform:translateY(-3px); }
+.rut-card__isla { font-family:Orbitron,sans-serif; font-size:8px; color:#5a6070; letter-spacing:2px; text-transform:uppercase; }
+.rut-card__nombre { font-family:Orbitron,sans-serif; font-size:11px; font-weight:700; color:#e8eaf0; margin:0; line-height:1.35; }
+.rut-card__meta { display:flex; gap:8px; flex-wrap:wrap; }
+.rut-badge { display:inline-flex; align-items:center; gap:4px; padding:3px 9px; border-radius:20px; font-family:Orbitron,sans-serif; font-size:8px; font-weight:700; letter-spacing:.5px; }
+.rut-card__btn { display:flex; align-items:center; justify-content:center; gap:6px; padding:9px; background:rgba(28,255,107,.08); border:1px solid rgba(28,255,107,.2); border-radius:8px; color:#1cff6b; font-family:Orbitron,sans-serif; font-size:8px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-top:auto; }
+
+/* ── EMPRESAS ── */
+.isla-emps-section { max-width:1100px; margin:0 auto 60px; padding:0 28px; }
+.isla-emp-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:20px; margin-bottom:14px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .isla-hero { padding:90px 16px 40px; }
+  .isla-foto-hero {
+  position:relative; width:100vw; margin-left:calc(-50vw + 50%); padding:0; overflow:hidden; height:420px;
+}
+.isla-foto-hero::before {
+  content:""; position:absolute; top:0; left:0; right:0; height:40%;
+  background:linear-gradient(to bottom,#02070f,transparent); pointer-events:none; z-index:1;
+}
+.isla-foto-hero::after {
+  content:""; position:absolute; bottom:0; left:0; right:0; height:50%;
+  background:linear-gradient(to bottom,transparent,#02070f); pointer-events:none; z-index:1;
+}
+.isla-foto-hero__img {
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  display:block; border-radius:0 !important; border:none !important;
+}
+@media(max-width:900px){ .isla-foto-hero { height:260px; } }
+  .rut-grid { grid-template-columns:1fr; }
+  .isla-zonas { grid-template-columns:1fr; }
+}
+</style>
+<style id="isla-emps-css">
+.isla-emps-titulo { font-family:Orbitron,sans-serif; font-size:11px; color:#1cff6b; letter-spacing:3px; text-transform:uppercase; margin:0 0 8px; display:flex; align-items:center; gap:10px; }
+.isla-emps-sub { color:#8a8fa0; font-size:14px; margin:0 0 24px; }
+.isla-emps-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+.isla-emp-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:16px; padding:20px; transition:border-color .2s,transform .15s; }
+.isla-emp-card:hover { border-color:rgba(28,255,107,.3); transform:translateY(-3px); }
+.isla-emp-card__head { display:flex; align-items:flex-start; gap:14px; margin-bottom:12px; }
+.isla-emp-card__ico { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.isla-emp-card__nombre { font-family:Orbitron,sans-serif; font-size:11px; font-weight:700; color:#e8eaf0; margin:0 0 4px; }
+.isla-emp-card__tipo { font-size:11px; color:#5a6070; }
+.isla-emp-card__desc { color:#8a8fa0; font-size:13px; line-height:1.6; margin:0 0 12px; }
+.isla-emp-card__tel { display:block; font-size:12px; color:#5a6070; margin-bottom:12px; }
+.isla-emp-card__tel i { margin-right:6px; color:#1cff6b; }
+.isla-emp-card__links { display:flex; gap:8px; flex-wrap:wrap; }
+.isla-emp-card__link { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:8px; font-family:Orbitron,sans-serif; font-size:8px; font-weight:700; letter-spacing:1px; text-decoration:none; text-transform:uppercase; transition:.2s; }
+.isla-emp-card__link--web { background:rgba(28,255,107,.1); color:#1cff6b; border:1px solid rgba(28,255,107,.2); }
+.isla-emp-card__link--maps { background:rgba(255,193,7,.08); color:#ffc107; border:1px solid rgba(255,193,7,.2); }
+.isla-emp-card__link--wa { background:rgba(37,211,102,.08); color:#25d366; border:1px solid rgba(37,211,102,.2); }
+@media(max-width:900px){ .isla-emps-grid { grid-template-columns:1fr; } }
+</style>
+<style id="isla-contenido-css">
+.isla-contenido { max-width:1100px; margin:0 auto 60px; padding:0 28px; }
+.isla-intro { max-width:800px; margin:0 auto 50px; }
+.isla-intro p { color:#c8ccd8; font-size:15px; line-height:1.85; }
+.isla-zonas { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; margin-bottom:40px; }
+.isla-zona { background:#0c1624; border:1px solid rgba(28,255,107,0.12); border-radius:16px; padding:20px; transition:border-color .2s,transform .2s; }
+.isla-zona:hover { border-color:#1cff6b; transform:translateY(-3px); }
+.isla-zona h3 { font-family:'Orbitron',sans-serif; font-size:12px; color:#1cff6b; letter-spacing:1px; margin:0 0 10px; line-height:1.4; }
+.isla-zona p { color:#8a8fa0; font-size:13px; line-height:1.65; margin:0; }
+.isla-info-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:40px; }
+.isla-info-box { background:rgba(28,255,107,0.04); border:1px solid rgba(28,255,107,0.12); border-radius:14px; padding:18px; }
+.isla-info-box h4 { font-family:'Orbitron',sans-serif; font-size:10px; color:#1cff6b; letter-spacing:2px; text-transform:uppercase; margin:0 0 8px; }
+.isla-info-box p { color:#8a8fa0; font-size:13px; line-height:1.6; margin:0; }
+@media(max-width:600px){ .isla-info-grid{grid-template-columns:1fr;} }
+.faq-seccion { max-width:860px; margin:0 auto 60px; padding:0 28px; }
+.faq-seccion h2 { font-family:'Orbitron',sans-serif; font-size:11px; color:#1cff6b; letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; display:flex; align-items:center; gap:10px; }
+.faq-lista { display:flex; flex-direction:column; gap:0; }
+.faq-item { border-bottom:1px solid rgba(28,255,107,0.08); }
+.faq-item summary { padding:18px 0; cursor:pointer; color:#e8eaf0; font-size:15px; font-weight:500; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:16px; transition:color .2s; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after { content:'+'; color:#1cff6b; font-size:20px; font-weight:300; flex-shrink:0; transition:transform .3s; }
+.faq-item[open] summary::after { transform:rotate(45deg); }
+.faq-item[open] summary { color:#1cff6b; }
+.faq-item p { color:#8a8fa0 !important; font-size:14px; line-height:1.75; margin:0; padding-bottom:18px; }
+.fade-in, .fade-in-left, .fade-in-right { opacity:1 !important; transform:none !important; transition:none !important; }
+section { opacity:1 !important; visibility:visible !important; }
+</style>
+<style id="links-fix">
+a { color:#1cff6b; text-decoration:none; }
+a:hover { color:#00e05a; }
+.isla-zona a, .isla-info-box a, .faq-item a { color:#1cff6b; }
+.related-card { color:#e8eaf0 !important; text-decoration:none !important; }
+.related-card strong { color:#e8eaf0; display:block; margin-bottom:4px; }
+.related-card span { color:#5a6070; font-size:12px; }
+</style>
+<style id="isla-stats-css">
+.isla-hero__stats {
+  display:flex; gap:0; justify-content:center;
+  background:#0c1624; border:1px solid rgba(28,255,107,.15);
+  border-radius:16px; overflow:hidden; max-width:520px; margin:0 auto 28px;
+}
+.isla-stat {
+  flex:1; padding:16px 10px; text-align:center;
+  border-right:1px solid rgba(28,255,107,.08);
+}
+.isla-stat:last-child { border-right:none; }
+.isla-stat__num {
+  font-family:Orbitron,sans-serif; font-size:1.2rem; font-weight:900;
+  color:#1cff6b; display:block; line-height:1;
+}
+.isla-stat__lbl {
+  font-size:9px; color:#5a6070; display:block; margin-top:5px;
+  font-family:Orbitron,sans-serif; letter-spacing:1px; text-transform:uppercase;
+}
+@media(max-width:600px){
+  .isla-hero__stats { max-width:100%; border-radius:12px; }
+  .isla-stat { padding:12px 6px; }
+  .isla-stat__num { font-size:1rem; }
+  .isla-stat__lbl { font-size:8px; }
+}
+</style>
+<style id="ih-btn-css">
+.ih-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:12px; font-family:Orbitron,sans-serif; font-size:10px; font-weight:700; letter-spacing:1px; text-decoration:none !important; transition:.2s; text-transform:uppercase; }
+.ih-btn--main { background:#1cff6b; color:#02070f !important; }
+.ih-btn--main:hover { opacity:.9; transform:translateY(-1px); }
+.ih-btn--out { background:transparent; color:#1cff6b !important; border:1px solid rgba(28,255,107,.4); }
+.ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
+.isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+</style>
 </head>
 
 <body>
@@ -451,25 +626,30 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i>Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
-          <a href="buscador-aventuras.html" class="nav-main__link">
+          <a href="comparador.html" class="nav-main__link">
             Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
           <ul class="nav-main__submenu" role="list">
-            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+            <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+            <li><a href="ruleta.html" style="color:#ff6f00;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Ruleta de Aventuras</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
             <li><a href="grancanaria.html">Gran Canaria</a></li>
             <li><a href="lanzarote.html">Lanzarote</a></li>
             <li><a href="fuerteventura.html">Fuerteventura</a></li>
             <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
             <li><a href="lagraciosa.html">La Graciosa</a></li>
             <li><a href="lobos.html">Isla de Lobos</a></li>
-            <li><a href="elhierro.html">El Hierro</a></li>
-            <li><a href="lagomera.html">La Gomera</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
           </ul>
         </li>
 
@@ -497,7 +677,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       <!-- Buscar -->
       <div class="nav-actions__drop" id="drop-buscar">
         <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-haspopup="true" aria-expanded="false"
            aria-controls="panel-buscar" aria-label="Buscar">
           <i class="fas fa-compass" aria-hidden="true"></i>
           <span class="nav-actions__label">Buscar</span>
@@ -575,8 +755,13 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  <span class="isla-hero__label"> Fuerteventura · La isla del viento</span>
  <h1 class="isla-hero__h1">Fuerteventura – Kitesurf, Surf y Dunas Infinitas</h1>
  <p class="isla-hero__desc">El mejor destino mundial de kitesurf. Playas de arena blanca, el GR 131 de 152 km y Cofete, la playa más virgen de España.</p>
- <div class="isla-hero__stats"><div><span class="ih-stat__num">30</span><span class="ih-stat__lbl">Rutas</span></div><div><span class="ih-stat__num">152km</span><span class="ih-stat__lbl">GR 131</span></div><div><span class="ih-stat__num">8</span><span class="ih-stat__lbl">Deportes</span></div><div><span class="ih-stat__num">Cofete</span><span class="ih-stat__lbl">Playa virgen</span></div></div>
- <div class="isla-hero__btns">
+ <div class="isla-hero__stats">
+  <div class="isla-stat"><span class="isla-stat__num">18</span><span class="isla-stat__lbl">Rutas</span></div>
+  <div class="isla-stat"><span class="isla-stat__num">807m</span><span class="isla-stat__lbl">Pico Zarza</span></div>
+  <div class="isla-stat"><span class="isla-stat__num">9</span><span class="isla-stat__lbl">Deportes</span></div>
+  <div class="isla-stat"><span class="isla-stat__num">150km</span><span class="isla-stat__lbl">Playas</span></div>
+</div>
+<div class="isla-hero__btns">
  <a href="buscador-aventuras.html?isla=Fuerteventura" class="ih-btn ih-btn--main"><i class="fas fa-compass"></i> Ver rutas</a>
  <a href="comparador.html" class="ih-btn ih-btn--out"><i class="fas fa-balance-scale"></i> Comparar islas</a>
  </div>
@@ -585,7 +770,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
 
 <!-- FOTO HERO FUERTEVENTURA -->
-<div class="isla-foto-hero">
+<div class="isla-foto-hero" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;padding:0;overflow:hidden;height:420px;">
  <img src="imagenes/fuerteventura-hero.jpg" loading="lazy"
  alt="Playas vírgenes y dunas de arena blanca de Fuerteventura"
  class="isla-foto-hero__img" width="1200" height="420">
@@ -931,6 +1116,43 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })();
 </script>
+<footer class="site-footer">
+ <div class="footer-grid">
+ <div class="footer-col">
+ <h3>Contacto</h3>
+ <p>aventurasencadapaso@gmail.com</p>
+ <p>+34 655 67 93 07</p>
+ </div>
+ <div class="footer-col">
+ <h3>Redes</h3>
+ <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">Instagram</a>
+ <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">TikTok</a>
+ <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">YouTube</a>
+ </div>
+ <div class="footer-col">
+ <h3>Navegación</h3>
+ <a href="index.html">Inicio</a>
+ <a href="recomendado.html">Recomendado</a>
+ <a href="quienes.html">Nuestro Fin</a>
+ </div>
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
+ </div>
+ <div class="footer-legal">
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ </div>
+ <p class="footer-copy">© 2026 Aventuras en Cada Paso. Vive Canarias al máximo.
+ &nbsp;·&nbsp;<a href="aviso-legal.html" style="color:#1cff6b">Aviso Legal</a>
+ &nbsp;·&nbsp;<a href="politica-privacidad.html" style="color:#1cff6b">Privacidad</a>
+ &nbsp;·&nbsp;<a href="politica-cookies.html" style="color:#1cff6b">Cookies</a>
+ </p>
+ </footer>
 </body>
 
 </html>

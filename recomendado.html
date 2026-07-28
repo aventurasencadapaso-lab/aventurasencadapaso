@@ -182,6 +182,39 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .rec-error h3{font-family:Orbitron,sans-serif;font-size:10px;color:#e8eaf0!important;margin:0 0 6px;letter-spacing:1px;}
  .rec-error p{color:#8a8fa0!important;font-size:12px;line-height:1.6;margin:0;}
  </style>
+<style id="pag-foto-fix">
+body { overflow-x: hidden !important; }
+.pag-foto-wrap {
+  position: relative;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  max-width: 100vw !important;
+  padding: 0 !important;
+  overflow: hidden;
+  height: 360px;
+  margin-top: 72px;
+  box-sizing: border-box;
+}
+.pag-foto-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center;
+  display: block;
+  border-radius: 0 !important;
+  max-width: none !important;
+}
+.pag-foto-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, #02070f);
+  pointer-events: none;
+}
+@media(max-width:900px){ .pag-foto-wrap { height: 200px; margin-top: 62px; } }
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -208,25 +241,30 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i>Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
-          <a href="buscador-aventuras.html" class="nav-main__link">
+          <a href="comparador.html" class="nav-main__link">
             Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
           <ul class="nav-main__submenu" role="list">
-            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+            <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+            <li><a href="ruleta.html" style="color:#ff6f00;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Ruleta de Aventuras</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
             <li><a href="grancanaria.html">Gran Canaria</a></li>
             <li><a href="lanzarote.html">Lanzarote</a></li>
             <li><a href="fuerteventura.html">Fuerteventura</a></li>
             <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
             <li><a href="lagraciosa.html">La Graciosa</a></li>
             <li><a href="lobos.html">Isla de Lobos</a></li>
-            <li><a href="elhierro.html">El Hierro</a></li>
-            <li><a href="lagomera.html">La Gomera</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
           </ul>
         </li>
 
@@ -254,7 +292,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       <!-- Buscar -->
       <div class="nav-actions__drop" id="drop-buscar">
         <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-haspopup="true" aria-expanded="false"
            aria-controls="panel-buscar" aria-label="Buscar">
           <i class="fas fa-compass" aria-hidden="true"></i>
           <span class="nav-actions__label">Buscar</span>
@@ -444,12 +482,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  </div>
 </div>
 
-  <div class="rec-leyenda">
-    <span class="rec-leyenda__item"><span style="color:#1cff6b;">★★★★★</span> Temporada perfecta</span>
-    <span class="rec-leyenda__item"><span style="color:#ffc107;">★★★</span> Buena época</span>
-    <span class="rec-leyenda__item"><span style="color:#ff6f00;">★★</span> Aceptable</span>
-    <span class="rec-leyenda__item"><span style="color:#5a6070;">★</span> Evitar</span>
-  </div>
+  
 </div>
 <footer class="site-footer">
  <div class="footer-grid">

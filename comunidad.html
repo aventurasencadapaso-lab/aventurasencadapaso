@@ -153,7 +153,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 </style>
 <style>
  html,body{background:#02070f!important;color:#c8ccd8!important;}
- .com-hero{padding:110px 28px 60px;text-align:center;max-width:760px;margin:0 auto;}
+ .com-hero{padding:32px 28px 48px;text-align:center;max-width:760px;margin:0 auto;}
  .com-hero__label{font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:14px;}
  .com-hero__h1{font-family:Orbitron,sans-serif;font-size:clamp(1rem,3vw,1.6rem);color:#e8eaf0;letter-spacing:2px;margin:0 0 12px;}
  .com-hero__desc{color:#8a8fa0;font-size:14px;line-height:1.75;margin:0;}
@@ -182,6 +182,39 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .com-nl-form input{flex:1;background:#0a0f1a;border:1px solid rgba(28,255,107,.25);border-radius:10px;padding:12px 16px;color:#e8eaf0;font-size:13px;outline:none;min-width:0;}
  .com-nl-form button{padding:12px 20px;background:#1cff6b;border:none;border-radius:10px;color:#02070f;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;cursor:pointer;white-space:nowrap;min-height:unset!important;}
  </style>
+<style id="pag-foto-fix">
+body { overflow-x: hidden !important; }
+.pag-foto-wrap {
+  position: relative;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  max-width: 100vw !important;
+  padding: 0 !important;
+  overflow: hidden;
+  height: 360px;
+  margin-top: 72px;
+  box-sizing: border-box;
+}
+.pag-foto-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center;
+  display: block;
+  border-radius: 0 !important;
+  max-width: none !important;
+}
+.pag-foto-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, #02070f);
+  pointer-events: none;
+}
+@media(max-width:900px){ .pag-foto-wrap { height: 200px; margin-top: 62px; } }
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -208,25 +241,30 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i>Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
-          <a href="buscador-aventuras.html" class="nav-main__link">
+          <a href="comparador.html" class="nav-main__link">
             Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
           <ul class="nav-main__submenu" role="list">
-            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+            <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+            <li><a href="ruleta.html" style="color:#ff6f00;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Ruleta de Aventuras</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
             <li><a href="grancanaria.html">Gran Canaria</a></li>
             <li><a href="lanzarote.html">Lanzarote</a></li>
             <li><a href="fuerteventura.html">Fuerteventura</a></li>
             <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
             <li><a href="lagraciosa.html">La Graciosa</a></li>
             <li><a href="lobos.html">Isla de Lobos</a></li>
-            <li><a href="elhierro.html">El Hierro</a></li>
-            <li><a href="lagomera.html">La Gomera</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
           </ul>
         </li>
 
@@ -254,7 +292,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       <!-- Buscar -->
       <div class="nav-actions__drop" id="drop-buscar">
         <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-haspopup="true" aria-expanded="false"
            aria-controls="panel-buscar" aria-label="Buscar">
           <i class="fas fa-compass" aria-hidden="true"></i>
           <span class="nav-actions__label">Buscar</span>
@@ -478,17 +516,18 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 </div>
 
 <!-- BANNER PUBLICIDAD -->
-<div class="pub-banner">
- <div class="pub-banner__inner">
- <div class="pub-banner__tag">PUBLICIDAD</div>
- <div class="pub-banner__txt">
- <span class="pub-banner__sup"><i class="fas fa-handshake"></i> ¿Tienes una empresa de aventura en Canarias?</span>
- <p class="pub-banner__desc">Colabora con nosotros y llega a toda la comunidad aventurera. Web, Instagram, TikTok y YouTube.</p>
- </div>
- <a href="empresas.html" class="pub-banner__btn">
- <i class="fas fa-rocket"></i> Colaborar
- </a>
- </div>
+<div style="max-width:1100px;margin:0 auto;padding:0 28px 60px;">
+  <div style="background:linear-gradient(135deg,#0c1624,#0d1f0d);border:1px solid rgba(28,255,107,.2);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;background:#1cff6b;color:#02070f;font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:0 0 8px 0;">PUBLICIDAD</div>
+    <div style="flex-shrink:0;font-size:2.5rem;"><i class="fas fa-handshake" style="color:#1cff6b;"></i></div>
+    <div style="flex:1;min-width:200px;margin-top:8px;">
+      <span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px;">¿Tienes una empresa de aventura en Canarias?</span>
+      <p style="color:#c8ccd8;font-size:14px;margin:0;line-height:1.6;">Colabora con nosotros y llega a toda la comunidad aventurera. Web, Instagram, TikTok y YouTube.</p>
+    </div>
+    <a href="empresas.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#1cff6b;color:#02070f!important;border-radius:12px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0;">
+      <i class="fas fa-rocket"></i> Colaborar
+    </a>
+  </div>
 </div>
 <footer class="site-footer">
  <div class="footer-grid">

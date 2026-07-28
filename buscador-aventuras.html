@@ -127,6 +127,51 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   color:#1cff6b !important;
 }
 </style>
+<style id="buscador-css">
+/* ── HERO ── */
+.bus-hero { padding:110px 28px 48px; text-align:center; }
+.bus-hero__label { font-family:Orbitron,sans-serif; font-size:10px; color:#1cff6b; letter-spacing:4px; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; background:rgba(28,255,107,.08); border:1px solid rgba(28,255,107,.2); border-radius:20px; padding:6px 16px; margin-bottom:18px; }
+.bus-hero__titulo { font-family:Orbitron,sans-serif; font-size:clamp(1.2rem,3.5vw,2rem); color:#e8eaf0; font-weight:900; margin:0 0 12px; }
+.bus-hero__desc { color:#8a8fa0; font-size:15px; line-height:1.75; margin:0 0 24px; }
+.bus-hero__stats { display:flex; gap:0; justify-content:center; background:#0c1624; border:1px solid rgba(28,255,107,.12); border-radius:14px; overflow:hidden; max-width:420px; margin:0 auto; }
+.bus-stat { flex:1; padding:14px 10px; text-align:center; border-right:1px solid rgba(28,255,107,.08); }
+.bus-stat:last-child { border-right:none; }
+.bus-stat__num { font-family:Orbitron,sans-serif; font-size:1.2rem; font-weight:900; color:#1cff6b; display:block; line-height:1; }
+.bus-stat__lbl { font-size:9px; color:#5a6070; display:block; margin-top:4px; font-family:Orbitron,sans-serif; letter-spacing:1px; }
+
+/* ── FILTROS ── */
+.bus-filtros { max-width:900px; margin:0 auto 32px; padding:0 28px; display:flex; gap:10px; flex-wrap:wrap; }
+.bus-filtros input, .bus-filtros select {
+  flex:1; min-width:160px; background:#0c1624; border:1px solid rgba(28,255,107,.2);
+  border-radius:10px; padding:10px 14px; color:#e8eaf0; font-family:Orbitron,sans-serif;
+  font-size:10px; outline:none; transition:border-color .2s;
+}
+.bus-filtros input:focus, .bus-filtros select:focus { border-color:#1cff6b; }
+.bus-filtros select option { background:#0c1624; color:#e8eaf0; }
+
+/* ── GRID DE RUTAS ── */
+.bus-grid { max-width:1100px; margin:0 auto; padding:0 28px 60px; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+
+/* ── CARD ── */
+.bus-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:18px; text-decoration:none !important; display:flex; flex-direction:column; gap:8px; transition:border-color .2s,transform .15s; cursor:pointer; }
+.bus-card:hover { border-color:rgba(28,255,107,.4); transform:translateY(-3px); }
+.bus-card__isla { font-family:Orbitron,sans-serif; font-size:8px; color:#5a6070; letter-spacing:2px; text-transform:uppercase; }
+.bus-card__nombre { font-family:Orbitron,sans-serif; font-size:11px; font-weight:700; color:#e8eaf0 !important; line-height:1.35; margin:0; }
+.bus-card__meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.bus-card__badge { display:inline-flex; align-items:center; gap:4px; padding:3px 9px; border-radius:20px; font-family:Orbitron,sans-serif; font-size:8px; font-weight:700; }
+.bus-card__btn { display:flex; align-items:center; justify-content:center; gap:6px; padding:9px; background:rgba(28,255,107,.08); border:1px solid rgba(28,255,107,.2); border-radius:8px; color:#1cff6b !important; font-family:Orbitron,sans-serif; font-size:8px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-top:auto; text-decoration:none !important; }
+.bus-card__btn:hover { background:rgba(28,255,107,.15); }
+
+/* ── VACÍO ── */
+.bus-vacio { text-align:center; padding:60px 28px; color:#5a6070; font-size:14px; grid-column:1/-1; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .bus-hero { padding:90px 16px 32px; }
+  .bus-filtros { padding:0 16px; flex-direction:column; }
+  .bus-grid { padding:0 16px 40px; grid-template-columns:1fr; }
+}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -154,25 +199,30 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i>Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
-          <a href="buscador-aventuras.html" class="nav-main__link">
+          <a href="comparador.html" class="nav-main__link">
             Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
           <ul class="nav-main__submenu" role="list">
-            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+            <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+            <li><a href="ruleta.html" style="color:#ff6f00;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Ruleta de Aventuras</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
             <li><a href="grancanaria.html">Gran Canaria</a></li>
             <li><a href="lanzarote.html">Lanzarote</a></li>
             <li><a href="fuerteventura.html">Fuerteventura</a></li>
             <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
             <li><a href="lagraciosa.html">La Graciosa</a></li>
             <li><a href="lobos.html">Isla de Lobos</a></li>
-            <li><a href="elhierro.html">El Hierro</a></li>
-            <li><a href="lagomera.html">La Gomera</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
           </ul>
         </li>
 
@@ -200,7 +250,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       <!-- Buscar -->
       <div class="nav-actions__drop" id="drop-buscar">
         <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-haspopup="true" aria-expanded="false"
            aria-controls="panel-buscar" aria-label="Buscar">
           <i class="fas fa-compass" aria-hidden="true"></i>
           <span class="nav-actions__label">Buscar</span>
@@ -706,5 +756,42 @@ function googleTranslateElementInit() {
  }
 })();
 </script>
+<footer class="site-footer">
+ <div class="footer-grid">
+ <div class="footer-col">
+ <h3>Contacto</h3>
+ <p>aventurasencadapaso@gmail.com</p>
+ <p>+34 655 67 93 07</p>
+ </div>
+ <div class="footer-col">
+ <h3>Redes</h3>
+ <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener">Instagram</a>
+ <a href="https://tiktok.com/@aventurasencadapaso" target="_blank" rel="noopener">TikTok</a>
+ <a href="https://youtube.com/@Aventuraencadapaso" target="_blank" rel="noopener">YouTube</a>
+ </div>
+ <div class="footer-col">
+ <h3>Navegación</h3>
+ <a href="index.html">Inicio</a>
+ <a href="recomendado.html">Recomendado</a>
+ <a href="quienes.html">Nuestro Fin</a>
+ </div>
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
+ </div>
+ <div class="footer-legal">
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ </div>
+ <p class="footer-copy">© 2026 Aventuras en Cada Paso. Vive Canarias al máximo.
+ &nbsp;·&nbsp;<a href="aviso-legal.html" style="color:#1cff6b">Aviso Legal</a>
+ &nbsp;·&nbsp;<a href="politica-privacidad.html" style="color:#1cff6b">Privacidad</a>
+ &nbsp;·&nbsp;<a href="politica-cookies.html" style="color:#1cff6b">Cookies</a>
+ </p>
+ </footer>
 </body>
 </html>

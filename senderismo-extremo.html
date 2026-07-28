@@ -194,7 +194,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 .fade-in,.fade-in-left,.fade-in-right{opacity:1!important;transform:none!important;}
 
 /* Hero */
-.send-hero{padding:110px 28px 48px;text-align:center;max-width:800px;margin:0 auto;position:relative;}
+.send-hero{padding:40px 28px 48px;text-align:center;max-width:800px;margin:0 auto;position:relative;}
 .send-hero::before{content:'';position:absolute;top:80px;left:50%;transform:translateX(-50%);width:500px;height:250px;background:radial-gradient(ellipse at center,rgba(229,57,53,.06),transparent 70%);pointer-events:none;}
 .send-hero__label{font-family:Orbitron,sans-serif;font-size:10px;color:#e53935;letter-spacing:4px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;background:rgba(229,57,53,.08);border:1px solid rgba(229,57,53,.2);border-radius:20px;padding:7px 18px;margin-bottom:24px;}
 .send-hero__h1{font-family:Orbitron,sans-serif;font-size:clamp(1.4rem,4vw,2.2rem);color:#e8eaf0;letter-spacing:2px;margin:0 0 16px;line-height:1.2;font-weight:900;}
@@ -287,25 +287,30 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
             <li><a href="index.html">Página principal</a></li>
             <li><a href="recomendado.html">Recomendado</a></li>
             <li><a href="senderismo-extremo.html">Senderismo Extremo</a></li>
+            <li><a href="blog/index.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-pen-nib" style="margin-right:6px;"></i>Blog</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
             <li><a href="momentos-epicos.html">Momentos Épicos</a></li>
           </ul>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
-          <a href="buscador-aventuras.html" class="nav-main__link">
+          <a href="comparador.html" class="nav-main__link">
             Islas <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
           </a>
           <ul class="nav-main__submenu" role="list">
-            <li><a href="tenerife.html">Tenerife</a></li>
+            <li><a href="buscador-aventuras.html" style="color:#1cff6b;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Buscador de Rutas</a></li>
+            <li><a href="calendario.html" style="color:#ffc107;font-weight:600;"><i class="fas fa-calendar-alt" style="margin-right:6px;"></i> Calendario de Eventos</a></li>
+            <li><a href="ruleta.html" style="color:#ff6f00;font-weight:600;"><i class="fas fa-compass" style="margin-right:6px;"></i> Ruleta de Aventuras</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="tenerife.html">Tenerife</a></li>
             <li><a href="grancanaria.html">Gran Canaria</a></li>
             <li><a href="lanzarote.html">Lanzarote</a></li>
             <li><a href="fuerteventura.html">Fuerteventura</a></li>
             <li><a href="lapalma.html">La Palma</a></li>
+            <li><a href="lagomera.html">La Gomera</a></li>
+            <li><a href="elhierro.html">El Hierro</a></li>
             <li><a href="lagraciosa.html">La Graciosa</a></li>
             <li><a href="lobos.html">Isla de Lobos</a></li>
-            <li><a href="elhierro.html">El Hierro</a></li>
-            <li><a href="lagomera.html">La Gomera</a></li>
+            <li style="border-top:1px solid rgba(28,255,107,0.15);margin-top:6px;padding-top:6px;"><a href="comparador.html" style="color:#1cff6b;"><i class="fas fa-balance-scale"></i> Comparador de islas</a></li>
           </ul>
         </li>
 
@@ -333,7 +338,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
       <!-- Buscar -->
       <div class="nav-actions__drop" id="drop-buscar">
         <a href="descubre.html" class="nav-actions__btn nav-actions__btn--cta"
-           id="btn-buscar-link" aria-haspopup="true" aria-expanded="false"
+           aria-haspopup="true" aria-expanded="false"
            aria-controls="panel-buscar" aria-label="Buscar">
           <i class="fas fa-compass" aria-hidden="true"></i>
           <span class="nav-actions__label">Buscar</span>
@@ -402,6 +407,13 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 
   </div><!-- /site-header__inner -->
 </header>
+<!-- FOTO HERO -->
+<div style="position:relative;width:100%;height:420px;overflow:hidden;margin-top:72px;">
+  <img src="imagenes/senderismo-extremo-hero.jpg" alt="Senderismo extremo en Canarias" loading="lazy"
+       onerror="this.style.display='none'"
+       style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.4) 0%,transparent 40%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
+</div>
 <main id="cp">
 
 <!-- HERO -->
@@ -414,11 +426,6 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  <div class="send-stat"><span class="send-stat__num">3</span><span class="send-stat__lbl">Extremas</span></div>
  <div class="send-stat"><span class="send-stat__num">9</span><span class="send-stat__lbl">Islas</span></div>
  </div>
-</div>
-
-<!-- FOTO -->
-<div class="send-foto-wrap">
- <img src="imagenes/senderismo-extremo-hero.jpg" alt="Senderismo extremo en Canarias" loading="lazy" onerror="this.parentElement.style.display='none'">
 </div>
 
 <!-- AVISO -->
@@ -673,17 +680,18 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 </main>
 
 <!-- BANNER PUBLICIDAD -->
-<div class="pub-banner">
- <div class="pub-banner__inner">
- <div class="pub-banner__tag">PUBLICIDAD</div>
- <div class="pub-banner__txt">
- <span class="pub-banner__sup"><i class="fas fa-hiking"></i> ¿Guía de senderismo o montaña en Canarias?</span>
- <p class="pub-banner__desc">Ofrece tus servicios a los aventureros más exigentes. Publícate en la sección de senderismo extremo.</p>
- </div>
- <a href="empresas.html" class="pub-banner__btn">
- <i class="fas fa-rocket"></i> Más información
- </a>
- </div>
+<div style="max-width:1100px;margin:0 auto;padding:0 28px 60px;">
+  <div style="background:linear-gradient(135deg,#0c1624,#1a0a00);border:1px solid rgba(229,57,53,.25);border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;background:#e53935;color:#fff;font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:0 0 8px 0;">PUBLICIDAD</div>
+    <div style="flex-shrink:0;font-size:2.5rem;"><i class="fas fa-hiking" style="color:#e53935;"></i></div>
+    <div style="flex:1;min-width:200px;margin-top:8px;">
+      <span style="font-family:Orbitron,sans-serif;font-size:9px;color:#e53935;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px;">¿Guía de senderismo o montaña en Canarias?</span>
+      <p style="color:#c8ccd8;font-size:14px;margin:0;line-height:1.6;">Ofrece tus servicios a los aventureros más exigentes. Publícate en la sección de senderismo extremo.</p>
+    </div>
+    <a href="empresas.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#e53935;color:#fff!important;border-radius:12px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:.2s;">
+      <i class="fas fa-rocket"></i> Más información
+    </a>
+  </div>
 </div>
 <footer class="site-footer">
  <div class="footer-grid">
