@@ -185,6 +185,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 .bus-card:hover { border-color:rgba(28,255,107,.4); transform:translateY(-3px); }
 @keyframes bus-card-in { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
 @media (prefers-reduced-motion: reduce) { .bus-card { animation:none; } }
+.bus-card__thumb { width:calc(100% + 36px); margin:-18px -18px 4px; height:88px; overflow:hidden; border-radius:14px 14px 0 0; background:#070e18; }
+.bus-card__thumb img { width:100%; height:100%; object-fit:contain; display:block; }
+.bus-card__thumb--empty { background-image:url("imagenes/fondo-aventuras.jpg"); background-size:cover; background-position:center; }
 .bus-card__isla { font-family:Orbitron,sans-serif; font-size:8px; color:#5a6070; letter-spacing:2px; text-transform:uppercase; }
 .bus-card__nombre { font-family:Orbitron,sans-serif; font-size:11px; font-weight:700; color:#e8eaf0 !important; line-height:1.35; margin:0; }
 .bus-card__meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
@@ -475,6 +478,16 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var DIFCOLOR = {Facil:'#1cff6b',Media:'#ffc107',Dificil:'#ff6f00',Extrema:'#e53935',
                    'Fácil':'#1cff6b','Difícil':'#ff6f00'};
 
+  // Rutas con track GPX real disponible (de momento, Tenerife)
+  var HAS_GPX = new Set(['teide-montana-blanca','roques-garcia-teide','pico-viejo-teide','ruta-040-teide',
+    'paisaje-lunar-vilaflor','volcan-fasnia','chinyero-san-jose','anaga-afur-taganana',
+    'anaga-roque-taborno','anaga-cruz-carmen-hidalgo','anaga-bosque-enigmas',
+    'anaga-taganana-tamadite','pijaral-tenerife','anaga-benijo-draguillo','masca-barranco',
+    'teno-risco-verde','teno-erjos-circular','teno-palmar-circular','barranco-infierno-adeje',
+    'roque-conde-arona','malpais-guimar','montana-roja-medano','rambla-castro',
+    'los-organos-orotava','anaga-sendero-sentidos','garachico-pr-tf-43',
+    'corona-forestal-las-raices','taborno-circular-anaga','montana-amarilla-sur']);
+
   function hayFiltros(){
     return !!(qEl.value.trim() || islaEl.value || tipoEl.value || difEl.value);
   }
@@ -510,7 +523,11 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
       var delay = Math.min(i * 0.03, 0.3);
+      var thumb = HAS_GPX.has(r.id)
+        ? '<div class="bus-card__thumb"><img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="Track de ' + r.nombre + '" loading="lazy" width="220" height="88"></div>'
+        : '<div class="bus-card__thumb bus-card__thumb--empty"></div>';
       return '<a href="rutas/' + r.id + '.html" class="bus-card" style="animation-delay:' + delay + 's;">' +
+        thumb +
         '<span class="bus-card__isla">' + r.isla + '</span>' +
         '<h3 class="bus-card__nombre">' + r.nombre + '</h3>' +
         '<div class="bus-card__meta">' +
