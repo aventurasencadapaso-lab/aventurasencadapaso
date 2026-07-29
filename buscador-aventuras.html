@@ -139,22 +139,52 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 .bus-stat__num { font-family:Orbitron,sans-serif; font-size:1.2rem; font-weight:900; color:#1cff6b; display:block; line-height:1; }
 .bus-stat__lbl { font-size:9px; color:#5a6070; display:block; margin-top:4px; font-family:Orbitron,sans-serif; letter-spacing:1px; }
 
-/* ── FILTROS ── */
-.bus-filtros { max-width:900px; margin:0 auto 32px; padding:0 28px; display:flex; gap:10px; flex-wrap:wrap; }
-.bus-filtros input, .bus-filtros select {
-  flex:1; min-width:160px; background:#0c1624; border:1px solid rgba(28,255,107,.2);
-  border-radius:10px; padding:10px 14px; color:#e8eaf0; font-family:Orbitron,sans-serif;
-  font-size:10px; outline:none; transition:border-color .2s;
+/* ── RECUADRO BUSCADOR ── */
+.bus-buscador-box {
+  max-width:900px; margin:0 auto 40px; padding:26px 28px;
+  background:#0c1624; border:1px solid rgba(28,255,107,.22); border-radius:18px;
+  box-shadow:0 0 0 1px rgba(28,255,107,.04), 0 20px 50px -20px rgba(28,255,107,.15);
 }
-.bus-filtros input:focus, .bus-filtros select:focus { border-color:#1cff6b; }
-.bus-filtros select option { background:#0c1624; color:#e8eaf0; }
+
+/* ── FILTROS ── */
+.bus-filtros { max-width:none; margin:0 0 16px; padding:0; display:flex; gap:10px; flex-wrap:wrap; }
+.bus-filtros__field { position:relative; flex:1; min-width:160px; display:flex; align-items:center; }
+.bus-filtros__field i { position:absolute; left:14px; color:#5a6070; font-size:12px; pointer-events:none; z-index:1; }
+.bus-filtros__field input, .bus-filtros__field select {
+  width:100%; background:#070e18; border:1px solid rgba(28,255,107,.2);
+  border-radius:10px; padding:10px 14px 10px 36px; color:#e8eaf0; font-family:Orbitron,sans-serif;
+  font-size:10px; outline:none; transition:border-color .2s; appearance:none; -webkit-appearance:none;
+}
+.bus-filtros__field select {
+  padding-right:28px; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235a6070'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center;
+}
+.bus-filtros__field input:focus, .bus-filtros__field select:focus { border-color:#1cff6b; }
+.bus-filtros__field select option { background:#0c1624; color:#e8eaf0; }
+
+/* ── BARRA DE RESULTADOS ── */
+.bus-filtros-bar { max-width:none; margin:0; padding-top:14px; border-top:1px solid rgba(28,255,107,.1); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.bus-filtros-bar__count { font-size:12px; color:#8a8fa0; }
+.bus-filtros-bar__count strong { color:#1cff6b; font-weight:700; }
+.bus-clear-btn {
+  display:inline-flex; align-items:center; gap:6px; background:transparent;
+  border:1px solid rgba(255,111,0,.3); color:#ff6f00; font-family:Orbitron,sans-serif;
+  font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:8px 14px;
+  border-radius:8px; cursor:pointer; transition:background .2s,border-color .2s,opacity .2s;
+}
+.bus-clear-btn:hover { background:rgba(255,111,0,.1); border-color:rgba(255,111,0,.5); }
+.bus-clear-btn:disabled { opacity:.35; cursor:default; }
+.bus-clear-btn:disabled:hover { background:transparent; border-color:rgba(255,111,0,.3); }
 
 /* ── GRID DE RUTAS ── */
 .bus-grid { max-width:1100px; margin:0 auto; padding:0 28px 60px; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
 
 /* ── CARD ── */
-.bus-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:18px; text-decoration:none !important; display:flex; flex-direction:column; gap:8px; transition:border-color .2s,transform .15s; cursor:pointer; }
+.bus-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:18px; text-decoration:none !important; display:flex; flex-direction:column; gap:8px; transition:border-color .2s,transform .15s; cursor:pointer; animation:bus-card-in .35s ease both; }
 .bus-card:hover { border-color:rgba(28,255,107,.4); transform:translateY(-3px); }
+@keyframes bus-card-in { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .bus-card { animation:none; } }
 .bus-card__isla { font-family:Orbitron,sans-serif; font-size:8px; color:#5a6070; letter-spacing:2px; text-transform:uppercase; }
 .bus-card__nombre { font-family:Orbitron,sans-serif; font-size:11px; font-weight:700; color:#e8eaf0 !important; line-height:1.35; margin:0; }
 .bus-card__meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
@@ -165,11 +195,41 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 /* ── VACÍO ── */
 .bus-vacio { text-align:center; padding:60px 28px; color:#5a6070; font-size:14px; grid-column:1/-1; }
 
+/* ── BANNER RULETA ── */
+.rul-banner { max-width:900px; margin:0 auto 28px; padding:0 28px; }
+.rul-banner__inner {
+  display:flex; align-items:center; gap:18px;
+  background:linear-gradient(135deg,#0c1624,#1a1220);
+  border:1px solid rgba(255,111,0,.25); border-radius:14px;
+  padding:18px 22px; text-decoration:none !important;
+  transition:border-color .2s, transform .15s;
+}
+.rul-banner__inner:hover { border-color:rgba(255,111,0,.5); transform:translateY(-2px); }
+.rul-banner__ico {
+  flex-shrink:0; width:52px; height:52px; display:flex; align-items:center; justify-content:center;
+  font-size:22px; color:#ff6f00; background:rgba(255,111,0,.1); border-radius:12px;
+}
+.rul-banner__txt { flex:1; min-width:0; }
+.rul-banner__sup { font-family:Orbitron,sans-serif; font-size:9px; color:#ff6f00; letter-spacing:2px; text-transform:uppercase; display:block; margin-bottom:4px; }
+.rul-banner__h { font-family:Orbitron,sans-serif; font-size:15px; font-weight:900; color:#e8eaf0; margin:0 0 4px; }
+.rul-banner__p { font-size:13px; color:#8a8fa0; margin:0; line-height:1.4; }
+.rul-banner__btn {
+  display:flex; align-items:center; gap:6px; flex-shrink:0; white-space:nowrap;
+  padding:10px 18px; background:#ff6f00; color:#02070f !important;
+  font-family:Orbitron,sans-serif; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  border-radius:8px;
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .bus-hero { padding:90px 16px 32px; }
-  .bus-filtros { padding:0 16px; flex-direction:column; }
+  .bus-buscador-box { padding:20px 16px; margin:0 16px 32px; }
+  .bus-filtros { flex-direction:column; }
   .bus-grid { padding:0 16px 40px; grid-template-columns:1fr; }
+  .rul-banner { padding:0 16px; }
+  .rul-banner__inner { flex-wrap:wrap; justify-content:center; text-align:center; padding:20px 16px; }
+  .rul-banner__txt { width:100%; }
+  .rul-banner__btn { width:100%; justify-content:center; }
 }
 </style>
 </head>
@@ -334,25 +394,46 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     </div>
   </div>
 
-  <!-- Filtros -->
-  <div class="bus-filtros">
-    <input type="text" id="bus-q" placeholder="Buscar ruta o isla...">
-    <select id="bus-isla">
-      <option value="">Todas las islas</option>
-      <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
-      <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
-      <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
-    </select>
-    <select id="bus-tipo">
-      <option value="">Todos los deportes</option>
-      <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
-      <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
-      <option>Espeleología</option>
-    </select>
-    <select id="bus-dif">
-      <option value="">Todas las dificultades</option>
-      <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
-    </select>
+  <!-- Recuadro del buscador -->
+  <div class="bus-buscador-box">
+    <!-- Filtros -->
+    <div class="bus-filtros">
+      <div class="bus-filtros__field">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="text" id="bus-q" placeholder="Buscar ruta o isla...">
+      </div>
+      <div class="bus-filtros__field">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <select id="bus-isla" aria-label="Filtrar por isla">
+          <option value="">Todas las islas</option>
+          <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
+          <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
+          <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
+        </select>
+      </div>
+      <div class="bus-filtros__field">
+        <i class="fas fa-person-hiking" aria-hidden="true"></i>
+        <select id="bus-tipo" aria-label="Filtrar por deporte">
+          <option value="">Todos los deportes</option>
+          <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
+          <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
+          <option>Espeleología</option>
+        </select>
+      </div>
+      <div class="bus-filtros__field">
+        <i class="fas fa-gauge-high" aria-hidden="true"></i>
+        <select id="bus-dif" aria-label="Filtrar por dificultad">
+          <option value="">Todas las dificultades</option>
+          <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contador de resultados + limpiar filtros -->
+    <div class="bus-filtros-bar">
+      <span class="bus-filtros-bar__count" id="bus-count" aria-live="polite"></span>
+      <button type="button" class="bus-clear-btn" id="bus-clear"><i class="fas fa-xmark" aria-hidden="true"></i> Limpiar filtros</button>
+    </div>
   </div>
 
   <!-- Banner ruleta -->
@@ -386,9 +467,22 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var islaEl = document.getElementById('bus-isla');
   var tipoEl = document.getElementById('bus-tipo');
   var difEl = document.getElementById('bus-dif');
+  var countEl = document.getElementById('bus-count');
+  var clearBtn = document.getElementById('bus-clear');
+
+  var TOTAL = RUTAS.length;
 
   var DIFCOLOR = {Facil:'#1cff6b',Media:'#ffc107',Dificil:'#ff6f00',Extrema:'#e53935',
                    'Fácil':'#1cff6b','Difícil':'#ff6f00'};
+
+  function hayFiltros(){
+    return !!(qEl.value.trim() || islaEl.value || tipoEl.value || difEl.value);
+  }
+
+  function actualizarBarra(n){
+    countEl.innerHTML = '<strong>' + n + '</strong> de ' + TOTAL + ' rutas';
+    clearBtn.disabled = !hayFiltros();
+  }
 
   function render(){
     var q = qEl.value.toLowerCase().trim();
@@ -404,16 +498,19 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       return true;
     });
 
+    actualizarBarra(filtradas.length);
+
     if(filtradas.length === 0){
       grid.innerHTML = '<div class="bus-vacio"><i class="fas fa-compass" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>No se encontraron rutas</div>';
       return;
     }
 
-    grid.innerHTML = filtradas.map(function(r){
+    grid.innerHTML = filtradas.map(function(r, i){
       var color = DIFCOLOR[r.dificultad] || '#ffc107';
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
-      return '<a href="rutas/' + r.id + '.html" class="bus-card">' +
+      var delay = Math.min(i * 0.03, 0.3);
+      return '<a href="rutas/' + r.id + '.html" class="bus-card" style="animation-delay:' + delay + 's;">' +
         '<span class="bus-card__isla">' + r.isla + '</span>' +
         '<h3 class="bus-card__nombre">' + r.nombre + '</h3>' +
         '<div class="bus-card__meta">' +
@@ -436,6 +533,15 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   islaEl.addEventListener('change', render);
   tipoEl.addEventListener('change', render);
   difEl.addEventListener('change', render);
+
+  clearBtn.addEventListener('click', function(){
+    qEl.value = '';
+    islaEl.value = '';
+    tipoEl.value = '';
+    difEl.value = '';
+    render();
+    qEl.focus();
+  });
 
   render();
 
