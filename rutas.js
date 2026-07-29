@@ -310,7 +310,7 @@ var RUTAS = [
     id: "roque-nublo-circular",
     nombre: "Roque Nublo – Tejeda (Circular)",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 10,
+    duracion: "2-4 horas", distancia: 8.5,
     descripcion: "La ruta más emblemática de Gran Canaria. Desde Tejeda al monolito volcánico de 1.813 m. Desde 2025 requiere reserva previa en la web oficial.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria",
     lat: 27.9694, lng: -15.5772
@@ -319,7 +319,7 @@ var RUTAS = [
     id: "roque-nublo-degollada",
     nombre: "Degollada Becerra – Roque Nublo",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 20.0,
     descripcion: "Acceso al Roque Nublo desde la Degollada Becerra pasando por el Roque de La Rana y El Fraile. Vistas a Artenara y Acusa.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
     lat: 27.9750, lng: -15.5853
@@ -328,7 +328,7 @@ var RUTAS = [
     id: "pico-nieves-roque-nublo",
     nombre: "Llanos de la Pez – Pico de las Nieves – Roque Nublo (S-51)",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 15.6,
     descripcion: "Circular por las cumbres de GC desde el área recreativa de Llanos de la Pez. Pico de las Nieves (1.949 m) y Roque Nublo en una sola ruta.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
     lat: 27.9650, lng: -15.5908
@@ -337,7 +337,7 @@ var RUTAS = [
     id: "pico-nieves-ascenso",
     nombre: "Ascensión al Pico de las Nieves",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 11,
+    duracion: "4-8 horas", distancia: 10.6,
     descripcion: "Subida al techo de Gran Canaria (1.949 m) desde el área recreativa de Tamadaba por pinar antiguo. Vistas al Roque Nublo, Bentayga y el Teide.",
     enlace: "https://www.s-cape.es/blog/gran-canaria-rutas-senderismo",
     lat: 27.9717, lng: -15.5669
@@ -346,7 +346,7 @@ var RUTAS = [
     id: "artenara-cuevas-caballero",
     nombre: "Artenara – Cuevas del Caballero",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 10,
+    duracion: "2-4 horas", distancia: 9.0,
     descripcion: "Circular desde Artenara, el pueblo más alto de Gran Canaria. Bosques, crestas y las cuevas guanches del Caballero con leyendas locales.",
     enlace: "https://www.s-cape.es/blog/gran-canaria-rutas-senderismo",
     lat: 28.0117, lng: -15.6425
@@ -355,7 +355,7 @@ var RUTAS = [
     id: "roque-bentayga-gc",
     nombre: "Roque Bentayga – Yacimiento Aborigen",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 4,
+    duracion: "2-4 horas", distancia: 8.7,
     descripcion: "Sendero hasta el lugar sagrado de los aborígenes canarios. Almogarenes, grabados rupestres y vistas al Roque Nublo y a la cuenca de Tejeda.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/tejeda",
     lat: 27.9872, lng: -15.6153
@@ -364,7 +364,7 @@ var RUTAS = [
     id: "caldera-marteles-gc",
     nombre: "Caldera de Los Marteles – Tenteniguada (SL-1)",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 11,
+    duracion: "2-4 horas", distancia: 11.2,
     descripcion: "Circular oficial SL-1 por la Caldera de Los Marteles con vistas al Pico de las Nieves. Almendros en flor en enero–febrero, paisaje único.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valsequillo-de-gran-canaria",
     lat: 27.9708, lng: -15.4853
@@ -375,7 +375,7 @@ var RUTAS = [
     id: "barranco-guayadeque",
     nombre: "Barranco de Guayadeque",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 10.9,
     descripcion: "Monumento Natural con cientos de cuevas aborígenes, ermita rupestre y restaurantes-cueva. Vegetación exuberante. Acceso con reserva desde 2025.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria",
     lat: 27.8997, lng: -15.4025
@@ -384,7 +384,7 @@ var RUTAS = [
     id: "barranco-guigui-gc",
     nombre: "Barranco de Güigüi – Playa Virgen",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "Día completo", distancia: 16,
+    duracion: "Día completo", distancia: 9.0,
     descripcion: "Una de las rutas más salvajes de Gran Canaria. Desciende al Barranco de Güigüi hasta una playa virgen inaccesible por carretera. Llevar mucha agua.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
     lat: 27.8792, lng: -15.7228
@@ -393,7 +393,7 @@ var RUTAS = [
     id: "barranco-cernicalos-gc",
     nombre: "Barranco de los Cernícalos",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 9.4,
     descripcion: "El barranco más húmedo de Gran Canaria. Cascadas, helechos gigantes y cernícalos sobrevolando el cauce. Muy verde y fresco todo el año.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valsequillo-de-gran-canaria",
     lat: 27.9500, lng: -15.4167
@@ -402,7 +402,7 @@ var RUTAS = [
     id: "caldera-bandama-gc",
     nombre: "Caldera de Bandama – Circular",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 7.1,
     descripcion: "Borde e interior de la Caldera de Bandama, cráter de 200 m de profundidad y 1 km de diámetro. Viñedos históricos en el fondo del cráter.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria",
     lat: 28.0181, lng: -15.4458
@@ -411,7 +411,7 @@ var RUTAS = [
     id: "presa-soria-gc",
     nombre: "Presa de Soria – Cascada",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 11.3,
     descripcion: "Ruta por zona semidesértica hasta la Presa de las Niñas. Cuando llueve se forma una cascada espectacular. Casi sin sombra, llevar protección solar.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
     lat: 27.8883, lng: -15.6136
@@ -420,7 +420,7 @@ var RUTAS = [
     id: "fataga-barranco-gc",
     nombre: "Barranco de Fataga – Parque Natural Ayagaures",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 10.6,
     descripcion: "Por el Parque Natural de Ayagaures en los alrededores del barranco de Fataga. Paisaje de palmeras canarias y acantilados ocres en el sur.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
     lat: 27.8381, lng: -15.5597
@@ -429,7 +429,7 @@ var RUTAS = [
     id: "pilancones-gc",
     nombre: "Parque Natural de Pilancones",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 13,
+    duracion: "4-8 horas", distancia: 15.0,
     descripcion: "Circular por el Parque Natural de Pilancones desde la Presa de la Angostura. Pino canario centenario y paisajes volcánicos del sur interior.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
     lat: 27.8683, lng: -15.6019
@@ -440,7 +440,7 @@ var RUTAS = [
     id: "tamadaba-circular-gc",
     nombre: "Circular Parque Natural de Tamadaba",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 18,
+    duracion: "4-8 horas", distancia: 10.1,
     descripcion: "Circular completa por el macizo de Tamadaba: pinos centenarios, Montaña Bibique, Presa de los Pérez y el Valle de Agaete. Impresionante.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
     lat: 28.0833, lng: -15.6667
@@ -449,7 +449,7 @@ var RUTAS = [
     id: "agaete-tamadaba-gc",
     nombre: "Agaete – Tamadaba (Lineal)",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 13,
+    duracion: "4-8 horas", distancia: 13.5,
     descripcion: "Ascenso desde Agaete al pinar de Tamadaba por el Camino de los Romeros. Perfecta para hacer solo ida y volver en guagua. Vistas al océano.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
     lat: 28.0994, lng: -15.7094
@@ -458,7 +458,7 @@ var RUTAS = [
     id: "valle-agaete-gc",
     nombre: "Valle de Agaete – El Sao",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 13,
+    duracion: "4-8 horas", distancia: 15.5,
     descripcion: "Por el Valle de Agaete hasta el barrio de El Sao y el Hornillo por caminos históricos. Frutales, riscos y el pinar de Tamadaba al fondo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/agaete",
     lat: 28.0994, lng: -15.7094
@@ -467,7 +467,7 @@ var RUTAS = [
     id: "azulejos-inagua-gc",
     nombre: "Los Azulejos – Reserva Natural de Inagua",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 18.2,
     descripcion: "Ruta por las rocas multicolores de Los Azulejos hasta la Reserva Natural Integral de Inagua. Paisaje único de colores volcánicos amarillos y verdes.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
     lat: 27.9178, lng: -15.7356
@@ -478,7 +478,7 @@ var RUTAS = [
     id: "camino-volcanes-gc",
     nombre: "GR 131 – Camino Entre Volcanes",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "Varios días", distancia: 47,
+    duracion: "Varios días", distancia: 22.3,
     descripcion: "Gran travesía norte–sur por el corazón volcánico de Gran Canaria. Barrancos, cumbres y bosques encadenados. Una de las mejores de Canarias.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/las-palmas-de-gran-canaria",
     lat: 28.1248, lng: -15.4300
@@ -487,7 +487,7 @@ var RUTAS = [
     id: "jacoba-canaria-gc",
     nombre: "Ruta Jacobea Canaria – Etapa 1",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 17,
+    duracion: "4-8 horas", distancia: 30.9,
     descripcion: "Primera etapa del Camino de Santiago por Gran Canaria. Cruza la isla por pueblos históricos y paisajes volcánicos únicos de norte a sur.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias",
     lat: 28.1248, lng: -15.4300
@@ -498,7 +498,7 @@ var RUTAS = [
     id: "dunas-maspalomas-gc",
     nombre: "Dunas de Maspalomas",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 12.1,
     descripcion: "Reserva Natural con dunas de hasta 10 m y laguna salobre. 8 km de senderos oficiales delimitados. Prohibido salirse del camino marcado.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
     lat: 27.7397, lng: -15.5761
@@ -507,7 +507,7 @@ var RUTAS = [
     id: "playa-cabron-gc",
     nombre: "Playa del Cabrón – Playa Cuervo Grande",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 6.4,
     descripcion: "Ruta costera por el litoral del este. Paisaje volcánico con tonos rojizos y turquesas. Ideal para combinar con baño en playas poco frecuentadas.",
     enlace: "https://welikecanarias.com/senderismo-en-gran-canaria-rutas/",
     lat: 27.9025, lng: -15.3608
@@ -516,7 +516,7 @@ var RUTAS = [
     id: "amadores-tauro-gc",
     nombre: "Playa de Amadores – Playa de Tauro",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 10.0,
     descripcion: "Paseo costero entre las playas más populares del suroeste. Acantilados de colores rojizos y vistas al Atlántico con parada en playa virgen.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
     lat: 27.8008, lng: -15.7283
@@ -525,7 +525,7 @@ var RUTAS = [
     id: "puerto-mogan-costa",
     nombre: "Puerto de Mogán – Paseo Costero",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 4,
+    duracion: "Menos de 2h", distancia: 5.2,
     descripcion: "Agradable paseo por el puerto histórico de Mogán, sus playas y acantilados. El pueblo más pintoresco del suroeste de Gran Canaria.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
     lat: 27.8253, lng: -15.7703
@@ -534,7 +534,7 @@ var RUTAS = [
     id: "barranco-guiniguada-gc",
     nombre: "Barranco del Guiniguada – Las Palmas",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 16.2,
     descripcion: "Sendero urbano–natural desde Las Palmas hasta casi el Jardín Canario. El barranco más accesible de la isla, rehabilitado y bien señalizado.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/las-palmas-de-gran-canaria",
     lat: 28.1008, lng: -15.4267
@@ -543,7 +543,7 @@ var RUTAS = [
     id: "firgas-circular-gc",
     nombre: "Circular de Firgas",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 12,
+    duracion: "4-8 horas", distancia: 6.9,
     descripcion: "Circular técnica por los alrededores de Firgas con tramos estrechos, expuestos y embarrados. Descargar mapa antes de salir. Paisaje muy variado.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
     lat: 28.0594, lng: -15.5044
@@ -552,7 +552,7 @@ var RUTAS = [
     id: "fortaleza-gc",
     nombre: "Patrimonio Arqueológico La Fortaleza",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 11.2,
     descripcion: "Ruta corta por el yacimiento arqueológico de La Fortaleza. Plantaciones de almendros y el lugar donde se conmemora la conquista de la isla.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
     lat: 27.9794, lng: -15.5622
@@ -561,7 +561,7 @@ var RUTAS = [
     id: "puerto-rico-trail-gc",
     nombre: "Puerto Rico – Palmeral Noruego",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 9.4,
     descripcion: "Ruta de trail muy expuesta con escaleras y piedra suelta desde Puerto Rico. Buenas vistas al mar y al interior de la isla. Apta para corredores.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
     lat: 27.7906, lng: -15.7072
@@ -570,7 +570,7 @@ var RUTAS = [
     id: "playa-ingles-costa-gc",
     nombre: "Playa del Inglés – San Agustín (Costa)",
     isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 5,
+    duracion: "Menos de 2h", distancia: 10.1,
     descripcion: "Paseo costero accesible entre Playa del Inglés y el Balcón de San Agustín. Vistas al Atlántico, bares con terraza y ambiente playero.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
     lat: 27.7594, lng: -15.5608
@@ -585,7 +585,7 @@ var RUTAS = [
     id: "caldera-blanca-lanzarote",
     nombre: "Caldera Blanca – Circular desde Tinajo",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 10,
+    duracion: "4-8 horas", distancia: 13.8,
     descripcion: "La ruta libre más impresionante de Lanzarote. Coladas de lava hasta el cráter más grande de la isla (1.200 m de diámetro). Sin guía obligatorio.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.0077, lng: -13.7588
@@ -594,7 +594,7 @@ var RUTAS = [
     id: "timanfaya-ruta-volcanes",
     nombre: "Ruta de los Volcanes – Timanfaya",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 10.2,
     descripcion: "Sendero oficial del Parque Nacional (lun/mié/vie). Acceso entre cráteres, coladas de lava y ceniza. Requiere reserva previa obligatoria.",
     enlace: "https://www.miteco.gob.es/es/red-parques-nacionales/nuestros-parques/timanfaya/",
     lat: 29.0180, lng: -13.7630
@@ -603,7 +603,7 @@ var RUTAS = [
     id: "timanfaya-golfo-litoral",
     nombre: "El Golfo – Ruta del Litoral",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 11.5,
     descripcion: "Sendero lineal desde El Golfo hasta la Playa del Paso por la costa de lava solidificada. Ruta guiada oficial del PN de Timanfaya (miércoles).",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.0433, lng: -13.8294
@@ -614,7 +614,7 @@ var RUTAS = [
     id: "monte-corona-lanzarote",
     nombre: "Volcán de La Corona – Desde Yé",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 5.0,
     descripcion: "Circular desde Yé hasta el cráter del Monte Corona (609 m), el volcán que originó el mayor tubo volcánico de Europa. Vistas a La Graciosa.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote",
     lat: 29.1714, lng: -13.4675
@@ -623,7 +623,7 @@ var RUTAS = [
     id: "penas-chache-lanzarote",
     nombre: "Peñas del Chache – Punto más alto",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 11,
+    duracion: "4-8 horas", distancia: 8.5,
     descripcion: "Ascenso al punto más alto de Lanzarote (670 m). Vistas espectaculares al acantilado de Famara y a La Graciosa. Sin sombra, llevar agua.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.1556, lng: -13.5422
@@ -632,7 +632,7 @@ var RUTAS = [
     id: "famara-risco-lanzarote",
     nombre: "Risco de Famara – Mirador del Río",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 12.6,
     descripcion: "Bajada por el Risco de Famara desde el Mirador del Río de César Manrique hasta la playa. Vistas a La Graciosa y pendiente pronunciada.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.2133, lng: -13.4781
@@ -641,7 +641,7 @@ var RUTAS = [
     id: "haria-bosquecillo-lanzarote",
     nombre: "Haría – El Bosquecillo – Mirador",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12,
+    duracion: "4-8 horas", distancia: 8.6,
     descripcion: "Valle de las Mil Palmeras hasta El Bosquecillo, uno de los pocos bosques naturales de Lanzarote. Contraste total: palmeras, pinos y volcán.",
     enlace: "https://www.los-jameos.com/es/blog/rutas-de-senderismo-en-lanzarote",
     lat: 29.1317, lng: -13.4919
@@ -650,7 +650,7 @@ var RUTAS = [
     id: "haria-mirador-lanzarote",
     nombre: "Haría – Subida al Mirador",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 10.8,
     descripcion: "Desde el pueblo blanco de Haría hasta un mirador con vistas al océano. Camino cómodo con paisaje de palmeras canarias y vegetación norteña.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
     lat: 29.1317, lng: -13.4919
@@ -659,7 +659,7 @@ var RUTAS = [
     id: "guatiza-famara-gr131",
     nombre: "GR 131 Lanzarote – Tramo Norte",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 11,
+    duracion: "4-8 horas", distancia: 74.4,
     descripcion: "Tramo del GR 131 entre Guatiza y Famara por campos de cactus, malpaíses y el paisaje lunar del norte. Ruta oficial bien señalizada.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/teguise",
     lat: 29.0917, lng: -13.4883
@@ -668,7 +668,7 @@ var RUTAS = [
     id: "santa-catalina-norte",
     nombre: "Ruta al Cráter de Santa Catalina",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 8.1,
     descripcion: "7 km hasta el cráter de Santa Catalina por paisaje volcánico único. Solo 9 personas por salida. Ruta guiada muy valorada en el norte.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
     lat: 29.1544, lng: -13.4856
@@ -679,7 +679,7 @@ var RUTAS = [
     id: "la-geria-vinedos",
     nombre: "La Geria – Viñedos Volcánicos",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 9.1,
     descripcion: "Ruta por la zona vinícola única en el mundo: uvas cultivadas en hoyos de ceniza volcánica negra. Combina senderismo y enoturismo en bodegas.",
     enlace: "https://www.elviajerofisgon.com/experiencias/guia-de-senderismo-en-lanzarote-rutas-senalizadas-y-consejos/",
     lat: 28.9819, lng: -13.6614
@@ -688,7 +688,7 @@ var RUTAS = [
     id: "montana-colorada-lanzarote",
     nombre: "Montaña Colorada – Volcán Rojo",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 4.7,
     descripcion: "Circular bien señalizado alrededor del volcán de color rojizo por óxidos de hierro. Con la Caldereta adyacente donde se cultivaron cereales.",
     enlace: "https://www.otroviajeenlamochila.com/senderismo-lanzarote/",
     lat: 28.9744, lng: -13.6667
@@ -697,7 +697,7 @@ var RUTAS = [
     id: "caldera-cuervos",
     nombre: "Caldera de los Cuervos – Montaña Negra",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 12.5,
     descripcion: "Vista única desde el interior del cráter de Los Cuervos. Bien conservado, rápido y con vistas panorámicas. Terreno polvoriento y seco.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
     lat: 28.9656, lng: -13.6922
@@ -706,7 +706,7 @@ var RUTAS = [
     id: "montana-blanca-grietas",
     nombre: "Montaña Blanca – Las Grietas",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 4,
+    duracion: "Menos de 2h", distancia: 8.6,
     descripcion: "Sendero muy popular hasta Las Grietas, cañones volcánicos estrechos con paredes onduladas. Terreno resbaladizo, llevar calzado con grip.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
     lat: 28.9211, lng: -13.6733
@@ -715,7 +715,7 @@ var RUTAS = [
     id: "montana-roja-sur",
     nombre: "Montaña Roja – Sur de Lanzarote",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 3.4,
     descripcion: "Circular de 3 km por el cráter de Montaña Roja en el sur. Vistas a Playa Blanca, Papagayo y Faro Pechiguera. Ruta en sentido antihorario.",
     enlace: "https://www.otroviajeenlamochila.com/senderismo-lanzarote/",
     lat: 28.8617, lng: -13.8394
@@ -726,7 +726,7 @@ var RUTAS = [
     id: "ajaches-cumbre-lanzarote",
     nombre: "Los Ajaches – Cima y Caldera Colorada",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 12.5,
     descripcion: "Ruta dura al punto más alto de Los Ajaches. Caldera Colorada, la bomba volcánica más grande del mundo y vistas a toda la costa sur.",
     enlace: "https://www.otroviajeenlamochila.com/senderismo-lanzarote/",
     lat: 28.8672, lng: -13.7617
@@ -735,7 +735,7 @@ var RUTAS = [
     id: "ajaches-barrancos-lanzarote",
     nombre: "Macizo de Los Ajaches – Barrancos",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 10,
+    duracion: "4-8 horas", distancia: 6.3,
     descripcion: "Por la zona más antigua de Lanzarote: barrancos, playas vírgenes y miradores sobre el macizo. Paisaje semiárido con flora endémica.",
     enlace: "https://www.elviajerofisgon.com/experiencias/guia-de-senderismo-en-lanzarote-rutas-senalizadas-y-consejos/",
     lat: 28.8672, lng: -13.7617
@@ -744,7 +744,7 @@ var RUTAS = [
     id: "playa-risco-lanzarote",
     nombre: "Risco de Famara – Playa del Risco",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 9.0,
     descripcion: "Bajada desde el acantilado hasta la solitaria Playa del Risco. Vistas a La Graciosa en el descenso. Pendiente considerable, buen calzado.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.1983, lng: -13.5111
@@ -753,7 +753,7 @@ var RUTAS = [
     id: "papagayo-playa-blanca",
     nombre: "Playa Blanca – Papagayo (Costera)",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 6.9,
     descripcion: "Paseo costero desde Playa Blanca hasta las calas de Papagayo por acantilados volcánicos. Termina en la cala más espectacular del sur.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
     lat: 28.8625, lng: -13.8144
@@ -762,7 +762,7 @@ var RUTAS = [
     id: "kayak-papagayo",
     nombre: "Kayak – Playas de Papagayo",
     isla: "Lanzarote", tipo: "Kayak", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 5.1,
     descripcion: "Ruta en kayak por las cristalinas calas de Papagayo con paradas para snorkel en fondos volcánicos. Una de las mejores experiencias acuáticas.",
     enlace: "https://kayakandwalkinlanzarote.com",
     lat: 28.8514, lng: -13.8278
@@ -773,7 +773,7 @@ var RUTAS = [
     id: "costa-teguise-playas",
     nombre: "Costa Teguise – Ruta de Playas",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 10.4,
     descripcion: "Circular costera desde Costa Teguise por Playa de las Cucharas, Los Charcos y Jabilillo. Zona turística con ambiente playero y accesos fáciles.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
     lat: 28.9983, lng: -13.5089
@@ -782,7 +782,7 @@ var RUTAS = [
     id: "arrecife-charco-paseo",
     nombre: "Arrecife – Paseo Marítimo y Charco",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 5,
+    duracion: "Menos de 2h", distancia: 7.1,
     descripcion: "Agradable paseo por la capital: Parque Temático, Playa del Reducto, Castillo de San Gabriel y el encantador Charco de San Ginés.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
     lat: 28.9635, lng: -13.5478
@@ -791,7 +791,7 @@ var RUTAS = [
     id: "puerto-calero-carmen",
     nombre: "Puerto Calero – Puerto del Carmen",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 13.1,
     descripcion: "Sendero costero desde Puerto Calero hasta Puerto del Carmen por el Mirador del Puerto, Barranco Quiquere y Playa Pila de la Barrilla.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote",
     lat: 28.9231, lng: -13.6694
@@ -802,7 +802,7 @@ var RUTAS = [
     id: "valles-norte-haria",
     nombre: "Valles del Norte – Haría",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 10,
+    duracion: "4-8 horas", distancia: 12.0,
     descripcion: "Caminata guiada por los valles del norte de Lanzarote. Paisajes increíbles, fauna endémica y el mercado de Haría al finalizar. Traslados incluidos.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
     lat: 29.1317, lng: -13.4919
@@ -811,7 +811,7 @@ var RUTAS = [
     id: "cara-sur-lanzarote",
     nombre: "Cara Sur – Volcanes y Costa",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 12,
+    duracion: "4-8 horas", distancia: 7.6,
     descripcion: "Ruta guiada por la cara sur de Lanzarote: volcanes, fauna y vistas espectaculares. Nivel de dificultad 4. 5 horas de recorrido intenso.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
     lat: 28.9000, lng: -13.7200
@@ -820,7 +820,7 @@ var RUTAS = [
     id: "santa-barbara-teguise",
     nombre: "Castillo de Santa Bárbara – Teguise",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 4.9,
     descripcion: "Subida al Castillo de Santa Bárbara en lo alto de la Montaña de Guanapay. Vistas panorámicas a Teguise, la antigua capital, y la costa este.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/teguise",
     lat: 29.0583, lng: -13.5619
@@ -829,7 +829,7 @@ var RUTAS = [
     id: "la-santa-tenesar",
     nombre: "La Santa – Tenesar",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 20.1,
     descripcion: "Recorrido de 7 km por paisaje volcánico con acantilados pronunciados desde La Santa hasta Tenesar. Tranquilidad total y vistas al Atlántico.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
     lat: 29.0694, lng: -13.6533
@@ -838,7 +838,7 @@ var RUTAS = [
     id: "gr131-lanzarote-completo",
     nombre: "GR 131 Lanzarote – Travesía",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "Varios días", distancia: 80,
+    duracion: "Varios días", distancia: 75.4,
     descripcion: "Travesía completa de norte a sur por Lanzarote. Volcanes, malpaíses, viñedos y costas. La gran ruta de largo recorrido de la isla.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/lanzarote",
     lat: 29.0917, lng: -13.4883

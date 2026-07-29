@@ -427,7 +427,7 @@ body { overflow-x: hidden !important; }
  <p class="cal-hero__desc">Trail running, triatlón, duatlón, swimrun, ciclismo, natación en aguas abiertas, kitesurf y mucho más.<br>Todos los eventos deportivos outdoor verificados con fuentes oficiales de FECANTRI, Gesport Canarias y federaciones.</p>
  <div class="cal-stats">
  <div><span class="cal-stat__num">107</span><span class="cal-stat__lbl">Eventos</span></div>
- <div><span class="cal-stat__num">51</span><span class="cal-stat__lbl">Próximos</span></div>
+ <div><span class="cal-stat__num" id="cal-stat-proximos">51</span><span class="cal-stat__lbl">Próximos</span></div>
  <div><span class="cal-stat__num">13</span><span class="cal-stat__lbl">Deportes</span></div>
  <div><span class="cal-stat__num">7</span><span class="cal-stat__lbl">Islas</span></div>
  </div>
@@ -1585,6 +1585,34 @@ body { overflow-x: hidden !important; }
 
 <script>
 var F={tipo:'',isla:''},showP=false,q='';
+
+// Actualiza automáticamente qué eventos están "Finalizado" o "Próximo"
+// comparando la fecha real de cada tarjeta con la fecha de hoy.
+// Así no hay que editar el HTML a mano cuando un evento pasa.
+function actualizarEstadoEventos(){
+ var MESES={Ene:0,Feb:1,Mar:2,Abr:3,May:4,Jun:5,Jul:6,Ago:7,Sep:8,Oct:9,Nov:10,Dic:11};
+ var hoy=new Date();hoy.setHours(0,0,0,0);
+ var proximos=0;
+ document.querySelectorAll('.ev-card').forEach(function(c){
+  var dia=c.querySelector('.ev-dia'),mes=c.querySelector('.ev-mes'),ano=c.querySelector('.ev-ano');
+  if(!dia||!mes||!ano)return;
+  var mIdx=MESES[mes.textContent.trim()];
+  if(mIdx===undefined)return;
+  var fecha=new Date(parseInt(ano.textContent,10),mIdx,parseInt(dia.textContent,10));
+  var esPasado=fecha<hoy;
+  c.classList.toggle('ev-pasado',esPasado);
+  var badge=c.querySelector('.ev-badge');
+  if(badge){
+   badge.classList.toggle('ev-badge--pasado',esPasado);
+   badge.classList.toggle('ev-badge--proximo',!esPasado);
+   badge.textContent=esPasado?'Finalizado':'Próximo';
+  }
+  if(!esPasado)proximos++;
+ });
+ var stat=document.getElementById('cal-stat-proximos');
+ if(stat)stat.textContent=proximos;
+}
+
 function fil(){
  var cards=document.querySelectorAll('.ev-card'),vis=0;
  cards.forEach(function(c){
@@ -1600,6 +1628,7 @@ document.getElementById('f-isla').querySelectorAll('.f-btn').forEach(function(b)
 document.getElementById('q-cal').addEventListener('input',function(){q=this.value.trim().toLowerCase();fil();});
 document.getElementById('q-clr').addEventListener('click',function(){document.getElementById('q-cal').value='';q='';fil();});
 document.getElementById('tog-pasado').addEventListener('click',function(){showP=!showP;this.textContent=showP?'Ocultar eventos finalizados':'Mostrar eventos finalizados';this.classList.toggle('on',!showP);fil();});
+actualizarEstadoEventos();
 fil();
 if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=='undefined'&&google.translate){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en,de,fr,it,pt',autoDisplay:false},'google_translate_element');}};var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.head.appendChild(s);}
 </script>
