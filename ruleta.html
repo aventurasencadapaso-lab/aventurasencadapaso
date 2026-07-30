@@ -614,22 +614,20 @@ body { overflow-x: hidden !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<div class="pag-foto-wrap">
- <img src="imagenes/ruleta-hero.jpg" alt="Aventura aleatoria en Canarias" loading="lazy"
+<!-- FOTO HERO CON TITULO SUPERPUESTO -->
+<div class="pag-foto-wrap__overlay-done" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:440px;overflow:hidden;margin-top:72px;">
+ <img src="imagenes/ruleta-hero.jpg" alt="Aventura aleatoria en Canarias" loading="eager"
+ style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
  onerror="this.parentElement.style.display='none'">
+ <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
+ <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-dice"></i> Ruleta de Aventuras</span>
+  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">¿No sabes qué ruta hacer?</h1>
+  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Elige isla, deporte y duración — o déjalo todo en aleatorio —<br> y la ruleta te lanza una aventura sorpresa en Canarias.</p>
+  
+ </div>
 </div>
 
-<main id="cp">
-
- <!-- HERO -->
- <div class="rul-hero">
- <span class="rul-hero__label"><i class="fas fa-dice"></i> Ruleta de Aventuras</span>
- <h1 class="rul-hero__h1">¿No sabes qué ruta hacer?</h1>
- <p class="rul-hero__desc">
- Elige isla, deporte y duración — o déjalo todo en aleatorio —<br>
- y la ruleta te lanza una aventura sorpresa en Canarias.
- </p>
- </div>
 
  <!-- FILTROS -->
  <div class="rul-panel">

@@ -652,95 +652,20 @@ body { overflow-x: hidden !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<div class="pag-foto-wrap">
- <img src="imagenes/portada-aventura.jpg" alt="Momentos épicos en Canarias" loading="lazy"
+<!-- FOTO HERO CON TITULO SUPERPUESTO -->
+<div class="pag-foto-wrap__overlay-done" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:440px;overflow:hidden;margin-top:72px;">
+ <img src="imagenes/portada-aventura.jpg" alt="Momentos épicos en Canarias" loading="eager"
+ style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
  onerror="this.parentElement.style.display='none'">
-</div>
-
-<script>
-/* === BANNER DE COOKIES === */
-(function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
-
- // Si ya hay consentimiento guardado, ocultar
- if (localStorage.getItem(KEY)) {
- banner.style.display = 'none';
- if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
- return;
- }
-
- // Mostrar banner
- banner.style.display = 'block';
-
- // Aceptar
- var btnAccept = document.getElementById('cookie-accept') ||
- document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- localStorage.setItem(KEY, 'accepted');
- banner.style.display = 'none';
- loadGoogleTranslate();
- });
- }
-
- // Rechazar
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- localStorage.setItem(KEY, 'rejected');
- banner.style.display = 'none';
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-})();
-</script>
-
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
- <div class="cookie-banner__inner">
- <div class="cookie-banner__text">
- <p>
- Usamos cookies propias y de terceros (Google Translate) para mejorar tu experiencia.
- Puedes aceptar todas, rechazar las no esenciales o leer más en nuestra
- <a href="politica-cookies.html">Política de Cookies</a> y
- <a href="politica-privacidad.html">Política de Privacidad</a>.
- </p>
- </div>
- <div class="cookie-banner__actions">
- <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
- <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
- <a href="politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
- </div>
+ <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
+ <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-camera"></i> Galería</span>
+  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Momentos que<br><em>se quedan</em> contigo</h1>
+  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Cada aventura en Canarias deja una huella. Estos son los instantes que no caben en palabras, solo en imágenes.</p>
+  
  </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true">
- <button class="lb__close" id="lb-close" aria-label="Cerrar"></button>
- <button class="lb__nav lb__prev" id="lb-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
- <img src="" alt="" class="lb__img" id="lb-img">
- <p class="lb__caption" id="lb-caption"></p>
- <div class="lb__counter" id="lb-counter"></div>
- <button class="lb__nav lb__next" id="lb-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-</div>
-
-<main id="contenido-principal">
-
- <!-- HERO -->
- <div class="epica-hero fade-in">
- <span class="epica-hero__label"><i class="fas fa-camera"></i> Galería</span>
- <h1 class="epica-hero__titulo">Momentos que<br><em>se quedan</em> contigo</h1>
- <p class="epica-hero__desc">Cada aventura en Canarias deja una huella. Estos son los instantes que no caben en palabras, solo en imágenes.</p>
- <div class="epica-hero__linea"></div>
- </div>
 
  <!-- 
  CAPÍTULO I — PUESTAS DE SOL

@@ -336,17 +336,20 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<div class="pag-foto-wrap">
- <img src="imagenes/adrenalina-hero.jpg" alt="Adrenalina pura en Canarias" loading="lazy"
+<!-- FOTO HERO CON TITULO SUPERPUESTO -->
+<div class="pag-foto-wrap__overlay-done" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:440px;overflow:hidden;margin-top:72px;">
+ <img src="imagenes/adrenalina-hero.jpg" alt="Adrenalina pura en Canarias" loading="eager"
+ style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
  onerror="this.parentElement.style.display='none'">
-</div>
-<main id="cp">
- <div class="cat-hero">
- <span class="cat-hero__label"><i class="fas fa-skull-crossbones"></i> Adrenalina Pura</span>
- <h1 class="cat-hero__h1">El límite está en Canarias</h1>
- <p class="cat-hero__desc">Barrancos verticales, volcanes activos, olas atlánticas y cumbres de 3.700 m. Para los que necesitan más que una ruta normal.</p>
- <div class="cat-stats"><div><span class="cat-stat__num">38</span><span class="cat-stat__lbl">Rutas difíciles/extremas</span></div><div><span class="cat-stat__num">1</span><span class="cat-stat__lbl">Spots de surf</span></div><div><span class="cat-stat__num">3</span><span class="cat-stat__lbl">Rutas de kayak</span></div><div><span class="cat-stat__num">9</span><span class="cat-stat__lbl">Islas, 9 retos</span></div></div>
+ <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
+ <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-skull-crossbones"></i> Adrenalina Pura</span>
+  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">El límite está en Canarias</h1>
+  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Barrancos verticales, volcanes activos, olas atlánticas y cumbres de 3.700 m. Para los que necesitan más que una ruta normal.</p>
+  <div class="cat-stats" style="margin-bottom:20px;"><div><span class="cat-stat__num">38</span><span class="cat-stat__lbl">Rutas difíciles/extremas</span></div><div><span class="cat-stat__num">1</span><span class="cat-stat__lbl">Spots de surf</span></div><div><span class="cat-stat__num">3</span><span class="cat-stat__lbl">Rutas de kayak</span></div><div><span class="cat-stat__num">9</span><span class="cat-stat__lbl">Islas, 9 retos</span></div>
  </div>
+</div>
+
 
  <section class="cat-seccion">
  <h2 class="cat-seccion__titulo"><i class="fas fa-skull-crossbones"></i> Rutas Difíciles y Extremas</h2>
