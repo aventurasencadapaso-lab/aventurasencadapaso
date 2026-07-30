@@ -852,7 +852,7 @@ var RUTAS = [
     id: "calderon-hondo-fuerte",
     nombre: "Calderón Hondo – Lajares (SL-FV 2)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 5.9,
     descripcion: "La ruta más popular de Fuerteventura. Cráter perfectamente dibujado (278 m) con vistas a Lobos, Lanzarote y el Atlántico. Bien señalizada.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.6572, lng: -13.9203
@@ -861,7 +861,7 @@ var RUTAS = [
     id: "pico-zarza-fuerte",
     nombre: "Pico de la Zarza – Morro Jable (PR-FV 54)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 13,
+    duracion: "4-8 horas", distancia: 15.2,
     descripcion: "Ascenso al punto más alto de Fuerteventura (807 m) con vistas a Cofete, las playas vírgenes y en días despejados hasta Gran Canaria.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.0956, lng: -14.3783
@@ -870,7 +870,7 @@ var RUTAS = [
     id: "cofete-gran-valle-fuerte",
     nombre: "Cofete – Gran Valle (PR-FV 55)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 8.0,
     descripcion: "Una de las mejores rutas de Fuerteventura. Desciende por el Gran Valle hasta la playa salvaje de Cofete, 12 km de arena virgen. Muy exigente.",
     enlace: "https://www.komoot.com/es-es/guide/809/rutas-de-senderismo-en-fuerteventura",
     lat: 28.0703, lng: -14.3972
@@ -879,7 +879,7 @@ var RUTAS = [
     id: "arco-penitas-fuerte",
     nombre: "Arco de las Peñitas – Barranco Malpaso (SL-FV 6)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 5.5,
     descripcion: "Sendero hasta el Arco de las Peñitas por el barranco de Malpaso. Escalar piedras grandes, vegetación idílica y la Ermita de la Peña.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.3939, lng: -14.1450
@@ -888,7 +888,7 @@ var RUTAS = [
     id: "barranco-penitas-fuerte",
     nombre: "Betancuria – Barranco de Las Peñitas (SL-FV 27)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 2,
+    duracion: "Menos de 2h", distancia: 7.1,
     descripcion: "Ruta patrimonial por el cauce del río Palmas hasta la Ermita de la Virgen de la Peña, patrona de Fuerteventura. Los materiales más antiguos de Canarias.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.3733, lng: -14.0567
@@ -897,7 +897,7 @@ var RUTAS = [
     id: "gr131-fuerteventura",
     nombre: "GR 131 Fuerteventura – Travesía Completa",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "Varios días", distancia: 152,
+    duracion: "Varios días", distancia: 157.1,
     descripcion: "152 km atravesando toda la isla de norte a sur entre volcanes, viento y largas etapas sin sombra. La gran travesía de Fuerteventura.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.3587, lng: -14.0531
@@ -906,7 +906,7 @@ var RUTAS = [
     id: "tindaya-fuerte",
     nombre: "Montaña de Tindaya",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 5,
+    duracion: "2-4 horas", distancia: 5.7,
     descripcion: "Ascenso a la montaña sagrada de los majos con grabados podomorlos únicos. Vistas al norte de la isla. Lugar de alto valor arqueológico y espiritual.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
     lat: 28.5919, lng: -13.9969
@@ -915,7 +915,7 @@ var RUTAS = [
     id: "malpais-arena-fuerte",
     nombre: "Malpaís de la Arena – Norte",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 7.5,
     descripcion: "Circular por el cono volcánico del Malpaís de la Arena rodeado de coladas de lava. Vistas hacia Corralejo y el Atlántico. Flora resistente al clima árido.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
     lat: 28.6208, lng: -13.9011
@@ -924,7 +924,7 @@ var RUTAS = [
     id: "volcan-escanfraga-fuerte",
     nombre: "Volcán de Escanfraga",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 6.6,
     descripcion: "Ascenso al volcán de Escanfraga con coladas basálticas y lavas solidificadas. Vistas al norte de la isla y contraste con las extensas llanuras.",
     enlace: "https://sendaecoway.com/blog/rutas-en-fuerteventura-5-mejores-senderismo/",
     lat: 28.5722, lng: -14.0194
@@ -933,7 +933,7 @@ var RUTAS = [
     id: "ajuy-cuevas-fuerte",
     nombre: "Ajuy – Caleta Negra y Cuevas Marinas",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3,
+    duracion: "Menos de 2h", distancia: 5.4,
     descripcion: "Ruta costera a las cuevas marinas de Ajuy y los acantilados de Caleta Negra. Los materiales más antiguos de Canarias a nivel del mar.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/pajara",
     lat: 28.3939, lng: -14.1692
@@ -942,7 +942,7 @@ var RUTAS = [
     id: "kitesurf-sotavento",
     nombre: "Kitesurf – Laguna de Sotavento",
     isla: "Fuerteventura", tipo: "Surf", dificultad: "Media",
-    duracion: "Menos de 2h", distancia: 0,
+    duracion: "Menos de 2h", distancia: 7.0,
     descripcion: "Sede del Mundial de Windsurf y Kitesurf. Laguna con aguas tranquilas y viento constante. Uno de los mejores spots de estos deportes en el mundo.",
     enlace: "https://profuerte.com",
     lat: 28.1294, lng: -14.2292
@@ -951,7 +951,7 @@ var RUTAS = [
     id: "corralejo-dunas-fuerte",
     nombre: "Parque Natural de Corralejo – Dunas",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 12.1,
     descripcion: "Sendero por las grandes dunas blancas del norte junto al Parque Natural de Corralejo. Paisaje desértico con vistas a Lobos y Lanzarote.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
     lat: 28.7361, lng: -13.8636
@@ -960,7 +960,7 @@ var RUTAS = [
     id: "sendero-costa-fuerte",
     nombre: "Costa de Gran Tarajal – Ruta Costera",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 27.4,
     descripcion: "Paseo costero por el sur entre playas tranquilas y acantilados de colores ocres. Zona alejada del turismo masivo con vistas al océano Atlántico.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/tuineje",
     lat: 28.2164, lng: -14.0133
@@ -969,7 +969,7 @@ var RUTAS = [
     id: "playa-molinos-fuerte",
     nombre: "Playa de Los Molinos",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 9.8,
     descripcion: "Ruta hasta la Playa de Los Molinos con la Cueva Herminia visible solo en bajamar. Paisaje volcánico y tranquilidad absoluta en el noroeste.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
     lat: 28.6069, lng: -13.9592
@@ -978,7 +978,7 @@ var RUTAS = [
     id: "circular-lobos-fuerte",
     nombre: "Ruta Circular – Isla de Lobos",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 11.2,
     descripcion: "Circular completa por Lobos: La Caldera, El Puertito, Faro Martiño y Playa de La Concha. Requiere permiso gratuito y ferry desde Corralejo.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.7506, lng: -13.8167
@@ -990,7 +990,7 @@ var RUTAS = [
     id: "sendero-bayuyo-fuerte",
     nombre: "Sendero Bayuyo – Malpaís Norte",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 10.7,
     descripcion: "Ruta por el enorme malpaís de lava del norte, producto de una erupción hace 10.000 años. Vistas a Lanzarote, Lobos y el Atlántico desde los conos volcánicos.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.6511, lng: -13.8869
@@ -999,7 +999,7 @@ var RUTAS = [
     id: "barrancos-puerto-fuerte",
     nombre: "Barrancos de Puerto – Centro",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 11,
+    duracion: "4-8 horas", distancia: 13.4,
     descripcion: "Circular por los barrancos del centro de la isla con 268 m de desnivel. Paisaje variado entre malpaíses, barrancos y llanuras volcánicas poco frecuentadas.",
     enlace: "https://www.senderosbtt.com/rutas-gps/rutas-de-senderismo/rutas-de-senderismo-en-fuerteventura/",
     lat: 28.4167, lng: -14.0000
@@ -1008,7 +1008,7 @@ var RUTAS = [
     id: "balcon-asomada-fuerte",
     nombre: "Balcón de La Asomada",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 10,
+    duracion: "2-4 horas", distancia: 9.6,
     descripcion: "Ruta con vistas panorámicas desde el Balcón de La Asomada. Paisaje desértico árido con vistas al Atlántico. Sendero poco frecuentado ideal para la tranquilidad.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.3833, lng: -14.0167
@@ -1017,7 +1017,7 @@ var RUTAS = [
     id: "degollada-facay-fuerte",
     nombre: "Degollada de Facay",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 17,
+    duracion: "4-8 horas", distancia: 22.8,
     descripcion: "Una de las rutas más largas y exigentes del centro de Fuerteventura con 520 m de desnivel. Atraviesa paisajes volcánicos remotos con gran sensación de aislamiento.",
     enlace: "https://www.senderosbtt.com/rutas-gps/rutas-de-senderismo/rutas-de-senderismo-en-fuerteventura/",
     lat: 28.3500, lng: -14.0333
@@ -1026,7 +1026,7 @@ var RUTAS = [
     id: "risco-paso-jandia",
     nombre: "Risco del Paso – Parque Natural Jandía",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 13,
+    duracion: "4-8 horas", distancia: 14.7,
     descripcion: "Circular técnica no apta para vértigo por Atalayeja Grande, Morro del Rinconcillo y la Playa Barlovento. Ruinas guanchas y vistas al Atlántico sur.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura/hard",
     lat: 28.1833, lng: -14.2667
@@ -1035,7 +1035,7 @@ var RUTAS = [
     id: "morro-jandia-cumbre",
     nombre: "Morro de La Zona – Cumbre Jandía",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 14,
+    duracion: "4-8 horas", distancia: 13.6,
     descripcion: "Ascenso por la sierra de Jandía al Morro de La Zona con vistas a Cofete y las playas vírgenes del sur. Paisaje abrupto con barrancos y montañas de 800 m.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.0833, lng: -14.3667
@@ -1044,7 +1044,7 @@ var RUTAS = [
     id: "tindaya-vallebron-tefia",
     nombre: "Tindaya – Vallebrón – Tefía (PR FV 9)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 16,
+    duracion: "4-8 horas", distancia: 17.9,
     descripcion: "Larga circular desde Tindaya pasando por Vallebrón y Tefía. Montaña de Tindaya, Ermita de San Juan, Montaña de la Muda y vistas al norte de la isla.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.5750, lng: -13.9917
@@ -1053,7 +1053,7 @@ var RUTAS = [
     id: "playa-playitas-fuerte",
     nombre: "Las Playitas – Costa Sur Este",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 9,
+    duracion: "2-4 horas", distancia: 9.9,
     descripcion: "Circular con subibajas constantes y vistas a la costa este. Paisaje volcánico rojizo, playas poco frecuentadas y la sensación de explorar el sur más tranquilo.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.2167, lng: -13.9833
@@ -1062,7 +1062,7 @@ var RUTAS = [
     id: "sotavento-playa-circular",
     nombre: "Arenal Playa de Sotavento – Circular",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8,
+    duracion: "2-4 horas", distancia: 15.5,
     descripcion: "Circular por el arenal de la Playa de Sotavento en Costa Calma. Laguna natural, dunas y el entorno donde se celebran los mundiales de kitesurf y windsurf.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura/easy",
     lat: 28.1500, lng: -14.2083
@@ -1071,7 +1071,7 @@ var RUTAS = [
     id: "salinas-jandia-fuerte",
     nombre: "Salinas del Carmen – Ruta Costera",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 4,
+    duracion: "Menos de 2h", distancia: 9.0,
     descripcion: "Paseo junto a las antiguas salinas del Carmen en el este de la isla. Museo de la Sal y paisaje costero único con aves limícolas en las balsas salineras.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/fuerteventura",
     lat: 28.2208, lng: -13.9972
@@ -1080,7 +1080,7 @@ var RUTAS = [
     id: "islote-lobos-norte-fuerte",
     nombre: "Costa Norte – Corralejo",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7,
+    duracion: "2-4 horas", distancia: 25.0,
     descripcion: "Ruta costera desde Corralejo por el GR-131 junto a las Dunas del Parque Natural, con vistas a Lobos y Lanzarote. Sendero de arena bien marcado.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/corralejo",
     lat: 28.7150, lng: -13.8700
@@ -1089,7 +1089,7 @@ var RUTAS = [
     id: "montana-cardones-fuerte",
     nombre: "Montaña de Cardones – La Oliva",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 6.0,
     descripcion: "Ruta circular desde La Oliva hasta la Montaña de Cardones. Paisaje semidesértico poco frecuentado con vistas a los pueblos blancos del norte.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura/easy",
     lat: 28.6083, lng: -13.9583
@@ -1098,7 +1098,7 @@ var RUTAS = [
     id: "betancuria-vega-rio-palmas",
     nombre: "Betancuria – Vega Río Palmas",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 6,
+    duracion: "2-4 horas", distancia: 11.5,
     descripcion: "Paseo histórico desde Betancuria, la antigua capital, hasta la Vega de Río Palmas por el barranco del Río Palmas. Agua, palmeras y la Ermita de la Peña.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/betancuria",
     lat: 28.4233, lng: -14.0567
@@ -1116,7 +1116,7 @@ var RUTAS = [
     id: "pecenescal-barlovento-fuerte",
     nombre: "Barranco de Pecenescal – Playa Barlovento",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 12,
+    duracion: "4-8 horas", distancia: 15.4,
     descripcion: "Sendero GR-131/SL-FV11 técnico con tramos de mucho desnivel hasta la Playa Barlovento. No apta para vértigo. Paisaje salvaje del Parque Natural de Jandía.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura/hard",
     lat: 28.1167, lng: -14.3333
