@@ -165,6 +165,24 @@ iframe.goog-te-banner-frame{display:none!important;}
 <style id="rp-done-css">
 .rp-btn-done.done{background:#1cff6b;border-color:#1cff6b;color:#02070f !important;}
 </style>
+
+<style id="rp-ig-modal-css">
+.rp-ig-modal{display:none;position:fixed;inset:0;background:rgba(2,7,15,.85);z-index:99999;align-items:center;justify-content:center;padding:20px;}
+.rp-ig-modal.show{display:flex;}
+.rp-ig-modal__inner{background:#0c1624;border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:20px;max-width:340px;width:100%;position:relative;}
+.rp-ig-modal__close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.08);border:none;color:#e8eaf0;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;}
+.rp-ig-modal__img{width:100%;border-radius:12px;display:block;margin-bottom:16px;
+ background-image:linear-gradient(45deg,#1a1f28 25%,transparent 25%),linear-gradient(-45deg,#1a1f28 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#1a1f28 75%),linear-gradient(-45deg,transparent 75%,#1a1f28 75%);
+ background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;background-color:#0c1624;}
+.rp-ig-modal__actions{display:flex;gap:8px;flex-wrap:wrap;}
+.rp-ig-modal__btn{flex:1;min-width:100px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:10px;border:1px solid rgba(28,255,107,.3);background:rgba(28,255,107,.08);color:#1cff6b;font-size:10px;font-weight:700;cursor:pointer;font-family:Orbitron,sans-serif;text-transform:uppercase;letter-spacing:.5px;}
+.rp-ig-modal__btn:hover{background:rgba(28,255,107,.15);}
+.rp-ig-modal__btn--p{background:#1cff6b;color:#02070f;}
+.rp-ig-modal__btn--p:hover{background:#16d95d;}
+.rp-ig-modal__hint{color:#5a6070;font-size:11px;text-align:center;margin:12px 0 0;line-height:1.5;}
+</style>
+.rp-safety__legal{color:#8a8fa0;font-size:11px;margin:8px 0 0;line-height:1.5;}
+.rp-safety__legal a{color:#e53935;text-decoration:underline;}
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
   <div class="site-header__inner">
@@ -406,7 +424,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-acts">
     <a href="../gpx/anaga-taganana-tamadite.gpx" download="anaga-taganana-tamadite.gpx" class="rp-btn"><i class="fas fa-download"></i> Track GPS</a><a href="https://www.google.com/maps/dir/?api=1&destination=28.555645,-16.248331" target="_blank" rel="noopener" class="rp-btn rp-btn-out rp-btn-llegar"><i class="fas fa-location-dot"></i> Cómo llegar</a>
-    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button type="button" class="rp-btn rp-btn-out rp-btn-ig" id="rp-ig-btn"><i class="fab fa-instagram"></i> Compartir en Instagram</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="anaga-taganana-tamadite"><i class="far fa-heart"></i> <span>Guardar</span></button><button class="rp-btn rp-btn-out rp-btn-done" id="rp-done-btn" data-ruta="anaga-taganana-tamadite"><i class="far fa-circle-check"></i> <span>Marcar como completada</span></button>
+    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button type="button" class="rp-btn rp-btn-out rp-btn-ig" id="rp-ig-btn"><i class="fas fa-share-nodes"></i> Comparte tu logro</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="anaga-taganana-tamadite"><i class="far fa-heart"></i> <span>Guardar</span></button><button class="rp-btn rp-btn-out rp-btn-done" id="rp-done-btn" data-ruta="anaga-taganana-tamadite"><i class="far fa-circle-check"></i> <span>Marcar como completada</span></button>
     <a href="../tenerife.html" class="rp-btn rp-btn-out"><i class="fas fa-map-marker-alt"></i> Ver Tenerife</a>
     <a href="../ruleta.html" class="rp-btn rp-btn-out"><i class="fas fa-dice"></i> Ruta aleatoria</a>
   </div>
@@ -415,9 +433,21 @@ iframe.goog-te-banner-frame{display:none!important;}
       <i class="fas fa-shield-heart rp-safety__ico" aria-hidden="true"></i>
       <div class="rp-safety__txt">
         <span class="rp-safety__label">Seguridad en ruta</span>
-        <p class="rp-safety__desc">Antes de salir, avisa a alguien de confianza con un mensaje listo para enviar.</p>
+        <p class="rp-safety__desc">Antes de salir, avisa a alguien de confianza con un mensaje listo para enviar.</p><p class="rp-safety__legal">Esta ficha es informativa y puede no estar actualizada. Antes de ir, comprueba el estado real del sendero y la previsión meteorológica con fuentes oficiales (Cabildo, Parque Nacional, <a href="https://www.aemet.es" target="_blank" rel="noopener">AEMET</a>). <a href="../aviso-legal.html">Más información</a>.</p>
       </div>
       <button type="button" class="rp-safety__btn" id="rp-safety-btn"><i class="fas fa-paper-plane"></i> Enviar aviso</button>
+    </div>
+  </div>
+  <div class="rp-ig-modal" id="rp-ig-modal">
+    <div class="rp-ig-modal__inner">
+      <button type="button" class="rp-ig-modal__close" id="rp-ig-close"><i class="fas fa-xmark"></i></button>
+      <img id="rp-ig-preview" class="rp-ig-modal__img" alt="Vista previa para compartir">
+      <div class="rp-ig-modal__actions">
+        <button type="button" class="rp-ig-modal__btn" id="rp-ig-copy"><i class="fas fa-copy"></i> Copiar imagen</button>
+        <button type="button" class="rp-ig-modal__btn" id="rp-ig-download"><i class="fas fa-download"></i> Descargar</button>
+        <button type="button" class="rp-ig-modal__btn rp-ig-modal__btn--p" id="rp-ig-native-share" style="display:none;"><i class="fas fa-share-alt"></i> Compartir</button>
+      </div>
+      <p class="rp-ig-modal__hint">Lista para compartir en tus redes.</p>
     </div>
   </div>
   <div class="rp-map-wrap">
@@ -720,35 +750,102 @@ function initOffline(){
 
  var statsGlob={asc:0,dist:0};
  var igBtn=document.getElementById("rp-ig-btn");
+ var igBlob=null;
  function initIG(elePts,ruta){
   if(!igBtn)return;
   var asc=0;
   for(var i=1;i<elePts.length;i++){var d=elePts[i].ele-elePts[i-1].ele; if(d>0)asc+=d;}
   statsGlob.asc=Math.round(asc);
   igBtn.addEventListener("click",function(){generarTarjetaIG(ruta);});
+  var closeBtn=document.getElementById("rp-ig-close");
+  var modal=document.getElementById("rp-ig-modal");
+  if(closeBtn)closeBtn.addEventListener("click",function(){modal.classList.remove("show");});
+  if(modal)modal.addEventListener("click",function(e){if(e.target===modal)modal.classList.remove("show");});
+  var copyBtn=document.getElementById("rp-ig-copy");
+  if(copyBtn)copyBtn.addEventListener("click",function(){
+   if(!igBlob)return;
+   if(navigator.clipboard&&window.ClipboardItem){
+    navigator.clipboard.write([new ClipboardItem({"image/png":igBlob})]).then(function(){
+     var old=copyBtn.innerHTML;copyBtn.innerHTML='<i class="fas fa-check"></i> Copiada';
+     setTimeout(function(){copyBtn.innerHTML=old;},2000);
+    }).catch(function(){alert("No se pudo copiar la imagen. Prueba a descargarla.");});
+   } else {
+    alert("Tu navegador no soporta copiar im\u00e1genes. Descarga la imagen en su lugar.");
+   }
+  });
+  var dlBtn=document.getElementById("rp-ig-download");
+  if(dlBtn)dlBtn.addEventListener("click",function(){
+   if(!igBlob)return;
+   var url=URL.createObjectURL(igBlob);
+   var a=document.createElement("a");a.href=url;a.download=ruta+"-logro.png";
+   document.body.appendChild(a);a.click();document.body.removeChild(a);
+   setTimeout(function(){URL.revokeObjectURL(url);},2000);
+  });
  }
  function generarTarjetaIG(ruta){
   igBtn.disabled=true;
   igBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Generando...';
+
+  var islaSlug="tenerife",isla="";
+  var links=document.querySelectorAll(".rp-acts a");
+  for(var li=0;li<links.length;li++){
+   if(links[li].textContent.trim().indexOf("Ver ")===0){
+    var href=links[li].getAttribute("href")||"";
+    var m=href.match(/([a-z]+)\.html$/);
+    if(m)islaSlug=m[1];
+   }
+  }
+  try{
+   var ld=JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent);
+   isla=(ld.address&&ld.address.addressLocality)||"";
+  }catch(e){}
+
+  var imgFoto=new Image();
+  var imgLogo=new Image();
+  var loaded=0;
+  function tryDraw(){ loaded++; if(loaded<2)return; dibujarTarjetaIG(imgFoto,imgLogo,isla,ruta); }
+  imgFoto.onload=tryDraw; imgFoto.onerror=tryDraw;
+  imgLogo.onload=tryDraw; imgLogo.onerror=tryDraw;
+  imgFoto.src="../imagenes/"+islaSlug+"-hero.jpg";
+  imgLogo.src="../logo-aventuras.png";
+ }
+ function dibujarTarjetaIG(imgFoto,imgLogo,isla,ruta){
   var W=1080,H=1920;
   var canvas=document.createElement("canvas");
   canvas.width=W;canvas.height=H;
   var ctx=canvas.getContext("2d");
-  ctx.clearRect(0,0,W,H);
+
+  if(imgFoto&&imgFoto.naturalWidth){
+   var ir=imgFoto.naturalWidth/imgFoto.naturalHeight,cr=W/H,sw,sh,sx,sy;
+   if(ir>cr){sh=imgFoto.naturalHeight;sw=sh*cr;sx=(imgFoto.naturalWidth-sw)/2;sy=0;}
+   else{sw=imgFoto.naturalWidth;sh=sw/cr;sx=0;sy=(imgFoto.naturalHeight-sh)/2;}
+   ctx.drawImage(imgFoto,sx,sy,sw,sh,0,0,W,H);
+  } else {
+   ctx.fillStyle="#0c1624";ctx.fillRect(0,0,W,H);
+  }
+
+  ctx.fillStyle="rgba(2,7,15,0.3)";ctx.fillRect(0,0,W,H);
+  var gradTop=ctx.createLinearGradient(0,0,0,260);
+  gradTop.addColorStop(0,"rgba(2,7,15,.7)");gradTop.addColorStop(1,"rgba(2,7,15,0)");
+  ctx.fillStyle=gradTop;ctx.fillRect(0,0,W,260);
+  var gradBottom=ctx.createLinearGradient(0,H*0.42,0,H);
+  gradBottom.addColorStop(0,"rgba(2,7,15,0)");gradBottom.addColorStop(1,"rgba(2,7,15,.97)");
+  ctx.fillStyle=gradBottom;ctx.fillRect(0,H*0.42,W,H*0.58);
+
+  if(imgLogo&&imgLogo.naturalWidth){
+   var logoW=230,logoH=logoW*(imgLogo.naturalHeight/imgLogo.naturalWidth);
+   ctx.drawImage(imgLogo,(W-logoW)/2,64,logoW,logoH);
+  } else {
+   ctx.fillStyle="#1cff6b";ctx.font="900 32px Arial";ctx.textAlign="center";
+   ctx.fillText("AVENTURAS EN CADA PASO",W/2,110);ctx.textAlign="left";
+  }
 
   var lats=pts.map(function(p){return p[0];}),lons=pts.map(function(p){return p[1];});
   var lat0=Math.min.apply(null,lats),lat1=Math.max.apply(null,lats);
   var lon0=Math.min.apply(null,lons),lon1=Math.max.apply(null,lons);
   var meanLat=lats.reduce(function(a,b){return a+b;},0)/lats.length;
   var xscale=Math.cos(meanLat*Math.PI/180);
-
-  var cardX0=60,cardY0=1280,cardX1=W-60,cardY1=1860;
-  ctx.fillStyle="rgba(2,7,15,0.82)";
-  roundRect(ctx,cardX0,cardY0,cardX1-cardX0,cardY1-cardY0,40);ctx.fill();
-  ctx.strokeStyle="rgba(28,255,107,.5)";ctx.lineWidth=3;
-  roundRect(ctx,cardX0,cardY0,cardX1-cardX0,cardY1-cardY0,40);ctx.stroke();
-
-  var trX0=cardX0+60,trY0=cardY0+40,trX1=cardX1-60,trY1=cardY0+260;
+  var trX0=110,trY0=520,trX1=W-110,trY1=980;
   var availW=trX1-trX0,availH=trY1-trY0;
   var spanX=(lon1-lon0)*xscale||1e-6,spanY=(lat1-lat0)||1e-6;
   var scl=Math.min(availW/spanX,availH/spanY);
@@ -756,48 +853,61 @@ function initOffline(){
   var offX=trX0+(availW-drawW)/2,offY=trY0+(availH-drawH)/2;
   function proj(p){return [offX+(p[1]-lon0)*xscale*scl, offY+(lat1-p[0])*scl];}
   var coords=pts.map(proj);
+  ctx.shadowColor="rgba(0,0,0,.6)";ctx.shadowBlur=12;
   ctx.beginPath();
   coords.forEach(function(c,i){if(i===0)ctx.moveTo(c[0],c[1]);else ctx.lineTo(c[0],c[1]);});
-  ctx.strokeStyle="#ff6f00";ctx.lineWidth=8;ctx.lineJoin="round";ctx.lineCap="round";ctx.stroke();
-  ctx.fillStyle="#1cff6b";ctx.beginPath();ctx.arc(coords[0][0],coords[0][1],10,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle="#e53935";ctx.beginPath();ctx.arc(coords[coords.length-1][0],coords[coords.length-1][1],10,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle="#ffffff";ctx.lineWidth=10;ctx.lineJoin="round";ctx.lineCap="round";ctx.stroke();
+  ctx.shadowBlur=0;
+  ctx.beginPath();
+  coords.forEach(function(c,i){if(i===0)ctx.moveTo(c[0],c[1]);else ctx.lineTo(c[0],c[1]);});
+  ctx.strokeStyle="#ff6f00";ctx.lineWidth=6;ctx.stroke();
+  ctx.fillStyle="#1cff6b";ctx.beginPath();ctx.arc(coords[0][0],coords[0][1],11,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle="#e53935";ctx.beginPath();ctx.arc(coords[coords.length-1][0],coords[coords.length-1][1],11,0,Math.PI*2);ctx.fill();
 
-  var isla=document.querySelector(".bc-sep")?document.querySelectorAll(".breadcrumb a")[1].textContent.trim():"";
   var h1=document.querySelector(".rp-h1");
   var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
   var dificultad="";
   document.querySelectorAll(".rp-sl").forEach(function(e){if(e.textContent.trim()==="Dificultad"&&e.nextElementSibling)dificultad=e.nextElementSibling.textContent.trim();});
 
   ctx.textBaseline="alphabetic";
-  ctx.fillStyle="#1cff6b";ctx.font="700 24px Arial";
-  ctx.fillText(isla.toUpperCase(),cardX0+60,trY1+40);
-  ctx.fillStyle="#ffffff";ctx.font="900 46px Arial";
-  wrapText(ctx,nombre,cardX0+60,trY1+95,cardX1-cardX0-120,52);
+  ctx.fillStyle="#1cff6b";ctx.font="700 26px Arial";
+  ctx.fillText(isla.toUpperCase(),70,H-420);
+  ctx.fillStyle="#ffffff";ctx.font="900 50px Arial";
+  wrapText(ctx,nombre,70,H-355,W-140,56);
 
-  var statsY=trY1+230;
+  var statsY=H-180;
   var distTxt=statsGlob.dist?statsGlob.dist+" km":"-- km";
   var stats=[[distTxt,"DISTANCIA"],["+"+statsGlob.asc+" m","DESNIVEL"],[dificultad.toUpperCase()||"--","DIFICULTAD"]];
-  var sx=cardX0+60;
+  var sx=70;
   stats.forEach(function(s){
-   ctx.fillStyle="#1cff6b";ctx.font="900 40px Arial";ctx.fillText(s[0],sx,statsY);
-   ctx.fillStyle="#8a8fa0";ctx.font="600 22px Arial";ctx.fillText(s[1],sx,statsY+34);
-   sx+=310;
+   ctx.fillStyle="#1cff6b";ctx.font="900 42px Arial";ctx.fillText(s[0],sx,statsY);
+   ctx.fillStyle="#c8ccd8";ctx.font="600 22px Arial";ctx.fillText(s[1],sx,statsY+34);
+   sx+=320;
   });
-  ctx.fillStyle="#5a6070";ctx.font="500 24px Arial";
-  ctx.fillText("aventurasencadapaso.com",cardX0+60,cardY1-45);
+  ctx.fillStyle="rgba(255,255,255,.55)";ctx.font="500 22px Arial";
+  ctx.fillText("aventurasencadapaso.com",70,H-50);
 
   canvas.toBlob(function(blob){
    igBtn.disabled=false;
-   igBtn.innerHTML='<i class="fab fa-instagram"></i> Compartir en Instagram';
-   var file=new File([blob],ruta+"-instagram.png",{type:"image/png"});
-   if(navigator.canShare&&navigator.canShare({files:[file]})){
-    navigator.share({files:[file],title:nombre}).catch(function(){});
-   } else {
-    var url=URL.createObjectURL(blob);
-    var a=document.createElement("a");
-    a.href=url;a.download=ruta+"-instagram.png";
-    document.body.appendChild(a);a.click();document.body.removeChild(a);
-    setTimeout(function(){URL.revokeObjectURL(url);},2000);
+   igBtn.innerHTML='<i class="fas fa-share-nodes"></i> Comparte tu logro';
+   igBlob=blob;
+   var url=URL.createObjectURL(blob);
+   var previewImg=document.getElementById("rp-ig-preview");
+   if(previewImg)previewImg.src=url;
+   var modal=document.getElementById("rp-ig-modal");
+   if(modal)modal.classList.add("show");
+   var nativeBtn=document.getElementById("rp-ig-native-share");
+   if(nativeBtn){
+    var canShareFiles=false;
+    try{
+     var testFile=new File([blob],ruta+".png",{type:"image/png"});
+     canShareFiles=!!(navigator.canShare&&navigator.canShare({files:[testFile]}));
+    }catch(e){canShareFiles=false;}
+    nativeBtn.style.display=canShareFiles?"inline-flex":"none";
+    nativeBtn.onclick=function(){
+     var file=new File([blob],ruta+"-logro.png",{type:"image/png"});
+     navigator.share({files:[file],title:nombre}).catch(function(){});
+    };
    }
   },"image/png");
  }
