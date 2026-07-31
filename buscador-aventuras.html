@@ -178,6 +178,33 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 .bus-clear-btn:disabled:hover { background:transparent; border-color:rgba(255,111,0,.3); }
 .bus-guardadas-btn.on { background:#e53935; border-color:#e53935; color:#fff; }
 .bus-guardadas-btn.on:hover { background:#e53935; }
+
+/* ── MIS LOGROS ── */
+.bus-logros { max-width:900px; margin:0 auto 32px; padding:0 28px; }
+.bus-logros__inner { background:linear-gradient(135deg,#0c1624,#0d1f0d); border:1px solid rgba(28,255,107,.2); border-radius:16px; padding:22px 24px; }
+.bus-logros__head { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.bus-logros__label { font-family:Orbitron,sans-serif; font-size:10px; color:#1cff6b; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:8px; }
+.bus-logros__stats { display:flex; gap:24px; }
+.bus-logro-stat { text-align:center; }
+.bus-logro-stat span { display:block; font-family:Orbitron,sans-serif; font-size:1.3rem; font-weight:900; color:#1cff6b; }
+.bus-logro-stat label { font-size:9px; color:#5a6070; text-transform:uppercase; letter-spacing:1px; }
+.bus-logros__badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+.bus-badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:20px; background:rgba(28,255,107,.1); border:1px solid rgba(28,255,107,.3); color:#1cff6b; font-size:11px; font-weight:600; }
+.bus-logros__vacio { color:#5a6070; font-size:12px; margin:14px 0 0; display:none; }
+.bus-logros.vacio .bus-logros__vacio { display:block; }
+.bus-logros.vacio .bus-logros__badges { display:none; }
+.bus-logros.vacio .bus-logros__lista { display:none; }
+.bus-logros__lista { margin-top:16px; border-top:1px solid rgba(28,255,107,.1); padding-top:14px; display:flex; flex-direction:column; gap:8px; max-height:280px; overflow-y:auto; }
+.bl-item { display:flex; align-items:center; gap:10px; background:#0c1624; border:1px solid rgba(28,255,107,.08); border-radius:10px; padding:10px 12px; }
+.bl-item__body { flex:1; min-width:0; }
+.bl-item__nombre { display:block; color:#e8eaf0; font-size:13px; font-weight:600; text-decoration:none; }
+.bl-item__nombre:hover { color:#1cff6b; }
+.bl-item__meta { color:#5a6070; font-size:10.5px; margin-top:2px; }
+.bl-item__share { background:transparent; border:1px solid rgba(28,255,107,.3); color:#1cff6b; width:30px; height:30px; border-radius:8px; flex-shrink:0; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:12px; }
+.bl-item__share:hover { background:rgba(28,255,107,.1); }
+.bl-item__del { background:transparent; border:1px solid rgba(229,57,53,.3); color:#e53935; width:30px; height:30px; border-radius:8px; flex-shrink:0; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:12px; }
+.bl-item__del:hover { background:rgba(229,57,53,.12); }
+@media(max-width:600px){ .bus-logros__head{flex-direction:column;align-items:flex-start;} }
 .bus-card__heart { position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:50%; background:rgba(2,7,15,.65); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; z-index:2; }
 .bus-card__heart.saved { color:#e53935; }
 .bus-card { position:relative; }
@@ -402,6 +429,22 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     </div>
   </div>
 
+  <!-- MIS LOGROS -->
+  <div class="bus-logros" id="bus-logros">
+    <div class="bus-logros__inner">
+      <div class="bus-logros__head">
+        <span class="bus-logros__label"><i class="fas fa-trophy"></i> Mis logros</span>
+        <div class="bus-logros__stats">
+          <div class="bus-logro-stat"><span id="bl-completadas">0</span><label>Rutas completadas</label></div>
+          <div class="bus-logro-stat"><span id="bl-km">0</span><label>Km recorridos</label></div>
+        </div>
+      </div>
+      <div class="bus-logros__badges" id="bl-badges"></div>
+      <div class="bus-logros__lista" id="bl-lista"></div>
+      <p class="bus-logros__vacio" id="bl-vacio">Aún no has completado ninguna ruta. Márcala como "Completada" en la ficha de la ruta para empezar a acumular logros.</p>
+    </div>
+  </div>
+
   <!-- Recuadro del buscador -->
   <div class="bus-buscador-box">
     <!-- Filtros -->
@@ -597,6 +640,72 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   });
 
   render();
+
+  // ── MIS LOGROS ──
+  (function(){
+    var CKEY = 'aventuras-completadas';
+    var completadas = [];
+    try { completadas = JSON.parse(localStorage.getItem(CKEY)) || []; } catch(e){}
+    var totalRutas = completadas.length;
+    var totalKm = completadas.reduce(function(s, r){ return s + (r.distancia || 0); }, 0);
+
+    document.getElementById('bl-completadas').textContent = totalRutas;
+    document.getElementById('bl-km').textContent = totalKm.toFixed(1).replace(/\.0$/, '');
+
+    var BADGES = [
+      { min: 1, tipo: 'rutas', icon: 'fa-flag-checkered', txt: 'Primera aventura' },
+      { min: 5, tipo: 'rutas', icon: 'fa-hiking', txt: 'Explorador' },
+      { min: 10, tipo: 'rutas', icon: 'fa-mountain', txt: 'Aventurero experto' },
+      { min: 25, tipo: 'rutas', icon: 'fa-crown', txt: 'Leyenda de Canarias' },
+      { min: 25, tipo: 'km', icon: 'fa-shoe-prints', txt: 'Andarín (25km)' },
+      { min: 100, tipo: 'km', icon: 'fa-route', txt: 'Centurión del sendero (100km)' },
+      { min: 300, tipo: 'km', icon: 'fa-medal', txt: 'Ultra distancia (300km)' },
+    ];
+    var badgesHtml = BADGES.filter(function(b){
+      return (b.tipo === 'rutas' && totalRutas >= b.min) || (b.tipo === 'km' && totalKm >= b.min);
+    }).map(function(b){
+      return '<span class="bus-badge"><i class="fas ' + b.icon + '"></i> ' + b.txt + '</span>';
+    }).join('');
+
+    document.getElementById('bl-badges').innerHTML = badgesHtml;
+
+    var listaEl = document.getElementById('bl-lista');
+    function pintarLista(){
+      var g = [];
+      try { g = JSON.parse(localStorage.getItem(CKEY)) || []; } catch(e){}
+      g.sort(function(a, b){ return new Date(b.fecha) - new Date(a.fecha); });
+      listaEl.innerHTML = g.map(function(r){
+        var fecha = new Date(r.fecha).toLocaleDateString('es-ES', {day:'2-digit', month:'short', year:'numeric'});
+        var dist = r.distancia ? r.distancia + ' km · ' : '';
+        return '<div class="bl-item">' +
+          '<div class="bl-item__body">' +
+            '<a href="rutas/' + r.id + '.html" class="bl-item__nombre">' + r.nombre + '</a>' +
+            '<div class="bl-item__meta">' + dist + fecha + '</div>' +
+          '</div>' +
+          '<button type="button" class="bl-item__del" data-id="' + r.id + '" title="Quitar de completadas"><i class="fas fa-trash"></i></button>' +
+        '</div>';
+      }).join('');
+    }
+    pintarLista();
+
+    listaEl.addEventListener('click', function(e){
+      var delBtn = e.target.closest('.bl-item__del');
+      if(!delBtn) return;
+      var id = delBtn.getAttribute('data-id');
+      var g = [];
+      try { g = JSON.parse(localStorage.getItem(CKEY)) || []; } catch(err){}
+      g = g.filter(function(r){ return r.id !== id; });
+      try { localStorage.setItem(CKEY, JSON.stringify(g)); } catch(err){}
+      totalRutas = g.length;
+      totalKm = g.reduce(function(s, r){ return s + (r.distancia || 0); }, 0);
+      document.getElementById('bl-completadas').textContent = totalRutas;
+      document.getElementById('bl-km').textContent = totalKm.toFixed(1).replace(/\.0$/, '');
+      document.getElementById('bus-logros').classList.toggle('vacio', totalRutas === 0);
+      pintarLista();
+    });
+
+    document.getElementById('bus-logros').classList.toggle('vacio', totalRutas === 0);
+  })();
 
   // Btn top
   var b = document.getElementById('btn-top');

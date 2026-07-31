@@ -123,6 +123,8 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-live-btn:hover,.rp-offline-btn:hover{background:rgba(28,255,107,.15);}
 .rp-live-btn.on{background:#1cff6b;color:#02070f;}
 .rp-live-btn:disabled,.rp-offline-btn:disabled{opacity:.6;cursor:default;}
+.rp-btn-ig:disabled{opacity:.6;cursor:default;}
+
 .rp-offline-btn.done{background:rgba(28,255,107,.2);color:#1cff6b;cursor:default;}
 .rp-live-hud{display:none;gap:12px;margin-top:10px;background:#0c1624;border:1px solid rgba(28,255,107,.15);border-radius:12px;padding:14px;flex-wrap:wrap;}
 .rp-live-hud.show{display:flex;}
@@ -132,6 +134,14 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-live-warn{display:none;width:100%;background:rgba(229,57,53,.12);border:1px solid rgba(229,57,53,.3);color:#ff6b6b;border-radius:8px;padding:8px 12px;font-size:12px;align-items:center;gap:8px;}
 .rp-live-warn.show{display:flex;}
 @media(max-width:600px){.rp-live-btn,.rp-offline-btn{min-width:auto;}}
+.rp-elev-wrap{margin:20px 0 0;}
+.rp-elev-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.rp-elev-stats{display:flex;gap:14px;flex-wrap:wrap;}
+.rp-elev-stats span{display:flex;align-items:center;gap:6px;font-size:11px;color:#8a8fa0;}
+.rp-elev-stats i{color:#1cff6b;font-size:11px;}
+.rp-elev-stats b{color:#e8eaf0;font-weight:700;}
+.rp-elev-canvas{width:100%;height:140px;border-radius:12px;border:1px solid rgba(28,255,107,.15);background:#070e18;display:block;cursor:crosshair;touch-action:none;}
+
 @media(max-width:600px){.rp-map{height:260px;}}
 </style>
 
@@ -150,6 +160,10 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-safety__btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:#e53935;color:#fff!important;border:none;border-radius:12px;font-family:Orbitron,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;flex-shrink:0;white-space:nowrap;transition:.2s;}
 .rp-safety__btn:hover{background:#c62828;}
 @media(max-width:600px){.rp-safety__inner{padding:18px;}.rp-safety__btn{width:100%;justify-content:center;}}
+</style>
+
+<style id="rp-done-css">
+.rp-btn-done.done{background:#1cff6b;border-color:#1cff6b;color:#02070f !important;}
 </style>
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
@@ -392,7 +406,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-acts">
     <a href="../gpx/volcan-fasnia.gpx" download="volcan-fasnia.gpx" class="rp-btn"><i class="fas fa-download"></i> Track GPS</a><a href="https://www.google.com/maps/dir/?api=1&destination=28.535389,-16.307927" target="_blank" rel="noopener" class="rp-btn rp-btn-out rp-btn-llegar"><i class="fas fa-location-dot"></i> Cómo llegar</a>
-    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="volcan-fasnia"><i class="far fa-heart"></i> <span>Guardar</span></button>
+    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button type="button" class="rp-btn rp-btn-out rp-btn-ig" id="rp-ig-btn"><i class="fab fa-instagram"></i> Compartir en Instagram</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="volcan-fasnia"><i class="far fa-heart"></i> <span>Guardar</span></button><button class="rp-btn rp-btn-out rp-btn-done" id="rp-done-btn" data-ruta="volcan-fasnia"><i class="far fa-circle-check"></i> <span>Marcar como completada</span></button>
     <a href="../tenerife.html" class="rp-btn rp-btn-out"><i class="fas fa-map-marker-alt"></i> Ver Tenerife</a>
     <a href="../ruleta.html" class="rp-btn rp-btn-out"><i class="fas fa-dice"></i> Ruta aleatoria</a>
   </div>
@@ -419,6 +433,17 @@ iframe.goog-te-banner-frame{display:none!important;}
     <div class="rp-live-hud__stat"><span id="rp-live-dist">--</span><label>Restante</label></div>
     <div class="rp-live-hud__stat"><span id="rp-live-pct">--</span><label>Completado</label></div>
     <div id="rp-live-warn" class="rp-live-warn"><i class="fas fa-triangle-exclamation"></i> Te has desviado del track</div>
+  </div>
+  <div class="rp-elev-wrap">
+    <div class="rp-elev-head">
+      <span class="rp-map-label"><i class="fas fa-chart-area"></i> Perfil de elevación</span>
+      <div class="rp-elev-stats">
+        <span><i class="fas fa-arrow-trend-up"></i> <b id="rp-elev-asc">--</b></span>
+        <span><i class="fas fa-arrow-trend-down"></i> <b id="rp-elev-desc">--</b></span>
+        <span><i class="fas fa-mountain"></i> <b id="rp-elev-max">--</b></span>
+      </div>
+    </div>
+    <canvas id="rp-elev-canvas" class="rp-elev-canvas" height="140"></canvas>
   </div>
   </div>
 
@@ -502,6 +527,9 @@ var pts=[],bounds=null;
 fetch(gpxUrl).then(function(r){return r.text();}).then(function(str){
  var xml=new DOMParser().parseFromString(str,"application/xml");
  pts=Array.prototype.slice.call(xml.querySelectorAll("trkpt")).map(function(p){return [parseFloat(p.getAttribute("lat")),parseFloat(p.getAttribute("lon"))];});
+ var elePts=Array.prototype.slice.call(xml.querySelectorAll("trkpt")).map(function(p){var eEl=p.querySelector("ele");return {ll:[parseFloat(p.getAttribute("lat")),parseFloat(p.getAttribute("lon"))],ele:eEl?parseFloat(eEl.textContent):0};});
+ function initElevacionDesdePts(){initElevacion(elePts);}
+
  if(!pts.length){el.innerHTML='<div class="rp-map-empty">Track no disponible</div>';return;}
  var line=L.polyline(pts,{color:"#ff6f00",weight:4,opacity:.9,lineJoin:"round"}).addTo(mp);
  bounds=line.getBounds();
@@ -510,6 +538,9 @@ fetch(gpxUrl).then(function(r){return r.text();}).then(function(str){
  if(pts.length>1){L.marker(pts[pts.length-1],{icon:icon("#e53935")}).addTo(mp).bindPopup("Fin");}
  initLive();
  initOffline();
+ initElevacionDesdePts();
+ initIG(elePts,"volcan-fasnia");
+ var __d=0;for(var __i=1;__i<pts.length;__i++){__d+=distM(pts[__i-1],pts[__i]);}statsGlob.dist=(__d/1000).toFixed(1);
 }).catch(function(){el.innerHTML='<div class="rp-map-empty">No se pudo cargar el track GPS</div>';});
 
 function distM(a,b){
@@ -604,7 +635,186 @@ function initOffline(){
   });
  });
 }
-})();</script><script>document.getElementById("bs").addEventListener("click",function(){var u="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/volcan-fasnia.html",t="Volcán de Fasnia – Siete Fuentes — Tenerife | Aventuras en Cada Paso";if(navigator.share){navigator.share({title:"Volcán de Fasnia – Siete Fuentes",text:t,url:u}).catch(function(){});return;}var o=document.getElementById("sp");if(o)o.remove();var d=document.createElement("div");d.id="sp";d.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#0c1624;border:1px solid rgba(28,255,107,.3);border-radius:16px;padding:20px 24px;min-width:280px;max-width:90vw;box-shadow:0 12px 40px rgba(0,0,0,.6)";d.innerHTML="<p style='font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:2px;margin:0 0 12px'>COMPARTIR</p><div style='display:flex;flex-wrap:wrap;gap:8px'>"+"<a href='https://wa.me/?text="+encodeURIComponent(t+" "+u)+"' target='_blank' style='padding:9px 14px;background:#25d366;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-whatsapp'></i>WhatsApp</a>"+"<a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(u)+"' target='_blank' style='padding:9px 14px;background:#1da1f2;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-twitter'></i>Twitter</a>"+"<button onclick='navigator.clipboard.writeText(\"https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/volcan-fasnia.html\").then(function(){this.textContent=\"✓ OK\";}.bind(this))' style='padding:9px 14px;background:rgba(28,255,107,.15);color:#1cff6b;border:1px solid rgba(28,255,107,.3);border-radius:10px;font-size:12px;cursor:pointer'><i class='fas fa-link'></i>Copiar</button>"+"<button onclick='document.getElementById(\"sp\").remove()' style='padding:9px 12px;background:rgba(255,255,255,.06);color:#8a8fa0;border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:12px;cursor:pointer'>✕</button></div>";document.body.appendChild(d);});if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=="undefined"&&google.translate){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,de,fr,it,pt",autoDisplay:false},"google_translate_element");}};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";document.head.appendChild(s);}(function(){var t=localStorage.getItem("aventuras-theme");if(t==="light")document.body.classList.add("light-mode");})();</script><script>
+})();</script><script>document.getElementById("bs").addEventListener("click",function(){var u="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/volcan-fasnia.html",t="Volcán de Fasnia – Siete Fuentes — Tenerife | Aventuras en Cada Paso";if(navigator.share){navigator.share({title:"Volcán de Fasnia – Siete Fuentes",text:t,url:u}).catch(function(){});return;}var o=document.getElementById("sp");if(o)o.remove();var d=document.createElement("div");d.id="sp";d.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#0c1624;border:1px solid rgba(28,255,107,.3);border-radius:16px;padding:20px 24px;min-width:280px;max-width:90vw;box-shadow:0 12px 40px rgba(0,0,0,.6)";d.innerHTML="<p style='font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:2px;margin:0 0 12px'>COMPARTIR</p><div style='display:flex;flex-wrap:wrap;gap:8px'>"+"<a href='https://wa.me/?text="+encodeURIComponent(t+" "+u)+"' target='_blank' style='padding:9px 14px;background:#25d366;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-whatsapp'></i>WhatsApp</a>"+"<a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(u)+"' target='_blank' style='padding:9px 14px;background:#1da1f2;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-twitter'></i>Twitter</a>"+"<button onclick='navigator.clipboard.writeText(\"https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/volcan-fasnia.html\").then(function(){this.textContent=\"✓ OK\";}.bind(this))' style='padding:9px 14px;background:rgba(28,255,107,.15);color:#1cff6b;border:1px solid rgba(28,255,107,.3);border-radius:10px;font-size:12px;cursor:pointer'><i class='fas fa-link'></i>Copiar</button>"+"<button onclick='document.getElementById(\"sp\").remove()' style='padding:9px 12px;background:rgba(255,255,255,.06);color:#8a8fa0;border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:12px;cursor:pointer'>✕</button></div>";document.body.appendChild(d);});if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=="undefined"&&google.translate){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,de,fr,it,pt",autoDisplay:false},"google_translate_element");}};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";document.head.appendChild(s);}(function(){var t=localStorage.getItem("aventuras-theme");if(t==="light")document.body.classList.add("light-mode");
+ var elevMarker=null;
+ function initElevacion(elePts){
+  var canvas=document.getElementById("rp-elev-canvas");
+  if(!canvas||!elePts.length)return;
+  var ctx=canvas.getContext("2d");
+  function resize(){canvas.width=canvas.clientWidth*2;canvas.height=canvas.clientHeight*2;draw();}
+
+  var dist=[0];
+  for(var i=1;i<elePts.length;i++){dist.push(dist[i-1]+distM(elePts[i-1].ll,elePts[i].ll));}
+  var totalDist=dist[dist.length-1];
+  var asc=0,desc=0,maxE=-Infinity,minE=Infinity;
+  for(var j=0;j<elePts.length;j++){
+   var e=elePts[j].ele;
+   if(e>maxE)maxE=e; if(e<minE)minE=e;
+   if(j>0){var d=e-elePts[j-1].ele; if(d>0)asc+=d; else desc+=-d;}
+  }
+  document.getElementById("rp-elev-asc").textContent="+"+Math.round(asc)+"m";
+  document.getElementById("rp-elev-desc").textContent="-"+Math.round(desc)+"m";
+  document.getElementById("rp-elev-max").textContent=Math.round(maxE)+"m";
+
+  function draw(hoverIdx){
+   var w=canvas.width,h=canvas.height,pad=8*2;
+   ctx.clearRect(0,0,w,h);
+   var range=(maxE-minE)||1;
+   ctx.beginPath();
+   for(var k=0;k<elePts.length;k++){
+    var x=pad+(w-2*pad)*(dist[k]/totalDist);
+    var y=h-pad-(h-2*pad)*((elePts[k].ele-minE)/range);
+    if(k===0)ctx.moveTo(x,y); else ctx.lineTo(x,y);
+   }
+   ctx.lineTo(pad+(w-2*pad),h-pad);
+   ctx.lineTo(pad,h-pad);
+   ctx.closePath();
+   var grad=ctx.createLinearGradient(0,0,0,h);
+   grad.addColorStop(0,"rgba(255,111,0,.35)");
+   grad.addColorStop(1,"rgba(255,111,0,.02)");
+   ctx.fillStyle=grad;ctx.fill();
+   ctx.beginPath();
+   for(var k2=0;k2<elePts.length;k2++){
+    var x2=pad+(w-2*pad)*(dist[k2]/totalDist);
+    var y2=h-pad-(h-2*pad)*((elePts[k2].ele-minE)/range);
+    if(k2===0)ctx.moveTo(x2,y2); else ctx.lineTo(x2,y2);
+   }
+   ctx.strokeStyle="#ff6f00";ctx.lineWidth=3;ctx.lineJoin="round";ctx.stroke();
+   if(hoverIdx!=null){
+    var hx=pad+(w-2*pad)*(dist[hoverIdx]/totalDist);
+    var hy=h-pad-(h-2*pad)*((elePts[hoverIdx].ele-minE)/range);
+    ctx.beginPath();ctx.moveTo(hx,pad);ctx.lineTo(hx,h-pad);
+    ctx.strokeStyle="rgba(28,255,107,.4)";ctx.lineWidth=1.5;ctx.stroke();
+    ctx.beginPath();ctx.arc(hx,hy,6,0,Math.PI*2);
+    ctx.fillStyle="#1cff6b";ctx.fill();
+   }
+  }
+
+  function idxFromEvent(e){
+   var rect=canvas.getBoundingClientRect();
+   var clientX=e.touches?e.touches[0].clientX:e.clientX;
+   var relX=(clientX-rect.left)/rect.width;
+   var target=relX*totalDist;
+   var lo=0,hi=dist.length-1;
+   while(lo<hi){var mid=(lo+hi)>>1; if(dist[mid]<target)lo=mid+1; else hi=mid;}
+   return Math.max(0,Math.min(elePts.length-1,lo));
+  }
+
+  function onMove(e){
+   var idx=idxFromEvent(e);
+   draw(idx);
+   var ll=elePts[idx].ll;
+   if(!elevMarker){elevMarker=L.circleMarker(ll,{radius:6,color:"#1cff6b",fillColor:"#1cff6b",fillOpacity:1,weight:2}).addTo(mp);}
+   else{elevMarker.setLatLng(ll);}
+  }
+  function onLeave(){draw();if(elevMarker){mp.removeLayer(elevMarker);elevMarker=null;}}
+
+  canvas.addEventListener("mousemove",onMove);
+  canvas.addEventListener("mouseleave",onLeave);
+  canvas.addEventListener("touchmove",function(e){onMove(e);e.preventDefault();},{passive:false});
+  canvas.addEventListener("touchend",onLeave);
+
+  window.addEventListener("resize",resize);
+  resize();
+ }
+
+ var statsGlob={asc:0,dist:0};
+ var igBtn=document.getElementById("rp-ig-btn");
+ function initIG(elePts,ruta){
+  if(!igBtn)return;
+  var asc=0;
+  for(var i=1;i<elePts.length;i++){var d=elePts[i].ele-elePts[i-1].ele; if(d>0)asc+=d;}
+  statsGlob.asc=Math.round(asc);
+  igBtn.addEventListener("click",function(){generarTarjetaIG(ruta);});
+ }
+ function generarTarjetaIG(ruta){
+  igBtn.disabled=true;
+  igBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Generando...';
+  var W=1080,H=1920;
+  var canvas=document.createElement("canvas");
+  canvas.width=W;canvas.height=H;
+  var ctx=canvas.getContext("2d");
+  ctx.clearRect(0,0,W,H);
+
+  var lats=pts.map(function(p){return p[0];}),lons=pts.map(function(p){return p[1];});
+  var lat0=Math.min.apply(null,lats),lat1=Math.max.apply(null,lats);
+  var lon0=Math.min.apply(null,lons),lon1=Math.max.apply(null,lons);
+  var meanLat=lats.reduce(function(a,b){return a+b;},0)/lats.length;
+  var xscale=Math.cos(meanLat*Math.PI/180);
+
+  var cardX0=60,cardY0=1280,cardX1=W-60,cardY1=1860;
+  ctx.fillStyle="rgba(2,7,15,0.82)";
+  roundRect(ctx,cardX0,cardY0,cardX1-cardX0,cardY1-cardY0,40);ctx.fill();
+  ctx.strokeStyle="rgba(28,255,107,.5)";ctx.lineWidth=3;
+  roundRect(ctx,cardX0,cardY0,cardX1-cardX0,cardY1-cardY0,40);ctx.stroke();
+
+  var trX0=cardX0+60,trY0=cardY0+40,trX1=cardX1-60,trY1=cardY0+260;
+  var availW=trX1-trX0,availH=trY1-trY0;
+  var spanX=(lon1-lon0)*xscale||1e-6,spanY=(lat1-lat0)||1e-6;
+  var scl=Math.min(availW/spanX,availH/spanY);
+  var drawW=spanX*scl,drawH=spanY*scl;
+  var offX=trX0+(availW-drawW)/2,offY=trY0+(availH-drawH)/2;
+  function proj(p){return [offX+(p[1]-lon0)*xscale*scl, offY+(lat1-p[0])*scl];}
+  var coords=pts.map(proj);
+  ctx.beginPath();
+  coords.forEach(function(c,i){if(i===0)ctx.moveTo(c[0],c[1]);else ctx.lineTo(c[0],c[1]);});
+  ctx.strokeStyle="#ff6f00";ctx.lineWidth=8;ctx.lineJoin="round";ctx.lineCap="round";ctx.stroke();
+  ctx.fillStyle="#1cff6b";ctx.beginPath();ctx.arc(coords[0][0],coords[0][1],10,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle="#e53935";ctx.beginPath();ctx.arc(coords[coords.length-1][0],coords[coords.length-1][1],10,0,Math.PI*2);ctx.fill();
+
+  var isla=document.querySelector(".bc-sep")?document.querySelectorAll(".breadcrumb a")[1].textContent.trim():"";
+  var h1=document.querySelector(".rp-h1");
+  var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+  var dificultad="";
+  document.querySelectorAll(".rp-sl").forEach(function(e){if(e.textContent.trim()==="Dificultad"&&e.nextElementSibling)dificultad=e.nextElementSibling.textContent.trim();});
+
+  ctx.textBaseline="alphabetic";
+  ctx.fillStyle="#1cff6b";ctx.font="700 24px Arial";
+  ctx.fillText(isla.toUpperCase(),cardX0+60,trY1+40);
+  ctx.fillStyle="#ffffff";ctx.font="900 46px Arial";
+  wrapText(ctx,nombre,cardX0+60,trY1+95,cardX1-cardX0-120,52);
+
+  var statsY=trY1+230;
+  var distTxt=statsGlob.dist?statsGlob.dist+" km":"-- km";
+  var stats=[[distTxt,"DISTANCIA"],["+"+statsGlob.asc+" m","DESNIVEL"],[dificultad.toUpperCase()||"--","DIFICULTAD"]];
+  var sx=cardX0+60;
+  stats.forEach(function(s){
+   ctx.fillStyle="#1cff6b";ctx.font="900 40px Arial";ctx.fillText(s[0],sx,statsY);
+   ctx.fillStyle="#8a8fa0";ctx.font="600 22px Arial";ctx.fillText(s[1],sx,statsY+34);
+   sx+=310;
+  });
+  ctx.fillStyle="#5a6070";ctx.font="500 24px Arial";
+  ctx.fillText("aventurasencadapaso.com",cardX0+60,cardY1-45);
+
+  canvas.toBlob(function(blob){
+   igBtn.disabled=false;
+   igBtn.innerHTML='<i class="fab fa-instagram"></i> Compartir en Instagram';
+   var file=new File([blob],ruta+"-instagram.png",{type:"image/png"});
+   if(navigator.canShare&&navigator.canShare({files:[file]})){
+    navigator.share({files:[file],title:nombre}).catch(function(){});
+   } else {
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a");
+    a.href=url;a.download=ruta+"-instagram.png";
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    setTimeout(function(){URL.revokeObjectURL(url);},2000);
+   }
+  },"image/png");
+ }
+ function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
+ }
+ function wrapText(ctx,text,x,y,maxW,lh){
+  var words=text.split(" "),line="",yy=y;
+  for(var i=0;i<words.length;i++){
+   var test=line+words[i]+" ";
+   if(ctx.measureText(test).width>maxW&&line){ctx.fillText(line,x,yy);line=words[i]+" ";yy+=lh;}
+   else line=test;
+  }
+  ctx.fillText(line,x,yy);
+ }
+})();</script><script>
 document.addEventListener('DOMContentLoaded', function(){
   var link = document.getElementById('btn-buscar-link') ||
              document.querySelector('[aria-controls="panel-buscar"]') ||
@@ -932,6 +1142,47 @@ function googleTranslateElementInit() {
    window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
   }
  });
+})();
+</script>
+
+<script>
+(function(){
+ var KEY="aventuras-completadas";
+ var btn=document.getElementById("rp-done-btn");
+ if(!btn)return;
+ var ruta=btn.getAttribute("data-ruta");
+ function getCompletadas(){try{return JSON.parse(localStorage.getItem(KEY))||[];}catch(e){return [];}}
+ function setCompletadas(arr){try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(e){}}
+ function datoDistancia(){
+  var val=0;
+  document.querySelectorAll(".rp-sl").forEach(function(e){
+   if(e.textContent.trim()==="Distancia" && e.nextElementSibling){
+    var t=e.nextElementSibling.textContent.replace("km","").replace(",",".").trim();
+    var n=parseFloat(t); if(!isNaN(n))val=n;
+   }
+  });
+  return val;
+ }
+ function pintar(){
+  var g=getCompletadas();
+  var on=g.some(function(x){return x.id===ruta;});
+  btn.classList.toggle("done",on);
+  btn.querySelector("i").className=on?"fas fa-circle-check":"far fa-circle-check";
+  btn.querySelector("span").textContent=on?"Completada":"Marcar como completada";
+ }
+ btn.addEventListener("click",function(){
+  var g=getCompletadas();
+  var i=g.findIndex(function(x){return x.id===ruta;});
+  if(i>-1){g.splice(i,1);}
+  else{
+   var h1=document.querySelector(".rp-h1");
+   var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+   g.push({id:ruta,nombre:nombre,fecha:new Date().toISOString(),distancia:datoDistancia()});
+  }
+  setCompletadas(g);
+  pintar();
+ });
+ pintar();
 })();
 </script>
 

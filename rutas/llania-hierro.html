@@ -125,6 +125,10 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-safety__btn:hover{background:#c62828;}
 @media(max-width:600px){.rp-safety__inner{padding:18px;}.rp-safety__btn{width:100%;justify-content:center;}}
 </style>
+
+<style id="rp-done-css">
+.rp-btn-done.done{background:#1cff6b;border-color:#1cff6b;color:#02070f !important;}
+</style>
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
   <div class="site-header__inner">
@@ -366,7 +370,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-acts">
     <a href="https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro" target="_blank" rel="noopener" class="rp-btn"><i class="fas fa-download"></i> Track GPS</a>
-    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="llania-hierro"><i class="far fa-heart"></i> <span>Guardar</span></button>
+    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="llania-hierro"><i class="far fa-heart"></i> <span>Guardar</span></button><button class="rp-btn rp-btn-out rp-btn-done" id="rp-done-btn" data-ruta="llania-hierro"><i class="far fa-circle-check"></i> <span>Marcar como completada</span></button>
     <a href="../elhierro.html" class="rp-btn rp-btn-out"><i class="fas fa-map-marker-alt"></i> Ver El Hierro</a>
     <a href="../ruleta.html" class="rp-btn rp-btn-out"><i class="fas fa-dice"></i> Ruta aleatoria</a>
   </div>
@@ -778,6 +782,47 @@ function googleTranslateElementInit() {
    window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
   }
  });
+})();
+</script>
+
+<script>
+(function(){
+ var KEY="aventuras-completadas";
+ var btn=document.getElementById("rp-done-btn");
+ if(!btn)return;
+ var ruta=btn.getAttribute("data-ruta");
+ function getCompletadas(){try{return JSON.parse(localStorage.getItem(KEY))||[];}catch(e){return [];}}
+ function setCompletadas(arr){try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(e){}}
+ function datoDistancia(){
+  var val=0;
+  document.querySelectorAll(".rp-sl").forEach(function(e){
+   if(e.textContent.trim()==="Distancia" && e.nextElementSibling){
+    var t=e.nextElementSibling.textContent.replace("km","").replace(",",".").trim();
+    var n=parseFloat(t); if(!isNaN(n))val=n;
+   }
+  });
+  return val;
+ }
+ function pintar(){
+  var g=getCompletadas();
+  var on=g.some(function(x){return x.id===ruta;});
+  btn.classList.toggle("done",on);
+  btn.querySelector("i").className=on?"fas fa-circle-check":"far fa-circle-check";
+  btn.querySelector("span").textContent=on?"Completada":"Marcar como completada";
+ }
+ btn.addEventListener("click",function(){
+  var g=getCompletadas();
+  var i=g.findIndex(function(x){return x.id===ruta;});
+  if(i>-1){g.splice(i,1);}
+  else{
+   var h1=document.querySelector(".rp-h1");
+   var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+   g.push({id:ruta,nombre:nombre,fecha:new Date().toISOString(),distancia:datoDistancia()});
+  }
+  setCompletadas(g);
+  pintar();
+ });
+ pintar();
 })();
 </script>
 
