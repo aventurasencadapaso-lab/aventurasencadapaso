@@ -810,7 +810,7 @@ function initOffline(){
    isla=(ld.address&&ld.address.addressLocality)||"";
   }catch(e){}
   var h1=document.querySelector(".rp-h1");
-  var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+  var nombre=h1?h1.textContent.trim():document.title;
   var dificultad="";
   document.querySelectorAll(".rp-sl").forEach(function(e){if(e.textContent.trim()==="Dificultad"&&e.nextElementSibling)dificultad=e.nextElementSibling.textContent.trim();});
   return {islaSlug:islaSlug,isla:isla,nombre:nombre,dificultad:dificultad};
@@ -856,7 +856,7 @@ function initOffline(){
   wrapText(ctx,datos.nombre,70,H-355,W-140,56);
   var statsY=H-180;
   var distTxt=statsGlob.dist?statsGlob.dist+" km":"-- km";
-  var stats=[[distTxt,"DISTANCIA"],["+"+statsGlob.asc+" m","DESNIVEL"],[datos.dificultad.toUpperCase()||"--","DIFICULTAD"]];
+  var stats=[[distTxt,"DISTANCIA"],["+"+statsGlob.asc+" m","DESNIVEL"]];
   var sx=70;
   stats.forEach(function(s){
    ctx.fillStyle="#1cff6b";ctx.font="900 42px Arial";ctx.fillText(s[0],sx,statsY);
@@ -870,8 +870,16 @@ function initOffline(){
  function dibujarLogo(ctx,W,H,imgLogo){
   var logoW=130;
   var x=W-70-logoW,y=H-268;
+  var logoH=(imgLogo&&imgLogo.naturalWidth)?logoW*(imgLogo.naturalHeight/imgLogo.naturalWidth):90;
+  var pad=10;
+  ctx.save();
+  ctx.shadowColor="#1cff6b";ctx.shadowBlur=16;
+  ctx.strokeStyle="#39ff6b";ctx.lineWidth=4;
+  roundRect(ctx,x-pad,y-pad,logoW+pad*2,logoH+pad*2,12);
+  ctx.stroke();
+  ctx.shadowBlur=0;
+  ctx.restore();
   if(imgLogo&&imgLogo.naturalWidth){
-   var logoH=logoW*(imgLogo.naturalHeight/imgLogo.naturalWidth);
    ctx.drawImage(imgLogo,x,y,logoW,logoH);
   } else {
    ctx.fillStyle="#1cff6b";ctx.font="700 16px Arial";ctx.textAlign="right";
@@ -1357,7 +1365,7 @@ function googleTranslateElementInit() {
  if(!btn)return;
  btn.addEventListener("click",function(){
   var h1=document.querySelector(".rp-h1");
-  var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+  var nombre=h1?h1.textContent.trim():document.title;
   var duracion="";
   document.querySelectorAll(".rp-sl").forEach(function(e){
    if(e.textContent.trim()==="Duraci\u00f3n" && e.nextElementSibling){duracion=e.nextElementSibling.textContent.trim();}
@@ -1410,7 +1418,7 @@ function googleTranslateElementInit() {
   if(i>-1){g.splice(i,1);}
   else{
    var h1=document.querySelector(".rp-h1");
-   var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+   var nombre=h1?h1.textContent.trim():document.title;
    g.push({id:ruta,nombre:nombre,fecha:new Date().toISOString(),distancia:datoDistancia()});
   }
   setCompletadas(g);

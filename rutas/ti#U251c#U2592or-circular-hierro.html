@@ -536,7 +536,7 @@
  if(!btn)return;
  btn.addEventListener("click",function(){
   var h1=document.querySelector(".rp-h1");
-  var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+  var nombre=h1?h1.textContent.trim():document.title;
   var duracion="";
   document.querySelectorAll(".rp-sl").forEach(function(e){
    if(e.textContent.trim()==="Duraci\u00f3n" && e.nextElementSibling){duracion=e.nextElementSibling.textContent.trim();}
@@ -589,7 +589,7 @@
   if(i>-1){g.splice(i,1);}
   else{
    var h1=document.querySelector(".rp-h1");
-   var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+   var nombre=h1?h1.textContent.trim():document.title;
    g.push({id:ruta,nombre:nombre,fecha:new Date().toISOString(),distancia:datoDistancia()});
   }
   setCompletadas(g);
