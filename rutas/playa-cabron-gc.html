@@ -134,6 +134,23 @@ iframe.goog-te-banner-frame{display:none!important;}
 @media(max-width:600px){.rp-live-btn,.rp-offline-btn{min-width:auto;}}
 @media(max-width:600px){.rp-map{height:260px;}}
 </style>
+
+<style id="rp-save-css">
+.rp-btn-save.saved{background:#e53935;border-color:#e53935;color:#fff !important;}
+.rp-btn-save.saved i{font-weight:900;}
+</style>
+
+<style id="rp-safety-css">
+.rp-safety{max-width:900px;margin:0 auto 32px;padding:0 28px;}
+.rp-safety__inner{display:flex;align-items:center;gap:18px;background:rgba(229,57,53,.06);border:1px solid rgba(229,57,53,.25);border-radius:16px;padding:20px 24px;flex-wrap:wrap;}
+.rp-safety__ico{font-size:24px;color:#e53935;flex-shrink:0;}
+.rp-safety__txt{flex:1;min-width:180px;}
+.rp-safety__label{font-family:Orbitron,sans-serif;font-size:9px;color:#e53935;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px;}
+.rp-safety__desc{color:#c8ccd8;font-size:13px;margin:0;line-height:1.5;}
+.rp-safety__btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:#e53935;color:#fff!important;border:none;border-radius:12px;font-family:Orbitron,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;flex-shrink:0;white-space:nowrap;transition:.2s;}
+.rp-safety__btn:hover{background:#c62828;}
+@media(max-width:600px){.rp-safety__inner{padding:18px;}.rp-safety__btn{width:100%;justify-content:center;}}
+</style>
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
   <div class="site-header__inner">
@@ -375,9 +392,19 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-acts">
     <a href="../gpx/playa-cabron-gc.gpx" download="playa-cabron-gc.gpx" class="rp-btn"><i class="fas fa-download"></i> Track GPS</a><a href="https://www.google.com/maps/dir/?api=1&destination=27.865830,-15.387930" target="_blank" rel="noopener" class="rp-btn rp-btn-out rp-btn-llegar"><i class="fas fa-location-dot"></i> Cómo llegar</a>
-    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button>
+    <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="playa-cabron-gc"><i class="far fa-heart"></i> <span>Guardar</span></button>
     <a href="../grancanaria.html" class="rp-btn rp-btn-out"><i class="fas fa-map-marker-alt"></i> Ver Gran Canaria</a>
     <a href="../ruleta.html" class="rp-btn rp-btn-out"><i class="fas fa-dice"></i> Ruta aleatoria</a>
+  </div>
+  <div class="rp-safety">
+    <div class="rp-safety__inner">
+      <i class="fas fa-shield-heart rp-safety__ico" aria-hidden="true"></i>
+      <div class="rp-safety__txt">
+        <span class="rp-safety__label">Seguridad en ruta</span>
+        <p class="rp-safety__desc">Antes de salir, avisa a alguien de confianza con un mensaje listo para enviar.</p>
+      </div>
+      <button type="button" class="rp-safety__btn" id="rp-safety-btn"><i class="fas fa-paper-plane"></i> Enviar aviso</button>
+    </div>
   </div>
   <div class="rp-map-wrap">
     <div class="rp-map-head">
@@ -854,4 +881,58 @@ function googleTranslateElementInit() {
  }
 })();
 </script>
+<script>
+(function(){
+ var KEY="aventuras-guardadas";
+ var btn=document.getElementById("rp-save-btn");
+ if(!btn)return;
+ var ruta=btn.getAttribute("data-ruta");
+ function getGuardadas(){try{return JSON.parse(localStorage.getItem(KEY))||[];}catch(e){return [];}}
+ function setGuardadas(arr){try{localStorage.setItem(KEY,JSON.stringify(arr));}catch(e){}}
+ function pintar(){
+  var g=getGuardadas();
+  var on=g.indexOf(ruta)>-1;
+  btn.classList.toggle("saved",on);
+  btn.querySelector("i").className=on?"fas fa-heart":"far fa-heart";
+  btn.querySelector("span").textContent=on?"Guardada":"Guardar";
+ }
+ btn.addEventListener("click",function(){
+  var g=getGuardadas();
+  var i=g.indexOf(ruta);
+  if(i>-1){g.splice(i,1);}else{g.push(ruta);}
+  setGuardadas(g);
+  pintar();
+ });
+ pintar();
+})();
+</script>
+
+<script>
+(function(){
+ var btn=document.getElementById("rp-safety-btn");
+ if(!btn)return;
+ btn.addEventListener("click",function(){
+  var h1=document.querySelector(".rp-h1");
+  var nombre=h1?h1.textContent.replace(/^\s*\S*\s*/,"").trim():document.title;
+  var duracion="";
+  document.querySelectorAll(".rp-sl").forEach(function(e){
+   if(e.textContent.trim()==="Duraci\u00f3n" && e.nextElementSibling){duracion=e.nextElementSibling.textContent.trim();}
+  });
+  var llegarBtn=document.querySelector(".rp-btn-llegar");
+  var mapsLink=llegarBtn?llegarBtn.getAttribute("href"):"";
+  var ahora=new Date();
+  var hora=ahora.toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"});
+  var msg="Voy a hacer la ruta \""+nombre+"\""+(duracion?" (duraci\u00f3n estimada: "+duracion+")":"")+".\n"+
+   (mapsLink?"Punto de inicio: "+mapsLink+"\n":"")+
+   "Salgo sobre las "+hora+". Si no sabes de m\u00ed cuando calculas que debería terminar, avisa al 112.\n"+
+   "Te recomiendo activar mi ubicaci\u00f3n en tiempo real en WhatsApp o Google Maps mientras estoy en ruta.";
+  if(navigator.share){
+   navigator.share({title:"Aviso de seguridad",text:msg}).catch(function(){});
+  } else {
+   window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+  }
+ });
+})();
+</script>
+
 </body></html>
