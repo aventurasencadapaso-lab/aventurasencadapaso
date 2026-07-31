@@ -176,6 +176,11 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 .bus-clear-btn:hover { background:rgba(255,111,0,.1); border-color:rgba(255,111,0,.5); }
 .bus-clear-btn:disabled { opacity:.35; cursor:default; }
 .bus-clear-btn:disabled:hover { background:transparent; border-color:rgba(255,111,0,.3); }
+.bus-guardadas-btn.on { background:#e53935; border-color:#e53935; color:#fff; }
+.bus-guardadas-btn.on:hover { background:#e53935; }
+.bus-card__heart { position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:50%; background:rgba(2,7,15,.65); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; z-index:2; }
+.bus-card__heart.saved { color:#e53935; }
+.bus-card { position:relative; }
 
 /* ── GRID DE RUTAS ── */
 .bus-grid { max-width:1100px; margin:0 auto; padding:0 28px 60px; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
@@ -435,7 +440,10 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     <!-- Contador de resultados + limpiar filtros -->
     <div class="bus-filtros-bar">
       <span class="bus-filtros-bar__count" id="bus-count" aria-live="polite"></span>
-      <button type="button" class="bus-clear-btn" id="bus-clear"><i class="fas fa-xmark" aria-hidden="true"></i> Limpiar filtros</button>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button type="button" class="bus-clear-btn bus-guardadas-btn" id="bus-guardadas"><i class="far fa-heart" aria-hidden="true"></i> Mis guardadas</button>
+        <button type="button" class="bus-clear-btn" id="bus-clear"><i class="fas fa-xmark" aria-hidden="true"></i> Limpiar filtros</button>
+      </div>
     </div>
   </div>
 
@@ -472,6 +480,19 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var difEl = document.getElementById('bus-dif');
   var countEl = document.getElementById('bus-count');
   var clearBtn = document.getElementById('bus-clear');
+  var guardadasBtn = document.getElementById('bus-guardadas');
+  var soloGuardadas = false;
+
+  var GKEY = 'aventuras-guardadas';
+  function getGuardadas(){ try{ return JSON.parse(localStorage.getItem(GKEY)) || []; } catch(e){ return []; } }
+  function setGuardadas(arr){ try{ localStorage.setItem(GKEY, JSON.stringify(arr)); } catch(e){} }
+  function estaGuardada(id){ return getGuardadas().indexOf(id) > -1; }
+  function toggleGuardada(id){
+    var g = getGuardadas();
+    var i = g.indexOf(id);
+    if(i > -1) g.splice(i, 1); else g.push(id);
+    setGuardadas(g);
+  }
 
   var TOTAL = RUTAS.length;
 
@@ -482,7 +503,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var HAS_GPX = new Set(['teide-montana-blanca','roques-garcia-teide','pico-viejo-teide','ruta-040-teide','paisaje-lunar-vilaflor','volcan-fasnia','chinyero-san-jose','anaga-afur-taganana','anaga-roque-taborno','anaga-cruz-carmen-hidalgo','anaga-bosque-enigmas','anaga-taganana-tamadite','pijaral-tenerife','anaga-benijo-draguillo','masca-barranco','teno-risco-verde','teno-erjos-circular','teno-palmar-circular','barranco-infierno-adeje','roque-conde-arona','malpais-guimar','montana-roja-medano','rambla-castro','los-organos-orotava','anaga-sendero-sentidos','garachico-pr-tf-43','corona-forestal-las-raices','taborno-circular-anaga','montana-amarilla-sur','agaete-tamadaba-gc','amadores-tauro-gc','artenara-cuevas-caballero','azulejos-inagua-gc','barranco-cernicalos-gc','barranco-guayadeque','barranco-guigui-gc','barranco-guiniguada-gc','caldera-bandama-gc','caldera-marteles-gc','camino-volcanes-gc','dunas-maspalomas-gc','fataga-barranco-gc','firgas-circular-gc','fortaleza-gc','jacoba-canaria-gc','pico-nieves-ascenso','pico-nieves-roque-nublo','pilancones-gc','playa-cabron-gc','playa-ingles-costa-gc','presa-soria-gc','puerto-mogan-costa','puerto-rico-trail-gc','roque-bentayga-gc','roque-nublo-circular','roque-nublo-degollada','tamadaba-circular-gc','valle-agaete-gc','ajaches-barrancos-lanzarote','ajaches-cumbre-lanzarote','arrecife-charco-paseo','caldera-blanca-lanzarote','caldera-cuervos','cara-sur-lanzarote','costa-teguise-playas','famara-risco-lanzarote','gr131-lanzarote-completo','guatiza-famara-gr131','haria-bosquecillo-lanzarote','haria-mirador-lanzarote','kayak-papagayo','la-geria-vinedos','la-santa-tenesar','montana-blanca-grietas','montana-colorada-lanzarote','montana-roja-sur','monte-corona-lanzarote','papagayo-playa-blanca','penas-chache-lanzarote','playa-risco-lanzarote','puerto-calero-carmen','santa-barbara-teguise','santa-catalina-norte','timanfaya-golfo-litoral','timanfaya-ruta-volcanes','valles-norte-haria','ajuy-cuevas-fuerte','arco-penitas-fuerte','balcon-asomada-fuerte','barranco-penitas-fuerte','barrancos-puerto-fuerte','betancuria-vega-rio-palmas','calderon-hondo-fuerte','circular-lobos-fuerte','cofete-gran-valle-fuerte','corralejo-dunas-fuerte','degollada-facay-fuerte','gr131-fuerteventura','islote-lobos-norte-fuerte','kitesurf-sotavento','malpais-arena-fuerte','montana-cardones-fuerte','morro-jandia-cumbre','pecenescal-barlovento-fuerte','pico-zarza-fuerte','playa-molinos-fuerte','playa-playitas-fuerte','risco-paso-jandia','salinas-jandia-fuerte','sendero-bayuyo-fuerte','sendero-costa-fuerte','sotavento-playa-circular','tindaya-fuerte','tindaya-vallebron-tefia','volcan-escanfraga-fuerte']);
 
   function hayFiltros(){
-    return !!(qEl.value.trim() || islaEl.value || tipoEl.value || difEl.value);
+    return !!(qEl.value.trim() || islaEl.value || tipoEl.value || difEl.value || soloGuardadas);
   }
 
   function actualizarBarra(n){
@@ -501,13 +522,16 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       if(tipo && r.tipo !== tipo) return false;
       if(dif && r.dificultad !== dif) return false;
       if(q && !r.nombre.toLowerCase().includes(q) && !r.isla.toLowerCase().includes(q)) return false;
+      if(soloGuardadas && !estaGuardada(r.id)) return false;
       return true;
     });
 
     actualizarBarra(filtradas.length);
 
     if(filtradas.length === 0){
-      grid.innerHTML = '<div class="bus-vacio"><i class="fas fa-compass" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>No se encontraron rutas</div>';
+      grid.innerHTML = soloGuardadas
+        ? '<div class="bus-vacio"><i class="far fa-heart" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>Aún no has guardado ninguna ruta</div>'
+        : '<div class="bus-vacio"><i class="fas fa-compass" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>No se encontraron rutas</div>';
       return;
     }
 
@@ -516,11 +540,13 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
       var delay = Math.min(i * 0.03, 0.3);
+      var guardada = estaGuardada(r.id);
       var thumb = HAS_GPX.has(r.id)
         ? '<div class="bus-card__thumb"><img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="Track de ' + r.nombre + '" loading="lazy" width="220" height="88"></div>'
         : '<div class="bus-card__thumb bus-card__thumb--empty"></div>';
       return '<a href="rutas/' + r.id + '.html" class="bus-card" style="animation-delay:' + delay + 's;">' +
         thumb +
+        '<span class="bus-card__heart' + (guardada ? ' saved' : '') + '" data-id="' + r.id + '"><i class="' + (guardada ? 'fas' : 'far') + ' fa-heart"></i></span>' +
         '<span class="bus-card__isla">' + r.isla + '</span>' +
         '<h3 class="bus-card__nombre">' + r.nombre + '</h3>' +
         '<div class="bus-card__meta">' +
@@ -544,11 +570,28 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   tipoEl.addEventListener('change', render);
   difEl.addEventListener('change', render);
 
+  grid.addEventListener('click', function(e){
+    var heart = e.target.closest('.bus-card__heart');
+    if(!heart) return;
+    e.preventDefault();
+    e.stopPropagation();
+    toggleGuardada(heart.getAttribute('data-id'));
+    render();
+  });
+
+  guardadasBtn.addEventListener('click', function(){
+    soloGuardadas = !soloGuardadas;
+    guardadasBtn.classList.toggle('on', soloGuardadas);
+    render();
+  });
+
   clearBtn.addEventListener('click', function(){
     qEl.value = '';
     islaEl.value = '';
     tipoEl.value = '';
     difEl.value = '';
+    soloGuardadas = false;
+    guardadasBtn.classList.remove('on');
     render();
     qEl.focus();
   });
