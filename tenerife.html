@@ -286,7 +286,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -625,6 +631,7 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
+<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -827,105 +834,7 @@ a:hover { color:#00e05a; }
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en Tenerife</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid">
-    <div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(28,255,107,.1);color:#1cff6b;">
-          <i class="fas fa-hiking"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Outdoor Activities Tenerife</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Barranquismo</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Especialistas en actividades de montaña: senderismo, barranquismo, escalada y rutas outdoor por todo Tenerife.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 633 658 015</span>
-      <div class="isla-emp-card__links">
-        <a href="https://outdooractivitystenerife.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(29,161,242,.1);color:#1da1f2;">
-          <i class="fas fa-ship"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Xplore Tenerife</h3>
-          <span class="isla-emp-card__tipo">Kayak · Bici · Snorkel</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Kayak con avistamiento de tortugas, rutas en bicicleta y excursiones marítimas desde Los Cristianos.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 605 536 940</span>
-      <div class="isla-emp-card__links">
-        <a href="https://xploretenerife.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(229,57,53,.1);color:#e53935;">
-          <i class="fas fa-mountain"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Nivaria Extremo</h3>
-          <span class="isla-emp-card__tipo">Barranquismo · Escalada</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Barranquismo, escalada, vías ferratas y senderismo técnico. Los más extremos de Tenerife.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 637 903 151</span>
-      <div class="isla-emp-card__links">
-        <a href="https://nivariaextremo.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,193,7,.1);color:#ffc107;">
-          <i class="fas fa-map"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Patea Tus Montes</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Guías</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Rutas de senderismo guiadas por el Parque Nacional del Teide, Anaga y los mejores senderos de Tenerife.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 001</span>
-      <div class="isla-emp-card__links">
-        <a href="https://pateatusmontes.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(168,85,247,.1);color:#a855f7;">
-          <i class="fas fa-compass"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Canaventura</h3>
-          <span class="isla-emp-card__tipo">Multideporte · Aventura</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Actividades outdoor para todos los niveles: senderismo, kayak, barranquismo y escalada en Tenerife.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 002</span>
-      <div class="isla-emp-card__links">
-        <a href="https://canaventura.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
-          <i class="fas fa-ticket-alt"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Civitatis Tenerife</h3>
-          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Las excursiones más valoradas de Tenerife: Teide, Anaga, Masca y mucho más. Reserva online con cancelación gratuita.</p>
-      
-      <div class="isla-emp-card__links">
-        <a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        
-      </div>
-    </div>
-  </div>
+  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-mountain"></i></div><div><h3 class="isla-emp-card__nombre">Outdoor Activities Tenerife</h3><span class="isla-emp-card__tipo">Barranquismo · Senderismo</span></div></div><p class="isla-emp-card__desc">Guías certificados, actividades de barranquismo y senderismo en el norte y sur de la isla. Seguro de RC y accidentes incluido.</p><div class="isla-emp-card__links"><a href="https://outdooractivitiestenerife.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1da1f21a;color:#1da1f2;"><i class="fas fa-water"></i></div><div><h3 class="isla-emp-card__nombre">El Cardón NaturExperience</h3><span class="isla-emp-card__tipo">Barranco de Masca · Kayak</span></div></div><p class="isla-emp-card__desc">Especialistas en el descenso del Barranco de Masca, avistamiento de cetáceos y kayak en Teno. Agencia de viajes y turismo activo certificada.</p><div class="isla-emp-card__links"><a href="https://elcardon.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-hiking"></i></div><div><h3 class="isla-emp-card__nombre">Atlántico Guías</h3><span class="isla-emp-card__tipo">Ascensiones al Teide</span></div></div><p class="isla-emp-card__desc">Guías locales especializados en el Teide: ascensiones a pie, con pernocta en altura o rutas privadas adaptadas a tu nivel.</p><div class="isla-emp-card__links"><a href="https://atlanticoguias.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#a855f71a;color:#a855f7;"><i class="fas fa-ship"></i></div><div><h3 class="isla-emp-card__nombre">Xplore Tenerife</h3><span class="isla-emp-card__tipo">Kayak · Bici · Snorkel</span></div></div><p class="isla-emp-card__desc">Kayak con avistamiento de tortugas, rutas en bicicleta y excursiones marítimas desde el sur de la isla, con enfoque en turismo sostenible.</p><div class="isla-emp-card__links"><a href="https://xploretenerife.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/tenerife/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> Parque Nacional del Teide</h3><p>El volcán más alto de España y Patrimonio de la Humanidad. Paisaje marciano con roques, coladas de lava y el mar de nubes que aparece y desaparece. Imprescindible subir al amanecer. Requiere permiso para los últimos 200 m hasta la cima.</p></div>
 <div class="isla-zona fade-in"><h3> Macizo de Anaga</h3><p>Reserva de la Biosfera con la laurisilva más antigua de Europa. Barrancos profundos, senderos entre niebla permanente y playas de arena negra inaccesibles por carretera. El lado más salvaje de Tenerife.</p></div>

@@ -192,7 +192,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -531,6 +537,7 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
+<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -734,57 +741,7 @@ a:hover { color:#00e05a; }
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en La Gomera</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid">
-    <div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(28,255,107,.1);color:#1cff6b;">
-          <i class="fas fa-tree"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Adventure Capital La Gomera</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Barranquismo</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Rutas por el Parque Nacional de Garajonay, barranquismo y senderismo en la laurisilva de La Gomera.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 050</span>
-      <div class="isla-emp-card__links">
-        <a href="https://adventurecapital.es" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/san-sebastian-de-la-gomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(0,188,212,.1);color:#00bcd4;">
-          <i class="fas fa-hiking"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Trotando Mundos La Gomera</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Naturaleza</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Guías locales especializados en el Parque de Garajonay y los barrancos de Valle Gran Rey.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 051</span>
-      <div class="isla-emp-card__links">
-        <a href="https://trotandomundos.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/san-sebastian-de-la-gomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
-          <i class="fas fa-ticket-alt"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Civitatis La Gomera</h3>
-          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Excursiones a Garajonay, Valle Gran Rey y los mejores miradores de La Gomera.</p>
-      
-      <div class="isla-emp-card__links">
-        <a href="https://www.civitatis.com/es/san-sebastian-de-la-gomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        
-      </div>
-    </div>
-  </div>
+  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-tree"></i></div><div><h3 class="isla-emp-card__nombre">Ipalan Trekking</h3><span class="isla-emp-card__tipo">Senderismo · Garajonay</span></div></div><p class="isla-emp-card__desc">Guía oficial de turismo de Canarias, viajes a medida y trekking itinerante por el Parque Nacional de Garajonay y los senderos de la isla.</p><div class="isla-emp-card__links"><a href="https://ipalan.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/lagomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> Parque Nacional de Garajonay</h3><p>La laurisilva más bien conservada del mundo. Árboles centenarios cubiertos de musgo y liquen, niebla permanente en las cumbres y una red de senderos que atraviesa un bosque que parece de cuento.</p></div>
 <div class="isla-zona fade-in"><h3> Valle Gran Rey</h3><p>El valle más fotografiado de La Gomera. Palmeras canarias, terrazas de cultivo en vertical y playas de arena negra en la desembocadura. Base de operaciones para el senderismo del oeste.</p></div>

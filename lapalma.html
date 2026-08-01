@@ -191,7 +191,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -530,6 +536,7 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
+<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -733,57 +740,7 @@ a:hover { color:#00e05a; }
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en La Palma</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid">
-    <div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(28,255,107,.1);color:#1cff6b;">
-          <i class="fas fa-leaf"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Senda Ecoway La Palma</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Naturaleza</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Rutas de senderismo por la Caldera de Taburiente, Ruta de los Volcanes y la laurisilva de La Palma.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 040</span>
-      <div class="isla-emp-card__links">
-        <a href="https://sendaecoway.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/santa-cruz-de-la-palma/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(168,85,247,.1);color:#a855f7;">
-          <i class="fas fa-star"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Visit La Palma Activo</h3>
-          <span class="isla-emp-card__tipo">Astronomía · Senderismo</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Rutas nocturnas de astroturismo y senderismo de día. La Palma tiene el cielo más limpio de Europa.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 041</span>
-      <div class="isla-emp-card__links">
-        <a href="https://visitlapalma.es" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/santa-cruz-de-la-palma/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
-          <i class="fas fa-ticket-alt"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Civitatis La Palma</h3>
-          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Excursiones a la Caldera, observación de estrellas y visitas a los volcanes con cancelación gratuita.</p>
-      
-      <div class="isla-emp-card__links">
-        <a href="https://www.civitatis.com/es/santa-cruz-de-la-palma/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        
-      </div>
-    </div>
-  </div>
+  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#e539351a;color:#e53935;"><i class="fas fa-fire"></i></div><div><h3 class="isla-emp-card__nombre">La Palma Natural</h3><span class="isla-emp-card__tipo">Senderismo · Volcán Tajogaite</span></div></div><p class="isla-emp-card__desc">Empresa de turismo activo inscrita en el Registro General Turístico de Canarias, guías oficiales certificados. Rutas al volcán y por la Caldera de Taburiente.</p><div class="isla-emp-card__links"><a href="https://www.lapalmanatural.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-water"></i></div><div><h3 class="isla-emp-card__nombre">La Palma Outdoor</h3><span class="isla-emp-card__tipo">Kayak · Senderismo · Volcán</span></div></div><p class="isla-emp-card__desc">Visitas guiadas al volcán de Tajogaite, kayak a la Cueva Bonita y rutas de senderismo por la isla.</p><div class="isla-emp-card__links"><a href="https://lapalmaoutdoor.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/lapalma/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> Zona Sur – Volcanes y Tajogaite</h3><p>La Ruta de los Volcanes recorre la espina dorsal del sur entre cráteres, coladas y pinares. El Tajogaite, activo en 2021, creó un nuevo delta volcánico de 45 hectáreas que se puede visitar hoy.</p></div>
 <div class="isla-zona fade-in"><h3> Caldera de Taburiente</h3><p>Parque Nacional con paredes de 2.000 m y la Cascada de Colores, donde el agua toma tonos rojizos y amarillos por los minerales volcánicos. Travesía de varios días por el interior del cráter.</p></div>

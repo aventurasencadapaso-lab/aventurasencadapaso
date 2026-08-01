@@ -170,7 +170,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -509,6 +515,7 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
+<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -713,41 +720,7 @@ a:hover { color:#00e05a; }
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en Isla de Lobos</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid">
-    <div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(29,161,242,.1);color:#1da1f2;">
-          <i class="fas fa-ship"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Isla Lobos Excursiones</h3>
-          <span class="isla-emp-card__tipo">Ferry · Snorkel</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Ferry desde Corralejo hasta Isla de Lobos. Día completo con snorkel en El Puertito y senderismo.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 928 535 020</span>
-      <div class="isla-emp-card__links">
-        <a href="https://www.islalobos.es" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/fuerteventura/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
-          <i class="fas fa-ticket-alt"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Civitatis Lobos</h3>
-          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Excursión de día completo a Isla de Lobos con snorkel, almuerzo y guía. Salidas desde Corralejo.</p>
-      
-      <div class="isla-emp-card__links">
-        <a href="https://www.civitatis.com/es/fuerteventura/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        
-      </div>
-    </div>
-  </div>
+  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1da1f21a;color:#1da1f2;"><i class="fas fa-ship"></i></div><div><h3 class="isla-emp-card__nombre">Barracuda Fuerteventura</h3><span class="isla-emp-card__tipo">Catamarán a Isla de Lobos</span></div></div><p class="isla-emp-card__desc">Excursiones en catamarán desde Corralejo a Isla de Lobos, con snorkel, paddle surf y kayak incluidos en la travesía.</p><div class="isla-emp-card__links"><a href="https://www.barracudafuerteventura.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/lanzarote/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> La Caldera – Cima del Islote</h3><p>El volcán de La Caldera (127 m) es el punto más alto de Lobos. En 20-30 minutos de subida se llegan a tener vistas a Fuerteventura, Lanzarote y el Canal de La Bocaina.</p></div>
 <div class="isla-zona fade-in"><h3> El Puertito – Snorkel</h3><p>La laguna natural protegida de El Puertito es el mejor spot de snorkel del archipiélago. Aguas tranquilas, cristalinas y poco profundas con gran variedad de peces tropicales.</p></div>

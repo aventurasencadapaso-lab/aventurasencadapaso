@@ -192,7 +192,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -531,6 +537,7 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
+<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -733,57 +740,7 @@ a:hover { color:#00e05a; }
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en El Hierro</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid">
-    <div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(29,161,242,.1);color:#1da1f2;">
-          <i class="fas fa-fish"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">El Hierro Activo</h3>
-          <span class="isla-emp-card__tipo">Buceo · Senderismo</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Buceo en la Reserva Marina de La Restinga y senderismo por los bosques de laurisilva de El Hierro.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 060</span>
-      <div class="isla-emp-card__links">
-        <a href="https://elhierroactivo.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/el-hierro/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(168,85,247,.1);color:#a855f7;">
-          <i class="fas fa-hiking"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Guía Isla El Hierro</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Naturaleza</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Rutas por el Camino de Jinama, El Sabinar y los mejores paisajes de la isla más pequeña de Canarias.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 061</span>
-      <div class="isla-emp-card__links">
-        <a href="https://guiaislas.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/el-hierro/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
-          <i class="fas fa-ticket-alt"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Civitatis El Hierro</h3>
-          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Las mejores excursiones por la isla 100% renovable: senderismo, buceo y astroturismo.</p>
-      
-      <div class="isla-emp-card__links">
-        <a href="https://www.civitatis.com/es/el-hierro/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        
-      </div>
-    </div>
-  </div>
+  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-hiking"></i></div><div><h3 class="isla-emp-card__nombre">Atlantidea</h3><span class="isla-emp-card__tipo">Senderismo · Excursiones</span></div></div><p class="isla-emp-card__desc">Empresa local desde 2008, excursiones y senderismo guiado por los caminos de El Hierro, Reserva Mundial de la Biosfera.</p><div class="isla-emp-card__links"><a href="https://www.atlantidea.net" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1da1f21a;color:#1da1f2;"><i class="fas fa-water"></i></div><div><h3 class="isla-emp-card__nombre">Senda Ecoway</h3><span class="isla-emp-card__tipo">Senderismo · Buceo</span></div></div><p class="isla-emp-card__desc">Actividades sostenibles en El Hierro: rutas de senderismo por paisajes volcánicos y buceo en aguas cristalinas.</p><div class="isla-emp-card__links"><a href="https://sendaecoway.com/destino/canarias/el-hierro/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/elhierro/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> La Restinga – Buceo</h3><p>La Reserva Marina de La Restinga es el mejor spot de buceo de España y uno de los mejores de Europa. Aguas con 50 m de visibilidad, fondos volcánicos únicos, tortugas marinas y manta rayas.</p></div>
 <div class="isla-zona fade-in"><h3> El Golfo – Paisaje Único</h3><p>El antiguo cráter volcánico sumergido en el mar forma la bahía más hermosa de El Hierro. El Camino de Jinama desciende 1.000 m en 4 km desde las cumbres hasta el fondo del golfo.</p></div>

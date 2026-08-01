@@ -238,7 +238,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -577,6 +583,7 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
+<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -780,73 +787,7 @@ a:hover { color:#00e05a; }
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en Gran Canaria</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid">
-    <div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(28,255,107,.1);color:#1cff6b;">
-          <i class="fas fa-hiking"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Turismo Activo Gran Canaria</h3>
-          <span class="isla-emp-card__tipo">Senderismo · Barranquismo</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Rutas guiadas por Tejeda, Roque Nublo, Güigüi y los mejores barrancos de Gran Canaria.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 010</span>
-      <div class="isla-emp-card__links">
-        <a href="https://grancanariaadventures.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/gran-canaria/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(29,161,242,.1);color:#1da1f2;">
-          <i class="fas fa-fish"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Diver Playa del Inglés</h3>
-          <span class="isla-emp-card__tipo">Buceo · Snorkel</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Centro de buceo en el sur de Gran Canaria. Inmersiones para todos los niveles en aguas templadas.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 011</span>
-      <div class="isla-emp-card__links">
-        <a href="https://diverplayadelingles.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/gran-canaria/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,193,7,.1);color:#ffc107;">
-          <i class="fas fa-bicycle"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Bike Station Gran Canaria</h3>
-          <span class="isla-emp-card__tipo">Ciclismo MTB</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Alquiler y rutas guiadas en bicicleta de montaña. Rutas técnicas por el interior y el norte de la isla.</p>
-      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 012</span>
-      <div class="isla-emp-card__links">
-        <a href="https://bikestation.es" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        <a href="https://www.civitatis.com/es/gran-canaria/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
-      </div>
-    </div><div class="isla-emp-card">
-      <div class="isla-emp-card__head">
-        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
-          <i class="fas fa-ticket-alt"></i>
-        </div>
-        <div>
-          <h3 class="isla-emp-card__nombre">Civitatis Gran Canaria</h3>
-          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
-        </div>
-      </div>
-      <p class="isla-emp-card__desc">Excursiones a Roque Nublo, Maspalomas, Güigüi y más. Las más valoradas con cancelación gratuita.</p>
-      
-      <div class="isla-emp-card__links">
-        <a href="https://www.civitatis.com/es/gran-canaria/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
-        
-      </div>
-    </div>
-  </div>
+  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-hiking"></i></div><div><h3 class="isla-emp-card__nombre">CANCO Travel Services</h3><span class="isla-emp-card__tipo">Senderismo guiado</span></div></div><p class="isla-emp-card__desc">Caminatas guiadas por los senderos de Gran Canaria con guías turísticos certificados por el Gobierno de Canarias.</p><div class="isla-emp-card__links"><a href="https://www.cancograncanaria.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-mountain"></i></div><div><h3 class="isla-emp-card__nombre">Gran Canaria Natural & Active</h3><span class="isla-emp-card__tipo">Senderismo · Barranquismo · Bici</span></div></div><p class="isla-emp-card__desc">Directorio y organizador de actividades outdoor en la isla: senderismo, barranquismo, cicloturismo y escalada con profesionales locales.</p><div class="isla-emp-card__links"><a href="https://www.grancanarianaturalandactive.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/grancanaria/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> Cumbres – Roque Nublo</h3><p>El corazón volcánico de Gran Canaria. Roque Nublo, Roque Bentayga y el Pico de las Nieves (1.949 m). Senderismo por caminos históricos, almendros en flor en enero y vistas al Teide en días despejados.</p></div>
 <div class="isla-zona fade-in"><h3> Sur – Dunas de Maspalomas</h3><p>Reserva Natural con dunas de hasta 10 m, laguna salobre y bosque de palmeras. El contraste entre el desierto y el Atlántico es uno de los paisajes más fotografiados de Canarias.</p></div>
