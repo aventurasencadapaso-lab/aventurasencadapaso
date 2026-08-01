@@ -415,19 +415,25 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   </div><!-- /site-header__inner -->
 </header>
 
-<main id="cp">
-
-  <div class="bus-hero">
-    <span class="bus-hero__label"><i class="fas fa-compass"></i> Buscador de Rutas</span>
-    <h1 class="bus-hero__titulo">Rutas Outdoor en Canarias</h1>
-    <p class="bus-hero__desc">236 rutas con GPS en 9 islas. Filtra por isla, deporte y dificultad.</p>
-    <div class="bus-hero__stats">
+<!-- FOTO HERO CON TITULO SUPERPUESTO -->
+<div style="position:relative;width:100%;height:480px;overflow:hidden;margin-top:72px;">
+  <img src="imagenes/aventureros-hero.jpg" alt="Buscador de rutas outdoor en Canarias" loading="eager"
+       onerror="this.parentElement.style.display='none'"
+       style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+    <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-compass"></i> Buscador de Rutas</span>
+    <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Rutas Outdoor en Canarias</h1>
+    <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">236 rutas con GPS en 9 islas. Filtra por isla, deporte y dificultad.</p>
+    <div class="bus-hero__stats" style="margin-bottom:0;">
       <div class="bus-stat"><span class="bus-stat__num">236</span><span class="bus-stat__lbl">Rutas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">9</span><span class="bus-stat__lbl">Islas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">GPS</span><span class="bus-stat__lbl">En todas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">0€</span><span class="bus-stat__lbl">Gratis</span></div>
     </div>
   </div>
+</div>
+<main id="cp">
 
   <!-- MIS LOGROS -->
   <div class="bus-logros" id="bus-logros">

@@ -40,7 +40,13 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <script>
@@ -407,26 +413,25 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 
   </div><!-- /site-header__inner -->
 </header>
-<!-- FOTO HERO -->
-<div style="position:relative;width:100%;height:420px;overflow:hidden;margin-top:72px;">
-  <img src="imagenes/senderismo-extremo-hero.jpg" alt="Senderismo extremo en Canarias" loading="lazy"
-       onerror="this.style.display='none'"
-       style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.4) 0%,transparent 40%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
+<!-- FOTO HERO CON TITULO SUPERPUESTO -->
+<div style="position:relative;width:100%;height:480px;overflow:hidden;margin-top:72px;">
+  <img src="imagenes/senderismo-extremo-hero.jpg" alt="Senderismo extremo en Canarias" loading="eager"
+       onerror="this.parentElement.style.display='none'"
+       style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+    <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-skull"></i> Rutas extremas</span>
+    <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Senderismo <em style="color:#1cff6b;font-style:normal;">extremo</em><br>en Canarias</h1>
+    <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Las rutas mas exigentes del archipielago. Solo para senderistas experimentados con buena condicion fisica, equipamiento tecnico y experiencia en montana.</p>
+    <div class="send-hero__stats" style="margin-bottom:0;">
+      <div class="send-stat"><span class="send-stat__num">38</span><span class="send-stat__lbl">Rutas dificiles</span></div>
+      <div class="send-stat"><span class="send-stat__num">3</span><span class="send-stat__lbl">Extremas</span></div>
+      <div class="send-stat"><span class="send-stat__num">9</span><span class="send-stat__lbl">Islas</span></div>
+    </div>
+  </div>
 </div>
 <main id="cp">
 
-<!-- HERO -->
-<div class="send-hero">
- <span class="send-hero__label"><i class="fas fa-skull"></i> Rutas extremas</span>
- <h1 class="send-hero__h1">Senderismo <em>extremo</em><br>en Canarias</h1>
- <p class="send-hero__desc">Las rutas mas exigentes del archipielago. Solo para senderistas experimentados con buena condicion fisica, equipamiento tecnico y experiencia en montana.</p>
- <div class="send-hero__stats">
- <div class="send-stat"><span class="send-stat__num">38</span><span class="send-stat__lbl">Rutas dificiles</span></div>
- <div class="send-stat"><span class="send-stat__num">3</span><span class="send-stat__lbl">Extremas</span></div>
- <div class="send-stat"><span class="send-stat__num">9</span><span class="send-stat__lbl">Islas</span></div>
- </div>
-</div>
 
 <!-- AVISO -->
 <div class="send-aviso">
