@@ -182,7 +182,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-ig-modal__hint{color:#5a6070;font-size:11px;text-align:center;margin:12px 0 0;line-height:1.5;}
 </style>
 .rp-safety__legal{color:#8a8fa0;font-size:11px;margin:8px 0 0;line-height:1.5;}
-.rp-safety__legal a{color:#e53935;text-decoration:underline;}
+.rp-safety__legal a{color:#1cff6b !important;text-decoration:underline;}
 
 <style id="rp-ig-style-css">
 .rp-ig-style-sel{display:flex;gap:6px;margin-bottom:12px;}
@@ -866,17 +866,17 @@ function initOffline(){
  function dibujarTextos(ctx,W,H,datos){
   ctx.textBaseline="alphabetic";
   ctx.fillStyle="#1cff6b";ctx.font="700 26px Arial";
-  ctx.fillText(datos.isla.toUpperCase(),70,H-420);
+  ctx.fillText(datos.isla.toUpperCase(),70,H-460);
   ctx.fillStyle="#ffffff";ctx.font="900 50px Arial";
-  wrapText(ctx,datos.nombre,70,H-355,W-140,56);
-  var statsY=H-180;
+  wrapText(ctx,datos.nombre,70,H-395,W-140,56);
+  var statsY=H-300;
   var distTxt=statsGlob.dist?statsGlob.dist+" km":"-- km";
   var stats=[[distTxt,"DISTANCIA"],["+"+statsGlob.asc+" m","DESNIVEL"]];
-  var sx=70;
+  var sy=statsY;
   stats.forEach(function(s){
-   ctx.fillStyle="#1cff6b";ctx.font="900 42px Arial";ctx.fillText(s[0],sx,statsY);
-   ctx.fillStyle="#c8ccd8";ctx.font="600 22px Arial";ctx.fillText(s[1],sx,statsY+34);
-   sx+=320;
+   ctx.fillStyle="#1cff6b";ctx.font="900 48px Arial";ctx.fillText(s[0],70,sy);
+   ctx.fillStyle="#c8ccd8";ctx.font="600 22px Arial";ctx.fillText(s[1],70,sy+30);
+   sy+=95;
   });
   ctx.fillStyle="rgba(255,255,255,.55)";ctx.font="500 22px Arial";
   ctx.fillText("aventurasencadapaso.com",70,H-50);
@@ -998,7 +998,7 @@ function initOffline(){
    gradBottom.addColorStop(0,"rgba(2,7,15,0)");gradBottom.addColorStop(1,"rgba(2,7,15,.97)");
    ctx.fillStyle=gradBottom;ctx.fillRect(0,H*0.42,W,H*0.58);
    dibujarLogo(ctx,W,H,imgLogo);
-   dibujarTrack(ctx,b,110,520,W-110,980,true);
+   dibujarTrack(ctx,b,110,540,W-110,1360,true);
    dibujarTextos(ctx,W,H,datos);
 
   } else if(estilo==="mapa" && mosaico){
@@ -1014,20 +1014,20 @@ function initOffline(){
    gradBottom2.addColorStop(0,"rgba(2,7,15,0)");gradBottom2.addColorStop(1,"rgba(2,7,15,.97)");
    ctx.fillStyle=gradBottom2;ctx.fillRect(0,H*0.42,W,H*0.58);
    dibujarLogo(ctx,W,H,imgLogo);
-   dibujarTrack(ctx,b,110,520,W-110,980,false);
+   dibujarTrack(ctx,b,110,540,W-110,1360,false);
    dibujarTextos(ctx,W,H,datos);
 
   } else if(estilo==="mapa" && !mosaico){
    ctx.fillStyle="#070e18";ctx.fillRect(0,0,W,H);
    dibujarLogo(ctx,W,H,imgLogo);
-   dibujarTrack(ctx,b,110,520,W-110,980,false);
+   dibujarTrack(ctx,b,110,540,W-110,1360,false);
    dibujarTextos(ctx,W,H,datos);
    ctx.fillStyle="rgba(255,255,255,.35)";ctx.font="500 20px Arial";
    ctx.fillText("(mapa no disponible, mostrando fondo simple)",70,H-500);
 
   } else {
    dibujarLogo(ctx,W,H,imgLogo);
-   dibujarTrack(ctx,b,110,700,W-110,1160,false);
+   dibujarTrack(ctx,b,110,540,W-110,1360,false);
    dibujarTextos(ctx,W,H,datos);
   }
 
