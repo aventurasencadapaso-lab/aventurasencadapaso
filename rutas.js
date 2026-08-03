@@ -26,6 +26,161 @@
 
 var RUTAS = [
   {
+    id: "buceo-charco-verde-lapalma",
+    nombre: "Buceo y Snorkel – Charco Verde",
+    isla: "La Palma", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Cala protegida de arena negra con Bandera Azul, ideal para snorkel en familia. Junto a la reserva marina, con arcos y cuevas accesibles para todos los niveles.",
+    enlace: "",
+    lat: 28.5544, lng: -17.87
+  },
+  {
+    id: "buceo-puerto-naos-lapalma",
+    nombre: "Buceo y Snorkel – Puerto Naos",
+    isla: "La Palma", tipo: "Submarinismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "La zona de buceo más completa de La Palma, con inmersiones desde la orilla hasta los 40 m. Coral negro, mantas y formaciones volcánicas en Playa Chica y Arco Verde.",
+    enlace: "",
+    lat: 28.5675, lng: -17.8758
+  },
+  {
+    id: "buceo-radazul-tenerife",
+    nombre: "Buceo – Radazul",
+    isla: "Tenerife", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Uno de los fondos marinos más limpios de Tenerife, ideal para iniciarse en el buceo. Aguas tranquilas de arena negra en el municipio de El Rosario.",
+    enlace: "",
+    lat: 28.4267, lng: -16.3153
+  },
+  {
+    id: "buceo-sardina-del-norte-gc",
+    nombre: "Buceo – Sardina del Norte",
+    isla: "Gran Canaria", tipo: "Submarinismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Una de las zonas de buceo más populares del norte de Gran Canaria, con fondos rocosos y gran variedad de vida marina en aguas tranquilas.",
+    enlace: "",
+    lat: 28.168, lng: -15.701
+  },
+  {
+    id: "kayak-los-gigantes-tenerife",
+    nombre: "Kayak – Acantilados de Los Gigantes",
+    isla: "Tenerife", tipo: "Kayak", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Remada junto a los espectaculares acantilados de Los Gigantes, de hasta 600 m de altura, con cuevas marinas accesibles solo desde el agua y avistamiento de cetáceos.",
+    enlace: "",
+    lat: 28.2434, lng: -16.84
+  },
+  {
+    id: "kitesurf-el-medano-tenerife",
+    nombre: "Kitesurf – El Médano",
+    isla: "Tenerife", tipo: "Kitesurf", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Uno de los mejores destinos de Europa para kitesurf y windsurf, con viento constante todo el año. El spot de Cabezo acoge competiciones internacionales.",
+    enlace: "",
+    lat: 28.0403, lng: -16.5375
+  },
+  {
+    id: "kitesurf-pozo-izquierdo-gc",
+    nombre: "Kitesurf y Windsurf – Pozo Izquierdo",
+    isla: "Gran Canaria", tipo: "Kitesurf", dificultad: "Difícil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Referente mundial de windsurf y kitesurf, sede habitual del campeonato del mundo. Vientos alisios fuertes y constantes en la costa este de la isla.",
+    enlace: "",
+    lat: 27.8386, lng: -15.431
+  },
+  {
+    id: "surf-el-confital-gc",
+    nombre: "Surf – El Confital",
+    isla: "Gran Canaria", tipo: "Surf", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "La ola de 'Las Monjas' en pleno Las Palmas de Gran Canaria. Junto a La Cícer, en Las Canteras, es uno de los spots favoritos de los surfistas locales.",
+    enlace: "",
+    lat: 28.1553, lng: -15.452
+  },
+  {
+    id: "surf-el-socorro-tenerife",
+    nombre: "Surf – Playa de El Socorro",
+    isla: "Tenerife", tipo: "Surf", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Una de las playas más constantes de Tenerife para surfear, con arena volcánica negra y olas de izquierda y derecha para todos los niveles. Mejor época: noviembre-marzo.",
+    enlace: "",
+    lat: 28.3919, lng: -16.582
+  },
+  {
+    id: "surf-la-izquierda-punta-hidalgo",
+    nombre: "Surf – La Izquierda (Punta del Hidalgo)",
+    isla: "Tenerife", tipo: "Surf", dificultad: "Difícil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Legendario point break al pie de los acantilados de Punta del Hidalgo. Izquierdas largas y rápidas con secciones tubulares, para surfistas con experiencia.",
+    enlace: "",
+    lat: 28.5748, lng: -16.322
+  },
+
+  {
+    id: "surf-americas-tenerife",
+    nombre: "Surf – Playa de Las Américas",
+    isla: "Tenerife", tipo: "Surf", dificultad: "Fácil",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "El epicentro del surf en el sur de Tenerife, con varios picos para todos los niveles como 'El Medio' y escuelas de surf durante todo el año.",
+    enlace: "https://tilegitsurf.es/playas-para-surfear-en-tenerife/",
+    lat: 28.0575, lng: -16.7245
+  },
+  {
+    id: "buceo-puertito-adeje",
+    nombre: "Buceo – El Puertito de Adeje",
+    isla: "Tenerife", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Microreserva marina con tortugas verdes en libertad y más de 50 especies. Caleta de arena negra ideal para snorkel y bautizos de buceo.",
+    enlace: "https://www.yumping.com/noticias-aventura/las-7-mejores-playas-para-hacer-snorkel-en-tenerife--c1193",
+    lat: 28.0987, lng: -16.7524
+  },
+  {
+    id: "buceo-canteras-gc",
+    nombre: "Buceo – Playa de Las Canteras",
+    isla: "Gran Canaria", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Uno de los puntos de buceo más accesibles de Canarias, junto a La Puntilla. Fondo de hasta 10 metros con arrecifes, praderas de algas y viejas multicolores. Ideal para bautizos.",
+    enlace: "https://blog.clickandboat.com/es/buceo-gran-canaria/",
+    lat: 28.15, lng: -15.44
+  },
+  {
+    id: "buceo-cabron-gc",
+    nombre: "Buceo – Reserva de El Cabrón",
+    isla: "Gran Canaria", tipo: "Submarinismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "La reserva marina más concurrida de Gran Canaria, en Arinaga. Caída de hasta 23 metros con alta concentración de especies, apta también para snorkel.",
+    enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/buceo-en-gran-canaria/",
+    lat: 27.8567, lng: -15.3933
+  },
+  {
+    id: "buceo-catedral-gc",
+    nombre: "Buceo – La Catedral",
+    isla: "Gran Canaria", tipo: "Submarinismo", dificultad: "Difícil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Una gran cueva submarina abovedada frente a La Isleta, con juegos de luces y sombras entre pasillos rocosos. Requiere experiencia previa; profundidad de hasta 40 metros.",
+    enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/buceo-en-gran-canaria/",
+    lat: 28.165, lng: -15.42
+  },
+  {
+    id: "surf-famara-lanzarote",
+    nombre: "Surf – Playa de Famara",
+    isla: "Lanzarote", tipo: "Surf", dificultad: "Media",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "El spot de surf más famoso de Lanzarote, bajo los acantilados de Famara. Olas consistentes todo el año y varias escuelas de surf en el pueblo.",
+    enlace: "https://es.wikipedia.org/wiki/Playa_de_Famara",
+    lat: 29.1103, lng: -13.5527
+  },
+  {
+    id: "surf-cotillo-fuerte",
+    nombre: "Surf – El Cotillo",
+    isla: "Fuerteventura", tipo: "Surf", dificultad: "Media",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "Pueblo pesquero del norte de Fuerteventura con varios picos de surf de calidad y las famosas lagunas turquesas de Los Lagos para bañarse en aguas tranquilas.",
+    enlace: "https://www.fuerteventuraplayas.com/",
+    lat: 28.6825, lng: -14.0089
+  },
+
+  {
     id: "buceo-restinga",
     nombre: "Buceo – Reserva Marina La Restinga",
     isla: "El Hierro", tipo: "Submarinismo", dificultad: "Fácil",
