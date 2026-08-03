@@ -39,7 +39,13 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <style id="hide-google-bar">
@@ -388,6 +394,8 @@ body { overflow-x: hidden !important; }
  <div class="rec-card ok"><i class="fas fa-mobile-alt"></i><h3>Batería extra</h3><p>PowerBank imprescindible para rutas largas. El GPS drena la batería rápido. Carga siempre el móvil antes de salir al 100%.</p></div>
  <div class="rec-card ok"><i class="fas fa-first-aid"></i><h3>Botiquín básico</h3><p>Tiritas, venda, desinfectante, analgésicos y pastillas de electrolitos para rutas de más de 4 horas. Imprescindible en travesías de varios días.</p></div>
  </div>
+</div>
+<main id="cp">
 
  <!-- Seguridad -->
  <h2 class="rec-titulo"><i class="fas fa-shield-alt"></i> Seguridad en ruta</h2>

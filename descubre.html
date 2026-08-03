@@ -37,7 +37,13 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <style id="hide-google-bar">
@@ -381,6 +387,7 @@ body { overflow-x: hidden !important; }
   
  </div>
 </div>
+<main id="cp">
 
 
   <!-- SUBSECCIONES DETALLE -->
@@ -459,7 +466,8 @@ body { overflow-x: hidden !important; }
  <a href="politica-cookies.html">Cookies</a>
  </div>
  </div>
- <div class="footer-legal">
+ 
+</div><div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
  <a href="politica-cookies.html">Cookies</a>
  <a href="aviso-legal.html">Aviso Legal</a>

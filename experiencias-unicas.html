@@ -41,7 +41,13 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <style id="hide-google-bar">
@@ -349,6 +355,8 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   <div class="cat-stats" style="margin-bottom:20px;"><div><span class="cat-stat__num">4</span><span class="cat-stat__lbl">Spots de buceo/snorkel</span></div><div><span class="cat-stat__num">4</span><span class="cat-stat__lbl">Rutas al amanecer</span></div><div><span class="cat-stat__num">50m</span><span class="cat-stat__lbl">Visibilidad en El Hierro</span></div><div><span class="cat-stat__num">9</span><span class="cat-stat__lbl">Islas únicas</span></div>
  </div>
 </div>
+</div>
+<main id="cp">
 
 
  <section class="cat-seccion">

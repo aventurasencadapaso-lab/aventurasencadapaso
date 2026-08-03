@@ -66,7 +66,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <style id="hide-google-bar">
@@ -542,6 +548,7 @@ body { overflow-x: hidden !important; }
   
  </div>
 </div>
+<main id="cp">
 
 
  <!-- FILTROS -->
@@ -589,6 +596,8 @@ body { overflow-x: hidden !important; }
  </select>
  </div>
  </div>
+</div>
+
  <div class="search-meta">
  <span class="resultado-count" id="cnt"></span>
  <button id="ball" type="button"><i class="fas fa-undo"></i> Limpiar</button>

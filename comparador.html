@@ -57,7 +57,13 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){
+    obs.observe(document.body, {childList:true, subtree:true});
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      obs.observe(document.body, {childList:true, subtree:true});
+    });
+  }
 })();
 </script>
 <style id="hide-google-bar">
@@ -446,6 +452,7 @@ body { overflow-x: hidden !important; }
   
  </div>
 </div>
+<main id="cp">
 
 
  <div class="cmp-wrap">
@@ -467,6 +474,8 @@ body { overflow-x: hidden !important; }
  <div class="cmp-opcion" data-val="naturaleza"><i class="fas fa-leaf"></i> Naturaleza / Fotografía</div>
  </div>
  </div>
+</div>
+
 
  <!-- P2: Nivel -->
  <div class="cmp-pregunta">
