@@ -143,6 +143,16 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-foto-hero .rp-h1{font-family:Orbitron,sans-serif;font-size:clamp(1.1rem,3.6vw,1.8rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0;line-height:1.3;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;}
 @media(max-width:600px){.rp-foto-hero{height:340px;}}
 </style>
+
+<style id="rp-punto-css">
+.rp-map-wrap{margin:20px 0 28px;}
+.rp-map-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;}
+.rp-map-label{font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.rp-map{width:100%;height:340px;border-radius:14px;overflow:hidden;border:1px solid rgba(28,255,107,.15);}
+.rp-sat-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid rgba(28,255,107,.3);background:rgba(28,255,107,.08);color:#1cff6b;font-size:10px;font-weight:700;font-family:Orbitron,sans-serif;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;}
+.rp-sat-btn:hover{background:rgba(28,255,107,.15);}
+.rp-sat-btn.on{background:#1cff6b;color:#02070f;}
+</style>
 </head>
 <body><a href="#cp" class="skip-link">Saltar al contenido principal</a><header class="site-header" role="banner">
   <div class="site-header__inner">
@@ -380,10 +390,17 @@ iframe.goog-te-banner-frame{display:none!important;}
   </div>
 
   <div class="rp-acts">
-    <a href="https://welikecanarias.com/senderismo-la-graciosa/" target="_blank" rel="noopener" class="rp-btn"><i class="fas fa-download"></i> Track GPS</a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=29.2147,-13.4808" target="_blank" rel="noopener" class="rp-btn rp-btn-out rp-btn-llegar"><i class="fas fa-location-dot"></i> Cómo llegar</a><a href="https://welikecanarias.com/senderismo-la-graciosa/" target="_blank" rel="noopener" class="rp-btn rp-btn-out"><i class="fas fa-circle-info"></i> Más información</a>
     <button class="rp-btn rp-btn-sh" id="bs"><i class="fas fa-share-alt"></i> Compartir</button><button class="rp-btn rp-btn-out rp-btn-save" id="rp-save-btn" data-ruta="snorkel-montana-amarilla"><i class="far fa-heart"></i> <span>Guardar</span></button><button class="rp-btn rp-btn-out rp-btn-done" id="rp-done-btn" data-ruta="snorkel-montana-amarilla"><i class="far fa-circle-check"></i> <span>Marcar como completada</span></button>
     <a href="../lagraciosa.html" class="rp-btn rp-btn-out"><i class="fas fa-map-marker-alt"></i> Ver La Graciosa</a>
     <a href="../ruleta.html" class="rp-btn rp-btn-out"><i class="fas fa-dice"></i> Ruta aleatoria</a>
+  </div>
+  <div class="rp-map-wrap">
+    <div class="rp-map-head">
+      <span class="rp-map-label"><i class="fas fa-map-marker-alt"></i> Ubicación</span>
+      <button type="button" id="rp-sat-btn" class="rp-sat-btn"><i class="fas fa-satellite"></i> Satélite</button>
+    </div>
+    <div id="rp-map" class="rp-map" data-lat="29.2147" data-lng="-13.4808"></div>
   </div>
   <div class="rp-safety">
     <div class="rp-safety__inner">
@@ -450,7 +467,26 @@ iframe.goog-te-banner-frame{display:none!important;}
 
 
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>(function(){var mp=L.map("mr",{center:[28.0994,-15.7094],zoom:13});L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"© CARTO",subdomains:"abcd",maxZoom:17}).addTo(mp);var sv='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.67 14 22 14 22S28 23.67 28 14C28 6.27 21.73 0 14 0z" fill="#ff6f00"/><circle cx="14" cy="14" r="6" fill="#02070f"/></svg>';L.marker([28.0994,-15.7094],{icon:L.divIcon({html:sv,className:"",iconSize:[28,36],iconAnchor:[14,36],popupAnchor:[0,-36]})}).addTo(mp).bindPopup("Agaete – Tamadaba (Lineal)").openPopup();})();</script><script>document.getElementById("bs").addEventListener("click",function(){var u="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html",t="Agaete – Tamadaba (Lineal) en Gran Canaria | Aventuras en Cada Paso";if(navigator.share){navigator.share({title:"Agaete – Tamadaba (Lineal)",text:t,url:u}).catch(function(){});return;}var o=document.getElementById("sp");if(o)o.remove();var d=document.createElement("div");d.id="sp";d.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#0c1624;border:1px solid rgba(28,255,107,.3);border-radius:16px;padding:20px 24px;min-width:280px;max-width:90vw;box-shadow:0 12px 40px rgba(0,0,0,.6)";d.innerHTML="<p style='font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:2px;margin:0 0 12px'>COMPARTIR</p><div style='display:flex;flex-wrap:wrap;gap:8px'>"+"<a href='https://wa.me/?text="+encodeURIComponent(t+" "+u)+"' target='_blank' style='padding:9px 14px;background:#25d366;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-whatsapp'></i>WhatsApp</a>"+"<a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(u)+"' target='_blank' style='padding:9px 14px;background:#1da1f2;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-twitter'></i>Twitter</a>"+"<button onclick='navigator.clipboard.writeText(\"https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html\").then(function(){this.textContent=\"✓ OK\";}.bind(this))' style='padding:9px 14px;background:rgba(28,255,107,.15);color:#1cff6b;border:1px solid rgba(28,255,107,.3);border-radius:10px;font-size:12px;cursor:pointer'><i class='fas fa-link'></i>Copiar</button>"+"<button onclick='document.getElementById(\"sp\").remove()' style='padding:9px 12px;background:rgba(255,255,255,.06);color:#8a8fa0;border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:12px;cursor:pointer'>✕</button></div>";document.body.appendChild(d);});if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=="undefined"&&google.translate){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,de,fr,it,pt",autoDisplay:false},"google_translate_element");}};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";document.head.appendChild(s);}(function(){var t=localStorage.getItem("aventuras-theme");if(t==="light")document.body.classList.add("light-mode");})();</script><script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>(function(){
+var el=document.getElementById("rp-map");if(!el)return;
+var lat=29.2147,lng=-13.4808;
+var mp=L.map("rp-map",{scrollWheelZoom:false}).setView([lat,lng],14);
+var capaMapa=L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"\u00a9 CARTO",subdomains:"abcd",maxZoom:18}).addTo(mp);
+var capaSatelite=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:19});
+var sv='<svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.67 14 22 14 22S28 23.67 28 14C28 6.27 21.73 0 14 0z" fill="#1cff6b"/><circle cx="14" cy="14" r="6" fill="#02070f"/></svg>';
+L.marker([lat,lng],{icon:L.divIcon({html:sv,className:"",iconSize:[30,40],iconAnchor:[15,40]})}).addTo(mp);
+var satActivo=false;
+var satBtn=document.getElementById("rp-sat-btn");
+if(satBtn){
+ satBtn.addEventListener("click",function(){
+  satActivo=!satActivo;
+  satBtn.classList.toggle("on",satActivo);
+  satBtn.innerHTML=satActivo?'<i class="fas fa-map"></i> Mapa':'<i class="fas fa-satellite"></i> Sat\u00e9lite';
+  if(satActivo){mp.removeLayer(capaMapa);capaSatelite.addTo(mp);}
+  else{mp.removeLayer(capaSatelite);capaMapa.addTo(mp);}
+ });
+}
+})();</script><script>document.getElementById("bs").addEventListener("click",function(){var u="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html",t="Agaete – Tamadaba (Lineal) en Gran Canaria | Aventuras en Cada Paso";if(navigator.share){navigator.share({title:"Agaete – Tamadaba (Lineal)",text:t,url:u}).catch(function(){});return;}var o=document.getElementById("sp");if(o)o.remove();var d=document.createElement("div");d.id="sp";d.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;background:#0c1624;border:1px solid rgba(28,255,107,.3);border-radius:16px;padding:20px 24px;min-width:280px;max-width:90vw;box-shadow:0 12px 40px rgba(0,0,0,.6)";d.innerHTML="<p style='font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:2px;margin:0 0 12px'>COMPARTIR</p><div style='display:flex;flex-wrap:wrap;gap:8px'>"+"<a href='https://wa.me/?text="+encodeURIComponent(t+" "+u)+"' target='_blank' style='padding:9px 14px;background:#25d366;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-whatsapp'></i>WhatsApp</a>"+"<a href='https://twitter.com/intent/tweet?text="+encodeURIComponent(t)+"&url="+encodeURIComponent(u)+"' target='_blank' style='padding:9px 14px;background:#1da1f2;color:#fff;border-radius:10px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;gap:6px'><i class='fab fa-twitter'></i>Twitter</a>"+"<button onclick='navigator.clipboard.writeText(\"https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/agaete-tamadaba-gc.html\").then(function(){this.textContent=\"✓ OK\";}.bind(this))' style='padding:9px 14px;background:rgba(28,255,107,.15);color:#1cff6b;border:1px solid rgba(28,255,107,.3);border-radius:10px;font-size:12px;cursor:pointer'><i class='fas fa-link'></i>Copiar</button>"+"<button onclick='document.getElementById(\"sp\").remove()' style='padding:9px 12px;background:rgba(255,255,255,.06);color:#8a8fa0;border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:12px;cursor:pointer'>✕</button></div>";document.body.appendChild(d);});if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=="undefined"&&google.translate){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,de,fr,it,pt",autoDisplay:false},"google_translate_element");}};var s=document.createElement("script");s.src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";document.head.appendChild(s);}(function(){var t=localStorage.getItem("aventuras-theme");if(t==="light")document.body.classList.add("light-mode");})();</script><script>
 document.addEventListener('DOMContentLoaded', function(){
   var link = document.getElementById('btn-buscar-link') ||
              document.querySelector('[aria-controls="panel-buscar"]') ||

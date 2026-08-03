@@ -26,6 +26,106 @@
 
 var RUTAS = [
   {
+    id: "buceo-restinga",
+    nombre: "Buceo – Reserva Marina La Restinga",
+    isla: "El Hierro", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Uno de los mejores spots de buceo de Europa. Aguas con 50 m de visibilidad, tortugas marinas, manta rayas y fondos volcánicos únicos.",
+    enlace: "https://adventurecapital.es",
+    lat: 27.6411, lng: -17.9867
+  },
+  {
+    id: "snorkel-montana-amarilla",
+    nombre: "Snorkel – Charcos de Montaña Amarilla",
+    isla: "La Graciosa", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 4,
+    descripcion: "Los charcos naturales detrás de Montaña Amarilla son los mejores de La Graciosa para snorkel. Aguas turquesas cristalinas con gran variedad de peces y fondos volcánicos.",
+    enlace: "https://welikecanarias.com/senderismo-la-graciosa/",
+    lat: 29.2147, lng: -13.4808
+  },
+  {
+    id: "salinas-graciosa",
+    nombre: "Antiguas Salinas – Historia Salinera",
+    isla: "La Graciosa", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 2,
+    descripcion: "Paseo hasta las antiguas salinas abandonadas de La Graciosa. Historia de la explotación salinera y aves zancudas que frecuentan las balsas en invierno.",
+    enlace: "https://www.alltrails.com/es/spain/la-graciosa",
+    lat: 29.2200, lng: -13.5000
+  },
+  {
+    id: "bufadero-graciosa",
+    nombre: "El Bufadero – Costa Este",
+    isla: "La Graciosa", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 4,
+    descripcion: "Ruta costera por la costa este de La Graciosa hasta el Bufadero, formación volcánica donde el mar entra y expulsa agua con fuerza. Vistas a Lanzarote.",
+    enlace: "https://www.alltrails.com/es/spain/la-graciosa",
+    lat: 29.2300, lng: -13.4850
+  },
+  {
+    id: "snorkel-puertito-lobos",
+    nombre: "Snorkel – El Puertito de Lobos",
+    isla: "Isla de Lobos", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Las mejores lagunas naturales del archipiélago para snorkel. Aguas turquesas protegidas del viento con gran variedad de peces tropicales y fondos volcánicos.",
+    enlace: "https://www.islalobos.es",
+    lat: 28.7489, lng: -13.8203
+  },
+  {
+    id: "salinas-lobos",
+    nombre: "Antiguas Salinas de Lobos",
+    isla: "Isla de Lobos", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 2,
+    descripcion: "Paseo hasta las antiguas salinas abandonadas del islote. Historia de la explotación salinera y aves zancudas que frecuentan las balsas en invierno.",
+    enlace: "https://www.islalobos.es",
+    lat: 28.7472, lng: -13.8186
+  },
+  {
+    id: "birdwatching-lobos",
+    nombre: "Observación de Aves – Lobos",
+    isla: "Isla de Lobos", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 5,
+    descripcion: "Isla de Lobos es hogar de pardelas, gaviotas de Audouin y otras aves marinas. Llevar prismáticos. La mejor época es primavera, en época de nidificación.",
+    enlace: "https://www.islalobos.es",
+    lat: 28.7506, lng: -13.8167
+  },
+  {
+    id: "kayak-lobos",
+    nombre: "Kayak – Vuelta a Isla de Lobos",
+    isla: "Isla de Lobos", tipo: "Kayak", dificultad: "Media",
+    duracion: "4-8 horas", distancia: 12,
+    descripcion: "Vuelta completa al islote en kayak desde Corralejo. Fondos cristalinos, cuevas marinas y la impresionante perspectiva de Lobos desde el agua.",
+    enlace: "https://profuerte.com",
+    lat: 28.7506, lng: -13.8167
+  },
+  {
+    id: "snorkel-concha-lobos",
+    nombre: "Snorkel – Playa de La Concha",
+    isla: "Isla de Lobos", tipo: "Submarinismo", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "La bahía protegida de La Concha es perfecta para el snorkel con niños. Aguas poco profundas, arena blanca y gran variedad de peces en un entorno paradisíaco.",
+    enlace: "https://www.islalobos.es",
+    lat: 28.7481, lng: -13.8250
+  },
+  {
+    id: "gran-tarajal-caleta-fuerte",
+    nombre: "Gran Tarajal – Caleta del Muerto",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 8,
+    descripcion: "Ruta costera por acantilados volcánicos del sureste desde Gran Tarajal. Calas solitarias, colores rojizos y el silencio de la costa menos visitada.",
+    enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/tuineje",
+    lat: 28.2017, lng: -14.0017
+  },
+  {
+    id: "cuevas-volcanicas-lobos",
+    nombre: "Cuevas Volcánicas – Lobos",
+    isla: "Isla de Lobos", tipo: "Espeleología", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 2,
+    descripcion: "Exploración de pequeñas cuevas y tubos volcánicos en el interior del islote. Formaciones de lava solidificada únicas con fauna rupícola protegida.",
+    enlace: "https://guiaislascanarias.com/fuerteventura/rutas-senderos-fuerteventura/",
+    lat: 28.7519, lng: -13.8183
+  },
+
+  {
     id: "tinor-circular-hierro",
     nombre: "Tiñor – Circular por Los Alisios",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
@@ -1417,7 +1517,7 @@ var RUTAS = [
   {
     id: "portelas-monte-agua",
     nombre: "Las Portelas – Monte del Agua",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 9.5,
     descripcion: "Laurisilva muy bien conservada en el Parque Rural de Teno gomero. Vistas al norte de La Gomera y senderos de niebla únicos en Europa.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/vallehermoso",
@@ -1573,7 +1673,7 @@ var RUTAS = [
   {
     id: "los-roques-gomera",
     nombre: "Los Roques – Mirador Paisaje Lunar",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 11.7,
     descripcion: "Ruta entre los Roques de La Gomera — Agando, Zarcita, Ojila y La Caldera — formaciones basálticas únicas en el interior de la isla. Muy fotogénico.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-gomera",
