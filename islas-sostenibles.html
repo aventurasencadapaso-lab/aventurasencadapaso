@@ -177,16 +177,28 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .rec-tip{background:linear-gradient(135deg,rgba(28,255,107,.06),rgba(28,255,107,.02));border-left:3px solid #1cff6b;border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:14px;}
  .rec-tip strong{color:#e8eaf0;font-size:13px;display:block;margin-bottom:4px;}
  .rec-tip span{color:#8a8fa0;font-size:12px;line-height:1.55;}
- .rec-apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:50px;}
+ .rec-apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:50px;}
  .rec-app{background:#0c1624;border:1px solid rgba(28,255,107,.1);border-radius:12px;padding:18px;display:flex;align-items:flex-start;gap:12px;}
  .rec-app__ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
  .rec-app h4{font-family:Orbitron,sans-serif;font-size:10px;color:#e8eaf0!important;margin:0 0 4px;}
  .rec-app p{color:#8a8fa0!important;font-size:11px;line-height:1.5;margin:0;}
- .rec-errores{margin-bottom:50px;}
- .rec-error{background:#0c1624;border:1px solid rgba(229,57,53,.2);border-radius:14px;padding:20px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start;}
+ .rec-errores{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:50px;}
+ .rec-error{background:#0c1624;border:1px solid rgba(229,57,53,.2);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start;}
  .rec-error__num{font-family:Orbitron,sans-serif;font-size:1.2rem;font-weight:900;color:rgba(229,57,53,.4);flex-shrink:0;width:32px;text-align:center;}
  .rec-error h3{font-family:Orbitron,sans-serif;font-size:10px;color:#e8eaf0!important;margin:0 0 6px;letter-spacing:1px;}
  .rec-error p{color:#8a8fa0!important;font-size:12px;line-height:1.6;margin:0;}
+ </style>
+ <style id="islas-sostenibles-centrado">
+ .rec-wrap{text-align:center;}
+ .rec-titulo{justify-content:center;}
+ .rec-card{text-align:center;}
+ .rec-card i{margin-left:auto;margin-right:auto;}
+ .rec-tip{border-left:none;border-top:2px solid rgba(28,255,107,.35);border-radius:14px;text-align:center;padding:20px 22px;background:#0c1624;margin-bottom:0;display:flex;flex-direction:column;justify-content:center;}
+ .rec-app{flex-direction:column;align-items:center;text-align:center;}
+ .rec-app__ico{margin:0 auto;}
+ .rec-errores{text-align:center;}
+ .rec-error{flex-direction:column;align-items:center;text-align:center;}
+ .rec-error > div{text-align:center;}
  </style>
 <style id="pag-foto-fix">
 body { overflow-x: hidden !important; }
@@ -399,11 +411,12 @@ body { overflow-x: hidden !important; }
  </div>
 </div>
 <main id="cp">
+<div class="rec-wrap">
 
  <!-- Especifico de Canarias -->
  <h2 class="rec-titulo"><i class="fas fa-mountain-sun"></i> Normas específicas de Canarias</h2>
- <div style="margin-bottom:50px;">
- <div class="rec-tip"><strong>Parques Nacionales con permisos</strong><span>El Teide requiere permiso gratuito (pero obligatorio) para acceder a los últimos 200 metros de cumbre. Timanfaya solo se visita en las rutas y horarios autorizados. Compruébalo siempre antes de ir.</span></div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:50px;">
+ <div class="rec-tip"><strong>Parques Nacionales con permisos</strong><span>El Teide requiere permiso para acceder a los últimos 200 metros de cumbre — desde 2026, con ecotasa incluida en los senderos 7 y 10 (gratis si resides en Tenerife). Desde junio de 2026 está prohibido fumar en todo el parque y no se admiten mascotas en los senderos regulados. Timanfaya solo se visita en las rutas y horarios autorizados. Compruébalo siempre antes de ir.</span></div>
  <div class="rec-tip"><strong>Reservas de la Biosfera</strong><span>Seis de las siete islas canarias son, en todo o en parte, Reserva de la Biosfera de la UNESCO. No es solo una etiqueta turística: implica un compromiso real de conservación en el que tú también participas al visitarlas.</span></div>
  <div class="rec-tip"><strong>Especies invasoras</strong><span>Nunca traigas semillas, plantas o tierra de fuera de las islas, ni muevas ejemplares entre una isla y otra — aunque parezca inofensivo. Las especies invasoras son una de las mayores amenazas para la biodiversidad única de Canarias.</span></div>
  <div class="rec-tip"><strong>El agua es un recurso escaso</strong><span>Las islas no tienen ríos permanentes y dependen en gran parte de desalinizadoras. En alojamientos rurales, ducha corta y grifo cerrado mientras te enjabonas — cada litro cuenta de verdad.</span></div>
@@ -413,7 +426,7 @@ body { overflow-x: hidden !important; }
  <!-- Como sumar -->
  <h2 class="rec-titulo"><i class="fas fa-hand-holding-heart"></i> Sé alguien que suma</h2>
  <div class="rec-apps">
- <div class="rec-app"><div class="rec-app__ico" style="background:rgba(28,255,107,.1);"><i class="fas fa-store" style="color:#1cff6b;"></i></div><div><h4>Apoya el comercio local</h4><p>Guías, tiendas y restaurantes de la zona en vez de grandes cadenas. Tu dinero se queda en la isla y sostiene a quien la cuida cada día. Consulta nuestras <a href="buscador-aventuras.html" style="color:#1cff6b;">empresas verificadas</a>.</p></div></div>
+ <div class="rec-app"><div class="rec-app__ico" style="background:rgba(28,255,107,.1);"><i class="fas fa-store" style="color:#1cff6b;"></i></div><div><h4>Apoya el comercio local</h4><p>Guías, tiendas y restaurantes de la zona en vez de grandes cadenas. Tu dinero se queda en la isla y sostiene a quien la cuida cada día. Consulta las <a href="comparador.html" style="color:#1cff6b;">empresas verificadas de tu isla</a>.</p></div></div>
  <div class="rec-app"><div class="rec-app__ico" style="background:rgba(255,193,7,.1);"><i class="fas fa-comments" style="color:#ffc107;"></i></div><div><h4>Respeta costumbres y horarios</h4><p>Un par de palabras en español, respetar los horarios de comida locales y el ritmo de los pueblos pequeños se nota y se agradece.</p></div></div>
  <div class="rec-app"><div class="rec-app__ico" style="background:rgba(29,161,242,.1);"><i class="fas fa-bus" style="color:#1da1f2;"></i></div><div><h4>Transporte responsable</h4><p>Usa transporte público o comparte coche cuando puedas. La guagua conecta la mayoría de puntos de interés y reduce tráfico y emisiones en carreteras de montaña ya de por sí estrechas.</p></div></div>
  <div class="rec-app"><div class="rec-app__ico" style="background:rgba(229,57,53,.1);"><i class="fas fa-triangle-exclamation" style="color:#e53935;"></i></div><div><h4>Reporta lo que veas mal</h4><p>Un vertido, un incendio incipiente o un daño a un espacio protegido: avisa al 112 en caso de emergencia, o al Cabildo de la isla para incidencias que no sean urgentes.</p></div></div>
@@ -441,59 +454,10 @@ body { overflow-x: hidden !important; }
  </div>
 
  </div>
+</div>
 </main>
 
-<div class="rec-wrap" style="margin-bottom:50px;">
- <h2 class="rec-titulo"><i class="fas fa-calendar-alt"></i> ¿Cuándo ir a cada isla?</h2>
- <div style="overflow-x:auto;">
- <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:600px;">
- <thead>
-    <tr style="background:rgba(28,255,107,.08);border-bottom:1px solid rgba(28,255,107,.2);">
-     <th style="padding:12px 14px;text-align:left;font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:1px;text-transform:uppercase;">Isla</th>
-     <th style="padding:12px 14px;text-align:center;font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:1px;">Invierno</th>
-     <th style="padding:12px 14px;text-align:center;font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:1px;">Primavera</th>
-     <th style="padding:12px 14px;text-align:center;font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:1px;">Verano</th>
-     <th style="padding:12px 14px;text-align:center;font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:1px;">Otoño</th>
-    </tr>
-   </thead>
-   <tbody>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);background:rgba(28,255,107,.02);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">Tenerife</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">8</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">6</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">Gran Canaria</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">8</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ff6f00;">5</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);background:rgba(28,255,107,.02);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">Lanzarote</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">7</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ff6f00;">4</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">Fuerteventura</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">6</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#5a6070;">3</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);background:rgba(28,255,107,.02);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">La Palma</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">7</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">6</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">La Gomera</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">8</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ff6f00;">5</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">8</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);background:rgba(28,255,107,.02);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">El Hierro</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">8</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">6</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">La Graciosa</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">6</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ff6f00;">4</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-<tr style="border-bottom:1px solid rgba(28,255,107,.06);background:rgba(28,255,107,.02);"><td style="padding:12px 14px;color:#e8eaf0;font-weight:600;">Isla de Lobos</td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ffc107;">6</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">10</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#ff6f00;">5</span><span style="color:#5a6070;font-size:10px;">/10</span></td><td style="padding:12px 14px;text-align:center;"><span style="font-family:Orbitron,sans-serif;font-size:1rem;font-weight:900;color:#1cff6b;">9</span><span style="color:#5a6070;font-size:10px;">/10</span></td></tr>
-   </tbody>
- </table>
- </div>
 
- <h2 class="rec-titulo" style="margin-top:40px;"><i class="fas fa-mobile-alt"></i> Apps imprescindibles para rutas en Canarias</h2>
- <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;">
- <div style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px;">
- <h3 style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;margin:0 0 8px;">Wikiloc</h3>
- <p style="color:#8a8fa0;font-size:12px;line-height:1.6;margin:0 0 8px;">Mapas y tracks GPS descargables. Más de 5.000 rutas en Canarias con GPS offline.</p>
- <span style="font-size:10px;color:#5a6070;">Gratis con anuncios · Premium 2,99€/mes</span>
- </div>
- <div style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px;">
- <h3 style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;margin:0 0 8px;">Komoot</h3>
- <p style="color:#8a8fa0;font-size:12px;line-height:1.6;margin:0 0 8px;">Planificador de rutas con perfil de elevación y recomendaciones según tu nivel.</p>
- <span style="font-size:10px;color:#5a6070;">Gratis · Regiones de pago</span>
- </div>
- <div style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px;">
- <h3 style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;margin:0 0 8px;">AEMET</h3>
- <p style="color:#8a8fa0;font-size:12px;line-height:1.6;margin:0 0 8px;">Meteorología oficial española. Imprescindible para rutas en cumbres y barrancos.</p>
- <span style="font-size:10px;color:#5a6070;">Gratis</span>
- </div>
- <div style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px;">
- <h3 style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;margin:0 0 8px;">Maps.me</h3>
- <p style="color:#8a8fa0;font-size:12px;line-height:1.6;margin:0 0 8px;">Mapas offline de todas las islas. Funciona sin internet, imprescindible en zonas sin cobertura.</p>
- <span style="font-size:10px;color:#5a6070;">Gratis</span>
- </div>
- </div>
-</div>
 
   
 </div>
@@ -502,7 +466,6 @@ body { overflow-x: hidden !important; }
  <div class="footer-col">
  <h3>Contacto</h3>
  <p>aventurasencadapaso@gmail.com</p>
- <p>+34 655 67 93 07</p>
  </div>
  <div class="footer-col">
  <h3>Redes</h3>
@@ -516,12 +479,7 @@ body { overflow-x: hidden !important; }
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- <div class="footer-col">
- <h3>Legal</h3>
- <a href="aviso-legal.html">Aviso Legal</a>
- <a href="politica-privacidad.html">Privacidad</a>
- <a href="politica-cookies.html">Cookies</a>
- </div>
+ 
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
