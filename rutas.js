@@ -335,7 +335,7 @@ var RUTAS = [
   {
     id: "paisaje-lunar-vilaflor",
     nombre: "Vilaflor – Paisaje Lunar (PR-TF 72)",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 12.9,
     descripcion: "Circular desde Vilaflor por pinares hasta el Paisaje Lunar, formaciones de piedra pómez erosionada que parecen de otro planeta. Impresionante.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
@@ -344,7 +344,7 @@ var RUTAS = [
   {
     id: "volcan-fasnia",
     nombre: "Volcán de Fasnia – Siete Fuentes",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 11.0,
     descripcion: "Sendero 20 del Teide por los conos volcánicos de la erupción de 1705. Negro intenso de la lava con tajinastes rojos y azules en primavera.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/fasnia",
@@ -353,7 +353,7 @@ var RUTAS = [
   {
     id: "chinyero-san-jose",
     nombre: "San José de los Llanos – Chinyero",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 16.2,
     descripcion: "Ruta por las coladas del último volcán en erupción de Tenerife (1909). Lava negra entre pinos centenarios. Ideal para familias y niños.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
@@ -364,7 +364,7 @@ var RUTAS = [
   {
     id: "anaga-afur-taganana",
     nombre: "Anaga – Afur a Taganana (Circular)",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 12.2,
     descripcion: "Una de las mejores rutas de Canarias. Laurisilva salvaje, barrancos profundos y la playa virgen del Tamadite. Joya del Macizo de Anaga.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
@@ -382,7 +382,7 @@ var RUTAS = [
   {
     id: "anaga-cruz-carmen-hidalgo",
     nombre: "Cruz del Carmen – Punta del Hidalgo",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 11.4,
     descripcion: "Ruta lineal desde el corazón de Anaga hasta la costa. Pasa por Chinamada, pueblo de casas-cueva habitadas y acantilados de Punta del Hidalgo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-laguna",
@@ -391,7 +391,7 @@ var RUTAS = [
   {
     id: "anaga-bosque-enigmas",
     nombre: "Bosque de los Enigmas – Anaga",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 5.7,
     descripcion: "Circular sencilla desde el Mirador de Zapata por laurisilva bien señalizada. Perfecta para familias. Llevar ropa de abrigo por la humedad.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
@@ -400,7 +400,7 @@ var RUTAS = [
   {
     id: "anaga-taganana-tamadite",
     nombre: "Taganana – Playa del Tamadite",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 12.4,
     descripcion: "Ruta lineal hasta la playa del Tamadite, arena negra volcánica solo accesible a pie. La marea baja revela la playa en todo su esplendor.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
@@ -438,7 +438,7 @@ var RUTAS = [
   {
     id: "teno-risco-verde",
     nombre: "Teno – Monte del Agua – Risco Verde",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 8.3,
     descripcion: "Laurisilva del Monte del Agua hasta los miradores únicos del Risco Verde. Vistas a Masca, Santiago del Teide y el Teide al fondo.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
@@ -485,7 +485,7 @@ var RUTAS = [
   {
     id: "malpais-guimar",
     nombre: "Malpaís de Güímar",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.5,
     descripcion: "Reserva Natural Especial con paisaje desértico volcánico rojizo. Tubos y cuevas volcánicas, miradores y flora endémica. Muy fotografiable.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/guimar",
@@ -494,7 +494,7 @@ var RUTAS = [
   {
     id: "montana-roja-medano",
     nombre: "Montaña Roja – El Médano",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 8.2,
     descripcion: "Circular corta al volcán de 171 m que separa las mejores playas naturales del sur. Referente en el horizonte y vistas a Gran Canaria.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
@@ -503,7 +503,7 @@ var RUTAS = [
   {
     id: "rambla-castro",
     nombre: "Rambla de Castro – Costa Norte",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 8.5,
     descripcion: "Espacio protegido con bancales agrícolas históricos sobre los acantilados del norte. Playas de arena negra y vistas únicas al Atlántico.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
@@ -521,7 +521,7 @@ var RUTAS = [
   {
     id: "anaga-sendero-sentidos",
     nombre: "Sendero de los Sentidos – Anaga",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.6,
     descripcion: "Triple ruta desde Cruz del Carmen con experiencia sensorial única entre laurisilva. Une Anaga con La Laguna. Muy didáctica y bien señalizada.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
@@ -530,7 +530,7 @@ var RUTAS = [
   {
     id: "garachico-pr-tf-43",
     nombre: "Circular Garachico – PR-TF 43",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 8.5,
     descripcion: "Circular bien señalizada desde el pueblo histórico de Garachico. Restos de lava volcánica, costa norte y pinar. Apto para todos los niveles.",
     enlace: "https://www.alltrails.com/es/spain/tenerife",
@@ -539,7 +539,7 @@ var RUTAS = [
   {
     id: "corona-forestal-las-raices",
     nombre: "Las Raíces – Corona Forestal (PR-TF 25.1)",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 13.0,
     descripcion: "Agradable ruta por el bosque de Las Esperanzas en la Corona Forestal. Pino canario y eucalipto en la zona donde Franco planificó el alzamiento.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
@@ -557,7 +557,7 @@ var RUTAS = [
   {
     id: "montana-amarilla-sur",
     nombre: "Montaña Amarilla – Punta de Panete",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 8.9,
     descripcion: "Circular corta al Monumento Natural de Montaña Amarilla. Capas de colores volcánicos entre la montaña y el océano. Puesta de sol espectacular.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/easy",
@@ -583,7 +583,7 @@ var RUTAS = [
   {
     id: "roque-nublo-degollada",
     nombre: "Degollada Becerra – Roque Nublo",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "2-4 horas", distancia: 20.0,
     descripcion: "Acceso al Roque Nublo desde la Degollada Becerra pasando por el Roque de La Rana y El Fraile. Vistas a Artenara y Acusa.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
@@ -592,7 +592,7 @@ var RUTAS = [
   {
     id: "pico-nieves-roque-nublo",
     nombre: "Llanos de la Pez – Pico de las Nieves – Roque Nublo (S-51)",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 15.6,
     descripcion: "Circular por las cumbres de GC desde el área recreativa de Llanos de la Pez. Pico de las Nieves (1.949 m) y Roque Nublo en una sola ruta.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
@@ -619,7 +619,7 @@ var RUTAS = [
   {
     id: "roque-bentayga-gc",
     nombre: "Roque Bentayga – Yacimiento Aborigen",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 8.7,
     descripcion: "Sendero hasta el lugar sagrado de los aborígenes canarios. Almogarenes, grabados rupestres y vistas al Roque Nublo y a la cuenca de Tejeda.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/tejeda",
@@ -628,7 +628,7 @@ var RUTAS = [
   {
     id: "caldera-marteles-gc",
     nombre: "Caldera de Los Marteles – Tenteniguada (SL-1)",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 11.2,
     descripcion: "Circular oficial SL-1 por la Caldera de Los Marteles con vistas al Pico de las Nieves. Almendros en flor en enero–febrero, paisaje único.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valsequillo-de-gran-canaria",
@@ -639,7 +639,7 @@ var RUTAS = [
   {
     id: "barranco-guayadeque",
     nombre: "Barranco de Guayadeque",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.9,
     descripcion: "Monumento Natural con cientos de cuevas aborígenes, ermita rupestre y restaurantes-cueva. Vegetación exuberante. Acceso con reserva desde 2025.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria",
@@ -657,7 +657,7 @@ var RUTAS = [
   {
     id: "barranco-cernicalos-gc",
     nombre: "Barranco de los Cernícalos",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.4,
     descripcion: "El barranco más húmedo de Gran Canaria. Cascadas, helechos gigantes y cernícalos sobrevolando el cauce. Muy verde y fresco todo el año.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valsequillo-de-gran-canaria",
@@ -666,7 +666,7 @@ var RUTAS = [
   {
     id: "caldera-bandama-gc",
     nombre: "Caldera de Bandama – Circular",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.1,
     descripcion: "Borde e interior de la Caldera de Bandama, cráter de 200 m de profundidad y 1 km de diámetro. Viñedos históricos en el fondo del cráter.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria",
@@ -675,7 +675,7 @@ var RUTAS = [
   {
     id: "presa-soria-gc",
     nombre: "Presa de Soria – Cascada",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 11.3,
     descripcion: "Ruta por zona semidesértica hasta la Presa de las Niñas. Cuando llueve se forma una cascada espectacular. Casi sin sombra, llevar protección solar.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
@@ -684,7 +684,7 @@ var RUTAS = [
   {
     id: "fataga-barranco-gc",
     nombre: "Barranco de Fataga – Parque Natural Ayagaures",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.6,
     descripcion: "Por el Parque Natural de Ayagaures en los alrededores del barranco de Fataga. Paisaje de palmeras canarias y acantilados ocres en el sur.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
@@ -693,7 +693,7 @@ var RUTAS = [
   {
     id: "pilancones-gc",
     nombre: "Parque Natural de Pilancones",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 15.0,
     descripcion: "Circular por el Parque Natural de Pilancones desde la Presa de la Angostura. Pino canario centenario y paisajes volcánicos del sur interior.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
@@ -704,7 +704,7 @@ var RUTAS = [
   {
     id: "tamadaba-circular-gc",
     nombre: "Circular Parque Natural de Tamadaba",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 10.1,
     descripcion: "Circular completa por el macizo de Tamadaba: pinos centenarios, Montaña Bibique, Presa de los Pérez y el Valle de Agaete. Impresionante.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
@@ -722,7 +722,7 @@ var RUTAS = [
   {
     id: "valle-agaete-gc",
     nombre: "Valle de Agaete – El Sao",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 15.5,
     descripcion: "Por el Valle de Agaete hasta el barrio de El Sao y el Hornillo por caminos históricos. Frutales, riscos y el pinar de Tamadaba al fondo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/agaete",
@@ -751,7 +751,7 @@ var RUTAS = [
   {
     id: "jacoba-canaria-gc",
     nombre: "Ruta Jacobea Canaria – Etapa 1",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 30.9,
     descripcion: "Primera etapa del Camino de Santiago por Gran Canaria. Cruza la isla por pueblos históricos y paisajes volcánicos únicos de norte a sur.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias",
@@ -762,7 +762,7 @@ var RUTAS = [
   {
     id: "dunas-maspalomas-gc",
     nombre: "Dunas de Maspalomas",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 12.1,
     descripcion: "Reserva Natural con dunas de hasta 10 m y laguna salobre. 8 km de senderos oficiales delimitados. Prohibido salirse del camino marcado.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
@@ -771,7 +771,7 @@ var RUTAS = [
   {
     id: "playa-cabron-gc",
     nombre: "Playa del Cabrón – Playa Cuervo Grande",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 6.4,
     descripcion: "Ruta costera por el litoral del este. Paisaje volcánico con tonos rojizos y turquesas. Ideal para combinar con baño en playas poco frecuentadas.",
     enlace: "https://welikecanarias.com/senderismo-en-gran-canaria-rutas/",
@@ -780,7 +780,7 @@ var RUTAS = [
   {
     id: "amadores-tauro-gc",
     nombre: "Playa de Amadores – Playa de Tauro",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.0,
     descripcion: "Paseo costero entre las playas más populares del suroeste. Acantilados de colores rojizos y vistas al Atlántico con parada en playa virgen.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
@@ -798,7 +798,7 @@ var RUTAS = [
   {
     id: "barranco-guiniguada-gc",
     nombre: "Barranco del Guiniguada – Las Palmas",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 16.2,
     descripcion: "Sendero urbano–natural desde Las Palmas hasta casi el Jardín Canario. El barranco más accesible de la isla, rehabilitado y bien señalizado.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/las-palmas-de-gran-canaria",
@@ -807,7 +807,7 @@ var RUTAS = [
   {
     id: "firgas-circular-gc",
     nombre: "Circular de Firgas",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 6.9,
     descripcion: "Circular técnica por los alrededores de Firgas con tramos estrechos, expuestos y embarrados. Descargar mapa antes de salir. Paisaje muy variado.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
@@ -816,7 +816,7 @@ var RUTAS = [
   {
     id: "fortaleza-gc",
     nombre: "Patrimonio Arqueológico La Fortaleza",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 11.2,
     descripcion: "Ruta corta por el yacimiento arqueológico de La Fortaleza. Plantaciones de almendros y el lugar donde se conmemora la conquista de la isla.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/easy",
@@ -834,7 +834,7 @@ var RUTAS = [
   {
     id: "playa-ingles-costa-gc",
     nombre: "Playa del Inglés – San Agustín (Costa)",
-    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 10.1,
     descripcion: "Paseo costero accesible entre Playa del Inglés y el Balcón de San Agustín. Vistas al Atlántico, bares con terraza y ambiente playero.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
@@ -849,7 +849,7 @@ var RUTAS = [
   {
     id: "caldera-blanca-lanzarote",
     nombre: "Caldera Blanca – Circular desde Tinajo",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 13.8,
     descripcion: "La ruta libre más impresionante de Lanzarote. Coladas de lava hasta el cráter más grande de la isla (1.200 m de diámetro). Sin guía obligatorio.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
@@ -867,7 +867,7 @@ var RUTAS = [
   {
     id: "timanfaya-golfo-litoral",
     nombre: "El Golfo – Ruta del Litoral",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 11.5,
     descripcion: "Sendero lineal desde El Golfo hasta la Playa del Paso por la costa de lava solidificada. Ruta guiada oficial del PN de Timanfaya (miércoles).",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
@@ -914,7 +914,7 @@ var RUTAS = [
   {
     id: "haria-mirador-lanzarote",
     nombre: "Haría – Subida al Mirador",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.8,
     descripcion: "Desde el pueblo blanco de Haría hasta un mirador con vistas al océano. Camino cómodo con paisaje de palmeras canarias y vegetación norteña.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
@@ -923,7 +923,7 @@ var RUTAS = [
   {
     id: "guatiza-famara-gr131",
     nombre: "GR 131 Lanzarote – Tramo Norte",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 74.4,
     descripcion: "Tramo del GR 131 entre Guatiza y Famara por campos de cactus, malpaíses y el paisaje lunar del norte. Ruta oficial bien señalizada.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/teguise",
@@ -943,7 +943,7 @@ var RUTAS = [
   {
     id: "la-geria-vinedos",
     nombre: "La Geria – Viñedos Volcánicos",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.1,
     descripcion: "Ruta por la zona vinícola única en el mundo: uvas cultivadas en hoyos de ceniza volcánica negra. Combina senderismo y enoturismo en bodegas.",
     enlace: "https://www.elviajerofisgon.com/experiencias/guia-de-senderismo-en-lanzarote-rutas-senalizadas-y-consejos/",
@@ -961,7 +961,7 @@ var RUTAS = [
   {
     id: "caldera-cuervos",
     nombre: "Caldera de los Cuervos – Montaña Negra",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 12.5,
     descripcion: "Vista única desde el interior del cráter de Los Cuervos. Bien conservado, rápido y con vistas panorámicas. Terreno polvoriento y seco.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
@@ -970,7 +970,7 @@ var RUTAS = [
   {
     id: "montana-blanca-grietas",
     nombre: "Montaña Blanca – Las Grietas",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 8.6,
     descripcion: "Sendero muy popular hasta Las Grietas, cañones volcánicos estrechos con paredes onduladas. Terreno resbaladizo, llevar calzado con grip.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
@@ -990,7 +990,7 @@ var RUTAS = [
   {
     id: "ajaches-cumbre-lanzarote",
     nombre: "Los Ajaches – Cima y Caldera Colorada",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 12.5,
     descripcion: "Ruta dura al punto más alto de Los Ajaches. Caldera Colorada, la bomba volcánica más grande del mundo y vistas a toda la costa sur.",
     enlace: "https://www.otroviajeenlamochila.com/senderismo-lanzarote/",
@@ -1017,7 +1017,7 @@ var RUTAS = [
   {
     id: "papagayo-playa-blanca",
     nombre: "Playa Blanca – Papagayo (Costera)",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 6.9,
     descripcion: "Paseo costero desde Playa Blanca hasta las calas de Papagayo por acantilados volcánicos. Termina en la cala más espectacular del sur.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
@@ -1037,7 +1037,7 @@ var RUTAS = [
   {
     id: "costa-teguise-playas",
     nombre: "Costa Teguise – Ruta de Playas",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.4,
     descripcion: "Circular costera desde Costa Teguise por Playa de las Cucharas, Los Charcos y Jabilillo. Zona turística con ambiente playero y accesos fáciles.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
@@ -1046,7 +1046,7 @@ var RUTAS = [
   {
     id: "arrecife-charco-paseo",
     nombre: "Arrecife – Paseo Marítimo y Charco",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 7.1,
     descripcion: "Agradable paseo por la capital: Parque Temático, Playa del Reducto, Castillo de San Gabriel y el encantador Charco de San Ginés.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
@@ -1055,7 +1055,7 @@ var RUTAS = [
   {
     id: "puerto-calero-carmen",
     nombre: "Puerto Calero – Puerto del Carmen",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 13.1,
     descripcion: "Sendero costero desde Puerto Calero hasta Puerto del Carmen por el Mirador del Puerto, Barranco Quiquere y Playa Pila de la Barrilla.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote",
@@ -1075,7 +1075,7 @@ var RUTAS = [
   {
     id: "cara-sur-lanzarote",
     nombre: "Cara Sur – Volcanes y Costa",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 7.6,
     descripcion: "Ruta guiada por la cara sur de Lanzarote: volcanes, fauna y vistas espectaculares. Nivel de dificultad 4. 5 horas de recorrido intenso.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
@@ -1084,7 +1084,7 @@ var RUTAS = [
   {
     id: "santa-barbara-teguise",
     nombre: "Castillo de Santa Bárbara – Teguise",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 4.9,
     descripcion: "Subida al Castillo de Santa Bárbara en lo alto de la Montaña de Guanapay. Vistas panorámicas a Teguise, la antigua capital, y la costa este.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/teguise",
@@ -1093,7 +1093,7 @@ var RUTAS = [
   {
     id: "la-santa-tenesar",
     nombre: "La Santa – Tenesar",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 20.1,
     descripcion: "Recorrido de 7 km por paisaje volcánico con acantilados pronunciados desde La Santa hasta Tenesar. Tranquilidad total y vistas al Atlántico.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
@@ -1102,7 +1102,7 @@ var RUTAS = [
   {
     id: "gr131-lanzarote-completo",
     nombre: "GR 131 Lanzarote – Travesía",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Varios días", distancia: 75.4,
     descripcion: "Travesía completa de norte a sur por Lanzarote. Volcanes, malpaíses, viñedos y costas. La gran ruta de largo recorrido de la isla.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/lanzarote",
@@ -1116,7 +1116,7 @@ var RUTAS = [
   {
     id: "calderon-hondo-fuerte",
     nombre: "Calderón Hondo – Lajares (SL-FV 2)",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 5.9,
     descripcion: "La ruta más popular de Fuerteventura. Cráter perfectamente dibujado (278 m) con vistas a Lobos, Lanzarote y el Atlántico. Bien señalizada.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1125,7 +1125,7 @@ var RUTAS = [
   {
     id: "pico-zarza-fuerte",
     nombre: "Pico de la Zarza – Morro Jable (PR-FV 54)",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 15.2,
     descripcion: "Ascenso al punto más alto de Fuerteventura (807 m) con vistas a Cofete, las playas vírgenes y en días despejados hasta Gran Canaria.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1134,7 +1134,7 @@ var RUTAS = [
   {
     id: "cofete-gran-valle-fuerte",
     nombre: "Cofete – Gran Valle (PR-FV 55)",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 8.0,
     descripcion: "Una de las mejores rutas de Fuerteventura. Desciende por el Gran Valle hasta la playa salvaje de Cofete, 12 km de arena virgen. Muy exigente.",
     enlace: "https://www.komoot.com/es-es/guide/809/rutas-de-senderismo-en-fuerteventura",
@@ -1152,7 +1152,7 @@ var RUTAS = [
   {
     id: "barranco-penitas-fuerte",
     nombre: "Betancuria – Barranco de Las Peñitas (SL-FV 27)",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 7.1,
     descripcion: "Ruta patrimonial por el cauce del río Palmas hasta la Ermita de la Virgen de la Peña, patrona de Fuerteventura. Los materiales más antiguos de Canarias.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1161,7 +1161,7 @@ var RUTAS = [
   {
     id: "gr131-fuerteventura",
     nombre: "GR 131 Fuerteventura – Travesía Completa",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Varios días", distancia: 157.1,
     descripcion: "152 km atravesando toda la isla de norte a sur entre volcanes, viento y largas etapas sin sombra. La gran travesía de Fuerteventura.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1170,7 +1170,7 @@ var RUTAS = [
   {
     id: "tindaya-fuerte",
     nombre: "Montaña de Tindaya",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 5.7,
     descripcion: "Ascenso a la montaña sagrada de los majos con grabados podomorlos únicos. Vistas al norte de la isla. Lugar de alto valor arqueológico y espiritual.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
@@ -1179,7 +1179,7 @@ var RUTAS = [
   {
     id: "malpais-arena-fuerte",
     nombre: "Malpaís de la Arena – Norte",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.5,
     descripcion: "Circular por el cono volcánico del Malpaís de la Arena rodeado de coladas de lava. Vistas hacia Corralejo y el Atlántico. Flora resistente al clima árido.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
@@ -1197,7 +1197,7 @@ var RUTAS = [
   {
     id: "ajuy-cuevas-fuerte",
     nombre: "Ajuy – Caleta Negra y Cuevas Marinas",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 5.4,
     descripcion: "Ruta costera a las cuevas marinas de Ajuy y los acantilados de Caleta Negra. Los materiales más antiguos de Canarias a nivel del mar.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/pajara",
@@ -1215,7 +1215,7 @@ var RUTAS = [
   {
     id: "corralejo-dunas-fuerte",
     nombre: "Parque Natural de Corralejo – Dunas",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 12.1,
     descripcion: "Sendero por las grandes dunas blancas del norte junto al Parque Natural de Corralejo. Paisaje desértico con vistas a Lobos y Lanzarote.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
@@ -1224,7 +1224,7 @@ var RUTAS = [
   {
     id: "sendero-costa-fuerte",
     nombre: "Costa de Gran Tarajal – Ruta Costera",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "2-4 horas", distancia: 27.4,
     descripcion: "Paseo costero por el sur entre playas tranquilas y acantilados de colores ocres. Zona alejada del turismo masivo con vistas al océano Atlántico.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/tuineje",
@@ -1233,7 +1233,7 @@ var RUTAS = [
   {
     id: "playa-molinos-fuerte",
     nombre: "Playa de Los Molinos",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.8,
     descripcion: "Ruta hasta la Playa de Los Molinos con la Cueva Herminia visible solo en bajamar. Paisaje volcánico y tranquilidad absoluta en el noroeste.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
@@ -1242,7 +1242,7 @@ var RUTAS = [
   {
     id: "circular-lobos-fuerte",
     nombre: "Ruta Circular – Isla de Lobos",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 11.2,
     descripcion: "Circular completa por Lobos: La Caldera, El Puertito, Faro Martiño y Playa de La Concha. Requiere permiso gratuito y ferry desde Corralejo.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1254,7 +1254,7 @@ var RUTAS = [
   {
     id: "sendero-bayuyo-fuerte",
     nombre: "Sendero Bayuyo – Malpaís Norte",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 10.7,
     descripcion: "Ruta por el enorme malpaís de lava del norte, producto de una erupción hace 10.000 años. Vistas a Lanzarote, Lobos y el Atlántico desde los conos volcánicos.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1263,7 +1263,7 @@ var RUTAS = [
   {
     id: "barrancos-puerto-fuerte",
     nombre: "Barrancos de Puerto – Centro",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 13.4,
     descripcion: "Circular por los barrancos del centro de la isla con 268 m de desnivel. Paisaje variado entre malpaíses, barrancos y llanuras volcánicas poco frecuentadas.",
     enlace: "https://www.senderosbtt.com/rutas-gps/rutas-de-senderismo/rutas-de-senderismo-en-fuerteventura/",
@@ -1272,7 +1272,7 @@ var RUTAS = [
   {
     id: "balcon-asomada-fuerte",
     nombre: "Balcón de La Asomada",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.6,
     descripcion: "Ruta con vistas panorámicas desde el Balcón de La Asomada. Paisaje desértico árido con vistas al Atlántico. Sendero poco frecuentado ideal para la tranquilidad.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -1281,7 +1281,7 @@ var RUTAS = [
   {
     id: "degollada-facay-fuerte",
     nombre: "Degollada de Facay",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 22.8,
     descripcion: "Una de las rutas más largas y exigentes del centro de Fuerteventura con 520 m de desnivel. Atraviesa paisajes volcánicos remotos con gran sensación de aislamiento.",
     enlace: "https://www.senderosbtt.com/rutas-gps/rutas-de-senderismo/rutas-de-senderismo-en-fuerteventura/",
@@ -1326,7 +1326,7 @@ var RUTAS = [
   {
     id: "sotavento-playa-circular",
     nombre: "Arenal Playa de Sotavento – Circular",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 15.5,
     descripcion: "Circular por el arenal de la Playa de Sotavento en Costa Calma. Laguna natural, dunas y el entorno donde se celebran los mundiales de kitesurf y windsurf.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura/easy",
@@ -1335,7 +1335,7 @@ var RUTAS = [
   {
     id: "salinas-jandia-fuerte",
     nombre: "Salinas del Carmen – Ruta Costera",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 9.0,
     descripcion: "Paseo junto a las antiguas salinas del Carmen en el este de la isla. Museo de la Sal y paisaje costero único con aves limícolas en las balsas salineras.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/fuerteventura",
@@ -1344,7 +1344,7 @@ var RUTAS = [
   {
     id: "islote-lobos-norte-fuerte",
     nombre: "Costa Norte – Corralejo",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 25.0,
     descripcion: "Ruta costera desde Corralejo por el GR-131 junto a las Dunas del Parque Natural, con vistas a Lobos y Lanzarote. Sendero de arena bien marcado.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/corralejo",
@@ -1353,7 +1353,7 @@ var RUTAS = [
   {
     id: "montana-cardones-fuerte",
     nombre: "Montaña de Cardones – La Oliva",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 6.0,
     descripcion: "Ruta circular desde La Oliva hasta la Montaña de Cardones. Paisaje semidesértico poco frecuentado con vistas a los pueblos blancos del norte.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura/easy",
@@ -1362,7 +1362,7 @@ var RUTAS = [
   {
     id: "betancuria-vega-rio-palmas",
     nombre: "Betancuria – Vega Río Palmas",
-    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 11.5,
     descripcion: "Paseo histórico desde Betancuria, la antigua capital, hasta la Vega de Río Palmas por el barranco del Río Palmas. Agua, palmeras y la Ermita de la Peña.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/betancuria",
@@ -1385,7 +1385,7 @@ var RUTAS = [
   {
     id: "ruta-volcanes-lapalma",
     nombre: "Ruta de los Volcanes – GR 131",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "Día completo", distancia: 8.2,
     descripcion: "Ruta mítica desde el Refugio del Pilar por cráteres volcánicos hasta Fuencaliente. El Cráter del Hoyo Negro, vistas al Teide y la Gomera.",
     enlace: "https://www.alltrails.com/es/spain/la-palma",
@@ -1412,7 +1412,7 @@ var RUTAS = [
   {
     id: "nacientes-marcos-cordero",
     nombre: "Nacientes de Marcos y Cordero – Túneles",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 14.6,
     descripcion: "Sendero PR-LP 6 por el canal con 13 túneles. El túnel 12 tiene una cascada interior. Laurisilva increíble en el descenso. Requiere frontal y chubasquero.",
     enlace: "https://guiaislascanarias.com/la-palma/rutas-senderos-la-palma/",
@@ -1439,7 +1439,7 @@ var RUTAS = [
   {
     id: "tilos-lapalma",
     nombre: "Ruta de Los Tilos – Bosque Sagrado",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.4,
     descripcion: "Bosque de laurisilva Reserva de la Biosfera con el Salto de los Tilos. Vegetación endémica exuberante y sonido del agua constante.",
     enlace: "https://sendaecoway.com/blog/rutas-la-palma-5-mejores-senderismo/",
@@ -1457,7 +1457,7 @@ var RUTAS = [
   {
     id: "caldera-taburiente-integral",
     nombre: "Travesía Integral – Caldera de Taburiente",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "Varios días", distancia: 15.1,
     descripcion: "Travesía completa del Parque Nacional. Barrancos, cascadas, paredes de 2.000 m y uno de los paisajes más impresionantes de Canarias.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1466,7 +1466,7 @@ var RUTAS = [
   {
     id: "san-antonio-volcan-lapalma",
     nombre: "Volcán de San Antonio – Fuencaliente",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 9.5,
     descripcion: "Sendero muy accesible alrededor del cráter del Volcán de San Antonio. Vistas al nuevo delta del Tajogaite y al faro de Fuencaliente.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1475,7 +1475,7 @@ var RUTAS = [
   {
     id: "camino-faya-lapalma",
     nombre: "Camino de la Faya – Medianías Este",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 13.5,
     descripcion: "Sendero panorámico por las medianías del este conectando los pinares. Vistas al Atlántico y a los valles. Flora endémica de medianías.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1487,7 +1487,7 @@ var RUTAS = [
   {
     id: "cubo-galga-lapalma",
     nombre: "El Cubo de La Galga – PR LP 5.1",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 9.0,
     descripcion: "Sendero por el bosque más húmedo del noreste de La Palma. Laurisilva densa, helechos gigantes y el sonido constante del agua en el barranco de La Galga.",
     enlace: "https://www.alltrails.com/es/spain/la-palma",
@@ -1505,7 +1505,7 @@ var RUTAS = [
   {
     id: "cumbrecita-caldera-lp",
     nombre: "Mirador de La Cumbrecita – Caldera",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.3,
     descripcion: "Ruta panorámica desde el Mirador de La Cumbrecita al borde de la Caldera de Taburiente. Vistas aéreas al interior del parque. Requiere reserva de aparcamiento.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1550,7 +1550,7 @@ var RUTAS = [
   {
     id: "tablado-gallegos-lp",
     nombre: "El Tablado – Gallegos (Costa Norte)",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 9.5,
     descripcion: "Costa norte salvaje entre barrancos, acantilados y caseríos remotos. Gran sensación de aislamiento. Hacer solo ida y volver en guagua desde Gallegos.",
     enlace: "https://www.s-cape.es/blog/la-palma-rutas-senderismo",
@@ -1559,7 +1559,7 @@ var RUTAS = [
   {
     id: "revenaton-cumbrenorte-lp",
     nombre: "Pico de las Nieves – Reventón (GR 131)",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 25.4,
     descripcion: "Ruta de altura desde el Pico de las Nieves (2.239 m) hasta el Paso del Reventón. Cornisas con vistas espectaculares. No apta para vértigo. Llevar abrigo.",
     enlace: "https://www.s-cape.es/blog/la-palma-rutas-senderismo",
@@ -1577,7 +1577,7 @@ var RUTAS = [
   {
     id: "barranco-los-tilos-lp",
     nombre: "Bosque de Los Tilos – Reserva",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 2.7,
     descripcion: "Paseo por la Reserva de la Biosfera de Los Tilos. Laurisilva Patrimonio de la Humanidad con la cascada del Salto de los Tilos. Sendero llano y muy verde.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1586,7 +1586,7 @@ var RUTAS = [
   {
     id: "puntalarga-fuencaliente-lp",
     nombre: "Playa Puntalarga – Fuencaliente",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "Menos de 2h", distancia: 13.4,
     descripcion: "Paseo hasta la Playa de Puntalarga, pequeña bahía de arena negra volcánica en Fuencaliente. Aguas tranquilas perfectas para baño. Junto al Volcán de San Antonio.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1613,7 +1613,7 @@ var RUTAS = [
   {
     id: "barranco-bombas-agua-lp",
     nombre: "Barranco de Las Bombas de Agua",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.7,
     descripcion: "Circular por el norte de La Palma entre plataneras, barrancos y el contraste entre vegetación exuberante y acantilados costeros. Sendero poco frecuentado.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1622,7 +1622,7 @@ var RUTAS = [
   {
     id: "punta-lava-fuencaliente-lp",
     nombre: "Punta de La Lava – Delta Tajogaite",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.7,
     descripcion: "Sendero por el delta volcánico creado en 2021, donde la lava llegó al mar y creó 50 hectáreas de tierra nueva. El paisaje más reciente y único de Europa.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1631,7 +1631,7 @@ var RUTAS = [
   {
     id: "mirador-lomo-chozas-lp",
     nombre: "Mirador Lomo de Las Chozas – Caldera",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "4-8 horas", distancia: 4.8,
     descripcion: "Sendero con tramos junto a cornisas del borde de la Caldera de Taburiente hasta el Mirador de Los Roques. Precaución en este tramo por el acantilado.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
@@ -1640,7 +1640,7 @@ var RUTAS = [
   {
     id: "malena-costa-lp",
     nombre: "Ruta Costera Norte – Barlovento",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 12.7,
     descripcion: "Costa norte salvaje de La Palma desde Barlovento. Acantilados, cuevas marinas y el paisaje atlántico más bravo de la isla. Poco señalizado, descargar mapa GPS.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-palma",
@@ -1663,7 +1663,7 @@ var RUTAS = [
   {
     id: "gr131-lagomera",
     nombre: "GR 131 La Gomera – Travesía",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Día completo", distancia: 19.7,
     descripcion: "Atraviesa el Parque Nacional de Garajonay y los barrancos más profundos de La Gomera. Jornada exigente por la joya verde del archipiélago.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/san-sebastian-de-la-gomera",
@@ -1681,7 +1681,7 @@ var RUTAS = [
   {
     id: "barranco-valle-gran-rey",
     nombre: "Barranco de Valle Gran Rey",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 14.7,
     descripcion: "Descenso por el barranco más profundo de La Gomera hasta las playas de Valle Gran Rey. Paredes verticales y vegetación exuberante.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valle-gran-rey",
@@ -1690,7 +1690,7 @@ var RUTAS = [
   {
     id: "roque-cano-gomera",
     nombre: "Roque Cano – Vallehermoso",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 10.8,
     descripcion: "Ascenso hasta la formación basáltica que domina Vallehermoso. Vistas al norte de La Gomera y al océano Atlántico desde el roque.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/vallehermoso",
@@ -1699,7 +1699,7 @@ var RUTAS = [
   {
     id: "gr132-lagomera",
     nombre: "GR 132 La Gomera – Vuelta a la Costa",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Varios días", distancia: 114.2,
     descripcion: "Gran ruta que rodea toda la isla por la costa norte. Acantilados, barrancos y pueblos remotos. Uno de los caminos más épicos de Canarias.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/san-sebastian-de-la-gomera",
@@ -1717,7 +1717,7 @@ var RUTAS = [
   {
     id: "kayak-gomera",
     nombre: "Kayak – Costa Sur La Gomera",
-    isla: "La Gomera", tipo: "Kayak", dificultad: "Fácil",
+    isla: "La Gomera", tipo: "Kayak", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.2,
     descripcion: "Ruta en kayak por la costa sur de La Gomera con acantilados, cuevas marinas y aguas cristalinas. Fauna marina abundante.",
     enlace: "https://adventurecapital.es",
@@ -1729,7 +1729,7 @@ var RUTAS = [
   {
     id: "laguna-grande-garajonay",
     nombre: "Laguna Grande – Circular Garajonay",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.1,
     descripcion: "Circular desde La Laguna Grande por el Parque Nacional. Bosque de laurisilva con musgo y helechos gigantes. Ruta familiar bien señalizada y muy fotogénica.",
     enlace: "https://www.alltrails.com/es/spain/la-gomera",
@@ -1747,7 +1747,7 @@ var RUTAS = [
   {
     id: "raso-bruma-gomera",
     nombre: "Raso de La Bruma – Fayal Brezal",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 10.0,
     descripcion: "Paseo corto pero mágico por fayal-brezal atlántico. Árboles con líquenes, helechos y niebla persistente. Ideal para familias o como calentamiento del día.",
     enlace: "https://trotandomundos.com/los-mejores-senderos-de-la-gomera/",
@@ -1783,7 +1783,7 @@ var RUTAS = [
   {
     id: "barranco-guarimiar-gomera",
     nombre: "Barranco de Guarimiar – Imada",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 9.6,
     descripcion: "Desde Imada (1.200 m) bajando por bancales de piedra seca y laderas escarpadas hacia el Barranco de Guarimiar. Arquitectura rural única en arquitectura gomera.",
     enlace: "https://www.alltrails.com/es/spain/la-gomera",
@@ -1810,7 +1810,7 @@ var RUTAS = [
   {
     id: "igualero-garajonay-cima",
     nombre: "Igualero – Alto de Garajonay",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 4.9,
     descripcion: "Ascenso al Alto de Garajonay desde Igualero por el GR 131 y el Camino El Contadero. Vistas a La Palma, Tenerife, El Hierro y La Palma desde la cima.",
     enlace: "https://www.alltrails.com/es/spain/la-gomera",
@@ -1837,7 +1837,7 @@ var RUTAS = [
   {
     id: "playa-santiago-alajero-gomera",
     nombre: "Playa de Santiago – Trekking Costa Sur",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 23.2,
     descripcion: "Ruta costera desde Playa de Santiago hacia el este. Acantilados volcánicos, playas de arena negra y el contraste árido del sur de la isla.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-gomera",
@@ -1846,7 +1846,7 @@ var RUTAS = [
   {
     id: "san-sebastian-garajonay-gomera",
     nombre: "San Sebastián – Garajonay (GR 132 tramo)",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 17.6,
     descripcion: "Ascenso desde la capital San Sebastián hasta el Parque Nacional de Garajonay por caminos históricos. Aldeas, bancales y bosques en el camino a las nubes.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/san-sebastian-de-la-gomera",
@@ -1855,7 +1855,7 @@ var RUTAS = [
   {
     id: "drago-milenario-gomera",
     nombre: "Drago de Agulo – Circular",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 6.8,
     descripcion: "Ruta desde Agulo por senderos entre plataneras y dragos hasta miradores con vistas al Teide. El pueblo más fotogénico de La Gomera con arquitectura única.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/agulo",
@@ -1865,7 +1865,7 @@ var RUTAS = [
     {
     id: "cedro-chorro-gomera",
     nombre: "El Cedro – Chorro del Cedro",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.8,
     descripcion: "Circular por laurisilva en el corazón de Garajonay. El Chorro del Cedro es la única cascada permanente de La Gomera, en un entorno de bosque mágico y húmedo.",
     enlace: "https://www.alltrails.com/es/spain/la-gomera",
@@ -1883,7 +1883,7 @@ var RUTAS = [
   {
     id: "vallehermoso-hermigua-gomera",
     nombre: "Vallehermoso – Hermigua por Garajonay",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 18.2,
     descripcion: "Conecta dos de los pueblos más bonitos del norte atravesando el Parque Nacional de Garajonay. Desnivel de 600 m, laurisilva densa y vistas al norte de la isla.",
     enlace: "https://www.s-cape.es/blog/la-gomera-rutas-senderismo",
@@ -1906,7 +1906,7 @@ var RUTAS = [
   {
     id: "camino-jinama",
     nombre: "Camino de Jinama",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Extrema",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 13.2,
     descripcion: "Ruta legendaria: 1.000 m de desnivel en 4 km. Camino histórico de las mudadas estacionales. Vista espectacular sobre El Golfo desde la ermita.",
     enlace: "https://www.spain.info/es/descubrir-espana/canarias-rutas-senderismo/",
@@ -1915,7 +1915,7 @@ var RUTAS = [
   {
     id: "gr131-hierro",
     nombre: "GR 131 El Hierro – Travesía",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Varios días", distancia: 36.2,
     descripcion: "Travesía que cruza la isla más pequeña y sostenible de Canarias. Bosques de sabinas milenarias, volcanes y costa salvaje impresionante.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valverde",
@@ -1924,7 +1924,7 @@ var RUTAS = [
   {
     id: "malpaso-cumbre",
     nombre: "Malpaso – Cima de El Hierro",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 12.0,
     descripcion: "Ascenso al punto más alto de El Hierro (1.501 m). Bosques de pino canario y sabinas milenarias. Vistas a La Palma y La Gomera.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -1933,7 +1933,7 @@ var RUTAS = [
   {
     id: "camino-virgen-hierro",
     nombre: "Camino de La Virgen de Los Reyes",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 27.1,
     descripcion: "Ruta de peregrinación histórica hasta la ermita de La Virgen de Los Reyes. Bosques de sabinas y laurisilva en entorno totalmente protegido.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -1942,7 +1942,7 @@ var RUTAS = [
   {
     id: "roque-bonanza-hierro",
     nombre: "Roque de La Bonanza – Frontera",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 10.5,
     descripcion: "Sendero por el Parque Rural de Frontera hasta el Roque de La Bonanza. Paisaje volcánico único y vistas al Mar de Las Calmas.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -1951,7 +1951,7 @@ var RUTAS = [
   {
     id: "charco-manso-hierro",
     nombre: "Charco Manso – Costa Norte",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.5,
     descripcion: "Ruta costera hasta la piscina natural de Charco Manso en el extremo norte. Acceso por sendero entre malpaíses. Baño en aguas cristalinas.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -1960,7 +1960,7 @@ var RUTAS = [
   {
     id: "sabinosa-hierro",
     nombre: "Sabinosa – Bosque de Sabinas Milenarias",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 13.7,
     descripcion: "Sendero entre sabinas milenarias retorcidas por el viento, uno de los árboles más longevos de Canarias. Paisaje mágico y único en el mundo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -1981,7 +1981,7 @@ var RUTAS = [
   {
     id: "el-golfo-circular-hierro",
     nombre: "El Golfo – Circular desde Las Puntas",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "4-8 horas", distancia: 5.1,
     descripcion: "Circular por el caldero volcánico de El Golfo, la bahía más hermosa de El Hierro. Vides, plataneras y el contraste entre la lava negra y el mar azul.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/frontera",
@@ -1990,7 +1990,7 @@ var RUTAS = [
   {
     id: "punta-naos-hierro",
     nombre: "Punta Naos – Costa Sureste",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.1,
     descripcion: "Ruta costera por la Reserva Marina de La Restinga hasta Punta Naos. Piscinas naturales, acantilados volcánicos y la mayor concentración de estrellas de Europa.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -1999,7 +1999,7 @@ var RUTAS = [
   {
     id: "valverde-mercado-hierro",
     nombre: "Valverde – Mirador de La Peña",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "Menos de 2h", distancia: 11.8,
     descripcion: "Paseo desde Valverde al famoso Mirador de La Peña diseñado por César Manrique. Vistas aéreas al El Golfo y a toda la bahía desde 700 m de altura.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valverde",
@@ -2008,7 +2008,7 @@ var RUTAS = [
   {
     id: "roques-salmor-hierro",
     nombre: "Roques de Salmor – Costa Norte",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 3.2,
     descripcion: "Ruta costera hasta los Roques de Salmor, hábitat del lagarto gigante endémico de El Hierro. Acantilados volcánicos y el mar abierto del Atlántico norte.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2026,7 +2026,7 @@ var RUTAS = [
   {
     id: "ermita-reyes-hierro",
     nombre: "Ermita de Nuestra Señora de Los Reyes",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 8.4,
     descripcion: "Sendero de peregrinación hasta la ermita de la patrona de El Hierro. Bosque de sabinas y el silencio absoluto del extremo occidental de España.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2035,7 +2035,7 @@ var RUTAS = [
   {
     id: "faro-orchilla-hierro",
     nombre: "Faro de Orchilla – Meridiano 0",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 3.9,
     descripcion: "Ruta hasta el Faro de Orchilla, el punto más occidental de España. Hasta el siglo XVII fue el Meridiano 0 del mundo. Paisaje desértico y viento constante.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2044,7 +2044,7 @@ var RUTAS = [
   {
     id: "tanajara-ruta-hierro",
     nombre: "Tanajara – Ruta del Lagarto Gigante",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 1.4,
     descripcion: "Sendero por la zona de cría del lagarto gigante de El Hierro, especie endémica recuperada del borde de la extinción. Acantilados y costa norte salvaje.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2071,7 +2071,7 @@ var RUTAS = [
   {
     id: "mirador-isora-hierro",
     nombre: "Mirador de Isora – Costa Este",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.8,
     descripcion: "Ruta corta hasta el Mirador de Isora con vistas aéreas a la costa este y al Mar de Las Calmas. El agua más tranquila del archipiélago en días sin viento.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2081,7 +2081,7 @@ var RUTAS = [
     {
     id: "llania-hierro",
     nombre: "La Llanía – Sabinar Milenario",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 12.4,
     descripcion: "Paseo por el sabinar más extenso del mundo con árboles de más de 1.000 años. Las sabinas retorcidas por el viento crean paisajes únicos e irrepetibles.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2108,7 +2108,7 @@ var RUTAS = [
   {
     id: "riscos-herques-hierro",
     nombre: "Riscos de Herques – Costa Sur",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "4-8 horas", distancia: 5.2,
     descripcion: "Ruta costera por los impresionantes Riscos de Herques en el sur de El Hierro. Acantilados de más de 200 m sobre el océano y flora endémica de El Hierro.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2117,7 +2117,7 @@ var RUTAS = [
   {
     id: "mirador-bascos-hierro",
     nombre: "Mirador de Bascos – El Golfo",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "Menos de 2h", distancia: 14.7,
     descripcion: "Sendero corto hasta el mejor mirador sobre El Golfo. Vista aérea de la bahía más bonita de El Hierro con el Roque de Salmor al fondo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2126,7 +2126,7 @@ var RUTAS = [
   {
     id: "el-pinar-hierro",
     nombre: "El Pinar – Circular por el Bosque",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 16.9,
     descripcion: "Circular por el bosque de pinos centenarios de El Pinar en el sur de El Hierro. La mayor masa forestal de la isla con gran variedad de flora endémica.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2135,7 +2135,7 @@ var RUTAS = [
   {
     id: "taceron-hierro",
     nombre: "Playa de Tacerón – Costa Salvaje",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 5.2,
     descripcion: "Ruta hasta la Playa de Tacerón, una de las más aisladas de El Hierro. Arena negra volcánica y aguas cristalinas solo accesible a pie por sendero costero.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2144,7 +2144,7 @@ var RUTAS = [
   {
     id: "ruta-mencey-hierro",
     nombre: "Ruta del Mencey – Patrimonio Bimbache",
-    isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
+    isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 13.0,
     descripcion: "Sendero histórico por los principales yacimientos arqueológicos bimbaches. Grabados rupestres del Julan, uno de los más importantes de Canarias.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
@@ -2158,7 +2158,7 @@ var RUTAS = [
   {
     id: "ruta-sur-graciosa",
     nombre: "Ruta Sur – Caleta de Sebo – Montaña Amarilla",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 10.3,
     descripcion: "La ruta más popular de la isla. Bordea la costa sur desde Caleta de Sebo por Playa del Salado, Playa Francesa y Playa de la Cocina hasta Montaña Amarilla. Solo hay que seguir la costa.",
     enlace: "https://www.visitlagraciosa.com/rutas-senderismo-la-graciosa/",
@@ -2185,7 +2185,7 @@ var RUTAS = [
   {
     id: "sebo-pedro-barba",
     nombre: "Caleta de Sebo – Pedro Barba",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 18.5,
     descripcion: "Sendero costero entre los dos únicos pueblos de La Graciosa. Camino bien señalizado con postes numerados. Vistas al Risco de Famara y El Bufadero.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/caleta-de-sebo",
@@ -2203,7 +2203,7 @@ var RUTAS = [
   {
     id: "barranco-conejos-graciosa",
     nombre: "Caleta de Sebo – Barranco de los Conejos",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 9.1,
     descripcion: "Ruta poco conocida hacia la costa este por paisaje volcánico árido hasta una pequeña y solitaria cala. Ideal para desconectar y escapar de los senderos más transitados.",
     enlace: "https://guiaislascanarias.com/la-graciosa/rutas-senderismo-bici-la-graciosa/",
@@ -2212,7 +2212,7 @@ var RUTAS = [
   {
     id: "vuelta-integral-graciosa",
     nombre: "Vuelta Integral a La Graciosa",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Difícil",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Día completo", distancia: 29.1,
     descripcion: "La vuelta completa a toda la isla en un día: Majapalomas, Montaña Bermeja, Playa Las Conchas, Playa del Ámbar. Para senderistas experimentados con buen ritmo. Sin sombra ni agua.",
     enlace: "https://es.wikiloc.com/rutas-senderismo/integral-de-la-isla-la-graciosa-159757456",
@@ -2221,7 +2221,7 @@ var RUTAS = [
   {
     id: "montana-bermeja-cima",
     nombre: "Montaña Bermeja – Cima Norte",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "2-4 horas", distancia: 18.8,
     descripcion: "Ascenso a la Montaña Bermeja (157 m) en el norte de la isla. Vistas espectaculares a Montaña Clara, Alegranza, Playa Las Conchas y toda La Graciosa.",
     enlace: "https://www.alltrails.com/es/spain/la-graciosa",
@@ -2230,7 +2230,7 @@ var RUTAS = [
   {
     id: "circular-norte-graciosa",
     nombre: "Circular Norte – Sebo, Bermeja, Conchas, Pedro Barba",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 18.7,
     descripcion: "Circular por el norte: Caleta de Sebo, Montaña Bermeja, Playa Las Conchas y Pedro Barba. La mejor opción para conocer la mitad norte de la isla en una jornada.",
     enlace: "https://www.alltrails.com/es/spain/la-graciosa",
@@ -2249,7 +2249,7 @@ var RUTAS = [
   {
     id: "agujas-graciosa",
     nombre: "Las Agujas Grandes – Norte Salvaje",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 24.7,
     descripcion: "Ruta hasta Las Agujas Grandes en el norte de La Graciosa. Formaciones volcánicas espectaculares y las vistas más salvajes de todo el Archipiélago Chinijo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-graciosa",
@@ -2258,7 +2258,7 @@ var RUTAS = [
   {
     id: "bici-graciosa",
     nombre: "Vuelta en Bici a La Graciosa",
-    isla: "La Graciosa", tipo: "Ciclismo", dificultad: "Media",
+    isla: "La Graciosa", tipo: "Ciclismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 27.8,
     descripcion: "La forma más popular de explorar La Graciosa. Caminos de arena y tierra entre playas, volcanes y paisajes únicos. Bicicletas de alquiler en Caleta de Sebo.",
     enlace: "https://guiaislascanarias.com/la-graciosa/rutas-senderismo-bici-la-graciosa/",
@@ -2272,7 +2272,7 @@ var RUTAS = [
   {
     id: "circular-lobos",
     nombre: "Ruta Circular Completa – Isla de Lobos",
-    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 11.5,
     descripcion: "La vuelta completa por el Parque Natural: El Puertito, La Caldera, Faro Martiño y Playa de La Concha. Requiere permiso gratuito online (máx. 200 personas/día).",
     enlace: "https://guiaislascanarias.com/fuerteventura/rutas-senderos-fuerteventura/",
@@ -2281,7 +2281,7 @@ var RUTAS = [
   {
     id: "caldera-lobos",
     nombre: "La Caldera – Subida al Volcán",
-    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 11.1,
     descripcion: "Ascenso breve al volcán de La Caldera (127 m). Vistas panorámicas a Fuerteventura, Lanzarote y el Canal de La Bocaina. El punto más alto del islote.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
@@ -2290,7 +2290,7 @@ var RUTAS = [
   {
     id: "faro-martino-lobos",
     nombre: "Faro de Punta Martiño",
-    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.8,
     descripcion: "Ruta costera hasta el faro del siglo XIX en el extremo norte del islote. Entorno solitario con aves marinas, paisaje volcánico y vistas a Lanzarote.",
     enlace: "https://www.islalobos.es",
@@ -2337,7 +2337,7 @@ var RUTAS = [
   {
     id: "pesca-tradicional-lobos",
     nombre: "Ruta Historia – Puerto de Lobos",
-    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Media",
     duracion: "Menos de 2h", distancia: 10.4,
     descripcion: "Paseo por el pequeño puerto y las antiguas chozas de pescadores restauradas. Historia de los lobos de mar (focas monje) que dieron nombre al islote.",
     enlace: "https://www.islalobos.es",
