@@ -818,6 +818,10 @@ function render(){
  ? '<button class="tc-btn tc-btn-out map-btn" data-id="'+t.id+'"><i class="fas fa-map-marker-alt"></i> Ver en mapa</button>'
  : '';
 
+ var llegarBtn = t.lat
+ ? '<a href="https://www.google.com/maps/dir/?api=1&destination='+t.lat+','+t.lng+'" target="_blank" rel="noopener" class="tc-btn tc-btn-out"><i class="fas fa-location-dot"></i> Cómo llegar</a>'
+ : '';
+
  var card = document.createElement('article');
  card.className = 'tc';
  card.innerHTML =
@@ -839,7 +843,7 @@ function render(){
  +(t.telefono ? '<div class="tc-info-row"><i class="fas fa-phone"></i> '+t.telefono+'</div>' : '')
  +(t.deporte && t.deporte.length ? '<div class="tc-info-row"><i class="fas fa-hiking"></i> '+t.deporte.join(', ')+'</div>' : '')
  +'</div>'
- +'<div class="tc-foot">'+wb+mapBtn+'</div>';
+ +'<div class="tc-foot">'+wb+llegarBtn+mapBtn+'</div>';
 
  grid.appendChild(card);
  });

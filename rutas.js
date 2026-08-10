@@ -26,13 +26,356 @@
 
 var RUTAS = [
   {
-    id: "cueva-guanches-icod",
-    nombre: "Cueva de los Guanches",
-    isla: "Tenerife", tipo: "Espeleología", dificultad: "Media",
+    id: "mirador-puntahidalgo-tenerife",
+    nombre: "Mirador de Punta del Hidalgo",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
-    descripcion: "Tubo volcánico en Icod de los Vinos con las dataciones más antiguas de poblamiento humano de Canarias (siglo VI a.C.). Bien de Interés Cultural desde 2005, con restos de cabañas de piedra seca en las inmediaciones.",
-    enlace: "https://es.wikipedia.org/wiki/Cueva_de_los_Guanches",
-    lat: 28.3697, lng: -16.7183
+    descripcion: "Su altitud permite ver el Teide por un lado y el océano Atlántico abierto por el otro, en el extremo norte de la isla. Un encuadre poco habitual que combina volcán y costa en la misma fotografía.",
+    enlace: "https://capturetheatlas.com/es/miradores-en-tenerife/",
+    lat: 28.5712518, lng: -16.3177717
+  },
+  {
+    id: "mirador-garanona-tenerife",
+    nombre: "Mirador de La Garañona",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Alzado sobre un acantilado en El Sauzal, con panorámicas de la costa norte y del Valle de La Orotava. Un lugar tranquilo y poco masificado, ideal para fotografiar sin aglomeraciones.",
+    enlace: "https://capturetheatlas.com/es/miradores-en-tenerife/",
+    lat: 28.4821989, lng: -16.4345189
+  },
+  {
+    id: "mirador-aguaide-tenerife",
+    nombre: "Mirador de Aguaide",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Sobre un acantilado de 600 metros cerca de Chinamada, en Anaga. Se llega tras una breve caminata de unos 10 minutos y ofrece unas vistas espectaculares del macizo y el mar, consideradas de las mejores de la isla.",
+    enlace: "https://www.tripadvisor.es/Attractions-g187479",
+    lat: 28.5648462, lng: -16.2947762
+  },
+  {
+    id: "mirador-jardina-tenerife",
+    nombre: "Mirador de Jardina",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Cerca de San Cristóbal de La Laguna, regala una panorámica abierta con el Teide al fondo en días despejados. Actúa como frontera natural entre la vega de La Laguna y la entrada al Macizo de Anaga.",
+    enlace: "https://www.melia.com/es/blog/viajar/los-mejores-miradores-de-tenerife",
+    lat: 28.5241262, lng: -16.2880589
+  },
+  {
+    id: "mirador-atalaya-tenerife",
+    nombre: "Mirador de la Atalaya (El Tanque)",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En la Isla Baja, permite admirar el municipio vecino de Garachico y sus alrededores desde las alturas. Un mirador poco conocido con un pueblo pequeño y encantador junto a él.",
+    enlace: "https://www.miradoresturisticos.com/es/los-mejores-miradores-de-la-isla-de-tenerife-en-canarias/fotografia/128109/",
+    lat: 28.3670436, lng: -16.7676516
+  },
+  {
+    id: "mirador-picoingles-tenerife",
+    nombre: "Mirador del Pico del Inglés",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Uno de los miradores más famosos de Anaga, con impresionantes vistas de las montañas y el océano. Ideal para fotografiar el característico mar de nubes que se forma entre los barrancos del macizo.",
+    enlace: "https://escursionitenerife.com/es/mirador-piu-belli-di-tenerife-i-punti-panoramici-da-non-perdere/",
+    lat: 28.5330072, lng: -16.2639969
+  },
+  {
+    id: "mirador-elarenal-tenerife",
+    nombre: "Mirador de la Playa El Arenal",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En Buenavista del Norte, extremo noroeste de la isla. Los tinerfeños dicen que desde aquí se contemplan los mejores atardeceres, con las olas rompiendo contra la arena negra volcánica.",
+    enlace: "https://www.melia.com/es/blog/viajar/los-mejores-miradores-de-tenerife",
+    lat: 28.3750849, lng: -16.8698927
+  },
+  {
+    id: "mirador-laruleta-tenerife",
+    nombre: "Mirador de La Ruleta",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el Parque Nacional del Teide, con vistas espectaculares del volcán, los Roques de García y el Llano de Ucanca. Ideal para amaneceres tranquilos y fotografía del paisaje volcánico.",
+    enlace: "https://dameaventura.com/miradores-tenerife/",
+    lat: 28.2230957, lng: -16.631272
+  },
+  {
+    id: "mirador-piconieves-gc",
+    nombre: "Mirador del Pico de las Nieves",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "El punto más alto de Gran Canaria, a 1.949 metros. Ofrece una vista panorámica que abarca prácticamente toda la isla junto a sus roques más icónicos: Nublo, Rana y Bentayga. Si hay alisios, se forma un mar de nubes a los pies del mirador.",
+    enlace: "https://casasruralesgrancanaria.com/mejores-miradores-de-gran-canaria/",
+    lat: 27.9620253, lng: -15.5719044
+  },
+  {
+    id: "mirador-bentayga-gc",
+    nombre: "Mirador del Roque Bentayga",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Imponente silueta rocosa con vistas hacia el Barranco de Guayadeque y la Caldera de Tejeda. Un yacimiento arqueológico aborigen además de mirador natural.",
+    enlace: "https://casasruralesgrancanaria.com/mejores-miradores-de-gran-canaria/",
+    lat: 27.9914744, lng: -15.6419445
+  },
+  {
+    id: "mirador-balcontamadaba-gc",
+    nombre: "Mirador del Balcón (Andén Verde)",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el sur del Parque Natural de Tamadaba, con vista panorámica de los acantilados de la costa noroeste conocidos como la Cola de Dragón, y el océano Atlántico.",
+    enlace: "https://baifoworld.com/los-mejores-miradores-de-gran-canaria/",
+    lat: 28.0193929, lng: -15.7851337
+  },
+  {
+    id: "mirador-unamuno-gc",
+    nombre: "Mirador de Unamuno",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En Artenara, presidido por una estatua del escritor Miguel de Unamuno, que describió esta vista de la Caldera de Tejeda como una tempestad petrificada. Vistas al Roque Nublo y al Roque Bentayga.",
+    enlace: "https://masrutasymenosrutinas.com/miradores-de-gran-canaria/",
+    lat: 28.0194165, lng: -15.6463216
+  },
+  {
+    id: "mirador-atalayaartenara-gc",
+    nombre: "Mirador de la Atalaya (Artenara)",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Vistas al Macizo de Tamadaba y a las casas-cueva excavadas en el barranco. El Teide asoma por detrás de Tamadaba en días despejados, desde el pueblo más alto de Gran Canaria.",
+    enlace: "https://masrutasymenosrutinas.com/miradores-de-gran-canaria/",
+    lat: 28.0230407, lng: -15.647425
+  },
+  {
+    id: "mirador-poetas-gc",
+    nombre: "Mirador de los Poetas",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En Artenara, con esculturas de acero y placas con fragmentos de poemas repartidas por el mirador. Ofrece una amplia vista de todo el pueblo y sus otros miradores.",
+    enlace: "https://baifoworld.com/los-mejores-miradores-de-gran-canaria/",
+    lat: 28.0216553, lng: -15.6455575
+  },
+  {
+    id: "mirador-losroques-gomera",
+    nombre: "Mirador de los Roques",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Una de las formaciones rocosas más importantes de Canarias, tallada durante millones de años por solidificación de lava. Desde aquí se contemplan las vistas más impresionantes de La Gomera.",
+    enlace: "https://www.miradoresturisticos.com/es/miradores-de-la-gomera-canarias/fotografia/128135/",
+    lat: 28.109024, lng: -17.2145881
+  },
+  {
+    id: "mirador-altogarajonay-gomera",
+    nombre: "Alto de Garajonay",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "El punto más alto de la isla, a 1.487 metros, dentro del Parque Nacional de Garajonay. Vistas de 360 grados con el Teide, La Palma, El Hierro y, con suerte, Gran Canaria en el horizonte.",
+    enlace: "https://www.recuerdosdemimochila.com/miradores-de-la-gomera/",
+    lat: 28.1095645, lng: -17.2483988
+  },
+  {
+    id: "mirador-igualero-gomera",
+    nombre: "Mirador de Igualero",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "A 1.321 metros de altitud, en el límite con el Parque Nacional de Garajonay. Una de las vistas más completas de la isla desde el interior.",
+    enlace: "https://www.recuerdosdemimochila.com/miradores-de-la-gomera/",
+    lat: 28.0995591, lng: -17.2547257
+  },
+  {
+    id: "mirador-curvaqueso-gomera",
+    nombre: "Mirador de la Curva del Queso",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Con vistas al Valle Gran Rey y el mar al fondo, cerca de donde nace el inmenso Barranco de Gran Rey. Un encuadre muy fotografiado por su forma curva característica.",
+    enlace: "https://www.recuerdosdemimochila.com/miradores-de-la-gomera/",
+    lat: 28.1148161, lng: -17.3209079
+  },
+  {
+    id: "mirador-vallehermoso-gomera",
+    nombre: "Mirador de Vallehermoso",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En la carretera GM-1, justo antes de llegar a Vallehermoso, ofrece las mejores vistas de esta localidad. Mirando hacia atrás se distingue el Roque Cano en los altos.",
+    enlace: "https://www.recuerdosdemimochila.com/miradores-de-la-gomera/",
+    lat: 28.1572368, lng: -17.2455011
+  },
+  {
+    id: "mirador-morroagando-gomera",
+    nombre: "Mirador del Morro de Agando",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Se llega tras caminar unos 500 metros y cruzar un puente de madera sobre la carretera. Vistas al Parque Nacional de Garajonay y a la Reserva Natural Integral de Benchijigua.",
+    enlace: "https://www.recuerdosdemimochila.com/miradores-de-la-gomera/",
+    lat: 28.1090496, lng: -17.2191038
+  },
+  {
+    id: "mirador-roqueblanco-gomera",
+    nombre: "Mirador Roque Blanco",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Contempla una de las zonas más recónditas de la isla, El Teón, con una de las mejores concentraciones de madroños de La Gomera. Las vistas alcanzan la cuenca de Vallehermoso.",
+    enlace: "https://www.jardin-tecina.com/es/que-visitar-la-gomera/miradores-de-la-gomera/",
+    lat: 28.1703604, lng: -17.2414571
+  },
+  {
+    id: "mirador-hermigua-gomera",
+    nombre: "Mirador de Hermigua",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Rodeado de vegetación abundante y decenas de especies autóctonas que crecen libremente. Vistas al valle de Hermigua, uno de los más verdes de la isla.",
+    enlace: "https://www.jardin-tecina.com/es/que-visitar-la-gomera/miradores-de-la-gomera/",
+    lat: 28.1424069, lng: -17.1974176
+  },
+  {
+    id: "mirador-roquemuchachos-lapalma",
+    nombre: "Mirador Roque de los Muchachos",
+    isla: "La Palma", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "El mirador más alto de la isla, a más de 2.400 metros. Domina la Caldera de Taburiente desde una perspectiva aérea impresionante, y en días claros permite ver Tenerife, La Gomera y El Hierro. Uno de los mejores lugares del mundo para observación astronómica.",
+    enlace: "https://www.idealista.com/news/vacacional/destinos-turisticos/2026/04/17/893533",
+    lat: 28.7547272, lng: -17.8852842
+  },
+  {
+    id: "mirador-concepcion-lapalma",
+    nombre: "Mirador de la Concepción",
+    isla: "La Palma", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Al borde de un antiguo cráter volcánico declarado Monumento Natural, en Breña Alta. Uno de los mejores puntos para contemplar Santa Cruz de La Palma, su puerto y casco histórico desde las alturas.",
+    enlace: "https://www.idealista.com/news/vacacional/destinos-turisticos/2026/04/17/893533",
+    lat: 28.673573, lng: -17.778423
+  },
+  {
+    id: "mirador-andenes-lapalma",
+    nombre: "Mirador de Los Andenes",
+    isla: "La Palma", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "A unos 2.000 metros de altitud, cerca del Roque de los Muchachos. Perspectiva privilegiada del trazado sinuoso del Barranco de Las Angustias y del Pinar de Garafía hacia el norte.",
+    enlace: "https://www.idealista.com/news/vacacional/destinos-turisticos/2026/04/17/893533",
+    lat: 28.7611096, lng: -17.86744
+  },
+  {
+    id: "mirador-barrancogomeros-lapalma",
+    nombre: "Mirador Barranco Los Gomeros",
+    isla: "La Palma", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Vistas espectaculares del océano Atlántico y la costa escarpada. Un homenaje a la comunidad gomera que aportó su esfuerzo a la agricultura en la isla, con una escultura de una canaria silbando.",
+    enlace: "https://welikecanarias.com/miradores-en-la-palma/",
+    lat: 28.7035059, lng: -17.7551767
+  },
+  {
+    id: "mirador-eltime-lapalma",
+    nombre: "Mirador de El Time",
+    isla: "La Palma", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En días despejados, la vista alcanza el puerto y la playa de Tazacorte, e incluso la silueta lejana de El Hierro en el horizonte. Tras la erupción del Tajogaite se convirtió en un punto privilegiado para observar el nuevo paisaje volcánico y las fajanas.",
+    enlace: "https://www.idealista.com/news/vacacional/destinos-turisticos/2026/04/17/893533",
+    lat: 28.6635199, lng: -17.9423442
+  },
+  {
+    id: "mirador-delrio-lanzarote",
+    nombre: "Mirador del Río",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Obra de César Manrique suspendida a 400 metros de altura, con una de las postales más impactantes de Canarias: La Graciosa y el Archipiélago Chinijo con sus aguas turquesas. Mejor a partir del mediodía, cuando se levantan las nubes matutinas.",
+    enlace: "https://lanzarote3.com/llanzarote-desde-el-cielo-mejores-miradores/",
+    lat: 29.2144614, lng: -13.4811973
+  },
+  {
+    id: "mirador-guinate-lanzarote",
+    nombre: "Mirador de Guinate",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Más discreto que el Mirador del Río pero igual de impresionante, con vistas sobre los acantilados, el océano y el Archipiélago Chinijo, con La Graciosa en primer plano.",
+    enlace: "https://www.idealista.com/news/vacacional/destinos-turisticos/2026/01/23/881040",
+    lat: 29.184732, lng: -13.5011635
+  },
+  {
+    id: "mirador-femes-lanzarote",
+    nombre: "Mirador de Femés",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el pequeño y encantador pueblo de Femés, sur de Lanzarote. Domina buena parte del valle, la zona de Playa Blanca a lo lejos y, en días despejados, la isla de Fuerteventura en el horizonte.",
+    enlace: "https://www.idealista.com/news/vacacional/destinos-turisticos/2026/01/23/881040",
+    lat: 28.9129219, lng: -13.7800232
+  },
+  {
+    id: "mirador-haria-lanzarote",
+    nombre: "Mirador de Haría",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En la carretera LZ-10, vistas al Valle de Haría conocido por su vegetación única en la isla, entre palmeras y dragos. Un rincón de paz que contrasta con el paisaje árido predominante en Lanzarote.",
+    enlace: "https://volare.volotea.com/es/ciudades/lanzarote/miradores-lanzarote/",
+    lat: 29.1448675, lng: -13.5192041
+  },
+  {
+    id: "mirador-helechos-lanzarote",
+    nombre: "Mirador de Los Helechos",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Parada obligatoria en la bajada a Haría desde Los Valles. Vistas al valle y su particular vegetación, con dragos y palmeras que rompen el paisaje volcánico habitual de la isla.",
+    enlace: "https://www.viva-lanzarote.com/miradores-de-lanzarote/",
+    lat: 29.1276834, lng: -13.5131784
+  },
+  {
+    id: "mirador-malpaso-haria-lanzarote",
+    nombre: "Mirador del Malpaso",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Obra de César Manrique en el municipio de Haría, con vistas al valle del mismo nombre. Muestra la cara más bonita y fotogénica de Haría desde las alturas.",
+    enlace: "https://www.viva-lanzarote.com/miradores-de-lanzarote/",
+    lat: 29.1318296, lng: -13.5135087
+  },
+  {
+    id: "mirador-charcoclicos-lanzarote",
+    nombre: "Mirador del Charco de los Clicos",
+    isla: "Lanzarote", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Antiguo cráter volcánico junto al mar, con arenas negras y rocas volcánicas que crean un paisaje espectacular. Diversas especies de aves y fauna marina se pueden observar desde el mirador.",
+    enlace: "https://welikecanarias.com/mejores-miradores-lanzarote/",
+    lat: 28.9765236, lng: -13.8276989
+  },
+  {
+    id: "mirador-guiseayoze-fuerte",
+    nombre: "Mirador de Guise y Ayoze",
+    isla: "Fuerteventura", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En lo alto de la degollada que da acceso a Betancuria, con esculturas de bronce de 4 metros de los dos reyes aborígenes de la isla. Vistas a los paisajes suaves y redondeados del norte y al barranco que desciende hacia Betancuria.",
+    enlace: "https://www.canarias7.es/canarias/fuerteventura/miradores-mejores-vistas-fuerteventura-20230629192430-ga.html",
+    lat: 28.4408892, lng: -14.0564463
+  },
+  {
+    id: "mirador-entallada-fuerte",
+    nombre: "Mirador Faro de la Entallada",
+    isla: "Fuerteventura", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el punto más próximo al continente africano de toda Canarias, a solo 100 kilómetros. Vistas majestuosas de la costa sur de Fuerteventura desde el municipio de Tuineje.",
+    enlace: "https://sendaecoway.com/blog/miradores-de-fuerteventura/",
+    lat: 28.2302711, lng: -13.9485695
+  },
+  {
+    id: "mirador-malpaso-hierro",
+    nombre: "Mirador de Malpaso",
+    isla: "El Hierro", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el punto más alto de la isla, ofrece una vista privilegiada de toda El Hierro y, en días despejados, de las vecinas La Gomera, La Palma y Tenerife con el Teide en el horizonte. Rodeado de pinos canarios y flora endémica.",
+    enlace: "https://dosviajerisimos.es/el-hierro/nuestro-top-6-de-miradores-favoritos-en-el-hierro/",
+    lat: 27.729212, lng: -18.040457
+  },
+  {
+    id: "mirador-jinama-hierro",
+    nombre: "Mirador de Jinama",
+    isla: "El Hierro", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el borde de El Golfo, con una vista vertiginosa de 1.000 metros sobre el valle. Punto de inicio del histórico Camino de Jinama, que desciende hasta la costa.",
+    enlace: "https://dosviajerisimos.es/el-hierro/nuestro-top-6-de-miradores-favoritos-en-el-hierro/",
+    lat: 27.7631227, lng: -17.9807107
+  },
+
+  {
+    id: "cueva-viento-icod",
+    nombre: "Cueva del Viento",
+    isla: "Tenerife", tipo: "Espeleología", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Uno de los tubos volcánicos más largos del mundo (más de 18 km explorados), en las faldas del Teide sobre Icod de los Vinos. Visita guiada de pago con reserva previa (máximo 120 visitantes al día), con recorrido por galerías y explicación de su formación geológica y ecología.",
+    enlace: "https://cuevadelviento.net",
+    lat: 28.3520121, lng: -16.7039689
   },
   {
     id: "cueva-belmaco-lapalma",
@@ -41,7 +384,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "El primer yacimiento con petroglifos descubierto en todo el archipiélago canario, ya en el siglo XVIII. Diez cuevas naturales con grabados rupestres benahoaritas, declarado Monumento Histórico Artístico, con centro de interpretación en Villa de Mazo.",
     enlace: "https://tuylapalma.com/descubre-la-palma/que-hacer-en-la-palma/que-visitar-en-la-palma/centros-arqueologicos-en-la-palma/",
-    lat: 28.6014, lng: -17.7847
+    lat: 28.5782235, lng: -17.7762148
   },
   {
     id: "grabados-eljulan-hierro",
@@ -50,7 +393,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Extensa zona de inscripciones rupestres bimbaches en la vertiente sur de El Hierro, con caracteres que podrían pertenecer a la escritura líbico-bereber. Terreno agreste en el municipio de El Pinar, acceso exigente.",
     enlace: "https://guanchipedia.com/grabados-rupestres-el-julan/",
-    lat: 27.68, lng: -18.03
+    lat: 27.7134535, lng: -18.0566713
   },
   {
     id: "poblado-zonzamas-lanzarote",
@@ -59,7 +402,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Uno de los yacimientos majos más importantes de Lanzarote, en Teguise, con estructuras habitacionales de piedra en superficie. Tradicionalmente vinculado a la sede del último Guanarteme de la isla antes de la conquista.",
     enlace: "https://www.fondoarqueologicolanzarote.com/",
-    lat: 29.0431, lng: -13.6178
+    lat: 29.0006348, lng: -13.5678092
   },
   {
     id: "fortaleza-chipude-gomera",
@@ -68,7 +411,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Símbolo de la resistencia de los aborígenes gomeros frente a la conquista castellana. Yacimiento de altura con aras de sacrificio que aún se conservan, considerado uno de los lugares de culto más citados de la isla.",
     enlace: "https://biosfera.lagomera.es/arqueologia/",
-    lat: 28.1372, lng: -17.2606
+    lat: 28.099922, lng: -17.2771285
   },
 
   {
@@ -78,7 +421,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Spot de kitesurf en Corralejo, capital del surf de la isla. Buen acceso y ambiente internacional, con escuelas y alquiler de material cerca.",
     enlace: "https://oceanadventure.surf/en/the-best-kitesurfing-spots-in-the-canary-islands/",
-    lat: 28.735, lng: -13.86
+    lat: 28.7087194, lng: -13.8396608
   },
   {
     id: "kitesurf-famara-lanzarote",
@@ -87,7 +430,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "5 km de playa bajo los acantilados de Famara, apta para todos los niveles de kitesurf. Vientos alisios constantes de mayo a septiembre y vistas a La Graciosa.",
     enlace: "https://www.hellocanaryislands.com/kitesurfing/lanzarote/kitesurfing-on-famara-beach/",
-    lat: 29.113, lng: -13.555
+    lat: 29.1171358, lng: -13.5645576
   },
   {
     id: "mirador-abrante-gomera",
@@ -96,7 +439,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Voladizo de siete metros con suelo de cristal, suspendido 400 metros sobre el valle de Angulo. Una de las postales más espectaculares de Canarias, cerca de Agulo.",
     enlace: "https://hola.com/viajes/galeria/20171011100489/miradores-espectaculares-canarias/",
-    lat: 28.185, lng: -17.2
+    lat: 28.1859755, lng: -17.2011654
   },
   {
     id: "mirador-lapena-hierro",
@@ -105,7 +448,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Diseño de César Manrique en Guarazoca, con vistas al valle de El Golfo y sus 15 km de acantilados. Uno de los mejores lugares de Canarias para ver el cielo estrellado.",
     enlace: "https://www.canarias7.es/canarias/el-hierro/miradores-mejores-vistas-hierro-20230706202450-ga.html",
-    lat: 27.755, lng: -18.035
+    lat: 27.8068816, lng: -17.9808248
   },
   {
     id: "mirador-morrovelosa-fuerte",
@@ -114,7 +457,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Diseño de César Manrique a 669 m de altitud, entre el Parque Rural de Betancuria y el valle de Santa Inés. La mejor vista del norte y centro de Fuerteventura.",
     enlace: "https://hola.com/viajes/galeria/20171011100489/miradores-espectaculares-canarias/",
-    lat: 28.4372, lng: -14.0139
+    lat: 28.4385463, lng: -14.0501109
   },
   {
     id: "mirador-palmarejo-gomera",
@@ -123,7 +466,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "También conocido como mirador César Manrique, sobre el imponente barranco de Valle Gran Rey. Arquitectura que se camufla entre la roca, con jardines de plantas autóctonas.",
     enlace: "https://trotandomundos.com/los-mejores-miradores-de-la-gomera/",
-    lat: 28.1219, lng: -17.2794
+    lat: 28.1192574, lng: -17.3156967
   },
 
   {
@@ -143,7 +486,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "El punto de surf más conocido del noreste de La Palma, en Puntallana. Arena negra volcánica y olas de calidad para nivel intermedio.",
     enlace: "https://top-car-hire.com/blog/islas-canarias/surf-en-canarias",
-    lat: 28.6742, lng: -17.7539
+    lat: 28.7596068, lng: -17.7404038
   },
   {
     id: "surf-quemao-lanzarote",
@@ -152,7 +495,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "Una de las olas más potentes y respetadas de Canarias, en La Santa. Izquierda de hasta 5 metros con tubos famosos a nivel mundial. Solo para surfistas expertos.",
     enlace: "https://elblog.bintercanarias.com/blog/5-spots-imprescindibles-para-los-amantes-del-surf-en-canarias",
-    lat: 29.1319, lng: -13.6486
+    lat: 29.10904, lng: -13.6655857
   },
   {
     id: "surf-majanicho-fuerte",
@@ -161,7 +504,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "La ola más famosa del norte de Fuerteventura, junto al pueblo de Majanicho (no confundir con la isla de El Hierro). Derecha rápida y tubera sobre fondo volcánico, solo alto nivel.",
     enlace: "https://fuerteventuractiva.es/es/surfear-en-fuerteventura-los-mejores-spots-de-la-isla/",
-    lat: 28.7719, lng: -13.9394
+    lat: 28.7392613, lng: -13.9395963
   },
   {
     id: "surf-elfronton-gc",
@@ -170,7 +513,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "Uno de los spots de bodyboard más reconocidos internacionalmente, cerca de Gáldar. Olas potentes y espectaculares, parada habitual del circuito mundial de bodyboard.",
     enlace: "https://macaronesiasport.com/sin-categoria/los-mejores-spots-de-surf-en-canarias/",
-    lat: 28.1706, lng: -15.6997
+    lat: 28.1258699, lng: -15.5847224
   },
   {
     id: "kayak-puertonaos-lapalma",
@@ -179,7 +522,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Aguas tranquilas y vistas al Atlántico, ideal para iniciarse en el kayak. Uno de los puntos más populares de La Palma para remar sin experiencia previa.",
     enlace: "https://sendaecoway.com/blog/kayak-en-la-palma-los-5-mejores-lugares-para-hacer/",
-    lat: 28.5661, lng: -17.8697
+    lat: 28.5844151, lng: -17.9096695
   },
   {
     id: "kayak-tazacorte-lapalma",
@@ -188,7 +531,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Remo entre formaciones rocosas y acantilados en una de las zonas más soleadas de La Palma. Aguas claras que permiten ver el fondo marino.",
     enlace: "https://sendaecoway.com/blog/kayak-en-la-palma-los-5-mejores-lugares-para-hacer/",
-    lat: 28.6294, lng: -17.9319
+    lat: 28.6528803, lng: -17.9439247
   },
   {
     id: "cuevas-pintadas-galdar",
@@ -197,7 +540,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Uno de los yacimientos arqueológicos más importantes de Canarias. Cueva artificial con pinturas geométricas guanches originales, protegidas bajo una cúpula de cristal. Acceso por pasarela, apto para todos.",
     enlace: "https://www.grancanaria.com/turismo/es/cultura/espacios-arqueologicos/museo-y-parque-arqueologico-cueva-pintada/",
-    lat: 28.1447, lng: -15.6547
+    lat: 28.1441363, lng: -15.6551741
   },
   {
     id: "cenobio-valeron-gc",
@@ -206,7 +549,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Granero colectivo aborigen con más de 300 oquedades excavadas en la roca hace más de 800 años, en un escarpe sobre un profundo barranco. Circuito guiado con paneles y recreaciones.",
     enlace: "https://www.grancanaria.com/turismo/es/cultura/espacios-arqueologicos/cenobio-de-valeron/",
-    lat: 28.1387, lng: -15.6994
+    lat: 28.1387058, lng: -15.6037841
   },
   {
     id: "risco-caido-gc",
@@ -215,7 +558,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Santuario rupestre aborigen declarado Patrimonio de la Humanidad por la UNESCO, en pleno Parque Rural del Nublo cerca de Artenara. Visita imprescindible de la Canarias prehispánica.",
     enlace: "https://www.grancanaria.com/turismo/es/cultura/espacios-arqueologicos/",
-    lat: 28.0186, lng: -15.6892
+    lat: 28.0205495, lng: -15.6474919
   },
 
   {
@@ -225,7 +568,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Cala protegida de arena negra con Bandera Azul, ideal para snorkel en familia. Junto a la reserva marina, con arcos y cuevas accesibles para todos los niveles.",
     enlace: "",
-    lat: 28.5544, lng: -17.87
+    lat: 28.5724265, lng: -17.8993012
   },
   {
     id: "buceo-puerto-naos-lapalma",
@@ -234,7 +577,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "La zona de buceo más completa de La Palma, con inmersiones desde la orilla hasta los 40 m. Coral negro, mantas y formaciones volcánicas en Playa Chica y Arco Verde.",
     enlace: "",
-    lat: 28.5675, lng: -17.8758
+    lat: 28.5844151, lng: -17.9096695
   },
   {
     id: "buceo-radazul-tenerife",
@@ -243,7 +586,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Uno de los fondos marinos más limpios de Tenerife, ideal para iniciarse en el buceo. Aguas tranquilas de arena negra en el municipio de El Rosario.",
     enlace: "",
-    lat: 28.4267, lng: -16.3153
+    lat: 28.4014914, lng: -16.3213588
   },
   {
     id: "buceo-sardina-del-norte-gc",
@@ -252,7 +595,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Una de las zonas de buceo más populares del norte de Gran Canaria, con fondos rocosos y gran variedad de vida marina en aguas tranquilas.",
     enlace: "",
-    lat: 28.168, lng: -15.701
+    lat: 28.151283, lng: -15.6951067
   },
   {
     id: "kayak-los-gigantes-tenerife",
@@ -261,7 +604,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Remada junto a los espectaculares acantilados de Los Gigantes, de hasta 600 m de altura, con cuevas marinas accesibles solo desde el agua y avistamiento de cetáceos.",
     enlace: "",
-    lat: 28.2434, lng: -16.84
+    lat: 28.2473517, lng: -16.8411906
   },
   {
     id: "kitesurf-el-medano-tenerife",
@@ -270,7 +613,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Uno de los mejores destinos de Europa para kitesurf y windsurf, con viento constante todo el año. El spot de Cabezo acoge competiciones internacionales.",
     enlace: "",
-    lat: 28.0403, lng: -16.5375
+    lat: 28.0415791, lng: -16.5429759
   },
   {
     id: "kitesurf-pozo-izquierdo-gc",
@@ -279,7 +622,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Referente mundial de windsurf y kitesurf, sede habitual del campeonato del mundo. Vientos alisios fuertes y constantes en la costa este de la isla.",
     enlace: "",
-    lat: 27.8386, lng: -15.431
+    lat: 27.8234647, lng: -15.4241287
   },
   {
     id: "surf-el-confital-gc",
@@ -288,7 +631,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "La ola de 'Las Monjas' en pleno Las Palmas de Gran Canaria. Junto a La Cícer, en Las Canteras, es uno de los spots favoritos de los surfistas locales.",
     enlace: "",
-    lat: 28.1553, lng: -15.452
+    lat: 28.1595866, lng: -15.4358131
   },
   {
     id: "surf-el-socorro-tenerife",
@@ -297,7 +640,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Una de las playas más constantes de Tenerife para surfear, con arena volcánica negra y olas de izquierda y derecha para todos los niveles. Mejor época: noviembre-marzo.",
     enlace: "",
-    lat: 28.3919, lng: -16.582
+    lat: 28.3942414, lng: -16.6028443
   },
   {
     id: "surf-la-izquierda-punta-hidalgo",
@@ -306,7 +649,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Legendario point break al pie de los acantilados de Punta del Hidalgo. Izquierdas largas y rápidas con secciones tubulares, para surfistas con experiencia.",
     enlace: "",
-    lat: 28.5748, lng: -16.322
+    lat: 28.5691271, lng: -16.3243753
   },
 
   {
@@ -316,7 +659,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "El epicentro del surf en el sur de Tenerife, con varios picos para todos los niveles como 'El Medio' y escuelas de surf durante todo el año.",
     enlace: "https://tilegitsurf.es/playas-para-surfear-en-tenerife/",
-    lat: 28.0575, lng: -16.7245
+    lat: 28.0601376, lng: -16.7334875
   },
   {
     id: "buceo-puertito-adeje",
@@ -325,7 +668,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Microreserva marina con tortugas verdes en libertad y más de 50 especies. Caleta de arena negra ideal para snorkel y bautizos de buceo.",
     enlace: "https://www.yumping.com/noticias-aventura/las-7-mejores-playas-para-hacer-snorkel-en-tenerife--c1193",
-    lat: 28.0987, lng: -16.7524
+    lat: 28.1124009, lng: -16.7679878
   },
   {
     id: "buceo-canteras-gc",
@@ -334,7 +677,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Uno de los puntos de buceo más accesibles de Canarias, junto a La Puntilla. Fondo de hasta 10 metros con arrecifes, praderas de algas y viejas multicolores. Ideal para bautizos.",
     enlace: "https://blog.clickandboat.com/es/buceo-gran-canaria/",
-    lat: 28.15, lng: -15.44
+    lat: 28.1487484, lng: -15.4327376
   },
   {
     id: "buceo-cabron-gc",
@@ -343,7 +686,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "La reserva marina más concurrida de Gran Canaria, en Arinaga. Caída de hasta 23 metros con alta concentración de especies, apta también para snorkel.",
     enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/buceo-en-gran-canaria/",
-    lat: 27.8567, lng: -15.3933
+    lat: 27.873941, lng: -15.3822649
   },
   {
     id: "buceo-catedral-gc",
@@ -352,7 +695,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Una gran cueva submarina abovedada frente a La Isleta, con juegos de luces y sombras entre pasillos rocosos. Requiere experiencia previa; profundidad de hasta 40 metros.",
     enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/buceo-en-gran-canaria/",
-    lat: 28.165, lng: -15.42
+    lat: 27.8657, lng: -15.383
   },
   {
     id: "surf-famara-lanzarote",
@@ -361,7 +704,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "El spot de surf más famoso de Lanzarote, bajo los acantilados de Famara. Olas consistentes todo el año y varias escuelas de surf en el pueblo.",
     enlace: "https://es.wikipedia.org/wiki/Playa_de_Famara",
-    lat: 29.1103, lng: -13.5527
+    lat: 29.1171358, lng: -13.5645576
   },
   {
     id: "surf-cotillo-fuerte",
@@ -370,7 +713,7 @@ var RUTAS = [
     duracion: "Variable (según oleaje)", distancia: 0,
     descripcion: "Pueblo pesquero del norte de Fuerteventura con varios picos de surf de calidad y las famosas lagunas turquesas de Los Lagos para bañarse en aguas tranquilas.",
     enlace: "https://www.fuerteventuraplayas.com/",
-    lat: 28.6825, lng: -14.0089
+    lat: 28.6898555, lng: -14.0110092
   },
 
   {
@@ -380,7 +723,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Uno de los mejores spots de buceo de Europa. Aguas con 50 m de visibilidad, tortugas marinas, manta rayas y fondos volcánicos únicos.",
     enlace: "https://adventurecapital.es",
-    lat: 27.6411, lng: -17.9867
+    lat: 27.6416199, lng: -17.9821366
   },
   {
     id: "snorkel-montana-amarilla",
@@ -416,7 +759,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Las mejores lagunas naturales del archipiélago para snorkel. Aguas turquesas protegidas del viento con gran variedad de peces tropicales y fondos volcánicos.",
     enlace: "https://www.islalobos.es",
-    lat: 28.7489, lng: -13.8203
+    lat: 28.7374902, lng: -13.8176941
   },
   {
     id: "salinas-lobos",
@@ -452,7 +795,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "La bahía protegida de La Concha es perfecta para el snorkel con niños. Aguas poco profundas, arena blanca y gran variedad de peces en un entorno paradisíaco.",
     enlace: "https://www.islalobos.es",
-    lat: 28.7481, lng: -13.8250
+    lat: 28.7418933, lng: -13.8269906
   },
   {
     id: "gran-tarajal-caleta-fuerte",

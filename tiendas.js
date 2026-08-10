@@ -1,9 +1,23 @@
 /*
    TIENDAS.JS — Base de datos de tiendas y equipamiento outdoor en Canarias
-   Campos: id, nombre, isla, tipo, deporte[], zona, descripcion, direccion, telefono, web, foto, lat, lng
+   Campos: id, nombre, isla, tipo, deporte[,
+], zona, descripcion, direccion, telefono, web, foto, lat, lng
 */
 
 var TIENDAS = [
+  {
+    id: "grandesport-gomera",
+    nombre: "Deportes GranDesport",
+    isla: "La Gomera", tipo: "Comprar",
+    deporte: ["Senderismo", "Multideporte"],
+    zona: "Sur",
+    descripcion: "La única tienda de la isla especializada en equipo de senderismo y camping. También ofrecen información sobre rutas y el terreno para quienes visitan La Gomera.",
+    direccion: "C. Real 47, 38800 San Sebastián de La Gomera, La Gomera",
+    telefono: "+34 922 87 06 85",
+    web: "",
+    foto: "",
+    lat: 28.0928977, lng: -17.1116994
+  },
 
   // ══════════════════════════════════════
   //  TENERIFE
@@ -19,7 +33,7 @@ var TIENDAS = [
     telefono: "+34 922 259 000",
     web: "https://www.oldpeak.es",
     foto: "imagenes/tiendas/oldpeak.jpg",
-    lat: 28.4858, lng: -16.3175
+    lat: 28.4938689, lng: -16.3150688
   },
   {
     id: "tenerife-outdoor",
@@ -32,7 +46,7 @@ var TIENDAS = [
     telefono: "+34 922 257 892",
     web: "https://www.tenerifeoutdoor.com",
     foto: "imagenes/tiendas/tenerife-outdoor.jpg",
-    lat: 28.4869, lng: -16.3159
+    lat: 28.5067422, lng: -16.3113805
   },
   {
     id: "javisport",
@@ -45,7 +59,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://javisport.com",
     foto: "imagenes/tiendas/javisport.jpg",
-    lat: 28.4250, lng: -16.4917
+    lat: 28.4165877, lng: -16.5038522
   },
   {
     id: "basalto-escalada",
@@ -58,7 +72,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://basaltoescalada.com",
     foto: "imagenes/tiendas/basalto-escalada.jpg",
-    lat: 28.4700, lng: -16.2600
+    lat: 28.4865396, lng: -16.31804
   },
   {
     id: "grlimits",
@@ -71,7 +85,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://grlimits.com",
     foto: "imagenes/tiendas/grlimits.jpg",
-    lat: 28.3750, lng: -16.5880
+    lat: 28.3805079, lng: -16.5848371
   },
   {
     id: "xplore-tenerife",
@@ -84,7 +98,7 @@ var TIENDAS = [
     telefono: "+34 605 536 940",
     web: "https://xploretenerife.com",
     foto: "imagenes/tiendas/xplore-tenerife.jpg",
-    lat: 28.0514, lng: -16.7147
+    lat: 28.0493552, lng: -16.7137002
   },
   {
     id: "decathlon-tenerife",
@@ -97,7 +111,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://www.decathlon.es/tiendas/tenerife",
     foto: "imagenes/tiendas/decathlon-tenerife.jpg",
-    lat: 28.0913, lng: -16.7286
+    lat: 28.1227185, lng: -16.7445804
   },
 
   // ══════════════════════════════════════
@@ -114,7 +128,7 @@ var TIENDAS = [
     telefono: "+34 928 232 890",
     web: "https://limasportcanarias.com",
     foto: "imagenes/tiendas/limasport-gc.jpg",
-    lat: 28.1000, lng: -15.4167
+    lat: 28.1066799, lng: -15.4532637
   },
   {
     id: "yukan-gran-canaria",
@@ -140,7 +154,7 @@ var TIENDAS = [
     telefono: "+34 675 911 923",
     web: "https://www.canariasextreme.com",
     foto: "imagenes/tiendas/canarias-extreme.jpg",
-    lat: 27.7599, lng: -15.5747
+    lat: 27.736311, lng: -15.5947631
   },
   {
     id: "decathlon-gc",
@@ -170,7 +184,7 @@ var TIENDAS = [
     telefono: "+34 928 585 636",
     web: "https://www.kayaklanzarote.com",
     foto: "imagenes/tiendas/kayak-walk-lanzarote.jpg",
-    lat: 28.8625, lng: -13.8344
+    lat: 28.8590891, lng: -13.8030372
   },
   {
     id: "papagayo-watersports",
@@ -183,7 +197,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://papagayowatersports.com",
     foto: "",
-    lat: 28.86, lng: -13.8400
+    lat: 28.8582723, lng: -13.798958
   },
 
   // ══════════════════════════════════════
@@ -200,7 +214,7 @@ var TIENDAS = [
     telefono: "+34 605 683 423",
     web: "https://profuerte.com",
     foto: "imagenes/tiendas/profuerte-fuerteventura.jpg",
-    lat: 28.7286, lng: -13.8653
+    lat: 28.7359669, lng: -13.8681305
   },
   {
     id: "divecenter-corralejo",
@@ -223,19 +237,6 @@ var TIENDAS = [
   // ══════════════════════════════════════
   //  LA GOMERA
   // ══════════════════════════════════════,
-  {
-    id: "adventure-capital-gomera",
-    nombre: "Adventure Capital La Gomera",
-    isla: "La Gomera", tipo: "Alquilar",
-    deporte: ["Kayak","Senderismo","Multideporte"],
-    zona: "Sur",
-    descripcion: "Kayak por la costa sur de La Gomera, senderismo guiado y actividades multiaventura. Guías locales con gran conocimiento de los barrancos y senderos de la isla.",
-    direccion: "Valle Gran Rey, La Gomera",
-    telefono: "",
-    web: "https://adventurecapital.es",
-    foto: "",
-    lat: 28.0987, lng: -17.2967
-  },
 
   // ══════════════════════════════════════
   //  EL HIERRO
@@ -298,7 +299,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://izas-outdoorcanarias.com",
     foto: "",
-    lat: 28.4682, lng: -16.2546
+    lat: 28.4697462, lng: -16.2593062
   },
 
   // ══════════════════════════════════════
@@ -315,7 +316,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://www.perojo.com",
     foto: "",
-    lat: 28.101, lng: -15.4136
+    lat: 28.1099094, lng: -15.4195245
   },
   {
     id: "mandala-climb-gc",
@@ -328,20 +329,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://www.mandalaclimb.com",
     foto: "",
-    lat: 28.105, lng: -15.428
-  },
-  {
-    id: "gran-canaria-outdoors",
-    nombre: "Gran Canaria Outdoors",
-    isla: "Gran Canaria", tipo: "Alquilar",
-    deporte: ["Senderismo","Escalada","Barranquismo"],
-    zona: "Sur",
-    descripcion: "Senderismo guiado, alquiler de material outdoor y tienda de equipamiento en Gran Canaria. Rutas por el Roque Nublo, Barranco de Güigüi y los mejores senderos de la isla.",
-    direccion: "Maspalomas, Gran Canaria",
-    telefono: "",
-    web: "https://www.senderismograncanaria.com",
-    foto: "",
-    lat: 27.7606, lng: -15.586
+    lat: 28.1296081, lng: -15.4310436
   },
 
   // ══════════════════════════════════════
@@ -369,7 +357,7 @@ var TIENDAS = [
   // ══════════════════════════════════════
 
   // ── NUEVAS TIENDAS TENERIFE ──
-  ,{
+  {
     id: "canary-runner",
     nombre: "Canary Runner",
     isla: "Tenerife", tipo: "Comprar",
@@ -380,7 +368,7 @@ var TIENDAS = [
     telefono: "+34 613 604 714",
     web: "https://canaryrunner.com",
     foto: "",
-    lat: 28.3841, lng: -16.5925
+    lat: 28.3977833, lng: -16.5763002
   }
   ,{
     id: "bikila-los-realejos",
@@ -393,7 +381,7 @@ var TIENDAS = [
     telefono: "+34 922 224 525",
     web: "https://bikila.com/pages/bikila-los-realejos",
     foto: "",
-    lat: 28.3838, lng: -16.5921
+    lat: 28.3976664, lng: -16.5774304
   }
   ,{
     id: "bikila-la-laguna",
@@ -406,7 +394,7 @@ var TIENDAS = [
     telefono: "+34 922 251 186",
     web: "https://bikila.com/pages/bikila-la-laguna",
     foto: "",
-    lat: 28.4879, lng: -16.3187
+    lat: 28.4870377, lng: -16.3172391
   }
   ,{
     id: "tenerife-climbing-house",
@@ -419,7 +407,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://tenerifeclimbinghouse.com",
     foto: "",
-    lat: 28.1641, lng: -16.4826
+    lat: 28.166328, lng: -16.500372
   }
   // ── NUEVAS TIENDAS GRAN CANARIA ──
   ,{
@@ -433,7 +421,7 @@ var TIENDAS = [
     telefono: "+34 928 768 351",
     web: "https://bikila.com/pages/bikila-las-palmas-gran-canaria",
     foto: "",
-    lat: 28.1033, lng: -15.4372
+    lat: 28.0969714, lng: -15.4550169
   }
   
 ]; // ← No borres este corchete

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Buscador de 268 rutas outdoor en Canarias. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
+  <meta name="description" content="Buscador de 306 rutas outdoor en Canarias. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
   <title>Buscador de Rutas Outdoor en Canarias | Aventuras en Cada Paso</title>
   <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
   <link rel="icon" type="image/png" href="logo-aventuras.png">
@@ -429,9 +429,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
     <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-compass"></i> Buscador de Rutas</span>
     <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Rutas Outdoor en Canarias</h1>
-    <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">268 rutas verificadas en 9 islas. Filtra por isla, deporte y dificultad.</p>
+    <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">306 rutas verificadas en 9 islas. Filtra por isla, deporte y dificultad.</p>
     <div class="bus-hero__stats" style="margin-bottom:0;">
-      <div class="bus-stat"><span class="bus-stat__num">268</span><span class="bus-stat__lbl">Rutas</span></div>
+      <div class="bus-stat"><span class="bus-stat__num">306</span><span class="bus-stat__lbl">Rutas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">9</span><span class="bus-stat__lbl">Islas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">GPS</span><span class="bus-stat__lbl">En todas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">0€</span><span class="bus-stat__lbl">Gratis</span></div>
@@ -636,12 +636,25 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var params = new URLSearchParams(window.location.search);
   if(params.get('isla')) islaEl.value = params.get('isla');
   if(params.get('tipo')) tipoEl.value = params.get('tipo');
+  if(params.get('dif')) difEl.value = params.get('dif');
   if(params.get('q')) qEl.value = params.get('q');
 
-  qEl.addEventListener('input', render);
-  islaEl.addEventListener('change', render);
-  tipoEl.addEventListener('change', render);
-  difEl.addEventListener('change', render);
+  function sincronizarURL(){
+    var p = new URLSearchParams();
+    if(qEl.value.trim()) p.set('q', qEl.value.trim());
+    if(islaEl.value) p.set('isla', islaEl.value);
+    if(tipoEl.value) p.set('tipo', tipoEl.value);
+    if(difEl.value) p.set('dif', difEl.value);
+    var nuevaURL = window.location.pathname + (p.toString() ? '?' + p.toString() : '');
+    history.replaceState(null, '', nuevaURL);
+  }
+
+  function renderYguardar(){ render(); sincronizarURL(); }
+
+  qEl.addEventListener('input', renderYguardar);
+  islaEl.addEventListener('change', renderYguardar);
+  tipoEl.addEventListener('change', renderYguardar);
+  difEl.addEventListener('change', renderYguardar);
 
   grid.addEventListener('click', function(e){
     var heart = e.target.closest('.bus-card__heart');
@@ -666,10 +679,12 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     soloGuardadas = false;
     guardadasBtn.classList.remove('on');
     render();
+    sincronizarURL();
     qEl.focus();
   });
 
   render();
+  sincronizarURL();
 
   // ── MIS LOGROS ──
   (function(){
