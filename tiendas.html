@@ -220,8 +220,20 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .tc-head {
  display: flex;
  align-items: flex-start;
- justify-content: space-between;
- gap: 10px;
+ gap: 12px;
+ }
+ .tc-logo {
+ width: 40px;
+ height: 40px;
+ border-radius: 10px;
+ flex-shrink: 0;
+ border: 1px solid;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-family: 'Orbitron', sans-serif;
+ font-size: 13px;
+ font-weight: 700;
  }
  .tc-nombre {
  font-family: 'Orbitron', sans-serif;
@@ -315,8 +327,13 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  margin-bottom: 16px;
  display: flex;
  align-items: center;
+ justify-content: space-between;
  gap: 10px;
+ flex-wrap: wrap;
  }
+ .t-sat-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid rgba(28,255,107,.3);background:rgba(28,255,107,.08);color:#1cff6b;font-size:10px;font-weight:700;font-family:Orbitron,sans-serif;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;}
+ .t-sat-btn:hover{background:rgba(28,255,107,.15);}
+ .t-sat-btn.on{background:#1cff6b;color:#02070f;}
  #mapa-t {
  width: 100%;
  height: 500px;
@@ -327,6 +344,13 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  display: flex; gap: 16px; justify-content: center;
  flex-wrap: wrap; margin-top: 12px;
  }
+ .t-mapa-aviso {
+ text-align: center; margin-top: 16px;
+ font-size: 12px; color: #5a6070;
+ display: flex; align-items: center; justify-content: center;
+ gap: 6px; flex-wrap: wrap;
+ }
+ .t-mapa-aviso i { color: #ffc107; }
  .t-leyenda span {
  font-family: Orbitron,sans-serif; font-size: 10px;
  letter-spacing: 1px; color: #8a8fa0 !important;
@@ -619,7 +643,8 @@ body { overflow-x: hidden !important; }
  <!-- MAPA ABAJO -->
  <div class="t-mapa-seccion">
  <div class="t-mapa-titulo">
- <i class="fas fa-map-marked-alt"></i> Mapa de tiendas
+ <span><i class="fas fa-map-marked-alt"></i> Mapa de tiendas</span>
+ <button type="button" id="t-sat-btn" class="t-sat-btn"><i class="fas fa-satellite"></i> Satélite</button>
  </div>
  <div id="mapa-t"></div>
  <div class="t-leyenda">
@@ -628,6 +653,7 @@ body { overflow-x: hidden !important; }
  <span class="leg-r">Reparar</span>
  <span class="leg-s">Suplementación</span>
  </div>
+ <p class="t-mapa-aviso"><i class="fas fa-circle-info"></i> La ubicación de cada tienda en el mapa es aproximada. Antes de desplazarte, confirma la dirección exacta con la propia tienda o en Google Maps.</p>
  </div>
 
 </main>
@@ -684,14 +710,36 @@ body { overflow-x: hidden !important; }
 <script src="tiendas.js"></script>
 <script>
 var COL = {'Comprar':'#1cff6b','Alquilar':'#ffc107','Reparar':'#ff6f00','Suplementación':'#a855f7'};
+
+function iniciales(nombre){
+ var palabras = nombre.replace(/[–—-].*$/,'').trim().split(/\s+/).filter(function(w){
+  return !['de','del','la','el','los','las','en','y'].includes(w.toLowerCase());
+ });
+ var letras = palabras.slice(0,2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+ return letras || nombre.charAt(0).toUpperCase();
+}
 var BCL = {'Comprar':'b-comprar','Alquilar':'b-alquilar','Reparar':'b-reparar','Suplementación':'b-suplem'};
 var FIC = {'Comprar':'fa-shopping-bag','Alquilar':'fa-key','Reparar':'fa-tools','Suplementación':'fa-flask'};
 
 /* MAPA */
 var mapa = L.map('mapa-t', {center:[28.3,-15.8], zoom:7});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+var capaMapa = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
  attribution:'© CARTO', subdomains:'abcd', maxZoom:17
 }).addTo(mapa);
+var capaSatelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+ attribution:'© Esri', maxZoom:19
+});
+var satActivo = false;
+var satBtn = document.getElementById('t-sat-btn');
+if(satBtn){
+ satBtn.addEventListener('click', function(){
+  satActivo = !satActivo;
+  satBtn.classList.toggle('on', satActivo);
+  satBtn.innerHTML = satActivo ? '<i class="fas fa-map"></i> Mapa' : '<i class="fas fa-satellite"></i> Satélite';
+  if(satActivo){ mapa.removeLayer(capaMapa); capaSatelite.addTo(mapa); }
+  else{ mapa.removeLayer(capaSatelite); capaMapa.addTo(mapa); }
+ });
+}
 setTimeout(function(){ mapa.invalidateSize(); }, 300);
 
 var marks = {};
@@ -774,6 +822,7 @@ function render(){
  card.className = 'tc';
  card.innerHTML =
  '<div class="tc-head">'
+ +'<div class="tc-logo" style="background:'+c+'22;border-color:'+c+'55;color:'+c+';">'+iniciales(t.nombre)+'</div>'
  +'<div>'
  +'<div class="tc-badges">'
  +'<span class="badge b-isla">'+t.isla+'</span>'

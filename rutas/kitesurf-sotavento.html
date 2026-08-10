@@ -564,7 +564,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>(function(){
 var el=document.getElementById("rp-map");if(!el)return;
 var gpxUrl=el.getAttribute("data-gpx");
-var mp=L.map("rp-map",{scrollWheelZoom:false});
+var mp=L.map("rp-map",{scrollWheelZoom:true});
 var capaMapa=L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"\u00a9 CARTO",subdomains:"abcd",maxZoom:18}).addTo(mp);
 var capaSatelite=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:19});
 var satActivo=false;

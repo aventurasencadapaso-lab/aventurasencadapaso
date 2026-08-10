@@ -28,7 +28,7 @@ var TIENDAS = [
     deporte: ["Senderismo","Trail Running","Escalada","Barranquismo"],
     zona: "Norte",
     descripcion: "La tienda outdoor más completa de Canarias. Senderismo, alpinismo, barranquismo y trail running. Especialistas en calzado barefoot. Marcas Rab, Arc'teryx, Osprey y Salomon.",
-    direccion: "San Cristóbal de La Laguna, Tenerife",
+    direccion: "Av. de la República Argentina 79, Local Bajo, 38208 San Cristóbal de La Laguna, Tenerife",
     telefono: "+34 922 257 892",
     web: "https://www.tenerifeoutdoor.com",
     foto: "imagenes/tiendas/tenerife-outdoor.jpg",
@@ -41,11 +41,11 @@ var TIENDAS = [
     deporte: ["Escalada","Barranquismo","Senderismo"],
     zona: "Norte",
     descripcion: "Especialistas en escalada, barranquismo y trabajos verticales. Material técnico de seguridad, cuerdas, arneses y calzado de escalada. Asesoramiento experto.",
-    direccion: "Santa Cruz de Tenerife",
+    direccion: "Carretera Provincial 189, Local 6, 38390 Santa Úrsula, Tenerife",
     telefono: "",
     web: "https://javisport.com",
     foto: "imagenes/tiendas/javisport.jpg",
-    lat: 28.4636, lng: -16.2518
+    lat: 28.4250, lng: -16.4917
   },
   {
     id: "basalto-escalada",
@@ -54,7 +54,7 @@ var TIENDAS = [
     deporte: ["Escalada","Barranquismo","Senderismo"],
     zona: "Norte",
     descripcion: "Más de 25 años de experiencia en equipamiento de escalada y montaña. Tienda especializada con asesoramiento técnico de nivel. Productos de seguridad y escalada deportiva.",
-    direccion: "Tenerife",
+    direccion: "C. Baltasar Núñez 2, 38202 San Cristóbal de La Laguna, Tenerife",
     telefono: "",
     web: "https://basaltoescalada.com",
     foto: "imagenes/tiendas/basalto-escalada.jpg",
@@ -80,7 +80,7 @@ var TIENDAS = [
     deporte: ["Kayak","Surf","Ciclismo"],
     zona: "Sur",
     descripcion: "Alquiler y tours de kayak, paddle surf y bicicleta en Los Cristianos. Material náutico de calidad con rutas guiadas por la costa sur. Ideal para todos los niveles.",
-    direccion: "Los Cristianos, Tenerife",
+    direccion: "Edificio Cristianmar, C. El Coronel 1, 38650 Los Cristianos, Tenerife",
     telefono: "+34 605 536 940",
     web: "https://xploretenerife.com",
     foto: "imagenes/tiendas/xplore-tenerife.jpg",
@@ -93,11 +93,11 @@ var TIENDAS = [
     deporte: ["Multideporte","Senderismo","Ciclismo","Surf"],
     zona: "Sur",
     descripcion: "Mayor oferta de equipamiento deportivo a buen precio. Senderismo, ciclismo, trail running, surf y camping. Nuevo servicio de alquiler náutico en tiendas seleccionadas.",
-    direccion: "San Isidro, Tenerife",
+    direccion: "Av. de Ayyo s/n, 38670 Adeje, Tenerife",
     telefono: "",
     web: "https://www.decathlon.es/tiendas/tenerife",
     foto: "imagenes/tiendas/decathlon-tenerife.jpg",
-    lat: 28.0764, lng: -16.5625
+    lat: 28.0913, lng: -16.7286
   },
 
   // ══════════════════════════════════════
@@ -110,7 +110,7 @@ var TIENDAS = [
     deporte: ["Escalada","Senderismo","Barranquismo","Trail Running"],
     zona: "Norte",
     descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo y barranquismo. También material para trabajos en altura y rescate profesional.",
-    direccion: "C/ Fondos del Segura 3, Las Palmas de Gran Canaria",
+    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
     telefono: "+34 928 232 890",
     web: "https://limasportcanarias.com",
     foto: "imagenes/tiendas/limasport-gc.jpg",
@@ -121,13 +121,13 @@ var TIENDAS = [
     nombre: "YUKAN Outdoor Gran Canaria",
     isla: "Gran Canaria", tipo: "Alquilar",
     deporte: ["Kayak","Escalada","Senderismo"],
-    zona: "Sur",
+    zona: "Norte",
     descripcion: "Alquiler de material para senderismo, escalada y coasteering. Guías especializados y equipamiento técnico para explorar Gran Canaria de forma segura.",
-    direccion: "Las Palmas de Gran Canaria",
+    direccion: "Telde, Gran Canaria",
     telefono: "+34 644 754 854",
     web: "https://yukanoutdoor.com",
     foto: "imagenes/tiendas/yukan-gran-canaria.jpg",
-    lat: null, lng: null
+    lat: 27.9931, lng: -15.4177
   },
   {
     id: "canarias-extreme",
@@ -136,11 +136,11 @@ var TIENDAS = [
     deporte: ["Surf","Kayak","Multideporte"],
     zona: "Sur",
     descripcion: "Material outdoor y deportes extremos en Maspalomas. Buggys, jet ski, kayak y material acuático. Aventuras en el sur de Gran Canaria para todos los gustos.",
-    direccion: "Maspalomas, Gran Canaria",
+    direccion: "Av. de Oceanía, 35100 Maspalomas, Gran Canaria",
     telefono: "+34 675 911 923",
     web: "https://www.canariasextreme.com",
     foto: "imagenes/tiendas/canarias-extreme.jpg",
-    lat: null, lng: null
+    lat: 27.7599, lng: -15.5747
   },
   {
     id: "decathlon-gc",
@@ -149,11 +149,11 @@ var TIENDAS = [
     deporte: ["Multideporte","Senderismo","Surf","Ciclismo"],
     zona: "Norte",
     descripcion: "Equipamiento deportivo completo en Las Palmas y Telde. Nuevo servicio de alquiler náutico: kayak y paddle surf en tiendas del sur. Accesible para todos los bolsillos.",
-    direccion: "Telde / Las Palmas de Gran Canaria",
+    direccion: "Autovía GC-1, Km 8, 35213 Telde, Gran Canaria",
     telefono: "",
     web: "https://www.decathlon.es/tiendas/gran-canaria",
     foto: "imagenes/tiendas/decathlon-tenerife.jpg",
-    lat: null, lng: null
+    lat: 27.9878, lng: -15.4144
   },
 
   // ══════════════════════════════════════
@@ -166,7 +166,7 @@ var TIENDAS = [
     deporte: ["Kayak","Submarinismo"],
     zona: "Sur",
     descripcion: "Entre el 10% de las mejores atracciones del mundo. Alquiler de kayaks de mar en Los Ajaches y Papagayo. Kayaks individuales, dobles y de travesía. Snorkel incluido.",
-    direccion: "Playa Blanca, Lanzarote",
+    direccion: "C. Las Palmas 5, 35580 Playa Blanca, Lanzarote",
     telefono: "+34 928 585 636",
     web: "https://www.kayaklanzarote.com",
     foto: "imagenes/tiendas/kayak-walk-lanzarote.jpg",
@@ -179,24 +179,11 @@ var TIENDAS = [
     deporte: ["Kayak","Surf","Submarinismo"],
     zona: "Sur",
     descripcion: "Alquiler de kayaks, paddle surf, máscaras y trajes de neopreno en Playa Blanca. Kayaks individuales, dobles, triples y cuádruples. Precios especiales para familias.",
-    direccion: "Playa Blanca, Lanzarote",
+    direccion: "Complejo Sandos Papagayo, 35580 Playa Blanca, Lanzarote",
     telefono: "",
     web: "https://papagayowatersports.com",
     foto: "",
     lat: 28.86, lng: -13.8400
-  },
-  {
-    id: "kayak-walk-lanzarote",
-    nombre: "Kayak & Walk in Lanzarote",
-    isla: "Lanzarote", tipo: "Alquilar",
-    deporte: ["Kayak","Senderismo"],
-    zona: "Sur",
-    descripcion: "Alquiler de kayaks y material de snorkel en Playa Blanca. Rutas guiadas por las calas de Papagayo con paradas para buceo en fondos volcánicos únicos.",
-    direccion: "Playa Blanca, Lanzarote",
-    telefono: "+34 928 585 636",
-    web: "https://kayakandwalkinlanzarote.com",
-    foto: "imagenes/tiendas/kayak-walk-lanzarote.jpg",
-    lat: 28.8630, lng: -13.8360
   },
 
   // ══════════════════════════════════════
@@ -209,7 +196,7 @@ var TIENDAS = [
     deporte: ["Surf","Kayak"],
     zona: "Norte",
     descripcion: "Alquiler y clases de windsurf, kitesurf y paddle surf en Corralejo. Material de última generación. Sede de eventos internacionales de windsurf durante décadas.",
-    direccion: "Corralejo, Fuerteventura",
+    direccion: "Av. Ntra. Sra. del Carmen 45, 35660 Corralejo, Fuerteventura",
     telefono: "+34 605 683 423",
     web: "https://profuerte.com",
     foto: "imagenes/tiendas/profuerte-fuerteventura.jpg",
@@ -224,7 +211,7 @@ var TIENDAS = [
     descripcion: "Centro de buceo en Corralejo con acceso a los mejores spots de Fuerteventura. Alquiler de equipo, inmersiones guiadas y cursos PADI para todos los niveles.",
     direccion: "C/ Nuestra Señora del Pino 22, 35660 Corralejo, Fuerteventura",
     telefono: "+34 928 535 906",
-    web: "https://divecentercorralejo.com",
+    web: "https://divecentercorralejo.webnode.page",
     foto: "",
     lat: 28.7305, lng: -13.8631
   },
@@ -247,7 +234,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://adventurecapital.es",
     foto: "",
-    lat: null, lng: null
+    lat: 28.0987, lng: -17.2967
   },
 
   // ══════════════════════════════════════
@@ -260,7 +247,7 @@ var TIENDAS = [
     deporte: ["Submarinismo"],
     zona: "Sur",
     descripcion: "El mejor buceo de España en la Reserva Marina de La Restinga. Alquiler de equipo, bautismos de buceo y cursos PADI. Aguas con 50 m de visibilidad y fondos volcánicos únicos.",
-    direccion: "La Restinga, El Hierro",
+    direccion: "C. El Rancho 12, 38917 La Restinga, El Hierro",
     telefono: "+34 922 558 164",
     web: "https://centrodebuceoelhierro.com",
     foto: "",
@@ -307,11 +294,11 @@ var TIENDAS = [
     deporte: ["Senderismo","Trail Running","Multideporte"],
     zona: "Norte",
     descripcion: "Más de 25 años vistiendo a senderistas y trekkers. Ropa técnica de senderismo con la mejor relación calidad-precio de Canarias. Marca canaria con tienda en Tenerife.",
-    direccion: "Tenerife",
+    direccion: "Rambla de Santa Cruz 74, 38001 Santa Cruz de Tenerife",
     telefono: "",
     web: "https://izas-outdoorcanarias.com",
     foto: "",
-    lat: null, lng: null
+    lat: 28.4682, lng: -16.2546
   },
 
   // ══════════════════════════════════════
@@ -324,11 +311,11 @@ var TIENDAS = [
     deporte: ["Senderismo","Escalada","Trail Running","Barranquismo"],
     zona: "Norte",
     descripcion: "Tienda clásica de deportes de montaña en Las Palmas. Senderismo, escalada, alpinismo y barranquismo. Una de las referencias del outdoor en Gran Canaria desde hace décadas.",
-    direccion: "Las Palmas de Gran Canaria",
+    direccion: "C. Perojo 27, 35003 Las Palmas de Gran Canaria",
     telefono: "",
     web: "https://www.perojo.com",
     foto: "",
-    lat: null, lng: null
+    lat: 28.101, lng: -15.4136
   },
   {
     id: "mandala-climb-gc",
@@ -337,11 +324,11 @@ var TIENDAS = [
     deporte: ["Escalada","Barranquismo"],
     zona: "Norte",
     descripcion: "Especialistas en escalada, boulder y montañismo. Equipamiento técnico de las mejores marcas con personal con años de experiencia en la práctica de la escalada. Envíos a todas las islas.",
-    direccion: "Las Palmas de Gran Canaria",
+    direccion: "C. Manuel González Martín 18, 35006 Las Palmas de Gran Canaria",
     telefono: "",
     web: "https://www.mandalaclimb.com",
     foto: "",
-    lat: null, lng: null
+    lat: 28.105, lng: -15.428
   },
   {
     id: "gran-canaria-outdoors",
@@ -354,7 +341,7 @@ var TIENDAS = [
     telefono: "",
     web: "https://www.senderismograncanaria.com",
     foto: "",
-    lat: null, lng: null
+    lat: 27.7606, lng: -15.586
   },
 
   // ══════════════════════════════════════
@@ -448,17 +435,5 @@ var TIENDAS = [
     foto: "",
     lat: 28.1033, lng: -15.4372
   }
-  ,{
-    id: "lima-sport-canarias",
-    nombre: "Lima Sport Canarias",
-    isla: "Gran Canaria", tipo: "Comprar",
-    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
-    zona: "Norte",
-    descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo, barranquismo y trabajos en altura. Referente en Gran Canaria.",
-    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
-    telefono: "+34 928 791 529",
-    web: "https://limasportcanarias.com",
-    foto: "",
-    lat: 28.0813, lng: -15.4694
-  }
+  
 ]; // ← No borres este corchete

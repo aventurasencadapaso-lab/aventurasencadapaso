@@ -466,7 +466,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>(function(){
 var el=document.getElementById("rp-map");if(!el)return;
 var lat=28.1219,lng=-17.2794;
-var mp=L.map("rp-map",{scrollWheelZoom:false}).setView([lat,lng],14);
+var mp=L.map("rp-map",{scrollWheelZoom:true}).setView([lat,lng],14);
 var capaMapa=L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{attribution:"\u00a9 CARTO",subdomains:"abcd",maxZoom:18}).addTo(mp);
 var capaSatelite=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:19});
 var sv='<svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.67 14 22 14 22S28 23.67 28 14C28 6.27 21.73 0 14 0z" fill="#1cff6b"/><circle cx="14" cy="14" r="6" fill="#02070f"/></svg>';
