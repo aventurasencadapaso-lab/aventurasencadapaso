@@ -26,9 +26,202 @@
 
 var RUTAS = [
   {
+    id: "cueva-guanches-icod",
+    nombre: "Cueva de los Guanches",
+    isla: "Tenerife", tipo: "Espeleología", dificultad: "Media",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Tubo volcánico en Icod de los Vinos con las dataciones más antiguas de poblamiento humano de Canarias (siglo VI a.C.). Bien de Interés Cultural desde 2005, con restos de cabañas de piedra seca en las inmediaciones.",
+    enlace: "https://es.wikipedia.org/wiki/Cueva_de_los_Guanches",
+    lat: 28.3697, lng: -16.7183
+  },
+  {
+    id: "cueva-belmaco-lapalma",
+    nombre: "Cueva de Belmaco",
+    isla: "La Palma", tipo: "Espeleología", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "El primer yacimiento con petroglifos descubierto en todo el archipiélago canario, ya en el siglo XVIII. Diez cuevas naturales con grabados rupestres benahoaritas, declarado Monumento Histórico Artístico, con centro de interpretación en Villa de Mazo.",
+    enlace: "https://tuylapalma.com/descubre-la-palma/que-hacer-en-la-palma/que-visitar-en-la-palma/centros-arqueologicos-en-la-palma/",
+    lat: 28.6014, lng: -17.7847
+  },
+  {
+    id: "grabados-eljulan-hierro",
+    nombre: "Grabados Rupestres de El Julan",
+    isla: "El Hierro", tipo: "Espeleología", dificultad: "Difícil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Extensa zona de inscripciones rupestres bimbaches en la vertiente sur de El Hierro, con caracteres que podrían pertenecer a la escritura líbico-bereber. Terreno agreste en el municipio de El Pinar, acceso exigente.",
+    enlace: "https://guanchipedia.com/grabados-rupestres-el-julan/",
+    lat: 27.68, lng: -18.03
+  },
+  {
+    id: "poblado-zonzamas-lanzarote",
+    nombre: "Poblado de Zonzamas",
+    isla: "Lanzarote", tipo: "Espeleología", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Uno de los yacimientos majos más importantes de Lanzarote, en Teguise, con estructuras habitacionales de piedra en superficie. Tradicionalmente vinculado a la sede del último Guanarteme de la isla antes de la conquista.",
+    enlace: "https://www.fondoarqueologicolanzarote.com/",
+    lat: 29.0431, lng: -13.6178
+  },
+  {
+    id: "fortaleza-chipude-gomera",
+    nombre: "Fortaleza de Chipude",
+    isla: "La Gomera", tipo: "Espeleología", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Símbolo de la resistencia de los aborígenes gomeros frente a la conquista castellana. Yacimiento de altura con aras de sacrificio que aún se conservan, considerado uno de los lugares de culto más citados de la isla.",
+    enlace: "https://biosfera.lagomera.es/arqueologia/",
+    lat: 28.1372, lng: -17.2606
+  },
+
+  {
+    id: "kitesurf-flagbeach-fuerte",
+    nombre: "Kitesurf – Flag Beach",
+    isla: "Fuerteventura", tipo: "Kitesurf", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Spot de kitesurf en Corralejo, capital del surf de la isla. Buen acceso y ambiente internacional, con escuelas y alquiler de material cerca.",
+    enlace: "https://oceanadventure.surf/en/the-best-kitesurfing-spots-in-the-canary-islands/",
+    lat: 28.735, lng: -13.86
+  },
+  {
+    id: "kitesurf-famara-lanzarote",
+    nombre: "Kitesurf – Playa de Famara",
+    isla: "Lanzarote", tipo: "Kitesurf", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "5 km de playa bajo los acantilados de Famara, apta para todos los niveles de kitesurf. Vientos alisios constantes de mayo a septiembre y vistas a La Graciosa.",
+    enlace: "https://www.hellocanaryislands.com/kitesurfing/lanzarote/kitesurfing-on-famara-beach/",
+    lat: 29.113, lng: -13.555
+  },
+  {
+    id: "mirador-abrante-gomera",
+    nombre: "Mirador de Abrante",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Voladizo de siete metros con suelo de cristal, suspendido 400 metros sobre el valle de Angulo. Una de las postales más espectaculares de Canarias, cerca de Agulo.",
+    enlace: "https://hola.com/viajes/galeria/20171011100489/miradores-espectaculares-canarias/",
+    lat: 28.185, lng: -17.2
+  },
+  {
+    id: "mirador-lapena-hierro",
+    nombre: "Mirador de La Peña",
+    isla: "El Hierro", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Diseño de César Manrique en Guarazoca, con vistas al valle de El Golfo y sus 15 km de acantilados. Uno de los mejores lugares de Canarias para ver el cielo estrellado.",
+    enlace: "https://www.canarias7.es/canarias/el-hierro/miradores-mejores-vistas-hierro-20230706202450-ga.html",
+    lat: 27.755, lng: -18.035
+  },
+  {
+    id: "mirador-morrovelosa-fuerte",
+    nombre: "Mirador Morro Velosa",
+    isla: "Fuerteventura", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Diseño de César Manrique a 669 m de altitud, entre el Parque Rural de Betancuria y el valle de Santa Inés. La mejor vista del norte y centro de Fuerteventura.",
+    enlace: "https://hola.com/viajes/galeria/20171011100489/miradores-espectaculares-canarias/",
+    lat: 28.4372, lng: -14.0139
+  },
+  {
+    id: "mirador-palmarejo-gomera",
+    nombre: "Mirador del Palmarejo",
+    isla: "La Gomera", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "También conocido como mirador César Manrique, sobre el imponente barranco de Valle Gran Rey. Arquitectura que se camufla entre la roca, con jardines de plantas autóctonas.",
+    enlace: "https://trotandomundos.com/los-mejores-miradores-de-la-gomera/",
+    lat: 28.1219, lng: -17.2794
+  },
+
+  {
+    id: "ciclismo-vuelta-gomera",
+    nombre: "Ciclismo – Vuelta a La Gomera",
+    isla: "La Gomera", tipo: "Ciclismo", dificultad: "Difícil",
+    duracion: "Día completo", distancia: 110,
+    descripcion: "Vuelta completa a la isla en bicicleta de carretera, unos 110 km de carreteras tranquilas y con poco tráfico entre paisajes espectaculares. Exige buena forma física por el desnivel acumulado del recorrido circular.",
+    enlace: "https://www.holaislascanarias.com/rutas-de-ciclismo/la-gomera/",
+    lat: 28.0916, lng: -17.1133
+  },
+
+  {
+    id: "surf-nogales-lapalma",
+    nombre: "Surf – Playa de Nogales",
+    isla: "La Palma", tipo: "Surf", dificultad: "Media",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "El punto de surf más conocido del noreste de La Palma, en Puntallana. Arena negra volcánica y olas de calidad para nivel intermedio.",
+    enlace: "https://top-car-hire.com/blog/islas-canarias/surf-en-canarias",
+    lat: 28.6742, lng: -17.7539
+  },
+  {
+    id: "surf-quemao-lanzarote",
+    nombre: "Surf – El Quemao",
+    isla: "Lanzarote", tipo: "Surf", dificultad: "Difícil",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "Una de las olas más potentes y respetadas de Canarias, en La Santa. Izquierda de hasta 5 metros con tubos famosos a nivel mundial. Solo para surfistas expertos.",
+    enlace: "https://elblog.bintercanarias.com/blog/5-spots-imprescindibles-para-los-amantes-del-surf-en-canarias",
+    lat: 29.1319, lng: -13.6486
+  },
+  {
+    id: "surf-majanicho-fuerte",
+    nombre: "Surf – El Hierro (Majanicho)",
+    isla: "Fuerteventura", tipo: "Surf", dificultad: "Difícil",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "La ola más famosa del norte de Fuerteventura, junto al pueblo de Majanicho (no confundir con la isla de El Hierro). Derecha rápida y tubera sobre fondo volcánico, solo alto nivel.",
+    enlace: "https://fuerteventuractiva.es/es/surfear-en-fuerteventura-los-mejores-spots-de-la-isla/",
+    lat: 28.7719, lng: -13.9394
+  },
+  {
+    id: "surf-elfronton-gc",
+    nombre: "Surf y Bodyboard – El Frontón",
+    isla: "Gran Canaria", tipo: "Surf", dificultad: "Difícil",
+    duracion: "Variable (según oleaje)", distancia: 0,
+    descripcion: "Uno de los spots de bodyboard más reconocidos internacionalmente, cerca de Gáldar. Olas potentes y espectaculares, parada habitual del circuito mundial de bodyboard.",
+    enlace: "https://macaronesiasport.com/sin-categoria/los-mejores-spots-de-surf-en-canarias/",
+    lat: 28.1706, lng: -15.6997
+  },
+  {
+    id: "kayak-puertonaos-lapalma",
+    nombre: "Kayak – Puerto Naos",
+    isla: "La Palma", tipo: "Kayak", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Aguas tranquilas y vistas al Atlántico, ideal para iniciarse en el kayak. Uno de los puntos más populares de La Palma para remar sin experiencia previa.",
+    enlace: "https://sendaecoway.com/blog/kayak-en-la-palma-los-5-mejores-lugares-para-hacer/",
+    lat: 28.5661, lng: -17.8697
+  },
+  {
+    id: "kayak-tazacorte-lapalma",
+    nombre: "Kayak – Acantilados de Tazacorte",
+    isla: "La Palma", tipo: "Kayak", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Remo entre formaciones rocosas y acantilados en una de las zonas más soleadas de La Palma. Aguas claras que permiten ver el fondo marino.",
+    enlace: "https://sendaecoway.com/blog/kayak-en-la-palma-los-5-mejores-lugares-para-hacer/",
+    lat: 28.6294, lng: -17.9319
+  },
+  {
+    id: "cuevas-pintadas-galdar",
+    nombre: "Cuevas Pintadas de Gáldar",
+    isla: "Gran Canaria", tipo: "Espeleología", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Uno de los yacimientos arqueológicos más importantes de Canarias. Cueva artificial con pinturas geométricas guanches originales, protegidas bajo una cúpula de cristal. Acceso por pasarela, apto para todos.",
+    enlace: "https://www.grancanaria.com/turismo/es/cultura/espacios-arqueologicos/museo-y-parque-arqueologico-cueva-pintada/",
+    lat: 28.1447, lng: -15.6547
+  },
+  {
+    id: "cenobio-valeron-gc",
+    nombre: "Cenobio de Valerón",
+    isla: "Gran Canaria", tipo: "Espeleología", dificultad: "Media",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Granero colectivo aborigen con más de 300 oquedades excavadas en la roca hace más de 800 años, en un escarpe sobre un profundo barranco. Circuito guiado con paneles y recreaciones.",
+    enlace: "https://www.grancanaria.com/turismo/es/cultura/espacios-arqueologicos/cenobio-de-valeron/",
+    lat: 28.1387, lng: -15.6994
+  },
+  {
+    id: "risco-caido-gc",
+    nombre: "Risco Caído",
+    isla: "Gran Canaria", tipo: "Espeleología", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 0,
+    descripcion: "Santuario rupestre aborigen declarado Patrimonio de la Humanidad por la UNESCO, en pleno Parque Rural del Nublo cerca de Artenara. Visita imprescindible de la Canarias prehispánica.",
+    enlace: "https://www.grancanaria.com/turismo/es/cultura/espacios-arqueologicos/",
+    lat: 28.0186, lng: -15.6892
+  },
+
+  {
     id: "buceo-charco-verde-lapalma",
     nombre: "Buceo y Snorkel – Charco Verde",
-    isla: "La Palma", tipo: "Submarinismo", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Cala protegida de arena negra con Bandera Azul, ideal para snorkel en familia. Junto a la reserva marina, con arcos y cuevas accesibles para todos los niveles.",
     enlace: "",
@@ -127,8 +320,8 @@ var RUTAS = [
   },
   {
     id: "buceo-puertito-adeje",
-    nombre: "Buceo – El Puertito de Adeje",
-    isla: "Tenerife", tipo: "Submarinismo", dificultad: "Fácil",
+    nombre: "Snorkel – El Puertito de Adeje",
+    isla: "Tenerife", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Microreserva marina con tortugas verdes en libertad y más de 50 especies. Caleta de arena negra ideal para snorkel y bautizos de buceo.",
     enlace: "https://www.yumping.com/noticias-aventura/las-7-mejores-playas-para-hacer-snorkel-en-tenerife--c1193",
@@ -192,7 +385,7 @@ var RUTAS = [
   {
     id: "snorkel-montana-amarilla",
     nombre: "Snorkel – Charcos de Montaña Amarilla",
-    isla: "La Graciosa", tipo: "Submarinismo", dificultad: "Fácil",
+    isla: "La Graciosa", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 4,
     descripcion: "Los charcos naturales detrás de Montaña Amarilla son los mejores de La Graciosa para snorkel. Aguas turquesas cristalinas con gran variedad de peces y fondos volcánicos.",
     enlace: "https://welikecanarias.com/senderismo-la-graciosa/",
@@ -219,7 +412,7 @@ var RUTAS = [
   {
     id: "snorkel-puertito-lobos",
     nombre: "Snorkel – El Puertito de Lobos",
-    isla: "Isla de Lobos", tipo: "Submarinismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Las mejores lagunas naturales del archipiélago para snorkel. Aguas turquesas protegidas del viento con gran variedad de peces tropicales y fondos volcánicos.",
     enlace: "https://www.islalobos.es",
@@ -255,7 +448,7 @@ var RUTAS = [
   {
     id: "snorkel-concha-lobos",
     nombre: "Snorkel – Playa de La Concha",
-    isla: "Isla de Lobos", tipo: "Submarinismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "La bahía protegida de La Concha es perfecta para el snorkel con niños. Aguas poco profundas, arena blanca y gran variedad de peces en un entorno paradisíaco.",
     enlace: "https://www.islalobos.es",

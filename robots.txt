@@ -1,0 +1,62 @@
+# Aventuras en Cada Paso — robots.txt
+# Permitimos explícitamente a buscadores y a los rastreadores de las principales IA,
+# para que puedan indexar y citar el contenido correctamente.
+
+User-agent: *
+Allow: /
+
+# --- Buscadores tradicionales ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- Rastreadores de IA (para que puedan leer y citar el contenido) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# No rastrear paginas de prueba/utilidad internas
+Disallow: /test-mapa.html
+Disallow: /test-tiendas.html
+
+Sitemap: https://aventurasencadapaso-lab.github.io/aventurasencadapaso/sitemap.xml
