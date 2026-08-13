@@ -26,6 +26,251 @@
 
 var RUTAS = [
   {
+    id: "ciclismo-teide-costaadeje",
+    nombre: "Subida al Teide desde Costa Adeje",
+    isla: "Tenerife", tipo: "Ciclismo", dificultad: "Extrema",
+    duracion: "Más de 4h", distancia: 106.1,
+    descripcion: "El gran clásico del ciclismo de carretera en Canarias, usado por equipos profesionales en pretemporada invernal. Ascenso desde el nivel del mar hasta el Parque Nacional del Teide. Track real de 106,1 km con +2.662 m de desnivel positivo, alcanzando los 2.240 m de altitud. Tramos de hasta el 8-9% de pendiente sostenida — una de las subidas de referencia mundial.",
+    enlace: "https://www.webtenerife.com/que-hacer/rutas/ciclismo/",
+    lat: 28.0844631, lng: -16.7326323
+  },
+  {
+    id: "ciclismo-garachico-masca",
+    nombre: "Garachico – Erjos – Masca",
+    isla: "Tenerife", tipo: "Ciclismo", dificultad: "Extrema",
+    duracion: "3-4 horas", distancia: 79.3,
+    descripcion: "Ruta muy exigente de 79 km que conecta Garachico con el entorno de Masca pasando por el Puerto de Erjos. Con más de 3.100 m de desnivel acumulado, es una de las rutas más duras de Tenerife en distancia moderada. Paisajes espectaculares del noroeste de Tenerife con puertos de montaña encadenados y curvas cerradas. Track real de 79,3 km con +3.157 m de desnivel positivo — exige una condición física y técnica notable.",
+    enlace: "https://www.alltrails.com/es/spain/tenerife/road-biking",
+    lat: 28.3732187, lng: -16.7645895
+  },
+  {
+    id: "ciclismo-sur-tenerife",
+    nombre: "Carretera del Sur (Costa Adeje–Los Cristianos–El Médano)",
+    isla: "Tenerife", tipo: "Ciclismo", dificultad: "Media",
+    duracion: "3-4 horas", distancia: 45.2,
+    descripcion: "Recorrido de 45 km por el sur de Tenerife desde Costa Adeje hasta la zona de Granadilla, combinando tramos llanos junto a la costa con suaves ascensos hacia el interior. Track real de 45,2 km con +585 m de desnivel positivo. Ideal para entrenar ritmo sin la exigencia de los grandes puertos de montaña de la isla.",
+    enlace: "https://www.webtenerife.com/que-hacer/rutas/ciclismo/",
+    lat: 28.0489062, lng: -16.7115979
+  },
+  {
+    id: "ciclismo-anaga-picoingles",
+    nombre: "La Laguna – Anaga vía Pico del Inglés",
+    isla: "Tenerife", tipo: "Ciclismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 11.0,
+    descripcion: "Bucle corto que parte de San Cristóbal de La Laguna y se adentra en el Parque Rural de Anaga pasando por el Pico del Inglés. Con solo 11 km y un desnivel moderado, es una introducción perfecta al ciclismo de montaña en Anaga. Carreteras sinuosas de montaña con vistas al macizo de Anaga y el océano. Track real de 11 km con +310 m de desnivel positivo.",
+    enlace: "https://www.komoot.com/es-es/guide/803/rutas-en-bici-de-carretera-en-tenerife",
+    lat: 28.4878415, lng: -16.3134443
+  },
+  {
+    id: "ciclismo-piconieves-gc",
+    nombre: "Subida al Pico de las Nieves",
+    isla: "Gran Canaria", tipo: "Ciclismo", dificultad: "Difícil",
+    duracion: "Más de 4h", distancia: 56.8,
+    descripcion: "El gran clásico de subida de Gran Canaria, referencia de entrenamiento para ciclistas profesionales en pretemporada. Asciende hasta el punto más alto de la isla (1.949 m). Track real de 56,8 km con +2.329 m de desnivel positivo. El Gran Fondo Pico de las Nieves es una de las marchas cicloturistas más disputadas del calendario canario.",
+    enlace: "https://www.topbici.es/rutas-de-ciclismo-de-carretera-en-gran-canaria/",
+    lat: 28.0059431, lng: -15.5994882
+  },
+  {
+    id: "ciclismo-vueltaisla-gc",
+    nombre: "Vuelta a Gran Canaria",
+    isla: "Gran Canaria", tipo: "Ciclismo", dificultad: "Extrema",
+    duracion: "Más de 4h", distancia: 182.6,
+    descripcion: "La gran vuelta completa a la isla, recorriendo Puerto de Mogán, La Aldea de San Nicolás, Agaete, Las Palmas de Gran Canaria y el sureste, por las carreteras GC-1, GC-500, GC-200 y GC-2. Track real de 182,6 km con +3.597 m de desnivel acumulado — la ruta más larga y exigente de todo el catálogo de ciclismo del sitio. Solo recomendada para ciclistas con experiencia en grandes fondos.",
+    enlace: "https://sense.hdhotels.com/ciclismo-canarias/",
+    lat: 27.8234371, lng: -15.7607916
+  },
+  {
+    id: "ciclismo-maspalomas-ayaguares",
+    nombre: "Maspalomas – Presa de la Gambuesa – Ayaguares",
+    isla: "Gran Canaria", tipo: "Ciclismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 37.6,
+    descripcion: "La ruta cicloturista más popular de Gran Canaria según Komoot. Recorrido de 38 km por el Parque Natural de Pilancones, con terreno variado que combina zonas llanas cerca de la costa con ascensos hacia el interior de la isla. Track real de 37,6 km con +1.545 m de desnivel positivo. Un buen equilibrio entre exigencia y disfrute del paisaje, ideal para quien se inicia en rutas de montaña en la isla.",
+    enlace: "https://www.komoot.com/es-es/guide/808/rutas-en-bici-en-gran-canaria",
+    lat: 27.7351307, lng: -15.5989029
+  },
+  {
+    id: "ciclismo-timanfaya-lanzarote",
+    nombre: "Ruta Timanfaya y Montañas del Fuego",
+    isla: "Lanzarote", tipo: "Ciclismo", dificultad: "Media",
+    duracion: "3-4 horas", distancia: 46.0,
+    descripcion: "Ruta imprescindible para explorar el corazón volcánico de Lanzarote, a través de campos de lava y las vistas lunares del Parque Nacional de Timanfaya. Track real de 46 km con +677 m de desnivel positivo. Un recorrido de dificultad moderada por uno de los paisajes más singulares de Canarias.",
+    enlace: "https://www.papagayobike.com/blog/las-5-mejores-rutas-de-ciclismo-de-carretera-en-lanzarote",
+    lat: 29.0157497, lng: -13.7829235
+  },
+  {
+    id: "ciclismo-miradorrio-haria",
+    nombre: "Mirador del Río – Ascenso a Haría",
+    isla: "Lanzarote", tipo: "Ciclismo", dificultad: "Media",
+    duracion: "3-4 horas", distancia: 30.2,
+    descripcion: "Pasa por el Mirador del Río, con vistas al Archipiélago Chinijo, e incluye el ascenso a Haría, conocido como el Valle de las Mil Palmeras. Este tramo forma parte del recorrido del Ironman Lanzarote. Track real de 30,2 km con +928 m de desnivel positivo. Un recorrido de dificultad media pero con paisajes de los más espectaculares del norte de la isla.",
+    enlace: "https://cycling-friendly.com/es/6-rutas-ciclistas-lanzarote/",
+    lat: 29.1706, lng: -13.4975
+  },
+  {
+    id: "ciclismo-travesia-lanzarote",
+    nombre: "Travesía Norte-Sur de Lanzarote",
+    isla: "Lanzarote", tipo: "Ciclismo", dificultad: "Extrema",
+    duracion: "Más de 4h", distancia: 117.3,
+    descripcion: "Cruza la isla de sur a norte, desde Playa Blanca hasta Órzola y vuelta. Atraviesa prácticamente todos los paisajes de Lanzarote: campos de lava, viñedos de La Geria y costa volcánica. Track real de 117,3 km con +1.885 m de desnivel acumulado. Una de las travesías más largas y completas del archipiélago en un solo día.",
+    enlace: "https://www.papagayobike.com/blog/las-5-mejores-rutas-de-ciclismo-de-carretera-en-lanzarote",
+    lat: 28.8654256, lng: -13.8431195
+  },
+  {
+    id: "ciclismo-corralejo-costacalma",
+    nombre: "Corralejo – Costa Calma (Norte-Sur)",
+    isla: "Fuerteventura", tipo: "Ciclismo", dificultad: "Extrema",
+    duracion: "Más de 4h", distancia: 102.7,
+    descripcion: "Travesía completa de norte a sur de Fuerteventura, entre Corralejo y Costa Calma. Con 103 km reales y viento alisio constante, es una de las travesías más largas y exigentes del archipiélago en cuanto a resistencia. Terreno mayormente llano pero con viento lateral constante que exige un esfuerzo real durante todo el recorrido, atravesando Betancuria y los paisajes semidesérticos del interior. Track real de 102,7 km con +1.487 m de desnivel acumulado.",
+    enlace: "https://hhcanarias.com/ciclismo-en-rutas-en-fuerteventura/",
+    lat: 28.7281552, lng: -13.8633524
+  },
+  {
+    id: "ciclismo-mtb-lapalma",
+    nombre: "Vuelta a La Palma en BTT/Gravel",
+    isla: "La Palma", tipo: "Ciclismo", dificultad: "Media",
+    duracion: "Más de 4h", distancia: 34.1,
+    descripcion: "Recorrido en bicicleta de montaña o gravel por las pistas forestales y volcánicas de La Palma, alternando senderos entre pinares con tramos de carretera secundaria sin apenas tráfico. Track real de 34,1 km con +795 m de desnivel positivo, alcanzando los 1.488 m de altitud máxima. Ideal para quienes buscan una experiencia técnica alejada del asfalto. Nota: la zona quedó afectada por la erupción de 2021, revisa el estado del recorrido antes de salir.",
+    enlace: "https://hhcanarias.com/ciclismo-en-rutas-en-fuerteventura/",
+    lat: 28.6835, lng: -17.7642
+  },
+
+  {
+    id: "mirador-bandama-gc",
+    nombre: "Mirador Pico de Bandama",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En el borde del cráter de un volcán, con una vista de 360 grados que abarca desde la capital, Las Palmas, hasta el campo de golf y la caldera del propio volcán. Uno de los miradores más famosos cerca de la ciudad.",
+    enlace: "https://guiacanarias.com/descubre-los-mejores-miradores-las-palmas-de-gran-canaria",
+    lat: 28.0375327, lng: -15.457862
+  },
+  {
+    id: "mirador-chipeque-tenerife",
+    nombre: "Mirador de Chipeque",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En la carretera de La Esperanza (TF-24), uno de los miradores más famosos de la isla para ver el mar de nubes rompiendo contra la ladera, con el Teide de fondo en días despejados.",
+    enlace: "https://escursionitenerife.com/es/mirador-piu-belli-di-tenerife-i-punti-panoramici-da-non-perdere/",
+    lat: 28.3739518, lng: -16.4638328
+  },
+  {
+    id: "mirador-cruzdelcarmen-anaga",
+    nombre: "Mirador Cruz del Carmen",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Puerta de entrada al bosque de laurisilva de Anaga, Reserva de la Biosfera. Vistas sobre montañas cubiertas de niebla y el propio bosque milenario, con centro de visitantes justo al lado.",
+    enlace: "https://capturetheatlas.com/es/miradores-en-tenerife/",
+    lat: 28.5303329, lng: -16.2804559
+  },
+  {
+    id: "mirador-cruztejeda-gc",
+    nombre: "Mirador Cruz de Tejeda",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Punto emblemático en el corazón geográfico de Gran Canaria, con vistas a los profundos barrancos que descienden hacia el mar desde el centro de la isla. Acceso en coche por carreteras con curvas pronunciadas.",
+    enlace: "https://welikecanarias.com/miradores-en-gran-canaria/",
+    lat: 28.0064848, lng: -15.6000545
+  },
+  {
+    id: "mirador-degolladabecerra-gc",
+    nombre: "Degollada de Becerra",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Entre Tejeda y Vega de San Mateo, con una de las mejores panorámicas hacia el Roque Nublo y el Roque Bentayga desde el mismo punto, sin necesidad de caminar.",
+    enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/miradores-gran-canaria/",
+    lat: 27.9881583, lng: -15.5936046
+  },
+  {
+    id: "mirador-degolladayeguas-gc",
+    nombre: "Degollada de las Yeguas",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Entre Fataga y San Bartolomé de Tirajana, con vistas al Barranco de Fataga y su vegetación semidesértica de tabaibas y cardones. Cerca se encuentra la Necrópolis de Arteara, un yacimiento arqueológico aborigen.",
+    enlace: "https://villagrancanaria.com/es/blog/miradores-gran-canaria/",
+    lat: 27.9394, lng: -15.5964
+  },
+  {
+    id: "mirador-delmolino-gc",
+    nombre: "Mirador del Molino",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Entre Artenara y La Aldea de San Nicolás, con vistas a la presa de Parralillo. El contraste entre el azul del agua embalsada y el barranco volcánico oscuro hace de este uno de los rincones más fotogénicos de la isla.",
+    enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/miradores-gran-canaria/",
+    lat: 27.9924726, lng: -15.6942675
+  },
+  {
+    id: "mirador-faneque-gc",
+    nombre: "Mirador de Faneque",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Frente al acantilado marino más alto de Canarias (unos 1.000 metros de caída al mar), en la costa noroeste de la isla. Un lugar sobrecogedor para fotografiar la escala real de los acantilados grancanarios.",
+    enlace: "https://villagrancanaria.com/es/blog/miradores-gran-canaria/",
+    lat: 28.0617745, lng: -15.7167638
+  },
+  {
+    id: "mirador-fortaleza-vilaflor",
+    nombre: "Mirador de La Fortaleza",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En la subida hacia el Teide desde el sur, con vistas al pinar de Vilaflor (el más alto de España) y las cumbres. Buen punto para fotografiar el contraste entre el verde del pinar canario y el paisaje volcánico.",
+    enlace: "https://capturetheatlas.com/es/miradores-en-tenerife/",
+    lat: 28.1794, lng: -16.6494
+  },
+  {
+    id: "mirador-garachico-tenerife",
+    nombre: "Mirador de Garachico",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Combina el elemento urbano con el natural: el pueblo de Garachico visto desde arriba, con las formaciones volcánicas de la costa que sepultaron parte del antiguo puerto en la erupción de 1706.",
+    enlace: "https://rental-ecocar.com/es/explorando-tenerife-los-5-mejores-miradores-para-fotografos/",
+    lat: 28.3722576, lng: -16.7697277
+  },
+  {
+    id: "mirador-humboldt-tenerife",
+    nombre: "Mirador de Humboldt",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Uno de los miradores más fotografiados de Tenerife, en la carretera hacia La Orotava. Se ve todo el Valle de La Orotava en abanico hasta el mar, con el Teide asomando detrás si el día está despejado.",
+    enlace: "https://capturetheatlas.com/es/miradores-en-tenerife/",
+    lat: 28.4077912, lng: -16.5071779
+  },
+  {
+    id: "mirador-lascoloradas-laspalmas",
+    nombre: "Mirador de Las Coloradas",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "En la propia ciudad de Las Palmas de Gran Canaria, con una perspectiva única de la capital y la playa de Las Canteras. El más urbano y accesible de los miradores de la isla, ideal para un atardecer rápido sin salir de la ciudad.",
+    enlace: "https://guiacanarias.com/descubre-los-mejores-miradores-las-palmas-de-gran-canaria",
+    lat: 28.1667273, lng: -15.4354772
+  },
+  {
+    id: "mirador-naricesteide-tenerife",
+    nombre: "Mirador de las Narices del Teide",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "Vistas directas a las coladas de lava de la última erupción del Teide, hace casi 225 años. Punto tranquilo y poco conocido, perfecto para atardeceres sobre el mar de nubes sin las multitudes de otros miradores del parque.",
+    enlace: "https://dameaventura.com/miradores-tenerife/",
+    lat: 28.2383948, lng: -16.6982511
+  },
+  {
+    id: "mirador-puntadeteno-tenerife",
+    nombre: "Mirador de Punta de Teno",
+    isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "El extremo más occidental de Tenerife, con el faro y acantilados que caen al Atlántico. Uno de los mejores puntos de la isla para fotografiar el atardecer; el acceso en coche está restringido, se llega en guagua desde Buenavista del Norte.",
+    enlace: "https://capturetheatlas.com/es/miradores-en-tenerife/",
+    lat: 28.3416093, lng: -16.9207786
+  },
+  {
+    id: "mirador-roquenublo-gc",
+    nombre: "Mirador Roque Nublo",
+    isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 0,
+    descripcion: "El monolito más simbólico de Gran Canaria, de 90 metros, en el corazón del Parque Rural del Nublo. Desde su base se domina un paisaje de pinares y caseríos, con el Teide visible al fondo en días claros.",
+    enlace: "https://www.barcelo.com/guia-turismo/es/espana/gran-canaria/que-ver/miradores-gran-canaria/",
+    lat: 27.9757708, lng: -15.5896873
+  },
+
+  {
     id: "mirador-puntahidalgo-tenerife",
     nombre: "Mirador de Punta del Hidalgo",
     isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
