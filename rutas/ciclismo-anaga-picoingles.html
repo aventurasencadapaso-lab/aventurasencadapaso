@@ -146,6 +146,8 @@ iframe.goog-te-banner-frame{display:none!important;}
 .rp-elev-stats i{color:#1cff6b;font-size:11px;}
 .rp-elev-stats b{color:#e8eaf0;font-weight:700;}
 .rp-elev-canvas{width:100%;height:140px;border-radius:12px;border:1px solid rgba(28,255,107,.15);background:#070e18;display:block;cursor:crosshair;touch-action:none;}
+.rp-elev-km-tooltip{background:#1cff6b!important;color:#02070f!important;border:none!important;box-shadow:0 2px 8px rgba(0,0,0,.4);font-family:Orbitron,sans-serif;font-weight:700;font-size:11px;padding:4px 9px;border-radius:8px;}
+.rp-elev-km-tooltip::before{border-top-color:#1cff6b!important;}
 
 @media(max-width:600px){.rp-map{height:260px;}}
 </style>
@@ -803,6 +805,19 @@ function initOffline(){
     ctx.strokeStyle="rgba(28,255,107,.4)";ctx.lineWidth=1.5;ctx.stroke();
     ctx.beginPath();ctx.arc(hx,hy,6,0,Math.PI*2);
     ctx.fillStyle="#1cff6b";ctx.fill();
+    var kmLabel=(dist[hoverIdx]/1000).toFixed(1)+" km";
+    ctx.font="bold "+(13*2)+"px Arial, sans-serif";
+    var labelW=ctx.measureText(kmLabel).width+16*2;
+    var labelX=Math.min(Math.max(hx-labelW/2,4),w-labelW-4);
+    var labelY=(hy>pad+30*2)?hy-30*2:hy+14*2;
+    ctx.fillStyle="#1cff6b";
+    ctx.beginPath();
+    if(ctx.roundRect){ctx.roundRect(labelX,labelY,labelW,22*2,8*2);}else{ctx.rect(labelX,labelY,labelW,22*2);}
+    ctx.fill();
+    ctx.fillStyle="#02070f";
+    ctx.textAlign="center";ctx.textBaseline="middle";
+    ctx.fillText(kmLabel,labelX+labelW/2,labelY+11*2);
+    ctx.textAlign="start";ctx.textBaseline="alphabetic";
    }
   }
 
@@ -820,8 +835,15 @@ function initOffline(){
    var idx=idxFromEvent(e);
    draw(idx);
    var ll=elePts[idx].ll;
-   if(!elevMarker){elevMarker=L.circleMarker(ll,{radius:6,color:"#1cff6b",fillColor:"#1cff6b",fillOpacity:1,weight:2}).addTo(mp);}
-   else{elevMarker.setLatLng(ll);}
+   var kmTxt=(dist[idx]/1000).toFixed(1)+" km";
+   if(!elevMarker){
+    elevMarker=L.circleMarker(ll,{radius:6,color:"#1cff6b",fillColor:"#1cff6b",fillOpacity:1,weight:2}).addTo(mp);
+    elevMarker.bindTooltip(kmTxt,{permanent:true,direction:"top",offset:[0,-8],className:"rp-elev-km-tooltip"}).openTooltip();
+   }
+   else{
+    elevMarker.setLatLng(ll);
+    elevMarker.setTooltipContent(kmTxt);
+   }
   }
   function onLeave(){draw();if(elevMarker){mp.removeLayer(elevMarker);elevMarker=null;}}
 
