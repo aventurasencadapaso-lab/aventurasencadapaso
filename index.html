@@ -107,7 +107,7 @@ window.GA_ID='G-XEHPD4GZQ9';
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load', function(){
- navigator.serviceWorker.register('sw.js', {scope:'/aventurasencadapaso/'})
+ navigator.serviceWorker.register('sw.js', {scope:'/'})
  .then(function(reg){
  console.log('SW registrado:', reg.scope);
  // Mostrar banner de instalación PWA
@@ -976,20 +976,10 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  </p>
  </footer>
 <!-- Google Translate -->
-
-
-
-
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
-</script>
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load', function(){
- navigator.serviceWorker.register('sw.js', {scope:'/aventurasencadapaso/'})
+ navigator.serviceWorker.register('sw.js', {scope:'/'})
  .then(function(reg){
  console.log('SW registrado:', reg.scope);
  // Mostrar banner de instalación PWA
