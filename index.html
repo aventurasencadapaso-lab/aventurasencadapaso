@@ -2,12 +2,11 @@
 <html lang="es">
 <head>
 
-<!-- Google Analytics 4 — se carga condicionalmente solo tras consentimiento, ver banner de cookies al final del body -->
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
-window.GA_ID='G-XXXXXXXXXX';
+window.GA_ID='G-XEHPD4GZQ9';
 </script>
  <meta charset="UTF-8">
  <link rel="icon" type="image/png" href="logo-aventuras.png">
@@ -976,39 +975,6 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  &nbsp;·&nbsp;<a href="politica-cookies.html" style="color:#1cff6b">Cookies</a>
  </p>
  </footer>
-
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
- <div class="cookie-banner__inner">
- <div class="cookie-banner__text">
- <p>
- Usamos cookies propias (necesarias) y de terceros (Google Translate y, si las aceptas, Google Analytics) para mejorar tu experiencia.
- Puedes aceptar todas, rechazar las no esenciales o configurar tus preferencias. Más info en nuestra
- <a href="politica-cookies.html">Política de Cookies</a> y
- <a href="politica-privacidad.html">Política de Privacidad</a>.
- </p>
- </div>
- <div class="cookie-banner__actions">
- <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Rechazar</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
- <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
- </div>
- </div>
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
- </div>
-</div>
 <!-- Google Translate -->
 
 
@@ -1249,7 +1215,15 @@ function googleTranslateElementInit() {
  }, 600);
  }
 }
-// Google Translate se carga condicionalmente, ver banner de cookies al final del body
+// Cargar Google Translate siempre (es funcionalidad, no tracking)
+(function(){
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ }
+})();
 </script>
 <script>
 /* === BANNER DE COOKIES === */
@@ -1258,70 +1232,33 @@ function googleTranslateElementInit() {
  var banner = document.getElementById('cookie-banner');
  if (!banner) return;
 
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
-
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
+ // Si ya hay consentimiento guardado, ocultar
+ if (localStorage.getItem(KEY)) {
  banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
+ if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
  return;
  }
 
  // Mostrar banner
  banner.style.display = 'block';
- var panel = document.getElementById('cookie-panel');
 
- // Aceptar todas
- var btnAccept = document.getElementById('cookie-accept-all');
+ // Aceptar
+ var btnAccept = document.getElementById('cookie-accept') ||
+ document.getElementById('cookie-accept-all');
  if (btnAccept) {
  btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
+ localStorage.setItem(KEY, 'accepted');
  banner.style.display = 'none';
- aplicarPrefs(p);
+ loadGoogleTranslate();
  });
  }
 
- // Rechazar (solo esenciales)
+ // Rechazar
  var btnReject = document.getElementById('cookie-reject');
  if (btnReject) {
  btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
+ localStorage.setItem(KEY, 'rejected');
  banner.style.display = 'none';
- });
- }
-
- // Configurar: mostrar panel de categorías
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- // Guardar preferencias del panel
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
  });
  }
 
@@ -1332,19 +1269,6 @@ function googleTranslateElementInit() {
  s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
  document.head.appendChild(s);
  }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- // Exponer para que el selector manual de idioma también pueda cargar el traductor
- window.loadGoogleTranslate = loadGoogleTranslate;
 })();
 </script>
 
