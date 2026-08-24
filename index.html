@@ -2,11 +2,13 @@
 <html lang="es">
 <head>
 
+<!-- Google Analytics 4 — reemplaza G-XXXXXXXXXX con tu ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
-window.GA_ID='G-XEHPD4GZQ9';
+gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
 </script>
  <meta charset="UTF-8">
  <link rel="icon" type="image/png" href="logo-aventuras.png">
@@ -87,6 +89,7 @@ window.GA_ID='G-XEHPD4GZQ9';
  "logo": "https://aventurasencadapaso-lab.github.io/aventurasencadapaso/logo-aventuras.png",
  "description": "Guía de aventuras outdoor en las Islas Canarias. Rutas de senderismo, kayak, surf, escalada y más en Tenerife, Gran Canaria, Lanzarote, Fuerteventura y todas las islas.",
  "email": "aventurasencadapaso@gmail.com",
+ "telephone": "+34655679307",
  "sameAs": [
  "https://instagram.com/aventurasencadapaso",
  "https://tiktok.com/@aventurasencadapaso",
@@ -107,7 +110,7 @@ window.GA_ID='G-XEHPD4GZQ9';
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load', function(){
- navigator.serviceWorker.register('sw.js', {scope:'/'})
+ navigator.serviceWorker.register('sw.js', {scope:'/aventurasencadapaso/'})
  .then(function(reg){
  console.log('SW registrado:', reg.scope);
  // Mostrar banner de instalación PWA
@@ -443,7 +446,6 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
   display: block;
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuántas rutas de senderismo hay en Canarias en esta web?", "acceptedAnswer": {"@type": "Answer", "text": "333 rutas y actividades verificadas repartidas en las 9 islas: 215 de senderismo, más surf, kayak, kitesurf, snorkel, submarinismo, ciclismo, fotografía y espeleología."}}, {"@type": "Question", "name": "¿Cómo se calcula la dificultad de cada ruta?", "acceptedAnswer": {"@type": "Answer", "text": "Con una fórmula objetiva basada en la distancia real y el desnivel positivo acumulado del track GPS (distancia en km + desnivel en metros ÷ 100). Para deportes como surf, kayak o submarinismo se usan criterios propios de cada disciplina."}}, {"@type": "Question", "name": "¿Es gratis usar la web?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, totalmente gratis: buscador de rutas, descarga de tracks GPS, calendario de eventos y toda la información de la web están disponibles sin registro ni coste."}}, {"@type": "Question", "name": "¿Las rutas incluyen track GPS descargable?", "acceptedAnswer": {"@type": "Answer", "text": "Las rutas de senderismo, ciclismo, kayak y otras actividades con recorrido incluyen su archivo GPX real, descargable gratis, además de mapa interactivo y perfil de elevación."}}, {"@type": "Question", "name": "¿La información de las rutas está verificada?", "acceptedAnswer": {"@type": "Answer", "text": "La distancia y el desnivel se calculan a partir de tracks GPS reales, contrastados con fuentes como Wikiloc, AllTrails y federaciones deportivas. Aun así, la web es informativa: antes de salir, comprueba siempre el estado real del sendero con fuentes oficiales."}}, {"@type": "Question", "name": "¿Cómo sé si un evento del calendario sigue vigente?", "acceptedAnswer": {"@type": "Answer", "text": "El calendario se actualiza automáticamente: cada evento se marca solo como Próximo o Finalizado según la fecha real, y puedes filtrar por isla, deporte o buscar por fecha con el mini calendario de viaje."}}]}</script>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -499,10 +501,6 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 
         <li class="nav-main__item">
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
-        </li>
-
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
@@ -594,356 +592,306 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 
   </div><!-- /site-header__inner -->
 </header>
-<main id="cp">
-
-<!-- FOTO HERO PRINCIPAL -->
-<div style="position:relative;width:100%;height:500px;overflow:hidden;margin-top:72px;">
- <img src="imagenes/portada-aventura.jpg" alt="Aventuras en Canarias"
- style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
- loading="eager" onerror="this.parentElement.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.3) 0%,transparent 40%,transparent 60%,#02070f 100%);"></div>
- <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
- <span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;">
- <i class="fas fa-compass"></i> Outdoor en Canarias
+<main id="cp"><div style="position:relative;width:100%;height:420px;overflow:hidden;margin-top:72px;">
+<img alt="Aventuras en Canarias" loading="eager" onerror="this.parentElement.style.display='none'" src="imagenes/portada-aventura.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"/>
+<div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.3) 0%,transparent 40%,transparent 60%,#02070f 100%);"></div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
+<span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;">
+<i class="fas fa-compass"></i> Outdoor en Canarias
  </span>
- <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.8rem,6vw,3.5rem);color:#e8eaf0;font-weight:900;letter-spacing:2px;margin:0 0 16px;line-height:1.1;text-shadow:0 2px 20px rgba(0,0,0,.8);">
- Aventuras en<br><span style="color:#1cff6b;">cada paso</span>
- </h1>
- <p style="color:rgba(255,255,255,.75);font-size:15px;line-height:1.75;max-width:560px;margin:0 0 28px;text-shadow:0 1px 8px rgba(0,0,0,.8);">
- La plataforma outdoor más completa de Canarias. 333 rutas verificadas en 9 islas — gratis.
+<h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.8rem,6vw,3.5rem);color:#e8eaf0;font-weight:900;letter-spacing:2px;margin:0 0 16px;line-height:1.1;text-shadow:0 2px 20px rgba(0,0,0,.8);">
+ Aventuras en<br/><span style="color:#1cff6b;">cada paso</span>
+</h1>
+<p style="color:rgba(255,255,255,.75);font-size:15px;line-height:1.75;max-width:560px;margin:0 0 28px;text-shadow:0 1px 8px rgba(0,0,0,.8);">
+ La plataforma outdoor más completa de Canarias. 236 rutas con GPS en 9 islas — gratis.
  </p>
- <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
- <a href="buscador-aventuras.html" class="idx-btn idx-btn--p"><i class="fas fa-compass"></i> Buscar rutas</a>
- <a href="ruleta.html" class="idx-btn idx-btn--o"><i class="fas fa-compass" style="animation:spin 2s linear infinite;display:inline-block;"></i> Ruta aleatoria</a>
- </div>
- </div>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+<a class="idx-btn idx-btn--p" href="buscador-aventuras.html"><i class="fas fa-search"></i> Explorar 236 rutas</a>
 </div>
-
-<!-- BANNER PUBLICIDAD -->
-<div style="max-width:1200px;margin:0 auto;padding:32px 28px 0;">
- <div style="background:linear-gradient(135deg,#0c1624,#0d1f0d);border:1px solid rgba(28,255,107,.2);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden;">
- <div style="position:absolute;top:0;left:0;background:#1cff6b;color:#02070f;font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:0 0 8px 0;">PUBLICIDAD</div>
- <div style="flex:1;min-width:200px;margin-top:8px;">
- <span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px;">¿Tu empresa de aventura aquí?</span>
- <p style="color:#c8ccd8;font-size:13px;margin:0;line-height:1.5;">Llega a miles de aventureros en Canarias. Publícate en nuestra web y redes sociales.</p>
- </div>
- <a href="empresas.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#1cff6b;color:#02070f!important;border-radius:12px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:.2s;">
- <i class="fas fa-rocket"></i> Más información
- </a>
- </div>
 </div>
-
-<!-- STATS -->
-<div class="idx-stats">
- <div class="idx-stats__inner">
- <div class="idx-stat"><span class="idx-stat__num">333</span><span class="idx-stat__lbl">Rutas verificadas</span></div>
- <div class="idx-stat"><span class="idx-stat__num">9</span><span class="idx-stat__lbl">Islas cubiertas</span></div>
- <div class="idx-stat"><span class="idx-stat__num">54</span><span class="idx-stat__lbl">Tiendas outdoor</span></div>
- <div class="idx-stat"><span class="idx-stat__num">107</span><span class="idx-stat__lbl">Eventos 2025-2027</span></div>
- <div class="idx-stat"><span class="idx-stat__num">0€</span><span class="idx-stat__lbl">Coste de acceso</span></div>
- </div>
 </div>
-
-<!-- BANNER RULETA -->
-<a href="ruleta.html" class="rul-idx-link">
- <div class="rul-idx-banner">
- <i class="fas fa-compass rul-idx-dado"></i>
- <div style="flex:1;">
- <span class="rul-idx-sup">Ruleta de Aventuras</span>
- <h2 class="rul-idx-titulo">No sabes que ruta hacer?</h2>
- <p class="rul-idx-desc">Elige filtros y te lanzamos una aventura aleatoria entre las 333 rutas de Canarias.</p>
- </div>
- <span class="rul-idx-btn">Lanzar! <i class="fas fa-arrow-right"></i></span>
- </div>
+<div class="idx-hub">
+  <a href="buscador-aventuras.html" class="idx-hub__card">
+    <div class="idx-hub__ico" style="background:rgba(28,255,107,.1);"><i class="fas fa-search" style="color:#1cff6b;"></i></div>
+    <strong>Buscador</strong>
+    <span>Filtra por isla, deporte y nivel</span>
+  </a>
+  <a href="comparador.html" class="idx-hub__card">
+    <div class="idx-hub__ico" style="background:rgba(0,183,255,.1);"><i class="fas fa-balance-scale" style="color:#00b7ff;"></i></div>
+    <strong>Comparar Islas</strong>
+    <span>¿Qué isla va contigo?</span>
+  </a>
+  <a href="calendario.html" class="idx-hub__card">
+    <div class="idx-hub__ico" style="background:rgba(255,193,7,.1);"><i class="fas fa-calendar-alt" style="color:#ffc107;"></i></div>
+    <strong>Calendario</strong>
+    <span>107 eventos outdoor</span>
+  </a>
+  <a href="tiendas.html" class="idx-hub__card">
+    <div class="idx-hub__ico" style="background:rgba(255,111,0,.1);"><i class="fas fa-store" style="color:#ff6f00;"></i></div>
+    <strong>Tiendas</strong>
+    <span>54 tiendas en Canarias</span>
+  </a>
+  <a href="ruleta.html" class="idx-hub__card">
+    <div class="idx-hub__ico" style="background:rgba(229,57,53,.1);"><i class="fas fa-dice" style="color:#e53935;"></i></div>
+    <strong>Sorpréndeme</strong>
+    <span>Ruta aleatoria</span>
+  </a>
+</div>
+<div class="idx-section" id="islas" style="padding-top:60px;">
+<div style="text-align:center;">
+<span class="idx-label"><i class="fas fa-map-marker-alt"></i> Las 9 islas</span>
+<h2 class="idx-h2">Elige tu isla y empieza a explorar</h2>
+<p class="idx-sub">236 rutas repartidas en 9 islas — cada una con su caracter unico</p>
+</div>
+<div class="idx-islas-grid">
+<a class="idx-isla" href="tenerife.html">
+<div class="idx-isla__img">
+<img alt="Tenerife" loading="lazy" onerror="this.style.display='none'" src="imagenes/tenerife-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">Tenerife</h3>
+<p class="idx-isla__desc">El Teide, Anaga y Masca</p>
+<span class="idx-isla__rutas" style="color:#1cff6b;">29 rutas</span>
+</div>
 </a>
-
-
-<!-- TITULO ENTRE RULETA Y FOTO -->
-<div style="text-align:center;padding:48px 28px 32px;max-width:860px;margin:0 auto;">
-  <span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:16px;"><i class="fas fa-compass"></i> Canarias te espera</span>
-  <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.6rem,4vw,2.8rem);color:#e8eaf0;font-weight:900;margin:0 0 16px;line-height:1.2;">333 rutas.<br><em style="color:#1cff6b;font-style:normal;">9 islas. 0 euros.</em></h2>
-  <p style="color:#8a8fa0;font-size:15px;line-height:1.75;margin:0 0 24px;">Desde el Teide hasta el fondo del mar. Senderismo, kayak, buceo, trail y mucho más en el archipiélago más aventurero de Europa.</p>
-  <a href="buscador-aventuras.html" class="idx-btn idx-btn--p"><i class="fas fa-compass"></i> Explorar rutas</a>
+<a class="idx-isla" href="grancanaria.html">
+<div class="idx-isla__img">
+<img alt="Gran Canaria" loading="lazy" onerror="this.style.display='none'" src="imagenes/grancanaria-hero.jpg"/>
 </div>
-<!-- FOTO DEBAJO DEL HERO -->
-<div class="idx-foto-strip">
- <img src="imagenes/portada-senderismo.jpg" alt="Aventuras en Canarias" loading="lazy"
- onerror="this.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,#02070f 0%,transparent 25%,transparent 75%,#02070f 100%);z-index:1;pointer-events:none;"></div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">Gran Canaria</h3>
+<p class="idx-isla__desc">Roque Nublo y Güigüi</p>
+<span class="idx-isla__rutas" style="color:#ffc107;">29 rutas</span>
 </div>
-
-<!-- FUNCIONALIDADES -->
-<div class="idx-section">
- <div style="text-align:center;">
- <span class="idx-label"><i class="fas fa-star"></i> Herramientas</span>
- <h2 class="idx-h2">Todo lo que necesitas para tu aventura</h2>
- <p class="idx-sub">Las herramientas mas completas para aventureros en Canarias — todas gratis</p>
- </div>
- <div class="idx-feat-grid">
- <a href="buscador-aventuras.html" class="idx-feat">
- <div class="idx-feat__foto" style="background:linear-gradient(135deg,#0d1f0d,#091509);">
- <img src="imagenes/portada-senderismo.jpg" alt="Buscador de rutas" loading="lazy" onerror="this.style.display='none'">
- <div class="idx-feat__foto-grad"><span class="idx-feat__num">333</span></div>
- </div>
- <div class="idx-feat__body">
- <h3 class="idx-feat__titulo">Buscador de Rutas</h3>
- <p class="idx-feat__desc">Filtra por isla, deporte, dificultad y duración. GPS verificado en todas las rutas.</p>
- </div>
- </a>
- <a href="ruleta.html" class="idx-feat">
- <div class="idx-feat__foto" style="background:linear-gradient(135deg,#1a0a00,#0c0500);">
- <img src="imagenes/ruleta-hero.jpg" alt="Ruleta de aventuras" loading="lazy" onerror="this.style.display='none'">
- <div class="idx-feat__foto-grad"><span class="idx-feat__num">∞</span></div>
- </div>
- <div class="idx-feat__body">
- <h3 class="idx-feat__titulo">Ruleta de Aventuras</h3>
- <p class="idx-feat__desc">Sin ideas? Elige filtros y la ruleta te lanza una ruta sorpresa entre 333 opciones.</p>
- </div>
- </a>
- <a href="comparador.html" class="idx-feat">
- <div class="idx-feat__foto" style="background:linear-gradient(135deg,#001a2a,#001020);">
- <img src="imagenes/comparador-hero.jpg" alt="Comparador de islas" loading="lazy" onerror="this.style.display='none'">
- <div class="idx-feat__foto-grad"><span class="idx-feat__num">9</span></div>
- </div>
- <div class="idx-feat__body">
- <h3 class="idx-feat__titulo">Comparador de Islas</h3>
- <p class="idx-feat__desc">6 preguntas y te decimos qué isla de Canarias encaja mejor con tu perfil aventurero.</p>
- </div>
- </a>
- <a href="calendario.html" class="idx-feat">
- <div class="idx-feat__foto" style="background:linear-gradient(135deg,#0a1500,#060e00);">
- <img src="imagenes/calendario-hero.jpg" alt="Calendario de eventos" loading="lazy" onerror="this.style.display='none'">
- <div class="idx-feat__foto-grad"><span class="idx-feat__num">107</span></div>
- </div>
- <div class="idx-feat__body">
- <h3 class="idx-feat__titulo">Calendario de Eventos</h3>
- <p class="idx-feat__desc">107 eventos outdoor verificados en Canarias para 2025-2027. Trail, triatlón, kayak y más.</p>
- </div>
- </a>
- <a href="tiendas.html" class="idx-feat">
- <div class="idx-feat__foto" style="background:linear-gradient(135deg,#1a1000,#0e0900);">
- <img src="imagenes/tiendas-hero.jpg" alt="Tiendas outdoor" loading="lazy" onerror="this.style.display='none'">
- <div class="idx-feat__foto-grad"><span class="idx-feat__num">54</span></div>
- </div>
- <div class="idx-feat__body">
- <h3 class="idx-feat__titulo">Tiendas Outdoor</h3>
- <p class="idx-feat__desc">Directorio de 54 tiendas de equipamiento, alquiler y reparación en todas las islas.</p>
- </div>
- </a>
- <a href="blog/index.html" class="idx-feat">
- <div class="idx-feat__foto" style="background:linear-gradient(135deg,#001a0d,#000e08);">
- <img src="imagenes/exploracion.jpg" alt="Blog de aventuras" loading="lazy" onerror="this.style.display='none'">
- <div class="idx-feat__foto-grad"><span class="idx-feat__num">15+</span></div>
- </div>
- <div class="idx-feat__body">
- <h3 class="idx-feat__titulo">Blog de Aventuras</h3>
- <p class="idx-feat__desc">Guías, consejos, equipamiento y los mejores destinos outdoor contados por aventureros.</p>
- </div>
- </a>
- </div>
+</a>
+<a class="idx-isla" href="lanzarote.html">
+<div class="idx-isla__img">
+<img alt="Lanzarote" loading="lazy" onerror="this.style.display='none'" src="imagenes/lanzarote-hero.jpg"/>
 </div>
-
-<!-- ISLAS -->
-<div class="idx-section" id="islas" style="padding-top:0;">
- <div style="text-align:center;">
- <span class="idx-label"><i class="fas fa-map-marker-alt"></i> Las 9 islas</span>
- <h2 class="idx-h2">Elige tu isla y empieza a explorar</h2>
- <p class="idx-sub">333 rutas repartidas en 9 islas — cada una con su caracter unico</p>
- </div>
- <div class="idx-islas-grid">
- <a href="tenerife.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/tenerife-hero.jpg" alt="Tenerife" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">Tenerife</h3>
- <p class="idx-isla__desc">El Teide, Anaga y Masca</p>
- <span class="idx-isla__rutas" style="color:#1cff6b;">29 rutas</span>
- </div>
- </a>
- <a href="grancanaria.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/grancanaria-hero.jpg" alt="Gran Canaria" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">Gran Canaria</h3>
- <p class="idx-isla__desc">Roque Nublo y Güigüi</p>
- <span class="idx-isla__rutas" style="color:#ffc107;">29 rutas</span>
- </div>
- </a>
- <a href="lanzarote.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/lanzarote-hero.jpg" alt="Lanzarote" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">Lanzarote</h3>
- <p class="idx-isla__desc">Timanfaya y volcanes</p>
- <span class="idx-isla__rutas" style="color:#ff6f00;">28 rutas</span>
- </div>
- </a>
- <a href="fuerteventura.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/fuerteventura-hero.jpg" alt="Fuerteventura" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">Fuerteventura</h3>
- <p class="idx-isla__desc">Dunas y kitesurf</p>
- <span class="idx-isla__rutas" style="color:#1da1f2;">30 rutas</span>
- </div>
- </a>
- <a href="lapalma.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/lapalma-hero.jpg" alt="La Palma" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">La Palma</h3>
- <p class="idx-isla__desc">Transvulcania y laurisilva</p>
- <span class="idx-isla__rutas" style="color:#1cff6b;">30 rutas</span>
- </div>
- </a>
- <a href="lagomera.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/lagomera-hero.jpg" alt="La Gomera" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">La Gomera</h3>
- <p class="idx-isla__desc">Garajonay UNESCO</p>
- <span class="idx-isla__rutas" style="color:#00bcd4;">30 rutas</span>
- </div>
- </a>
- <a href="elhierro.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/elhierro-hero.jpg" alt="El Hierro" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">El Hierro</h3>
- <p class="idx-isla__desc">100% renovable y buceo</p>
- <span class="idx-isla__rutas" style="color:#a855f7;">30 rutas</span>
- </div>
- </a>
- <a href="lagraciosa.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/lagraciosa-hero.jpg" alt="La Graciosa" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">La Graciosa</h3>
- <p class="idx-isla__desc">Sin asfalto ni masas</p>
- <span class="idx-isla__rutas" style="color:#ffc107;">15 rutas</span>
- </div>
- </a>
- <a href="lobos.html" class="idx-isla">
- <div class="idx-isla__img">
- <img src="imagenes/lobos-hero.jpg" alt="Isla de Lobos" loading="lazy" onerror="this.style.display='none'">
- 
- </div>
- <div class="idx-isla__body">
- <h3 class="idx-isla__nombre">Isla de Lobos</h3>
- <p class="idx-isla__desc">Snorkel virgen</p>
- <span class="idx-isla__rutas" style="color:#1cff6b;">15 rutas</span>
- </div>
- </a>
-
- </div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">Lanzarote</h3>
+<p class="idx-isla__desc">Timanfaya y volcanes</p>
+<span class="idx-isla__rutas" style="color:#ff6f00;">28 rutas</span>
+</div>
+</a>
+<a class="idx-isla" href="fuerteventura.html">
+<div class="idx-isla__img">
+<img alt="Fuerteventura" loading="lazy" onerror="this.style.display='none'" src="imagenes/fuerteventura-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">Fuerteventura</h3>
+<p class="idx-isla__desc">Dunas y kitesurf</p>
+<span class="idx-isla__rutas" style="color:#1da1f2;">30 rutas</span>
+</div>
+</a>
+<a class="idx-isla" href="lapalma.html">
+<div class="idx-isla__img">
+<img alt="La Palma" loading="lazy" onerror="this.style.display='none'" src="imagenes/lapalma-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">La Palma</h3>
+<p class="idx-isla__desc">Transvulcania y laurisilva</p>
+<span class="idx-isla__rutas" style="color:#1cff6b;">30 rutas</span>
+</div>
+</a>
+<a class="idx-isla" href="lagomera.html">
+<div class="idx-isla__img">
+<img alt="La Gomera" loading="lazy" onerror="this.style.display='none'" src="imagenes/lagomera-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">La Gomera</h3>
+<p class="idx-isla__desc">Garajonay UNESCO</p>
+<span class="idx-isla__rutas" style="color:#00bcd4;">30 rutas</span>
+</div>
+</a>
+<a class="idx-isla" href="elhierro.html">
+<div class="idx-isla__img">
+<img alt="El Hierro" loading="lazy" onerror="this.style.display='none'" src="imagenes/elhierro-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">El Hierro</h3>
+<p class="idx-isla__desc">100% renovable y buceo</p>
+<span class="idx-isla__rutas" style="color:#a855f7;">30 rutas</span>
+</div>
+</a>
+<a class="idx-isla" href="lagraciosa.html">
+<div class="idx-isla__img">
+<img alt="La Graciosa" loading="lazy" onerror="this.style.display='none'" src="imagenes/lagraciosa-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">La Graciosa</h3>
+<p class="idx-isla__desc">Sin asfalto ni masas</p>
+<span class="idx-isla__rutas" style="color:#ffc107;">15 rutas</span>
+</div>
+</a>
+<a class="idx-isla" href="lobos.html">
+<div class="idx-isla__img">
+<img alt="Isla de Lobos" loading="lazy" onerror="this.style.display='none'" src="imagenes/lobos-hero.jpg"/>
+</div>
+<div class="idx-isla__body">
+<h3 class="idx-isla__nombre">Isla de Lobos</h3>
+<p class="idx-isla__desc">Snorkel virgen</p>
+<span class="idx-isla__rutas" style="color:#1cff6b;">15 rutas</span>
+</div>
+</a>
+</div>
+</div><div class="idx-section" style="padding-top:0;text-align:center;">
+<span class="idx-label"><i class="fas fa-running"></i> Deportes</span>
+<h2 class="idx-h2">Cual es tu deporte?</h2>
+<p class="idx-sub">Filtra las rutas por el deporte que mas te gusta</p>
+<div class="idx-dep-grid">
+<a class="idx-dep" href="buscador-aventuras.html?tipo=Senderismo"><i class="fas fa-hiking"></i> Senderismo (221)</a>
+<a class="idx-dep" href="buscador-aventuras.html?tipo=Kayak"><i class="fas fa-ship"></i> Kayak (3)</a>
+<a class="idx-dep" href="buscador-aventuras.html?tipo=Submarinismo"><i class="fas fa-fish"></i> Buceo (4)</a>
+<a class="idx-dep" href="buscador-aventuras.html?tipo=Surf"><i class="fas fa-water"></i> Surf (1)</a>
+<a class="idx-dep" href="buscador-aventuras.html?tipo=Fotografía"><i class="fas fa-camera"></i> Fotografia (5)</a>
+<a class="idx-dep" href="buscador-aventuras.html?tipo=Ciclismo"><i class="fas fa-bicycle"></i> Ciclismo (1)</a>
+<a class="idx-dep" href="senderismo-extremo.html" style="border-color:rgba(229,57,53,.3);color:#e53935!important;"><i class="fas fa-skull"></i> Extremo (3)</a>
+</div>
+</div><div class="idx-section">
+<div style="text-align:center;">
+<span class="idx-label"><i class="fas fa-star"></i> Herramientas</span>
+<h2 class="idx-h2">Todo lo que necesitas para tu aventura</h2>
+<p class="idx-sub">Las herramientas mas completas para aventureros en Canarias — todas gratis</p>
+</div>
+<div class="idx-feat-grid">
+<a class="idx-feat" href="buscador-aventuras.html">
+<div class="idx-feat__foto" style="background:linear-gradient(135deg,#0d1f0d,#091509);">
+<img alt="Buscador de rutas" loading="lazy" onerror="this.style.display='none'" src="imagenes/portada-senderismo.jpg"/>
+<div class="idx-feat__foto-grad"><span class="idx-feat__num">236</span></div>
+</div>
+<div class="idx-feat__body">
+<h3 class="idx-feat__titulo">Buscador de Rutas</h3>
+<p class="idx-feat__desc">Filtra por isla, deporte, dificultad y duración. GPS verificado en todas las rutas.</p>
+</div>
+</a>
+<a class="idx-feat" href="ruleta.html">
+<div class="idx-feat__foto" style="background:linear-gradient(135deg,#1a0a00,#0c0500);">
+<img alt="Ruleta de aventuras" loading="lazy" onerror="this.style.display='none'" src="imagenes/ruleta-hero.jpg"/>
+<div class="idx-feat__foto-grad"><span class="idx-feat__num">∞</span></div>
+</div>
+<div class="idx-feat__body">
+<h3 class="idx-feat__titulo">Ruleta de Aventuras</h3>
+<p class="idx-feat__desc">Sin ideas? Elige filtros y la ruleta te lanza una ruta sorpresa entre 236 opciones.</p>
+</div>
+</a>
+<a class="idx-feat" href="comparador.html">
+<div class="idx-feat__foto" style="background:linear-gradient(135deg,#001a2a,#001020);">
+<img alt="Comparador de islas" loading="lazy" onerror="this.style.display='none'" src="imagenes/comparador-hero.jpg"/>
+<div class="idx-feat__foto-grad"><span class="idx-feat__num">9</span></div>
+</div>
+<div class="idx-feat__body">
+<h3 class="idx-feat__titulo">Comparador de Islas</h3>
+<p class="idx-feat__desc">6 preguntas y te decimos qué isla de Canarias encaja mejor con tu perfil aventurero.</p>
+</div>
+</a>
+<a class="idx-feat" href="calendario.html">
+<div class="idx-feat__foto" style="background:linear-gradient(135deg,#0a1500,#060e00);">
+<img alt="Calendario de eventos" loading="lazy" onerror="this.style.display='none'" src="imagenes/calendario-hero.jpg"/>
+<div class="idx-feat__foto-grad"><span class="idx-feat__num">107</span></div>
+</div>
+<div class="idx-feat__body">
+<h3 class="idx-feat__titulo">Calendario de Eventos</h3>
+<p class="idx-feat__desc">107 eventos outdoor verificados en Canarias para 2025-2027. Trail, triatlón, kayak y más.</p>
+</div>
+</a>
+<a class="idx-feat" href="tiendas.html">
+<div class="idx-feat__foto" style="background:linear-gradient(135deg,#1a1000,#0e0900);">
+<img alt="Tiendas outdoor" loading="lazy" onerror="this.style.display='none'" src="imagenes/tiendas-hero.jpg"/>
+<div class="idx-feat__foto-grad"><span class="idx-feat__num">54</span></div>
+</div>
+<div class="idx-feat__body">
+<h3 class="idx-feat__titulo">Tiendas Outdoor</h3>
+<p class="idx-feat__desc">Directorio de 54 tiendas de equipamiento, alquiler y reparación en todas las islas.</p>
+</div>
+</a>
+<a class="idx-feat" href="blog/index.html">
+<div class="idx-feat__foto" style="background:linear-gradient(135deg,#001a0d,#000e08);">
+<img alt="Blog de aventuras" loading="lazy" onerror="this.style.display='none'" src="imagenes/exploracion.jpg"/>
+<div class="idx-feat__foto-grad"><span class="idx-feat__num">15+</span></div>
+</div>
+<div class="idx-feat__body">
+<h3 class="idx-feat__titulo">Blog de Aventuras</h3>
+<p class="idx-feat__desc">Guías, consejos, equipamiento y los mejores destinos outdoor contados por aventureros.</p>
+</div>
+</a>
+</div>
+</div><div class="idx-section" style="padding-top:0;">
+<div style="text-align:center;">
+<span class="idx-label"><i class="fas fa-pen-nib"></i> Blog</span>
+<h2 class="idx-h2">Ultimos articulos</h2>
+<p class="idx-sub">Guias, consejos y rutas para sacar el maximo a tu aventura en Canarias</p>
+</div>
+<div class="idx-blog-grid">
+<a class="idx-blog-card" href="blog/trail-running-canarias-guia-2026.html">
+<span class="idx-blog-card__cat"><i class="fas fa-running"></i> Trail Running</span>
+<h3 class="idx-blog-card__titulo">Trail Running en Canarias 2026: Las 10 Rutas Mas Epicas</h3>
+<p class="idx-blog-card__desc">Transvulcania, Bluetrail, Anaga y mas. Las mejores rutas para corredores de todos los niveles.</p>
+<span class="idx-blog-card__leer">Leer articulo -&gt;</span>
+</a>
+<a class="idx-blog-card" href="blog/guia-completa-teide.html">
+<span class="idx-blog-card__cat"><i class="fas fa-mountain"></i> Tenerife</span>
+<h3 class="idx-blog-card__titulo">Guia Completa para Subir al Teide a Pie</h3>
+<p class="idx-blog-card__desc">Todo lo que necesitas saber para coronar el punto mas alto de Espana desde el suelo.</p>
+<span class="idx-blog-card__leer">Leer articulo -&gt;</span>
+</a>
+<a class="idx-blog-card" href="blog/buceo-snorkel-canarias-mejores-spots.html">
+<span class="idx-blog-card__cat"><i class="fas fa-fish"></i> Acuatico</span>
+<h3 class="idx-blog-card__titulo">Los 12 Mejores Spots de Buceo y Snorkel en Canarias</h3>
+<p class="idx-blog-card__desc">El Hierro, el Cabron, La Graciosa y mas. Los mejores fondos marinos del archipielago.</p>
+<span class="idx-blog-card__leer">Leer articulo -&gt;</span>
+</a>
+</div>
+<div style="text-align:center;margin-top:24px;">
+<a class="idx-btn idx-btn--s" href="blog/index.html"><i class="fas fa-pen-nib"></i> Ver todos los articulos</a>
+</div>
 </div>
 
-<!-- DEPORTES -->
-<div class="idx-section" style="padding-top:0;text-align:center;">
- <span class="idx-label"><i class="fas fa-running"></i> Deportes</span>
- <h2 class="idx-h2">Cual es tu deporte?</h2>
- <p class="idx-sub">Filtra las rutas por el deporte que mas te gusta</p>
- <div class="idx-dep-grid">
- <a href="buscador-aventuras.html?tipo=Senderismo" class="idx-dep" data-dep-tipo="Senderismo"><i class="fas fa-hiking"></i> Senderismo (<span data-dep-count>221</span>)</a>
- <a href="buscador-aventuras.html?tipo=Kayak" class="idx-dep" data-dep-tipo="Kayak"><i class="fas fa-ship"></i> Kayak (<span data-dep-count>3</span>)</a>
- <a href="buscador-aventuras.html?tipo=Submarinismo" class="idx-dep" data-dep-tipo="Submarinismo"><i class="fas fa-fish"></i> Buceo (<span data-dep-count>4</span>)</a>
- <a href="buscador-aventuras.html?tipo=Surf" class="idx-dep" data-dep-tipo="Surf"><i class="fas fa-water"></i> Surf (<span data-dep-count>1</span>)</a>
- <a href="buscador-aventuras.html?tipo=Fotografía" class="idx-dep" data-dep-tipo="Fotografía"><i class="fas fa-camera"></i> Fotografia (<span data-dep-count>5</span>)</a>
- <a href="buscador-aventuras.html?tipo=Ciclismo" class="idx-dep" data-dep-tipo="Ciclismo"><i class="fas fa-bicycle"></i> Ciclismo (<span data-dep-count>1</span>)</a>
- <a href="senderismo-extremo.html" class="idx-dep" style="border-color:rgba(229,57,53,.3);color:#e53935!important;" data-dep-extremo="1"><i class="fas fa-skull"></i> Extremo (<span data-dep-count>3</span>)</a>
- </div>
+<div class="idx-section" style="padding-top:48px;">
+<div style="max-width:900px;margin:0 auto;">
+  <span class="idx-label"><i class="fas fa-compass"></i> Senderismo en Canarias</span>
+  <h2 class="idx-h2">Tu guía de rutas outdoor en las Islas Canarias</h2>
+  <p style="color:#8a8fa0;font-size:14px;line-height:1.8;margin:0 0 20px;text-align:center;">
+    Aventuras en Cada Paso es la plataforma de senderismo y deportes outdoor más completa de Canarias. Reunimos 236 rutas verificadas con GPS en las 9 islas del archipiélago — desde caminatas familiares hasta trekking de alta montaña, barranquismo, trail running, kayak y surf. Todo gratis, sin registro.
+  </p>
+  <p style="color:#8a8fa0;font-size:14px;line-height:1.8;margin:0 0 28px;text-align:center;">
+    Ya sea que busques subir al Teide, perderte en la laurisilva de Anaga, recorrer los volcanes de Lanzarote o descubrir los barrancos de Gran Canaria, aquí tienes la información que necesitas: dificultad, duración, desnivel, track GPS descargable y consejos prácticos para cada ruta de senderismo en Canarias.
+  </p>
+  <h3 style="font-family:Orbitron,sans-serif;font-size:11px;color:#1cff6b;letter-spacing:2px;text-transform:uppercase;text-align:center;margin:0 0 16px;"><i class="fas fa-star" style="margin-right:6px;"></i>Rutas más populares</h3>
+  <ul class="isla-rutas-list" style="max-width:700px;margin:0 auto;">
+    <li><a href="rutas/teide-montana-blanca.html">Ascensión al Teide – Montaña Blanca (Tenerife)</a></li>
+    <li><a href="rutas/masca-barranco.html">Barranco de Masca (Tenerife)</a></li>
+    <li><a href="rutas/roque-nublo-circular.html">Roque Nublo – Tejeda (Gran Canaria)</a></li>
+    <li><a href="rutas/caldera-blanca-lanzarote.html">Caldera Blanca – Circular (Lanzarote)</a></li>
+    <li><a href="rutas/ruta-volcanes-lapalma.html">Ruta de los Volcanes (La Palma)</a></li>
+    <li><a href="rutas/garajonay-cima-gomera.html">Alto de Garajonay (La Gomera)</a></li>
+    <li><a href="rutas/caldera-taburiente-integral.html">Caldera de Taburiente (La Palma)</a></li>
+    <li><a href="rutas/paisaje-lunar-vilaflor.html">Paisaje Lunar – Vilaflor (Tenerife)</a></li>
+  </ul>
+</div>
 </div>
 
-<!-- BLOG PREVIEW -->
-<div class="idx-section" style="padding-top:0;">
- <div style="text-align:center;">
- <span class="idx-label"><i class="fas fa-pen-nib"></i> Blog</span>
- <h2 class="idx-h2">Ultimos articulos</h2>
- <p class="idx-sub">Guias, consejos y rutas para sacar el maximo a tu aventura en Canarias</p>
- </div>
- <div class="idx-blog-grid">
- <a href="blog/trail-running-canarias-guia-2026.html" class="idx-blog-card">
- <span class="idx-blog-card__cat"><i class="fas fa-running"></i> Trail Running</span>
- <h3 class="idx-blog-card__titulo">Trail Running en Canarias 2026: Las 10 Rutas Mas Epicas</h3>
- <p class="idx-blog-card__desc">Transvulcania, Bluetrail, Anaga y mas. Las mejores rutas para corredores de todos los niveles.</p>
- <span class="idx-blog-card__leer">Leer articulo -></span>
- </a>
- <a href="blog/guia-completa-teide.html" class="idx-blog-card">
- <span class="idx-blog-card__cat"><i class="fas fa-mountain"></i> Tenerife</span>
- <h3 class="idx-blog-card__titulo">Guia Completa para Subir al Teide a Pie</h3>
- <p class="idx-blog-card__desc">Todo lo que necesitas saber para coronar el punto mas alto de Espana desde el suelo.</p>
- <span class="idx-blog-card__leer">Leer articulo -></span>
- </a>
- <a href="blog/buceo-snorkel-canarias-mejores-spots.html" class="idx-blog-card">
- <span class="idx-blog-card__cat"><i class="fas fa-fish"></i> Acuatico</span>
- <h3 class="idx-blog-card__titulo">Los 12 Mejores Spots de Buceo y Snorkel en Canarias</h3>
- <p class="idx-blog-card__desc">El Hierro, el Cabron, La Graciosa y mas. Los mejores fondos marinos del archipielago.</p>
- <span class="idx-blog-card__leer">Leer articulo -></span>
- </a>
- </div>
- <div style="text-align:center;margin-top:24px;">
- <a href="blog/index.html" class="idx-btn idx-btn--s"><i class="fas fa-pen-nib"></i> Ver todos los articulos</a>
- </div>
+<div style="max-width:1200px;margin:0 auto;padding:32px 28px 0;">
+<div style="background:linear-gradient(135deg,#0c1624,#0d1f0d);border:1px solid rgba(28,255,107,.2);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;background:#1cff6b;color:#02070f;font-family:Orbitron,sans-serif;font-size:7px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:0 0 8px 0;">PUBLICIDAD</div>
+<div style="flex:1;min-width:200px;margin-top:8px;">
+<span style="font-family:Orbitron,sans-serif;font-size:9px;color:#1cff6b;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px;">¿Tu empresa de aventura aquí?</span>
+<p style="color:#c8ccd8;font-size:13px;margin:0;line-height:1.5;">Llega a miles de aventureros en Canarias. Publícate en nuestra web y redes sociales.</p>
 </div>
-
-<!-- CTA FINAL -->
-<div class="idx-section" style="padding-top:0;padding-bottom:80px;">
- <div class="idx-cta">
- <h2>Listo para tu proxima aventura?</h2>
- <p>333 rutas verificadas esperando. Encuentra la tuya en menos de un minuto.</p>
- <div class="idx-cta__btns">
- <a href="buscador-aventuras.html" class="idx-btn idx-btn--p"><i class="fas fa-compass"></i> Buscar rutas ahora</a>
- <a href="ruleta.html" class="idx-btn idx-btn--o"><i class="fas fa-compass" style="animation:spin 2s linear infinite;display:inline-block;"></i> Sorprendeme</a>
- </div>
- </div>
+<a href="empresas.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#1cff6b;color:#02070f!important;border-radius:12px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:.2s;">
+<i class="fas fa-rocket"></i> Más información
+ </a>
 </div>
-
-<section style="max-width:900px;margin:0 auto;padding:20px 28px 70px;">
- <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.8vw,1.3rem);color:#e8eaf0;text-align:center;margin:0 0 30px;"><i class="fas fa-circle-question" style="color:#1cff6b;margin-right:10px;"></i>Preguntas frecuentes</h2>
- <div style="display:flex;flex-direction:column;gap:12px;">
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Cuántas rutas de senderismo hay en Canarias en esta web?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">333 rutas y actividades verificadas repartidas en las 9 islas: 215 de senderismo, más surf, kayak, kitesurf, snorkel, submarinismo, ciclismo, fotografía y espeleología. Cada una con isla, dificultad, distancia y duración indicadas.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Cómo se calcula la dificultad de cada ruta?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Con una fórmula objetiva basada en la distancia real y el desnivel positivo acumulado del track GPS (distancia en km + desnivel en metros ÷ 100), no es una valoración subjetiva. Para deportes como surf, kayak o submarinismo se usan criterios propios de cada disciplina.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Es gratis usar la web?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Sí, totalmente gratis: buscador de rutas, descarga de tracks GPS, calendario de eventos y toda la información de la web están disponibles sin registro ni coste.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Las rutas incluyen track GPS descargable?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Las rutas de senderismo, ciclismo, kayak y otras actividades con recorrido incluyen su archivo GPX real, descargable gratis, además de mapa interactivo y perfil de elevación. Las actividades de punto único (buceo, kitesurf, miradores) muestran su ubicación exacta en el mapa.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿La información de las rutas está verificada?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">La distancia y el desnivel se calculan a partir de tracks GPS reales, contrastados con fuentes como Wikiloc, AllTrails y federaciones deportivas. Aun así, la web es informativa: antes de salir, comprueba siempre el estado real del sendero y la previsión meteorológica con fuentes oficiales.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Cómo sé si un evento del calendario sigue vigente?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">El calendario se actualiza automáticamente: cada evento se marca solo como "Próximo" o "Finalizado" según la fecha real, y puedes filtrar por isla, deporte o buscar por fecha con el mini calendario de viaje.</p>
- </details>
- </div>
-</section>
-</main>
+</div><div class="idx-section" style="padding-top:0;padding-bottom:80px;">
+<div class="idx-cta">
+<h2>Listo para tu proxima aventura?</h2>
+<p>236 rutas verificadas esperando. Encuentra la tuya en menos de un minuto.</p>
+<div class="idx-cta__btns">
+<a class="idx-btn idx-btn--p" href="buscador-aventuras.html"><i class="fas fa-compass"></i> Buscar rutas ahora</a>
+<a class="idx-btn idx-btn--o" href="ruleta.html"><i class="fas fa-compass" style="animation:spin 2s linear infinite;display:inline-block;"></i> Sorprendeme</a>
+</div>
+</div>
+</div></main>
 <footer class="site-footer">
  <div class="footer-grid">
  <div class="footer-col">
@@ -962,7 +910,12 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
@@ -976,132 +929,20 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  </p>
  </footer>
 <!-- Google Translate -->
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
- <div class="cookie-banner__inner">
- <div class="cookie-banner__text">
- <p>
- Usamos cookies propias (necesarias) y de terceros (Google Translate y, si las aceptas, Google Analytics) para mejorar tu experiencia.
- Puedes aceptar todas, rechazar las no esenciales o configurar tus preferencias. Más info en nuestra
- <a href="politica-cookies.html">Política de Cookies</a> y
- <a href="politica-privacidad.html">Política de Privacidad</a>.
- </p>
- </div>
- <div class="cookie-banner__actions">
- <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Rechazar</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
- <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
- </div>
- </div>
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
- </div>
-</div>
+
+
+
+
 <script>
-/* === BANNER DE COOKIES === */
-(function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
-
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
-
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
- banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
- } else {
- banner.style.display = 'block';
- }
-
- var panel = document.getElementById('cookie-panel');
-
- var btnAccept = document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
- banner.style.display = 'none';
- });
- }
-
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- window.loadGoogleTranslate = loadGoogleTranslate;
-})();
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
 </script>
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load', function(){
- navigator.serviceWorker.register('sw.js', {scope:'/'})
+ navigator.serviceWorker.register('sw.js', {scope:'/aventurasencadapaso/'})
  .then(function(reg){
  console.log('SW registrado:', reg.scope);
  // Mostrar banner de instalación PWA
@@ -1396,7 +1237,6 @@ document.addEventListener('DOMContentLoaded', function(){
   }, true); // captura en fase de captura, antes que cualquier otro handler
 });
 </script>
-<script src="rutas.js"></script>
 <script>
 (function(){
   if(window.innerWidth > 900) return;
@@ -1439,26 +1279,6 @@ document.addEventListener('DOMContentLoaded', function(){
       if(burger) burger.click();
       this.classList.toggle('active');
     });
-  }
-})();
-</script>
-<script>
-(function(){
-  // Contadores de deportes en tiempo real, calculados desde rutas.js
-  // (independiente del bloque anterior: debe correr también en escritorio)
-  if(typeof RUTAS !== 'undefined'){
-    document.querySelectorAll('[data-dep-tipo]').forEach(function(el){
-      var tipo = el.getAttribute('data-dep-tipo');
-      var n = RUTAS.filter(function(r){ return r.tipo === tipo; }).length;
-      var span = el.querySelector('[data-dep-count]');
-      if(span) span.textContent = n;
-    });
-    var extremoEl = document.querySelector('[data-dep-extremo]');
-    if(extremoEl){
-      var nExtremo = RUTAS.filter(function(r){ return r.tipo === 'Senderismo' && r.dificultad === 'Extrema'; }).length;
-      var spanExtremo = extremoEl.querySelector('[data-dep-count]');
-      if(spanExtremo) spanExtremo.textContent = nExtremo;
-    }
   }
 })();
 </script>

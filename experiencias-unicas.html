@@ -41,13 +41,7 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  if(document.body){
-    obs.observe(document.body, {childList:true, subtree:true});
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      obs.observe(document.body, {childList:true, subtree:true});
-    });
-  }
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
 <style id="hide-google-bar">
@@ -252,10 +246,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -346,22 +336,17 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div class="pag-foto-wrap__overlay-done" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:440px;overflow:hidden;margin-top:72px;">
- <img src="imagenes/experiencias-hero.jpg" alt="Experiencias únicas en Canarias" loading="eager"
- style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
+<div class="pag-foto-wrap">
+ <img src="imagenes/experiencias-hero.jpg" alt="Experiencias únicas en Canarias" loading="lazy"
  onerror="this.parentElement.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
- <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-star"></i> Experiencias Únicas</span>
-  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Momentos que no encontrarás en ningún otro lugar</h1>
-  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Un volcán a 3.715 m, el mejor buceo de España, la playa más virgen de Europa y el único silbo del mundo. Canarias concentra experiencias irrepetibles en 9 islas.</p>
-  <div class="cat-stats" style="margin-bottom:20px;"><div><span class="cat-stat__num">4</span><span class="cat-stat__lbl">Spots de buceo/snorkel</span></div><div><span class="cat-stat__num">4</span><span class="cat-stat__lbl">Rutas al amanecer</span></div><div><span class="cat-stat__num">50m</span><span class="cat-stat__lbl">Visibilidad en El Hierro</span></div><div><span class="cat-stat__num">9</span><span class="cat-stat__lbl">Islas únicas</span></div>
- </div>
-</div>
 </div>
 <main id="cp">
-
+ <div class="cat-hero">
+ <span class="cat-hero__label"><i class="fas fa-star"></i> Experiencias Únicas</span>
+ <h1 class="cat-hero__h1">Momentos que no encontrarás en ningún otro lugar</h1>
+ <p class="cat-hero__desc">Un volcán a 3.715 m, el mejor buceo de España, la playa más virgen de Europa y el único silbo del mundo. Canarias concentra experiencias irrepetibles en 9 islas.</p>
+ <div class="cat-stats"><div><span class="cat-stat__num">4</span><span class="cat-stat__lbl">Spots de buceo/snorkel</span></div><div><span class="cat-stat__num">4</span><span class="cat-stat__lbl">Rutas al amanecer</span></div><div><span class="cat-stat__num">50m</span><span class="cat-stat__lbl">Visibilidad en El Hierro</span></div><div><span class="cat-stat__num">9</span><span class="cat-stat__lbl">Islas únicas</span></div></div>
+ </div>
 
  <section class="cat-seccion">
  <h2 class="cat-seccion__titulo"><i class="fas fa-fish"></i> Buceo y Snorkel de Otro Mundo</h2>
@@ -527,7 +512,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  <div class="cat-info-grid"><div class="cat-info-card"><i class="fas fa-sun"></i><h3>Amanecer en el Teide</h3><p>Ver el amanecer desde La Rambleta (3.555 m) con el mar de nubes bajo los pies es una de las 10 experiencias más espectaculares de España.</p></div><div class="cat-info-card"><i class="fas fa-fish"></i><h3>Buceo en La Restinga</h3><p>50 metros de visibilidad, tiburones ángel y fondos volcánicos únicos en el mejor spot de buceo de España según los expertos.</p></div><div class="cat-info-card"><i class="fas fa-mountain"></i><h3>Snorkel en Montaña Amarilla</h3><p>La laguna volcánica de La Graciosa tiene aguas turquesas de visibilidad excepcional. El mejor snorkel gratuito de España.</p></div><div class="cat-info-card"><i class="fas fa-star"></i><h3>Astronomía en La Palma</h3><p>El Roque de los Muchachos tiene el cielo más limpio de Europa. La Palma es Reserva Starlight desde 2012.</p></div></div>
  <div class="cat-cta">
  <h2>Vive algo irrepetible</h2>
- <p>Experiencias que solo existen en Canarias. Busca la tuya entre las 219 rutas verificadas con GPS y valoraciones.</p>
+ <p>Experiencias que solo existen en Canarias. Busca la tuya entre las 236 rutas verificadas con GPS y valoraciones.</p>
  <div class="cat-cta-btns">
  <a href="buscador-aventuras.html" class="cat-btn-primary"><i class="fas fa-compass"></i> Buscar Rutas</a>
  <a href="ruleta.html" class="cat-btn-sec"><i class="fas fa-dice"></i> Ruleta de Aventuras</a>
@@ -601,7 +586,12 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>

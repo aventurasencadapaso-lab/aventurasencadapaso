@@ -192,13 +192,7 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  if(document.body){
-    obs.observe(document.body, {childList:true, subtree:true});
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      obs.observe(document.body, {childList:true, subtree:true});
-    });
-  }
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
 <script>
@@ -537,7 +531,6 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
-<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -602,10 +595,6 @@ a:hover { color:#00e05a; }
 
         <li class="nav-main__item">
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
-        </li>
-
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
@@ -701,51 +690,129 @@ a:hover { color:#00e05a; }
 
 
 
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div class="isla-foto-hero__overlay" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:560px;overflow:hidden;margin-top:72px;">
- <img src="imagenes/lagomera-hero.jpg" alt="Bosque de laurisilva del Parque Nacional de Garajonay en La Gomera" loading="eager"
- style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
- onerror="this.parentElement.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
- <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;backdrop-filter:blur(4px);">La Gomera · Laurisilva milenaria</span>
-  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.4rem,4.5vw,2.4rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.2;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:820px;">La Gomera – Senderismo en Laurisilva y Barrancos</h1>
-  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:620px;margin:0 0 28px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Garajonay, el bosque más antiguo de Europa. Barrancos verticales, Valle Gran Rey y el mejor senderismo de invierno de Canarias.</p>
-  <div class="isla-hero__stats" style="margin-bottom:24px;">
-   <div class="isla-stat"><span class="isla-stat__num">12</span><span class="isla-stat__lbl">Rutas</span></div>
+<section class="isla-hero">
+ <div class="isla-hero__inner">
+ <span class="isla-hero__label"> La Gomera · Laurisilva milenaria</span>
+ <h1 class="isla-hero__h1">La Gomera – Senderismo en Laurisilva y Barrancos</h1>
+ <p class="isla-hero__desc">Garajonay, el bosque más antiguo de Europa. Barrancos verticales, Valle Gran Rey y el mejor senderismo de invierno de Canarias.</p>
+ <div class="isla-hero__stats">
+  <div class="isla-stat"><span class="isla-stat__num">12</span><span class="isla-stat__lbl">Rutas</span></div>
   <div class="isla-stat"><span class="isla-stat__num">1.487m</span><span class="isla-stat__lbl">Garajonay</span></div>
   <div class="isla-stat"><span class="isla-stat__num">7</span><span class="isla-stat__lbl">Deportes</span></div>
   <div class="isla-stat"><span class="isla-stat__num">260km</span><span class="isla-stat__lbl">Senderos</span></div>
-  </div>
-  <div class="isla-hero__btns">
-   <a href="buscador-aventuras.html?isla=La Gomera" class="ih-btn ih-btn--main"><i class="fas fa-compass"></i> Ver rutas</a>
+</div>
+<div class="isla-hero__btns">
+ <a href="buscador-aventuras.html?isla=La Gomera" class="ih-btn ih-btn--main"><i class="fas fa-compass"></i> Ver rutas</a>
  <a href="comparador.html" class="ih-btn ih-btn--out"><i class="fas fa-balance-scale"></i> Comparar islas</a>
-  </div>
  </div>
-</div>
+ </div>
+</section>
 
-<!-- DESCRIPCIÓN DE LA ISLA -->
-<div style="max-width:1100px;margin:0 auto 48px;padding:0 28px;">
-  <div style="max-width:760px;margin:0 auto;text-align:center;">
-    <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);color:#e8eaf0;font-weight:700;margin:0 0 16px;">Laurisilva milenaria</h2>
-    <p style="color:#8a8fa0;font-size:15px;line-height:1.85;margin:0 0 24px;">La Gomera es una isla redonda surcada por barrancos profundos que convergen en su centro, coronado por el Parque Nacional de Garajonay, el bosque de laurisilva mejor conservado de Europa y Patrimonio de la Humanidad. La niebla permanente en las cumbres alimenta un ecosistema que sobrevivió a la última glaciación. En la costa, Valle Gran Rey combina playas de arena negra con una comunidad alternativa que lleva décadas atrayendo viajeros. Es, además, la cuna del silbo gomero, un lenguaje silbado usado para comunicarse a través de los barrancos y reconocido por la UNESCO.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-tree"></i> 1.487m Garajonay</span>
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-leaf"></i> Laurisilva Patrimonio Humanidad</span>
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-umbrella-beach"></i> Valle Gran Rey</span>
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-comment"></i> Silbo gomero</span>
-    </div>
-  </div>
-</div>
 
+<!-- FOTO HERO LA GOMERA -->
+<div class="isla-foto-hero" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;padding:0;overflow:hidden;height:420px;">
+ <img src="imagenes/lagomera-hero.jpg" loading="lazy"
+ alt="Bosque de laurisilva del Parque Nacional de Garajonay en La Gomera"
+ class="isla-foto-hero__img" width="1200" height="420">
+</div>
 
 <section class="empresas-seccion">
  <div class="container">
  <!-- EMPRESAS Y EXCURSIONES -->
+
+<div class="isla-rutas-section" style="max-width:1100px;margin:0 auto 60px;padding:0 28px;">
+  <div style="text-align:center;margin-bottom:24px;">
+    <span class="idx-label"><i class="fas fa-route"></i> Rutas en La Gomera</span>
+    <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:#e8eaf0;margin:12px 0 8px;">Las 30 rutas de La Gomera</h2>
+    <p style="color:#8a8fa0;font-size:14px;">Todas las rutas verificadas con GPS en La Gomera. Haz clic en cualquiera para ver el detalle, mapa y track.</p>
+  </div>
+  <ul class="isla-rutas-list">
+    <li><a href="rutas/garajonay-cima-gomera.html">Alto de Garajonay – Cima del Parque Nacional</a></li>
+    <li><a href="rutas/gr131-lagomera.html">GR 131 La Gomera – Travesía</a></li>
+    <li><a href="rutas/portelas-monte-agua.html">Las Portelas – Monte del Agua</a></li>
+    <li><a href="rutas/barranco-valle-gran-rey.html">Barranco de Valle Gran Rey</a></li>
+    <li><a href="rutas/roque-cano-gomera.html">Roque Cano – Vallehermoso</a></li>
+    <li><a href="rutas/gr132-lagomera.html">GR 132 La Gomera – Vuelta a la Costa</a></li>
+    <li><a href="rutas/lagomera-benchijigua.html">Benchijigua – Barranco Seco</a></li>
+    <li><a href="rutas/kayak-gomera.html">Kayak – Costa Sur La Gomera</a></li>
+    <li><a href="rutas/laguna-grande-garajonay.html">Laguna Grande – Circular Garajonay</a></li>
+    <li><a href="rutas/creces-garajonay-ruta5.html">Las Creces – Circular Garajonay (Ruta 5)</a></li>
+    <li><a href="rutas/raso-bruma-gomera.html">Raso de La Bruma – Fayal Brezal</a></li>
+    <li><a href="rutas/canada-jorge-gomera.html">Cañada de Jorge</a></li>
+    <li><a href="rutas/alajero-playa-santiago.html">Alajeró – Playa de Santiago (Camino de La Costa)</a></li>
+    <li><a href="rutas/barranco-arure-gomera.html">Barranco de Arure – Valle Gran Rey</a></li>
+    <li><a href="rutas/barranco-guarimiar-gomera.html">Barranco de Guarimiar – Imada</a></li>
+    <li><a href="rutas/roque-agando-mirador.html">Roque Agando – Mirador</a></li>
+    <li><a href="rutas/circular-garajonay-18.html">Gran Circular Garajonay (Ruta 18)</a></li>
+    <li><a href="rutas/igualero-garajonay-cima.html">Igualero – Alto de Garajonay</a></li>
+    <li><a href="rutas/vallehermoso-tamargada-gomera.html">Vallehermoso – Tamargada – Garabato</a></li>
+    <li><a href="rutas/los-roques-gomera.html">Los Roques – Mirador Paisaje Lunar</a></li>
+    <li><a href="rutas/playa-santiago-alajero-gomera.html">Playa de Santiago – Trekking Costa Sur</a></li>
+    <li><a href="rutas/san-sebastian-garajonay-gomera.html">San Sebastián – Garajonay (GR 132 tramo)</a></li>
+    <li><a href="rutas/drago-milenario-gomera.html">Drago de Agulo – Circular</a></li>
+    <li><a href="rutas/cedro-chorro-gomera.html">El Cedro – Chorro del Cedro</a></li>
+    <li><a href="rutas/chipude-valle-gran-rey.html">Chipude – Valle Gran Rey (GR-132)</a></li>
+    <li><a href="rutas/vallehermoso-hermigua-gomera.html">Vallehermoso – Hermigua por Garajonay</a></li>
+    <li><a href="rutas/alajero-playa-santiago.html">Alajeró – Playa de Santiago (Ruta 7)</a></li>
+    <li><a href="rutas/raso-bruma-gomera.html">Raso de la Bruma – Circular Garajonay</a></li>
+    <li><a href="rutas/canada-jorge-gomera.html">Cañada de Jorge – Garajonay</a></li>
+    <li><a href="rutas/las-hayas-vallehermoso-gr131.html">Las Hayas – Vallehermoso (GR 131)</a></li>
+  </ul>
+</div>
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en La Gomera</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-tree"></i></div><div><h3 class="isla-emp-card__nombre">Ipalan Trekking</h3><span class="isla-emp-card__tipo">Senderismo · Garajonay</span></div></div><p class="isla-emp-card__desc">Guía oficial de turismo de Canarias, viajes a medida y trekking itinerante por el Parque Nacional de Garajonay y los senderos de la isla.</p><div class="isla-emp-card__links"><a href="https://ipalan.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/lagomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
+  <div class="isla-emps-grid">
+    <div class="isla-emp-card">
+      <div class="isla-emp-card__head">
+        <div class="isla-emp-card__ico" style="background:rgba(28,255,107,.1);color:#1cff6b;">
+          <i class="fas fa-tree"></i>
+        </div>
+        <div>
+          <h3 class="isla-emp-card__nombre">Adventure Capital La Gomera</h3>
+          <span class="isla-emp-card__tipo">Senderismo · Barranquismo</span>
+        </div>
+      </div>
+      <p class="isla-emp-card__desc">Rutas por el Parque Nacional de Garajonay, barranquismo y senderismo en la laurisilva de La Gomera.</p>
+      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 050</span>
+      <div class="isla-emp-card__links">
+        <a href="https://adventurecapital.es" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
+        <a href="https://www.civitatis.com/es/san-sebastian-de-la-gomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
+      </div>
+    </div><div class="isla-emp-card">
+      <div class="isla-emp-card__head">
+        <div class="isla-emp-card__ico" style="background:rgba(0,188,212,.1);color:#00bcd4;">
+          <i class="fas fa-hiking"></i>
+        </div>
+        <div>
+          <h3 class="isla-emp-card__nombre">Trotando Mundos La Gomera</h3>
+          <span class="isla-emp-card__tipo">Senderismo · Naturaleza</span>
+        </div>
+      </div>
+      <p class="isla-emp-card__desc">Guías locales especializados en el Parque de Garajonay y los barrancos de Valle Gran Rey.</p>
+      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 051</span>
+      <div class="isla-emp-card__links">
+        <a href="https://trotandomundos.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
+        <a href="https://www.civitatis.com/es/san-sebastian-de-la-gomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
+      </div>
+    </div><div class="isla-emp-card">
+      <div class="isla-emp-card__head">
+        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
+          <i class="fas fa-ticket-alt"></i>
+        </div>
+        <div>
+          <h3 class="isla-emp-card__nombre">Civitatis La Gomera</h3>
+          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
+        </div>
+      </div>
+      <p class="isla-emp-card__desc">Excursiones a Garajonay, Valle Gran Rey y los mejores miradores de La Gomera.</p>
+      
+      <div class="isla-emp-card__links">
+        <a href="https://www.civitatis.com/es/san-sebastian-de-la-gomera/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
+        
+      </div>
+    </div>
+  </div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> Parque Nacional de Garajonay</h3><p>La laurisilva más bien conservada del mundo. Árboles centenarios cubiertos de musgo y liquen, niebla permanente en las cumbres y una red de senderos que atraviesa un bosque que parece de cuento.</p></div>
 <div class="isla-zona fade-in"><h3> Valle Gran Rey</h3><p>El valle más fotografiado de La Gomera. Palmeras canarias, terrazas de cultivo en vertical y playas de arena negra en la desembocadura. Base de operaciones para el senderismo del oeste.</p></div>
@@ -1047,7 +1114,12 @@ document.addEventListener('DOMContentLoaded', function(){
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
@@ -1068,9 +1140,170 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-<script src="script.js" defer></script>
+
 
 <!-- Google Translate -->
+
+
+<script>
+(function () {
+ function changeLanguage(lang) {
+ // 1) Intentar usar el widget ya cargado
+ var combo = document.querySelector('select.goog-te-combo');
+ if (combo) {
+ combo.value = lang;
+ combo.dispatchEvent(new Event('change'));
+ return;
+ }
+
+ // 2) Guardar la cookie de idioma (funciona aunque el widget no esté cargado)
+ try {
+ var v = '/es/' + lang;
+ document.cookie = 'googtrans=' + v + ';path=/;';
+ if (location.hostname) {
+ document.cookie = 'googtrans=' + v + ';path=/;domain=.' + location.hostname + ';';
+ }
+ } catch(e) {}
+
+ // 3) Si Google Translate no está cargado, cargarlo ahora sin esperar cookies
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ window._pendingLang = lang;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ // Cuando cargue, aplicar el idioma
+ var orig = window.googleTranslateElementInit;
+ window.googleTranslateElementInit = function() {
+ if (orig) orig();
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c && window._pendingLang) {
+ c.value = window._pendingLang;
+ c.dispatchEvent(new Event('change'));
+ window._pendingLang = null;
+ }
+ }, 800);
+ };
+ } else {
+ // Widget ya cargado pero combo no encontrado aún, reintentar
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c) { c.value = lang; c.dispatchEvent(new Event('change')); }
+ else { location.reload(); }
+ }, 500);
+ }
+ }
+ document.querySelectorAll('a[data-lang]').forEach(function(a) {
+ a.addEventListener('click', function(e) { e.preventDefault(); changeLanguage(this.dataset.lang); });
+ });
+ /* Dropdowns acciones con delay */
+ var actionTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-actions__drop:not(#drop-buscar)').forEach(function(drop) {
+ var btn = drop.querySelector('[aria-haspopup]');
+ var panel = drop.querySelector('.nav-actions__panel');
+ if (!btn || !panel) return;
+
+ drop.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(actionTimers.get(drop));
+ open(drop, btn);
+ });
+
+ drop.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() { close(drop, btn); }, 200);
+ actionTimers.set(drop, t);
+ });
+
+ btn.addEventListener('click', function(e) {
+ e.stopPropagation();
+ var isOpen = drop.classList.contains('open');
+ closeAll();
+ if (!isOpen) open(drop, btn);
+ });
+ });
+ function open(drop, btn) { drop.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+ function close(drop, btn) { drop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+ function closeAll() {
+ document.querySelectorAll('.nav-actions__drop.open').forEach(function(d) {
+ close(d, d.querySelector('[aria-haspopup]'));
+ });
+ }
+ document.addEventListener('click', function() { closeAll(); });
+ /* Submenús desktop con delay para no cerrarse al bajar el ratón */
+ var hoverTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(li) {
+ var link = li.querySelector('.nav-main__link');
+ if (!link) return;
+
+ // Desktop: hover con delay de cierre
+ li.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ li.classList.add('open');
+ });
+
+ li.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 200); // 200ms de gracia para mover el ratón al submenú
+ hoverTimers.set(li, t);
+ });
+
+ // Submenú también mantiene el menú abierto si el ratón entra en él
+ var sub = li.querySelector('.nav-main__submenu');
+ if (sub) {
+ sub.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ });
+ sub.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 150);
+ hoverTimers.set(li, t);
+ });
+ }
+
+ // Móvil: tap para abrir/cerrar
+ link.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ e.preventDefault();
+ var was = li.classList.contains('open');
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ if (!was) li.classList.add('open');
+ });
+ });
+ var burger = document.querySelector('.nav-burger');
+ var navMain = document.querySelector('.nav-main');
+ if (burger && navMain) {
+ burger.addEventListener('click', function() {
+ var isOpen = burger.classList.toggle('open');
+ burger.setAttribute('aria-expanded', isOpen);
+ navMain.classList.toggle('open', isOpen);
+ });
+ }
+ window.addEventListener('resize', function() {
+ if (window.innerWidth > 900) {
+ if (navMain) navMain.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ }
+ });
+ document.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ if (!e.target.closest('.site-header') && navMain) {
+ navMain.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ }
+ });
+})();
+</script>
 </body>
 </html>
 

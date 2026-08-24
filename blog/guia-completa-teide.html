@@ -49,7 +49,7 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber">
   <meta name="twitter:description" content="Todo sobre la subida al Teide: permisos, rutas, época del año, qué llevar y los errores más comunes que cometen los turistas.">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber", "description": "Todo sobre la subida al Teide: permisos, rutas, época del año, qué llevar y los errores más comunes que cometen los turistas.", "datePublished": "2026-06-20", "dateModified": "2026-08-04", "author": {"@type": "Organization", "name": "Aventuras en Cada Paso"}, "publisher": {"@type": "Organization", "name": "Aventuras en Cada Paso", "logo": {"@type": "ImageObject", "url": "https://aventurasencadapaso-lab.github.io/aventuras-web/logo-aventuras.png"}}, "url": "https://aventurasencadapaso-lab.github.io/aventuras-web/blog/guia-completa-teide.html", "image": "https://aventurasencadapaso-lab.github.io/aventuras-web/imagenes/tenerife-hero.jpg"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber", "description": "Todo sobre la subida al Teide: permisos, rutas, época del año, qué llevar y los errores más comunes que cometen los turistas.", "datePublished": "2026-06-20", "dateModified": "2026-06-20", "author": {"@type": "Organization", "name": "Aventuras en Cada Paso"}, "publisher": {"@type": "Organization", "name": "Aventuras en Cada Paso", "logo": {"@type": "ImageObject", "url": "https://aventurasencadapaso-lab.github.io/aventuras-web/logo-aventuras.png"}}, "url": "https://aventurasencadapaso-lab.github.io/aventuras-web/blog/guia-completa-teide.html", "image": "https://aventurasencadapaso-lab.github.io/aventuras-web/imagenes/tenerife-hero.jpg"}</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -414,10 +414,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           <a href="../quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="../islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="../contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -510,91 +506,47 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 <script>
 /* === BANNER DE COOKIES === */
 (function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
+  var KEY = 'cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
 
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
+  // Si ya hay consentimiento guardado, ocultar
+  if (localStorage.getItem(KEY)) {
+    banner.style.display = 'none';
+    if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
+    return;
+  }
 
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
- banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
- } else {
- banner.style.display = 'block';
- }
+  // Mostrar banner
+  banner.style.display = 'block';
 
- var panel = document.getElementById('cookie-panel');
+  // Aceptar
+  var btnAccept = document.getElementById('cookie-accept') ||
+                  document.getElementById('cookie-accept-all');
+  if (btnAccept) {
+    btnAccept.addEventListener('click', function () {
+      localStorage.setItem(KEY, 'accepted');
+      banner.style.display = 'none';
+      loadGoogleTranslate();
+    });
+  }
 
- var btnAccept = document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
+  // Rechazar
+  var btnReject = document.getElementById('cookie-reject');
+  if (btnReject) {
+    btnReject.addEventListener('click', function () {
+      localStorage.setItem(KEY, 'rejected');
+      banner.style.display = 'none';
+    });
+  }
 
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
- banner.style.display = 'none';
- });
- }
-
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- window.loadGoogleTranslate = loadGoogleTranslate;
+  function loadGoogleTranslate() {
+    if (window.googleTranslateLoaded) return;
+    window.googleTranslateLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(s);
+  }
 })();
 </script>
 <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
@@ -610,26 +562,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     <div class="cookie-banner__actions">
       <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
       <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
       <a href="../politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
     </div>
   </div>
-
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
- </div>
 </div>
 <main id="cp">
 <article class="blog-art">
@@ -652,22 +587,16 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     
 <p>El Teide es el volcán más alto de España (3.715 m), el tercer volcán más grande del mundo desde su base oceánica y el destino turístico más visitado de España con más de 4 millones de visitas anuales. Esta guía recoge todo lo que necesitas saber para subir a la cima correctamente.</p>
 
-<h2>Permiso y ecotasa para la cima: lo que ha cambiado en 2026</h2>
-<p>Muchos turistas llegan al Teide sin saber que para subir los últimos 200 metros desde La Rambleta (3.555 m) hasta la cima (3.715 m) necesitas un <strong>permiso obligatorio</strong> — y desde enero de 2026 esto ya no es gratis para todo el mundo.</p>
-<p>El Cabildo de Tenerife ha implantado la primera ecotasa del Parque Nacional, que afecta a los senderos <strong>PNT 7 (Montaña Blanca–La Rambleta)</strong> y <strong>PNT 10 (Telesforo Bravo, el que llega a la cima)</strong>:</p>
-<ul>
-<li><strong>Residentes en Tenerife:</strong> exentos de pago, en ambos senderos.</li>
-<li><strong>Resto de residentes canarios:</strong> 3-6 € en el sendero 7 (según día laborable o fin de semana); 4-6 € en el sendero 10.</li>
-<li><strong>No residentes:</strong> 6-10 € en el sendero 7; hasta 15 € sin guía o 10 € con guía en el sendero 10 (Telesforo Bravo).</li>
-</ul>
-<p>El resto de senderos regulados del parque (PNT 9, PNT 23, PNT 28) siguen requiriendo el permiso gratuito de siempre, tramitado en <a href="https://www.tenerifeon.es" target="_blank" rel="noopener">Tenerife ON</a> — la antigua plataforma reservasparquesnacionales.es ha sido sustituida por esta.</p>
-<div class="blog-tip"><i class="fas fa-lightbulb"></i> <strong>Truco:</strong> las plazas se liberan cada lunes a las 07:00 (hora canaria) para las semanas siguientes, con un máximo de 56 días de antelación. En temporada alta se agotan en minutos.</div>
+<h2>Permiso para la cima: el error más común</h2>
+<p>Muchos turistas llegan al Teide sin saber que para subir los últimos 200 metros desde La Rambleta (3.555 m) hasta la cima (3.715 m) necesitas un <strong>permiso gratuito y obligatorio</strong>. Sin él, el acceso está vetado y los guardas del parque te impedirán pasar.</p>
+<p>El permiso se tramita online en <a href="https://www.reservasparquesnacionales.es" target="_blank" rel="noopener">reservasparquesnacionales.es</a> con meses de antelación. Solo hay 200 permisos diarios y en temporada alta (verano y fines de semana) se agotan en minutos cuando se liberan.</p>
+<div class="blog-tip"><i class="fas fa-lightbulb"></i> <strong>Truco:</strong> Los permisos se liberan exactamente a las 8:00h (hora peninsular) tres meses antes de la fecha. Pon una alarma y ten la web lista.</div>
 
 <h2>Las rutas para subir al Teide</h2>
 <p>Hay varias formas de llegar a La Rambleta:</p>
 <ul>
 <li><strong>Teleférico</strong>: la opción más fácil. Sube desde 2.356 m hasta 3.555 m en 8 minutos. No apto para vértigo. Requiere cola en temporada alta. El billete no incluye el permiso para la cima.</li>
-<li><strong>Sendero 7 (Montaña Blanca)</strong>: la ruta de senderismo más popular. 8,9 km de subida desde el aparcamiento de Montaña Blanca (2.356 m). 6-8 horas ida y vuelta. Alta dificultad. Sujeta a la ecotasa desde 2026.</li>
+<li><strong>Sendero 7 (Montaña Blanca)</strong>: la ruta de senderismo más popular. 8,9 km de subida desde el aparcamiento de Montaña Blanca (2.356 m). 6-8 horas ida y vuelta. Alta dificultad.</li>
 <li><strong>Sendero 7 completo</strong>: desde Las Cañadas del Teide, más largo pero más gradual.</li>
 <li><strong>Ruta 0-4-0</strong>: del mar a la cima y de vuelta al mar. Solo para deportistas muy experimentados.</li>
 </ul>
@@ -700,11 +629,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
 <h2>Lo que no puedes hacer en el Parque Nacional</h2>
 <p>El Parque Nacional del Teide tiene normas estrictas: no puedes salirte de los senderos señalizados, no puedes recoger piedras ni plantas, no puedes hacer fuego y los drones necesitan autorización expresa. Las multas por infringir estas normas son muy elevadas.</p>
-<p><strong>Novedades importantes de 2026:</strong></p>
-<ul>
-<li><strong>Prohibido fumar en todo el parque</strong>, desde junio de 2026, en cualquier espacio abierto: senderos, miradores, aparcamientos y áreas de descanso. Solo se permite en interiores habilitados expresamente. Las multas van de 100 a 1.000 €, y pueden ser mayores si el descuido provoca un incendio.</li>
-<li><strong>No se admiten mascotas</strong> en los senderos regulados (incluido el 7 y el 10), salvo perros guía o de asistencia. Déjalos en casa o con alguien si vas a subir al Teide.</li>
-</ul>
 
   </div>
 
@@ -717,13 +641,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       <a href="https://twitter.com/intent/tweet?text=Guía+Completa+para+Subir+al+Teide+en+2026:+Todo+lo+que+Necesitas+Saber&url=https%3A%2F%2Faventurasencadapaso-lab.github.io%2Faventuras-web%2Fblog%2Fguia-completa-teide.html" target="_blank" rel="noopener" class="blog-art__share-btn blog-art__share-btn--tw"><i class="fab fa-twitter"></i> Twitter</a>
       <button class="blog-art__share-btn blog-art__share-btn--copy" onclick="navigator.clipboard.writeText('https://aventurasencadapaso-lab.github.io/aventuras-web/blog/guia-completa-teide.html').then(function(){this.textContent='✓ Copiado';}.bind(this))"><i class="fas fa-link"></i> Copiar link</button>
     </div>
-  </div>
-
-  
-  <div style="background:linear-gradient(135deg,rgba(28,255,107,.08),rgba(28,255,107,.02));border:1px solid rgba(28,255,107,.2);border-radius:16px;padding:28px 24px;text-align:center;margin-top:40px;">
-   <h2 style="font-family:Orbitron,sans-serif;font-size:14px;color:#e8eaf0;margin:0 0 10px;"><i class="fas fa-compass" style="color:#1cff6b;margin-right:8px;"></i>¿Listo para salir?</h2>
-   <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:0 0 20px;max-width:480px;margin-left:auto;margin-right:auto;">Encuentra tu ruta ideal en Tenerife con datos reales: distancia, desnivel, dificultad y track GPS descargable.</p>
-   <a href="../buscador-aventuras.html?isla=Tenerife" style="display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:#1cff6b;border-radius:12px;color:#02070f!important;font-family:Orbitron,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-decoration:none;text-transform:uppercase;"><i class="fas fa-compass"></i> Buscar mi ruta</a>
   </div>
 
   <div class="blog-art__relacionados">
@@ -751,7 +668,12 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
         <a href="../recomendado.html">Recomendado</a>
         <a href="../quienes.html">Nuestro Fin</a>
       </div>
-      
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="../aviso-legal.html">Aviso Legal</a>
+        <a href="../politica-privacidad.html">Privacidad</a>
+        <a href="../politica-cookies.html">Cookies</a>
+      </div>
     </div>
       <div class="footer-legal">
     <a href="../politica-privacidad.html">Privacidad</a>

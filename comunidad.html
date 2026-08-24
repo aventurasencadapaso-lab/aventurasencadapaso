@@ -39,13 +39,7 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  if(document.body){
-    obs.observe(document.body, {childList:true, subtree:true});
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      obs.observe(document.body, {childList:true, subtree:true});
-    });
-  }
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
 <style id="hide-google-bar">
@@ -278,10 +272,6 @@ body { overflow-x: hidden !important; }
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -372,21 +362,17 @@ body { overflow-x: hidden !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div class="pag-foto-wrap__overlay-done" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:440px;overflow:hidden;margin-top:72px;">
- <img src="imagenes/comunidad-hero.jpg" alt="Comunidad outdoor Canarias" loading="eager"
- style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
+<div class="pag-foto-wrap">
+ <img src="imagenes/comunidad-hero.jpg" alt="Comunidad outdoor Canarias" loading="lazy"
  onerror="this.parentElement.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
- <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-users"></i> Comunidad</span>
-  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">La comunidad outdoor de Canarias</h1>
-  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Aventureros, fotógrafos, trail runners, buceadores y exploradores que comparten el mismo archipiélago. Únete y comparte tus aventuras.</p>
-  
- </div>
 </div>
-
-<main id="cp"><div class="com-wrap">
+<main id="cp">
+ <div class="com-hero">
+ <span class="com-hero__label"><i class="fas fa-users"></i> Comunidad</span>
+ <h1 class="com-hero__h1">La comunidad outdoor de Canarias</h1>
+ <p class="com-hero__desc">Aventureros, fotógrafos, trail runners, buceadores y exploradores que comparten el mismo archipiélago. Únete y comparte tus aventuras.</p>
+ </div>
+ <div class="com-wrap">
 
  <h2 class="com-titulo"><i class="fas fa-share-alt"></i> Síguenos en redes</h2>
  <div class="com-redes">
@@ -423,7 +409,17 @@ body { overflow-x: hidden !important; }
  <i class="fab fa-youtube"></i> Suscribirse
  </span>
  </a>
- 
+ <a href="https://wa.me/34655679307" target="_blank" rel="noopener" class="com-red">
+ <div class="com-red__ico" style="background:#25d366;">
+ <i class="fab fa-whatsapp" style="color:#fff;"></i>
+ </div>
+ <span class="com-red__nombre">WhatsApp</span>
+ <span class="com-red__handle">+34 655 67 93 07</span>
+ <p class="com-red__desc">Contacto directo para preguntas sobre rutas, condiciones del terreno o cualquier duda sobre aventuras en Canarias.</p>
+ <span class="com-red__btn" style="background:#25d366;">
+ <i class="fab fa-whatsapp"></i> Escribir
+ </span>
+ </a>
  </div>
 
  <!-- Newsletter -->
@@ -509,7 +505,9 @@ body { overflow-x: hidden !important; }
  <a href="https://instagram.com/aventurasencadapaso" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:linear-gradient(135deg,#f09433,#dc2743);border-radius:10px;color:#fff!important;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-decoration:none;text-transform:uppercase;">
  <i class="fab fa-instagram"></i> Instagram
  </a>
- 
+ <a href="https://wa.me/34655679307" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:#25D366;border-radius:10px;color:#fff!important;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-decoration:none;text-transform:uppercase;">
+ <i class="fab fa-whatsapp"></i> WhatsApp
+ </a>
  <a href="contacto.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.3);border-radius:10px;color:#1cff6b!important;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-decoration:none;text-transform:uppercase;">
  <i class="fas fa-envelope"></i> Email
  </a>
@@ -549,7 +547,12 @@ body { overflow-x: hidden !important; }
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>

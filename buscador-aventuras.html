@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Buscador de 321 rutas outdoor en Canarias. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
+  <meta name="description" content="Buscador de 236 rutas outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
   <title>Buscador de Rutas Outdoor en Canarias | Aventuras en Cada Paso</title>
   <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
   <link rel="icon" type="image/png" href="logo-aventuras.png">
@@ -139,87 +139,22 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 .bus-stat__num { font-family:Orbitron,sans-serif; font-size:1.2rem; font-weight:900; color:#1cff6b; display:block; line-height:1; }
 .bus-stat__lbl { font-size:9px; color:#5a6070; display:block; margin-top:4px; font-family:Orbitron,sans-serif; letter-spacing:1px; }
 
-/* ── RECUADRO BUSCADOR ── */
-.bus-buscador-box {
-  max-width:900px; margin:0 auto 40px; padding:26px 28px;
-  background:#0c1624; border:1px solid rgba(28,255,107,.22); border-radius:18px;
-  box-shadow:0 0 0 1px rgba(28,255,107,.04), 0 20px 50px -20px rgba(28,255,107,.15);
-}
-
 /* ── FILTROS ── */
-.bus-filtros { max-width:none; margin:0 0 16px; padding:0; display:flex; gap:10px; flex-wrap:wrap; }
-.bus-filtros__field { position:relative; flex:1; min-width:160px; display:flex; align-items:center; }
-.bus-filtros__field i { position:absolute; left:14px; color:#5a6070; font-size:12px; pointer-events:none; z-index:1; }
-.bus-filtros__field input, .bus-filtros__field select {
-  width:100%; background:#070e18; border:1px solid rgba(28,255,107,.2);
-  border-radius:10px; padding:10px 14px 10px 36px; color:#e8eaf0; font-family:Orbitron,sans-serif;
-  font-size:10px; outline:none; transition:border-color .2s; appearance:none; -webkit-appearance:none;
+.bus-filtros { max-width:900px; margin:0 auto 32px; padding:0 28px; display:flex; gap:10px; flex-wrap:wrap; }
+.bus-filtros input, .bus-filtros select {
+  flex:1; min-width:160px; background:#0c1624; border:1px solid rgba(28,255,107,.2);
+  border-radius:10px; padding:10px 14px; color:#e8eaf0; font-family:Orbitron,sans-serif;
+  font-size:10px; outline:none; transition:border-color .2s;
 }
-.bus-filtros__field select {
-  padding-right:28px; cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235a6070'/%3E%3C/svg%3E");
-  background-repeat:no-repeat; background-position:right 12px center;
-}
-.bus-filtros__field input:focus, .bus-filtros__field select:focus { border-color:#1cff6b; }
-.bus-filtros__field select option { background:#0c1624; color:#e8eaf0; }
-
-/* ── BARRA DE RESULTADOS ── */
-.bus-filtros-bar { max-width:none; margin:0; padding-top:14px; border-top:1px solid rgba(28,255,107,.1); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-.bus-filtros-bar__count { font-size:12px; color:#8a8fa0; }
-.bus-filtros-bar__count strong { color:#1cff6b; font-weight:700; }
-.bus-clear-btn {
-  display:inline-flex; align-items:center; gap:6px; background:transparent;
-  border:1px solid rgba(255,111,0,.3); color:#ff6f00; font-family:Orbitron,sans-serif;
-  font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:8px 14px;
-  border-radius:8px; cursor:pointer; transition:background .2s,border-color .2s,opacity .2s;
-}
-.bus-clear-btn:hover { background:rgba(255,111,0,.1); border-color:rgba(255,111,0,.5); }
-.bus-clear-btn:disabled { opacity:.35; cursor:default; }
-.bus-clear-btn:disabled:hover { background:transparent; border-color:rgba(255,111,0,.3); }
-.bus-guardadas-btn.on { background:#e53935; border-color:#e53935; color:#fff; }
-.bus-guardadas-btn.on:hover { background:#e53935; }
-
-/* ── MIS LOGROS ── */
-.bus-logros { max-width:900px; margin:0 auto 32px; padding:0 28px; }
-.bus-logros__inner { background:linear-gradient(135deg,#0c1624,#0d1f0d); border:1px solid rgba(28,255,107,.2); border-radius:16px; padding:22px 24px; }
-.bus-logros__head { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-.bus-logros__label { font-family:Orbitron,sans-serif; font-size:10px; color:#1cff6b; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:8px; }
-.bus-logros__stats { display:flex; gap:24px; }
-.bus-logro-stat { text-align:center; }
-.bus-logro-stat span { display:block; font-family:Orbitron,sans-serif; font-size:1.3rem; font-weight:900; color:#1cff6b; }
-.bus-logro-stat label { font-size:9px; color:#5a6070; text-transform:uppercase; letter-spacing:1px; }
-.bus-logros__badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
-.bus-badge { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:20px; background:rgba(28,255,107,.1); border:1px solid rgba(28,255,107,.3); color:#1cff6b; font-size:11px; font-weight:600; }
-.bus-logros__vacio { color:#5a6070; font-size:12px; margin:14px 0 0; display:none; }
-.bus-logros.vacio .bus-logros__vacio { display:block; }
-.bus-logros.vacio .bus-logros__badges { display:none; }
-.bus-logros.vacio .bus-logros__lista { display:none; }
-.bus-logros__lista { margin-top:16px; border-top:1px solid rgba(28,255,107,.1); padding-top:14px; display:flex; flex-direction:column; gap:8px; max-height:280px; overflow-y:auto; }
-.bl-item { display:flex; align-items:center; gap:10px; background:#0c1624; border:1px solid rgba(28,255,107,.08); border-radius:10px; padding:10px 12px; }
-.bl-item__body { flex:1; min-width:0; }
-.bl-item__nombre { display:block; color:#e8eaf0; font-size:13px; font-weight:600; text-decoration:none; }
-.bl-item__nombre:hover { color:#1cff6b; }
-.bl-item__meta { color:#5a6070; font-size:10.5px; margin-top:2px; }
-.bl-item__share { background:transparent; border:1px solid rgba(28,255,107,.3); color:#1cff6b; width:30px; height:30px; border-radius:8px; flex-shrink:0; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:12px; }
-.bl-item__share:hover { background:rgba(28,255,107,.1); }
-.bl-item__del { background:transparent; border:1px solid rgba(229,57,53,.3); color:#e53935; width:30px; height:30px; border-radius:8px; flex-shrink:0; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:12px; }
-.bl-item__del:hover { background:rgba(229,57,53,.12); }
-@media(max-width:600px){ .bus-logros__head{flex-direction:column;align-items:flex-start;} }
-.bus-card__heart { position:absolute; top:8px; right:8px; width:26px; height:26px; border-radius:50%; background:rgba(2,7,15,.65); display:flex; align-items:center; justify-content:center; color:#fff; font-size:12px; z-index:2; }
-.bus-card__heart.saved { color:#e53935; }
-.bus-card { position:relative; }
+.bus-filtros input:focus, .bus-filtros select:focus { border-color:#1cff6b; }
+.bus-filtros select option { background:#0c1624; color:#e8eaf0; }
 
 /* ── GRID DE RUTAS ── */
 .bus-grid { max-width:1100px; margin:0 auto; padding:0 28px 60px; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
 
 /* ── CARD ── */
-.bus-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:18px; text-decoration:none !important; display:flex; flex-direction:column; gap:8px; transition:border-color .2s,transform .15s; cursor:pointer; animation:bus-card-in .35s ease both; }
+.bus-card { background:#0c1624; border:1px solid rgba(28,255,107,.1); border-radius:14px; padding:18px; text-decoration:none !important; display:flex; flex-direction:column; gap:8px; transition:border-color .2s,transform .15s; cursor:pointer; }
 .bus-card:hover { border-color:rgba(28,255,107,.4); transform:translateY(-3px); }
-@keyframes bus-card-in { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-@media (prefers-reduced-motion: reduce) { .bus-card { animation:none; } }
-.bus-card__thumb { width:calc(100% + 36px); margin:-18px -18px 4px; height:88px; overflow:hidden; border-radius:14px 14px 0 0; background:#070e18; }
-.bus-card__thumb img { width:100%; height:100%; object-fit:contain; display:block; }
-.bus-card__thumb--empty { background-image:url("imagenes/fondo-aventuras.jpg"); background-size:cover; background-position:center; }
 .bus-card__isla { font-family:Orbitron,sans-serif; font-size:8px; color:#5a6070; letter-spacing:2px; text-transform:uppercase; }
 .bus-card__nombre { font-family:Orbitron,sans-serif; font-size:11px; font-weight:700; color:#e8eaf0 !important; line-height:1.35; margin:0; }
 .bus-card__meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
@@ -230,44 +165,13 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 /* ── VACÍO ── */
 .bus-vacio { text-align:center; padding:60px 28px; color:#5a6070; font-size:14px; grid-column:1/-1; }
 
-/* ── BANNER RULETA ── */
-.rul-banner { max-width:900px; margin:0 auto 28px; padding:0 28px; }
-.rul-banner__inner {
-  display:flex; align-items:center; gap:18px;
-  background:linear-gradient(135deg,#0c1624,#1a1220);
-  border:1px solid rgba(255,111,0,.25); border-radius:14px;
-  padding:18px 22px; text-decoration:none !important;
-  transition:border-color .2s, transform .15s;
-}
-.rul-banner__inner:hover { border-color:rgba(255,111,0,.5); transform:translateY(-2px); }
-.rul-banner__ico {
-  flex-shrink:0; width:52px; height:52px; display:flex; align-items:center; justify-content:center;
-  font-size:22px; color:#ff6f00; background:rgba(255,111,0,.1); border-radius:12px;
-}
-.rul-banner__txt { flex:1; min-width:0; }
-.rul-banner__sup { font-family:Orbitron,sans-serif; font-size:9px; color:#ff6f00; letter-spacing:2px; text-transform:uppercase; display:block; margin-bottom:4px; }
-.rul-banner__h { font-family:Orbitron,sans-serif; font-size:15px; font-weight:900; color:#e8eaf0; margin:0 0 4px; }
-.rul-banner__p { font-size:13px; color:#8a8fa0; margin:0; line-height:1.4; }
-.rul-banner__btn {
-  display:flex; align-items:center; gap:6px; flex-shrink:0; white-space:nowrap;
-  padding:10px 18px; background:#ff6f00; color:#02070f !important;
-  font-family:Orbitron,sans-serif; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
-  border-radius:8px;
-}
-
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .bus-hero { padding:90px 16px 32px; }
-  .bus-buscador-box { padding:20px 16px; margin:0 16px 32px; }
-  .bus-filtros { flex-direction:column; }
+  .bus-filtros { padding:0 16px; flex-direction:column; }
   .bus-grid { padding:0 16px 40px; grid-template-columns:1fr; }
-  .rul-banner { padding:0 16px; }
-  .rul-banner__inner { flex-wrap:wrap; justify-content:center; text-align:center; padding:20px 16px; }
-  .rul-banner__txt { width:100%; }
-  .rul-banner__btn { width:100%; justify-content:center; }
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo filtro las rutas por isla y dificultad?", "acceptedAnswer": {"@type": "Answer", "text": "Usa los desplegables de isla, deporte y dificultad en la parte superior del buscador, o escribe directamente en el buscador de texto el nombre de una ruta, isla o distancia."}}, {"@type": "Question", "name": "¿Puedo guardar rutas para verlas más tarde?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, pulsando el corazón de cualquier ficha se guarda en el propio navegador, sin necesidad de crear cuenta, y puede verse luego con el filtro Mis guardadas."}}, {"@type": "Question", "name": "¿Qué significa el icono de track junto a algunas rutas?", "acceptedAnswer": {"@type": "Answer", "text": "Indica que esa ruta tiene un track GPS real descargable con mapa y perfil de elevación. Las actividades sin ese icono muestran su ubicación exacta en un mapa de punto."}}, {"@type": "Question", "name": "¿Hay rutas fáciles aptas para niños o principiantes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, filtrando por dificultad Fácil se muestran solo rutas cortas y con poco desnivel, calculadas de forma objetiva a partir de la distancia y el desnivel real de cada track."}}]}</script>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -324,10 +228,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
         <li class="nav-main__item">
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
-        </li>
-
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
@@ -420,85 +320,39 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   </div><!-- /site-header__inner -->
 </header>
 
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div style="position:relative;width:100%;height:480px;overflow:hidden;margin-top:72px;">
-  <img src="imagenes/aventureros-hero.jpg" alt="Buscador de rutas outdoor en Canarias" loading="eager"
-       onerror="this.parentElement.style.display='none'"
-       style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
-  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-    <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-compass"></i> Buscador de Rutas</span>
-    <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Rutas Outdoor en Canarias</h1>
-    <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">321 rutas verificadas en 9 islas. Filtra por isla, deporte y dificultad.</p>
-    <div class="bus-hero__stats" style="margin-bottom:0;">
-      <div class="bus-stat"><span class="bus-stat__num">321</span><span class="bus-stat__lbl">Rutas</span></div>
+<main id="cp">
+
+  <div class="bus-hero">
+    <span class="bus-hero__label"><i class="fas fa-compass"></i> Buscador de Rutas</span>
+    <h1 class="bus-hero__titulo">Rutas Outdoor en Canarias</h1>
+    <p class="bus-hero__desc">236 rutas con GPS en 9 islas. Filtra por isla, deporte y dificultad.</p>
+    <div class="bus-hero__stats">
+      <div class="bus-stat"><span class="bus-stat__num">236</span><span class="bus-stat__lbl">Rutas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">9</span><span class="bus-stat__lbl">Islas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">GPS</span><span class="bus-stat__lbl">En todas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">0€</span><span class="bus-stat__lbl">Gratis</span></div>
     </div>
   </div>
-</div>
-<main id="cp">
 
-  <!-- MIS LOGROS -->
-  <div class="bus-logros" id="bus-logros">
-    <div class="bus-logros__inner">
-      <div class="bus-logros__head">
-        <span class="bus-logros__label"><i class="fas fa-trophy"></i> Mis logros</span>
-        <div class="bus-logros__stats">
-          <div class="bus-logro-stat"><span id="bl-completadas">0</span><label>Rutas completadas</label></div>
-          <div class="bus-logro-stat"><span id="bl-km">0</span><label>Km recorridos</label></div>
-        </div>
-      </div>
-      <div class="bus-logros__badges" id="bl-badges"></div>
-      <div class="bus-logros__lista" id="bl-lista"></div>
-      <p class="bus-logros__vacio" id="bl-vacio">Aún no has completado ninguna ruta. Márcala como "Completada" en la ficha de la ruta para empezar a acumular logros.</p>
-    </div>
-  </div>
-
-  <!-- Recuadro del buscador -->
-  <div class="bus-buscador-box">
-    <!-- Filtros -->
-    <div class="bus-filtros">
-      <div class="bus-filtros__field">
-        <i class="fas fa-search" aria-hidden="true"></i>
-        <input type="text" id="bus-q" placeholder="Buscar ruta o isla...">
-      </div>
-      <div class="bus-filtros__field">
-        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-        <select id="bus-isla" aria-label="Filtrar por isla">
-          <option value="">Todas las islas</option>
-          <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
-          <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
-          <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
-        </select>
-      </div>
-      <div class="bus-filtros__field">
-        <i class="fas fa-person-hiking" aria-hidden="true"></i>
-        <select id="bus-tipo" aria-label="Filtrar por deporte">
-          <option value="">Todos los deportes</option>
-          <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
-          <option>Surf</option><option>Kitesurf</option><option>Submarinismo</option><option>Snorkel</option><option>Fotografía</option>
-          <option>Espeleología</option>
-        </select>
-      </div>
-      <div class="bus-filtros__field">
-        <i class="fas fa-gauge-high" aria-hidden="true"></i>
-        <select id="bus-dif" aria-label="Filtrar por dificultad">
-          <option value="">Todas las dificultades</option>
-          <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Contador de resultados + limpiar filtros -->
-    <div class="bus-filtros-bar">
-      <span class="bus-filtros-bar__count" id="bus-count" aria-live="polite"></span>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button type="button" class="bus-clear-btn bus-guardadas-btn" id="bus-guardadas"><i class="far fa-heart" aria-hidden="true"></i> Mis guardadas</button>
-        <button type="button" class="bus-clear-btn" id="bus-clear"><i class="fas fa-xmark" aria-hidden="true"></i> Limpiar filtros</button>
-      </div>
-    </div>
+  <!-- Filtros -->
+  <div class="bus-filtros">
+    <input type="text" id="bus-q" placeholder="Buscar ruta o isla...">
+    <select id="bus-isla">
+      <option value="">Todas las islas</option>
+      <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
+      <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
+      <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
+    </select>
+    <select id="bus-tipo">
+      <option value="">Todos los deportes</option>
+      <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
+      <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
+      <option>Espeleología</option>
+    </select>
+    <select id="bus-dif">
+      <option value="">Todas las dificultades</option>
+      <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
+    </select>
   </div>
 
   <!-- Banner ruleta -->
@@ -519,34 +373,8 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
 </main>
 
-<section style="max-width:900px;margin:0 auto;padding:0 28px 40px;">
- <div style="background:linear-gradient(135deg,rgba(28,255,107,.06),rgba(28,255,107,.01));border:1px solid rgba(28,255,107,.15);border-radius:16px;padding:26px 24px;">
-  <h2 style="font-family:Orbitron,sans-serif;font-size:13px;color:#e8eaf0;margin:0 0 12px;display:flex;align-items:center;gap:8px;"><i class="fas fa-bicycle" style="color:#1cff6b;"></i>Canarias, paraíso del ciclismo todo el año</h2>
-  <p style="color:#8a8fa0;font-size:13px;line-height:1.8;margin:0;">Con temperaturas estables entre 18-25°C los 365 días del año, Canarias es uno de los destinos favoritos de Europa para el cicloturismo. No es casualidad que equipos ciclistas profesionales elijan Tenerife y Gran Canaria para sus pretemporadas invernales, aprovechando ascensos de referencia mundial como la subida al Teide o al Pico de las Nieves. La isla también acoge pruebas de primer nivel como el Ironman Lanzarote, uno de los circuitos más exigentes del calendario internacional. Carreteras en buen estado, tráfico reducido fuera de las zonas turísticas y paisajes volcánicos únicos completan un destino que ya reúne 14 rutas verificadas en este buscador, desde travesías llanas hasta puertos de montaña de primer nivel.</p>
- </div>
-</section>
 
-<section style="max-width:900px;margin:0 auto;padding:20px 28px 50px;">
- <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.8vw,1.3rem);color:#e8eaf0;text-align:center;margin:0 0 30px;"><i class="fas fa-circle-question" style="color:#1cff6b;margin-right:10px;"></i>Preguntas frecuentes</h2>
- <div style="display:flex;flex-direction:column;gap:12px;">
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Cómo filtro las rutas por isla y dificultad?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Usa los desplegables de isla, deporte y dificultad en la parte superior del buscador, o escribe directamente en el buscador de texto el nombre de una ruta, isla o distancia.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Puedo guardar rutas para verlas más tarde?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Sí, pulsa el corazón de cualquier ficha para guardarla. Se guarda en tu propio navegador y puedes verlas luego con el filtro "Mis guardadas", sin necesidad de crear cuenta.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Qué significa el icono de track junto a algunas rutas?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Indica que esa ruta tiene un track GPS real descargable con mapa y perfil de elevación. Las actividades sin ese icono (buceo, kitesurf, miradores) muestran su ubicación exacta en un mapa de punto.</p>
- </details>
- <details style="background:#0c1624;border:1px solid rgba(28,255,107,.12);border-radius:14px;padding:18px 22px;">
- <summary style="cursor:pointer;font-weight:700;color:#e8eaf0;font-size:14px;">¿Hay rutas fáciles aptas para niños o principiantes?</summary>
- <p style="color:#8a8fa0;font-size:13px;line-height:1.7;margin:12px 0 0;">Sí, filtra por dificultad "Fácil" para ver solo rutas cortas y con poco desnivel, calculadas de forma objetiva a partir de la distancia y el desnivel real de cada track.</p>
- </details>
- </div>
-</section>
+
 
 <button id="btn-top" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></button>
 
@@ -558,39 +386,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var islaEl = document.getElementById('bus-isla');
   var tipoEl = document.getElementById('bus-tipo');
   var difEl = document.getElementById('bus-dif');
-  var countEl = document.getElementById('bus-count');
-  var clearBtn = document.getElementById('bus-clear');
-  var guardadasBtn = document.getElementById('bus-guardadas');
-  var soloGuardadas = false;
-
-  var GKEY = 'aventuras-guardadas';
-  function getGuardadas(){ try{ return JSON.parse(localStorage.getItem(GKEY)) || []; } catch(e){ return []; } }
-  function setGuardadas(arr){ try{ localStorage.setItem(GKEY, JSON.stringify(arr)); } catch(e){} }
-  function estaGuardada(id){ return getGuardadas().indexOf(id) > -1; }
-  function toggleGuardada(id){
-    var g = getGuardadas();
-    var i = g.indexOf(id);
-    if(i > -1) g.splice(i, 1); else g.push(id);
-    setGuardadas(g);
-  }
-
-  var TOTAL = RUTAS.length;
 
   var DIFCOLOR = {Facil:'#1cff6b',Media:'#ffc107',Dificil:'#ff6f00',Extrema:'#e53935',
                    'Fácil':'#1cff6b','Difícil':'#ff6f00'};
-
-  // Rutas con track GPX real disponible (de momento, Tenerife)
-  var HAS_PIN = new Set(['mirador-bandama-gc','mirador-chipeque-tenerife','mirador-cruzdelcarmen-anaga','mirador-cruztejeda-gc','mirador-degolladabecerra-gc','mirador-degolladayeguas-gc','mirador-delmolino-gc','mirador-faneque-gc','mirador-fortaleza-vilaflor','mirador-garachico-tenerife','mirador-humboldt-tenerife','mirador-lascoloradas-laspalmas','mirador-naricesteide-tenerife','mirador-puntadeteno-tenerife','mirador-roquenublo-gc','mirador-puntahidalgo-tenerife','mirador-garanona-tenerife','mirador-aguaide-tenerife','mirador-jardina-tenerife','mirador-atalaya-tenerife','mirador-picoingles-tenerife','mirador-elarenal-tenerife','mirador-laruleta-tenerife','mirador-piconieves-gc','mirador-bentayga-gc','mirador-balcontamadaba-gc','mirador-unamuno-gc','mirador-atalayaartenara-gc','mirador-poetas-gc','mirador-losroques-gomera','mirador-altogarajonay-gomera','mirador-igualero-gomera','mirador-curvaqueso-gomera','mirador-vallehermoso-gomera','mirador-morroagando-gomera','mirador-roqueblanco-gomera','mirador-hermigua-gomera','mirador-roquemuchachos-lapalma','mirador-concepcion-lapalma','mirador-andenes-lapalma','mirador-barrancogomeros-lapalma','mirador-eltime-lapalma','mirador-delrio-lanzarote','mirador-guinate-lanzarote','mirador-femes-lanzarote','mirador-haria-lanzarote','mirador-helechos-lanzarote','mirador-malpaso-haria-lanzarote','mirador-charcoclicos-lanzarote','mirador-guiseayoze-fuerte','mirador-entallada-fuerte','mirador-malpaso-hierro','mirador-jinama-hierro','cueva-viento-icod','cueva-belmaco-lapalma','grabados-eljulan-hierro','poblado-zonzamas-lanzarote','fortaleza-chipude-gomera','kitesurf-flagbeach-fuerte','kitesurf-famara-lanzarote','mirador-abrante-gomera','mirador-lapena-hierro','mirador-morrovelosa-fuerte','mirador-palmarejo-gomera','surf-nogales-lapalma','surf-quemao-lanzarote','surf-majanicho-fuerte','surf-elfronton-gc','kayak-puertonaos-lapalma','kayak-tazacorte-lapalma','cuevas-pintadas-galdar','cenobio-valeron-gc','risco-caido-gc','buceo-charco-verde-lapalma','buceo-puerto-naos-lapalma','buceo-radazul-tenerife','buceo-sardina-del-norte-gc','kayak-los-gigantes-tenerife','kitesurf-el-medano-tenerife','kitesurf-pozo-izquierdo-gc','surf-el-confital-gc','surf-el-socorro-tenerife','surf-la-izquierda-punta-hidalgo','surf-americas-tenerife','buceo-puertito-adeje','buceo-canteras-gc','buceo-cabron-gc','buceo-catedral-gc','surf-famara-lanzarote','surf-cotillo-fuerte','buceo-restinga','snorkel-montana-amarilla','salinas-graciosa','bufadero-graciosa','snorkel-puertito-lobos','salinas-lobos','birdwatching-lobos','kayak-lobos','snorkel-concha-lobos','cuevas-volcanicas-lobos','kayak-papagayo','kitesurf-sotavento','kayak-gomera','amanecer-lobos']);
-  var HAS_GPX = new Set(['agaete-tamadaba-gc','agujas-graciosa','ajaches-barrancos-lanzarote','ajaches-cumbre-lanzarote','ajuy-cuevas-fuerte','alajero-playa-santiago','amadores-tauro-gc','amanecer-lobos','anaga-afur-taganana','anaga-benijo-draguillo','anaga-bosque-enigmas','anaga-cruz-carmen-hidalgo','anaga-roque-taborno','anaga-sendero-sentidos','anaga-taganana-tamadite','arco-penitas-fuerte','arrecife-charco-paseo','artenara-cuevas-caballero','azulejos-inagua-gc','bajada-jinama-golfo','balcon-asomada-fuerte','barranco-angustias-lp','barranco-arure-gomera','barranco-bombas-agua-lp','barranco-cernicalos-gc','barranco-conejos-graciosa','barranco-guarimiar-gomera','barranco-guayadeque','barranco-guigui-gc','barranco-guiniguada-gc','barranco-infierno-adeje','barranco-los-tilos-lp','barranco-penitas-fuerte','barranco-valle-gran-rey','barrancos-puerto-fuerte','betancuria-vega-rio-palmas','bici-graciosa','birigoyo-pilar-lapalma','caldera-bandama-gc','caldera-blanca-lanzarote','caldera-cuervos','caldera-lobos','caldera-marteles-gc','caldera-taburiente-brecitos','caldera-taburiente-integral','calderon-hondo-fuerte','camino-faya-lapalma','camino-jinama','camino-virgen-hierro','camino-volcanes-gc','canada-jorge-gomera','cara-sur-lanzarote','cedro-chorro-gomera','charco-azul-lapalma','charco-manso-hierro','chinyero-san-jose','chipude-valle-gran-rey','circular-garajonay-18','circular-lobos','circular-lobos-fuerte','circular-norte-graciosa','cofete-gran-valle-fuerte','corona-forestal-las-raices','corralejo-dunas-fuerte','costa-este-lobos','costa-teguise-playas','creces-garajonay-ruta5','cubo-galga-lapalma','cumbrecita-caldera-lp','degollada-facay-fuerte','drago-milenario-gomera','dunas-maspalomas-gc','ecoturismo-hierro-completo','el-golfo-circular-hierro','el-pinar-hierro','ermita-reyes-hierro','famara-risco-lanzarote','faro-martino-lobos','faro-orchilla-hierro','fataga-barranco-gc','firgas-circular-gc','fortaleza-gc','garachico-pr-tf-43','garajonay-cima-gomera','gr131-fuerteventura','gr131-hierro','gr131-lagomera','gr131-lanzarote-completo','gr132-lagomera','guatiza-famara-gr131','haria-bosquecillo-lanzarote','haria-mirador-lanzarote','hoyo-negro-volcan-lp','igualero-garajonay-cima','islote-lobos-norte-fuerte','jacoba-canaria-gc','jedey-los-llanos-lp','kayak-gomera','kayak-papagayo','kitesurf-sotavento','la-geria-vinedos','la-santa-tenesar','lagomera-benchijigua','laguna-grande-garajonay','las-hayas-vallehermoso-gr131','llania-elhierro','llania-hierro','los-organos-orotava','los-roques-gomera','malena-costa-lp','malpais-arena-fuerte','malpais-guimar','malpaso-cumbre','marcos-cordero-tuneles-lp','masca-barranco','mirador-bascos-hierro','mirador-isora-hierro','mirador-lomo-chozas-lp','montana-amarilla-cima','montana-amarilla-sur','montana-bermeja-cima','montana-blanca-grietas','montana-cardones-fuerte','montana-colorada-lanzarote','montana-roja-medano','montana-roja-sur','monte-corona-lanzarote','morro-jandia-cumbre','nacientes-marcos-cordero','north-coast-lobos','paisaje-lunar-vilaflor','papagayo-playa-blanca','pecenescal-barlovento-fuerte','penas-chache-lanzarote','pesca-tradicional-lobos','pico-cruz-roque-lp','pico-nieves-ascenso','pico-nieves-roque-nublo','pico-nieves-sabina-lp','pico-sabina-nieve-lp','pico-viejo-teide','pico-zarza-fuerte','pijaral-tenerife','pilancones-gc','playa-cabron-gc','playa-concha-lobos','playa-francesa-graciosa','playa-ingles-costa-gc','playa-molinos-fuerte','playa-playitas-fuerte','playa-risco-lanzarote','playa-santiago-alajero-gomera','portelas-monte-agua','pozo-la-salud-hierro','pozo-salud-frontera','presa-soria-gc','puerto-calero-carmen','puerto-mogan-costa','puerto-rico-trail-gc','punta-del-pobre-graciosa','punta-lava-fuencaliente-lp','punta-naos-hierro','punta-orchilla-hierro','puntalarga-fuencaliente-lp','rambla-castro','raso-bruma-gomera','revenaton-cumbrenorte-lp','risco-paso-jandia','riscos-herques-hierro','roque-agando-mirador','roque-bentayga-gc','roque-bonanza-hierro','roque-cano-gomera','roque-conde-arona','roque-muchachos-cumbre','roque-nublo-circular','roque-nublo-degollada','roques-garcia-teide','roques-salmor-hierro','ruta-040-teide','ruta-mencey-hierro','ruta-norte-conchas-bermeja','ruta-sur-graciosa','ruta-volcanes-lapalma','sabinosa-hierro','salinas-jandia-fuerte','san-antonio-volcan-lapalma','san-sebastian-garajonay-gomera','santa-barbara-teguise','santa-catalina-norte','sebo-pedro-barba','sendero-bayuyo-fuerte','sendero-costa-fuerte','sotavento-playa-circular','tablado-gallegos-lp','taborno-circular-anaga','taceron-hierro','tajogaite-erupcion','tamadaba-circular-gc','tanajara-ruta-hierro','tazacorte-roque-muchachos','teide-montana-blanca','teno-erjos-circular','teno-palmar-circular','teno-risco-verde','tilos-lapalma','timanfaya-golfo-litoral','timanfaya-ruta-volcanes','tindaya-fuerte','tindaya-vallebron-tefia','tinor-circular-hierro','valle-agaete-gc','vallehermoso-hermigua-gomera','vallehermoso-tamargada-gomera','valles-norte-haria','valverde-mercado-hierro','volcan-escanfraga-fuerte','volcan-fasnia','vuelta-integral-graciosa','ciclismo-anaga-picoingles','ciclismo-corralejo-costacalma','ciclismo-garachico-masca','ciclismo-maspalomas-ayaguares','ciclismo-miradorrio-haria','ciclismo-mtb-lapalma','ciclismo-piconieves-gc','ciclismo-sur-tenerife','ciclismo-teide-costaadeje','ciclismo-timanfaya-lanzarote','ciclismo-travesia-lanzarote','ciclismo-vueltaisla-gc']);
-
-  function hayFiltros(){
-    return !!(qEl.value.trim() || islaEl.value || tipoEl.value || difEl.value || soloGuardadas);
-  }
-
-  function actualizarBarra(n){
-    countEl.innerHTML = '<strong>' + n + '</strong> de ' + TOTAL + ' rutas';
-    clearBtn.disabled = !hayFiltros();
-  }
 
   function render(){
     var q = qEl.value.toLowerCase().trim();
@@ -603,33 +401,19 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       if(tipo && r.tipo !== tipo) return false;
       if(dif && r.dificultad !== dif) return false;
       if(q && !r.nombre.toLowerCase().includes(q) && !r.isla.toLowerCase().includes(q)) return false;
-      if(soloGuardadas && !estaGuardada(r.id)) return false;
       return true;
     });
 
-    actualizarBarra(filtradas.length);
-
     if(filtradas.length === 0){
-      grid.innerHTML = soloGuardadas
-        ? '<div class="bus-vacio"><i class="far fa-heart" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>Aún no has guardado ninguna ruta</div>'
-        : '<div class="bus-vacio"><i class="fas fa-compass" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>No se encontraron rutas</div>';
+      grid.innerHTML = '<div class="bus-vacio"><i class="fas fa-compass" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>No se encontraron rutas</div>';
       return;
     }
 
-    grid.innerHTML = filtradas.map(function(r, i){
+    grid.innerHTML = filtradas.map(function(r){
       var color = DIFCOLOR[r.dificultad] || '#ffc107';
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
-      var delay = Math.min(i * 0.03, 0.3);
-      var guardada = estaGuardada(r.id);
-      var thumb = HAS_GPX.has(r.id)
-        ? '<div class="bus-card__thumb"><img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="Track de ' + r.nombre + '" loading="lazy" width="220" height="88"></div>'
-        : HAS_PIN.has(r.id)
-        ? '<div class="bus-card__thumb"><img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="Ubicación de ' + r.nombre + '" loading="lazy" width="220" height="88"></div>'
-        : '<div class="bus-card__thumb bus-card__thumb--empty"></div>';
-      return '<a href="rutas/' + r.id + '.html" class="bus-card" style="animation-delay:' + delay + 's;">' +
-        thumb +
-        '<span class="bus-card__heart' + (guardada ? ' saved' : '') + '" data-id="' + r.id + '"><i class="' + (guardada ? 'fas' : 'far') + ' fa-heart"></i></span>' +
+      return '<a href="rutas/' + r.id + '.html" class="bus-card">' +
         '<span class="bus-card__isla">' + r.isla + '</span>' +
         '<h3 class="bus-card__nombre">' + r.nombre + '</h3>' +
         '<div class="bus-card__meta">' +
@@ -646,121 +430,14 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var params = new URLSearchParams(window.location.search);
   if(params.get('isla')) islaEl.value = params.get('isla');
   if(params.get('tipo')) tipoEl.value = params.get('tipo');
-  if(params.get('dif')) difEl.value = params.get('dif');
   if(params.get('q')) qEl.value = params.get('q');
 
-  function sincronizarURL(){
-    var p = new URLSearchParams();
-    if(qEl.value.trim()) p.set('q', qEl.value.trim());
-    if(islaEl.value) p.set('isla', islaEl.value);
-    if(tipoEl.value) p.set('tipo', tipoEl.value);
-    if(difEl.value) p.set('dif', difEl.value);
-    var nuevaURL = window.location.pathname + (p.toString() ? '?' + p.toString() : '');
-    history.replaceState(null, '', nuevaURL);
-  }
-
-  function renderYguardar(){ render(); sincronizarURL(); }
-
-  qEl.addEventListener('input', renderYguardar);
-  islaEl.addEventListener('change', renderYguardar);
-  tipoEl.addEventListener('change', renderYguardar);
-  difEl.addEventListener('change', renderYguardar);
-
-  grid.addEventListener('click', function(e){
-    var heart = e.target.closest('.bus-card__heart');
-    if(!heart) return;
-    e.preventDefault();
-    e.stopPropagation();
-    toggleGuardada(heart.getAttribute('data-id'));
-    render();
-  });
-
-  guardadasBtn.addEventListener('click', function(){
-    soloGuardadas = !soloGuardadas;
-    guardadasBtn.classList.toggle('on', soloGuardadas);
-    render();
-  });
-
-  clearBtn.addEventListener('click', function(){
-    qEl.value = '';
-    islaEl.value = '';
-    tipoEl.value = '';
-    difEl.value = '';
-    soloGuardadas = false;
-    guardadasBtn.classList.remove('on');
-    render();
-    sincronizarURL();
-    qEl.focus();
-  });
+  qEl.addEventListener('input', render);
+  islaEl.addEventListener('change', render);
+  tipoEl.addEventListener('change', render);
+  difEl.addEventListener('change', render);
 
   render();
-  sincronizarURL();
-
-  // ── MIS LOGROS ──
-  (function(){
-    var CKEY = 'aventuras-completadas';
-    var completadas = [];
-    try { completadas = JSON.parse(localStorage.getItem(CKEY)) || []; } catch(e){}
-    var totalRutas = completadas.length;
-    var totalKm = completadas.reduce(function(s, r){ return s + (r.distancia || 0); }, 0);
-
-    document.getElementById('bl-completadas').textContent = totalRutas;
-    document.getElementById('bl-km').textContent = totalKm.toFixed(1).replace(/\.0$/, '');
-
-    var BADGES = [
-      { min: 1, tipo: 'rutas', icon: 'fa-flag-checkered', txt: 'Primera aventura' },
-      { min: 5, tipo: 'rutas', icon: 'fa-hiking', txt: 'Explorador' },
-      { min: 10, tipo: 'rutas', icon: 'fa-mountain', txt: 'Aventurero experto' },
-      { min: 25, tipo: 'rutas', icon: 'fa-crown', txt: 'Leyenda de Canarias' },
-      { min: 25, tipo: 'km', icon: 'fa-shoe-prints', txt: 'Andarín (25km)' },
-      { min: 100, tipo: 'km', icon: 'fa-route', txt: 'Centurión del sendero (100km)' },
-      { min: 300, tipo: 'km', icon: 'fa-medal', txt: 'Ultra distancia (300km)' },
-    ];
-    var badgesHtml = BADGES.filter(function(b){
-      return (b.tipo === 'rutas' && totalRutas >= b.min) || (b.tipo === 'km' && totalKm >= b.min);
-    }).map(function(b){
-      return '<span class="bus-badge"><i class="fas ' + b.icon + '"></i> ' + b.txt + '</span>';
-    }).join('');
-
-    document.getElementById('bl-badges').innerHTML = badgesHtml;
-
-    var listaEl = document.getElementById('bl-lista');
-    function pintarLista(){
-      var g = [];
-      try { g = JSON.parse(localStorage.getItem(CKEY)) || []; } catch(e){}
-      g.sort(function(a, b){ return new Date(b.fecha) - new Date(a.fecha); });
-      listaEl.innerHTML = g.map(function(r){
-        var fecha = new Date(r.fecha).toLocaleDateString('es-ES', {day:'2-digit', month:'short', year:'numeric'});
-        var dist = r.distancia ? r.distancia + ' km · ' : '';
-        return '<div class="bl-item">' +
-          '<div class="bl-item__body">' +
-            '<a href="rutas/' + r.id + '.html" class="bl-item__nombre">' + r.nombre + '</a>' +
-            '<div class="bl-item__meta">' + dist + fecha + '</div>' +
-          '</div>' +
-          '<button type="button" class="bl-item__del" data-id="' + r.id + '" title="Quitar de completadas"><i class="fas fa-trash"></i></button>' +
-        '</div>';
-      }).join('');
-    }
-    pintarLista();
-
-    listaEl.addEventListener('click', function(e){
-      var delBtn = e.target.closest('.bl-item__del');
-      if(!delBtn) return;
-      var id = delBtn.getAttribute('data-id');
-      var g = [];
-      try { g = JSON.parse(localStorage.getItem(CKEY)) || []; } catch(err){}
-      g = g.filter(function(r){ return r.id !== id; });
-      try { localStorage.setItem(CKEY, JSON.stringify(g)); } catch(err){}
-      totalRutas = g.length;
-      totalKm = g.reduce(function(s, r){ return s + (r.distancia || 0); }, 0);
-      document.getElementById('bl-completadas').textContent = totalRutas;
-      document.getElementById('bl-km').textContent = totalKm.toFixed(1).replace(/\.0$/, '');
-      document.getElementById('bus-logros').classList.toggle('vacio', totalRutas === 0);
-      pintarLista();
-    });
-
-    document.getElementById('bus-logros').classList.toggle('vacio', totalRutas === 0);
-  })();
 
   // Btn top
   var b = document.getElementById('btn-top');
@@ -1097,7 +774,12 @@ function googleTranslateElementInit() {
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>

@@ -190,10 +190,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -289,65 +285,33 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  var banner = document.getElementById('cookie-banner');
  if (!banner) return;
 
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
-
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
+ // Si ya hay consentimiento guardado, ocultar
+ if (localStorage.getItem(KEY)) {
  banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
- } else {
- banner.style.display = 'block';
+ if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
+ return;
  }
 
- var panel = document.getElementById('cookie-panel');
+ // Mostrar banner
+ banner.style.display = 'block';
 
- var btnAccept = document.getElementById('cookie-accept-all');
+ // Aceptar
+ var btnAccept = document.getElementById('cookie-accept') ||
+ document.getElementById('cookie-accept-all');
  if (btnAccept) {
  btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
+ localStorage.setItem(KEY, 'accepted');
  banner.style.display = 'none';
- aplicarPrefs(p);
+ loadGoogleTranslate();
  });
  }
 
+ // Rechazar
  var btnReject = document.getElementById('cookie-reject');
  if (btnReject) {
  btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
+ localStorage.setItem(KEY, 'rejected');
  banner.style.display = 'none';
- });
- }
-
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
  });
  }
 
@@ -358,18 +322,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
  document.head.appendChild(s);
  }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- window.loadGoogleTranslate = loadGoogleTranslate;
 })();
 </script><div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
  <div class="cookie-banner__inner">
@@ -384,25 +336,8 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  <div class="cookie-banner__actions">
  <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
  <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
  <a href="../politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
  </div>
- </div>
-
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
  </div>
 </div>
 <main id="cp"><div class="rp">
@@ -459,16 +394,16 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
  <div class="rp-rel">
  <h2 class="rp-section-title"><i class="fas fa-compass"></i> Más rutas en Tenerife</h2>
- <div class="rp-rel-links"><a href="rutas/teide-montana-blanca.html" class="rp-rel-link">
+ <div class="rp-rel-links"><a href="teide-montana-blanca.html" class="rp-rel-link">
  <i class="fas fa-hiking" style="color:#ff6f00;margin-right:6px;"></i>
  Ascensión al Teide – Montaña Blanca (Sendero 7)
- </a><a href="rutas/roques-garcia-teide.html" class="rp-rel-link">
+ </a><a href="roques-garcia-teide.html" class="rp-rel-link">
  <i class="fas fa-hiking" style="color:#1cff6b;margin-right:6px;"></i>
  Roques de García – Sendero 3 Teide
- </a><a href="rutas/pico-viejo-teide.html" class="rp-rel-link">
+ </a><a href="pico-viejo-teide.html" class="rp-rel-link">
  <i class="fas fa-hiking" style="color:#ffc107;margin-right:6px;"></i>
  Pico Viejo – Sendero 13
- </a><a href="rutas/ruta-040-teide.html" class="rp-rel-link">
+ </a><a href="ruta-040-teide.html" class="rp-rel-link">
  <i class="fas fa-hiking" style="color:#e53935;margin-right:6px;"></i>
  Ruta 0-4-0 Teide
  </a></div>
@@ -493,7 +428,12 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  <a href="../recomendado.html">Recomendado</a>
  <a href="../quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="../aviso-legal.html">Aviso Legal</a>
+ <a href="../politica-privacidad.html">Privacidad</a>
+ <a href="../politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="../politica-privacidad.html">Privacidad</a>

@@ -170,13 +170,7 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  if(document.body){
-    obs.observe(document.body, {childList:true, subtree:true});
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      obs.observe(document.body, {childList:true, subtree:true});
-    });
-  }
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
 <script>
@@ -515,7 +509,6 @@ a:hover { color:#00e05a; }
 .ih-btn--out:hover { border-color:#1cff6b; background:rgba(28,255,107,.1); }
 .isla-hero__btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 </style>
-<style id="isla-emp-promo-css">.isla-emp-card--promo{border:1.5px dashed rgba(28,255,107,.35);background:transparent;}.isla-emp-card--promo:hover{border-color:#1cff6b;}</style>
 </head>
 
 <body>
@@ -580,10 +573,6 @@ a:hover { color:#00e05a; }
 
         <li class="nav-main__item">
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
-        </li>
-
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
@@ -678,52 +667,115 @@ a:hover { color:#00e05a; }
 <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span class="bc-sep" aria-hidden="true">›</span><a href="buscador-aventuras.html">Islas</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">La Graciosa</span></nav>
 
 
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div class="isla-foto-hero__overlay" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:560px;overflow:hidden;margin-top:72px;">
- <img src="imagenes/lagraciosa-hero.jpg" alt="Playa de las Conchas y paisaje virgen de La Graciosa sin asfalto" loading="eager"
- style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
- onerror="this.parentElement.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
- <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;backdrop-filter:blur(4px);">La Graciosa · Sin asfalto</span>
-  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.4rem,4.5vw,2.4rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.2;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:820px;">La Graciosa – Snorkel, Kayak y Playas Vírgenes</h1>
-  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:620px;margin:0 0 28px;text-shadow:0 1px 10px rgba(0,0,0,.9);">La única isla habitada de Europa sin asfalto. Playa de Las Conchas, snorkel en Montaña Amarilla y el silencio más profundo de Canarias.</p>
-  <div class="isla-hero__stats" style="margin-bottom:24px;">
-   <div class="isla-stat"><span class="isla-stat__num">5</span><span class="isla-stat__lbl">Rutas</span></div>
+<section class="isla-hero">
+ <div class="isla-hero__inner">
+ <span class="isla-hero__label"> La Graciosa · Sin asfalto</span>
+ <h1 class="isla-hero__h1">La Graciosa – Snorkel, Kayak y Playas Vírgenes</h1>
+ <p class="isla-hero__desc">La única isla habitada de Europa sin asfalto. Playa de Las Conchas, snorkel en Montaña Amarilla y el silencio más profundo de Canarias.</p>
+ <div class="isla-hero__stats">
+  <div class="isla-stat"><span class="isla-stat__num">5</span><span class="isla-stat__lbl">Rutas</span></div>
   <div class="isla-stat"><span class="isla-stat__num">266m</span><span class="isla-stat__lbl">Agujas Grandes</span></div>
   <div class="isla-stat"><span class="isla-stat__num">4</span><span class="isla-stat__lbl">Deportes</span></div>
   <div class="isla-stat"><span class="isla-stat__num">6</span><span class="isla-stat__lbl">Playas vírgenes</span></div>
-  </div>
-  <div class="isla-hero__btns">
-   <a href="buscador-aventuras.html?isla=La Graciosa" class="ih-btn ih-btn--main"><i class="fas fa-compass"></i> Ver rutas</a>
+</div>
+<div class="isla-hero__btns">
+ <a href="buscador-aventuras.html?isla=La Graciosa" class="ih-btn ih-btn--main"><i class="fas fa-compass"></i> Ver rutas</a>
  <a href="comparador.html" class="ih-btn ih-btn--out"><i class="fas fa-balance-scale"></i> Comparar islas</a>
-  </div>
  </div>
-</div>
+ </div>
+</section>
 
-<!-- DESCRIPCIÓN DE LA ISLA -->
-<div style="max-width:1100px;margin:0 auto 48px;padding:0 28px;">
-  <div style="max-width:760px;margin:0 auto;text-align:center;">
-    <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);color:#e8eaf0;font-weight:700;margin:0 0 16px;">Sin asfalto</h2>
-    <p style="color:#8a8fa0;font-size:15px;line-height:1.85;margin:0 0 24px;">La Graciosa es la octava isla habitada de Canarias y la única de Europa sin una sola carretera asfaltada: sus calles son de arena volcánica compactada, y el transporte se hace a pie, en bici o en todoterreno. Frente a la costa norte de Lanzarote, forma parte del Parque Natural del Archipiélago Chinijo. La playa de Las Conchas, con vistas a Montaña Clara, está considerada una de las más espectaculares de España, aunque su fuerte oleaje la hace poco apta para el baño. Caleta de Sebo, su único pueblo, conserva el ritmo de vida de un pueblo pesquero de otra época.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-mountain"></i> 266m Agujas Grandes</span>
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-road"></i> Isla sin asfalto</span>
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-umbrella-beach"></i> Playa de Las Conchas</span>
-      <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-water"></i> Parque Natural Chinijo</span>
-    </div>
-  </div>
-</div>
 
+<!-- FOTO HERO LA GRACIOSA -->
+<div class="isla-foto-hero" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;padding:0;overflow:hidden;height:420px;">
+ <img src="imagenes/lagraciosa-hero.jpg" loading="lazy"
+ alt="Playa de las Conchas y paisaje virgen de La Graciosa sin asfalto"
+ class="isla-foto-hero__img" width="1200" height="420">
+</div>
 
 <section class="empresas-seccion">
  <div class="container">
 
  <!-- EMPRESAS Y EXCURSIONES -->
+
+<div class="isla-rutas-section" style="max-width:1100px;margin:0 auto 60px;padding:0 28px;">
+  <div style="text-align:center;margin-bottom:24px;">
+    <span class="idx-label"><i class="fas fa-route"></i> Rutas en La Graciosa</span>
+    <h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:#e8eaf0;margin:12px 0 8px;">Las 15 rutas de La Graciosa</h2>
+    <p style="color:#8a8fa0;font-size:14px;">Todas las rutas verificadas con GPS en La Graciosa. Haz clic en cualquiera para ver el detalle, mapa y track.</p>
+  </div>
+  <ul class="isla-rutas-list">
+    <li><a href="rutas/ruta-sur-graciosa.html">Ruta Sur – Caleta de Sebo – Montaña Amarilla</a></li>
+    <li><a href="rutas/montana-amarilla-cima.html">Montaña Amarilla – Subida a la Cima</a></li>
+    <li><a href="rutas/ruta-norte-conchas-bermeja.html">Ruta Norte – Playa Las Conchas – Montaña Bermeja</a></li>
+    <li><a href="rutas/sebo-pedro-barba.html">Caleta de Sebo – Pedro Barba</a></li>
+    <li><a href="rutas/punta-del-pobre-graciosa.html">Ruta Este – Punta del Pobre</a></li>
+    <li><a href="rutas/barranco-conejos-graciosa.html">Caleta de Sebo – Barranco de los Conejos</a></li>
+    <li><a href="rutas/vuelta-integral-graciosa.html">Vuelta Integral a La Graciosa</a></li>
+    <li><a href="rutas/montana-bermeja-cima.html">Montaña Bermeja – Cima Norte</a></li>
+    <li><a href="rutas/snorkel-montana-amarilla.html">Snorkel – Charcos de Montaña Amarilla</a></li>
+    <li><a href="rutas/circular-norte-graciosa.html">Circular Norte – Sebo, Bermeja, Conchas, Pedro Barba</a></li>
+    <li><a href="rutas/playa-francesa-graciosa.html">Playa Francesa – Graciosa</a></li>
+    <li><a href="rutas/agujas-graciosa.html">Las Agujas Grandes – Norte Salvaje</a></li>
+    <li><a href="rutas/salinas-graciosa.html">Antiguas Salinas – Historia Salinera</a></li>
+    <li><a href="rutas/bufadero-graciosa.html">El Bufadero – Costa Este</a></li>
+    <li><a href="rutas/bici-graciosa.html">Vuelta en Bici a La Graciosa</a></li>
+  </ul>
+</div>
 <div class="isla-emps-section">
   <h2 class="isla-emps-titulo"><i class="fas fa-store"></i> Empresas y excursiones en La Graciosa</h2>
   <p class="isla-emps-sub">Guías locales, escuelas de deportes y excursiones verificadas. Reserva con cancelación gratuita.</p>
-  <div class="isla-emps-grid"><!-- DATOS VERIFICADOS, sin telefono --> <div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1da1f21a;color:#1da1f2;"><i class="fas fa-ship"></i></div><div><h3 class="isla-emp-card__nombre">Líneas Romero</h3><span class="isla-emp-card__tipo">Ferry · Excursiones</span></div></div><p class="isla-emp-card__desc">Naviera oficial que conecta Órzola (Lanzarote) con La Graciosa, con excursiones y salidas para conocer el Parque Natural del Archipiélago Chinijo.</p><div class="isla-emp-card__links"><a href="https://www.lineasromero.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a></div></div><div class="isla-emp-card"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#ff6f001a;color:#ff6f00;"><i class="fas fa-ticket-alt"></i></div><div><h3 class="isla-emp-card__nombre">Civitatis</h3><span class="isla-emp-card__tipo">Excursiones · Tours</span></div></div><p class="isla-emp-card__desc">Plataforma de reserva de excursiones y tours con cancelación gratuita, con oferta verificada para la isla.</p><div class="isla-emp-card__links"><a href="https://www.civitatis.com/es/lanzarote/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver ofertas</a></div></div><div class="isla-emp-card isla-emp-card--promo"><div class="isla-emp-card__head"><div class="isla-emp-card__ico" style="background:#1cff6b1a;color:#1cff6b;"><i class="fas fa-plus"></i></div><div><h3 class="isla-emp-card__nombre">¿Tienes una empresa aquí?</h3><span class="isla-emp-card__tipo">Aparece en esta lista</span></div></div><p class="isla-emp-card__desc">Si tu empresa de turismo activo opera en esta isla y quieres aparecer en esta página, ponte en contacto con nosotros.</p><div class="isla-emp-card__links"><a href="contacto.html" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-envelope"></i> Contactar</a></div></div></div>
+  <div class="isla-emps-grid">
+    <div class="isla-emp-card">
+      <div class="isla-emp-card__head">
+        <div class="isla-emp-card__ico" style="background:rgba(255,193,7,.1);color:#ffc107;">
+          <i class="fas fa-bicycle"></i>
+        </div>
+        <div>
+          <h3 class="isla-emp-card__nombre">Visit La Graciosa</h3>
+          <span class="isla-emp-card__tipo">Kayak · Senderismo · Bici</span>
+        </div>
+      </div>
+      <p class="isla-emp-card__desc">Alquiler de bicicletas, kayak y rutas guiadas por los paisajes volcánicos y playas vírgenes de La Graciosa.</p>
+      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 600 000 070</span>
+      <div class="isla-emp-card__links">
+        <a href="https://www.visitlagraciosa.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
+        <a href="https://www.civitatis.com/es/lanzarote/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
+      </div>
+    </div><div class="isla-emp-card">
+      <div class="isla-emp-card__head">
+        <div class="isla-emp-card__ico" style="background:rgba(29,161,242,.1);color:#1da1f2;">
+          <i class="fas fa-ship"></i>
+        </div>
+        <div>
+          <h3 class="isla-emp-card__nombre">Excursiones Lineas Romero</h3>
+          <span class="isla-emp-card__tipo">Ferry · Excursiones</span>
+        </div>
+      </div>
+      <p class="isla-emp-card__desc">Ferry desde Órzola y excursiones de un día a La Graciosa. La forma más fácil de llegar a la isla.</p>
+      <span class="isla-emp-card__tel"><i class="fas fa-phone"></i>+34 928 842 055</span>
+      <div class="isla-emp-card__links">
+        <a href="https://lineasromero.com" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
+        <a href="https://www.civitatis.com/es/lanzarote/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--civit"><i class="fas fa-ticket-alt"></i> Reservar</a>
+      </div>
+    </div><div class="isla-emp-card">
+      <div class="isla-emp-card__head">
+        <div class="isla-emp-card__ico" style="background:rgba(255,111,0,.1);color:#ff6f00;">
+          <i class="fas fa-ticket-alt"></i>
+        </div>
+        <div>
+          <h3 class="isla-emp-card__nombre">Civitatis La Graciosa</h3>
+          <span class="isla-emp-card__tipo">Excursiones · Tours</span>
+        </div>
+      </div>
+      <p class="isla-emp-card__desc">Excursiones de día completo a La Graciosa desde Lanzarote con snorkel y guía incluidos.</p>
+      
+      <div class="isla-emp-card__links">
+        <a href="https://www.civitatis.com/es/lanzarote/" target="_blank" rel="noopener" class="isla-emp-card__btn isla-emp-card__btn--web"><i class="fas fa-external-link-alt"></i> Ver web</a>
+        
+      </div>
+    </div>
+  </div>
 </div>
 <div class="isla-zonas"><div class="isla-zona fade-in"><h3> Playa de Las Conchas</h3><p>La playa más espectacular de La Graciosa y una de las más bonitas de España. Arena dorada, agua turquesa y vistas a la isla de Montaña Clara. Solo accesible a pie o en bici desde Caleta de Sebo.</p></div>
 <div class="isla-zona fade-in"><h3> Montaña Amarilla</h3><p>Formación volcánica de color amarillo único por sus minerales. Detrás hay lagunas naturales de snorkel con agua turquesa y fondo volcánico negro. El contraste es de postal.</p></div>
@@ -830,7 +882,12 @@ a:hover { color:#00e05a; }
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
@@ -864,118 +921,10 @@ a:hover { color:#00e05a; }
  <div class="cookie-banner__actions">
  <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
  <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
  <a href="politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
  </div>
  </div>
-
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
- </div>
 </div>
-<script>
-/* === BANNER DE COOKIES === */
-(function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
-
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
-
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
- banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
- } else {
- banner.style.display = 'block';
- }
-
- var panel = document.getElementById('cookie-panel');
-
- var btnAccept = document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
- banner.style.display = 'none';
- });
- }
-
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- window.loadGoogleTranslate = loadGoogleTranslate;
-})();
-</script>
-
 
 
 <!-- Script banner de cookies -->
@@ -1179,9 +1128,170 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-<script src="script.js" defer></script>
+
 
 <!-- Google Translate -->
+
+
+<script>
+(function () {
+ function changeLanguage(lang) {
+ // 1) Intentar usar el widget ya cargado
+ var combo = document.querySelector('select.goog-te-combo');
+ if (combo) {
+ combo.value = lang;
+ combo.dispatchEvent(new Event('change'));
+ return;
+ }
+
+ // 2) Guardar la cookie de idioma (funciona aunque el widget no esté cargado)
+ try {
+ var v = '/es/' + lang;
+ document.cookie = 'googtrans=' + v + ';path=/;';
+ if (location.hostname) {
+ document.cookie = 'googtrans=' + v + ';path=/;domain=.' + location.hostname + ';';
+ }
+ } catch(e) {}
+
+ // 3) Si Google Translate no está cargado, cargarlo ahora sin esperar cookies
+ if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ window._pendingLang = lang;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ // Cuando cargue, aplicar el idioma
+ var orig = window.googleTranslateElementInit;
+ window.googleTranslateElementInit = function() {
+ if (orig) orig();
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c && window._pendingLang) {
+ c.value = window._pendingLang;
+ c.dispatchEvent(new Event('change'));
+ window._pendingLang = null;
+ }
+ }, 800);
+ };
+ } else {
+ // Widget ya cargado pero combo no encontrado aún, reintentar
+ setTimeout(function() {
+ var c = document.querySelector('select.goog-te-combo');
+ if (c) { c.value = lang; c.dispatchEvent(new Event('change')); }
+ else { location.reload(); }
+ }, 500);
+ }
+ }
+ document.querySelectorAll('a[data-lang]').forEach(function(a) {
+ a.addEventListener('click', function(e) { e.preventDefault(); changeLanguage(this.dataset.lang); });
+ });
+ /* Dropdowns acciones con delay */
+ var actionTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-actions__drop:not(#drop-buscar)').forEach(function(drop) {
+ var btn = drop.querySelector('[aria-haspopup]');
+ var panel = drop.querySelector('.nav-actions__panel');
+ if (!btn || !panel) return;
+
+ drop.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(actionTimers.get(drop));
+ open(drop, btn);
+ });
+
+ drop.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() { close(drop, btn); }, 200);
+ actionTimers.set(drop, t);
+ });
+
+ btn.addEventListener('click', function(e) {
+ e.stopPropagation();
+ var isOpen = drop.classList.contains('open');
+ closeAll();
+ if (!isOpen) open(drop, btn);
+ });
+ });
+ function open(drop, btn) { drop.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+ function close(drop, btn) { drop.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+ function closeAll() {
+ document.querySelectorAll('.nav-actions__drop.open').forEach(function(d) {
+ close(d, d.querySelector('[aria-haspopup]'));
+ });
+ }
+ document.addEventListener('click', function() { closeAll(); });
+ /* Submenús desktop con delay para no cerrarse al bajar el ratón */
+ var hoverTimers = new WeakMap();
+
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(li) {
+ var link = li.querySelector('.nav-main__link');
+ if (!link) return;
+
+ // Desktop: hover con delay de cierre
+ li.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ li.classList.add('open');
+ });
+
+ li.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 200); // 200ms de gracia para mover el ratón al submenú
+ hoverTimers.set(li, t);
+ });
+
+ // Submenú también mantiene el menú abierto si el ratón entra en él
+ var sub = li.querySelector('.nav-main__submenu');
+ if (sub) {
+ sub.addEventListener('mouseenter', function() {
+ if (window.innerWidth <= 900) return;
+ clearTimeout(hoverTimers.get(li));
+ });
+ sub.addEventListener('mouseleave', function() {
+ if (window.innerWidth <= 900) return;
+ var t = setTimeout(function() {
+ li.classList.remove('open');
+ }, 150);
+ hoverTimers.set(li, t);
+ });
+ }
+
+ // Móvil: tap para abrir/cerrar
+ link.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ e.preventDefault();
+ var was = li.classList.contains('open');
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ if (!was) li.classList.add('open');
+ });
+ });
+ var burger = document.querySelector('.nav-burger');
+ var navMain = document.querySelector('.nav-main');
+ if (burger && navMain) {
+ burger.addEventListener('click', function() {
+ var isOpen = burger.classList.toggle('open');
+ burger.setAttribute('aria-expanded', isOpen);
+ navMain.classList.toggle('open', isOpen);
+ });
+ }
+ window.addEventListener('resize', function() {
+ if (window.innerWidth > 900) {
+ if (navMain) navMain.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ document.querySelectorAll('.nav-main__item--drop').forEach(function(x){ x.classList.remove('open'); });
+ }
+ });
+ document.addEventListener('click', function(e) {
+ if (window.innerWidth > 900) return;
+ if (!e.target.closest('.site-header') && navMain) {
+ navMain.classList.remove('open');
+ if (burger) { burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+ }
+ });
+})();
+</script>
 </body>
 </html>
 

@@ -40,13 +40,7 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  if(document.body){
-    obs.observe(document.body, {childList:true, subtree:true});
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      obs.observe(document.body, {childList:true, subtree:true});
-    });
-  }
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
 <script>
@@ -324,10 +318,6 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -417,25 +407,26 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 
   </div><!-- /site-header__inner -->
 </header>
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div style="position:relative;width:100%;height:480px;overflow:hidden;margin-top:72px;">
-  <img src="imagenes/senderismo-extremo-hero.jpg" alt="Senderismo extremo en Canarias" loading="eager"
-       onerror="this.parentElement.style.display='none'"
-       style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);">
-  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
-  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-    <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-skull"></i> Rutas extremas</span>
-    <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">Senderismo <em style="color:#1cff6b;font-style:normal;">extremo</em><br>en Canarias</h1>
-    <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Las rutas mas exigentes del archipielago. Solo para senderistas experimentados con buena condicion fisica, equipamiento tecnico y experiencia en montana.</p>
-    <div class="send-hero__stats" style="margin-bottom:0;">
-      <div class="send-stat"><span class="send-stat__num">38</span><span class="send-stat__lbl">Rutas dificiles</span></div>
-      <div class="send-stat"><span class="send-stat__num">3</span><span class="send-stat__lbl">Extremas</span></div>
-      <div class="send-stat"><span class="send-stat__num">9</span><span class="send-stat__lbl">Islas</span></div>
-    </div>
-  </div>
+<!-- FOTO HERO -->
+<div style="position:relative;width:100%;height:420px;overflow:hidden;margin-top:72px;">
+  <img src="imagenes/senderismo-extremo-hero.jpg" alt="Senderismo extremo en Canarias" loading="lazy"
+       onerror="this.style.display='none'"
+       style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.4) 0%,transparent 40%,transparent 60%,#02070f 100%);pointer-events:none;"></div>
 </div>
 <main id="cp">
 
+<!-- HERO -->
+<div class="send-hero">
+ <span class="send-hero__label"><i class="fas fa-skull"></i> Rutas extremas</span>
+ <h1 class="send-hero__h1">Senderismo <em>extremo</em><br>en Canarias</h1>
+ <p class="send-hero__desc">Las rutas mas exigentes del archipielago. Solo para senderistas experimentados con buena condicion fisica, equipamiento tecnico y experiencia en montana.</p>
+ <div class="send-hero__stats">
+ <div class="send-stat"><span class="send-stat__num">38</span><span class="send-stat__lbl">Rutas dificiles</span></div>
+ <div class="send-stat"><span class="send-stat__num">3</span><span class="send-stat__lbl">Extremas</span></div>
+ <div class="send-stat"><span class="send-stat__num">9</span><span class="send-stat__lbl">Islas</span></div>
+ </div>
+</div>
 
 <!-- AVISO -->
 <div class="send-aviso">
@@ -448,7 +439,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 <!-- RUTAS -->
 <div class="send-section">
  <h2 class="send-titulo"><i class="fas fa-compass"></i> Rutas dificiles y extremas</h2>
- <p class="send-sub">Filtradas de las 219 rutas verificadas — solo dificultad Dificil y Extrema</p>
+ <p class="send-sub">Filtradas de las 236 rutas verificadas — solo dificultad Dificil y Extrema</p>
  <div class="send-grid">
  <a href="rutas/teide-montana-blanca.html" class="send-card">
  <div class="send-card__head">
@@ -678,7 +669,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 <div class="send-section" style="padding-top:0;">
  <div class="send-cta">
  <h2>Busca menos extremo?</h2>
- <p>Tenemos 219 rutas para todos los niveles. Encuentra la perfecta para ti en el buscador.</p>
+ <p>Tenemos 236 rutas para todos los niveles. Encuentra la perfecta para ti en el buscador.</p>
  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
  <a href="buscador-aventuras.html" class="send-btn send-btn--s"><i class="fas fa-compass"></i> Buscador de rutas</a>
  <a href="ruleta.html" class="send-btn send-btn--p"><i class="fas fa-compass" style="animation:spin 2s linear infinite;display:inline-block;"></i> Ruta aleatoria</a>
@@ -720,7 +711,12 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
@@ -753,118 +749,10 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
  <div class="cookie-banner__actions">
  <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
  <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
  <a href="politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
  </div>
  </div>
-
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
- </div>
 </div>
-<script>
-/* === BANNER DE COOKIES === */
-(function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
-
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
-
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
- banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
- } else {
- banner.style.display = 'block';
- }
-
- var panel = document.getElementById('cookie-panel');
-
- var btnAccept = document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
- banner.style.display = 'none';
- });
- }
-
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- window.loadGoogleTranslate = loadGoogleTranslate;
-})();
-</script>
-
 
 
 <!-- Script banner de cookies -->

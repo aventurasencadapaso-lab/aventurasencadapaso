@@ -57,13 +57,7 @@ if('serviceWorker' in navigator){
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  if(document.body){
-    obs.observe(document.body, {childList:true, subtree:true});
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      obs.observe(document.body, {childList:true, subtree:true});
-    });
-  }
+  obs.observe(document.body, {childList:true, subtree:true});
 })();
 </script>
 <style id="hide-google-bar">
@@ -227,13 +221,13 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .isla-bar{height:100%;background:linear-gradient(90deg,#1cff6b,#00e05a);border-radius:3px;transition:width .6s ease;}
 
  /* Desglose por categoría */
- .isla-cats{padding:0 20px 14px;display:flex;flex-direction:column;gap:5px;}
- .isla-cat{display:flex;align-items:center;gap:8px;}
- .isla-cat__ico{width:14px;text-align:center;font-size:10px;color:#5a6070;flex-shrink:0;}
- .isla-cat__nom{font-size:11px;color:#8a8fa0!important;flex:1;min-width:0;}
- .isla-cat__bar-wrap{width:80px;height:4px;background:rgba(28,255,107,.08);border-radius:2px;overflow:hidden;flex-shrink:0;}
+ .isla-cats{padding:0 20px 14px;display:flex;flex-direction:column;gap:8px;}
+ .isla-cat{display:grid;grid-template-columns:32px minmax(0,1fr) 70px 20px;align-items:center;gap:8px;}
+ .isla-cat__ico{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1cff6b;flex-shrink:0;background:rgba(28,255,107,.06);border-radius:8px;}
+ .isla-cat__nom{font-size:11px;color:#8a8fa0!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+ .isla-cat__bar-wrap{width:100%;height:4px;background:rgba(28,255,107,.08);border-radius:2px;overflow:hidden;}
  .isla-cat__bar{height:100%;border-radius:2px;transition:width .5s ease;}
- .isla-cat__val{font-family:Orbitron,sans-serif;font-size:9px;color:#5a6070;width:18px;text-align:right;flex-shrink:0;}
+ .isla-cat__val{font-family:Orbitron,sans-serif;font-size:9px;color:#5a6070;text-align:right;}
 
  /* Descripción y puntos */
  .isla-desc{padding:0 20px 14px;color:#8a8fa0!important;font-size:12px;line-height:1.65;}
@@ -349,10 +343,6 @@ body { overflow-x: hidden !important; }
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -443,21 +433,18 @@ body { overflow-x: hidden !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<!-- FOTO HERO CON TITULO SUPERPUESTO -->
-<div class="pag-foto-wrap__overlay-done" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;height:440px;overflow:hidden;margin-top:72px;">
- <img src="imagenes/comparador-hero.jpg" alt="Islas Canarias desde el aire" loading="eager"
- style="width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.5);"
+<div class="pag-foto-wrap">
+ <img src="imagenes/comparador-hero.jpg" alt="Islas Canarias desde el aire" loading="lazy"
  onerror="this.parentElement.style.display='none'">
- <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(2,7,15,.35) 0%,transparent 35%,transparent 60%,#02070f 100%);"></div>
- <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;">
-  <span style="font-family:Orbitron,sans-serif;font-size:10px;color:#1cff6b;letter-spacing:4px;text-transform:uppercase;background:rgba(28,255,107,.1);border:1px solid rgba(28,255,107,.25);border-radius:20px;padding:6px 16px;margin-bottom:20px;display:inline-block;"><i class="fas fa-balance-scale"></i> Comparador de Islas</span>
-  <h1 style="font-family:Orbitron,sans-serif;font-size:clamp(1.3rem,4.2vw,2.2rem);color:#fff;font-weight:900;letter-spacing:1px;margin:0 0 16px;line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.85);max-width:760px;">¿Qué isla de Canarias es la tuya?</h1>
-  <p style="color:rgba(255,255,255,.85);font-size:14px;line-height:1.75;max-width:600px;margin:0 0 20px;text-shadow:0 1px 10px rgba(0,0,0,.9);">Responde estas 6 preguntas y te decimos exactamente qué isla encaja con tu perfil de aventurero.</p>
-  
- </div>
 </div>
+
 <main id="cp">
 
+ <div class="cmp-hero">
+ <span class="cmp-hero__label"><i class="fas fa-balance-scale"></i> Comparador de Islas</span>
+ <h1 class="cmp-hero__h1">¿Qué isla de Canarias es la tuya?</h1>
+ <p class="cmp-hero__desc">Responde estas 6 preguntas y te decimos exactamente qué isla encaja con tu perfil de aventurero.</p>
+ </div>
 
  <div class="cmp-wrap">
 
@@ -478,8 +465,6 @@ body { overflow-x: hidden !important; }
  <div class="cmp-opcion" data-val="naturaleza"><i class="fas fa-leaf"></i> Naturaleza / Fotografía</div>
  </div>
  </div>
-</div>
-
 
  <!-- P2: Nivel -->
  <div class="cmp-pregunta">
@@ -593,7 +578,12 @@ body { overflow-x: hidden !important; }
  <a href="recomendado.html">Recomendado</a>
  <a href="quienes.html">Nuestro Fin</a>
  </div>
- 
+ <div class="footer-col">
+ <h3>Legal</h3>
+ <a href="aviso-legal.html">Aviso Legal</a>
+ <a href="politica-privacidad.html">Privacidad</a>
+ <a href="politica-cookies.html">Cookies</a>
+ </div>
  </div>
  <div class="footer-legal">
  <a href="politica-privacidad.html">Privacidad</a>
@@ -618,9 +608,9 @@ var ISLAS = [{"id": "tenerife", "nombre": "Tenerife", "sub": "La isla del Teide"
 var CATS = [
  {key:'senderismo', ico:'fa-hiking', nom:'Senderismo'},
  {key:'trail', ico:'fa-running', nom:'Trail Running'},
- {key:'escalada', ico:'fa-mountain', nom:'Escalada'},
- {key:'barranquismo',ico:'fa-water', nom:'Barranquismo'},
- {key:'surf', ico:'fa-wave-square', nom:'Surf'},
+ {key:'escalada', ico:'fa-hand-fist', nom:'Escalada'},
+ {key:'barranquismo',ico:'fa-helmet-safety', nom:'Barranquismo'},
+ {key:'surf', ico:'fa-water', nom:'Surf'},
  {key:'kitesurf', ico:'fa-wind', nom:'Kitesurf'},
  {key:'kayak', ico:'fa-ship', nom:'Kayak'},
  {key:'buceo', ico:'fa-fish', nom:'Buceo'},

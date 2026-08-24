@@ -50,24 +50,24 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
   <link rel="stylesheet" href="../style.min.css">
   <style>
     /* ── Blog index ── */
-    .blog-hero{padding:120px 28px 50px;text-align:center;max-width:1100px;margin:0 auto;}
+    .blog-hero{padding:120px 28px 50px;text-align:center;max-width:800px;margin:0 auto;}
     .blog-hero h1{font-family:Orbitron,sans-serif;color:#1cff6b;font-size:clamp(1rem,3vw,1.6rem);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;}
     .blog-hero p{color:#8a8fa0;font-size:14px;line-height:1.7;}
 
-    .blog-filtros{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:1100px;margin:0 auto 40px;padding:0 28px;}
+    .blog-filtros{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:900px;margin:0 auto 40px;padding:0 28px;}
     .blog-filtro{padding:8px 18px;background:rgba(28,255,107,0.05);border:1px solid rgba(28,255,107,0.15);border-radius:20px;color:#8a8fa0;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s;}
     .blog-filtro:hover{border-color:rgba(28,255,107,0.4);color:#c8ccd8;}
     .blog-filtro.activo{background:rgba(28,255,107,0.12);border-color:#1cff6b;color:#1cff6b;}
 
-    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;max-width:1100px;margin:0 auto;padding:0 28px 60px;}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;max-width:1200px;margin:0 auto;padding:0 28px 60px;}
 
-    .blog-card{background:#0c1624;border:1px solid rgba(28,255,107,0.12);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;text-decoration:none;cursor:pointer;}
+    .blog-card{background:#0c1624;border:1px solid rgba(28,255,107,0.12);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;}
     .blog-card:hover{border-color:#1cff6b;transform:translateY(-4px);}
     .blog-card.oculta{display:none!important;}
 
     .blog-card__img-wrap{display:block;overflow:hidden;aspect-ratio:16/8;}
     .blog-card__img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
-    .blog-card:hover .blog-card__img{transform:scale(1.04);}
+    .blog-card__img-wrap:hover .blog-card__img{transform:scale(1.04);}
     .blog-card__img-placeholder{width:100%;aspect-ratio:16/8;background:linear-gradient(135deg,#08111d,#0c1a2e);display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(28,255,107,0.15);}
 
     .blog-card__body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1;}
@@ -77,12 +77,12 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
     .blog-card__fecha i,.blog-card__lectura i{color:#1cff6b;font-size:10px;}
 
     .blog-card__titulo{margin:0;}
-    .blog-card__titulo{font-family:Orbitron,sans-serif;font-size:13px;font-weight:700;color:#e8eaf0;text-decoration:none;line-height:1.4;transition:.2s;}
-    .blog-card:hover .blog-card__titulo{color:#1cff6b;}
+    .blog-card__titulo a{font-family:Orbitron,sans-serif;font-size:13px;font-weight:700;color:#e8eaf0;text-decoration:none;line-height:1.4;transition:.2s;}
+    .blog-card__titulo a:hover{color:#1cff6b;}
 
     .blog-card__desc{color:#8a8fa0;font-size:13px;line-height:1.65;margin:0;flex:1;}
     .blog-card__leer{display:inline-flex;align-items:center;gap:6px;color:#1cff6b;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;margin-top:4px;transition:.2s;}
-    .blog-card:hover .blog-card__leer{gap:10px;}
+    .blog-card__leer:hover{gap:10px;}
 
     .blog-vacio{display:none;text-align:center;padding:60px 20px;grid-column:1/-1;}
     .blog-vacio i{font-size:3rem;color:rgba(28,255,107,.15);display:block;margin-bottom:16px;}
@@ -119,11 +119,10 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
   position:relative;
 }
 .blog-card__img{
-  width:100%;height:180px;
+  width:100%;height:100%;
   object-fit:cover;
   transition:transform .3s;
   filter:brightness(.8);
-  display:block;
 }
 .blog-card:hover .blog-card__img{transform:scale(1.05);}
 
@@ -157,11 +156,11 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
   color:#e8eaf0!important;
   line-height:1.4;margin:0;
 }
-.blog-card__titulo{
+.blog-card__titulo a{
   color:#e8eaf0!important;
   text-decoration:none!important;
 }
-.blog-card:hover .blog-card__titulo{color:#1cff6b!important;}
+.blog-card__titulo a:hover{color:#1cff6b!important;}
 .blog-card__desc{
   color:#8a8fa0;font-size:12px;
   line-height:1.65;margin:0;flex:1;
@@ -178,7 +177,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
   display:flex;align-items:center;gap:6px;
   letter-spacing:1px;
 }
-.blog-card:hover .blog-card__leer{color:#00e05a!important;}
+.blog-card__leer:hover{color:#00e05a!important;}
 .blog-card__tiempo{font-size:11px;color:#5a6070;}
 
 /* Artículos relacionados */
@@ -419,10 +418,6 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           <a href="../quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
-        <li class="nav-main__item">
-          <a href="../islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><span><i class="fas fa-leaf" style="margin-right:6px;"></i>Islas Sostenibles</span></a>
-        </li>
-
         <li class="nav-main__item nav-main__item--drop">
           <a href="../contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -515,91 +510,47 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 <script>
 /* === BANNER DE COOKIES === */
 (function () {
- var KEY = 'cookie_consent';
- var banner = document.getElementById('cookie-banner');
- if (!banner) return;
+  var KEY = 'cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
 
- function leerPrefs(){
- try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
- }
- function guardarPrefs(p){
- localStorage.setItem(KEY, JSON.stringify(p));
- }
- function aplicarPrefs(p){
- if (p.funcionales) loadGoogleTranslate();
- if (p.analiticas) loadGoogleAnalytics();
- }
+  // Si ya hay consentimiento guardado, ocultar
+  if (localStorage.getItem(KEY)) {
+    banner.style.display = 'none';
+    if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
+    return;
+  }
 
- var prefsGuardadas = leerPrefs();
- if (prefsGuardadas) {
- banner.style.display = 'none';
- aplicarPrefs(prefsGuardadas);
- } else {
- banner.style.display = 'block';
- }
+  // Mostrar banner
+  banner.style.display = 'block';
 
- var panel = document.getElementById('cookie-panel');
+  // Aceptar
+  var btnAccept = document.getElementById('cookie-accept') ||
+                  document.getElementById('cookie-accept-all');
+  if (btnAccept) {
+    btnAccept.addEventListener('click', function () {
+      localStorage.setItem(KEY, 'accepted');
+      banner.style.display = 'none';
+      loadGoogleTranslate();
+    });
+  }
 
- var btnAccept = document.getElementById('cookie-accept-all');
- if (btnAccept) {
- btnAccept.addEventListener('click', function () {
- var p = {funcionales:true, analiticas:true};
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
+  // Rechazar
+  var btnReject = document.getElementById('cookie-reject');
+  if (btnReject) {
+    btnReject.addEventListener('click', function () {
+      localStorage.setItem(KEY, 'rejected');
+      banner.style.display = 'none';
+    });
+  }
 
- var btnReject = document.getElementById('cookie-reject');
- if (btnReject) {
- btnReject.addEventListener('click', function () {
- var p = {funcionales:false, analiticas:false};
- guardarPrefs(p);
- banner.style.display = 'none';
- });
- }
-
- var btnConfig = document.getElementById('cookie-config');
- if (btnConfig && panel) {
- btnConfig.addEventListener('click', function () {
- panel.hidden = !panel.hidden;
- });
- }
-
- var btnSave = document.getElementById('cookie-save-prefs');
- if (btnSave) {
- btnSave.addEventListener('click', function () {
- var chkFunc = document.getElementById('cat-funcionales');
- var chkAnalit = document.getElementById('cat-analiticas');
- var p = {
- funcionales: chkFunc ? chkFunc.checked : false,
- analiticas: chkAnalit ? chkAnalit.checked : false
- };
- guardarPrefs(p);
- banner.style.display = 'none';
- aplicarPrefs(p);
- });
- }
-
- function loadGoogleTranslate() {
- if (window.googleTranslateLoaded) return;
- window.googleTranslateLoaded = true;
- var s = document.createElement('script');
- s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
- document.head.appendChild(s);
- }
-
- function loadGoogleAnalytics() {
- if (window.googleAnalyticsLoaded) return;
- window.googleAnalyticsLoaded = true;
- var s = document.createElement('script');
- s.async = true;
- s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
- document.head.appendChild(s);
- if (window.gtag) window.gtag('config', window.GA_ID, {anonymize_ip:true});
- }
-
- window.loadGoogleTranslate = loadGoogleTranslate;
+  function loadGoogleTranslate() {
+    if (window.googleTranslateLoaded) return;
+    window.googleTranslateLoaded = true;
+    var s = document.createElement('script');
+    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.head.appendChild(s);
+  }
 })();
 </script>
 <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
@@ -615,26 +566,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     <div class="cookie-banner__actions">
       <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
       <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
- <button id="cookie-config" class="cookie-btn cookie-btn--config">Configurar</button>
       <a href="../politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
     </div>
   </div>
-
- <div class="cookie-banner__panel" id="cookie-panel" hidden>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Necesarias</span><input type="checkbox" checked disabled></div>
- <p>Imprescindibles para el funcionamiento del sitio. Siempre activas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Funcionales (Google Translate)</span><input type="checkbox" id="cat-funcionales" checked></div>
- <p>Permiten traducir la web a otros idiomas.</p>
- </div>
- <div class="cookie-cat">
- <div class="cookie-cat__head"><span>Analíticas (Google Analytics)</span><input type="checkbox" id="cat-analiticas" checked></div>
- <p>Nos ayudan a entender cómo se usa la web, de forma anonimizada.</p>
- </div>
- <button id="cookie-save-prefs" class="cookie-btn cookie-btn--accept">Guardar preferencias</button>
- </div>
 </div>
 <main id="cp">
 
@@ -647,200 +581,199 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
   <div class="blog-grid" id="blog-grid">
     
-    <a class="blog-card fade-in" href="10-mejores-rutas-senderismo-tenerife.html">
-      <img src="../imagenes/tenerife-hero.jpg" alt="Las 10 Mejores Rutas de Senderismo en Tenerife para 2026" class="blog-card__img" loading="lazy" width="400" height="220">
+    <article class="blog-card fade-in">
+      <a href="10-mejores-rutas-senderismo-tenerife.html" class="blog-card__img-wrap"><img src="../imagenes/tenerife-hero.jpg" alt="Las 10 Mejores Rutas de Senderismo en Tenerife para 2026" class="blog-card__img" loading="lazy" width="400" height="220"></a>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__cat" style="background:#1cff6b22;color:#1cff6b;border:1px solid #1cff6b44">Senderismo</span>
           <span class="blog-card__fecha"><i class="fas fa-calendar"></i> 15 junio 2026</span>
           <span class="blog-card__lectura"><i class="fas fa-clock"></i> 8 min</span>
         </div>
-        <h2 class="blog-card__titulo">Las 10 Mejores Rutas de Senderismo en Tenerife para 2026</h2>
+        <h2 class="blog-card__titulo"><a href="10-mejores-rutas-senderismo-tenerife.html">Las 10 Mejores Rutas de Senderismo en Tenerife para 2026</a></h2>
         <p class="blog-card__desc">Desde la subida al Teide hasta los barrancos de Anaga: selección de las rutas más espectaculares de Tenerife para todos los niveles.</p>
-        <span class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></span>
-</div>
-    </a>
-    <a class="blog-card fade-in" href="guia-completa-teide.html">
-      <img src="../imagenes/blog/guia-teide.jpg" alt="Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber" class="blog-card__img" loading="lazy" width="400" height="220">
+        <a href="10-mejores-rutas-senderismo-tenerife.html" class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <article class="blog-card fade-in">
+      <a href="guia-completa-teide.html" class="blog-card__img-wrap"><img src="../imagenes/blog/guia-teide.jpg" alt="Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber" class="blog-card__img" loading="lazy" width="400" height="220"></a>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__cat" style="background:#ffc10722;color:#ffc107;border:1px solid #ffc10744">Guías</span>
           <span class="blog-card__fecha"><i class="fas fa-calendar"></i> 20 junio 2026</span>
           <span class="blog-card__lectura"><i class="fas fa-clock"></i> 10 min</span>
         </div>
-        <h2 class="blog-card__titulo">Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber</h2>
+        <h2 class="blog-card__titulo"><a href="guia-completa-teide.html">Guía Completa para Subir al Teide en 2026: Todo lo que Necesitas Saber</a></h2>
         <p class="blog-card__desc">Todo sobre la subida al Teide: permisos, rutas, época del año, qué llevar y los errores más comunes que cometen los turistas.</p>
-        <span class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></span>
-</div>
-    </a>
-    <a class="blog-card fade-in" href="que-llevar-mochila-senderismo-canarias.html">
-      <img src="../imagenes/senderismo-extremo-hero.jpg" alt="Qué Llevar en la Mochila para Hacer Senderismo en Canarias" class="blog-card__img" loading="lazy" width="400" height="220">
+        <a href="guia-completa-teide.html" class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <article class="blog-card fade-in">
+      <a href="que-llevar-mochila-senderismo-canarias.html" class="blog-card__img-wrap"><img src="../imagenes/senderismo-extremo-hero.jpg" alt="Qué Llevar en la Mochila para Hacer Senderismo en Canarias" class="blog-card__img" loading="lazy" width="400" height="220"></a>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__cat" style="background:#ff6f0022;color:#ff6f00;border:1px solid #ff6f0044">Equipamiento</span>
           <span class="blog-card__fecha"><i class="fas fa-calendar"></i> 25 junio 2026</span>
           <span class="blog-card__lectura"><i class="fas fa-clock"></i> 6 min</span>
         </div>
-        <h2 class="blog-card__titulo">Qué Llevar en la Mochila para Hacer Senderismo en Canarias</h2>
+        <h2 class="blog-card__titulo"><a href="que-llevar-mochila-senderismo-canarias.html">Qué Llevar en la Mochila para Hacer Senderismo en Canarias</a></h2>
         <p class="blog-card__desc">Lista completa de equipamiento para senderismo en Canarias: ropa, calzado, tecnología y extras que marcan la diferencia en las rutas canarias.</p>
-        <span class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></span>
-</div>
-    </a>
-    <a class="blog-card fade-in" href="mejor-isla-canarias-senderismo.html">
-      <img src="../imagenes/recomendado-hero.jpg" alt="¿Cuál es la Mejor Isla de Canarias para Hacer Senderismo? Comparativa 2026" class="blog-card__img" loading="lazy" width="400" height="220">
+        <a href="que-llevar-mochila-senderismo-canarias.html" class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <article class="blog-card fade-in">
+      <a href="mejor-isla-canarias-senderismo.html" class="blog-card__img-wrap"><img src="../imagenes/recomendado-hero.jpg" alt="¿Cuál es la Mejor Isla de Canarias para Hacer Senderismo? Comparativa 2026" class="blog-card__img" loading="lazy" width="400" height="220"></a>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__cat" style="background:#a855f722;color:#a855f7;border:1px solid #a855f744">Comparativas</span>
           <span class="blog-card__fecha"><i class="fas fa-calendar"></i> 28 junio 2026</span>
           <span class="blog-card__lectura"><i class="fas fa-clock"></i> 7 min</span>
         </div>
-        <h2 class="blog-card__titulo">¿Cuál es la Mejor Isla de Canarias para Hacer Senderismo? Comparativa 2026</h2>
+        <h2 class="blog-card__titulo"><a href="mejor-isla-canarias-senderismo.html">¿Cuál es la Mejor Isla de Canarias para Hacer Senderismo? Comparativa 2026</a></h2>
         <p class="blog-card__desc">Comparamos las 9 islas canarias para el senderismo: dificultad, paisajes, red de senderos y experiencia general. Te ayudamos a elegir.</p>
-        <span class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></span>
-</div>
-    </a>
-    <a class="blog-card fade-in" href="kayak-canarias-guia-2026.html">
-      <img src="../imagenes/portada-mar.jpg" alt="Guía de Kayak en Canarias 2026: Los Mejores Spots por Isla" class="blog-card__img" loading="lazy" width="400" height="220">
+        <a href="mejor-isla-canarias-senderismo.html" class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+    <article class="blog-card fade-in">
+      <a href="kayak-canarias-guia-2026.html" class="blog-card__img-wrap"><img src="../imagenes/portada-mar.jpg" alt="Guía de Kayak en Canarias 2026: Los Mejores Spots por Isla" class="blog-card__img" loading="lazy" width="400" height="220"></a>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__cat" style="background:#1da1f222;color:#1da1f2;border:1px solid #1da1f244">Deportes acuáticos</span>
           <span class="blog-card__fecha"><i class="fas fa-calendar"></i> 1 julio 2026</span>
           <span class="blog-card__lectura"><i class="fas fa-clock"></i> 6 min</span>
         </div>
-        <h2 class="blog-card__titulo">Guía de Kayak en Canarias 2026: Los Mejores Spots por Isla</h2>
+        <h2 class="blog-card__titulo"><a href="kayak-canarias-guia-2026.html">Guía de Kayak en Canarias 2026: Los Mejores Spots por Isla</a></h2>
         <p class="blog-card__desc">Los mejores spots de kayak en Canarias: calas de Papagayo, costa sur de La Gomera, La Graciosa y más. Con consejos para principiantes y avanzados.</p>
-        <span class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></span>
-</div>
-    </a>
+        <a href="kayak-canarias-guia-2026.html" class="blog-card__leer">Leer artículo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
     <div class="blog-vacio" id="blog-vacio">
       <i class="fas fa-newspaper"></i>
       <p>Sin artículos en esta categoría</p>
     </div>
-  
+  </div>
 
 
-
-      <a class="blog-card" href="ciclismo-mtb-canarias-mejores-rutas.html">
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#ff980020,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-bicycle" style="font-size:3rem;color:#ff9800;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(255,152,0,.1);color:#ff9800;border:1px solid rgba(255,152,0,.3);">Ciclismo</span>
-          <h2 class="blog-card__titulo">Ciclismo MTB en Canarias: Las 8 Mejores Rutas para Bicicleta de Montaña</h2>
+          <h2 class="blog-card__titulo"><a href="ciclismo-mtb-canarias-mejores-rutas.html">Ciclismo MTB en Canarias: Las 8 Mejores Rutas para Bicicleta de Montaña</a></h2>
           <p class="blog-card__desc">Lanzarote, Gran Canaria, Tenerife y Fuerteventura. Las mejores rutas MTB para todos los niveles en el archipiélago.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 10 Jun 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="kitesurf-windsurf-canarias-guia.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#1da1f220,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-wind" style="font-size:3rem;color:#1da1f2;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(29,161,242,.1);color:#1da1f2;border:1px solid rgba(29,161,242,.3);">Kitesurf</span>
-          <h2 class="blog-card__titulo">Kitesurf y Windsurf en Canarias: La Guía Definitiva para 2026</h2>
+          <h2 class="blog-card__titulo"><a href="kitesurf-windsurf-canarias-guia.html">Kitesurf y Windsurf en Canarias: La Guía Definitiva para 2026</a></h2>
           <p class="blog-card__desc">Sotavento, El Médano y Famara. Los mejores spots del archipiélago y cómo empezar desde cero.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 28 Jun 2026</span><span><i class="fas fa-clock"></i> 6 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="la-graciosa-guia-completa.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#ffc10720,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-umbrella-beach" style="font-size:3rem;color:#ffc107;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(255,193,7,.1);color:#ffc107;border:1px solid rgba(255,193,7,.3);">Guías de Islas</span>
-          <h2 class="blog-card__titulo">La Graciosa: La Guía Definitiva de la Isla Sin Asfalto</h2>
+          <h2 class="blog-card__titulo"><a href="la-graciosa-guia-completa.html">La Graciosa: La Guía Definitiva de la Isla Sin Asfalto</a></h2>
           <p class="blog-card__desc">Cómo llegar, qué hacer, Las Conchas y Montaña Amarilla. La isla más pequeña y más auténtica de Canarias.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 2 Jul 2026</span><span><i class="fas fa-clock"></i> 6 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="senderismo-invernal-canarias.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#1cff6b20,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-snowflake" style="font-size:3rem;color:#1cff6b;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.3);">Senderismo</span>
-          <h2 class="blog-card__titulo">Senderismo en Invierno en Canarias: Las Mejores Rutas de Octubre a Marzo</h2>
+          <h2 class="blog-card__titulo"><a href="senderismo-invernal-canarias.html">Senderismo en Invierno en Canarias: Las Mejores Rutas de Octubre a Marzo</a></h2>
           <p class="blog-card__desc">20°C mientras Europa está bajo cero. Las mejores rutas de temporada baja en La Gomera, Tenerife y El Hierro.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 5 Jul 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="fotografia-naturaleza-canarias.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#a855f720,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-camera" style="font-size:3rem;color:#a855f7;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.3);">Fotografía</span>
-          <h2 class="blog-card__titulo">Fotografía de Naturaleza en Canarias: Los 10 Mejores Spots para Fotógrafos</h2>
+          <h2 class="blog-card__titulo"><a href="fotografia-naturaleza-canarias.html">Fotografía de Naturaleza en Canarias: Los 10 Mejores Spots para Fotógrafos</a></h2>
           <p class="blog-card__desc">Teide al amanecer, laurisilva con niebla, coladas de lava y el cielo estrellado de La Palma. Los spots más épicos.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 7 Jul 2026</span><span><i class="fas fa-clock"></i> 8 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="gran-canaria-guia-senderismo-2026.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#ffc10720,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-mountain" style="font-size:3rem;color:#ffc107;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(255,193,7,.1);color:#ffc107;border:1px solid rgba(255,193,7,.3);">Guías de Islas</span>
-          <h2 class="blog-card__titulo">Gran Canaria para Senderistas: Las 10 Mejores Rutas del Continente en Miniatura</h2>
+          <h2 class="blog-card__titulo"><a href="gran-canaria-guia-senderismo-2026.html">Gran Canaria para Senderistas: Las 10 Mejores Rutas del Continente en Miniatura</a></h2>
           <p class="blog-card__desc">Roque Nublo, Güigüi, Barranco de Guayadeque y las mejores rutas de Gran Canaria para senderistas de todos los niveles.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 3 Jul 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="lanzarote-ruta-volcanica-guia.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#ff6f0020,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-fire" style="font-size:3rem;color:#ff6f00;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(255,111,0,.1);color:#ff6f00;border:1px solid rgba(255,111,0,.3);">Guías de Islas</span>
-          <h2 class="blog-card__titulo">Lanzarote Volcánica: La Guía Definitiva para Explorar la Isla del Fuego</h2>
+          <h2 class="blog-card__titulo"><a href="lanzarote-ruta-volcanica-guia.html">Lanzarote Volcánica: La Guía Definitiva para Explorar la Isla del Fuego</a></h2>
           <p class="blog-card__desc">Timanfaya, Caldera Blanca, kayak en Papagayo y el IRONMAN más duro del mundo. Todo lo que necesitas saber sobre Lanzarote.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 4 Jul 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="equipamiento-trail-running-canarias.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#1cff6b20,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-shoe-prints" style="font-size:3rem;color:#1cff6b;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.3);">Equipamiento</span>
-          <h2 class="blog-card__titulo">Equipamiento para Trail Running en Canarias: Qué Llevar en Cada Tipo de Ruta</h2>
+          <h2 class="blog-card__titulo"><a href="equipamiento-trail-running-canarias.html">Equipamiento para Trail Running en Canarias: Qué Llevar en Cada Tipo de Ruta</a></h2>
           <p class="blog-card__desc">Zapatillas, mochila, hidratación y tecnología para correr por volcanes, laurisilva y barrancos canarios.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 5 Jul 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="fuerteventura-kitesurf-surf-guia.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#1da1f220,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-wind" style="font-size:3rem;color:#1da1f2;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(29,161,242,.1);color:#1da1f2;border:1px solid rgba(29,161,242,.3);">Deportes Acuáticos</span>
-          <h2 class="blog-card__titulo">Fuerteventura para Surfistas y Kitesurfistas: La Meca del Viento en Europa</h2>
+          <h2 class="blog-card__titulo"><a href="fuerteventura-kitesurf-surf-guia.html">Fuerteventura para Surfistas y Kitesurfistas: La Meca del Viento en Europa</a></h2>
           <p class="blog-card__desc">Sotavento, Corralejo, Cofete y los mejores spots de kitesurf y surf en Fuerteventura para todos los niveles.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 6 Jul 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="rutas-familiares-canarias-ninos.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#1cff6b15,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-child" style="font-size:3rem;color:#1cff6b;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(28,255,107,.1);color:#1cff6b;border:1px solid rgba(28,255,107,.3);">Senderismo</span>
-          <h2 class="blog-card__titulo">Las Mejores Rutas Familiares en Canarias: Aventuras para Hacer con Niños</h2>
+          <h2 class="blog-card__titulo"><a href="rutas-familiares-canarias-ninos.html">Las Mejores Rutas Familiares en Canarias: Aventuras para Hacer con Niños</a></h2>
           <p class="blog-card__desc">8 rutas fáciles en Canarias perfectas para hacer con niños. Distancias cortas, paisajes increíbles y diversión garantizada.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 7 Jul 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
         </div>
-      </a>
-      <a class="blog-card" href="gomera-lapalma-hierro-guia-islas-pequenas.html">
+      </article>
+      <article class="blog-card">
         <div class="blog-card__img" style="background:linear-gradient(135deg,#a855f720,#02070f);display:flex;align-items:center;justify-content:center;">
           <i class="fas fa-gem" style="font-size:3rem;color:#a855f7;opacity:0.4;"></i>
         </div>
         <div class="blog-card__body">
           <span class="blog-card__cat" style="background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.3);">Guías de Islas</span>
-          <h2 class="blog-card__titulo">La Gomera, La Palma y El Hierro: Guía de las Tres Joyas Desconocidas de Canarias</h2>
+          <h2 class="blog-card__titulo"><a href="gomera-lapalma-hierro-guia-islas-pequenas.html">La Gomera, La Palma y El Hierro: Guía de las Tres Joyas Desconocidas de Canarias</a></h2>
           <p class="blog-card__desc">Las tres islas más auténticas y menos masificadas de Canarias. Garajonay, Transvulcania, La Restinga y el silencio más absoluto.</p>
           <div class="blog-card__meta"><span><i class="fas fa-calendar"></i> 8 Jul 2026</span><span><i class="fas fa-clock"></i> 8 min</span></div>
         </div>
-      </a></div>
+      </article>
 </main>
 <footer class="site-footer">
     <div class="footer-grid">
@@ -860,7 +793,12 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
         <a href="../recomendado.html">Recomendado</a>
         <a href="../quienes.html">Nuestro Fin</a>
       </div>
-      
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="../aviso-legal.html">Aviso Legal</a>
+        <a href="../politica-privacidad.html">Privacidad</a>
+        <a href="../politica-cookies.html">Cookies</a>
+      </div>
     </div>
       <div class="footer-legal">
     <a href="../politica-privacidad.html">Privacidad</a>
