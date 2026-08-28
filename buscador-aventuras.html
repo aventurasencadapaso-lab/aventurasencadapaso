@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Buscador de 236 rutas outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
   <title>Buscador de Rutas Outdoor en Canarias | Aventuras en Cada Paso</title>
-  <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/buscador-aventuras.html">
+  <link rel="canonical" href="https://aventurasencadapaso.com/buscador-aventuras.html">
   <link rel="icon" type="image/png" href="logo-aventuras.png">
   <meta name="theme-color" content="#1cff6b">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.min.css?v=2">
+  <link rel="stylesheet" href="style.min.css?v=22">
   <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
 
 
@@ -230,6 +230,10 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
+        <li class="nav-main__item">
+          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
+        </li>
+
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -334,37 +338,43 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     </div>
   </div>
 
-  <!-- Filtros -->
-  <div class="bus-filtros">
-    <input type="text" id="bus-q" placeholder="Buscar ruta o isla...">
-    <select id="bus-isla">
-      <option value="">Todas las islas</option>
-      <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
-      <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
-      <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
-    </select>
-    <select id="bus-tipo">
-      <option value="">Todos los deportes</option>
-      <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
-      <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
-      <option>Espeleología</option>
-    </select>
-    <select id="bus-dif">
-      <option value="">Todas las dificultades</option>
-      <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
-    </select>
+  <!-- Panel de búsqueda -->
+  <div class="bus-panel">
+    <div class="bus-panel__search">
+      <i class="fas fa-search bus-panel__search-ico"></i>
+      <input type="text" id="bus-q" placeholder="Buscar ruta o isla...">
+    </div>
+    <div class="bus-panel__filters">
+      <select id="bus-isla">
+        <option value="">Todas las islas</option>
+        <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
+        <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
+        <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
+      </select>
+      <select id="bus-tipo">
+        <option value="">Todos los deportes</option>
+        <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
+        <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
+        <option>Espeleología</option>
+      </select>
+      <select id="bus-dif">
+        <option value="">Todas las dificultades</option>
+        <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
+      </select>
+    </div>
+    <div class="bus-panel__bar">
+      <span id="bus-count" class="bus-panel__count"></span>
+      <button id="bus-clear" class="bus-panel__clear" onclick="document.getElementById('bus-q').value='';document.getElementById('bus-isla').value='';document.getElementById('bus-tipo').value='';document.getElementById('bus-dif').value='';document.getElementById('bus-q').dispatchEvent(new Event('input'));"><i class="fas fa-times"></i> Limpiar filtros</button>
+    </div>
   </div>
-
   <!-- Banner ruleta -->
-  <div class="rul-banner">
-    <a href="ruleta.html" class="rul-banner__inner">
-      <i class="fas fa-compass rul-banner__ico"></i>
-      <div class="rul-banner__txt">
-        <span class="rul-banner__sup">Ruleta de Aventuras</span>
-        <h2 class="rul-banner__h">No sabes que ruta hacer?</h2>
-        <p class="rul-banner__p">Elige filtros y te lanzamos una aventura aleatoria.</p>
+  <div style="max-width:1100px;margin:0 auto 24px;padding:0 28px;">
+    <a href="ruleta.html" class="bus-ruleta-banner">
+      <div class="bus-ruleta-banner__txt">
+        <span class="bus-ruleta-banner__title"><i class="fas fa-dice"></i> ¿No sabes qué ruta hacer?</span>
+        <span class="bus-ruleta-banner__desc">Deja que la ruleta elija una aventura aleatoria por ti</span>
       </div>
-      <span class="rul-banner__btn"><i class="fas fa-arrow-right"></i> Lanzar</span>
+      <span class="bus-ruleta-banner__btn"><i class="fas fa-arrow-right"></i> Lanzar ruleta</span>
     </a>
   </div>
 
@@ -376,7 +386,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
 
 
-<button id="btn-top" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+
 
 <script src="rutas.js"></script>
 <script>
@@ -387,6 +397,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   var tipoEl = document.getElementById('bus-tipo');
   var difEl = document.getElementById('bus-dif');
 
+  var countEl = document.getElementById('bus-count');
+  var clearEl = document.getElementById('bus-clear');
+
   var DIFCOLOR = {Facil:'#1cff6b',Media:'#ffc107',Dificil:'#ff6f00',Extrema:'#e53935',
                    'Fácil':'#1cff6b','Difícil':'#ff6f00'};
 
@@ -396,6 +409,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
     var tipo = tipoEl.value;
     var dif = difEl.value;
 
+    var hasFilter = q || isla || tipo || dif;
+    clearEl.style.display = hasFilter ? 'inline-flex' : 'none';
+
     var filtradas = RUTAS.filter(function(r){
       if(isla && r.isla !== isla) return false;
       if(tipo && r.tipo !== tipo) return false;
@@ -403,6 +419,8 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       if(q && !r.nombre.toLowerCase().includes(q) && !r.isla.toLowerCase().includes(q)) return false;
       return true;
     });
+
+    countEl.textContent = filtradas.length + ' de ' + RUTAS.length + ' rutas';
 
     if(filtradas.length === 0){
       grid.innerHTML = '<div class="bus-vacio"><i class="fas fa-compass" style="font-size:2rem;color:rgba(28,255,107,.2);display:block;margin-bottom:12px;"></i>No se encontraron rutas</div>';
@@ -413,7 +431,10 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       var color = DIFCOLOR[r.dificultad] || '#ffc107';
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
+      var thumb = '<img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="" class="bus-card__img" loading="lazy" onerror="this.outerHTML=\'<div class=bus-card__img-placeholder><i class=fas\\ fa-mountain></i></div>\'">';
       return '<a href="rutas/' + r.id + '.html" class="bus-card">' +
+        thumb +
+        '<div class="bus-card__body">' +
         '<span class="bus-card__isla">' + r.isla + '</span>' +
         '<h3 class="bus-card__nombre">' + r.nombre + '</h3>' +
         '<div class="bus-card__meta">' +
@@ -422,6 +443,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           (dist ? '<span class="bus-card__badge" style="background:rgba(28,255,107,.06);color:#8a8fa0;border:1px solid rgba(28,255,107,.1);">' + dist + '</span>' : '') +
         '</div>' +
         '<span class="bus-card__btn"><i class="fas fa-compass"></i> Ver ruta</span>' +
+        '</div>' +
       '</a>';
     }).join('');
   }
@@ -756,11 +778,99 @@ function googleTranslateElementInit() {
  }
 })();
 </script>
+
+
+<div class="enviar-ruta" style="max-width:900px;margin:0 auto;padding:60px 28px;">
+  <div class="enviar-ruta__header">
+    <span class="idx-label"><i class="fas fa-paper-plane"></i> Comunidad</span>
+    <h2 class="enviar-ruta__titulo">¿Conoces una ruta que no tenemos?</h2>
+    <p class="enviar-ruta__desc">Envíanos tu ruta y la publicamos en la web. Así ayudas a otros aventureros a descubrir nuevos rincones de Canarias.</p>
+  </div>
+
+  <form class="enviar-ruta__form"
+        action="https://formsubmit.co/aventurasencadapaso@gmail.com"
+        method="POST"
+        enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Nueva ruta enviada por un usuario">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://aventurasencadapaso.com/gracias.html">
+
+    <div class="er-field">
+      <label class="er-label"><i class="fas fa-route"></i> Nombre de la ruta *</label>
+      <input type="text" name="ruta_nombre" placeholder="Ej: Sendero del Faro de Orchilla" required>
+    </div>
+
+    <div class="er-field">
+      <label class="er-label"><i class="fas fa-map-marker-alt"></i> Isla *</label>
+      <select name="ruta_isla" required>
+        <option value="">Selecciona isla</option>
+        <option>Tenerife</option><option>Gran Canaria</option><option>Lanzarote</option>
+        <option>Fuerteventura</option><option>La Palma</option><option>La Gomera</option>
+        <option>El Hierro</option><option>La Graciosa</option><option>Isla de Lobos</option>
+      </select>
+    </div>
+
+    <div class="er-field">
+      <label class="er-label"><i class="fas fa-tag"></i> Tipo de lugar</label>
+      <select name="ruta_tipo_lugar">
+        <option value="">Selecciona tipo</option>
+        <option>Sendero de montaña</option>
+        <option>Ruta costera</option>
+        <option>Playa / Spot de surf u olas</option>
+        <option>Mirador / Punto fotográfico</option>
+        <option>Barranco</option>
+        <option>Cueva / Tubo volcánico</option>
+        <option>Zona de kayak o buceo</option>
+        <option>Otro</option>
+      </select>
+    </div>
+
+    <div class="er-field">
+      <label class="er-label"><i class="fas fa-align-left"></i> Descripción de la ruta *</label>
+      <textarea name="ruta_descripcion" rows="4" placeholder="Cuéntanos cómo es la ruta: dificultad, duración, qué se ve, cómo llegar al inicio..." required></textarea>
+    </div>
+
+    <div class="er-row">
+      <div class="er-field">
+        <label class="er-label"><i class="fas fa-file-export"></i> Track GPS</label>
+        <input type="file" name="ruta_gpx" accept=".gpx,.kml">
+        <span class="er-hint">Opcional — sube tu archivo .gpx o .kml</span>
+      </div>
+      <div class="er-field">
+        <label class="er-label"><i class="fas fa-camera"></i> Foto de la ruta</label>
+        <input type="file" name="ruta_foto" accept="image/*">
+        <span class="er-hint">Opcional — máximo 5 MB</span>
+      </div>
+    </div>
+
+    <div class="er-field">
+      <label class="er-label"><i class="fas fa-user"></i> Tu nombre</label>
+      <input type="text" name="ruta_autor" placeholder="Cómo quieres que te mencionemos">
+      <span class="er-hint">Déjalo vacío si prefieres que sea anónimo</span>
+    </div>
+
+    <div class="er-field">
+      <label class="er-label"><i class="fas fa-hashtag"></i> ¿Te mencionamos en redes?</label>
+      <div class="er-radios">
+        <label class="er-radio"><input type="radio" name="ruta_mencion" value="si" checked> <span>Sí, mencionadme (pon tu @ abajo)</span></label>
+        <label class="er-radio"><input type="radio" name="ruta_mencion" value="anonimo"> <span>Prefiero que sea anónimo</span></label>
+      </div>
+      <input type="text" name="ruta_redes" placeholder="Tu @ de Instagram, TikTok o lo que uses">
+    </div>
+
+    <button type="submit" class="er-submit">
+      <i class="fas fa-paper-plane"></i> Enviar mi ruta
+    </button>
+    <p class="er-legal">Al enviar aceptas que publiquemos la ruta en la web con los datos proporcionados.</p>
+  </form>
+</div>
+
 <footer class="site-footer">
  <div class="footer-grid">
  <div class="footer-col">
  <h3>Contacto</h3>
  <p>aventurasencadapaso@gmail.com</p>
+ 
  </div>
  <div class="footer-col">
  <h3>Redes</h3>

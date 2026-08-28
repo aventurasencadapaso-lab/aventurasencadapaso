@@ -5,7 +5,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="description" content="¿No sabes qué ruta hacer? Usa la Ruleta de Aventuras — elige isla, deporte y duración y te lanzamos una ruta aleatoria en Canarias.">
  <title>Ruleta de Aventuras – Ruta Aleatoria en Canarias</title>
- <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/ruleta.html">
+ <link rel="canonical" href="https://aventurasencadapaso.com/ruleta.html">
  <link rel="icon" type="image/png" href="logo-aventuras.png">
  <link rel="manifest" href="manifest.json">
  <meta name="theme-color" content="#1cff6b">
@@ -15,7 +15,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.min.css?v=2">
+ <link rel="stylesheet" href="style.min.css?v=22">
  <script>
 /* Ocultar barra de Google Translate dinámicamente */
 (function(){
@@ -157,10 +157,12 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
  /* Hero */
  .rul-hero {
- padding: 110px 28px 40px;
+ padding: 0 28px 40px;
  text-align: center;
  max-width: 720px;
- margin: 0 auto;
+ margin: -60px auto 0;
+ position: relative;
+ z-index: 2;
  }
  .rul-hero__label {
  font-family: Orbitron,sans-serif;
@@ -479,6 +481,10 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           <a href="quienes.html" class="nav-main__link">Nuestro Fin</a>
         </li>
 
+        <li class="nav-main__item">
+          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
+        </li>
+
         <li class="nav-main__item nav-main__item--drop">
           <a href="contacto.html" class="nav-main__link">
             Contacto <i class="fas fa-chevron-down nav-main__chevron" aria-hidden="true"></i>
@@ -569,9 +575,11 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   </div><!-- /site-header__inner -->
 </header>
 <!-- Foto hero -->
-<div class="pag-foto-wrap">
+<div class="pag-foto-wrap" style="position:relative;height:360px;overflow:hidden;margin-top:72px;">
  <img src="imagenes/ruleta-hero.jpg" alt="Aventura aleatoria en Canarias" loading="lazy"
- onerror="this.parentElement.style.display='none'">
+ onerror="this.parentElement.style.display='none'"
+ style="width:100%;height:100%;object-fit:cover;display:block;">
+ <div style="position:absolute;bottom:0;left:0;right:0;height:50%;background:linear-gradient(to top,#02070f,transparent);"></div>
 </div>
 
 <main id="cp">
@@ -883,7 +891,7 @@ function addHistorial(r){
 }
 
 function compartir(nombre, id){
- var url = 'https://aventurasencadapaso-lab.github.io/aventurasencadapaso/rutas/' + id + '.html';
+ var url = 'https://aventurasencadapaso.com/rutas/' + id + '.html';
  var texto = '¡La Ruleta de Aventuras me ha elegido esta ruta en Canarias! ' + nombre + ' ' + url;
  if(navigator.share){
  navigator.share({ title: nombre, text: texto, url: url });
@@ -905,8 +913,8 @@ if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googl
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
 </script>
-<button id="btn-top" aria-label="Volver arriba" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
-<script>(function(){var b=document.getElementById('btn-top');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>400);},{passive:true});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();</script>
+
+
 
 <script>
 (function(){

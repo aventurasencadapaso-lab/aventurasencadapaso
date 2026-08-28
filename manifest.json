@@ -2,8 +2,8 @@
   "name": "Aventuras en Cada Paso",
   "short_name": "Aventuras",
   "description": "La plataforma outdoor más completa de Canarias. 236 rutas, 9 islas, eventos y tiendas.",
-  "start_url": "/aventurasencadapaso/index.html",
-  "scope": "/aventurasencadapaso/",
+  "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#02070f",
@@ -78,28 +78,28 @@
       "name": "Buscador de Rutas",
       "short_name": "Rutas",
       "description": "Busca entre 236 rutas outdoor en Canarias",
-      "url": "/aventurasencadapaso/buscador-aventuras.html",
+      "url": "/buscador-aventuras.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Ruleta de Aventuras",
       "short_name": "Ruleta",
       "description": "Ruta aleatoria sorpresa en Canarias",
-      "url": "/aventurasencadapaso/ruleta.html",
+      "url": "/ruleta.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Calendario de Eventos",
       "short_name": "Eventos",
       "description": "107 eventos outdoor 2025-2027",
-      "url": "/aventurasencadapaso/calendario.html",
+      "url": "/calendario.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Comparador de Islas",
       "short_name": "Islas",
       "description": "Descubre qué isla es la tuya",
-      "url": "/aventurasencadapaso/comparador.html",
+      "url": "/comparador.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }
   ],

@@ -36,8 +36,8 @@ if('serviceWorker' in navigator){
   <meta property="og:site_name" content="Aventuras en Cada Paso">
   <meta property="og:title" content="Aventuras en Cada Paso – Outdoor en Canarias">
   <meta property="og:description" content="Rutas, tiendas, eventos y comparador de islas para aventuras outdoor en Canarias.">
-  <meta property="og:image" content="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/imagenes/og-default.jpg">
-  <link rel="canonical" href="https://aventurasencadapaso-lab.github.io/aventurasencadapaso/test-mapa.html">
+  <meta property="og:image" content="https://aventurasencadapaso.com/imagenes/og-default.jpg">
+  <link rel="canonical" href="https://aventurasencadapaso.com/test-mapa.html">
 </head>
 <body>
   <div id="mapa"></div>
@@ -58,8 +58,8 @@ if('serviceWorker' in navigator){
       // 2. Iniciar mapa
       try {
         var mapa = L.map('mapa').setView([28.3, -15.8], 7);
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-          attribution: '© CARTO', subdomains: 'abcd'
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap', subdomains: 'abcd'
         }).addTo(mapa);
 
         // 3. Poner marcadores
@@ -74,7 +74,7 @@ if('serviceWorker' in navigator){
       }
     }
   </script>
-<button id="btn-top" aria-label="Volver arriba" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+
 <script>
 (function(){
   var btn=document.getElementById('btn-top');
