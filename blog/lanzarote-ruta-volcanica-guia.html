@@ -29,7 +29,7 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
   setTimeout(hideBar, 1500);
   var obs = new MutationObserver(hideBar);
   document.addEventListener('DOMContentLoaded', function(){
-    obs.observe(document.body, {childList:true, subtree:true});
+    if(document.body){obs.observe(document.body, {childList:true, subtree:true});}else{document.addEventListener('DOMContentLoaded',function(){obs.observe(document.body,{childList:true,subtree:true});});}
     hideBar();
   });
 })();
@@ -49,7 +49,7 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.min.css?v=25">
+  <link rel="stylesheet" href="../style.min.css?v=28">
     <style>
 .blog-art{max-width:800px;margin:0 auto;padding:120px 28px 60px;}
 .blog-art__back{display:inline-flex;align-items:center;gap:8px;color:#8a8fa0;font-family:Orbitron,sans-serif;font-size:10px;letter-spacing:1px;text-decoration:none;margin-bottom:32px;transition:.2s;}
@@ -353,7 +353,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
         </li>
 
         <li class="nav-main__item">
-          <a href="../islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
+          <a href="../islas-sostenibles.html" class="nav-main__link nav-main__link--green"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
@@ -781,6 +781,70 @@ function googleTranslateElementInit() {
 // Cargar Google Translate siempre (es funcionalidad, no tracking)
 (function(){
  if (!window.googleTranslateLoaded) {
+ window.googleTranslateLoaded = true;
+ var s = document.createElement('script');
+ s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+ document.head.appendChild(s);
+ }
+})();
+</script>
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+ <div class="cookie-banner__inner">
+ <div class="cookie-banner__text">
+ <p>
+ Usamos cookies propias y de terceros (Google Translate) para mejorar tu experiencia.
+ Puedes aceptar todas, rechazar las no esenciales o leer más en nuestra
+ <a href="../politica-cookies.html">Política de Cookies</a> y
+ <a href="../politica-privacidad.html">Política de Privacidad</a>.
+ </p>
+ </div>
+ <div class="cookie-banner__actions">
+ <button id="cookie-accept-all" class="cookie-btn cookie-btn--accept">Aceptar todas</button>
+ <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Solo esenciales</button>
+ <a href="../politica-cookies.html" class="cookie-btn cookie-btn--info">Más info</a>
+ </div>
+ </div>
+</div>
+
+<script>
+/* === BANNER DE COOKIES === */
+(function () {
+ var KEY = 'cookie_consent';
+ var banner = document.getElementById('cookie-banner');
+ if (!banner) return;
+
+ // Si ya hay consentimiento guardado, ocultar
+ if (localStorage.getItem(KEY)) {
+ banner.style.display = 'none';
+ if (localStorage.getItem(KEY) === 'accepted') loadGoogleTranslate();
+ return;
+ }
+
+ // Mostrar banner
+ banner.style.display = 'block';
+
+ // Aceptar
+ var btnAccept = document.getElementById('cookie-accept') ||
+ document.getElementById('cookie-accept-all');
+ if (btnAccept) {
+ btnAccept.addEventListener('click', function () {
+ localStorage.setItem(KEY, 'accepted');
+ banner.style.display = 'none';
+ loadGoogleTranslate();
+ });
+ }
+
+ // Rechazar
+ var btnReject = document.getElementById('cookie-reject');
+ if (btnReject) {
+ btnReject.addEventListener('click', function () {
+ localStorage.setItem(KEY, 'rejected');
+ banner.style.display = 'none';
+ });
+ }
+
+ function loadGoogleTranslate() {
+ if (window.googleTranslateLoaded) return;
  window.googleTranslateLoaded = true;
  var s = document.createElement('script');
  s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';

@@ -29,7 +29,7 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
   setTimeout(hideBar, 1500);
   var obs = new MutationObserver(hideBar);
   document.addEventListener('DOMContentLoaded', function(){
-    obs.observe(document.body, {childList:true, subtree:true});
+    if(document.body){obs.observe(document.body, {childList:true, subtree:true});}else{document.addEventListener('DOMContentLoaded',function(){obs.observe(document.body,{childList:true,subtree:true});});}
     hideBar();
   });
 })();
@@ -47,7 +47,7 @@ body { top:0!important; margin-top:0!important; position:relative!important; }
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.min.css?v=25">
+  <link rel="stylesheet" href="../style.min.css?v=28">
   <style>
     /* ── Blog index ── */
     .blog-hero{padding:120px 28px 50px;text-align:center;max-width:800px;margin:0 auto;}
@@ -419,7 +419,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
         </li>
 
         <li class="nav-main__item">
-          <a href="../islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
+          <a href="../islas-sostenibles.html" class="nav-main__link nav-main__link--green"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">

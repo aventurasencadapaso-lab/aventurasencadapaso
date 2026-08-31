@@ -14,7 +14,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.min.css?v=23">
+ <link rel="stylesheet" href="style.min.css?v=28">
  <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
 <script>
 /* Ocultar barra de Google Translate dinámicamente */
@@ -40,7 +40,7 @@
   setTimeout(ocultarBarra, 2000);
   // Observer para detectar cuando aparece
   var obs = new MutationObserver(ocultarBarra);
-  obs.observe(document.body, {childList:true, subtree:true});
+  if(document.body){obs.observe(document.body, {childList:true, subtree:true});}else{document.addEventListener('DOMContentLoaded',function(){obs.observe(document.body,{childList:true,subtree:true});});}
 })();
 </script>
 <script>
@@ -319,7 +319,7 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
         </li>
 
         <li class="nav-main__item">
-          <a href="islas-sostenibles.html" class="nav-main__link" style="color:#1cff6b;"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
+          <a href="islas-sostenibles.html" class="nav-main__link nav-main__link--green"><i class="fas fa-leaf" style="margin-right:4px;"></i> Islas Sostenibles</a>
         </li>
 
         <li class="nav-main__item nav-main__item--drop">
