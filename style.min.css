@@ -85,3 +85,17 @@
 .rp-safety__legal a{color:#1cff6b !important;text-decoration:underline;forced-color-adjust:none;}
 .rp-map-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;background:rgba(28,255,107,.02);border-radius:14px;}.nav-main__link--green{color:#1cff6b!important}
 @media(max-width:900px){.nav-main__link--green{justify-content:flex-start!important;gap:8px!important}}
+
+.rp-ig-style-sel{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.rp-ig-style-btn{padding:8px 14px;border:1px solid rgba(28,255,107,.2);border-radius:10px;background:rgba(28,255,107,.05);color:#8a8fa0;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.rp-ig-style-btn:hover{border-color:rgba(28,255,107,.4);color:#c8ccd8}
+.rp-ig-style-btn.on{background:#1cff6b;color:#02070f;border-color:#1cff6b}
+.rp-ig-modal__close{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.1);border:none;color:#e8eaf0;width:36px;height:36px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:10}
+.rp-ig-modal__close:hover{background:rgba(255,255,255,.2)}
+.rp-ig-modal__inner{position:relative;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.rp-ig-modal__img{width:100%;border-radius:12px;display:block}
+.rp-ig-modal__actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.rp-ig-modal__btn{padding:10px 18px;border-radius:10px;font-family:Orbitron,sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s;border:1px solid rgba(28,255,107,.3);background:transparent;color:#1cff6b}
+.rp-ig-modal__btn:hover{background:rgba(28,255,107,.1)}
+.rp-ig-modal__btn--p{background:#1cff6b;color:#02070f;border-color:#1cff6b}
+.rp-ig-modal__btn--p:hover{background:#00e05a}
