@@ -1172,23 +1172,14 @@ function initOffline(){
   if(!img)return;
   var nw=img.naturalWidth||220,nh=img.naturalHeight||100;
   var availW=x1-x0,availH=y1-y0;
-  var pad=30;
-  // Dark rounded background
-  ctx.save();
-  ctx.fillStyle="rgba(7,14,24,0.85)";
-  ctx.beginPath();
-  ctx.roundRect(x0,y0,availW,availH,20);
-  ctx.fill();
-  ctx.strokeStyle="rgba(28,255,107,0.2)";
-  ctx.lineWidth=2;
-  ctx.stroke();
-  ctx.restore();
-  // Draw SVG inside with padding
-  var iw=availW-pad*2,ih=availH-pad*2;
   var ir=nw/nh;var drawW,drawH;
-  if(ir>iw/ih){drawW=iw;drawH=drawW/ir;}else{drawH=ih;drawW=drawH*ir;}
-  var offX=x0+pad+(iw-drawW)/2,offY=y0+pad+(ih-drawH)/2;
+  if(ir>availW/availH){drawW=availW;drawH=drawW/ir;}else{drawH=availH;drawW=drawH*ir;}
+  var offX=x0+(availW-drawW)/2,offY=y0+(availH-drawH)/2;
+  ctx.save();
+  ctx.shadowColor="rgba(0,0,0,0.7)";
+  ctx.shadowBlur=20;
   ctx.drawImage(img,offX,offY,drawW,drawH);
+  ctx.restore();
  }
 
 
