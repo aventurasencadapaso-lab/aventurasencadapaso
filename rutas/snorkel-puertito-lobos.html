@@ -1150,7 +1150,8 @@ function initOffline(){
  }
  function cargarSVGThumb(slug){return new Promise(function(resolve){var img=new Image();img.onload=function(){resolve(img);};img.onerror=function(){resolve(null);};img.src="../imagenes/gpx-thumbs/"+slug+".svg";});}
  function dibujarThumb(ctx,img,x0,y0,x1,y1){
-  if(!img||!img.naturalWidth)return;
+  if(!img)return;
+  var nw=img.naturalWidth||220,nh=img.naturalHeight||100;
   var availW=x1-x0,availH=y1-y0;
   var pad=30;
   // Dark rounded background
@@ -1165,7 +1166,7 @@ function initOffline(){
   ctx.restore();
   // Draw SVG inside with padding
   var iw=availW-pad*2,ih=availH-pad*2;
-  var ir=img.naturalWidth/img.naturalHeight;var drawW,drawH;
+  var ir=nw/nh;var drawW,drawH;
   if(ir>iw/ih){drawW=iw;drawH=drawW/ir;}else{drawH=ih;drawW=drawH*ir;}
   var offX=x0+pad+(iw-drawW)/2,offY=y0+pad+(ih-drawH)/2;
   ctx.drawImage(img,offX,offY,drawW,drawH);
