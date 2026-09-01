@@ -1348,6 +1348,78 @@ function initOffline(){
   document.body.appendChild(a);a.click();document.body.removeChild(a);
  });
 
+
+ // Build map mosaic from GPX track
+ function buildMapMosaic(slug){
+  return new Promise(function(resolve){
+   fetch("../gpx/"+slug+".gpx").then(function(r){return r.text();}).then(function(str){
+    var xml=new DOMParser().parseFromString(str,"application/xml");
+    var nodes=xml.querySelectorAll("trkpt");
+    if(!nodes.length){resolve(null);return;}
+    var pts=[];
+    for(var i=0;i<nodes.length;i++){
+     pts.push([parseFloat(nodes[i].getAttribute("lat")),parseFloat(nodes[i].getAttribute("lon"))]);
+    }
+    var lats=pts.map(function(p){return p[0];}),lons=pts.map(function(p){return p[1];});
+    var lat0=Math.min.apply(null,lats),lat1=Math.max.apply(null,lats);
+    var lon0=Math.min.apply(null,lons),lon1=Math.max.apply(null,lons);
+    var z=13;
+    for(var zz=16;zz>=10;zz--){
+     var tileDeg=360/Math.pow(2,zz);
+     if(Math.max(lon1-lon0,0.001)/tileDeg<=3.2){z=zz;break;}
+    }
+    function lon2x(lon){return (lon+180)/360*Math.pow(2,z);}
+    function lat2y(lat){var r=lat*Math.PI/180;return (1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*Math.pow(2,z);}
+    var padX=(lon2x(lon1)-lon2x(lon0))*0.15||0.3;
+    var padY=(lat2y(lat0)-lat2y(lat1))*0.15||0.3;
+    var x0=lon2x(lon0)-padX,x1=lon2x(lon1)+padX;
+    var y0=lat2y(lat1)-padY,y1=lat2y(lat0)+padY;
+    var txMin=Math.floor(x0),txMax=Math.floor(x1),tyMin=Math.floor(y0),tyMax=Math.floor(y1);
+    var cols=txMax-txMin+1,rows=tyMax-tyMin+1,total=cols*rows;
+    if(total<=0||total>64){resolve(null);return;}
+    var mosaic=document.createElement("canvas");
+    mosaic.width=cols*256;mosaic.height=rows*256;
+    var mctx=mosaic.getContext("2d");
+    var subs=["a","b","c"],done=0;
+    for(var ty=tyMin;ty<=tyMax;ty++){
+     for(var tx=txMin;tx<=txMax;tx++){
+      (function(tx,ty){
+       var img=new Image();img.crossOrigin="anonymous";
+       img.onload=function(){try{mctx.drawImage(img,(tx-txMin)*256,(ty-tyMin)*256);}catch(e){}done++;if(done===total)finish();};
+       img.onerror=function(){done++;if(done===total)finish();};
+       var s=subs[Math.abs(tx+ty)%subs.length];
+       img.src="https://"+s+".tile.openstreetmap.org/"+z+"/"+tx+"/"+ty+".png";
+      })(tx,ty);
+     }
+    }
+    function finish(){
+     // Darken the map
+     mctx.fillStyle="rgba(2,7,15,0.55)";
+     mctx.fillRect(0,0,mosaic.width,mosaic.height);
+     // Draw the track on the mosaic
+     mctx.save();
+     mctx.strokeStyle="#ff6f00";mctx.lineWidth=6;mctx.lineJoin="round";mctx.lineCap="round";
+     mctx.shadowColor="rgba(0,0,0,0.6)";mctx.shadowBlur=8;
+     mctx.beginPath();
+     pts.forEach(function(p,i){
+      var px=(lon2x(p[1])-txMin)*256,py=(lat2y(p[0])-tyMin)*256;
+      if(i===0)mctx.moveTo(px,py);else mctx.lineTo(px,py);
+     });
+     mctx.stroke();
+     // Start/end markers
+     var sp=pts[0],ep=pts[pts.length-1];
+     mctx.shadowBlur=0;
+     mctx.fillStyle="#1cff6b";mctx.beginPath();
+     mctx.arc((lon2x(sp[1])-txMin)*256,(lat2y(sp[0])-tyMin)*256,10,0,Math.PI*2);mctx.fill();
+     mctx.fillStyle="#e53935";mctx.beginPath();
+     mctx.arc((lon2x(ep[1])-txMin)*256,(lat2y(ep[0])-tyMin)*256,10,0,Math.PI*2);mctx.fill();
+     mctx.restore();
+     resolve({canvas:mosaic,sx:(x0-txMin)*256,sy:(y0-tyMin)*256,sw:(x1-x0)*256,sh:(y1-y0)*256});
+    }
+   }).catch(function(){resolve(null);});
+  });
+ }
+
  function renderLogro(){
   if(loadingEl)loadingEl.style.display="flex";
   var datos=window.datosRuta();
@@ -1355,10 +1427,11 @@ function initOffline(){
   var promises=[
    window.cargarImagen("../imagenes/"+datos.islaSlug+"-hero.jpg"),
    window.cargarImagen("../logo-aventuras.png"),
-   window.cargarSVGThumb(ruta)
+   window.cargarSVGThumb(ruta),
+   estilo==="mapa"?buildMapMosaic(ruta):Promise.resolve(null)
   ];
   Promise.all(promises).then(function(res){
-   var imgFoto=res[0],imgLogo=res[1],imgThumb=res[2];
+   var imgFoto=res[0],imgLogo=res[1],imgThumb=res[2],mosaico=res[3];
    var W=1080,H=1920;
    var canvas=document.createElement("canvas");canvas.width=W;canvas.height=H;
    var ctx=canvas.getContext("2d");
@@ -1372,6 +1445,12 @@ function initOffline(){
     coverDraw(ctx,window._userPhoto,W,H);
     ctx.fillStyle="rgba(2,7,15,0.35)";ctx.fillRect(0,0,W,H);
     gradient(ctx,W,H,0.4);
+   }else if(estilo==="mapa"&&mosaico){
+    var mir=mosaico.sw/mosaico.sh,cr2=W/H,dsx,dsy,dsw,dsh;
+    if(mir>cr2){dsh=mosaico.sh;dsw=dsh*cr2;dsx=mosaico.sx+(mosaico.sw-dsw)/2;dsy=mosaico.sy;}
+    else{dsw=mosaico.sw;dsh=dsw/cr2;dsx=mosaico.sx;dsy=mosaico.sy+(mosaico.sh-dsh)/2;}
+    try{ctx.drawImage(mosaico.canvas,dsx,dsy,dsw,dsh,0,0,W,H);}catch(e){ctx.fillStyle="#070e18";ctx.fillRect(0,0,W,H);}
+    gradient(ctx,W,H,0.5);
    }else if(estilo==="transparente"){
     // transparent - do nothing for background
    }else{
@@ -1379,7 +1458,7 @@ function initOffline(){
    }
 
    // Track thumb
-   if(imgThumb)window.dibujarThumb(ctx,imgThumb,80,estilo==="transparente"?200:480,W-80,estilo==="transparente"?1200:1300);
+   if(imgThumb&&estilo!=="mapa")window.dibujarThumb(ctx,imgThumb,80,estilo==="transparente"?200:480,W-80,estilo==="transparente"?1200:1300);
 
    // Logo
    if(imgLogo){
