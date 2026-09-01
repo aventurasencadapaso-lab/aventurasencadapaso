@@ -1130,13 +1130,21 @@ function initOffline(){
     }
     function lon2x(lon){return (lon+180)/360*Math.pow(2,z);}
     function lat2y(lat){var r=lat*Math.PI/180;return (1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*Math.pow(2,z);}
-    var padX=(lon2x(lon1)-lon2x(lon0))*0.15||0.3;
-    var padY=(lat2y(lat0)-lat2y(lat1))*0.15||0.3;
-    var x0=lon2x(lon0)-padX,x1=lon2x(lon1)+padX;
-    var y0=lat2y(lat1)-padY,y1=lat2y(lat0)+padY;
+    // Track bounds in tile coords
+    var tx0=lon2x(lon0),tx1=lon2x(lon1),ty0=lat2y(lat1),ty1=lat2y(lat0);
+    var trackW=Math.max(tx1-tx0,0.0001),trackH=Math.max(ty1-ty0,0.0001);
+    var cx=(tx0+tx1)/2,cy=(ty0+ty1)/2;
+    // Target aspect 1080/1920 = 0.5625 (portrait)
+    var targetAR=1080/1920;
+    // Expand to fill portrait frame while containing the track
+    var frameW,frameH;
+    if(trackW/trackH>targetAR){frameW=trackW*1.35;frameH=frameW/targetAR;}
+    else{frameH=trackH*1.35;frameW=frameH*targetAR;}
+    var x0=cx-frameW/2,x1=cx+frameW/2;
+    var y0=cy-frameH/2,y1=cy+frameH/2;
     var txMin=Math.floor(x0),txMax=Math.floor(x1),tyMin=Math.floor(y0),tyMax=Math.floor(y1);
     var cols=txMax-txMin+1,rows=tyMax-tyMin+1,total=cols*rows;
-    if(total<=0||total>64){resolve(null);return;}
+    if(total<=0||total>120){resolve(null);return;}
     var mosaic=document.createElement("canvas");
     mosaic.width=cols*256;mosaic.height=rows*256;
     var mctx=mosaic.getContext("2d");
@@ -1207,20 +1215,8 @@ function initOffline(){
     gradient(ctx,W,H,0.4);
    }else if(estilo==="mapa"&&mosaico){
     ctx.fillStyle="#070e18";ctx.fillRect(0,0,W,H);
-    // Fit whole track in upper area, preserving aspect ratio (contain, not cover)
-    var boxX=60,boxY=260,boxW=W-120,boxH=1000;
-    var mr=mosaico.sw/mosaico.sh;
-    var dw,dh;
-    if(mr>boxW/boxH){dw=boxW;dh=dw/mr;}else{dh=boxH;dw=dh*mr;}
-    var dx=boxX+(boxW-dw)/2,dy=boxY+(boxH-dh)/2;
-    try{
-     ctx.save();
-     ctx.beginPath();ctx.roundRect(dx,dy,dw,dh,16);ctx.clip();
-     ctx.drawImage(mosaico.canvas,mosaico.sx,mosaico.sy,mosaico.sw,mosaico.sh,dx,dy,dw,dh);
-     ctx.restore();
-     ctx.strokeStyle="rgba(28,255,107,0.25)";ctx.lineWidth=2;
-     ctx.beginPath();ctx.roundRect(dx,dy,dw,dh,16);ctx.stroke();
-    }catch(e){}
+    try{ctx.drawImage(mosaico.canvas,mosaico.sx,mosaico.sy,mosaico.sw,mosaico.sh,0,0,W,H);}catch(e){}
+    gradient(ctx,W,H,0.55);
    }else if(estilo==="transparente"){
     // transparent - do nothing for background
    }else{
