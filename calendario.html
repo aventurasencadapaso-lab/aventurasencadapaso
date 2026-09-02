@@ -215,6 +215,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .ev-badge{font-family:Orbitron,sans-serif;font-size:7px;letter-spacing:1px;padding:3px 8px;border-radius:10px;text-transform:uppercase;}
  .ev-badge--proximo{background:rgba(28,255,107,.1);color:#1cff6b!important;}
  .ev-badge--pasado{background:rgba(255,255,255,.04);color:#5a6070!important;}
+ .ev-badge--proximo{background:rgba(28,255,107,.15);color:#1cff6b!important;border:1px solid rgba(28,255,107,.3);}
  .ev-nombre{font-family:Orbitron,sans-serif;font-size:12px;font-weight:700;color:#e8eaf0!important;margin:0 0 5px;letter-spacing:.5px;line-height:1.35;}
  .ev-desc{color:#8a8fa0!important;font-size:12px;line-height:1.6;margin:0 0 8px;}
  .ev-web{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:rgba(28,255,107,.07);border:1px solid rgba(28,255,107,.2);border-radius:8px;color:#1cff6b!important;font-family:Orbitron,sans-serif;font-size:8px;font-weight:700;letter-spacing:1px;text-decoration:none;transition:.2s;}
@@ -1560,6 +1561,34 @@ document.getElementById('f-isla').querySelectorAll('.f-btn').forEach(function(b)
 document.getElementById('q-cal').addEventListener('input',function(){q=this.value.trim().toLowerCase();fil();});
 document.getElementById('q-clr').addEventListener('click',function(){document.getElementById('q-cal').value='';q='';fil();});
 document.getElementById('tog-pasado').addEventListener('click',function(){showP=!showP;this.textContent=showP?'Ocultar eventos finalizados':'Mostrar eventos finalizados';this.classList.toggle('on',!showP);fil();});
+
+/* === MARCADO AUTOMÁTICO DE EVENTOS PASADOS === */
+(function(){
+ var MESES={'Ene':0,'Feb':1,'Mar':2,'Abr':3,'May':4,'Jun':5,'Jul':6,'Ago':7,'Sep':8,'Oct':9,'Nov':10,'Dic':11};
+ var hoy=new Date();hoy.setHours(0,0,0,0);
+ document.querySelectorAll('.ev-card').forEach(function(card){
+  var diaEl=card.querySelector('.ev-dia'),mesEl=card.querySelector('.ev-mes'),anoEl=card.querySelector('.ev-ano');
+  if(!diaEl||!mesEl||!anoEl)return;
+  var dia=parseInt(diaEl.textContent.trim(),10);
+  var mes=MESES[mesEl.textContent.trim()];
+  var ano=parseInt(anoEl.textContent.trim(),10);
+  if(isNaN(dia)||mes===undefined||isNaN(ano))return;
+  var fe=new Date(ano,mes,dia);fe.setHours(0,0,0,0);
+  var pasado=fe<hoy;
+  card.classList.toggle('ev-pasado',pasado);
+  var meta=card.querySelector('.ev-meta');
+  var badge=card.querySelector('.ev-badge--pasado');
+  if(pasado){
+   if(!badge&&meta){badge=document.createElement('span');badge.className='ev-badge ev-badge--pasado';badge.textContent='Finalizado';meta.appendChild(badge);}
+  }else if(badge){badge.remove();}
+  var dd=Math.round((fe-hoy)/86400000);
+  var pb=card.querySelector('.ev-badge--proximo');
+  if(!pasado&&dd<=30&&dd>=0){
+   if(!pb&&meta){pb=document.createElement('span');pb.className='ev-badge ev-badge--proximo';pb.textContent=dd===0?'¡Hoy!':(dd===1?'Mañana':'En '+dd+' días');meta.appendChild(pb);}
+  }else if(pb){pb.remove();}
+ });
+})();
+
 fil();
 if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googleTranslateElementInit=function(){if(typeof google!=='undefined'&&google.translate){new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'en,de,fr,it,pt',autoDisplay:false},'google_translate_element');}};var s=document.createElement('script');s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';document.head.appendChild(s);}
 </script>
@@ -1805,3 +1834,4 @@ if(!window.googleTranslateLoaded){window.googleTranslateLoaded=true;window.googl
 })();
 
 </script>
+
