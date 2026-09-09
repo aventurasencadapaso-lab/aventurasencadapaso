@@ -446,6 +446,17 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
   display: block;
 }
 </style>
+<style id="hub-icons-css">
+.idx-hub__ico{width:52px;height:52px;display:flex;align-items:center;justify-content:center;border-radius:14px;color:var(--c,#1cff6b);background:color-mix(in srgb, var(--c,#1cff6b) 10%, transparent);border:1px solid color-mix(in srgb, var(--c,#1cff6b) 22%, transparent);transition:transform .35s cubic-bezier(.34,1.4,.64,1),background .3s,border-color .3s;position:relative;overflow:hidden;flex-shrink:0}
+.idx-hub__ico svg{width:28px;height:28px;position:relative;z-index:1}
+.idx-hub__ico::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 120%, color-mix(in srgb, var(--c,#1cff6b) 35%, transparent), transparent 70%);opacity:0;transition:opacity .35s}
+.idx-hub__card:hover .idx-hub__ico{transform:translateY(-4px) scale(1.06);background:color-mix(in srgb, var(--c,#1cff6b) 16%, transparent);border-color:color-mix(in srgb, var(--c,#1cff6b) 45%, transparent)}
+.idx-hub__card:hover .idx-hub__ico::after{opacity:1}
+@media(max-width:700px){.idx-hub__ico{width:44px;height:44px;border-radius:12px}.idx-hub__ico svg{width:24px;height:24px}}
+@supports not (background: color-mix(in srgb, red 10%, transparent)){
+ .idx-hub__ico{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+}
+</style>
 </head>
 <body>
 <a href="#cp" class="skip-link">Saltar al contenido principal</a>
@@ -616,27 +627,65 @@ html,body{background:#02070f!important;color:#c8ccd8!important;}
 </div>
 <div class="idx-hub">
   <a href="buscador-aventuras.html" class="idx-hub__card">
-    <div class="idx-hub__ico" style="background:rgba(28,255,107,.1);"><i class="fas fa-search" style="color:#1cff6b;"></i></div>
+    <div class="idx-hub__ico" style="--c:#1cff6b;">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 24 L11 13 L16 19 L21 10 L28 21" opacity=".35"/>
+        <circle cx="14" cy="14" r="7.5"/>
+        <path d="M19.5 19.5 L26 26"/>
+        <path d="M11 14 L13.5 16.5 L17.5 11.5" stroke-width="1.5"/>
+      </svg>
+    </div>
     <strong>Buscador</strong>
     <span>Filtra por isla, deporte y nivel</span>
   </a>
   <a href="comparador.html" class="idx-hub__card">
-    <div class="idx-hub__ico" style="background:rgba(0,183,255,.1);"><i class="fas fa-balance-scale" style="color:#00b7ff;"></i></div>
+    <div class="idx-hub__ico" style="--c:#00b7ff;">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 26 L9 15 L14 26 Z" fill="currentColor" fill-opacity=".18"/>
+        <path d="M18 26 L24 9 L30 26 Z" fill="currentColor" fill-opacity=".3"/>
+        <path d="M2 26 L30 26"/>
+        <circle cx="9" cy="15" r="1.3" fill="currentColor" stroke="none"/>
+        <circle cx="24" cy="9" r="1.6" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
     <strong>Comparar Islas</strong>
     <span>¿Qué isla va contigo?</span>
   </a>
   <a href="calendario.html" class="idx-hub__card">
-    <div class="idx-hub__ico" style="background:rgba(255,193,7,.1);"><i class="fas fa-calendar-alt" style="color:#ffc107;"></i></div>
+    <div class="idx-hub__ico" style="--c:#ffc107;">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="7" width="24" height="21" rx="3"/>
+        <path d="M4 13 L28 13"/>
+        <path d="M10 4 L10 9 M22 4 L22 9"/>
+        <circle cx="11" cy="19" r="1.6" fill="currentColor" stroke="none"/>
+        <circle cx="16" cy="19" r="1.6" fill="currentColor" stroke="none" opacity=".45"/>
+        <circle cx="21" cy="23" r="1.6" fill="currentColor" stroke="none" opacity=".45"/>
+      </svg>
+    </div>
     <strong>Calendario</strong>
-    <span>107 eventos outdoor</span>
+    <span>148 eventos outdoor</span>
   </a>
   <a href="tiendas.html" class="idx-hub__card">
-    <div class="idx-hub__ico" style="background:rgba(255,111,0,.1);"><i class="fas fa-store" style="color:#ff6f00;"></i></div>
+    <div class="idx-hub__ico" style="--c:#ff6f00;">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 12 L7 27 L25 27 L25 12"/>
+        <path d="M3 12 L6 5 L26 5 L29 12 Z" fill="currentColor" fill-opacity=".18"/>
+        <path d="M3 12 Q6 16 9.5 12 Q13 16 16 12 Q19 16 22.5 12 Q26 16 29 12"/>
+        <path d="M13 27 L13 19 L19 19 L19 27"/>
+      </svg>
+    </div>
     <strong>Tiendas</strong>
     <span>54 tiendas en Canarias</span>
   </a>
   <a href="ruleta.html" class="idx-hub__card">
-    <div class="idx-hub__ico" style="background:rgba(229,57,53,.1);"><i class="fas fa-dice" style="color:#e53935;"></i></div>
+    <div class="idx-hub__ico" style="--c:#e53935;">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="16" cy="16" r="12"/>
+        <circle cx="16" cy="16" r="3" fill="currentColor" stroke="none"/>
+        <path d="M16 4 L16 13 M16 19 L16 28 M4 16 L13 16 M19 16 L28 16"/>
+        <path d="M7.5 7.5 L11.5 11.5 M20.5 20.5 L24.5 24.5 M24.5 7.5 L20.5 11.5 M11.5 20.5 L7.5 24.5" opacity=".4"/>
+      </svg>
+    </div>
     <strong>Sorpréndeme</strong>
     <span>Ruta aleatoria</span>
   </a>
