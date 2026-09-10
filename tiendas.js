@@ -53,12 +53,12 @@ var TIENDAS = [
     isla: "Tenerife", tipo: "Comprar",
     deporte: ["Escalada","Barranquismo","Senderismo"],
     zona: "Norte",
-    descripcion: "Más de 25 años de experiencia en equipamiento de escalada y montaña. Tienda especializada con asesoramiento técnico de nivel. Productos de seguridad y escalada deportiva.",
-    direccion: "Tenerife",
-    telefono: "",
+    descripcion: "Más de 30 años de experiencia en equipamiento de escalada y montaña. Tienda especializada con asesoramiento técnico de nivel. Productos de seguridad y escalada deportiva.",
+    direccion: "C/ Baltasar Núñez, Edificio Málaga nº2, 38202 San Cristóbal de La Laguna, Tenerife",
+    telefono: "+34 922 258 029",
     web: "https://basaltoescalada.com",
     foto: "imagenes/tiendas/basalto-escalada.jpg",
-    lat: 28.4700, lng: -16.2600
+    lat: 28.4864, lng: -16.3186
   },
   {
     id: "grlimits",
