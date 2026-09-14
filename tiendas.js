@@ -159,19 +159,7 @@ var TIENDAS = [
   // ══════════════════════════════════════
   //  LANZAROTE
   // ══════════════════════════════════════
-  {
-    id: "kayak-lanzarote",
-    nombre: "Kayak Lanzarote",
-    isla: "Lanzarote", tipo: "Alquilar",
-    deporte: ["Kayak","Submarinismo"],
-    zona: "Sur",
-    descripcion: "Entre el 10% de las mejores atracciones del mundo. Alquiler de kayaks de mar en Los Ajaches y Papagayo. Kayaks individuales, dobles y de travesía. Snorkel incluido.",
-    direccion: "Playa Blanca, Lanzarote",
-    telefono: "+34 928 585 636",
-    web: "https://www.kayaklanzarote.com",
-    foto: "imagenes/tiendas/kayak-walk-lanzarote.jpg",
-    lat: 28.8625, lng: -13.8344
-  },
+  
   {
     id: "papagayo-watersports",
     nombre: "Papagayo Watersports",
@@ -189,9 +177,9 @@ var TIENDAS = [
     id: "kayak-walk-lanzarote",
     nombre: "Kayak & Walk in Lanzarote",
     isla: "Lanzarote", tipo: "Alquilar",
-    deporte: ["Kayak","Senderismo"],
+    deporte: ["Kayak","Senderismo","Submarinismo"],
     zona: "Sur",
-    descripcion: "Alquiler de kayaks y material de snorkel en Playa Blanca. Rutas guiadas por las calas de Papagayo con paradas para buceo en fondos volcánicos únicos.",
+    descripcion: "Alquiler de kayaks de mar y material de snorkel en Playa Blanca. Rutas guiadas por Los Ajaches y las calas de Papagayo, con paradas para buceo en fondos volcánicos. Kayaks individuales, dobles y de travesía.",
     direccion: "Playa Blanca, Lanzarote",
     telefono: "+34 928 585 636",
     web: "https://kayakandwalkinlanzarote.com",
