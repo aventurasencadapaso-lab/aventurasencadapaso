@@ -107,14 +107,14 @@ var TIENDAS = [
     id: "limasport-gc",
     nombre: "Lima Sport Canarias",
     isla: "Gran Canaria", tipo: "Comprar",
-    deporte: ["Escalada","Senderismo","Barranquismo","Trail Running"],
+    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
     zona: "Norte",
     descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo y barranquismo. También material para trabajos en altura y rescate profesional.",
-    direccion: "C/ Fondos del Segura 3, Las Palmas de Gran Canaria",
+    direccion: "C/ Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
     telefono: "+34 928 232 890",
     web: "https://limasportcanarias.com",
     foto: "imagenes/tiendas/limasport-gc.jpg",
-    lat: 28.1000, lng: -15.4167
+    lat: 28.1077, lng: -15.4256
   },
   {
     id: "yukan-gran-canaria",
@@ -343,19 +343,7 @@ var TIENDAS = [
     foto: "",
     lat: null, lng: null
   },
-  {
-    id: "gran-canaria-outdoors",
-    nombre: "Gran Canaria Outdoors",
-    isla: "Gran Canaria", tipo: "Alquilar",
-    deporte: ["Senderismo","Escalada","Barranquismo"],
-    zona: "Sur",
-    descripcion: "Senderismo guiado, alquiler de material outdoor y tienda de equipamiento en Gran Canaria. Rutas por el Roque Nublo, Barranco de Güigüi y los mejores senderos de la isla.",
-    direccion: "Maspalomas, Gran Canaria",
-    telefono: "",
-    web: "https://www.senderismograncanaria.com",
-    foto: "",
-    lat: null, lng: null
-  },
+  
 
   // ══════════════════════════════════════
   //  LANZAROTE — más tiendas
@@ -448,17 +436,4 @@ var TIENDAS = [
     foto: "",
     lat: 28.1033, lng: -15.4372
   }
-  ,{
-    id: "lima-sport-canarias",
-    nombre: "Lima Sport Canarias",
-    isla: "Gran Canaria", tipo: "Comprar",
-    deporte: ["Escalada","Senderismo","Barranquismo","Alpinismo"],
-    zona: "Norte",
-    descripcion: "Tienda especializada en equipamiento técnico para montaña, escalada, alpinismo, barranquismo y trabajos en altura. Referente en Gran Canaria.",
-    direccion: "C. Fondos de Segura 3, 35019 Las Palmas de Gran Canaria",
-    telefono: "+34 928 791 529",
-    web: "https://limasportcanarias.com",
-    foto: "",
-    lat: 28.0813, lng: -15.4694
-  }
-]; // ← No borres este corchete
+  ]; // ← No borres este corchete
