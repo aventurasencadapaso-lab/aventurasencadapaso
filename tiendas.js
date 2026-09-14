@@ -203,19 +203,7 @@ var TIENDAS = [
     foto: "imagenes/tiendas/profuerte-fuerteventura.jpg",
     lat: 28.7286, lng: -13.8653
   },
-  {
-    id: "divecenter-corralejo",
-    nombre: "Dive Center Corralejo",
-    isla: "Fuerteventura", tipo: "Alquilar",
-    deporte: ["Submarinismo"],
-    zona: "Norte",
-    descripcion: "Centro de buceo en Corralejo con acceso a los mejores spots de Fuerteventura. Alquiler de equipo, inmersiones guiadas y cursos PADI para todos los niveles.",
-    direccion: "C/ Nuestra Señora del Pino 22, 35660 Corralejo, Fuerteventura",
-    telefono: "+34 928 535 906",
-    web: "https://divecentercorralejo.com",
-    foto: "",
-    lat: 28.7305, lng: -13.8631
-  },
+  
 
   // ══════════════════════════════════════
   //  LA PALMA
@@ -225,17 +213,17 @@ var TIENDAS = [
   //  LA GOMERA
   // ══════════════════════════════════════,
   {
-    id: "adventure-capital-gomera",
-    nombre: "Adventure Capital La Gomera",
-    isla: "La Gomera", tipo: "Alquilar",
-    deporte: ["Kayak","Senderismo","Multideporte"],
-    zona: "Sur",
-    descripcion: "Kayak por la costa sur de La Gomera, senderismo guiado y actividades multiaventura. Guías locales con gran conocimiento de los barrancos y senderos de la isla.",
-    direccion: "Valle Gran Rey, La Gomera",
-    telefono: "",
-    web: "https://adventurecapital.es",
+    id: "adventure-capital-tenerife",
+    nombre: "Adventure Capital",
+    isla: "Tenerife", tipo: "Alquilar",
+    deporte: ["Senderismo","Barranquismo","Trail Running","Ciclismo","Surf"],
+    zona: "Norte",
+    descripcion: "Turismo activo con guía oficial UIMLA en Tenerife: senderismo, ascensión al Teide, barranquismo, trail running, ciclismo, surf y observación de cetáceos. También organiza circuitos guiados en el resto de islas.",
+    direccion: "Rambla de Santa Cruz 149, 1B, 38001 Santa Cruz de Tenerife",
+    telefono: "+34 629 392 160",
+    web: "https://www.adventurecapital.es",
     foto: "",
-    lat: null, lng: null
+    lat: 28.4682, lng: -16.2637
   },
 
   // ══════════════════════════════════════

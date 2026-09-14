@@ -35,12 +35,12 @@ if('serviceWorker' in navigator){
  <meta property="og:site_name" content="Aventuras en Cada Paso">
  <meta property="og:url" content="https://aventurasencadapaso.com/tiendas.html">
  <meta property="og:title" content="Tiendas y Equipamiento Outdoor en Canarias – Aventuras en Cada Paso">
- <meta property="og:description" content="27 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
+ <meta property="og:description" content="26 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
  <meta property="og:image" content="https://aventurasencadapaso.com/imagenes/og-tiendas.jpg">
  <meta property="og:locale" content="es_ES">
  <meta name="twitter:card" content="summary_large_image">
  <meta name="twitter:title" content="Tiendas y Equipamiento Outdoor en Canarias – Aventuras en Cada Paso">
- <meta name="twitter:description" content="27 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
+ <meta name="twitter:description" content="26 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
  <meta name="twitter:image" content="https://aventurasencadapaso.com/imagenes/og-tiendas.jpg">
 <script>
 /* Ocultar barra de Google Translate dinámicamente */
@@ -380,6 +380,26 @@ body { overflow-x: hidden !important; }
   pointer-events: none;
 }
 @media(max-width:900px){ .pag-foto-wrap { height: 200px; margin-top: 62px; } }
+</style>
+<style id="filtro-select-fix">
+/* Hacer que todo el recuadro del filtro sea clicable, no solo el texto */
+.filtro-select{position:relative;display:flex;align-items:center;cursor:pointer}
+.filtro-select i{position:absolute;left:14px;pointer-events:none;z-index:2;color:#1cff6b;font-size:13px}
+.filtro-select select{
+  width:100%;
+  height:100%;
+  min-height:46px;
+  padding:12px 40px 12px 38px;
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1.5 L6 6.5 L11 1.5' stroke='%231cff6b' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 15px center;
+}
+.filtro-select:hover select{border-color:rgba(28,255,107,.45)}
+.filtro-select select:focus{outline:none;border-color:#1cff6b}
 </style>
 </head>
 <body>
@@ -741,7 +761,7 @@ body { overflow-x: hidden !important; }
  </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="tiendas.js?v=6"></script>
+<script src="tiendas.js?v=9"></script>
 <script>
 var COL = {'Comprar':'#1cff6b','Alquilar':'#ffc107','Reparar':'#ff6f00','Suplementación':'#a855f7'};
 var BCL = {'Comprar':'b-comprar','Alquilar':'b-alquilar','Reparar':'b-reparar','Suplementación':'b-suplem'};
