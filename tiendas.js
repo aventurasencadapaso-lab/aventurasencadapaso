@@ -14,7 +14,7 @@ var TIENDAS = [
     isla: "Tenerife", tipo: "Comprar",
     deporte: ["Senderismo","Escalada","Trail Running","Barranquismo"],
     zona: "Norte",
-    descripcion: "Tienda técnica de montaña en La Laguna. Escalada, alpinismo, senderismo, trail running y trabajos verticales. Marcas como Petzl, Black Diamond, La Sportiva y The North Face.",
+    descripcion: "Tienda técnica de montaña en La Laguna. Escalada, alpinismo, senderismo, trail running y trabajos verticales. Marcas como Petzl, Arc'teryx, La Sportiva y The North Face.",
     direccion: "Av. de la República Argentina 14, La Laguna, Tenerife",
     telefono: "+34 922 259 000",
     web: "https://www.oldpeak.es",
