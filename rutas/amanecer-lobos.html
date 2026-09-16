@@ -775,7 +775,7 @@ function googleTranslateElementInit() {
 var el=document.getElementById("rp-map");if(!el)return;
 var gpxUrl=el.getAttribute("data-gpx");
 var mp=L.map("rp-map",{scrollWheelZoom:true});
-var capaMapa=L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"\u00a9 OpenStreetMap",subdomains:"abc",maxZoom:18}).addTo(mp);
+var capaMapa=L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:16}).addTo(mp);
 var capaSatelite=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:19});
 var satActivo=false;
 var satBtn=document.getElementById("rp-sat-btn");
@@ -885,7 +885,7 @@ function initOffline(){
    for(var x=Math.min(x1,x2);x<=Math.max(x1,x2);x++){
     for(var y=Math.min(y1,y2);y<=Math.max(y1,y2);y++){
      var s=subs[(x+y)%subs.length];
-     tiles.push("https://"+s+".tile.openstreetmap.org/"+z+"/"+x+"/"+y+".png");
+     tiles.push("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/"+z+"/"+y+"/"+x);
     }
    }
   });
@@ -1393,13 +1393,13 @@ function initOffline(){
        img.onload=function(){try{mctx.drawImage(img,(tx-txMin)*256,(ty-tyMin)*256);}catch(e){}done++;if(done===total)finish();};
        img.onerror=function(){done++;if(done===total)finish();};
        var s=subs[Math.abs(tx+ty)%subs.length];
-       img.src="https://"+s+".tile.openstreetmap.org/"+z+"/"+tx+"/"+ty+".png";
+       img.src="https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/"+z+"/"+ty+"/"+tx;
       })(tx,ty);
      }
     }
     function finish(){
      // Darken the map
-     mctx.fillStyle="rgba(2,7,15,0.55)";
+     mctx.fillStyle="rgba(2,7,15,0.15)";
      mctx.fillRect(0,0,mosaic.width,mosaic.height);
      // Draw the track on the mosaic
      mctx.save();

@@ -279,7 +279,7 @@ var TIENDAS = [
   {
     id: "izas-outdoor",
     nombre: "Izas Outdoor",
-    isla: "Marca", tipo: "Marca",
+    isla: "Marca", tipo: ["Marca"],
     deporte: ["Senderismo","Trail Running","Multideporte"],
     zona: "Marca",
     descripcion: "Marca española de ropa técnica para senderismo, trekking y actividades al aire libre, con más de 35 años de trayectoria. Sus productos están disponibles en diferentes tiendas de Canarias a través de su red comercial en las islas.",
@@ -388,7 +388,7 @@ var TIENDAS = [
   ,{
     id: "tenerife-climbing-house",
     nombre: "Tenerife Climbing House",
-    isla: "Tenerife", tipo: "Comprar",
+    isla: "Tenerife", tipo: ["Comprar","Alquilar","Alojamiento","Cursos"],
     deporte: ["Escalada","Barranquismo"],
     zona: "Sur",
     descripcion: "Albergue, escuela de escalada, tienda y alquiler de material en Villa de Arico. El punto neurálgico de la escalada en Tenerife.",

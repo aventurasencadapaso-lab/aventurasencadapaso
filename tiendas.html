@@ -334,6 +334,8 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  .leg-a::before { background:#ffc107; }
  .leg-r::before { background:#ff6f00; }
  .leg-s::before { background:#a855f7; }
+ .leg-al::before { background:#00b7ff; }
+ .leg-cu::before { background:#e91e63; }
 
  /* Popup mapa */
  .leaflet-popup-content-wrapper {
@@ -400,6 +402,11 @@ body { overflow-x: hidden !important; }
 }
 .filtro-select:hover select{border-color:rgba(28,255,107,.45)}
 .filtro-select select:focus{outline:none;border-color:#1cff6b}
+</style>
+<style id="badges-extra">
+.badge.b-aloja{background:rgba(0,183,255,.12);color:#00b7ff;border:1px solid rgba(0,183,255,.3)}
+.badge.b-cursos{background:rgba(233,30,99,.12);color:#e91e63;border:1px solid rgba(233,30,99,.3)}
+.badge.b-marca{background:rgba(138,143,160,.12);color:#8a8fa0;border:1px solid rgba(138,143,160,.3)}
 </style>
 </head>
 <body>
@@ -657,6 +664,7 @@ body { overflow-x: hidden !important; }
  <option value="">Tipo de servicio</option>
  <option>Comprar</option><option>Alquilar</option>
  <option>Reparar</option><option>Suplementación</option>
+ <option>Alojamiento</option><option>Cursos</option>
  <option>Marca</option>
  </select>
  </div>
@@ -705,6 +713,8 @@ body { overflow-x: hidden !important; }
  <span class="leg-a">Alquilar</span>
  <span class="leg-r">Reparar</span>
  <span class="leg-s">Suplementación</span>
+ <span class="leg-al">Alojamiento</span>
+ <span class="leg-cu">Cursos</span>
  </div>
  </div>
 
@@ -764,16 +774,22 @@ body { overflow-x: hidden !important; }
  </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="tiendas.js?v=12"></script>
+<script src="tiendas.js?v=14"></script>
 <script>
-var COL = {'Comprar':'#1cff6b','Alquilar':'#ffc107','Reparar':'#ff6f00','Suplementación':'#a855f7'};
-var BCL = {'Comprar':'b-comprar','Alquilar':'b-alquilar','Reparar':'b-reparar','Suplementación':'b-suplem'};
-var FIC = {'Comprar':'fa-shopping-bag','Alquilar':'fa-key','Reparar':'fa-tools','Suplementación':'fa-flask'};
+
+/* tipo puede ser texto o lista: lo normalizamos siempre a lista */
+function tipos(t){ return Array.isArray(t.tipo) ? t.tipo : [t.tipo]; }
+var COL = {'Comprar':'#1cff6b','Alquilar':'#ffc107','Reparar':'#ff6f00','Suplementación':'#a855f7','Alojamiento':'#00b7ff','Cursos':'#e91e63','Marca':'#8a8fa0'};
+var BCL = {'Comprar':'b-comprar','Alquilar':'b-alquilar','Reparar':'b-reparar','Suplementación':'b-suplem','Alojamiento':'b-aloja','Cursos':'b-cursos','Marca':'b-marca'};
+var FIC = {'Comprar':'fa-shopping-bag','Alquilar':'fa-key','Reparar':'fa-tools','Suplementación':'fa-flask','Alojamiento':'fa-bed','Cursos':'fa-graduation-cap','Marca':'fa-tag'};
 
 /* MAPA */
 var mapa = L.map('mapa-t', {center:[28.3,-15.8], zoom:7});
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
- attribution:'© OpenStreetMap', subdomains:'abc', maxZoom:19
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{
+ attribution:'© Esri', maxZoom:16
+}).addTo(mapa);
+L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{
+ attribution:'', maxZoom:16
 }).addTo(mapa);
 setTimeout(function(){ mapa.invalidateSize(); }, 300);
 
@@ -792,12 +808,12 @@ function actualizarMapa(arr){
  var bounds = [];
  arr.forEach(function(t){
  if(!t.lat || !t.lng) return;
- var c = COL[t.tipo] || '#1cff6b';
+ var c = COL[tipos(t)[0]] || '#1cff6b';
  var wb = t.web ? '<br><a href="'+t.web+'" target="_blank" style="color:#1cff6b;font-size:11px;">Ver tienda ↗</a>' : '';
  var mk = L.marker([t.lat,t.lng], {icon:svgPin(c)}).addTo(mapa)
  .bindPopup(
  '<strong style="color:#e8eaf0;font-family:Orbitron,sans-serif;font-size:11px;">'+t.nombre+'</strong>'
- +'<br><span style="color:'+c+';font-size:11px;">'+t.tipo+'</span>'
+ +'<br><span style="color:'+c+';font-size:11px;">'+tipos(t).join(' · ')+'</span>'
  +'<br><span style="color:#8a8fa0;font-size:11px;">'+t.direccion+'</span>'
  +(t.telefono?'<br><span style="color:#8a8fa0;font-size:11px;"><i class="fas fa-phone"></i> '+t.telefono+'</span>':'')
  +wb
@@ -823,10 +839,10 @@ function render(){
  document.getElementById('bx').classList.toggle('visible', !!q);
 
  var fil = TIENDAS.filter(function(t){
- var hay = [t.nombre, t.descripcion, t.isla, t.tipo, t.zona, t.deporte.join(' ')].join(' ').toLowerCase();
+ var hay = [t.nombre, t.descripcion, t.isla, tipos(t).join(' '), t.zona, t.deporte.join(' ')].join(' ').toLowerCase();
  if(q && !q.split(/\s+/).every(function(w){ return hay.includes(w); })) return false;
  if(si && t.isla !== si) return false;
- if(st && t.tipo !== st) return false;
+ if(st && !tipos(t).includes(st)) return false;
  if(sd && !t.deporte.includes(sd)) return false;
  if(sz && t.zona !== sz) return false;
  return true;
@@ -841,9 +857,10 @@ function render(){
  });
 
  fil.forEach(function(t){
- var c = COL[t.tipo] || '#1cff6b';
- var bc = BCL[t.tipo] || 'b-comprar';
- var fi = FIC[t.tipo] || 'fa-store';
+ var tp = tipos(t);
+ var c = COL[tp[0]] || '#1cff6b';
+ var bc = BCL[tp[0]] || 'b-comprar';
+ var fi = FIC[tp[0]] || 'fa-store';
 
  var wb = t.web
  ? '<a href="'+t.web+'" target="_blank" rel="noopener" class="tc-btn"><i class="fas fa-external-link-alt"></i> Ver tienda</a>'
@@ -860,7 +877,7 @@ function render(){
  +'<div>'
  +'<div class="tc-badges">'
  +'<span class="badge b-isla">'+t.isla+'</span>'
- +'<span class="badge '+bc+'">'+t.tipo+'</span>'
+ +tp.map(function(x){ return '<span class="badge '+(BCL[x]||'b-comprar')+'">'+x+'</span>'; }).join('')
  +'<span class="badge b-zona">'+t.zona+'</span>'
  +'</div>'
  +'</div>'
@@ -868,7 +885,7 @@ function render(){
  +'<h3 class="tc-nombre">'+t.nombre+'</h3>'
  +'<p class="tc-desc">'+t.descripcion+'</p>'
  +'<div class="tc-info-grid">'
- +'<div class="tc-info-row"><i class="fas '+fi+'"></i> '+t.tipo+'</div>'
+ +'<div class="tc-info-row"><i class="fas '+fi+'"></i> '+tp.join(' · ')+'</div>'
  +(t.direccion && t.direccion!=='Online' ? '<div class="tc-info-row"><i class="fas fa-map-marker-alt"></i> '+t.direccion+'</div>' : '')
  +(t.telefono ? '<div class="tc-info-row"><i class="fas fa-phone"></i> '+t.telefono+'</div>' : '')
  +(t.deporte && t.deporte.length ? '<div class="tc-info-row"><i class="fas fa-hiking"></i> '+t.deporte.join(', ')+'</div>' : '')
