@@ -393,7 +393,7 @@ var TIENDAS = [
     zona: "Sur",
     descripcion: "Albergue, escuela de escalada, tienda y alquiler de material en Villa de Arico. El punto neurálgico de la escalada en Tenerife.",
     direccion: "C/ La Asomadita 8, 38580 Villa de Arico, Tenerife",
-    telefono: "",
+    telefono: "+34 689 886 809",
     web: "https://tenerifeclimbinghouse.com",
     foto: "",
     lat: 28.1641, lng: -16.4826

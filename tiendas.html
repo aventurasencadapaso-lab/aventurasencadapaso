@@ -384,24 +384,59 @@ body { overflow-x: hidden !important; }
 @media(max-width:900px){ .pag-foto-wrap { height: 200px; margin-top: 62px; } }
 </style>
 <style id="filtro-select-fix">
-/* Hacer que todo el recuadro del filtro sea clicable, no solo el texto */
-.filtro-select{position:relative;display:flex;align-items:center;cursor:pointer}
-.filtro-select i{position:absolute;left:14px;pointer-events:none;z-index:2;color:#1cff6b;font-size:13px}
+/* El <select> ES el recuadro: borde, fondo y flecha van en él.
+   El contenedor no dibuja nada, así todo el area responde al clic. */
+.filtro-select{
+  position:relative;
+  display:block;
+  background:none !important;
+  border:none !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+/* Quitar cualquier flecha o decoración heredada del CSS global */
+.filtro-select::after,
+.filtro-select::before{content:none !important;display:none !important}
+
+/* Icono de la izquierda: decorativo, nunca bloquea el clic */
+.filtro-select > i{
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  z-index:2;
+  color:#1cff6b;
+  font-size:13px;
+}
+
+/* El select ocupa todo y lleva el estilo del recuadro */
 .filtro-select select{
+  display:block;
   width:100%;
-  height:100%;
-  min-height:46px;
-  padding:12px 40px 12px 38px;
+  box-sizing:border-box;
+  margin:0;
+  padding:13px 42px 13px 40px;
+  background:#0c1624;
+  border:1px solid rgba(28,255,107,.18);
+  border-radius:12px;
+  color:#e8eaf0;
+  font-family:Orbitron,sans-serif;
+  font-size:11px;
+  letter-spacing:.5px;
   cursor:pointer;
   appearance:none;
   -webkit-appearance:none;
   -moz-appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1.5 L6 6.5 L11 1.5' stroke='%231cff6b' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;
-  background-position:right 15px center;
+  background-position:right 16px center;
+  transition:border-color .2s;
 }
-.filtro-select:hover select{border-color:rgba(28,255,107,.45)}
+.filtro-select select::-ms-expand{display:none}
+.filtro-select select:hover{border-color:rgba(28,255,107,.45)}
 .filtro-select select:focus{outline:none;border-color:#1cff6b}
+.filtro-select select option{background:#0c1624;color:#e8eaf0}
 </style>
 <style id="badges-extra">
 .badge.b-aloja{background:rgba(0,183,255,.12);color:#00b7ff;border:1px solid rgba(0,183,255,.3)}
@@ -774,7 +809,7 @@ body { overflow-x: hidden !important; }
  </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="tiendas.js?v=14"></script>
+<script src="tiendas.js?v=17"></script>
 <script>
 
 /* tipo puede ser texto o lista: lo normalizamos siempre a lista */
