@@ -277,15 +277,15 @@ var TIENDAS = [
   //  TENERIFE — más tiendas
   // ══════════════════════════════════════
   {
-    id: "izas-tenerife",
-    nombre: "Izas Outdoor Canarias",
-    isla: "Tenerife", tipo: "Comprar",
+    id: "izas-outdoor",
+    nombre: "Izas Outdoor",
+    isla: "Marca", tipo: "Marca",
     deporte: ["Senderismo","Trail Running","Multideporte"],
-    zona: "Norte",
-    descripcion: "Más de 25 años vistiendo a senderistas y trekkers. Ropa técnica de senderismo con la mejor relación calidad-precio de Canarias. Marca canaria con tienda en Tenerife.",
-    direccion: "Tenerife",
+    zona: "Marca",
+    descripcion: "Marca española de ropa técnica para senderismo, trekking y actividades al aire libre, con más de 35 años de trayectoria. Sus productos están disponibles en diferentes tiendas de Canarias a través de su red comercial en las islas.",
+    direccion: "Disponible en tiendas colaboradoras de Canarias",
     telefono: "",
-    web: "https://izas-outdoorcanarias.com",
+    web: "https://www.izas-outdoor.com",
     foto: "",
     lat: null, lng: null
   },
@@ -313,11 +313,11 @@ var TIENDAS = [
     deporte: ["Escalada","Barranquismo"],
     zona: "Norte",
     descripcion: "Especialistas en escalada, boulder y montañismo. Equipamiento técnico de las mejores marcas con personal con años de experiencia en la práctica de la escalada. Envíos a todas las islas.",
-    direccion: "Las Palmas de Gran Canaria",
-    telefono: "",
+    direccion: "C/ Manuel González Martín 18, 35006 Las Palmas de Gran Canaria",
+    telefono: "+34 928 249 809",
     web: "https://www.mandalaclimb.com",
     foto: "",
-    lat: null, lng: null
+    lat: 28.1128, lng: -15.4302
   },
   
 
