@@ -35,12 +35,12 @@ if('serviceWorker' in navigator){
  <meta property="og:site_name" content="Aventuras en Cada Paso">
  <meta property="og:url" content="https://aventurasencadapaso.com/tiendas.html">
  <meta property="og:title" content="Tiendas y Equipamiento Outdoor en Canarias – Aventuras en Cada Paso">
- <meta property="og:description" content="26 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
+ <meta property="og:description" content="28 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
  <meta property="og:image" content="https://aventurasencadapaso.com/imagenes/og-tiendas.jpg">
  <meta property="og:locale" content="es_ES">
  <meta name="twitter:card" content="summary_large_image">
  <meta name="twitter:title" content="Tiendas y Equipamiento Outdoor en Canarias – Aventuras en Cada Paso">
- <meta name="twitter:description" content="26 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
+ <meta name="twitter:description" content="28 tiendas de equipamiento outdoor en Canarias. Comprar, alquilar, reparar y suplementación para senderismo, kayak, buceo, escalada y más deportes de aventura.">
  <meta name="twitter:image" content="https://aventurasencadapaso.com/imagenes/og-tiendas.jpg">
 <script>
 /* Ocultar barra de Google Translate dinámicamente */
@@ -809,7 +809,7 @@ body { overflow-x: hidden !important; }
  </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="tiendas.js?v=17"></script>
+<script src="tiendas.js?v=18"></script>
 <script>
 
 /* tipo puede ser texto o lista: lo normalizamos siempre a lista */
@@ -874,7 +874,7 @@ function render(){
  document.getElementById('bx').classList.toggle('visible', !!q);
 
  var fil = TIENDAS.filter(function(t){
- var hay = [t.nombre, t.descripcion, t.isla, tipos(t).join(' '), t.zona, t.deporte.join(' ')].join(' ').toLowerCase();
+ var hay = [t.nombre, t.descripcion, t.isla, tipos(t).join(' '), t.zona, t.deporte.join(' '), t.horario||''].join(' ').toLowerCase();
  if(q && !q.split(/\s+/).every(function(w){ return hay.includes(w); })) return false;
  if(si && t.isla !== si) return false;
  if(st && !tipos(t).includes(st)) return false;
@@ -923,6 +923,7 @@ function render(){
  +'<div class="tc-info-row"><i class="fas '+fi+'"></i> '+tp.join(' · ')+'</div>'
  +(t.direccion && t.direccion!=='Online' ? '<div class="tc-info-row"><i class="fas fa-map-marker-alt"></i> '+t.direccion+'</div>' : '')
  +(t.telefono ? '<div class="tc-info-row"><i class="fas fa-phone"></i> '+t.telefono+'</div>' : '')
+ +(t.horario ? '<div class="tc-info-row"><i class="fas fa-clock"></i> '+t.horario+'</div>' : '')
  +(t.deporte && t.deporte.length ? '<div class="tc-info-row"><i class="fas fa-hiking"></i> '+t.deporte.join(', ')+'</div>' : '')
  +'</div>'
  +'<div class="tc-foot">'+wb+mapBtn+'</div>';
