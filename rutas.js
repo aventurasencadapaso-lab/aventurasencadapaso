@@ -1778,7 +1778,7 @@ var RUTAS = [
     lat: 27.6500, lng: -17.9750
   },
   {
-    id: "tiñor-circular-hierro",
+    id: "tinor-circular-hierro",
     nombre: "Tiñor – Circular por Los Alisios",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7,
@@ -2189,7 +2189,7 @@ var RUTAS = [
     lat: 28.7628, lng: -13.8106
   },
   {
-    id: "cuevas-volcánicas-lobos",
+    id: "cuevas-volcanicas-lobos",
     nombre: "Cuevas Volcánicas – Lobos",
     isla: "Isla de Lobos", tipo: "Espeleología", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 2,
