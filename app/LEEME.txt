@@ -1,0 +1,41 @@
+APP DE RUTAS · AVENTURAS EN CADA PASO
+=====================================
+
+CÓMO PUBLICARLA
+1. Copia la carpeta "app" dentro de tu web, al lado de index.html, rutas.js y la carpeta gpx:
+
+     tu-web/
+       index.html
+       rutas.js
+       gpx/
+       icons/
+       app/   <- esta carpeta
+
+2. Sube los cambios a tu hosting igual que haces con el resto de la web.
+3. Abre en el móvil:  https://TU-WEB/app/
+   (si tu web está en GitHub Pages: .../aventurasencadapaso/app/)
+
+CÓMO LA INSTALA LA GENTE
+- Android (Chrome): botón "Instalar" arriba en la app, o menú ⋮ > "Instalar aplicación".
+- iPhone (Safari): botón Compartir > "Añadir a pantalla de inicio".
+
+AÑADIR O CAMBIAR RUTAS
+No tienes que tocar la app. Lee directamente tu rutas.js y los GPX de gpx/<id>.gpx.
+Añade la ruta a rutas.js y su GPX con el mismo id, y aparecerá en la app.
+
+SI CAMBIAS ALGÚN ARCHIVO DE LA APP (app.js, app.css, index.html)
+Abre app/sw.js y sube el número de versión: 'acp-app-v1' -> 'acp-app-v2'.
+Así los móviles que ya la tienen instalada reciben la actualización.
+
+AJUSTES (al principio de app/app.js)
+- offRoute: metros a partir de los cuales avisa de "te has salido" (40 por defecto)
+- dlBuffer: metros de mapa que se guardan alrededor del track (450)
+- dlMaxZoom: nivel de detalle máximo del mapa descargado (16)
+
+ENLAZAR DESDE TU WEB
+En la ficha de cada ruta puedes poner un botón que abra la app directamente en esa ruta:
+  <a href="../app/#/ruta/ID-DE-LA-RUTA">Seguir en la app</a>
+
+MAPA
+Mapa topográfico y ortofoto del Instituto Geográfico Nacional (IGN), licencia CC BY 4.0.
+La atribución ya aparece en la app; no la quites.

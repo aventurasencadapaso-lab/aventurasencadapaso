@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rutas · Aventuras en Cada Paso</title>
+<meta name="description" content="Sigue las rutas de senderismo de Aventuras en Cada Paso con GPS, incluso sin cobertura.">
+<meta name="theme-color" content="#02070f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ACP Rutas">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ============ LISTA DE RUTAS ============ -->
+<section id="v-list" class="view">
+  <header class="top">
+    <a class="brand" href="../index.html" aria-label="Ir a la web">
+      <img src="../logo-aventuras.png" alt="" onerror="this.style.display='none'">
+      <span>RUTAS</span>
+    </a>
+    <div class="top-r">
+      <span id="net" class="pill"></span>
+      <button id="btn-install" class="pill pill-btn" hidden>Instalar</button>
+    </div>
+  </header>
+
+  <div id="ios-hint" class="hint" hidden>
+    <b>Instala la app en tu iPhone:</b> pulsa <span class="ico-share"></span> <i>Compartir</i> y luego <i>«Añadir a pantalla de inicio»</i>.
+    <button class="hint-x" aria-label="Cerrar">×</button>
+  </div>
+
+  <div class="filters">
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="q" type="search" placeholder="Buscar ruta, lugar…" autocomplete="off">
+    </div>
+    <div id="chips-isla" class="chips"></div>
+    <div class="row-f">
+      <select id="f-dif" aria-label="Dificultad">
+        <option value="">Toda dificultad</option>
+        <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
+      </select>
+      <select id="f-tipo" aria-label="Actividad"></select>
+      <button id="btn-near" class="tog" type="button">Cerca de mí</button>
+      <button id="btn-dl" class="tog" type="button">Descargadas</button>
+    </div>
+  </div>
+
+  <p id="count" class="count"></p>
+  <ul id="list" class="list"></ul>
+  <p id="storage" class="storage"></p>
+</section>
+
+<!-- ============ DETALLE ============ -->
+<section id="v-detail" class="view" hidden>
+  <header class="top top-sub">
+    <a href="#/" class="back" aria-label="Volver">
+      <svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg>
+    </a>
+    <span class="top-title">Ruta</span>
+    <span class="pill net-mini"></span>
+  </header>
+  <div id="d-map" class="d-map"></div>
+  <div class="d-body">
+    <p id="d-meta" class="d-meta"></p>
+    <h1 id="d-name" class="d-name"></h1>
+    <div id="d-stats" class="stats"></div>
+
+    <div id="d-dlbox" class="dlbox"></div>
+
+    <button id="btn-start" class="btn btn-main" type="button">
+      <svg viewBox="0 0 24 24"><path d="M12 2 4.5 20.3l.7.7L12 18l6.8 3 .7-.7z"/></svg>
+      Empezar ruta
+    </button>
+    <label class="rev"><input type="checkbox" id="d-rev"> Hacerla en sentido inverso</label>
+
+    <h2 class="h2">Perfil de altitud</h2>
+    <canvas id="d-prof" class="prof"></canvas>
+
+    <p id="d-desc" class="d-desc"></p>
+    <div class="d-links">
+      <a id="d-go" class="btn btn-out" target="_blank" rel="noopener">Cómo llegar al inicio</a>
+      <a id="d-web" class="btn btn-out">Ver ficha en la web</a>
+    </div>
+    <p class="legal">Mapa: © <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geográfico Nacional</a> (CC BY 4.0). Sigue siempre la señalización y valora tus condiciones y la meteorología.</p>
+  </div>
+</section>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<section id="v-nav" class="view" hidden>
+  <div id="n-map" class="n-map"></div>
+
+  <div class="n-top">
+    <button id="n-exit" class="rbtn" aria-label="Terminar">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div id="n-banner" class="banner"></div>
+    <button id="n-sos" class="rbtn sos" aria-label="Emergencia y coordenadas">SOS</button>
+  </div>
+
+  <div class="n-side">
+    <button id="n-layer" class="rbtn" aria-label="Cambiar mapa">
+      <svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+    </button>
+    <button id="n-center" class="rbtn" aria-label="Centrar en mi posición">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="8"/></svg>
+    </button>
+  </div>
+
+  <div class="sheet">
+    <div class="n-stats">
+      <div><b id="n-done">0,0</b><span>km hechos</span></div>
+      <div><b id="n-left">–</b><span>km quedan</span></div>
+      <div><b id="n-up">–</b><span>m subida rest.</span></div>
+      <div><b id="n-ele">–</b><span>m altitud</span></div>
+    </div>
+    <canvas id="n-prof" class="prof prof-sm"></canvas>
+    <p id="n-gps" class="n-gps">Buscando señal GPS…</p>
+  </div>
+
+  <div id="n-coords" class="coords" hidden></div>
+</section>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="../rutas.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
