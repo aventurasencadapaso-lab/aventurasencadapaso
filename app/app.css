@@ -20,7 +20,7 @@ a{color:var(--green)}
   padding:calc(10px + var(--st)) 16px 10px;background:rgba(2,7,15,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{height:34px;width:auto}
+.brand img{height:40px;width:auto}
 .brand span{font:900 18px var(--head);letter-spacing:3px;color:var(--green)}
 .top-r{display:flex;gap:8px;align-items:center}
 .pill{font:700 9px var(--head);letter-spacing:1.2px;text-transform:uppercase;padding:6px 10px;border-radius:99px;

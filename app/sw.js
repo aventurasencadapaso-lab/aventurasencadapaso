@@ -2,7 +2,7 @@
    Service worker · App de rutas · Aventuras en Cada Paso
    Si cambias algún archivo de la app, sube el número de VERSION.
    ============================================================ */
-var VERSION = 'acp-app-v1';
+var VERSION = 'acp-app-v3';
 var OFFLINE = 'acp-offline-v1';   // rutas descargadas por el usuario (no se borra al actualizar)
 var RUNTIME = 'acp-runtime-v1';   // GPX y mapas vistos, fuentes
 var MAX_RUNTIME_TILES = 1500;
@@ -10,7 +10,7 @@ var MAX_RUNTIME_TILES = 1500;
 var SHELL = [
   './', 'index.html', 'app.css', 'app.js', 'manifest.webmanifest',
   'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css',
-  '../rutas.js', '../logo-aventuras.png', '../icons/icon-192.png', '../icons/icon-512.png', '../icons/icon-maskable-512.png'
+  '../rutas.js', '../logo-aventuras.png', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png', 'icons/apple-touch-icon.png', 'icons/logo-cabecera.png'
 ];
 
 self.addEventListener('install', function (e) {
