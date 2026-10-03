@@ -339,7 +339,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <p class="rp-desc-larga">Vuelta completa al islote en kayak desde Corralejo. Fondos cristalinos, cuevas marinas y la impresionante perspectiva de Lobos desde el agua.</p>
 
-  <p class="rp-desc-larga">Con 12 km de recorrido y una duración de 4-8 horas, esta ruta te lleva por uno de los paisajes más espectaculares de Isla de Lobos. El terreno volcánico canario ofrece una experiencia que no encontrarás en ningún otro lugar de Europa.</p>
+  <p class="rp-desc-larga">Es una salida en kayak de nivel medio; calcula 4-8 horas con la travesía desde Corralejo incluida. El viento manda aquí, así que consulta la previsión antes de salir.</p>
 
   <div class="rp-tip" style="background:#0c1624;border:1px solid rgba(28,255,107,.2);border-left:3px solid #1cff6b;border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;">
     <p style="margin:0;color:#c8ccd8;font-size:14px;line-height:1.7;">
@@ -398,7 +398,7 @@ iframe.goog-te-banner-frame{display:none!important;}
       <span class="rp-map-label"><i class="fas fa-map-location-dot"></i> Track de la ruta</span>
       <button type="button" id="rp-sat-btn" class="rp-sat-btn"><i class="fas fa-satellite"></i> Satélite</button>
     </div>
-    <div id="rp-map" class="rp-map" data-gpx="../gpx/kayak-lobos.gpx"></div>
+    <div id="rp-map" class="rp-map" data-punto="28.7506,-13.8167"></div>
   <div class="rp-map-live-bar">
     <button type="button" id="rp-live-btn" class="rp-live-btn"><i class="fas fa-location-arrow"></i> Seguir ruta en vivo</button>
     <button type="button" id="rp-offline-btn" class="rp-offline-btn"><i class="fas fa-download"></i> Descargar para offline</button>
@@ -437,6 +437,8 @@ iframe.goog-te-banner-frame{display:none!important;}
 
 </div></main>
 
+<div class="promo-slot" data-promo="ruta" data-base="../"></div>
+<script src="../banners.js?v=1" defer></script>
 <div class="rp-related">
   <h2 class="rp-section-title"><i class="fas fa-route" style="color:#1cff6b;margin-right:8px;"></i>Más rutas en Isla de Lobos</h2>
   <div class="rp-related-grid">
@@ -765,7 +767,7 @@ function googleTranslateElementInit() {
 </script>
 <script>(function(){
 var el=document.getElementById("rp-map");if(!el)return;
-var gpxUrl=el.getAttribute("data-gpx");
+var gpxUrl=el.getAttribute("data-gpx");var PUNTO=el.getAttribute("data-punto");
 var mp=L.map("rp-map",{scrollWheelZoom:true});
 var capaMapa=L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:16}).addTo(mp);
 var capaSatelite=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",{attribution:"\u00a9 Esri",maxZoom:19});
@@ -783,6 +785,7 @@ if(satBtn){
 function icon(c){var sv='<svg xmlns="http://www.w3.org/2000/svg" width="26" height="34" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.67 14 22 14 22S28 23.67 28 14C28 6.27 21.73 0 14 0z" fill="'+c+'"/><circle cx="14" cy="14" r="6" fill="#02070f"/></svg>';return L.divIcon({html:sv,className:"",iconSize:[26,34],iconAnchor:[13,34],popupAnchor:[0,-34]});}
 var pts=[],bounds=null;
 
+if(PUNTO){var pp=PUNTO.split(",").map(parseFloat);mp.setView(pp,15);L.marker(pp,{icon:icon("#1cff6b")}).addTo(mp).bindPopup("Punto de inicio");["rp-live-btn","rp-offline-btn","rp-live-hud","rp-ig-btn"].forEach(function(id){var e=document.getElementById(id);if(e)e.style.display="none";});[".rp-elev-wrap",".rp-btn-gpx",".rp-btn-app",".rp-btn-ig"].forEach(function(q){var e=document.querySelector(q);if(e)e.style.display="none";});var ga=document.querySelector('a[href$=".gpx"]');if(ga)ga.style.display="none";}else{
 fetch(gpxUrl).then(function(r){return r.text();}).then(function(str){
  var xml=new DOMParser().parseFromString(str,"application/xml");
  pts=Array.prototype.slice.call(xml.querySelectorAll("trkpt")).map(function(p){return [parseFloat(p.getAttribute("lat")),parseFloat(p.getAttribute("lon"))];});
@@ -801,6 +804,7 @@ fetch(gpxUrl).then(function(r){return r.text();}).then(function(str){
  initIG(elePts,"kayak-lobos");
  var __d=0;for(var __i=1;__i<pts.length;__i++){__d+=distM(pts[__i-1],pts[__i]);}statsGlob.dist=(__d/1000).toFixed(1);
 }).catch(function(){el.innerHTML='<div class="rp-map-empty"><img src="../imagenes/gpx-thumbs/kayak-lobos.svg" alt="Track de la ruta" style="width:100%;max-height:300px;object-fit:contain;padding:20px;box-sizing:border-box;"><p style="text-align:center;color:#8a8fa0;font-size:12px;margin:8px 0 0;">Track GPS pendiente de datos reales</p></div>';initIG([],"kayak-lobos");});
+}
 
 function distM(a,b){
  var R=6371000,p1=a[0]*Math.PI/180,p2=b[0]*Math.PI/180,dp=(b[0]-a[0])*Math.PI/180,dl=(b[1]-a[1])*Math.PI/180;
@@ -905,11 +909,11 @@ function initOffline(){
   var dist=[0];
   for(var i=1;i<elePts.length;i++){dist.push(dist[i-1]+distM(elePts[i-1].ll,elePts[i].ll));}
   var totalDist=dist[dist.length-1];
-  var asc=0,desc=0,maxE=-Infinity,minE=Infinity;
+  var asc=0,desc=0,maxE=-Infinity,minE=Infinity,refE=(elePts.length?elePts[0].ele:0);
   for(var j=0;j<elePts.length;j++){
    var e=elePts[j].ele;
    if(e>maxE)maxE=e; if(e<minE)minE=e;
-   if(j>0){var d=e-elePts[j-1].ele; if(d>0)asc+=d; else desc+=-d;}
+   if(j>0){var d=e-refE; if(d>=4){asc+=d;refE=e;} else if(d<=-4){desc+=-d;refE=e;}}
   }
   document.getElementById("rp-elev-asc").textContent="+"+Math.round(asc)+"m";
   document.getElementById("rp-elev-desc").textContent="-"+Math.round(desc)+"m";
@@ -1135,7 +1139,7 @@ function initOffline(){
 
  function initIG(elePts,ruta){
   if(!igBtn)return;
-  if(elePts&&elePts.length>1){var asc=0;for(var i=1;i<elePts.length;i++){var d=elePts[i].ele-elePts[i-1].ele;if(d>0)asc+=d;}if(asc>0)statsGlob.asc=Math.round(asc);}
+  if(elePts&&elePts.length>1){var asc=0,rE=elePts[0].ele;for(var i=1;i<elePts.length;i++){var d=elePts[i].ele-rE;if(d>=4){asc+=d;rE=elePts[i].ele;}else if(d<=-4){rE=elePts[i].ele;}}if(asc>0)statsGlob.asc=Math.round(asc);}
   // click handler moved to modal script
 
  window.estiloActual=estiloActual;

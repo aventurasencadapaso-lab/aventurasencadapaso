@@ -493,7 +493,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <p class="rp-desc-larga">Circular por el bosque de Los Alisios desde Tiñor. Laurisilva húmeda y bosque de hayas con los garoeos, árboles que capturan agua de las nubes.</p>
 
-  <p class="rp-desc-larga">Con 9.8 km de recorrido y una duración de 2-4 horas, esta ruta te lleva por uno de los paisajes más espectaculares de El Hierro. El terreno volcánico canario ofrece una experiencia que no encontrarás en ningún otro lugar de Europa.</p>
+  <p class="rp-desc-larga">9,8 km con salida y llegada en el mismo punto, con unos 423 m de desnivel acumulado entre los 789 m en la parte más baja y los 1.128 m en la más alta. Es una ruta de senderismo de dificultad media; reserva 4-8 horas para hacerla con calma.</p>
 
   <div class="rp-tip" style="background:#0c1624;border:1px solid rgba(28,255,107,.2);border-left:3px solid #1cff6b;border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;">
     <p style="margin:0;color:#c8ccd8;font-size:14px;line-height:1.7;">
@@ -503,8 +503,8 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-stats">
     <div class="rp-stat"><div class="rp-sl">Dificultad</div><div class="rp-sv" style="color:#ffc107!important">Media</div></div>
-    <div class="rp-stat"><div class="rp-sl">Distancia</div><div class="rp-sv">9.8 km</div></div>
-    <div class="rp-stat"><div class="rp-sl">Duración</div><div class="rp-sv">2-4 horas</div></div>
+    <div class="rp-stat"><div class="rp-sl">Distancia</div><div class="rp-sv">9,8 km</div></div>
+    <div class="rp-stat"><div class="rp-sl">Duración</div><div class="rp-sv">4-8 horas</div></div>
     <div class="rp-stat"><div class="rp-sl">Tipo</div><div class="rp-sv">Senderismo</div></div>
     <div class="rp-stat"><div class="rp-sl">Isla</div><div class="rp-sv">El Hierro</div></div>
   </div>
@@ -602,6 +602,8 @@ iframe.goog-te-banner-frame{display:none!important;}
   </div>
 
 </div></main>
+<div class="promo-slot" data-promo="ruta" data-base="../"></div>
+<script src="../banners.js?v=1" defer></script>
 <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-col">
@@ -777,11 +779,11 @@ var elevMarker=null;
   var dist=[0];
   for(var i=1;i<elePts.length;i++){dist.push(dist[i-1]+distM(elePts[i-1].ll,elePts[i].ll));}
   var totalDist=dist[dist.length-1];
-  var asc=0,desc=0,maxE=-Infinity,minE=Infinity;
+  var asc=0,desc=0,maxE=-Infinity,minE=Infinity,refE=(elePts.length?elePts[0].ele:0);
   for(var j=0;j<elePts.length;j++){
    var e=elePts[j].ele;
    if(e>maxE)maxE=e; if(e<minE)minE=e;
-   if(j>0){var d=e-elePts[j-1].ele; if(d>0)asc+=d; else desc+=-d;}
+   if(j>0){var d=e-refE; if(d>=4){asc+=d;refE=e;} else if(d<=-4){desc+=-d;refE=e;}}
   }
   document.getElementById("rp-elev-asc").textContent="+"+Math.round(asc)+"m";
   document.getElementById("rp-elev-desc").textContent="-"+Math.round(desc)+"m";

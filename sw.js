@@ -4,7 +4,7 @@
    Offline page para cuando no hay red
 ============================================================ */
 
-var CACHE_NAME   = 'aventuras-v15';
+var CACHE_NAME   = 'aventuras-v16';
 var BASE         = '/aventurasencadapaso';
 
 var CACHE_CORE = [
@@ -12,6 +12,7 @@ var CACHE_CORE = [
   BASE + '/index.html',
   BASE + '/style.min.css',
   BASE + '/rutas.js',
+  BASE + '/banners.js',
   BASE + '/tiendas.js',
   BASE + '/manifest.json',
   BASE + '/offline.html',

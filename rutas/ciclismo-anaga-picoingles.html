@@ -487,8 +487,8 @@ iframe.goog-te-banner-frame{display:none!important;}
 </div>
 <div class="rp-foto-hero"><img src="../imagenes/tenerife-hero.jpg" alt="Tenerife" loading="eager" onerror="this.parentElement.style.display='none'"><div class="rp-foto-hero__grad"></div><div class="rp-foto-hero__content"><div class="rp-foto-hero__badges"><span class="badge badge-isla">🌋 Tenerife</span>
     <span class="badge badge-tipo"><i class="fas fa-hiking" style="margin-right:5px;"></i>Senderismo</span>
-    <span class="badge" style="background:#ff6f0022;color:#ff6f00;border:1px solid #ff6f0044">
-      <i class="fas fa-frown" style="margin-right:5px;"></i>Difícil
+    <span class="badge" style="background:#1cff6b22;color:#1cff6b;border:1px solid #1cff6b44">
+      <i class="fas fa-smile" style="margin-right:5px;"></i>Fácil
     </span></div><h1 class="rp-h1">La Laguna – Anaga vía Pico del Inglés</h1></div></div>
 <main id="cp"><div class="rp">
 
@@ -510,7 +510,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-stats">
     <div class="rp-stat"><div class="rp-sl">Dificultad</div><div class="rp-sv" style="color:#1cff6b!important">Fácil</div></div>
-    <div class="rp-stat"><div class="rp-sl">Distancia</div><div class="rp-sv">11 km</div></div>
+    <div class="rp-stat"><div class="rp-sl">Distancia</div><div class="rp-sv">11,0 km</div></div>
     <div class="rp-stat"><div class="rp-sl">Duración</div><div class="rp-sv">1-2 horas</div></div>
     <div class="rp-stat"><div class="rp-sl">Tipo</div><div class="rp-sv">Ciclismo</div></div>
     <div class="rp-stat"><div class="rp-sl">Isla</div><div class="rp-sv">Tenerife</div></div>
@@ -592,6 +592,8 @@ iframe.goog-te-banner-frame{display:none!important;}
   </div>
 
   </div></main>
+<div class="promo-slot" data-promo="ruta" data-base="../"></div>
+<script src="../banners.js?v=1" defer></script>
 <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-col">
@@ -768,11 +770,11 @@ function initOffline(){
   var dist=[0];
   for(var i=1;i<elePts.length;i++){dist.push(dist[i-1]+distM(elePts[i-1].ll,elePts[i].ll));}
   var totalDist=dist[dist.length-1];
-  var asc=0,desc=0,maxE=-Infinity,minE=Infinity;
+  var asc=0,desc=0,maxE=-Infinity,minE=Infinity,refE=(elePts.length?elePts[0].ele:0);
   for(var j=0;j<elePts.length;j++){
    var e=elePts[j].ele;
    if(e>maxE)maxE=e; if(e<minE)minE=e;
-   if(j>0){var d=e-elePts[j-1].ele; if(d>0)asc+=d; else desc+=-d;}
+   if(j>0){var d=e-refE; if(d>=4){asc+=d;refE=e;} else if(d<=-4){desc+=-d;refE=e;}}
   }
   document.getElementById("rp-elev-asc").textContent="+"+Math.round(asc)+"m";
   document.getElementById("rp-elev-desc").textContent="-"+Math.round(desc)+"m";

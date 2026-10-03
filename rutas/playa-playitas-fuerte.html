@@ -339,7 +339,7 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <p class="rp-desc-larga">Circular con subibajas constantes y vistas a la costa este. Paisaje volcánico rojizo, playas poco frecuentadas y la sensación de explorar el sur más tranquilo.</p>
 
-  <p class="rp-desc-larga">Con 9 km de recorrido y una duración de 2-4 horas, esta ruta te lleva por uno de los paisajes más espectaculares de Fuerteventura. El terreno volcánico canario ofrece una experiencia que no encontrarás en ningún otro lugar de Europa.</p>
+  <p class="rp-desc-larga">Son 9,9 km con unos 439 m de desnivel acumulado, en un recorrido que empieza y acaba en el mismo punto, moviéndose entre el nivel del mar y los 157 m de altitud. Es una ruta de senderismo de dificultad media; reserva 4-8 horas para hacerla con calma.</p>
 
   <div class="rp-tip" style="background:#0c1624;border:1px solid rgba(28,255,107,.2);border-left:3px solid #1cff6b;border-radius:0 12px 12px 0;padding:16px 18px;margin:20px 0;">
     <p style="margin:0;color:#c8ccd8;font-size:14px;line-height:1.7;">
@@ -349,8 +349,8 @@ iframe.goog-te-banner-frame{display:none!important;}
 
   <div class="rp-stats">
     <div class="rp-stat"><div class="rp-sl">Dificultad</div><div class="rp-sv" style="color:#ffc107!important">Media</div></div>
-    <div class="rp-stat"><div class="rp-sl">Distancia</div><div class="rp-sv">9 km</div></div>
-    <div class="rp-stat"><div class="rp-sl">Duración</div><div class="rp-sv">2-4 horas</div></div>
+    <div class="rp-stat"><div class="rp-sl">Distancia</div><div class="rp-sv">9,9 km</div></div>
+    <div class="rp-stat"><div class="rp-sl">Duración</div><div class="rp-sv">4-8 horas</div></div>
     <div class="rp-stat"><div class="rp-sl">Tipo</div><div class="rp-sv">Senderismo</div></div>
     <div class="rp-stat"><div class="rp-sl">Isla</div><div class="rp-sv">Fuerteventura</div></div>
   </div>
@@ -452,11 +452,13 @@ iframe.goog-te-banner-frame{display:none!important;}
 
 </div></main>
 
+<div class="promo-slot" data-promo="ruta" data-base="../"></div>
+<script src="../banners.js?v=1" defer></script>
 <div class="rp-related">
   <h2 class="rp-section-title"><i class="fas fa-route" style="color:#1cff6b;margin-right:8px;"></i>Más rutas en Fuerteventura</h2>
   <div class="rp-related-grid">
     <a href="gran-tarajal-caleta-fuerte.html" class="rp-related-link">Gran Tarajal – Caleta del Muerto</a>
-    <a href="morro-jandia-cumbre.html" class="rp-related-link">Morro de La Zona – Cumbre Jandía</a>
+    <a href="pico-zarza-fuerte.html" class="rp-related-link">Pico de la Zarza – Morro Jable (PR-FV 54)</a>
     <a href="montana-cardones-fuerte.html" class="rp-related-link">Montaña de Cardones – La Oliva</a>
     <a href="corralejo-dunas-fuerte.html" class="rp-related-link">Parque Natural de Corralejo – Dunas</a>
   </div>
@@ -920,11 +922,11 @@ function initOffline(){
   var dist=[0];
   for(var i=1;i<elePts.length;i++){dist.push(dist[i-1]+distM(elePts[i-1].ll,elePts[i].ll));}
   var totalDist=dist[dist.length-1];
-  var asc=0,desc=0,maxE=-Infinity,minE=Infinity;
+  var asc=0,desc=0,maxE=-Infinity,minE=Infinity,refE=(elePts.length?elePts[0].ele:0);
   for(var j=0;j<elePts.length;j++){
    var e=elePts[j].ele;
    if(e>maxE)maxE=e; if(e<minE)minE=e;
-   if(j>0){var d=e-elePts[j-1].ele; if(d>0)asc+=d; else desc+=-d;}
+   if(j>0){var d=e-refE; if(d>=4){asc+=d;refE=e;} else if(d<=-4){desc+=-d;refE=e;}}
   }
   document.getElementById("rp-elev-asc").textContent="+"+Math.round(asc)+"m";
   document.getElementById("rp-elev-desc").textContent="-"+Math.round(desc)+"m";
@@ -1150,7 +1152,7 @@ function initOffline(){
 
  function initIG(elePts,ruta){
   if(!igBtn)return;
-  if(elePts&&elePts.length>1){var asc=0;for(var i=1;i<elePts.length;i++){var d=elePts[i].ele-elePts[i-1].ele;if(d>0)asc+=d;}if(asc>0)statsGlob.asc=Math.round(asc);}
+  if(elePts&&elePts.length>1){var asc=0,rE=elePts[0].ele;for(var i=1;i<elePts.length;i++){var d=elePts[i].ele-rE;if(d>=4){asc+=d;rE=elePts[i].ele;}else if(d<=-4){rE=elePts[i].ele;}}if(asc>0)statsGlob.asc=Math.round(asc);}
   // click handler moved to modal script
 
  window.estiloActual=estiloActual;
