@@ -199,45 +199,53 @@ gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
 }
  </script>
 <script type="application/ld+json">
- {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "¿Qué aventuras se pueden hacer en Tenerife?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "En Tenerife puedes hacer senderismo al Teide, barranquismo, surf, kayak, parapente, escalada, trail running y avistamiento de cetáceos. Es la isla más completa de Canarias para el turismo activo."
- }
- },
- {
- "@type": "Question",
- "name": "¿Cómo subir al Teide?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Puedes subir al Teide a pie por el sendero 7 (requiere permiso gratuito del Parque Nacional) o en teleférico hasta los 3.555 metros. La ruta 0-4-0 es la más extrema, partiendo desde el nivel del mar."
- }
- },
- {
- "@type": "Question",
- "name": "¿Cuándo es mejor visitar Tenerife para hacer senderismo?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Tenerife tiene buen clima durante todo el año. La primavera (marzo-mayo) y el otoño (septiembre-noviembre) son las épocas ideales para senderismo y actividades outdoor por las temperaturas suaves."
- }
- },
- {
- "@type": "Question",
- "name": "¿Qué empresas de aventura hay en Tenerife?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "En Tenerife destacan Outdoor Activities Tenerife, Xplore Tenerife, Nivaria Extremo, Patea Tus Montes y Canaventura, especializadas en senderismo, barranquismo, kayak y actividades extremas."
- }
- }
- ]
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hace falta permiso para subir al Teide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, y son dos permisos distintos. El sendero 7 (Montaña Blanca – La Rambleta) necesita reserva previa con tarifa según residencia, y el sendero 10 (Telesforo Bravo), que es el que sube los últimos 163 m hasta el cráter, necesita otra reserva aparte: gratis para residentes en Tenerife, 6 € para el resto de Canarias y 15 € para no residentes. Los dos se piden en la plataforma Tenerife ON y las plazas se abren cada lunes a las 7:00 para los 56 días siguientes. El billete del teleférico no incluye ninguno de los dos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la mejor época para caminar en Tenerife?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se camina todo el año, pero primavera y otoño son lo más cómodo. En verano la cumbre pasa de los 30° al mediodía y conviene salir de madrugada; en invierno la carretera del Teide puede cerrarse por nieve o hielo durante unos días."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hago si el norte está cubierto de nubes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es lo normal con el alisio: el mar de nubes se queda entre los 600 y los 1.500 m en Anaga y la vertiente norte. Por encima de esa cota (Las Cañadas, el Teide) y en el sur suele estar despejado, así que lo práctico es cambiar de zona y no de plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué otras rutas de Tenerife necesitan reserva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El barranco de Masca (reserva de pago, casco obligatorio y 275 personas al día), el Barranco del Infierno de Adeje (300 personas al día, 15 € y 5 € residentes, con entrada solo por la mañana), la Cueva del Viento de Icod (visita guiada con entrada comprada antes) y, dentro del Parque Nacional, los senderos 9, 23 y 28 además del 7 y el 10."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por dónde empiezo si es mi primera vez?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por los senderos cortos y señalizados: los Roques de García en el Teide, el entorno de Cruz del Carmen en Anaga o el volcán Chinyero. Son de medio día, con desnivel moderado, y dan una idea muy buena de lo distinta que es cada vertiente de la isla."
+      }
+    }
+  ]
 }
- </script>
+</script>
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load',function(){
@@ -751,7 +759,7 @@ a:hover { color:#00e05a; }
 <h1 class="isla-hero__h1">Tenerife – Senderismo, Trail y Aventuras Outdoor</h1>
 <p class="isla-hero__desc">La más completa de Canarias. Volcán Teide a 3.715 m, laurisilva de Anaga, surf en El Médano, barranquismo en Masca y 1.000 km de senderos.</p>
 <div class="isla-hero__stats">
-<div class="isla-stat"><span class="isla-stat__num">29</span><span class="isla-stat__lbl">Rutas</span></div>
+<div class="isla-stat"><span class="isla-stat__num">57</span><span class="isla-stat__lbl">Rutas</span></div>
 <div class="isla-stat"><span class="isla-stat__num">3.715m</span><span class="isla-stat__lbl">Teide</span></div>
 <div class="isla-stat"><span class="isla-stat__num">12</span><span class="isla-stat__lbl">Deportes</span></div>
 <div class="isla-stat"><span class="isla-stat__num">1.000km</span><span class="isla-stat__lbl">Senderos</span></div>
@@ -767,65 +775,83 @@ a:hover { color:#00e05a; }
 <img alt="Paisaje de Tenerife con el Teide al fondo y naturaleza volcánica" class="isla-foto-hero__img" height="420" loading="lazy" src="imagenes/tenerife-hero.jpg" width="1200"/>
 </div>
 <!-- DESCRIPCIÓN DE LA ISLA -->
-<div style="max-width:1100px;margin:0 auto 48px;padding:0 28px;">
-<div style="max-width:760px;margin:0 auto;text-align:center;">
-<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);color:#e8eaf0;font-weight:700;margin:0 0 16px;">La isla más completa de Canarias</h2>
-<p style="color:#8a8fa0;font-size:15px;line-height:1.85;margin:0 0 24px;">Tenerife lo tiene todo: el Teide a 3.715 m sobre el mar, la laurisilva milenaria de Anaga, el barranco salvaje de Masca, las dunas del Médano y 1.000 km de senderos señalizados. Tanto si buscas una ruta técnica de alta montaña como un paseo costero con snorkel, Tenerife tiene exactamente lo que necesitas.</p>
-<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+<div class="isla-contenido">
+<div class="isla-intro">
+<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);color:#e8eaf0;font-weight:700;margin:0 0 18px;text-align:center;">Cuatro islas en una</h2>
+<p>Tenerife funciona como cuatro islas distintas dentro de la misma. Arriba, el Parque Nacional del Teide: un circo de unos 17 km de diámetro a 2.100 m de altitud con el volcán más alto de España (3.715 m) en el centro. Al noreste, el macizo de Anaga, el trozo más antiguo de la isla, cubierto de laurisilva y declarado Reserva de la Biosfera. Al oeste, Teno y el barranco de Masca. Y en la costa sur, El Médano y el alisio.</p>
+<p>Para quien viene a caminar o a entrenar, eso significa que aquí manda la previsión y no el calendario: cuando el norte está tapado por el mar de nubes, la cumbre y el sur están despejados, y al revés. Entre diciembre y marzo la cumbre puede nevar y cerrarse la carretera, y en verano el calor obliga a salir de madrugada por debajo de los 1.000 m.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
 <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-mountain"></i> Teide 3.715m</span>
-<span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-hiking"></i> 29 rutas</span>
+<span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-hiking"></i> 57 rutas</span>
 <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-tree"></i> Laurisilva Anaga</span>
 <span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-water"></i> Surf El Médano</span>
 </div>
 </div>
+<div class="isla-zonas">
+<div class="isla-zona fade-in"><h3>Parque Nacional del Teide</h3><p>Los Roques de García, el Mirador de La Ruleta y las Narices del Teide salen de la carretera TF-21, a 2.000 m. Para pisar el cono del pico hace falta un permiso gratuito (sendero Telesforo Bravo) que se agota semanas antes.</p></div>
+<div class="isla-zona fade-in"><h3>Macizo de Anaga</h3><p>El laberinto verde de la isla: Cruz del Carmen, Chinamada, el Pico del Inglés y las bajadas a Taganana. Caminos empedrados, niebla casi diaria y 500 m de desnivel en muy poco recorrido.</p></div>
+<div class="isla-zona fade-in"><h3>Teno y Masca</h3><p>El extremo noroeste, con el barranco de Masca —acceso con reserva de pago y casco— y los acantilados de Los Gigantes. La carretera a Punta de Teno suele estar restringida al coche particular de día: se entra en guagua o en bici.</p></div>
+<div class="isla-zona fade-in"><h3>Costa sur y El Médano</h3><p>Montaña Roja, La Tejita y uno de los mejores spots de windsurf y kitesurf de Europa por lo constante del viento. El plan B perfecto cuando el resto de la isla está nublado.</p></div>
 </div>
+<div class="isla-info-grid">
+<div class="isla-info-box"><h4><i class="fas fa-sun"></i> Mejor época</h4><p>Primavera y otoño para la cumbre y para Anaga. En verano, la cumbre al amanecer; en invierno puede nevar y cerrarse la TF-21 y la TF-24.</p></div>
+<div class="isla-info-box"><h4><i class="fas fa-plane"></i> Cómo llegar</h4><p>Dos aeropuertos (Tenerife Norte y Tenerife Sur) y ferris desde Agaete, Las Palmas, La Gomera, La Palma y El Hierro. Para las rutas de cumbre, coche casi imprescindible.</p></div>
+<div class="isla-info-box"><h4><i class="fas fa-ticket"></i> Permisos y reservas</h4><p>El pico del Teide, el barranco de Masca y el Barranco del Infierno se reservan con antelación, y los dos últimos son de pago. Sin reserva no se entra.</p></div>
+<div class="isla-info-box"><h4><i class="fas fa-triangle-exclamation"></i> A tener en cuenta</h4><p>A 3.500 m el esfuerzo se nota: sube despacio y bebe más de lo normal. En Anaga, la niebla reduce la visibilidad a metros en minutos.</p></div>
+</div>
+</div><!-- /isla-contenido -->
 <section class="empresas-seccion">
 <div class="container">
 <!-- EMPRESAS Y EXCURSIONES -->
 <html><body><div class="isla-rutas-section" style="max-width:900px;margin:0 auto 60px;padding:0 28px;">
 <div style="text-align:center;margin-bottom:24px;">
 <span class="idx-label"><i class="fas fa-route"></i> Rutas en Tenerife</span>
-<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:#e8eaf0;margin:12px 0 8px;">Las 29 rutas de Tenerife</h2>
+<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:#e8eaf0;margin:12px 0 8px;">Rutas destacadas de Tenerife</h2>
 </div>
 <div class="rutas-tabs">
 <div class="rutas-tabs__nav">
-<button class="rutas-tabs__btn rutas-tabs__btn--active" onclick="showTab(this,'rt-Tenerife-0')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1cff6b;"></span> Fácil <span class="rutas-tabs__count">11</span></button>
-<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Tenerife-1')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffc107;"></span> Media <span class="rutas-tabs__count">12</span></button>
-<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Tenerife-2')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff6f00;"></span> Difícil <span class="rutas-tabs__count">5</span></button>
+<button class="rutas-tabs__btn rutas-tabs__btn--active" onclick="showTab(this,'rt-Tenerife-0')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1cff6b;"></span> Fácil <span class="rutas-tabs__count">8</span></button>
+<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Tenerife-1')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffc107;"></span> Media <span class="rutas-tabs__count">8</span></button>
+<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Tenerife-2')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff6f00;"></span> Difícil <span class="rutas-tabs__count">8</span></button>
+<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Tenerife-3')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#e53935;"></span> Extrema <span class="rutas-tabs__count">6</span></button>
 </div>
 <div class="rutas-tabs__panel" id="rt-Tenerife-0">
-<a class="ruta-row" href="rutas/roques-garcia-teide.html">Roques de García – Sendero 3 Teide</a>
-<a class="ruta-row" href="rutas/volcan-fasnia.html">Volcán de Fasnia – Siete Fuentes</a>
-<a class="ruta-row" href="rutas/chinyero-san-jose.html">San José de los Llanos – Chinyero</a>
-<a class="ruta-row" href="rutas/anaga-bosque-enigmas.html">Bosque de los Enigmas – Anaga</a>
-<a class="ruta-row" href="rutas/malpais-guimar.html">Malpaís de Güímar</a>
-<a class="ruta-row" href="rutas/montana-roja-medano.html">Montaña Roja – El Médano</a>
-<a class="ruta-row" href="rutas/rambla-castro.html">Rambla de Castro – Costa Norte</a>
-<a class="ruta-row" href="rutas/anaga-sendero-sentidos.html">Sendero de los Sentidos – Anaga</a>
-<a class="ruta-row" href="rutas/garachico-pr-tf-43.html">Circular Garachico – PR-TF 43</a>
-<a class="ruta-row" href="rutas/corona-forestal-las-raices.html">Las Raíces – Corona Forestal (PR-TF 25.1)</a>
-<a class="ruta-row" href="rutas/montana-amarilla-sur.html">Montaña Amarilla – Punta de Panete</a>
+<a class="ruta-row" href="rutas/roques-garcia-teide.html" title="Roques de García – Sendero 3 Teide"><span class="ruta-row__name">Roques de García – Sendero 3 Teide</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">3,6 km</span></a>
+<a class="ruta-row" href="rutas/anaga-bosque-enigmas.html" title="Bosque de los Enigmas – Anaga"><span class="ruta-row__name">Bosque de los Enigmas – Anaga</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">5,7 km</span></a>
+<a class="ruta-row" href="rutas/ciclismo-anaga-picoingles.html" title="La Laguna – Anaga vía Pico del Inglés"><span class="ruta-row__name">La Laguna – Anaga vía Pico del Inglés</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">11 km</span><span class="ruta-row__sport"><i class="fas fa-biking"></i> Ciclismo</span></a>
+<a class="ruta-row" href="rutas/buceo-radazul-tenerife.html" title="Buceo – Radazul"><span class="ruta-row__name">Buceo – Radazul</span><span class="ruta-row__sport"><i class="fas fa-water"></i> Submarinismo</span></a>
+<a class="ruta-row" href="rutas/cueva-guanches-icod.html" title="Cueva de los Guanches"><span class="ruta-row__name">Cueva de los Guanches</span><span class="ruta-row__sport"><i class="fas fa-landmark"></i> Patrimonio</span></a>
+<a class="ruta-row" href="rutas/cueva-viento-icod.html" title="Cueva del Viento"><span class="ruta-row__name">Cueva del Viento</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span><span class="ruta-row__sport"><i class="fas fa-helmet-safety"></i> Espeleología</span></a>
+<a class="ruta-row" href="rutas/buceo-puertito-adeje.html" title="Snorkel – El Puertito de Adeje"><span class="ruta-row__name">Snorkel – El Puertito de Adeje</span><span class="ruta-row__sport"><i class="fas fa-water"></i> Snorkel</span></a>
+<a class="ruta-row" href="rutas/surf-americas-tenerife.html" title="Surf – Playa de Las Américas"><span class="ruta-row__name">Surf – Playa de Las Américas</span><span class="ruta-row__sport"><i class="fas fa-wind"></i> Surf</span></a>
 </div>
 <div class="rutas-tabs__panel" id="rt-Tenerife-1" style="display:none">
-<a class="ruta-row" href="rutas/pico-viejo-teide.html">Pico Viejo – Sendero 13</a>
-<a class="ruta-row" href="rutas/paisaje-lunar-vilaflor.html">Vilaflor – Paisaje Lunar (PR-TF 72)</a>
-<a class="ruta-row" href="rutas/anaga-afur-taganana.html">Anaga – Afur a Taganana (Circular)</a>
-<a class="ruta-row" href="rutas/anaga-roque-taborno.html">Anaga – Roque Taborno</a>
-<a class="ruta-row" href="rutas/anaga-cruz-carmen-hidalgo.html">Cruz del Carmen – Punta del Hidalgo</a>
-<a class="ruta-row" href="rutas/pijaral-tenerife.html">Sendero de El Pijaral – Anaga</a>
-<a class="ruta-row" href="rutas/anaga-benijo-draguillo.html">Benijo – Cruz del Draguillo (PR-TF 6.3)</a>
-<a class="ruta-row" href="rutas/portelas-monte-agua.html">Las Portelas – Monte del Agua</a>
-<a class="ruta-row" href="rutas/teno-erjos-circular.html">Erjos – Circular Parque Rural de Teno</a>
-<a class="ruta-row" href="rutas/teno-palmar-circular.html">Valle de El Palmar – Teno Alto</a>
-<a class="ruta-row" href="rutas/barranco-infierno-adeje.html">Barranco del Infierno – Adeje</a>
-<a class="ruta-row" href="rutas/roque-conde-arona.html">Roque del Conde – Arona</a>
+<a class="ruta-row" href="rutas/volcan-fasnia.html" title="Volcán de Fasnia – Siete Fuentes"><span class="ruta-row__name">Volcán de Fasnia – Siete Fuentes</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">9 km</span></a>
+<a class="ruta-row" href="rutas/malpais-guimar.html" title="Malpaís de Güímar"><span class="ruta-row__name">Malpaís de Güímar</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">9,5 km</span></a>
+<a class="ruta-row" href="rutas/montana-roja-medano.html" title="Montaña Roja – El Médano"><span class="ruta-row__name">Montaña Roja – El Médano</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">8,2 km</span></a>
+<a class="ruta-row" href="rutas/rambla-castro.html" title="Rambla de Castro – Costa Norte"><span class="ruta-row__name">Rambla de Castro – Costa Norte</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">8,5 km</span></a>
+<a class="ruta-row" href="rutas/anaga-sendero-sentidos.html" title="Sendero de los Sentidos – Anaga"><span class="ruta-row__name">Sendero de los Sentidos – Anaga</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">7,6 km</span></a>
+<a class="ruta-row" href="rutas/montana-amarilla-sur.html" title="Montaña Amarilla – Punta de Panete"><span class="ruta-row__name">Montaña Amarilla – Punta de Panete</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">8,9 km</span></a>
+<a class="ruta-row" href="rutas/anaga-roque-taborno.html" title="Anaga – Roque Taborno"><span class="ruta-row__name">Anaga – Roque Taborno</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">5,8 km</span></a>
+<a class="ruta-row" href="rutas/barranco-infierno-adeje.html" title="Barranco del Infierno – Adeje"><span class="ruta-row__name">Barranco del Infierno – Adeje</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">6,9 km</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span></a>
 </div>
 <div class="rutas-tabs__panel" id="rt-Tenerife-2" style="display:none">
-<a class="ruta-row" href="rutas/teide-montana-blanca.html">Ascensión al Teide – Montaña Blanca (Sendero 7)</a>
-<a class="ruta-row" href="rutas/masca-barranco.html">Barranco de Masca</a>
-<a class="ruta-row" href="rutas/teno-risco-verde.html">Teno – Monte del Agua – Risco Verde</a>
-<a class="ruta-row" href="rutas/los-organos-orotava.html">Los Órganos – La Orotava</a>
-<a class="ruta-row" href="rutas/taborno-circular-anaga.html">Taborno – Carboneras – Llano Frío</a>
+<a class="ruta-row" href="rutas/pico-viejo-teide.html" title="Teide – La Rambleta – Pico Viejo – Parador"><span class="ruta-row__name">Teide – La Rambleta – Pico Viejo – Parador</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">10,1 km</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span></a>
+<a class="ruta-row" href="rutas/chinyero-san-jose.html" title="San José de los Llanos – Chinyero"><span class="ruta-row__name">San José de los Llanos – Chinyero</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">16,2 km</span></a>
+<a class="ruta-row" href="rutas/corona-forestal-las-raices.html" title="Las Raíces – Corona Forestal (PR-TF 25.1)"><span class="ruta-row__name">Las Raíces – Corona Forestal (PR-TF 25.1)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">13 km</span></a>
+<a class="ruta-row" href="rutas/paisaje-lunar-vilaflor.html" title="Vilaflor – Paisaje Lunar (PR-TF 72)"><span class="ruta-row__name">Vilaflor – Paisaje Lunar (PR-TF 72)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">12,9 km</span></a>
+<a class="ruta-row" href="rutas/anaga-afur-taganana.html" title="Anaga – Afur a Taganana (Circular)"><span class="ruta-row__name">Anaga – Afur a Taganana (Circular)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">12,2 km</span></a>
+<a class="ruta-row" href="rutas/anaga-cruz-carmen-hidalgo.html" title="Cruz del Carmen – Punta del Hidalgo"><span class="ruta-row__name">Cruz del Carmen – Punta del Hidalgo</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">11,4 km</span></a>
+<a class="ruta-row" href="rutas/los-organos-orotava.html" title="Los Órganos – La Orotava"><span class="ruta-row__name">Los Órganos – La Orotava</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">10,8 km</span></a>
+<a class="ruta-row" href="rutas/taborno-circular-anaga.html" title="Taborno – Carboneras – Llano Frío"><span class="ruta-row__name">Taborno – Carboneras – Llano Frío</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">11,8 km</span></a>
+</div>
+<div class="rutas-tabs__panel" id="rt-Tenerife-3" style="display:none">
+<a class="ruta-row" href="rutas/garachico-pr-tf-43.html" title="Circular Garachico – PR-TF 43"><span class="ruta-row__name">Circular Garachico – PR-TF 43</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">8,5 km</span></a>
+<a class="ruta-row" href="rutas/teide-montana-blanca.html" title="Ascensión al Teide – Montaña Blanca (Sendero 7)"><span class="ruta-row__name">Ascensión al Teide – Montaña Blanca (Sendero 7)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">9 km</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span></a>
+<a class="ruta-row" href="rutas/masca-barranco.html" title="Barranco de Masca"><span class="ruta-row__name">Barranco de Masca</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">6,9 km</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span></a>
+<a class="ruta-row" href="rutas/ciclismo-garachico-masca.html" title="Garachico – Erjos – Masca"><span class="ruta-row__name">Garachico – Erjos – Masca</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">79,3 km</span><span class="ruta-row__sport"><i class="fas fa-biking"></i> Ciclismo</span></a>
+<a class="ruta-row" href="rutas/ruta-040-teide.html" title="Ruta 0-4-0 Teide"><span class="ruta-row__name">Ruta 0-4-0 Teide</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">50,7 km</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span></a>
+<a class="ruta-row" href="rutas/ciclismo-teide-costaadeje.html" title="Subida al Teide desde Costa Adeje"><span class="ruta-row__name">Subida al Teide desde Costa Adeje</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">106,1 km</span><span class="ruta-row__sport"><i class="fas fa-biking"></i> Ciclismo</span></a>
 </div>
 </div>
 </div>
@@ -853,8 +879,42 @@ a:hover { color:#00e05a; }
 </div>
 
 
+<section aria-label="Te puede interesar" class="related-links">
+<h2 class="related-title">Te puede interesar</h2>
+<div class="related-grid">
+<a class="related-card" href="lagomera.html"><span class="related-icon"><i class="fas fa-tree" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">La Gomera</strong><span style="display:block;color:#8a8fa0;font-size:12px">A 50 minutos en ferry</span></div></a>
+<a class="related-card" href="lapalma.html"><span class="related-icon"><i class="fas fa-star" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">La Palma</strong><span style="display:block;color:#8a8fa0;font-size:12px">La isla más vertical</span></div></a>
+<a class="related-card" href="grancanaria.html"><span class="related-icon"><i class="fas fa-sun" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">Gran Canaria</strong><span style="display:block;color:#8a8fa0;font-size:12px">Barrancos y dunas</span></div></a>
+<a class="related-card" href="comparador.html"><span class="related-icon"><i class="fas fa-balance-scale" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">Comparar islas</strong><span style="display:block;color:#8a8fa0;font-size:12px">Clima, rutas y precios</span></div></a>
+</div>
+</section>
+<section class="faq-seccion">
+<h2>Preguntas frecuentes sobre Tenerife</h2>
+<div class="faq-lista">
+<details class="faq-item">
+<summary>¿Hace falta permiso para subir al Teide?</summary>
+<p>Sí, y son dos permisos distintos. El sendero 7 (Montaña Blanca – La Rambleta) necesita reserva previa con tarifa según residencia, y el sendero 10 (Telesforo Bravo), que es el que sube los últimos 163 m hasta el cráter, necesita otra reserva aparte: gratis para residentes en Tenerife, 6 € para el resto de Canarias y 15 € para no residentes. Los dos se piden en la plataforma Tenerife ON y las plazas se abren cada lunes a las 7:00 para los 56 días siguientes. El billete del teleférico no incluye ninguno de los dos.</p>
+</details>
+<details class="faq-item">
+<summary>¿Cuál es la mejor época para caminar en Tenerife?</summary>
+<p>Se camina todo el año, pero primavera y otoño son lo más cómodo. En verano la cumbre pasa de los 30° al mediodía y conviene salir de madrugada; en invierno la carretera del Teide puede cerrarse por nieve o hielo durante unos días.</p>
+</details>
+<details class="faq-item">
+<summary>¿Qué hago si el norte está cubierto de nubes?</summary>
+<p>Es lo normal con el alisio: el mar de nubes se queda entre los 600 y los 1.500 m en Anaga y la vertiente norte. Por encima de esa cota (Las Cañadas, el Teide) y en el sur suele estar despejado, así que lo práctico es cambiar de zona y no de plan.</p>
+</details>
+<details class="faq-item">
+<summary>¿Qué otras rutas de Tenerife necesitan reserva?</summary>
+<p>El barranco de Masca (reserva de pago, casco obligatorio y 275 personas al día), el Barranco del Infierno de Adeje (300 personas al día, 15 € y 5 € residentes, con entrada solo por la mañana), la Cueva del Viento de Icod (visita guiada con entrada comprada antes) y, dentro del Parque Nacional, los senderos 9, 23 y 28 además del 7 y el 10.</p>
+</details>
+<details class="faq-item">
+<summary>¿Por dónde empiezo si es mi primera vez?</summary>
+<p>Por los senderos cortos y señalizados: los Roques de García en el Teide, el entorno de Cruz del Carmen en Anaga o el volcán Chinyero. Son de medio día, con desnivel moderado, y dan una idea muy buena de lo distinta que es cada vertiente de la isla.</p>
+</details>
+</div>
+</section>
 <div class="promo-slot promo-slot--ancho" data-promo="isla" data-base=""></div>
-<script src="banners.js?v=1" defer></script>
+<script src="banners.js?v=2" defer></script>
 <footer class="site-footer">
 <div class="footer-grid">
 <div class="footer-col">

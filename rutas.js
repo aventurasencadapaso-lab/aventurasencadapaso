@@ -36,8 +36,9 @@ var RUTAS = [
     nombre: "Ascensión al Teide – Montaña Blanca (Sendero 7)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 9.0,
-    descripcion: "La ruta más icónica de España. Desde Montaña Blanca (2.300 m) hasta La Rambleta (3.555 m). Requiere permiso para subir los últimos 200 m hasta la cima.",
+    descripcion: "La ruta más icónica de España: de Montaña Blanca (2.300 m) a La Rambleta (3.555 m) y, si llevas el segundo permiso, hasta el cráter por el sendero Telesforo Bravo. Son dos autorizaciones distintas y las dos se reservan antes.",
     enlace: "https://www.alltrails.com/es/sendero/spain/santa-cruz-de-tenerife/montana-blanca-pico-del-teide",
+    permiso: true,
     lat: 28.26032, lng: -16.60298
   },
   {
@@ -51,11 +52,12 @@ var RUTAS = [
   },
   {
     id: "pico-viejo-teide",
-    nombre: "Pico Viejo – Sendero 13",
-    isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
+    nombre: "Teide – La Rambleta – Pico Viejo – Parador",
+    isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 10.1,
-    descripcion: "Ascenso al volcán hermano del Teide con vistas únicas al cráter de Pico Viejo. Pinar canario milenario y panorámicas de los conos volcánicos.",
+    descripcion: "Travesía de altura que arranca en La Rambleta (3.555 m), cruza hacia Pico Viejo y baja hasta la zona del Parador. Casi todo es descenso, pero se hace por encima de los 2.100 m y con el terreno suelto de las coladas.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
+    permiso: true,
     lat: 28.27008, lng: -16.63881
   },
   {
@@ -65,6 +67,7 @@ var RUTAS = [
     duracion: "Varios días", distancia: 50.7,
     descripcion: "Del nivel del mar en Playa del Socorro hasta la cima del Teide y vuelta al mar. La ruta más extrema de Canarias: más de 3.700 m de desnivel.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/santa-cruz-de-tenerife",
+    permiso: true,
     lat: 28.39403, lng: -16.60302
   },
   {
@@ -157,8 +160,9 @@ var RUTAS = [
     nombre: "Barranco de Masca",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "4-8 horas", distancia: 6.9,
-    descripcion: "Descenso espectacular por el barranco más famoso de Tenerife hasta la playa. Requiere reserva previa en el Cabildo y regreso en barco.",
+    descripcion: "Descenso por el barranco más famoso de Tenerife hasta la playa, con paredes de cientos de metros a ambos lados. El acceso está regulado: reserva previa de pago, casco obligatorio y vuelta en barco o andando.",
     enlace: "https://es.wikiloc.com/planet/discovery-es/rutas-senderismo-tenerife/",
+    permiso: true,
     lat: 28.30506, lng: -16.84076
   },
   {
@@ -197,6 +201,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 6.9,
     descripcion: "Reserva Natural Especial. Sendero hasta cascada de 80 m con cuevas aborígenes y grabados rupestres. Requiere reserva previa obligatoria.",
     enlace: "https://www.barrancodelinfierno.es",
+    permiso: true,
     lat: 28.12631, lng: -16.72364
   },
   {
@@ -304,6 +309,7 @@ var RUTAS = [
     duracion: "4-8 horas", distancia: 8.5,
     descripcion: "La ruta más emblemática de Gran Canaria. Desde Tejeda al monolito volcánico de 1.813 m. Desde 2025 requiere reserva previa en la web oficial.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria",
+    permiso: true,
     lat: 27.9765, lng: -15.60028
   },
   {
@@ -313,6 +319,7 @@ var RUTAS = [
     duracion: "Día completo", distancia: 20.0,
     descripcion: "Acceso al Roque Nublo desde la Degollada Becerra pasando por el Roque de La Rana y El Fraile. Vistas a Artenara y Acusa.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/hard",
+    permiso: true,
     lat: 27.98871, lng: -15.59331
   },
   {
@@ -322,6 +329,7 @@ var RUTAS = [
     duracion: "4-8 horas", distancia: 15.6,
     descripcion: "Circular por las cumbres de GC desde el área recreativa de Llanos de la Pez. Pico de las Nieves (1.949 m) y Roque Nublo en una sola ruta.",
     enlace: "https://www.alltrails.com/es/spain/gran-canaria/long",
+    permiso: true,
     lat: 27.97516, lng: -15.58366
   },
   {
@@ -577,7 +585,7 @@ var RUTAS = [
     nombre: "Caldera Blanca – Circular desde Tinajo",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 13.8,
-    descripcion: "La ruta libre más impresionante de Lanzarote. Coladas de lava hasta el cráter más grande de la isla (1.200 m de diámetro). Sin guía obligatorio.",
+    descripcion: "Travesía por las coladas hasta el borde de la Caldera Blanca (458 m), con un cráter de más de un kilómetro de diámetro, uno de los mayores de Lanzarote. Es de acceso libre, sin guía ni reserva.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.04375, lng: -13.69267
   },
@@ -588,6 +596,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 10.2,
     descripcion: "Sendero oficial del Parque Nacional (lun/mié/vie). Acceso entre cráteres, coladas de lava y ceniza. Requiere reserva previa obligatoria.",
     enlace: "https://www.miteco.gob.es/es/red-parques-nacionales/nuestros-parques/timanfaya/",
+    permiso: true,
     lat: 29.00573, lng: -13.75309
   },
   {
@@ -651,7 +660,7 @@ var RUTAS = [
     nombre: "Ruta al Cráter de Santa Catalina",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 8.1,
-    descripcion: "7 km hasta el cráter de Santa Catalina por paisaje volcánico único. Solo 9 personas por salida. Ruta guiada muy valorada en el norte.",
+    descripcion: "Circular de acceso libre hasta la caldera de Santa Catalina, entre Mancha Blanca y Masdache, por el Parque Natural de Los Volcanes. Terreno de lapilli y coladas, sin sombra y con el perfil de Timanfaya siempre al lado.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
     lat: 29.03096, lng: -13.686
   },
@@ -871,7 +880,7 @@ var RUTAS = [
     nombre: "Betancuria – Barranco de Las Peñitas (SL-FV 27)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 7.1,
-    descripcion: "Ruta patrimonial por el cauce del río Palmas hasta la Ermita de la Virgen de la Peña, patrona de Fuerteventura. Los materiales más antiguos de Canarias.",
+    descripcion: "Ruta patrimonial por el cauce del río Palmas hasta la Ermita de la Virgen de la Peña, patrona de Fuerteventura. Discurre sobre el Complejo Basal, los materiales más antiguos del archipiélago, de hasta unos 180 millones de años.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
     lat: 28.39395, lng: -14.07254
   },
@@ -889,7 +898,7 @@ var RUTAS = [
     nombre: "Montaña de Tindaya",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 5.7,
-    descripcion: "Ascenso a la montaña sagrada de los majos con grabados podomorlos únicos. Vistas al norte de la isla. Lugar de alto valor arqueológico y espiritual.",
+    descripcion: "Ascenso a la montaña sagrada de los majos con grabados podomorfos únicos. Vistas al norte de la isla. Lugar de alto valor arqueológico y espiritual.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
     lat: 28.59002, lng: -13.98241
   },
@@ -916,7 +925,7 @@ var RUTAS = [
     nombre: "Ajuy – Caleta Negra y Cuevas Marinas",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 5.4,
-    descripcion: "Ruta costera a las cuevas marinas de Ajuy y los acantilados de Caleta Negra. Los materiales más antiguos de Canarias a nivel del mar.",
+    descripcion: "Ruta costera a las cuevas marinas de Ajuy y los acantilados de Caleta Negra. Aquí afloran los materiales más antiguos de Canarias: corteza oceánica del Complejo Basal, con basaltos en pillow lavas de unos 180 millones de años, visibles a pie de playa.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/pajara",
     lat: 28.3992, lng: -14.15435
   },
@@ -963,6 +972,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 11.2,
     descripcion: "Circular completa por Lobos: La Caldera, El Puertito, Faro Martiño y Playa de La Concha. Requiere permiso gratuito y ferry desde Corralejo.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
+    permiso: true,
     lat: 28.7367, lng: -13.82247
   },
 
@@ -1080,7 +1090,7 @@ var RUTAS = [
     id: "gran-tarajal-caleta-fuerte",
     nombre: "Gran Tarajal – Caleta del Muerto",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8.0,
+    duracion: "2-4 horas", distancia: 0,
     descripcion: "Ruta costera por acantilados volcánicos del sureste desde Gran Tarajal. Calas solitarias, colores rojizos y el silencio de la costa menos visitada.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/tuineje",
     lat: 28.2017, lng: -14.0017
@@ -1113,7 +1123,7 @@ var RUTAS = [
     nombre: "Volcán Tajogaite – Erupción 2021",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 7.2,
-    descripcion: "Paisaje lunar reciente único en Europa. Coladas y el nuevo delta volcánico formado en 2021. La más impresionante y reciente de las rutas canarias.",
+    descripcion: "Circular por el entorno del cono del Tajogaite, el volcán que entró en erupción en 2021 y cambió el mapa del valle de Aridane. Lapilli, coladas recientes y la silueta del cono, con el Teide asomando al fondo en días claros.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
     lat: 28.6227, lng: -17.84254
   },
@@ -1124,6 +1134,7 @@ var RUTAS = [
     duracion: "4-8 horas", distancia: 14.5,
     descripcion: "Descenso desde Los Brecitos (taxi 4x4) por el Parque Nacional hasta la Cascada de Colores y el Barranco de las Angustias. Espectacular.",
     enlace: "https://guiaislascanarias.com/la-palma/rutas-senderos-la-palma/",
+    permiso: true,
     lat: 28.71167, lng: -17.90061
   },
   {
@@ -1140,7 +1151,7 @@ var RUTAS = [
     nombre: "Tazacorte – Roque de los Muchachos",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Día completo", distancia: 16.5,
-    descripcion: "Más de 2.400 m de ascenso continuo desde el mar hasta la cima de La Palma (2.423 m). Una de las rutas más duras de todo el archipiélago.",
+    descripcion: "Más de 2.400 m de ascenso continuo desde el mar hasta la cima de La Palma (2.426 m). Una de las rutas más duras de todo el archipiélago.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
     lat: 28.65184, lng: -17.94764
   },
@@ -1149,7 +1160,7 @@ var RUTAS = [
     nombre: "Roque de los Muchachos – Cumbre GR 131",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 9.3,
-    descripcion: "Tramo del GR 131 por la cumbre (2.423 m) entre observatorios. Desde el Pico de la Cruz al Roque, con vistas a todas las islas del archipiélago.",
+    descripcion: "Tramo del GR 131 por la cumbre (2.426 m) entre observatorios. Desde el Pico de la Cruz al Roque, con vistas a todas las islas del archipiélago.",
     enlace: "https://guiaislascanarias.com/la-palma/rutas-senderos-la-palma/",
     lat: 28.75454, lng: -17.88515
   },
@@ -1179,6 +1190,7 @@ var RUTAS = [
     duracion: "4-8 horas", distancia: 15.1,
     descripcion: "Travesía completa del Parque Nacional. Barrancos, cascadas, paredes de 2.000 m y uno de los paisajes más impresionantes de Canarias.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
+    permiso: true,
     lat: 28.71182, lng: -17.90078
   },
   {
@@ -1329,15 +1341,6 @@ var RUTAS = [
     lat: 28.72435, lng: -17.75105
   },
   {
-    id: "punta-lava-fuencaliente-lp",
-    nombre: "Punta de La Lava – Delta Tajogaite",
-    isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 7.7,
-    descripcion: "Sendero por el delta volcánico creado en 2021, donde la lava llegó al mar y creó 50 hectáreas de tierra nueva. El paisaje más reciente y único de Europa.",
-    enlace: "https://visitlapalma.es/senderos-la-palma/",
-    lat: 28.58648, lng: -17.91037
-  },
-  {
     id: "mirador-lomo-chozas-lp",
     nombre: "Mirador Lomo de Las Chozas – Caldera",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Fácil",
@@ -1374,7 +1377,7 @@ var RUTAS = [
     nombre: "GR 131 La Gomera – Travesía",
     isla: "La Gomera", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Día completo", distancia: 19.7,
-    descripcion: "Atraviesa el Parque Nacional de Garajonay y los barrancos más profundos de La Gomera. Jornada exigente por la joya verde del archipiélago.",
+    descripcion: "Atraviesa el Parque Nacional de Garajonay y los barrancos más encajados de La Gomera. Jornada exigente por la joya verde del archipiélago, con la cumbre casi siempre entre niebla.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/san-sebastian-de-la-gomera",
     lat: 28.18059, lng: -17.26499
   },
@@ -1392,7 +1395,7 @@ var RUTAS = [
     nombre: "Barranco de Valle Gran Rey",
     isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "Día completo", distancia: 14.7,
-    descripcion: "Descenso por el barranco más profundo de La Gomera hasta las playas de Valle Gran Rey. Paredes verticales y vegetación exuberante.",
+    descripcion: "Descenso por el barranco más encajado y de mayor desarrollo de La Gomera, con paredes que superan los 800 m, hasta las playas de Valle Gran Rey. Roca vertical, palmeras y bancales a media ladera.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/valle-gran-rey",
     lat: 28.08903, lng: -17.33899
   },
@@ -1558,7 +1561,7 @@ var RUTAS = [
     nombre: "El Cedro – Chorro del Cedro",
     isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
     duracion: "4-8 horas", distancia: 9.8,
-    descripcion: "Circular por laurisilva en el corazón de Garajonay. El Chorro del Cedro es la única cascada permanente de La Gomera, en un entorno de bosque mágico y húmedo.",
+    descripcion: "Circular por la laurisilva en el corazón de Garajonay. El Chorro del Cedro es un salto de unos 150 m que mana todo el año y alimenta las presas de Hermigua: está considerado el mayor de Canarias con caudal permanente.",
     enlace: "https://www.alltrails.com/es/spain/la-gomera",
     lat: 28.13425, lng: -17.20211
   },
@@ -1644,7 +1647,7 @@ var RUTAS = [
     nombre: "Roque de La Bonanza – Frontera",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 10.5,
-    descripcion: "Bajada desde el Mirador de Las Playas por el Camino de Isora hasta el Parador y el Roque de la Bonanza, el peñasco de 200 m que emerge del mar en la costa este de El Hierro.",
+    descripcion: "Bajada desde el Mirador de Las Playas por el Camino de Isora hasta el Parador y el Roque de la Bonanza, el dique volcánico que emerge del mar frente a Las Playas; su estructura alcanza más de 200 m contando desde la base submarina, aunque lo que sobresale del agua es mucho menos.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
     lat: 27.73099, lng: -17.97322
   },
@@ -1738,7 +1741,7 @@ var RUTAS = [
     nombre: "Faro de Orchilla – Meridiano 0",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 3.9,
-    descripcion: "Ruta hasta el Faro de Orchilla, en el punto más occidental de España. Aquí estuvo el Meridiano 0 del mundo hasta 1884, cuando se trasladó a Greenwich. Paisaje desértico y viento constante.",
+    descripcion: "Ruta hasta el Faro de Orchilla, en el punto más occidental de España. Aquí situaron el meridiano cero muchos mapas desde la Antigüedad —Francia lo oficializó en 1634— hasta que en 1884 se adoptó Greenwich. Paisaje desértico y viento constante.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
     lat: 27.71195, lng: -18.1417
   },
@@ -1793,7 +1796,7 @@ var RUTAS = [
     nombre: "Punta Orchilla – Antiguo Meridiano 0",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 2.9,
-    descripcion: "Sendero hasta la Punta de Orchilla, el extremo más occidental de España. Fue el meridiano de referencia del mundo hasta 1884. Costa salvaje de lava y mar abierto.",
+    descripcion: "Sendero hasta la Punta de Orchilla, el extremo más occidental de España. Desde Ptolomeo buena parte de la cartografía situó aquí el meridiano cero, hasta que en 1884 se adoptó Greenwich como referencia internacional. Costa salvaje de lava y mar abierto.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
     lat: 27.71231, lng: -18.14203
   },
@@ -1931,8 +1934,8 @@ var RUTAS = [
   {
     id: "snorkel-montana-amarilla",
     nombre: "Snorkel – Charcos de Montaña Amarilla",
-    isla: "La Graciosa", tipo: "Submarinismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 4.0,
+    isla: "La Graciosa", tipo: "Snorkel", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 0,
     descripcion: "Los charcos naturales detrás de Montaña Amarilla son los mejores de La Graciosa para snorkel. Aguas turquesas cristalinas con gran variedad de peces y fondos volcánicos.",
     enlace: "https://welikecanarias.com/senderismo-la-graciosa/",
     lat: 29.2147, lng: -13.4808
@@ -1970,14 +1973,14 @@ var RUTAS = [
     nombre: "Salinas del Río – Historia Salinera",
     isla: "Lanzarote", tipo: "Fotografía", dificultad: "Media",
     duracion: "2-4h", distancia: 0,
-    descripcion: "Las salinas más antiguas de Canarias, al pie del Risco de Famara y frente a La Graciosa: balsas de piedra todavía dibujadas en la orilla del Río, con el islote justo enfrente.",
+    descripcion: "Las salinas más antiguas de Canarias, explotadas desde el siglo XVI y en uso hasta los años setenta, al pie del Risco de Famara y frente a La Graciosa: las balsas de piedra siguen dibujadas en la orilla del Río.",
     lat: 29.2185000, lng: -13.4927500
   },
   {
     id: "bufadero-graciosa",
     nombre: "El Bufadero – Costa Este",
     isla: "La Graciosa", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 4.0,
+    duracion: "2-4 horas", distancia: 0,
     descripcion: "Ruta costera por la costa este de La Graciosa hasta el Bufadero, formación volcánica donde el mar entra y expulsa agua con fuerza. Vistas a Lanzarote.",
     enlace: "https://www.alltrails.com/es/spain/la-graciosa",
     lat: 29.23, lng: -13.485
@@ -2001,8 +2004,9 @@ var RUTAS = [
     nombre: "Ruta Circular Completa – Isla de Lobos",
     isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 11.5,
-    descripcion: "La vuelta completa por el Parque Natural: El Puertito, La Caldera, Faro Martiño y Playa de La Concha. Requiere permiso gratuito online (máx. 200 personas/día).",
+    descripcion: "La vuelta completa por el Parque Natural: El Puertito, La Caldera, el faro de Martiño y la playa de La Concha. Hace falta la autorización gratuita del Cabildo, con un cupo de 400 personas al día repartidas en dos turnos de 200 (10:00-14:00 y 14:00-18:00).",
     enlace: "https://guiaislascanarias.com/fuerteventura/rutas-senderos-fuerteventura/",
+    permiso: true,
     lat: 28.73691, lng: -13.82228
   },
   {
@@ -2012,15 +2016,17 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 11.1,
     descripcion: "Ascenso breve al volcán de La Caldera (127 m). Vistas panorámicas a Fuerteventura, Lanzarote y el Canal de La Bocaina. El punto más alto del islote.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
+    permiso: true,
     lat: 28.73743, lng: -13.82189
   },
   {
     id: "snorkel-puertito-lobos",
     nombre: "Snorkel – El Puertito de Lobos",
-    isla: "Isla de Lobos", tipo: "Submarinismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Las mejores lagunas naturales del archipiélago para snorkel. Aguas turquesas protegidas del viento con gran variedad de peces tropicales y fondos volcánicos.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.7489, lng: -13.8203
   },
   {
@@ -2028,8 +2034,9 @@ var RUTAS = [
     nombre: "Faro de Punta Martiño",
     isla: "Isla de Lobos", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 7.8,
-    descripcion: "Ruta costera hasta el faro del siglo XIX en el extremo norte del islote. Entorno solitario con aves marinas, paisaje volcánico y vistas a Lanzarote.",
+    descripcion: "Travesía hasta el faro de Punta Martiño, en la punta norte del islote, con Lanzarote y el Río enfrente. Es el mejor sitio de Lobos para fotografiar, aunque no al amanecer: la autorización solo cubre de 10:00 a 18:00 y no se puede pernoctar.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.7373, lng: -13.82205
   },
   {
@@ -2039,15 +2046,17 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 0.7,
     descripcion: "La playa más tranquila del islote. Arena volcánica fina y aguas cristalinas en el interior de la bahía protegida. Ideal para el baño y el descanso.",
     enlace: "https://www.alltrails.com/es/spain/fuerteventura",
+    permiso: true,
     lat: 28.74216, lng: -13.82647
   },
   {
     id: "salinas-lobos",
     nombre: "Antiguas Salinas de Lobos",
     isla: "Isla de Lobos", tipo: "Fotografía", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 2.0,
+    duracion: "Menos de 2h", distancia: 0,
     descripcion: "Paseo hasta las antiguas salinas abandonadas del islote. Historia de la explotación salinera y aves zancudas que frecuentan las balsas en invierno.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.7430900, lng: -13.8257400
   },
   {
@@ -2057,6 +2066,7 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 5.1,
     descripcion: "Sendero por la costa norte del islote con vistas a Lanzarote. Coladas de lava negra, pequeñas calas y la soledad de uno de los rincones más salvajes del archipiélago.",
     enlace: "https://guiaislascanarias.com/fuerteventura/rutas-senderos-fuerteventura/",
+    permiso: true,
     lat: 28.76478, lng: -13.81556
   },
   {
@@ -2066,6 +2076,7 @@ var RUTAS = [
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Lobos alberga pardelas, gaviotas de Audouin y otras aves marinas protegidas. La mejor época es primavera en plena nidificación. Llevar prismáticos.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.7479400, lng: -13.8159500
   },
 
@@ -2077,16 +2088,8 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 5.8,
     descripcion: "Sendero por la costa este del islote con vistas a Lanzarote. Coladas de lava negra, pequeñas calas y la soledad de uno de los rincones más salvajes del archipiélago.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.73686, lng: -13.82224
-  },
-  {
-    id: "amanecer-lobos",
-    nombre: "Amanecer en el Faro – Lobos",
-    isla: "Isla de Lobos", tipo: "Fotografía", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 3.7,
-    descripcion: "Ruta nocturna para ver el amanecer desde el Faro de Punta Martiño. El cielo sin contaminación lumínica de Lobos permite ver la Vía Láctea hasta el alba.",
-    enlace: "https://www.islalobos.es",
-    lat: 28.7648900, lng: -13.8148600
   },
   {
     id: "cuevas-volcanicas-lobos",
@@ -2095,15 +2098,17 @@ var RUTAS = [
     duracion: "Menos de 2h", distancia: 2.0,
     descripcion: "Exploración de pequeñas cuevas y tubos volcánicos en el interior del islote. Formaciones de lava solidificada únicas con fauna rupícola protegida.",
     enlace: "https://guiaislascanarias.com/fuerteventura/rutas-senderos-fuerteventura/",
+    permiso: true,
     lat: 28.7519, lng: -13.8183
   },
   {
     id: "kayak-lobos",
     nombre: "Kayak – Vuelta a Isla de Lobos",
     isla: "Isla de Lobos", tipo: "Kayak", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12.0,
+    duracion: "4-8 horas", distancia: 0,
     descripcion: "Vuelta completa al islote en kayak desde Corralejo. Fondos cristalinos, cuevas marinas y la impresionante perspectiva de Lobos desde el agua.",
     enlace: "https://profuerte.com",
+    permiso: true,
     lat: 28.7506, lng: -13.8167
   },
   {
@@ -2113,15 +2118,17 @@ var RUTAS = [
     duracion: "4-8 horas", distancia: 10.4,
     descripcion: "Paseo por el pequeño puerto y las antiguas chozas de pescadores restauradas. Historia de los lobos de mar (focas monje) que dieron nombre al islote.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.7368, lng: -13.82236
   },
   {
     id: "snorkel-concha-lobos",
     nombre: "Snorkel – Playa de La Concha",
-    isla: "Isla de Lobos", tipo: "Submarinismo", dificultad: "Fácil",
+    isla: "Isla de Lobos", tipo: "Snorkel", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "La bahía protegida de La Concha es perfecta para el snorkel con niños. Aguas poco profundas, arena blanca y gran variedad de peces en un entorno paradisíaco.",
     enlace: "https://www.islalobos.es",
+    permiso: true,
     lat: 28.7527, lng: -13.824
   },
   {
@@ -2151,7 +2158,7 @@ var RUTAS = [
   {
     id: "buceo-charco-verde-lapalma",
     nombre: "Buceo y Snorkel – Charco Verde",
-    isla: "La Palma", tipo: "Snorkel", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Submarinismo", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Cala protegida de arena negra con Bandera Azul, ideal para snorkel en familia. Junto a la reserva marina, con arcos y cuevas accesibles para todos los niveles.",
     lat: 28.57243, lng: -17.8993
@@ -2191,9 +2198,10 @@ var RUTAS = [
   {
     id: "cenobio-valeron-gc",
     nombre: "Cenobio de Valerón",
-    isla: "Gran Canaria", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Granero colectivo aborigen con más de 300 oquedades excavadas en la roca hace más de 800 años, en un escarpe sobre un profundo barranco. Circuito guiado con paneles y recreaciones.",
+    permiso: true,
     lat: 28.13871, lng: -15.60378
   },
   {
@@ -2303,7 +2311,7 @@ var RUTAS = [
   {
     id: "cueva-belmaco-lapalma",
     nombre: "Cueva de Belmaco",
-    isla: "La Palma", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "La Palma", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "El primer yacimiento con petroglifos descubierto en todo el archipiélago canario, ya en el siglo XVIII. Diez cuevas naturales con grabados rupestres benahoaritas, declarado Monumento Histórico Artístico, con centro de interpretaci",
     lat: 28.57822, lng: -17.77621
@@ -2311,31 +2319,33 @@ var RUTAS = [
   {
     id: "cueva-guanches-icod",
     nombre: "Cueva de los Guanches",
-    isla: "Tenerife", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "Tenerife", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
-    descripcion: "Tubo volcánico en Icod de los Vinos con las dataciones más antiguas de poblamiento humano de Canarias (siglo VI a.C.). Bien de Interés Cultural desde 2005, con restos de cabañas de piedra seca en las inmediaciones.",
-    lat: 28.3697, lng: -16.7183
+    descripcion: "Yacimiento guanche en Icod de los Vinos, con unas de las dataciones de poblamiento humano más antiguas de Canarias y restos de cabañas de piedra seca en los alrededores. Se llega hasta la boca del tubo volcánico, pero la cueva está cerrada con una puerta y no se puede entrar.",
+    lat: 28.3828500, lng: -16.6997500
   },
   {
     id: "cueva-viento-icod",
     nombre: "Cueva del Viento",
     isla: "Tenerife", tipo: "Espeleología", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
-    descripcion: "Uno de los tubos volcánicos más largos del mundo (más de 18 km explorados), en las faldas del Teide sobre Icod de los Vinos. Visita guiada de pago con reserva previa (máximo 120 visitantes al día), con recorrido por galerías y exp",
+    descripcion: "Unos 17 km topografiados la convierten en el mayor tubo volcánico de Europa y uno de los mayores del mundo, en las faldas del Teide sobre Icod de los Vinos. Se formó en coladas de Pico Viejo y solo se entra en visita guiada con entrada reservada antes.",
+    permiso: true,
     lat: 28.35201, lng: -16.70397
   },
   {
     id: "cuevas-pintadas-galdar",
     nombre: "Cuevas Pintadas de Gáldar",
-    isla: "Gran Canaria", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Uno de los yacimientos arqueológicos más importantes de Canarias. Cueva artificial con pinturas geométricas guanches originales, protegidas bajo una cúpula de cristal. Acceso por pasarela, apto para todos.",
+    permiso: true,
     lat: 28.14414, lng: -15.65517
   },
   {
     id: "fortaleza-chipude-gomera",
     nombre: "Fortaleza de Chipude",
-    isla: "La Gomera", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "La Gomera", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Símbolo de la resistencia de los aborígenes gomeros frente a la conquista castellana. Yacimiento de altura con aras de sacrificio que aún se conservan, considerado uno de los lugares de culto más citados de la isla.",
     lat: 28.09992, lng: -17.27713
@@ -2343,9 +2353,10 @@ var RUTAS = [
   {
     id: "grabados-eljulan-hierro",
     nombre: "Grabados Rupestres de El Julan",
-    isla: "El Hierro", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "El Hierro", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
     descripcion: "Extensa zona de inscripciones rupestres bimbaches en la vertiente sur de El Hierro, con caracteres que podrían pertenecer a la escritura líbico-bereber. Terreno agreste en el municipio de El Pinar, acceso exigente.",
+    permiso: true,
     lat: 27.71345, lng: -18.05667
   },
   {
@@ -2585,7 +2596,7 @@ var RUTAS = [
     nombre: "Mirador Faro de la Entallada",
     isla: "Fuerteventura", tipo: "Fotografía", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
-    descripcion: "En el punto más próximo al continente africano de toda Canarias, a solo 100 kilómetros. Vistas majestuosas de la costa sur de Fuerteventura desde el municipio de Tuineje.",
+    descripcion: "Sobre el punto más próximo de todo el archipiélago al continente africano: poco más de 100 km en línea recta hasta Tarfaya. Vistas de la costa sur de Fuerteventura desde el municipio de Tuineje.",
     lat: 28.23027, lng: -13.94857
   },
   {
@@ -2593,7 +2604,7 @@ var RUTAS = [
     nombre: "Mirador de Faneque",
     isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
-    descripcion: "Frente al acantilado marino más alto de Canarias (unos 1.000 metros de caída al mar), en la costa noroeste de la isla. Un lugar sobrecogedor para fotografiar la escala real de los acantilados grancanarios.",
+    descripcion: "Asomado al Risco de Faneque (1.027 m), en el macizo de Tamadaba: el acantilado marino más alto de Canarias y uno de los más altos de Europa. No es una pared vertical de mil metros, sino una cumbre sobre una costa cortada a pico, y desde arriba se entiende de golpe la escala del noroeste grancanario.",
     lat: 28.06177, lng: -15.71676
   },
   {
@@ -2609,7 +2620,7 @@ var RUTAS = [
     nombre: "Mirador de Vilaflor",
     isla: "Tenerife", tipo: "Fotografía", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
-    descripcion: "En la subida hacia el Teide desde el sur, con vistas al pinar de Vilaflor (el más alto de España) y las cumbres. Buen punto para fotografiar el contraste entre el verde del pinar canario y el paisaje volcánico.",
+    descripcion: "En la subida al Teide desde el sur, con el pinar canario de Vilaflor por debajo y las cumbres enfrente. Buen punto para fotografiar el contraste entre el verde del pinar y el paisaje volcánico.",
     lat: 28.1716400, lng: -16.6449400
   },
   {
@@ -2834,6 +2845,7 @@ var RUTAS = [
     isla: "Gran Canaria", tipo: "Fotografía", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
     descripcion: "El monolito más simbólico de Gran Canaria, 80 metros de roca que se alzan hasta los 1.813 m, en el corazón del Parque Rural del Nublo. Desde su base se domina un paisaje de pinares y caseríos, con el Teide al fondo en días claros.",
+    permiso: true,
     lat: 27.9765500, lng: -15.6002100
   },
   {
@@ -2856,14 +2868,14 @@ var RUTAS = [
     id: "pinar-hierro-circular",
     nombre: "El Pinar – Circular por el Bosque",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 8.0,
+    duracion: "2-4 horas", distancia: 0,
     descripcion: "Circular tranquila por el Pinar de El Hierro, uno de los bosques de pino canario más densos del archipiélago. Fácil, sombreada y perfecta para familias.",
     lat: 27.72, lng: -17.98
   },
   {
     id: "poblado-zonzamas-lanzarote",
     nombre: "Poblado de Zonzamas",
-    isla: "Lanzarote", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "Lanzarote", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 0,
     descripcion: "Uno de los yacimientos majos más importantes de Lanzarote, en Teguise, con estructuras habitacionales de piedra en superficie. Tradicionalmente vinculado a la sede del último Guanarteme de la isla antes de la conquista.",
     lat: 29.00063, lng: -13.56781
@@ -2871,9 +2883,9 @@ var RUTAS = [
   {
     id: "risco-caido-gc",
     nombre: "Risco Caído",
-    isla: "Gran Canaria", tipo: "Espeleología", dificultad: "Fácil",
+    isla: "Gran Canaria", tipo: "Patrimonio", dificultad: "Fácil",
     duracion: "2-4 horas", distancia: 0,
-    descripcion: "Santuario rupestre aborigen declarado Patrimonio de la Humanidad por la UNESCO, en pleno Parque Rural del Nublo cerca de Artenara. Visita imprescindible de la Canarias prehispánica.",
+    descripcion: "Santuario rupestre aborigen en el corazón del Paisaje Cultural de Risco Caído y las Montañas Sagradas, Patrimonio de la Humanidad. El yacimiento en sí no se visita: lo que se ve es el centro de interpretación de Artenara, con la réplica del santuario, y el paisaje de almogarenes y cuevas que lo rodea.",
     lat: 28.02055, lng: -15.64749
   },
   {
@@ -2960,7 +2972,7 @@ var RUTAS = [
     id: "tablado-gallegos-lapalma",
     nombre: "El Tablado – Gallegos (Costa Norte)",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 9.0,
+    duracion: "4-8 horas", distancia: 0,
     descripcion: "Costa norte salvaje entre barrancos y acantilados, plantaciones en terrazas y caseríos remotos. Gran sensación de aislamiento. Solo ida.",
     lat: 28.79, lng: -17.805
   }

@@ -173,37 +173,53 @@ gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
 }
  </script>
 <script type="application/ld+json">
- {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "¿Por qué Fuerteventura es famosa para el kitesurf?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Fuerteventura tiene viento alisio constante, playas largas y aguas tranquilas que la convierten en uno de los mejores destinos del mundo para kitesurf y windsurf. Corralejo y El Cotillo son los spots principales."
- }
- },
- {
- "@type": "Question",
- "name": "¿Qué playas tiene Fuerteventura?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Fuerteventura tiene algunas de las mejores playas de Europa: Corralejo, Sotavento, El Cotillo, Cofete (salvaje y de difícil acceso) y Grandes Playas. Son famosas por su arena blanca y aguas turquesas."
- }
- },
- {
- "@type": "Question",
- "name": "¿Cómo llegar a Isla de Lobos desde Fuerteventura?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Desde el puerto de Corralejo salen ferries y catamaranes a Isla de Lobos varias veces al día. La travesía dura unos 10 minutos. Es necesario reservar con antelación en temporada alta."
- }
- }
- ]
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué es tan buena para kitesurf y windsurf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por el alisio: sopla con mucha constancia de abril a septiembre y la isla es llana, así que no corta el viento. Corralejo y El Cotillo son la base del surf y el kite, y la laguna de Sotavento, en Jandía, es sede habitual de competición mundial de windsurf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se llega a la playa de Cofete?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por una pista de tierra de unos 20 km desde Morro Jable, cruzando el macizo de Jandía. Muchos contratos de alquiler de coche no cubren esa pista, así que lo habitual es ir en 4x4 o en el servicio de transporte que sube desde Morro Jable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se visita la Isla de Lobos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En barco desde Corralejo, unos 15-20 minutos de travesía, con una autorización gratuita del Cabildo que se pide por internet con hasta 5 días de antelación y es personal e intransferible. El cupo es de 400 personas al día repartidas en dos turnos de 200 (de 10:00 a 14:00 y de 14:00 a 18:00), así que la visita dura como mucho cuatro horas. En la isla no hay tiendas ni fuentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué senderos tiene Fuerteventura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El GR 131 la cruza de Corralejo a Punta de Jandía, unos 152 km repartidos en etapas. Como ruta de día, la subida al Pico de la Zarza, el techo de la isla, es la más conocida por las vistas sobre Cofete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo conviene ir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Todo el año: es la isla más cálida y seca del archipiélago. En verano el viento es fuerte de tarde, así que las caminatas se hacen por la mañana; en invierno las temperaturas son suaves y hay menos gente en las playas."
+      }
+    }
+  ]
 }
- </script>
+</script>
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load',function(){
@@ -717,7 +733,7 @@ a:hover { color:#00e05a; }
 <h1 class="isla-hero__h1">Fuerteventura – Kitesurf, Surf y Dunas Infinitas</h1>
 <p class="isla-hero__desc">El mejor destino mundial de kitesurf. Playas de arena blanca, el GR 131 de 152 km y Cofete, la playa más virgen de España.</p>
 <div class="isla-hero__stats">
-<div class="isla-stat"><span class="isla-stat__num">18</span><span class="isla-stat__lbl">Rutas</span></div>
+<div class="isla-stat"><span class="isla-stat__num">36</span><span class="isla-stat__lbl">Rutas</span></div>
 <div class="isla-stat"><span class="isla-stat__num">807m</span><span class="isla-stat__lbl">Pico Zarza</span></div>
 <div class="isla-stat"><span class="isla-stat__num">9</span><span class="isla-stat__lbl">Deportes</span></div>
 <div class="isla-stat"><span class="isla-stat__num">150km</span><span class="isla-stat__lbl">Playas</span></div>
@@ -732,54 +748,80 @@ a:hover { color:#00e05a; }
 <div class="isla-foto-hero" style="position:relative;width:100%;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;max-width:100vw;padding:0;overflow:hidden;height:420px;">
 <img alt="Playas vírgenes y dunas de arena blanca de Fuerteventura" class="isla-foto-hero__img" height="420" loading="lazy" src="imagenes/fuerteventura-hero.jpg" width="1200"/>
 </div>
+<!-- DESCRIPCIÓN DE LA ISLA -->
+<div class="isla-contenido">
+<div class="isla-intro">
+<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);color:#e8eaf0;font-weight:700;margin:0 0 18px;text-align:center;">La isla del viento</h2>
+<p>Fuerteventura es la más antigua y la más llana del archipiélago: veinte millones de años de erosión han dejado montañas redondeadas, barrancos abiertos y más de 150 km de playa. El punto más alto es el Pico de la Zarza (807 m), en la península de Jandía, y desde su cima se ve Cofete, la playa más aislada de Canarias.</p>
+<p>El viento que a muchos espanta es lo que la ha convertido en destino mundial de kitesurf y windsurf: la laguna de Sotavento acoge cada verano una prueba de la Copa del Mundo. Para caminar, lo mejor son el GR 131, las dunas de Corralejo y los volcanes del centro, con la ventaja de que aquí casi nunca hay barro ni niebla.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;">
+<span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-wind"></i> Kitesurf Sotavento</span>
+<span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-hiking"></i> 36 rutas</span>
+<span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-mountain"></i> Pico Zarza 807m</span>
+<span style="background:rgba(28,255,107,.08);border:1px solid rgba(28,255,107,.2);border-radius:20px;padding:6px 14px;font-family:Orbitron,sans-serif;font-size:8px;color:#1cff6b;letter-spacing:1px;"><i class="fas fa-umbrella-beach"></i> Cofete</span>
+</div>
+</div>
+<div class="isla-zonas">
+<div class="isla-zona fade-in"><h3>Parque Natural de Corralejo</h3><p>Un cordón de dunas vivas de miles de hectáreas entre Corralejo y la Montaña Roja, con el islote de Lobos justo enfrente. Se camina mucho mejor a primera hora y con el viento de espaldas.</p></div>
+<div class="isla-zona fade-in"><h3>Jandía y Cofete</h3><p>El Pico de la Zarza se sube desde Morro Jable y es la ruta más larga de la isla. Al otro lado queda Cofete, al final de una pista de tierra de unos 20 km que conviene hacer con el depósito lleno.</p></div>
+<div class="isla-zona fade-in"><h3>Betancuria y el centro</h3><p>El valle histórico, con los miradores de Morro Velosa y de Guize y Ayose y el pinar del Castillo de Lara, la mejor sombra de la isla. Subidas cortas con vistas de costa a costa.</p></div>
+<div class="isla-zona fade-in"><h3>Isla de Lobos</h3><p>A un cuarto de hora en barco desde Corralejo. La entrada necesita un permiso gratuito limitado a 200 visitantes al día que se saca en la web del Cabildo. La circular del islote y el snorkel en El Puertito llenan el día.</p></div>
+</div>
+<div class="isla-info-grid">
+<div class="isla-info-box"><h4><i class="fas fa-sun"></i> Mejor época</h4><p>Todo el año. El invierno es suave y con menos viento para caminar; el verano es la temporada fuerte de kite y windsurf.</p></div>
+<div class="isla-info-box"><h4><i class="fas fa-plane"></i> Cómo llegar</h4><p>Aeropuerto de Fuerteventura (El Matorral) y ferry desde Playa Blanca (Lanzarote) a Corralejo, con un cruce de media hora.</p></div>
+<div class="isla-info-box"><h4><i class="fas fa-ticket"></i> Permisos y reservas</h4><p>Lobos exige permiso previo y tiene cupo diario. Conviene sacarlo en cuanto tengas la fecha, sobre todo en verano.</p></div>
+<div class="isla-info-box"><h4><i class="fas fa-droplet"></i> A tener en cuenta</h4><p>Casi no hay sombra ni fuentes en toda la isla: agua y protección solar no son opcionales. La pista de Cofete no es para coches bajos.</p></div>
+</div>
+</div><!-- /isla-contenido -->
 <section class="empresas-seccion">
 <div class="container">
 <!-- EMPRESAS Y EXCURSIONES -->
 <html><body><div class="isla-rutas-section" style="max-width:900px;margin:0 auto 60px;padding:0 28px;">
 <div style="text-align:center;margin-bottom:24px;">
 <span class="idx-label"><i class="fas fa-route"></i> Rutas en Fuerteventura</span>
-<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:#e8eaf0;margin:12px 0 8px;">Las 30 rutas de Fuerteventura</h2>
+<h2 style="font-family:Orbitron,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);color:#e8eaf0;margin:12px 0 8px;">Rutas destacadas de Fuerteventura</h2>
 </div>
 <div class="rutas-tabs">
 <div class="rutas-tabs__nav">
-<button class="rutas-tabs__btn rutas-tabs__btn--active" onclick="showTab(this,'rt-Fuerteventura-0')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1cff6b;"></span> Fácil <span class="rutas-tabs__count">14</span></button>
-<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Fuerteventura-1')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffc107;"></span> Media <span class="rutas-tabs__count">9</span></button>
+<button class="rutas-tabs__btn rutas-tabs__btn--active" onclick="showTab(this,'rt-Fuerteventura-0')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#1cff6b;"></span> Fácil <span class="rutas-tabs__count">8</span></button>
+<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Fuerteventura-1')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffc107;"></span> Media <span class="rutas-tabs__count">8</span></button>
 <button class="rutas-tabs__btn" onclick="showTab(this,'rt-Fuerteventura-2')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff6f00;"></span> Difícil <span class="rutas-tabs__count">7</span></button>
+<button class="rutas-tabs__btn" onclick="showTab(this,'rt-Fuerteventura-3')"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#e53935;"></span> Extrema <span class="rutas-tabs__count">3</span></button>
 </div>
 <div class="rutas-tabs__panel" id="rt-Fuerteventura-0">
-<a class="ruta-row" href="rutas/calderon-hondo-fuerte.html">Calderón Hondo – Lajares (SL-FV 2) <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/barranco-penitas-fuerte.html">Betancuria – Barranco de Las Peñitas (SL-FV 27) <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/malpais-arena-fuerte.html">Malpaís de la Arena – Norte <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/ajuy-cuevas-fuerte.html">Ajuy – Caleta Negra y Cuevas Marinas <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/corralejo-dunas-fuerte.html">Parque Natural de Corralejo – Dunas <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/sendero-costa-fuerte.html">Costa de Gran Tarajal – Ruta Costera <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/playa-molinos-fuerte.html">Playa de Los Molinos <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/circular-lobos-fuerte.html">Ruta Circular – Isla de Lobos <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/balcon-asomada-fuerte.html">Balcón de La Asomada <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/sotavento-playa-circular.html">Arenal Playa de Sotavento – Circular <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/salinas-jandia-fuerte.html">Salinas del Carmen – Ruta Costera <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/islote-lobos-norte-fuerte.html">Costa Norte – Corralejo <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/montana-cardones-fuerte.html">Montaña de Cardones – La Oliva <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/betancuria-vega-rio-palmas.html">Betancuria – Vega Río Palmas <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
+<a class="ruta-row" href="rutas/calderon-hondo-fuerte.html" title="Calderón Hondo – Lajares (SL-FV 2)"><span class="ruta-row__name">Calderón Hondo – Lajares (SL-FV 2)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">5,9 km</span></a>
+<a class="ruta-row" href="rutas/barranco-penitas-fuerte.html" title="Betancuria – Barranco de Las Peñitas (SL-FV 27)"><span class="ruta-row__name">Betancuria – Barranco de Las Peñitas (SL-FV 27)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">7,1 km</span></a>
+<a class="ruta-row" href="rutas/ajuy-cuevas-fuerte.html" title="Ajuy – Caleta Negra y Cuevas Marinas"><span class="ruta-row__name">Ajuy – Caleta Negra y Cuevas Marinas</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">5,4 km</span></a>
+<a class="ruta-row" href="rutas/salinas-jandia-fuerte.html" title="Salinas del Carmen – Ruta Costera"><span class="ruta-row__name">Salinas del Carmen – Ruta Costera</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">9 km</span></a>
+<a class="ruta-row" href="rutas/arco-penitas-fuerte.html" title="Arco de las Peñitas – Barranco Malpaso (SL-FV 6)"><span class="ruta-row__name">Arco de las Peñitas – Barranco Malpaso (SL-FV 6)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">5,5 km</span></a>
+<a class="ruta-row" href="rutas/tindaya-fuerte.html" title="Montaña de Tindaya"><span class="ruta-row__name">Montaña de Tindaya</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">5,7 km</span></a>
+<a class="ruta-row" href="rutas/kitesurf-flagbeach-fuerte.html" title="Kitesurf – Flag Beach"><span class="ruta-row__name">Kitesurf – Flag Beach</span><span class="ruta-row__sport"><i class="fas fa-wind"></i> Kitesurf</span></a>
+<a class="ruta-row" href="rutas/surf-cotillo-fuerte.html" title="Surf – El Cotillo"><span class="ruta-row__name">Surf – El Cotillo</span><span class="ruta-row__sport"><i class="fas fa-wind"></i> Surf</span></a>
 </div>
 <div class="rutas-tabs__panel" id="rt-Fuerteventura-1" style="display:none">
-<a class="ruta-row" href="rutas/pico-zarza-fuerte.html">Pico de la Zarza – Morro Jable (PR-FV 54) <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/arco-penitas-fuerte.html">Arco de las Peñitas – Barranco Malpaso (SL-FV 6) <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/tindaya-fuerte.html">Montaña de Tindaya <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/volcan-escanfraga-fuerte.html">Volcán de Escanfraga <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/kitesurf-sotavento.html">Kitesurf – Laguna de Sotavento <span class="ruta-row__sport"><i class="fas fa-water"></i> Surf</span></a>
-<a class="ruta-row" href="rutas/sendero-bayuyo-fuerte.html">Sendero Bayuyo – Malpaís Norte <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/barrancos-puerto-fuerte.html">Barrancos de Puerto – Centro <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/playa-playitas-fuerte.html">Las Playitas – Costa Sur Este <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/gran-tarajal-caleta-fuerte.html">Gran Tarajal – Caleta del Muerto <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
+<a class="ruta-row" href="rutas/malpais-arena-fuerte.html" title="Malpaís de la Arena – Norte"><span class="ruta-row__name">Malpaís de la Arena – Norte</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">7,5 km</span></a>
+<a class="ruta-row" href="rutas/corralejo-dunas-fuerte.html" title="Parque Natural de Corralejo – Dunas"><span class="ruta-row__name">Parque Natural de Corralejo – Dunas</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">12,1 km</span></a>
+<a class="ruta-row" href="rutas/playa-molinos-fuerte.html" title="Playa de Los Molinos"><span class="ruta-row__name">Playa de Los Molinos</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">9,8 km</span></a>
+<a class="ruta-row" href="rutas/circular-lobos-fuerte.html" title="Ruta Circular – Isla de Lobos"><span class="ruta-row__name">Ruta Circular – Isla de Lobos</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">11,2 km</span><span class="ruta-row__diff" style="color:#ff6f00;border-color:rgba(255,111,0,.35)" title="Necesita permiso o reserva">Permiso</span></a>
+<a class="ruta-row" href="rutas/balcon-asomada-fuerte.html" title="Balcón de La Asomada"><span class="ruta-row__name">Balcón de La Asomada</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">9,6 km</span></a>
+<a class="ruta-row" href="rutas/sotavento-playa-circular.html" title="Arenal Playa de Sotavento – Circular"><span class="ruta-row__name">Arenal Playa de Sotavento – Circular</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">15,5 km</span></a>
+<a class="ruta-row" href="rutas/montana-cardones-fuerte.html" title="Montaña de Cardones – La Oliva"><span class="ruta-row__name">Montaña de Cardones – La Oliva</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">6 km</span></a>
+<a class="ruta-row" href="rutas/betancuria-vega-rio-palmas.html" title="Betancuria – Vega Río Palmas"><span class="ruta-row__name">Betancuria – Vega Río Palmas</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">11,5 km</span></a>
 </div>
 <div class="rutas-tabs__panel" id="rt-Fuerteventura-2" style="display:none">
-<a class="ruta-row" href="rutas/cofete-gran-valle-fuerte.html">Cofete – Gran Valle (PR-FV 55) <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/gr131-fuerteventura.html">GR 131 Fuerteventura – Travesía Completa <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/degollada-facay-fuerte.html">Degollada de Facay <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/risco-paso-jandia.html">Risco del Paso – Parque Natural Jandía <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/tindaya-vallebron-tefia.html">Tindaya – Vallebrón – Tefía (PR FV 9) <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
-<a class="ruta-row" href="rutas/pecenescal-barlovento-fuerte.html">Barranco de Pecenescal – Playa Barlovento <span class="ruta-row__sport"><i class="fas fa-hiking"></i> Senderismo</span></a>
+<a class="ruta-row" href="rutas/islote-lobos-norte-fuerte.html" title="Costa Norte – Corralejo"><span class="ruta-row__name">Costa Norte – Corralejo</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">25 km</span></a>
+<a class="ruta-row" href="rutas/pico-zarza-fuerte.html" title="Pico de la Zarza – Morro Jable (PR-FV 54)"><span class="ruta-row__name">Pico de la Zarza – Morro Jable (PR-FV 54)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">15,2 km</span></a>
+<a class="ruta-row" href="rutas/sendero-bayuyo-fuerte.html" title="Sendero Bayuyo – Malpaís Norte"><span class="ruta-row__name">Sendero Bayuyo – Malpaís Norte</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">10,7 km</span></a>
+<a class="ruta-row" href="rutas/barrancos-puerto-fuerte.html" title="Barrancos de Puerto – Centro"><span class="ruta-row__name">Barrancos de Puerto – Centro</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">13,4 km</span></a>
+<a class="ruta-row" href="rutas/degollada-facay-fuerte.html" title="Degollada de Facay"><span class="ruta-row__name">Degollada de Facay</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">22,8 km</span></a>
+<a class="ruta-row" href="rutas/tindaya-vallebron-tefia.html" title="Tindaya – Vallebrón – Tefía (PR FV 9)"><span class="ruta-row__name">Tindaya – Vallebrón – Tefía (PR FV 9)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">17,9 km</span></a>
+<a class="ruta-row" href="rutas/pecenescal-barlovento-fuerte.html" title="Barranco de Pecenescal – Playa Barlovento"><span class="ruta-row__name">Barranco de Pecenescal – Playa Barlovento</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">15,4 km</span></a>
+</div>
+<div class="rutas-tabs__panel" id="rt-Fuerteventura-3" style="display:none">
+<a class="ruta-row" href="rutas/sendero-costa-fuerte.html" title="Costa de Gran Tarajal – Ruta Costera"><span class="ruta-row__name">Costa de Gran Tarajal – Ruta Costera</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">27,4 km</span></a>
+<a class="ruta-row" href="rutas/gr131-fuerteventura.html" title="GR 131 Fuerteventura – Travesía Completa"><span class="ruta-row__name">GR 131 Fuerteventura – Travesía Completa</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">157,1 km</span></a>
+<a class="ruta-row" href="rutas/ciclismo-corralejo-costacalma.html" title="Corralejo – Costa Calma (Norte-Sur)"><span class="ruta-row__name">Corralejo – Costa Calma (Norte-Sur)</span><span class="ruta-row__diff" style="color:#8a8fa0;border-color:rgba(28,255,107,.18)">102,7 km</span><span class="ruta-row__sport"><i class="fas fa-biking"></i> Ciclismo</span></a>
 </div>
 </div>
 </div>
@@ -807,8 +849,42 @@ a:hover { color:#00e05a; }
 </div>
 
 
+<section aria-label="Te puede interesar" class="related-links">
+<h2 class="related-title">Te puede interesar</h2>
+<div class="related-grid">
+<a class="related-card" href="lobos.html"><span class="related-icon"><i class="fas fa-fish" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">Isla de Lobos</strong><span style="display:block;color:#8a8fa0;font-size:12px">A 15 minutos en barco</span></div></a>
+<a class="related-card" href="lanzarote.html"><span class="related-icon"><i class="fas fa-fire" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">Lanzarote</strong><span style="display:block;color:#8a8fa0;font-size:12px">Volcanes y La Geria</span></div></a>
+<a class="related-card" href="grancanaria.html"><span class="related-icon"><i class="fas fa-sun" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">Gran Canaria</strong><span style="display:block;color:#8a8fa0;font-size:12px">Montaña y buceo</span></div></a>
+<a class="related-card" href="comparador.html"><span class="related-icon"><i class="fas fa-balance-scale" style="color:#1cff6b"></i></span><div><strong style="display:block;color:#e8eaf0;font-size:14px">Comparar islas</strong><span style="display:block;color:#8a8fa0;font-size:12px">Clima, rutas y precios</span></div></a>
+</div>
+</section>
+<section class="faq-seccion">
+<h2>Preguntas frecuentes sobre Fuerteventura</h2>
+<div class="faq-lista">
+<details class="faq-item">
+<summary>¿Por qué es tan buena para kitesurf y windsurf?</summary>
+<p>Por el alisio: sopla con mucha constancia de abril a septiembre y la isla es llana, así que no corta el viento. Corralejo y El Cotillo son la base del surf y el kite, y la laguna de Sotavento, en Jandía, es sede habitual de competición mundial de windsurf.</p>
+</details>
+<details class="faq-item">
+<summary>¿Cómo se llega a la playa de Cofete?</summary>
+<p>Por una pista de tierra de unos 20 km desde Morro Jable, cruzando el macizo de Jandía. Muchos contratos de alquiler de coche no cubren esa pista, así que lo habitual es ir en 4x4 o en el servicio de transporte que sube desde Morro Jable.</p>
+</details>
+<details class="faq-item">
+<summary>¿Cómo se visita la Isla de Lobos?</summary>
+<p>En barco desde Corralejo, unos 15-20 minutos de travesía, con una autorización gratuita del Cabildo que se pide por internet con hasta 5 días de antelación y es personal e intransferible. El cupo es de 400 personas al día repartidas en dos turnos de 200 (de 10:00 a 14:00 y de 14:00 a 18:00), así que la visita dura como mucho cuatro horas. En la isla no hay tiendas ni fuentes.</p>
+</details>
+<details class="faq-item">
+<summary>¿Qué senderos tiene Fuerteventura?</summary>
+<p>El GR 131 la cruza de Corralejo a Punta de Jandía, unos 152 km repartidos en etapas. Como ruta de día, la subida al Pico de la Zarza, el techo de la isla, es la más conocida por las vistas sobre Cofete.</p>
+</details>
+<details class="faq-item">
+<summary>¿Cuándo conviene ir?</summary>
+<p>Todo el año: es la isla más cálida y seca del archipiélago. En verano el viento es fuerte de tarde, así que las caminatas se hacen por la mañana; en invierno las temperaturas son suaves y hay menos gente en las playas.</p>
+</details>
+</div>
+</section>
 <div class="promo-slot promo-slot--ancho" data-promo="isla" data-base=""></div>
-<script src="banners.js?v=1" defer></script>
+<script src="banners.js?v=2" defer></script>
 <footer class="site-footer">
 <div class="footer-grid">
 <div class="footer-col">

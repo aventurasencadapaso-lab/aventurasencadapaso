@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Buscador de 331 rutas y miradores outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
+  <meta name="description" content="Buscador de 326 rutas y miradores outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
   <title>Buscador de Rutas Outdoor en Canarias | Aventuras en Cada Paso</title>
   <link rel="canonical" href="https://aventurasencadapaso.com/buscador-aventuras.html">
   <link rel="icon" type="image/png" href="logo-aventuras.png">
@@ -333,9 +333,9 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   <div class="bus-hero">
     <span class="bus-hero__label"><i class="fas fa-compass"></i> Buscador de Rutas</span>
     <h1 class="bus-hero__titulo">Rutas Outdoor en Canarias</h1>
-    <p class="bus-hero__desc">225 rutas con GPS y 106 miradores en 9 islas. Filtra por isla, deporte y dificultad.</p>
+    <p class="bus-hero__desc">222 rutas con GPS y 104 miradores en 9 islas. Filtra por isla, deporte y dificultad.</p>
     <div class="bus-hero__stats">
-      <div class="bus-stat"><span class="bus-stat__num">236</span><span class="bus-stat__lbl">Rutas</span></div>
+      <div class="bus-stat"><span class="bus-stat__num">326</span><span class="bus-stat__lbl">Rutas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">9</span><span class="bus-stat__lbl">Islas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">GPS</span><span class="bus-stat__lbl">En todas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">0€</span><span class="bus-stat__lbl">Gratis</span></div>
@@ -360,7 +360,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
         <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
         <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
         <option>Espeleología</option>
-      <option>Snorkel</option><option>Kitesurf</option></select>
+      <option>Snorkel</option><option>Kitesurf</option><option>Patrimonio</option></select>
       <select id="bus-dif">
         <option value="">Todas las dificultades</option>
         <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
@@ -435,7 +435,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       var color = DIFCOLOR[r.dificultad] || '#ffc107';
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
-      var icono = r.tipo === 'Fotografía' ? 'fa-camera' : r.tipo === 'Submarinismo' || r.tipo === 'Snorkel' ? 'fa-water' : r.tipo === 'Surf' || r.tipo === 'Kitesurf' ? 'fa-wind' : r.tipo === 'Kayak' ? 'fa-ship' : r.tipo === 'Ciclismo' ? 'fa-bicycle' : r.tipo === 'Espeleología' ? 'fa-mountain-sun' : 'fa-mountain';
+      var icono = r.tipo === 'Fotografía' ? 'fa-camera' : r.tipo === 'Submarinismo' || r.tipo === 'Snorkel' ? 'fa-water' : r.tipo === 'Surf' || r.tipo === 'Kitesurf' ? 'fa-wind' : r.tipo === 'Kayak' ? 'fa-ship' : r.tipo === 'Ciclismo' ? 'fa-bicycle' : r.tipo === 'Espeleología' ? 'fa-mountain-sun' : r.tipo === 'Patrimonio' ? 'fa-landmark' : 'fa-mountain';
       var thumb = r.distancia ? '<img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="" class="bus-card__img" loading="lazy" onerror="this.outerHTML=\'<div class=bus-card__img-placeholder><i class=fas\\ ' + icono + '></i></div>\'">' : '<div class="bus-card__img-placeholder"><i class="fas ' + icono + '"></i></div>';
       return '<a href="rutas/' + r.id + '.html" class="bus-card">' +
         thumb +
@@ -446,6 +446,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
           '<span class="bus-card__badge" style="background:' + color + '22;color:' + color + ';border:1px solid ' + color + '44;">' + r.dificultad + '</span>' +
           '<span class="bus-card__badge" style="background:rgba(28,255,107,.06);color:#8a8fa0;border:1px solid rgba(28,255,107,.1);">' + r.tipo + '</span>' +
           (dist ? '<span class="bus-card__badge" style="background:rgba(28,255,107,.06);color:#8a8fa0;border:1px solid rgba(28,255,107,.1);">' + dist + '</span>' : '') +
+          (r.permiso ? '<span class="bus-card__badge" title="Necesita permiso o reserva previa" style="background:rgba(255,111,0,.1);color:#ff6f00;border:1px solid rgba(255,111,0,.35);"><i class="fas fa-ticket"></i> Permiso</span>' : '') +
         '</div>' +
         '<span class="bus-card__btn"><i class="fas fa-compass"></i> Ver ruta</span>' +
         '</div>' +
@@ -898,7 +899,7 @@ function googleTranslateElementInit() {
 </div>
 
 <div class="promo-slot promo-slot--ancho" data-promo="herramienta" data-base=""></div>
-<script src="banners.js?v=1" defer></script>
+<script src="banners.js?v=2" defer></script>
 <footer class="site-footer">
  <div class="footer-grid">
  <div class="footer-col">
