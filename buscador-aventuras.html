@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Buscador de 228 rutas outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
+  <meta name="description" content="Buscador de 331 rutas y miradores outdoor en Canarias con GPS. Filtra por isla, deporte, dificultad y duración. Senderismo, trail, kayak, buceo y más.">
   <title>Buscador de Rutas Outdoor en Canarias | Aventuras en Cada Paso</title>
   <link rel="canonical" href="https://aventurasencadapaso.com/buscador-aventuras.html">
   <link rel="icon" type="image/png" href="logo-aventuras.png">
@@ -333,7 +333,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   <div class="bus-hero">
     <span class="bus-hero__label"><i class="fas fa-compass"></i> Buscador de Rutas</span>
     <h1 class="bus-hero__titulo">Rutas Outdoor en Canarias</h1>
-    <p class="bus-hero__desc">228 rutas con GPS en 9 islas. Filtra por isla, deporte y dificultad.</p>
+    <p class="bus-hero__desc">225 rutas con GPS y 106 miradores en 9 islas. Filtra por isla, deporte y dificultad.</p>
     <div class="bus-hero__stats">
       <div class="bus-stat"><span class="bus-stat__num">236</span><span class="bus-stat__lbl">Rutas</span></div>
       <div class="bus-stat"><span class="bus-stat__num">9</span><span class="bus-stat__lbl">Islas</span></div>
@@ -360,7 +360,7 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
         <option>Senderismo</option><option>Ciclismo</option><option>Kayak</option>
         <option>Surf</option><option>Submarinismo</option><option>Fotografía</option>
         <option>Espeleología</option>
-      </select>
+      <option>Snorkel</option><option>Kitesurf</option></select>
       <select id="bus-dif">
         <option value="">Todas las dificultades</option>
         <option>Fácil</option><option>Media</option><option>Difícil</option><option>Extrema</option>
@@ -435,7 +435,8 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
       var color = DIFCOLOR[r.dificultad] || '#ffc107';
       var dist = r.distancia ? r.distancia + ' km' : '';
       var dur = r.duracion || '';
-      var thumb = '<img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="" class="bus-card__img" loading="lazy" onerror="this.outerHTML=\'<div class=bus-card__img-placeholder><i class=fas\\ fa-mountain></i></div>\'">';
+      var icono = r.tipo === 'Fotografía' ? 'fa-camera' : r.tipo === 'Submarinismo' || r.tipo === 'Snorkel' ? 'fa-water' : r.tipo === 'Surf' || r.tipo === 'Kitesurf' ? 'fa-wind' : r.tipo === 'Kayak' ? 'fa-ship' : r.tipo === 'Ciclismo' ? 'fa-bicycle' : r.tipo === 'Espeleología' ? 'fa-mountain-sun' : 'fa-mountain';
+      var thumb = r.distancia ? '<img src="imagenes/gpx-thumbs/' + r.id + '.svg" alt="" class="bus-card__img" loading="lazy" onerror="this.outerHTML=\'<div class=bus-card__img-placeholder><i class=fas\\ ' + icono + '></i></div>\'">' : '<div class="bus-card__img-placeholder"><i class="fas ' + icono + '"></i></div>';
       return '<a href="rutas/' + r.id + '.html" class="bus-card">' +
         thumb +
         '<div class="bus-card__body">' +
@@ -453,17 +454,44 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
   }
 
   // Leer parámetros URL
-  var params = new URLSearchParams(window.location.search);
-  if(params.get('isla')) islaEl.value = params.get('isla');
-  if(params.get('tipo')) tipoEl.value = params.get('tipo');
-  if(params.get('q')) qEl.value = params.get('q');
+  function leerUrl(){
+    var params = new URLSearchParams(window.location.search);
+    islaEl.value = params.get('isla') || '';
+    tipoEl.value = params.get('tipo') || '';
+    difEl.value  = params.get('dif')  || '';
+    qEl.value    = params.get('q')    || '';
+  }
 
-  qEl.addEventListener('input', render);
-  islaEl.addEventListener('change', render);
-  tipoEl.addEventListener('change', render);
-  difEl.addEventListener('change', render);
+  // Guardar los filtros en la URL: así, al volver atrás desde una ficha,
+  // el buscador se reabre con la misma búsqueda y las mismas tarjetas.
+  function guardarUrl(){
+    var p = new URLSearchParams();
+    if(qEl.value.trim()) p.set('q', qEl.value.trim());
+    if(islaEl.value)     p.set('isla', islaEl.value);
+    if(tipoEl.value)     p.set('tipo', tipoEl.value);
+    if(difEl.value)      p.set('dif', difEl.value);
+    var qs = p.toString();
+    try{ history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); }catch(e){}
+  }
+
+  function actualizar(){ render(); guardarUrl(); }
+
+  leerUrl();
+
+  qEl.addEventListener('input', actualizar);
+  islaEl.addEventListener('change', actualizar);
+  tipoEl.addEventListener('change', actualizar);
+  difEl.addEventListener('change', actualizar);
 
   render();
+
+  // Al volver atrás (o si el navegador restaura los campos por su cuenta),
+  // se vuelve a filtrar para que la lista coincida con lo seleccionado.
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted) return;   // la página vuelve entera de la caché: ya está bien
+    leerUrl();
+    render();
+  });
 
   // Btn top
   var b = document.getElementById('btn-top');
