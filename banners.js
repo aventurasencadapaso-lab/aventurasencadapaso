@@ -41,7 +41,7 @@ var BANNERS = [
     id: 'calendario',
     tipo: 'propio',
     icono: 'fa-calendar-alt',
-    titulo: '92 eventos outdoor en Canarias',
+    titulo: '227 eventos outdoor en Canarias',
     texto: 'Carreras, travesías y quedadas de las 9 islas, en un solo calendario.',
     cta: 'Ver el calendario',
     url: 'calendario.html',
