@@ -903,6 +903,8 @@ function initOffline(){
  function initElevacion(elePts){
   var canvas=document.getElementById("rp-elev-canvas");
   if(!canvas||!elePts.length)return;
+  var __hay=false;for(var __k=0;__k<elePts.length;__k++){if(elePts[__k].ele&&isFinite(elePts[__k].ele)){__hay=true;break;}}
+  if(!__hay){var __w=canvas.closest(".rp-elev-wrap");if(__w)__w.style.display="none";return;}
   var ctx=canvas.getContext("2d");
   function resize(){canvas.width=canvas.clientWidth*2;canvas.height=canvas.clientHeight*2;draw();}
 

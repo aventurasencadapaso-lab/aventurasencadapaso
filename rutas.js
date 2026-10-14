@@ -1988,7 +1988,7 @@ var RUTAS = [
   {
     id: "bici-graciosa",
     nombre: "Vuelta en Bici a La Graciosa",
-    isla: "La Graciosa", tipo: "Ciclismo", dificultad: "Media",
+    isla: "La Graciosa", tipo: "MTB", dificultad: "Media",
     duracion: "4-8 horas", distancia: 27.8,
     descripcion: "La forma más popular de explorar La Graciosa. Caminos de arena y tierra entre playas, volcanes y paisajes únicos. Bicicletas de alquiler en Caleta de Sebo.",
     enlace: "https://guiaislascanarias.com/la-graciosa/rutas-senderismo-bici-la-graciosa/",
@@ -2247,7 +2247,7 @@ var RUTAS = [
   {
     id: "ciclismo-mtb-lapalma",
     nombre: "Vuelta a La Palma en BTT/Gravel",
-    isla: "La Palma", tipo: "Ciclismo", dificultad: "Media",
+    isla: "La Palma", tipo: "MTB", dificultad: "Media",
     duracion: "2-4 horas", distancia: 34.1,
     descripcion: "Recorrido en bicicleta de montaña o gravel por las pistas forestales y volcánicas de La Palma, alternando senderos entre pinares con tramos de carretera secundaria sin apenas tráfico.",
     lat: 28.6141, lng: -17.83594
@@ -2975,5 +2975,147 @@ var RUTAS = [
     duracion: "4-8 horas", distancia: 0,
     descripcion: "Costa norte salvaje entre barrancos y acantilados, plantaciones en terrazas y caseríos remotos. Gran sensación de aislamiento. Solo ida.",
     lat: 28.79, lng: -17.805
+  },
+  {
+    id: "mtb-bc1-forestal-norte",
+    nombre: "BTT – BC-1 Ruta Forestal del Norte",
+    isla: "Tenerife", tipo: "MTB", dificultad: "Extrema",
+    duracion: "Varios días", distancia: 84.9,
+    descripcion: "Gran travesía forestal de Tenerife: 84,9 km de pista de Las Raíces a Montaña Cascajo con 4.600 m de desnivel positivo. Quince municipios y seis espacios protegidos. Track oficial del Cabildo.",
+    enlace: "https://www.tenerifeon.es/en/routes/cycling-horse-riding/bc-1-northern-forest-route",
+    lat: 28.42884, lng: -16.37632
+  },
+  {
+    id: "mtb-bc5-pinares-vilaflor",
+    nombre: "BTT – BC-5 Pinares de Vilaflor",
+    isla: "Tenerife", tipo: "MTB", dificultad: "Media",
+    duracion: "1-2 horas", distancia: 13.6,
+    descripcion: "13,6 km por el pinar canario más alto de Tenerife, entre los 1.582 y los 1.943 m. Señalizada por el Cabildo para bici, con poca exigencia física y sombra casi todo el recorrido.",
+    enlace: "https://tenerifeon.es/en/routes/cycling-horse-riding/bc-5-pinares-de-vilaflor",
+    lat: 28.16525, lng: -16.63445
+  },
+  {
+    id: "mtb-bc2-raices-lagunetas",
+    nombre: "BTT – BC-2 Las Raíces – Monte de La Esperanza",
+    isla: "Tenerife", tipo: "MTB", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 6.3,
+    descripcion: "6,3 km por el Paisaje Protegido de Las Lagunetas, de la Zona de Acampada de Las Raíces a Las Lagunetas. La ruta BC más corta y la puerta de entrada al monte de La Esperanza en bici.",
+    enlace: "https://www.tenerifeon.es/en/routes/cycling-horse-riding/bc-2-monte-de-la-esperanza",
+    lat: 28.42354, lng: -16.37978
+  },
+  {
+    id: "mtb-bc4-ruta-sur-arico",
+    nombre: "BTT – BC-4 Pinares del Sur y Volcanes Negros",
+    isla: "Tenerife", tipo: "MTB", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 14.5,
+    descripcion: "14,5 km por las pistas de Arico, del área recreativa de El Contador a la zona de Volcanes Negros. Pinar seco del sur, picón suelto y mucha menos gente que en la vertiente norte.",
+    enlace: "https://tenerifeon.es/en/routes/cycling-horse-riding/bc-4-pinares-del-sur-and-volcanes-negros",
+    lat: 28.20720, lng: -16.53874
+  },
+  {
+    id: "mtb-btt1-pilar-salemera",
+    nombre: "BTT – El Pilar a La Salemera (Ruta 1)",
+    isla: "La Palma", tipo: "MTB", dificultad: "Difícil",
+    duracion: "2-4 horas", distancia: 15.3,
+    descripcion: "De los 1.462 m del Refugio de El Pilar al nivel del mar en La Salemera: 15,3 km con 1.573 metros de descenso. La ruta BTT oficial más espectacular de La Palma.",
+    enlace: "https://www.senderosdelapalma.es/en/?p=19767",
+    lat: 28.61430, lng: -17.83605
+  },
+  {
+    id: "mtb-btt2-la-hilera",
+    nombre: "BTT – La Hilera (Ruta 2)",
+    isla: "La Palma", tipo: "MTB", dificultad: "Fácil",
+    duracion: "1-2 horas", distancia: 13.5,
+    descripcion: "13,4 km de ida y vuelta desde el Refugio de El Pilar por pista forestal, con pendientes muy suaves. La ruta BTT de iniciación de La Palma, apta para toda la familia.",
+    enlace: "https://www.senderosdelapalma.es/en/?p=19772",
+    lat: 28.61428, lng: -17.83605
+  },
+  {
+    id: "mtb-btt3-pista-oeste",
+    nombre: "BTT – Pista Oeste y Pista El Cabrito (Ruta 3)",
+    isla: "La Palma", tipo: "MTB", dificultad: "Difícil",
+    duracion: "2-4 horas", distancia: 34.9,
+    descripcion: "La circular grande de la cumbre de La Palma: 34,9 km por la Pista del Oeste y la de El Cabrito, cruzando campos de lava entre los 1.003 y los 1.482 m.",
+    enlace: "https://www.senderosdelapalma.es/en/?p=19787",
+    lat: 28.61430, lng: -17.83605
+  },
+  {
+    id: "mtb-btt4-llano-mosca",
+    nombre: "BTT – Llano de la Mosca (Ruta 4)",
+    isla: "La Palma", tipo: "MTB", dificultad: "Fácil",
+    duracion: "Menos de 2h", distancia: 10.3,
+    descripcion: "Circular corta de 10,2 km desde el Refugio de El Pilar por pinar de repoblación con sotobosque húmedo. Comparte traza con senderos de a pie: hay que ir despacio.",
+    enlace: "https://www.senderosdelapalma.es/en/?p=19782",
+    lat: 28.61428, lng: -17.83605
+  },
+  {
+    id: "mtb-btt7-paredvieja-tunel",
+    nombre: "BTT – Pared Vieja a Túnel Viejo (Ruta 7)",
+    isla: "La Palma", tipo: "MTB", dificultad: "Fácil",
+    duracion: "1-2 horas", distancia: 14.8,
+    descripcion: "14,8 km casi llanos por antiguos caminos de carboneo, de la zona recreativa de Pared Vieja al Túnel Viejo de la Cumbre. Ojo al túnel: no tiene aceras y se comparte con camiones.",
+    enlace: "https://www.senderosdelapalma.es/en/?p=19792",
+    lat: 28.61935, lng: -17.82284
+  },
+  {
+    id: "mtb-roque-muchachos-tazacorte",
+    nombre: "BTT – Roque de los Muchachos a Tazacorte",
+    isla: "La Palma", tipo: "MTB", dificultad: "Extrema",
+    duracion: "2-4 horas", distancia: 16.5,
+    descripcion: "El descenso más grande de Canarias: de los 2.426 m del Roque de los Muchachos al mar en Tazacorte, 16,5 km de singletrack y 2.618 m de bajada. Solo con shuttle y con nivel.",
+    lat: 28.75470, lng: -17.88569
+  },
+  {
+    id: "mtb-juego-bolas-gomera",
+    nombre: "BTT – Circular de Juego de Bolas (Agulo)",
+    isla: "La Gomera", tipo: "MTB", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 23.0,
+    descripcion: "23 km por pista y asfalto desde el Centro de Visitantes de Juego de Bolas, con la presa de La Palmita y los miradores sobre Agulo. La forma legal de rodar dentro de Garajonay.",
+    enlace: "https://www.hellocanaryislands.com/cycling/la-gomera/between-forests-and-orchards/",
+    lat: 28.178211, lng: -17.213882
+  },
+  {
+    id: "mtb-circular-valverde-hierro",
+    nombre: "BTT – Circular de Valverde (Vuelta a El Hierro)",
+    isla: "El Hierro", tipo: "MTB", dificultad: "Extrema",
+    duracion: "Día completo", distancia: 136.8,
+    descripcion: "La vuelta completa a El Hierro en BTT: 136,8 km circulares desde Valverde con 3.667 m de desnivel, por El Julan, La Restinga, La Dehesa de Sabinosa y el faro de La Orchilla.",
+    enlace: "https://www.hellocanaryislands.com/mountain-biking/el-hierro/mtb-route-in-el-hierro/",
+    lat: 27.81336, lng: -17.91283
+  },
+  {
+    id: "mtb-ayagaures-circular-gc",
+    nombre: "BTT – Maspalomas a Ayagaures (Circular)",
+    isla: "Gran Canaria", tipo: "MTB", dificultad: "Media",
+    duracion: "4-8 horas", distancia: 33.8,
+    descripcion: "Circular de 33,8 km desde Maspalomas hasta el oasis de Ayagaures y vuelta, con 1.200 m de desnivel. Sin tramos técnicos, pero con mucha subida y nada de sombra.",
+    lat: 27.76773, lng: -15.59584
+  },
+  {
+    id: "mtb-lajares-circular-fuerte",
+    nombre: "BTT – Circular de Lajares y el norte de Fuerteventura",
+    isla: "Fuerteventura", tipo: "MTB", dificultad: "Media",
+    duracion: "4-8 horas", distancia: 44.0,
+    descripcion: "Circular de 44 km por el norte de Fuerteventura: Lajares, el malpaís de Corralejo, el camino de Majanicho y El Cotillo. La variante oficial añade el bucle de Tindaya.",
+    enlace: "https://www.hellocanaryislands.com/mountain-biking/fuerteventura/mtb-route-in-the-northwest-of-fuerteventura/",
+    lat: 28.74157, lng: -13.87069
+  },
+  {
+    id: "mtb-btt-pilar-faro-fuencaliente",
+    nombre: "BTT – El Pilar al Faro de Fuencaliente",
+    isla: "La Palma", tipo: "MTB", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 33.7,
+    descripcion: "Del Refugio de El Pilar (1.462 m) al faro de Fuencaliente, en la punta sur de La Palma: 33,7 km de descenso casi continuo por pinar, volcanes jóvenes y la arena negra de las salinas.",
+    enlace: "https://www.senderosdelapalma.es/en/mountainbikes/network-of-mountain-bike-routes/",
+    lat: 28.61429, lng: -17.83618
+  },
+  {
+    id: "mtb-bc3-pinar-chio",
+    nombre: "BTT – BC-3 Pinar de Chío",
+    isla: "Tenerife", tipo: "MTB", dificultad: "Fácil",
+    duracion: "1-2 horas", distancia: 9.3,
+    descripcion: "9,3 km por el pinar seco y luminoso de la vertiente oeste de Tenerife, entre Guía de Isora y Santiago del Teide. La ruta BC más tranquila y la menos conocida de las cinco.",
+    enlace: "https://www.webtenerife.co.uk/what-to-do/routes/mountainbiking/",
+    lat: 28.25766, lng: -16.76946
   }
 ]; // ← No borres este corchete ni el punto y coma

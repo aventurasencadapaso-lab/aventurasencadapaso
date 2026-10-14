@@ -2,7 +2,7 @@
    Service worker · App de rutas · Aventuras en Cada Paso
    Si cambias algún archivo de la app, sube el número de VERSION.
    ============================================================ */
-var VERSION = 'acp-app-v3';
+var VERSION = 'acp-app-v4';
 var OFFLINE = 'acp-offline-v1';   // rutas descargadas por el usuario (no se borra al actualizar)
 var RUNTIME = 'acp-runtime-v1';   // GPX y mapas vistos, fuentes
 var MAX_RUNTIME_TILES = 1500;
