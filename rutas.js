@@ -1112,10 +1112,19 @@ var RUTAS = [
   {
     id: "ruta-volcanes-lapalma",
     nombre: "Ruta de los Volcanes – GR 131",
+    isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
+    duracion: "Día completo", distancia: 23.7,
+    descripcion: "La travesía clásica de La Palma: 23,7 km por la dorsal de Cumbre Vieja desde el Refugio de El Pilar hasta el Faro de Fuencaliente, pasando por el Hoyo Negro, los volcanes de Fuencaliente y las Salinas. 2.195 m de bajada.",
+    enlace: "https://www.senderosdelapalma.es/?p=17206",
+    lat: 28.61351, lng: -17.83655
+  },
+  {
+    id: "salinas-faro-fuencaliente-lapalma",
+    nombre: "Los Canarios – Salinas y Faro de Fuencaliente",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
     duracion: "2-4 horas", distancia: 8.2,
-    descripcion: "Ruta mítica desde el Refugio del Pilar por cráteres volcánicos hasta Fuencaliente. El Cráter del Hoyo Negro, vistas al Teide y la Gomera.",
-    enlace: "https://www.alltrails.com/es/spain/la-palma",
+    descripcion: "Bajada de 8,2 km desde Los Canarios hasta el Faro de Fuencaliente por el tramo final del GR 131. Pasa junto al cráter del volcán de San Antonio, el Teneguía y las Salinas, y acaba en el mar.",
+    enlace: "https://www.senderosdelapalma.es/",
     lat: 28.49339, lng: -17.84316
   },
   {
