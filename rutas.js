@@ -582,12 +582,12 @@ var RUTAS = [
   // ── TIMANFAYA ──
   {
     id: "caldera-blanca-lanzarote",
-    nombre: "Caldera Blanca – Circular desde Tinajo",
+    nombre: "Caldera Blanca y Caldereta – Circular desde Mancha Blanca",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 13.8,
-    descripcion: "Travesía por las coladas hasta el borde de la Caldera Blanca (458 m), con un cráter de más de un kilómetro de diámetro, uno de los mayores de Lanzarote. Es de acceso libre, sin guía ni reserva.",
+    duracion: "4-8 horas", distancia: 11.5,
+    descripcion: "Circular de 11,5 km desde Mancha Blanca por el malpaís hasta el borde de la Caldera Blanca, uno de los mayores cráteres de Lanzarote. Acceso libre, sin guía ni reserva. El recorrido rodea el cráter por arriba: no se baja al fondo.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
-    lat: 29.04375, lng: -13.69267
+    lat: 29.04396, lng: -13.69194
   },
   {
     id: "timanfaya-ruta-volcanes",
