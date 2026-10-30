@@ -898,7 +898,7 @@ var RUTAS = [
     nombre: "Montaña de Tindaya",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
     duracion: "Menos de 2h", distancia: 5.7,
-    descripcion: "Ascenso a la montaña sagrada de los majos con grabados podomorfos únicos. Vistas al norte de la isla. Lugar de alto valor arqueológico y espiritual.",
+    descripcion: "La montaña sagrada de los majos, con grabados podomorfos únicos y Bien de Interés Cultural. Subir exige autorización de Patrimonio Histórico: se visita con guía y en grupos reducidos.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
     lat: 28.59002, lng: -13.98241
   },

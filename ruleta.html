@@ -258,6 +258,18 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
  }
  @keyframes spin { to { transform: rotate(360deg); } }
 
+
+/* ====== RULETA VISIBLE + MARCA ====== */
+.rul-ruleta { max-width:520px; margin:0 auto 6px; padding:0 20px; text-align:center; scroll-margin-top:96px; }
+.rul-canvas-wrap { position:relative; display:inline-block; width:100%; max-width:420px; }
+#rul-canvas { width:100%; height:auto; display:block; touch-action:manipulation; }
+.rul-canvas-wrap.girando #rul-canvas { cursor:progress; }
+.rul-ruleta__fallback { display:none; color:#8a8fa0; font-size:13px; padding:20px; }
+@media (max-width:560px){ .rul-ruleta { padding:0 14px; } }
+
+.rul-card__marca { margin:14px 0 0; text-align:center; font-family:Orbitron,sans-serif;
+  font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#1cff6b; opacity:.75; }
+
  .rul-sin-rutas {
  text-align: center;
  padding: 20px;
@@ -656,6 +668,15 @@ img:not(.site-logo__img), video, iframe, table { max-width: 100% !important; }
 
  </div><!-- /rul-panel -->
 
+
+ <!-- RULETA -->
+ <div class="rul-ruleta">
+ <div class="rul-canvas-wrap">
+ <canvas id="rul-canvas" role="img" aria-label="Ruleta de rutas de Aventuras en Cada Paso"></canvas>
+ </div>
+ <p class="rul-ruleta__fallback" id="rul-fallback">Tu navegador no puede dibujar la ruleta, pero el botón de abajo sigue funcionando igual.</p>
+ </div>
+
  <!-- CONTADOR Y BOTÓN -->
  <div class="rul-btn-wrap">
  <div class="rul-contador" id="rul-contador"></div>
@@ -797,18 +818,18 @@ function actualizarContador(){
  : '';
  btn.style.display = n > 0 ? 'inline-flex' : 'none';
  sin.style.display = n === 0 ? 'block' : 'none';
+ if(window.rulRueda) window.rulRueda.previsualiza();
 }
 
 function girar(){
  var pool = rutasFiltradas();
  if(!pool.length) return;
+ if(window.rulRueda && window.rulRueda.ocupada()) return;
 
  var btn = document.getElementById('rul-btn');
  btn.classList.add('girando');
  btn.disabled = true;
 
- /* Animación de suspense — 600ms */
- setTimeout(function(){
  /* Elegir aleatoria diferente a la última si hay más de 1 */
  var candidatas = pool.length > 1
  ? pool.filter(function(r){ return !ultimaRuta || r.id !== ultimaRuta.id; })
@@ -816,13 +837,17 @@ function girar(){
  var ruta = candidatas[Math.floor(Math.random() * candidatas.length)];
  ultimaRuta = ruta;
 
+ function remata(){
  btn.classList.remove('girando');
  btn.disabled = false;
  btn.innerHTML = '<span class="rul-btn__ico"><i class="fas fa-redo"></i></span> ¡Otra vez!';
-
  mostrarResultado(ruta);
  addHistorial(ruta);
- }, 600);
+ }
+
+ /* La rueda decide el ritmo; si no hay canvas, se mantiene el comportamiento de antes */
+ if(window.rulRueda){ window.rulRueda.lanza(pool, ruta, remata); }
+ else { setTimeout(remata, 600); }
 }
 
 function mostrarResultado(r){
@@ -857,6 +882,7 @@ function mostrarResultado(r){
  + '<button class="rul-card__btn rul-card__btn--sec btn-otra"><i class="fas fa-dice"></i> Otra ruta</button>'
  + '<button data-rid="'+r.id+'" data-rnom="'+encodeURIComponent(r.nombre)+'" class="rul-card__btn rul-card__btn--share btn-compartir"><i class="fas fa-share-alt"></i> Compartir</button>'
  + '</div>'
+ + '<p class="rul-card__marca">aventurasencadapaso.com</p>'
  + '</div>'
  + '</div>';
 
@@ -909,6 +935,239 @@ function compartir(nombre, id){
  window.open('https://wa.me/?text=' + encodeURIComponent(texto), '_blank');
  }
 }
+
+
+/* ================= RULETA VISIBLE ================= */
+(function(){
+  var cv = document.getElementById('rul-canvas');
+  if(!cv || !cv.getContext) return;
+  var ctx = cv.getContext('2d');
+
+  var VERDE='#1cff6b', FONDO='#02070f', PANEL='#0c1624', TEXTO='#e8eaf0', GRIS='#8a8fa0';
+  var COLOR = { 'Fácil':'#1cff6b', 'Media':'#ffc107', 'Difícil':'#ff6f00', 'Extrema':'#e53935' };
+  var DOMINIO = 'aventurasencadapaso.com';
+
+  var gajos = [];      // rutas dibujadas en la rueda
+  var giro = 0;        // ángulo actual, en radianes
+  var animando = false;
+  var resaltar = false;
+  var W = 420, H = 0, R = 0, dpr = 1;
+
+  /* el logo, para la franja de marca */
+  var logo = new Image(); var logoOk = false;
+  logo.onload = function(){ logoOk = true; pinta(); };
+  logo.onerror = function(){ logoOk = false; };
+  logo.src = 'logo-aventuras.png';
+
+  /* las huellas del logo, para el buje central */
+  var huellas = new Image(); var huellasOk = false;
+  huellas.onload = function(){ huellasOk = true; pinta(); };
+  huellas.onerror = function(){ huellasOk = false; };
+  huellas.src = 'imagenes/huellas.png';
+
+  function mezcla(hex, sobre, k){
+    var a = parseInt(hex.slice(1),16), b = parseInt(sobre.slice(1),16);
+    var r = Math.round(((a>>16)&255)*k + ((b>>16)&255)*(1-k));
+    var g = Math.round(((a>>8)&255)*k + ((b>>8)&255)*(1-k));
+    var z = Math.round((a&255)*k + (b&255)*(1-k));
+    return 'rgb('+r+','+g+','+z+')';
+  }
+
+  function dimensiona(){
+    var anchoCSS = cv.clientWidth || 420;
+    dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+    W = anchoCSS;
+    H = Math.round(W * 1.16);          // rueda + franja de marca
+    cv.width  = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    cv.style.height = H + 'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    R = W/2 - 18;
+  }
+
+  /* elige los gajos a partir del pool actual */
+  function montaGajos(pool, ganadora){
+    var n = pool.length >= 12 ? 12 : Math.max(4, pool.length);
+    var baraja = pool.slice();
+    for(var i=baraja.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=baraja[i]; baraja[i]=baraja[j]; baraja[j]=t; }
+    var out = [];
+    for(var k=0;k<n;k++) out.push(baraja[k % baraja.length]);
+    if(ganadora){
+      var idx = Math.floor(Math.random()*n);
+      out[idx] = ganadora;
+      out.ganadorIdx = idx;
+    }
+    return out;
+  }
+
+  function corta(txt, max){
+    txt = String(txt).replace(/\s*[–—-]\s*/g,' · ');
+    return txt.length > max ? txt.slice(0, max-1).trim() + '…' : txt;
+  }
+
+  function pinta(){
+    if(!gajos.length){ return; }
+    var n = gajos.length, seg = (Math.PI*2)/n;
+    var cx = W/2, cy = W/2;
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle = FONDO; ctx.fillRect(0,0,W,H);
+
+    /* gajos */
+    for(var i=0;i<n;i++){
+      var r = gajos[i];
+      var col = COLOR[r.dificultad] || '#ffc107';
+      var a0 = giro + i*seg, a1 = a0 + seg;
+
+      ctx.beginPath();
+      ctx.moveTo(cx,cy);
+      ctx.arc(cx,cy,R,a0,a1);
+      ctx.closePath();
+      var gana = resaltar && i === gajos.ganadorIdx;
+      ctx.fillStyle = gana ? mezcla(col, PANEL, 0.62) : mezcla(col, PANEL, i%2 ? 0.17 : 0.09);
+      if(gana){ ctx.shadowColor = col; ctx.shadowBlur = 18; }
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.strokeStyle = gana ? col : mezcla(col, PANEL, 0.55);
+      ctx.lineWidth = gana ? 2.5 : 1.5; ctx.stroke();
+
+      /* etiqueta radial — se voltea en la mitad izquierda para que no salga del revés */
+      var mid = a0 + seg/2;
+      var dir = ((mid % (Math.PI*2)) + Math.PI*2) % (Math.PI*2);
+      var vuelta = dir > Math.PI/2 && dir < Math.PI*1.5;
+      ctx.save();
+      ctx.translate(cx,cy);
+      ctx.rotate(vuelta ? mid + Math.PI : mid);
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = gana ? '#02070f' : TEXTO;
+      ctx.font = (gana ? '700 ' : '600 ') + Math.max(9, Math.round(W*0.032)) + 'px Roboto, system-ui, sans-serif';
+      var txt = corta(r.nombre, n > 8 ? 17 : 24);
+      if(vuelta){ ctx.textAlign = 'left';  ctx.fillText(txt, -(R - R*0.09), 0); }
+      else      { ctx.textAlign = 'right'; ctx.fillText(txt,  (R - R*0.09), 0); }
+      ctx.restore();
+    }
+
+    /* aro exterior */
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2);
+    ctx.strokeStyle = 'rgba(28,255,107,.45)'; ctx.lineWidth = 3; ctx.stroke();
+
+    /* buje central con la marca */
+    var rh = R*0.27;
+    ctx.beginPath(); ctx.arc(cx,cy,rh,0,Math.PI*2);
+    ctx.fillStyle = PANEL; ctx.fill();
+    ctx.strokeStyle = VERDE; ctx.lineWidth = 2.5; ctx.stroke();
+
+    ctx.save();
+    ctx.translate(cx,cy);
+    ctx.textAlign='center';
+    if(huellasOk){
+      /* las huellas del logo, quietas mientras la rueda gira */
+      var lado = rh*1.52;
+      ctx.drawImage(huellas, -lado/2, -lado/2, lado, lado);
+    } else {
+      /* si la imagen no carga, rosa de los vientos */
+      var rr = rh*0.42;
+      ctx.beginPath();
+      ctx.moveTo(0,-rr); ctx.lineTo(rr*0.26,-rr*0.26); ctx.lineTo(rr,0);
+      ctx.lineTo(rr*0.26,rr*0.26); ctx.lineTo(0,rr); ctx.lineTo(-rr*0.26,rr*0.26);
+      ctx.lineTo(-rr,0); ctx.lineTo(-rr*0.26,-rr*0.26); ctx.closePath();
+      ctx.fillStyle = VERDE; ctx.globalAlpha = .9; ctx.fill(); ctx.globalAlpha = 1;
+    }
+    ctx.restore();
+
+    /* aguja */
+    var py = cy - R - 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, py + R*0.13);
+    ctx.lineTo(cx - R*0.065, py - R*0.02);
+    ctx.lineTo(cx + R*0.065, py - R*0.02);
+    ctx.closePath();
+    ctx.fillStyle = '#ff6f00'; ctx.fill();
+    ctx.strokeStyle = FONDO; ctx.lineWidth = 2; ctx.stroke();
+
+    /* ===== franja de marca, dentro del propio lienzo ===== */
+    var fy = W + 4, fh = H - fy;
+    ctx.fillStyle = PANEL;
+    ctx.fillRect(0, fy, W, fh);
+    ctx.fillStyle = 'rgba(28,255,107,.25)';
+    ctx.fillRect(0, fy, W, 1.5);
+
+    var cyf = fy + fh/2;
+    ctx.font = '700 ' + Math.max(9, Math.round(W*0.031)) + 'px Orbitron, Roboto, sans-serif';
+    ctx.textBaseline = 'middle';
+    if(logoOk){
+      var lh = fh*0.62, lw = lh * (logo.naturalWidth/logo.naturalHeight);
+      var total = lw + 10 + ctx.measureText(DOMINIO).width;
+      ctx.drawImage(logo, W/2 - total/2, cyf - lh/2, lw, lh);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = VERDE;
+      ctx.fillText(DOMINIO, W/2 - total/2 + lw + 10, cyf + 1);
+    } else {
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillStyle = VERDE;
+      ctx.font = '700 ' + Math.max(10, Math.round(W*0.034)) + 'px Orbitron, Roboto, sans-serif';
+      ctx.fillText(DOMINIO, W/2, cyf);
+    }
+  }
+
+  /* dibuja una vista previa con los filtros actuales */
+  function previsualiza(){
+    var pool = (typeof rutasFiltradas === 'function') ? rutasFiltradas() : [];
+    if(!pool.length){ ctx.clearRect(0,0,W,H); gajos=[]; return; }
+    if(animando) return;
+    resaltar = false;
+    gajos = montaGajos(pool, null);
+    pinta();
+  }
+
+  /* gira hasta dejar la ganadora bajo la aguja */
+  function lanza(pool, ganadora, alAcabar){
+    if(animando) return;
+    dimensiona();
+    resaltar = false;
+    gajos = montaGajos(pool, ganadora);
+    var n = gajos.length, seg = (Math.PI*2)/n, w = gajos.ganadorIdx;
+
+    var lento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    /* dentro del gajo, sin pegarse a los bordes */
+    var dentro = (Math.random()*0.6 + 0.2) * seg;
+    var destino = -Math.PI/2 - w*seg - dentro;
+    var vueltas = lento ? 0 : (5 + Math.floor(Math.random()*3));
+    while(destino < giro) destino += Math.PI*2;
+    destino += vueltas * Math.PI*2;
+
+    if(lento){ giro = destino; resaltar = true; pinta(); alAcabar(); return; }
+
+    var desde = giro, delta = destino - desde;
+    var dur = 4200, t0 = null;
+    animando = true;
+    cv.parentNode.classList.add('girando');
+
+    function paso(t){
+      if(t0 === null) t0 = t;
+      var p = Math.min((t - t0)/dur, 1);
+      var e = 1 - Math.pow(1 - p, 4);   /* frenada suave */
+      giro = desde + delta*e;
+      pinta();
+      if(p < 1){ requestAnimationFrame(paso); }
+      else { animando = false; resaltar = true; pinta();
+             cv.parentNode.classList.remove('girando'); alAcabar(); }
+    }
+    requestAnimationFrame(paso);
+  }
+
+  window.rulRueda = { lanza: lanza, previsualiza: previsualiza, ocupada: function(){ return animando; } };
+
+  function arranca(){ dimensiona(); previsualiza(); }
+  arranca();
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ pinta(); }); }
+
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ if(animando) return; dimensiona(); pinta(); }, 150);
+  });
+})();
 
 /* Iniciar */
 actualizarContador();
