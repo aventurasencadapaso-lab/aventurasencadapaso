@@ -187,9 +187,9 @@ var RUTAS = [
     id: "teno-palmar-circular",
     nombre: "Valle de El Palmar – Teno Alto",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 9.9,
+    duracion: "4-8 horas", distancia: 10.6,
     descripcion: "Circular por el Valle de El Palmar hasta Teno Alto por bosque de brezos y laurisilva única en altura. Vistas excepcionales al norte de la isla.",
-    enlace: "https://www.alltrails.com/es/spain/tenerife/long",
+    enlace: "https://www.tenerifeon.es/es/rutas/senderismo",
     lat: 28.3408, lng: -16.85032
   },
 
