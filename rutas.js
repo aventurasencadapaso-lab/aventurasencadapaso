@@ -45,7 +45,7 @@ var RUTAS = [
     id: "roques-garcia-teide",
     nombre: "Roques de García – Sendero 3 Teide",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 3.6,
+    duracion: "Menos de 2h", distancia: 3.5,
     descripcion: "Circular por las formaciones volcánicas más espectaculares del Teide: Roque Cinchado, El Torrotito y el Llano de Ucanca. Apta para familias.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.22328, lng: -16.63091
@@ -74,7 +74,7 @@ var RUTAS = [
     id: "paisaje-lunar-vilaflor",
     nombre: "Vilaflor – Paisaje Lunar (PR-TF 72)",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 12.9,
+    duracion: "4-8 horas", distancia: 13.1,
     descripcion: "Circular desde Vilaflor por pinares hasta el Paisaje Lunar, formaciones de piedra pómez erosionada que parecen de otro planeta. Impresionante.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/long",
     lat: 28.15967, lng: -16.63697
@@ -83,7 +83,7 @@ var RUTAS = [
     id: "volcan-fasnia",
     nombre: "Volcán de Fasnia – Siete Fuentes",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 9.0,
+    duracion: "2-4 horas", distancia: 8.2,
     descripcion: "Sendero 20 del Parque Nacional del Teide, en la dorsal de Pedro Gil. Circular desde el Mirador del Corral del Niño (TF-24) entre los conos de la erupción de 1705, con retamas, codesos y lava oscura.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/fasnia",
     lat: 28.30257, lng: -16.52202
@@ -130,7 +130,7 @@ var RUTAS = [
     id: "anaga-bosque-enigmas",
     nombre: "Bosque de los Enigmas – Anaga",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "2-4 horas", distancia: 5.7,
+    duracion: "2-4 horas", distancia: 4.8,
     descripcion: "Circular sencilla desde el Mirador de Zapata por laurisilva bien señalizada. Perfecta para familias. Llevar ropa de abrigo por la humedad.",
     enlace: "https://www.alltrails.com/es/spain/tenerife/moderate",
     lat: 28.53061, lng: -16.2801
@@ -139,7 +139,7 @@ var RUTAS = [
     id: "pijaral-tenerife",
     nombre: "Sendero de El Pijaral – Anaga",
     isla: "Tenerife", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 6.6,
+    duracion: "2-4 horas", distancia: 6.5,
     descripcion: "La laurisilva más protegida de Tenerife. Reserva Natural Integral de El Pijaral. Requiere permiso del Cabildo. Experiencia única e irrepetible.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/santa-cruz-de-tenerife",
     lat: 28.55622, lng: -16.1798
@@ -3006,7 +3006,7 @@ var RUTAS = [
     id: "mtb-bc5-pinares-vilaflor",
     nombre: "BTT – BC-5 Pinares de Vilaflor",
     isla: "Tenerife", tipo: "MTB", dificultad: "Media",
-    duracion: "1-2 horas", distancia: 13.6,
+    duracion: "1-2 horas", distancia: 13.8,
     descripcion: "13,6 km por el pinar canario más alto de Tenerife, entre los 1.582 y los 1.943 m. Señalizada por el Cabildo para bici, con poca exigencia física y sombra casi todo el recorrido.",
     enlace: "https://tenerifeon.es/en/routes/cycling-horse-riding/bc-5-pinares-de-vilaflor",
     lat: 28.16525, lng: -16.63445
@@ -3024,7 +3024,7 @@ var RUTAS = [
     id: "mtb-bc4-ruta-sur-arico",
     nombre: "BTT – BC-4 Pinares del Sur y Volcanes Negros",
     isla: "Tenerife", tipo: "MTB", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 14.5,
+    duracion: "2-4 horas", distancia: 14.7,
     descripcion: "14,5 km por las pistas de Arico, del área recreativa de El Contador a la zona de Volcanes Negros. Pinar seco del sur, picón suelto y mucha menos gente que en la vertiente norte.",
     enlace: "https://tenerifeon.es/en/routes/cycling-horse-riding/bc-4-pinares-del-sur-and-volcanes-negros",
     lat: 28.20720, lng: -16.53874
