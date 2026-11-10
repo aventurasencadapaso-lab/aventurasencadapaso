@@ -1,0 +1,56 @@
+DIEZ RUTAS CON TRAZADO PROPIO
+Aventuras en Cada Paso - 10 de noviembre de 2026
+
+Sube TODO junto, respetando las carpetas. Son 33 ficheros.
+
+  rutas.js        -> a la raiz
+  sw.js           -> a la raiz   (v19 -> v20, IMPRESCINDIBLE)
+  sitemap.xml     -> a la raiz
+  rutas/          -> 10 fichas
+  gpx/            -> 10 recorridos
+  imagenes/gpx-thumbs/ -> 10 miniaturas
+
+El cambio de sw.js NO es opcional: rutas.js va por cache y sin subir la
+version la gente seguiria viendo las distancias viejas.
+
+LO QUE CAMBIA EN CADA RUTA
+
+  Penas del Chache        8,5 -> 8,2 km   +186 m
+     descripcion al macizo de Famara; la meta de Google decia 11 km
+
+  Morro Janana            FICHA NUEVA     7,8 km  +359 m
+     Media, 2-4 h, cima con antenas de telecomunicaciones
+
+  Betancuria - Vega      11,5 -> 13,7 km  +490 m
+     ahora sube al Morro Janana; meta de Google cortada, arreglada
+
+  Risco de Famara        12,6 -> 14,1 km  +518 m
+     Media -> DIFICIL; la ficha decia "bajada", es bajada Y subida
+
+  Punta del Pobre        14,1 -> 13,7 km  +277 m
+     sube a Montana Amarilla; decia "costa este" y va al suroeste
+
+  Pedro Barba            18,5 -> 11,5 km  +130 m
+     DIFICIL -> Media, 4-8 h -> 2-4 h
+
+  La Santa               20,1 -> 12,4 km  +159 m
+     renombrada a Caleton de las Animas; DIFICIL -> Media; 4-8 -> 2-4 h
+     el track viejo tenia 15 cortes de GPS
+
+  Montana Colorada        4,7 -> 3,0 km    +31 m
+     aparcamiento mas cercano, sin tramo de carretera
+
+  Montana de Tindaya      5,7 -> 6,0 km    +48 m
+     decia "Ascenso" y subir esta prohibido; ahora es circular
+
+  Cofete - Gran Valle     8,0 -> 11,3 km  +435 m
+     desde Morro Jable; ida y vuelta serian 22,5 km
+
+QUE QUEDA PENDIENTE
+
+  - Tindaya - Vallebron - Tefia (PR FV 9): su track tiene 39 cortes
+  - Los 7 GPX oficiales de Tenerife, que necesitan altura en gpx.studio
+  - Los correos a los Cabildos de La Palma y Gran Canaria
+  - Revisar las 343 fichas por si hay mas descripciones cortadas
+    (han aparecido dos: Betancuria-Vega y Punta del Pobre)
+  - El 2FA de GitHub

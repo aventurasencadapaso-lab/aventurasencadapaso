@@ -623,17 +623,17 @@ var RUTAS = [
     id: "penas-chache-lanzarote",
     nombre: "Peñas del Chache – Punto más alto",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8.5,
-    descripcion: "Ascenso al punto más alto de Lanzarote (670 m). Vistas espectaculares al acantilado de Famara y a La Graciosa. Sin sombra, llevar agua.",
+    duracion: "2-4 horas", distancia: 8.2,
+    descripcion: "Ascenso al macizo de Famara, junto al punto más alto de Lanzarote (670 m). Vistas espectaculares al acantilado de Famara y a La Graciosa. Sin sombra, llevar agua.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.1275, lng: -13.51429
   },
   {
     id: "famara-risco-lanzarote",
     nombre: "Risco de Famara – Mirador del Río",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12.6,
-    descripcion: "Bajada por el Risco de Famara desde el Mirador del Río de César Manrique hasta la playa. Vistas a La Graciosa y pendiente pronunciada.",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
+    duracion: "4-8 horas", distancia: 14.1,
+    descripcion: "Bajada desde el Mirador del Río hasta las Salinas del Río, al nivel del mar, y vuelta por el mismo camino. Sendero muy técnico por el Risco de Famara, con La Graciosa enfrente todo el rato.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
     lat: 29.17674, lng: -13.51098
   },
@@ -679,10 +679,10 @@ var RUTAS = [
     id: "montana-colorada-lanzarote",
     nombre: "Montaña Colorada – Volcán Rojo",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 4.7,
-    descripcion: "Circular bien señalizado alrededor del volcán de color rojizo por óxidos de hierro. Con la Caldereta adyacente donde se cultivaron cereales.",
+    duracion: "Menos de 2h", distancia: 3.0,
+    descripcion: "Circular bien señalizado alrededor del volcán de color rojizo por óxidos de hierro, con la Caldereta adyacente donde se cultivaron cereales. Sale del aparcamiento más cercano al volcán, sin tramo de carretera.",
     enlace: "https://www.otroviajeenlamochila.com/senderismo-lanzarote/",
-    lat: 28.99617, lng: -13.68454
+    lat: 29.00477, lng: -13.68374
   },
   {
     id: "caldera-cuervos",
@@ -818,10 +818,10 @@ var RUTAS = [
   },
   {
     id: "la-santa-tenesar",
-    nombre: "La Santa – Tenesar",
-    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 20.1,
-    descripcion: "Recorrido por paisaje volcánico con acantilados pronunciados desde La Santa hasta Tenesar. Tranquilidad total y vistas al Atlántico.",
+    nombre: "La Santa – Caletón de las Ánimas",
+    isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 12.4,
+    descripcion: "Ida y vuelta por la costa volcánica de La Santa hasta el Caletón de las Ánimas, con acantilados y vistas al Atlántico. Tranquilidad total. Se puede alargar hasta Tenésar, pero eso es mucha más vuelta.",
     enlace: "https://www.lanzarote.com/guia-viaje/excursiones/senderismo/",
     lat: 29.10644, lng: -13.66791
   },
@@ -861,10 +861,18 @@ var RUTAS = [
     id: "cofete-gran-valle-fuerte",
     nombre: "Cofete – Gran Valle (PR-FV 55)",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8.0,
-    descripcion: "Una de las mejores rutas de Fuerteventura. Desciende por el Gran Valle hasta la playa salvaje de Cofete, 12 km de arena virgen. Muy exigente.",
+    duracion: "2-4 horas", distancia: 11.3,
+    descripcion: "Una de las mejores rutas de Fuerteventura. Desde Morro Jable, sube por el Gran Valle y baja a la playa salvaje de Cofete, 12 km de arena virgen. Solo ida: se puede volver por el mismo camino, pero entonces es el doble.",
     enlace: "https://www.komoot.com/es-es/guide/809/rutas-de-senderismo-en-fuerteventura",
-    lat: 28.06361, lng: -14.37624
+    lat: 28.05081, lng: -14.35969
+  },
+  {
+    id: "morro-janana-betancuria",
+    nombre: "Morro Janana desde Betancuria",
+    isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 7.8,
+    descripcion: "Subida al Morro Janana (672 m), el pico de las antenas del macizo de Betancuria, desde la antigua capital de la isla. Circular con vistas a la llanura de Antigua y al valle de Betancuria.",
+    lat: 28.42572, lng: -14.05695
   },
   {
     id: "arco-penitas-fuerte",
@@ -897,10 +905,10 @@ var RUTAS = [
     id: "tindaya-fuerte",
     nombre: "Montaña de Tindaya",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 5.7,
+    duracion: "Menos de 2h", distancia: 6.0,
     descripcion: "La montaña sagrada de los majos, con grabados podomorfos únicos y Bien de Interés Cultural. Subir exige autorización de Patrimonio Histórico: se visita con guía y en grupos reducidos.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/la-oliva",
-    lat: 28.59002, lng: -13.98241
+    lat: 28.58648, lng: -13.97950
   },
   {
     id: "malpais-arena-fuerte",
@@ -1081,8 +1089,8 @@ var RUTAS = [
     id: "betancuria-vega-rio-palmas",
     nombre: "Betancuria – Vega Río Palmas",
     isla: "Fuerteventura", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 11.5,
-    descripcion: "Paseo histórico desde Betancuria, la antigua capital, hasta la Vega de Río Palmas por el barranco del Río Palmas. Agua, palmeras y la Ermita de la Peña.",
+    duracion: "4-8 horas", distancia: 13.7,
+    descripcion: "Circular desde Betancuria, la antigua capital, subiendo al Morro Janana y bajando a la Vega de Río Palmas por el barranco. Agua, palmeras y la Ermita de la Peña.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/betancuria",
     lat: 28.42289, lng: -14.05779
   },
@@ -1898,8 +1906,8 @@ var RUTAS = [
   {
     id: "sebo-pedro-barba",
     nombre: "Caleta de Sebo – Pedro Barba",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 18.5,
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
+    duracion: "2-4 horas", distancia: 11.5,
     descripcion: "Sendero costero entre los dos únicos pueblos de La Graciosa. Camino bien señalizado con postes numerados. Vistas al Risco de Famara y El Bufadero.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/caleta-de-sebo",
     lat: 29.23006, lng: -13.50274
@@ -1908,8 +1916,8 @@ var RUTAS = [
     id: "punta-del-pobre-graciosa",
     nombre: "Ruta Este – Punta del Pobre",
     isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 14.1,
-    descripcion: "Travesía hasta la Punta del Pobre por la costa este. Vistas a Montaña Clara, Roque del Oeste y Alegranza. Bordea el lado oeste de Lanzarote con Famara al fondo.",
+    duracion: "4-8 horas", distancia: 13.7,
+    descripcion: "Circular por el sur de La Graciosa desde Caleta de Sebo: costa hasta la Punta del Pobre, subida a Montaña Amarilla y vuelta por detrás de la montaña, cruzando el interior de la isla. Vistas a Montaña Clara, Roque del Oeste y Alegranza, con el Risco de Famara enfrente.",
     enlace: "https://lanzarote3.com/senderismo-en-la-graciosa-mejores-rutas/",
     lat: 29.2301, lng: -13.50266
   },
