@@ -1618,7 +1618,7 @@ var RUTAS = [
     id: "camino-jinama",
     nombre: "Camino de Jinama",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 13.2,
+    duracion: "4-8 horas", distancia: 12.9,
     descripcion: "Camino histórico de las mudadas estacionales entre El Golfo y la cumbre de El Hierro: unos 1.000 m de desnivel en los 4 km del tramo empinado, dentro de una circular más larga por el Mirador de Jinama. Vista espectacular sobre el ",
     enlace: "https://www.spain.info/es/descubrir-espana/canarias-rutas-senderismo/",
     lat: 27.75498, lng: -18.00195
@@ -1720,10 +1720,10 @@ var RUTAS = [
     id: "pozo-calcosas-hierro",
     nombre: "Pozo de las Calcosas – Circular desde El Mocanal",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 6.6,
-    descripcion: "Bajada desde El Mocanal hasta el mirador sobre el caserío del Pozo de las Calcosas, en la costa norte de El Hierro. Casas de piedra con techo de paja, piscinas naturales y acantilados sobre el Atlántico.",
+    duracion: "2-4 horas", distancia: 7.6,
+    descripcion: "Circular desde El Mocanal bajando hasta el caserío del Pozo de las Calcosas, en la costa norte de El Hierro, con vuelta por otro camino. Casas de piedra con techo de paja, piscinas naturales y acantilados sobre el Atlántico.",
     enlace: "https://www.wikiloc.com/hiking-trails/mocanal-mirador-del-pozo-de-las-calcosas-el-hierro-77347251",
-    lat: 27.82172, lng: -17.94357
+    lat: 27.82047, lng: -17.94297
   },
   {
     id: "valverde-mercado-hierro",
@@ -1773,10 +1773,10 @@ var RUTAS = [
   },
   {
     id: "bajada-jinama-golfo",
-    nombre: "Bajada de Jinama – El Golfo",
+    nombre: "Subida a Jinama – Ascenso Vertical",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 8.8,
-    descripcion: "Descenso inverso del Camino de Jinama desde Las Playas hasta El Golfo. Paisaje que cambia de costa sur árida a El Golfo verde y fértil.",
+    duracion: "4-8 horas", distancia: 8.0,
+    descripcion: "883 metros de desnivel en 4 km por el camino histórico de la mudada, y vuelta por el mismo sitio. Un 22% de pendiente media: esto es un reto de piernas, no un paseo.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
     lat: 27.75489, lng: -18.00208
   },
@@ -1819,10 +1819,10 @@ var RUTAS = [
   },
   {
     id: "pozo-salud-frontera",
-    nombre: "Pozo de la Salud – Costa de Frontera",
+    nombre: "Camino del Canal – Pozo de la Salud a Frontera",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12.5,
-    descripcion: "Ruta por la costa de El Golfo hasta el Pozo de la Salud, manantial con propiedades medicinales. Paisaje volcánico de plataformas de lava y charcos naturales.",
+    duracion: "4-8 horas", distancia: 12.1,
+    descripcion: "El camino del canal desde el Pozo de la Salud, en Sabinosa, hasta Frontera, cruzando el valle de El Golfo a media ladera. Es lineal: termina a 9 km de donde empieza, así que hay que organizar la vuelta.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/el-hierro",
     lat: 27.75639, lng: -18.10458
   },
@@ -1830,10 +1830,10 @@ var RUTAS = [
     id: "litoral-laspuntas-maceta-hierro",
     nombre: "Sendero Litoral de Las Puntas – La Maceta",
     isla: "El Hierro", tipo: "Senderismo", dificultad: "Fácil",
-    duracion: "Menos de 2h", distancia: 5.2,
-    descripcion: "Paseo litoral por la costa de El Golfo, de Las Puntas a la piscina natural de La Maceta. Pasarela de madera, charcos marinos, antiguos lavaderos y miradores con paneles sobre la flora y la fauna de la isla.",
+    duracion: "2-4 horas", distancia: 7.6,
+    descripcion: "Paseo litoral por la costa de El Golfo, del Charco de los Sargos a las Salinas de las Puntas, pasando por la piscina natural de La Maceta. Pasarela de madera, charcos marinos, antiguos lavaderos y miradores con paneles sobre la flora y la fauna de la isla.",
     enlace: "https://www.wikiloc.com/hiking-trails/charco-de-la-maceta-sendero-litoral-de-las-puntas-el-charco-azul-y-el-pozo-de-la-salud-isla-de-el-h-87390562",
-    lat: 27.78654, lng: -18.00818
+    lat: 27.78330, lng: -18.01177
   },
   {
     id: "mirador-bascos-hierro",

@@ -1,41 +1,99 @@
-17 RUTAS CON RECORRIDO NUEVO
+22 RUTAS + TENO AMPLIADA + 216 ENCABEZADOS
 Aventuras en Cada Paso - 10 de noviembre de 2026
 
-Sube TODO junto respetando las carpetas.
+266 ficheros. Sube TODO junto respetando las carpetas.
+  rutas.js  sw.js  sitemap.xml -> raiz
+  rutas/  gpx/  imagenes/gpx-thumbs/
 
-  rutas.js    -> raiz      sw.js -> raiz (v19 -> v20, IMPRESCINDIBLE)
-  sitemap.xml -> raiz      rutas/  gpx/  imagenes/gpx-thumbs/
+sw.js pasa de v19 a v20. No es opcional: rutas.js va por cache.
 
-El cambio de sw.js no es opcional: rutas.js va por cache.
 
-== 10 TRAZADAS POR TI (OpenStreetMap, ODbL) ==
+== 1. QUINCE RUTAS TRAZADAS POR TI (OpenStreetMap, ODbL) ==
 
-  Penas del Chache          8,5 -> 8,2 km   +186
-  Morro Janana              FICHA NUEVA     7,8 km  +359
-  Betancuria - Vega        11,5 -> 13,7 km  +490   ahora sube al Janana
-  Risco de Famara          12,6 -> 14,1 km  +518   Media -> DIFICIL
-  Punta del Pobre          14,1 -> 13,7 km  +277   por Montana Amarilla
-  Pedro Barba              18,5 -> 11,5 km  +130   DIFICIL -> Media
-  La Santa                 20,1 -> 12,4 km  +159   -> Caleton de las Animas
-  Montana Colorada          4,7 -> 3,0 km    +31   aparcamiento mas cerca
-  Montana de Tindaya        5,7 -> 6,0 km    +48   ya no dice "ascenso"
-  Cofete - Gran Valle       8,0 -> 11,3 km  +435   desde Morro Jable
+  Penas del Chache          8,5 -> 8,2 km    +186
+  Morro Janana              FICHA NUEVA      7,8 km  +359
+  Betancuria - Vega        11,5 -> 13,7 km   +490  ahora sube al Janana
+  Risco de Famara          12,6 -> 14,1 km   +518  Media -> DIFICIL
+  Punta del Pobre          14,1 -> 13,7 km   +277  por Montana Amarilla
+  Pedro Barba              18,5 -> 11,5 km   +130  DIFICIL -> Media
+  La Santa                 20,1 -> 12,4 km   +159  -> Caleton de las Animas
+  Montana Colorada          4,7 -> 3,0 km     +31  aparcamiento mas cerca
+  Montana de Tindaya        5,7 -> 6,0 km     +48  ya no dice "ascenso"
+  Cofete - Gran Valle       8,0 -> 11,3 km   +435  desde Morro Jable
+  Camino de Jinama         13,2 -> 12,9 km  +1208  el viejo tenia 12 cortes
+  Subida a Jinama           8,8 -> 8,0 km   +1030  antes "Bajada de Jinama
+                                                   - El Golfo"
+  Litoral de Las Puntas     5,2 -> 7,6 km    +121  Charco de los Sargos a
+                                                   Salinas de las Puntas
+  Camino del Canal         12,5 -> 12,1 km   +398  antes "Pozo de la Salud
+                                                   - Costa de Frontera"
+  Pozo de las Calcosas      6,6 -> 7,6 km    +515  ahora baja al caserio
+                                                   y vuelve en circular
 
-== 7 OFICIALES DEL CABILDO DE TENERIFE (datos abiertos, CC BY) ==
+== 2. SIETE OFICIALES DEL CABILDO DE TENERIFE (CC BY) ==
 
   Bosque de Los Enigmas     5,7 -> 4,8 km   +193
-  BC-4 Ruta Sur Arico      14,5 -> 14,7 km  +764   la bajada decia 207, son 52
+  BC-4 Ruta Sur Arico      14,5 -> 14,7 km  +764
   BC-5 Pinares Vilaflor    13,6 -> 13,8 km  +322
   Paisaje Lunar            12,9 -> 13,1 km  +715
   El Pijaral                6,6 -> 6,5 km   +508   antes decia +282
   Roques de Garcia          3,6 -> 3,5 km   +163
   Volcan de Fasnia          9,0 -> 8,2 km   +178
 
-  Estos llevan el credito al Cabildo, no a OpenStreetMap.
+
+== 3. TRES FICHAS QUE DECIAN LO QUE NO ERAN ==
+
+  Montana de Tindaya   decia "Ascenso" y subir esta prohibido.
+                       Ahora es circular, rodeando la montana.
+
+  Camino del Canal     decia "por la costa HASTA el Pozo de la Salud".
+                       Sale del Pozo, no llega, y a partir del km 2 se
+                       mete tierra adentro. Ademas es LINEAL y acaba a
+                       9,2 km: ahora lleva aviso naranja diciendolo.
+
+  Risco de Famara      decia "bajada" y son 518 m de SUBIDA por un
+                       sendero tecnico. Media -> DIFICIL.
+
+
+== 4. LAS DOS DE JINAMA, YA DIFERENCIADAS ==
+
+  Camino de Jinama      12,9 km  CIRCULAR
+  Subida a Jinama        8,0 km  IDA Y VUELTA, como reto: 883 m en 4 km,
+                                 22% de media. Camino del Kilometro
+                                 Vertical Meridiano.
+  Cada una enlaza a la otra. Las dos avisan de comprobar que el sendero
+  este abierto: estuvo cerrado de 2022 a su rehabilitacion.
+
+
+== 5. LA GUAGUA DE VUELTA EN EL CAMINO DEL CANAL ==
+
+  El Camino del Canal es lineal y acaba en la ESTACION DE GUAGUAS de
+  Frontera. Lo he puesto en el aviso naranja, con el dato que faltaba:
+  TransHierro tiene la linea 12, Estacion de Frontera - Sabinosa - Pozo
+  de la Salud. Existe, asi que se puede volver al coche en guagua.
+  No pongo horarios: son pocas expediciones y cambian por temporada,
+  asi que la ficha enlaza a transhierro.com para que los miren ellos.
+
+
+== 6. VALLE DE EL PALMAR - TENO ALTO, FICHA AMPLIADA ==
+
+  Como llegar y aparcar, Que se ve desde aqui, aviso del tiempo, como es
+  el recorrido y 6 preguntas frecuentes con marcado FAQPage.
+
+
+== 7. 216 ENCABEZADOS REPETIDOS ==
+
+  216 de 343 fichas tenian dos <h2> identicos. Arreglado en todas.
+
 
 QUEDA PENDIENTE
 
-  - Tindaya - Vallebron - Tefia (PR FV 9): su track tiene 39 cortes
+  - AVISO TEMPORAL POR LA BORRASCA: 29 fichas en zonas cerradas ahora
+    (Teide, Corona Forestal, Anaga, Teno, Masca, Barranco del Infierno,
+    y Jinama / Sabinosa / La Llania en El Hierro). Manana es el dia peor.
+  - 7 rutas promocionadas con el track roto: Ruta Sur Graciosa, Caldera
+    Blanca, Jedey, Montana Blanca-Las Grietas, Roque Nublo, Benchijigua,
+    Los Canarios
   - Los correos a los Cabildos de La Palma y Gran Canaria
-  - Revisar las 343 fichas por descripciones cortadas a mitad de palabra
+  - Tindaya - Vallebron - Tefia (PR FV 9): 39 cortes
   - El 2FA de GitHub
