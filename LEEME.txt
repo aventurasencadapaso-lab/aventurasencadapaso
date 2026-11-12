@@ -1,99 +1,114 @@
-22 RUTAS + TENO AMPLIADA + 216 ENCABEZADOS
-Aventuras en Cada Paso - 10 de noviembre de 2026
+28 RUTAS FUERA DE WIKILOC + AVISOS + ARREGLOS
+Aventuras en Cada Paso - 12 de noviembre de 2026
 
-266 ficheros. Sube TODO junto respetando las carpetas.
+277 ficheros. Sube TODO junto respetando las carpetas.
   rutas.js  sw.js  sitemap.xml -> raiz
   rutas/  gpx/  imagenes/gpx-thumbs/
 
-sw.js pasa de v19 a v20. No es opcional: rutas.js va por cache.
+sw.js pasa de v19 a v20. NO ES OPCIONAL: rutas.js va por cache.
 
 
-== 1. QUINCE RUTAS TRAZADAS POR TI (OpenStreetMap, ODbL) ==
+== 1. LAS 28 RUTAS, CON SU TRACK NUEVO ==
 
-  Penas del Chache          8,5 -> 8,2 km    +186
-  Morro Janana              FICHA NUEVA      7,8 km  +359
-  Betancuria - Vega        11,5 -> 13,7 km   +490  ahora sube al Janana
-  Risco de Famara          12,6 -> 14,1 km   +518  Media -> DIFICIL
-  Punta del Pobre          14,1 -> 13,7 km   +277  por Montana Amarilla
-  Pedro Barba              18,5 -> 11,5 km   +130  DIFICIL -> Media
-  La Santa                 20,1 -> 12,4 km   +159  -> Caleton de las Animas
-  Montana Colorada          4,7 -> 3,0 km     +31  aparcamiento mas cerca
-  Montana de Tindaya        5,7 -> 6,0 km     +48  ya no dice "ascenso"
-  Cofete - Gran Valle       8,0 -> 11,3 km   +435  desde Morro Jable
-  Camino de Jinama         13,2 -> 12,9 km  +1208  el viejo tenia 12 cortes
-  Subida a Jinama           8,8 -> 8,0 km   +1030  antes "Bajada de Jinama
-                                                   - El Golfo"
-  Litoral de Las Puntas     5,2 -> 7,6 km    +121  Charco de los Sargos a
-                                                   Salinas de las Puntas
-  Camino del Canal         12,5 -> 12,1 km   +398  antes "Pozo de la Salud
-                                                   - Costa de Frontera"
-  Pozo de las Calcosas      6,6 -> 7,6 km    +515  ahora baja al caserio
-                                                   y vuelve en circular
+21 trazadas por ti sobre OpenStreetMap (licencia ODbL).
+7 oficiales del Cabildo de Tenerife (licencia CC BY).
+Cada ficha lleva su linea de credito, distinta segun el origen.
 
-== 2. SIETE OFICIALES DEL CABILDO DE TENERIFE (CC BY) ==
-
-  Bosque de Los Enigmas     5,7 -> 4,8 km   +193
-  BC-4 Ruta Sur Arico      14,5 -> 14,7 km  +764
-  BC-5 Pinares Vilaflor    13,6 -> 13,8 km  +322
-  Paisaje Lunar            12,9 -> 13,1 km  +715
-  El Pijaral                6,6 -> 6,5 km   +508   antes decia +282
-  Roques de Garcia          3,6 -> 3,5 km   +163
-  Volcan de Fasnia          9,0 -> 8,2 km   +178
-
-
-== 3. TRES FICHAS QUE DECIAN LO QUE NO ERAN ==
-
-  Montana de Tindaya   decia "Ascenso" y subir esta prohibido.
-                       Ahora es circular, rodeando la montana.
-
-  Camino del Canal     decia "por la costa HASTA el Pozo de la Salud".
-                       Sale del Pozo, no llega, y a partir del km 2 se
-                       mete tierra adentro. Ademas es LINEAL y acaba a
-                       9,2 km: ahora lleva aviso naranja diciendolo.
-
-  Risco de Famara      decia "bajada" y son 518 m de SUBIDA por un
-                       sendero tecnico. Media -> DIFICIL.
+  El Hierro      Camino de Jinama                                               12.9 km  D+1208    13.2 -> 12.9 km
+  El Hierro      Camino del Canal – Pozo de la Salud a Frontera                 12.1 km  D+398     12.5 -> 12.1 km  renombrada
+  El Hierro      Pozo de las Calcosas – Circular desde El Mocanal                7.5 km  D-516     6.6 -> 7.6 km
+  El Hierro      Sendero Litoral de Las Puntas – La Maceta                       7.6 km  D+121     5.2 -> 7.6 km
+  El Hierro      Subida a Jinama – Ascenso Vertical                              8.0 km  D+1030    8.8 -> 8.0 km  renombrada
+  Fuerteventura  Betancuria – Vega Río Palmas                                   13.7 km  D-491     11.5 -> 13.7 km
+  Fuerteventura  Cofete – Gran Valle (PR-FV 55)                                 11.2 km  D+435     8.0 -> 11.3 km
+  Fuerteventura  Montaña de Tindaya                                              6.0 km  D+48      5.7 -> 6.0 km
+  Fuerteventura  Morro Janana desde Betancuria                                   7.8 km  D+359     FICHA NUEVA
+  La Gomera      Benchijigua – Barranco Seco                                    12.8 km  D-1160    12.1 -> 12.8 km  Media -> Difícil
+  La Graciosa    Caleta de Sebo – Pedro Barba                                   11.4 km  D-131     18.5 -> 11.5 km  Difícil -> Media
+  La Graciosa    Circular Norte – Sebo, Las Conchas, Bermeja y Pedro Barba      22.5 km  D+213     18.7 -> 22.5 km  renombrada
+  La Graciosa    Montaña Amarilla – Subida a la Cima                            12.8 km  D-219     9.2 -> 12.9 km
+  La Graciosa    Ruta Este – Punta del Pobre                                    13.7 km  D-278     14.1 -> 13.7 km
+  La Graciosa    Ruta Sur – Caleta de Sebo – Playa de la Cocina                 10.0 km  D-41      10.3 -> 10.0 km  Media -> Fácil  renombrada
+  Lanzarote      Caldera Blanca y Caldereta – Ida y vuelta desde Mancha Blanca  12.1 km  D-356     11.5 -> 12.1 km  renombrada
+  Lanzarote      La Santa – Caletón de las Ánimas                               12.4 km  D+159     20.1 -> 12.4 km  Difícil -> Media  renombrada
+  Lanzarote      Montaña Blanca – Las Grietas                                    8.4 km  D+470     8.6 -> 8.4 km
+  Lanzarote      Montaña Colorada – Volcán Rojo                                  3.0 km  D+31      4.7 -> 3.0 km
+  Lanzarote      Peñas del Chache – Punto más alto                               8.2 km  D+186     8.5 -> 8.2 km
+  Lanzarote      Risco de Famara – Mirador del Río                              14.1 km  D-519     12.6 -> 14.1 km  Media -> Difícil
+  Tenerife       BTT – BC-4 Pinares del Sur y Volcanes Negros                   14.7 km  D+764     14.5 -> 14.7 km
+  Tenerife       BTT – BC-5 Pinares de Vilaflor                                 13.8 km  D-476     13.6 -> 13.8 km
+  Tenerife       Bosque de los Enigmas – Anaga                                   4.8 km  D+193     5.7 -> 4.8 km
+  Tenerife       Roques de García – Sendero 3 Teide                              3.5 km  D+163     3.6 -> 3.5 km
+  Tenerife       Sendero de El Pijaral – Anaga                                   6.5 km  D+508     6.6 -> 6.5 km
+  Tenerife       Vilaflor – Paisaje Lunar (PR-TF 72)                            13.1 km  D+715     12.9 -> 13.1 km
+  Tenerife       Volcán de Fasnia – Siete Fuentes                                8.2 km  D+178     9.0 -> 8.2 km
 
 
-== 4. LAS DOS DE JINAMA, YA DIFERENCIADAS ==
+== 2. AVISOS QUE NO EXISTIAN ==
 
-  Camino de Jinama      12,9 km  CIRCULAR
-  Subida a Jinama        8,0 km  IDA Y VUELTA, como reto: 883 m en 4 km,
-                                 22% de media. Camino del Kilometro
-                                 Vertical Meridiano.
-  Cada una enlaza a la otra. Las dos avisan de comprobar que el sendero
-  este abierto: estuvo cerrado de 2022 a su rehabilitacion.
-
-
-== 5. LA GUAGUA DE VUELTA EN EL CAMINO DEL CANAL ==
-
-  El Camino del Canal es lineal y acaba en la ESTACION DE GUAGUAS de
-  Frontera. Lo he puesto en el aviso naranja, con el dato que faltaba:
-  TransHierro tiene la linea 12, Estacion de Frontera - Sabinosa - Pozo
-  de la Salud. Existe, asi que se puede volver al coche en guagua.
-  No pongo horarios: son pocas expediciones y cambian por temporada,
-  asi que la ficha enlaza a transhierro.com para que los miren ellos.
+  Benchijigua      lineal, 1.160 m de BAJADA, acaba a 9,1 km.
+                   Media -> DIFICIL. Lleva las guaguas reales
+                   (lineas 3 y 1 de Guaguagomera) y la alternativa
+                   de hacerla al reves desde Playa de Santiago.
+  Jedey            lineal, acaba a 9,2 km de la salida.
+  Los Canarios     lineal, baja 648 m hasta el faro, acaba a 4,3 km.
+  Camino del Canal acaba en la ESTACION DE GUAGUAS de Frontera.
+                   TransHierro linea 12 llega al Pozo de la Salud.
+  Cofete           lineal, acaba a 7,2 km en linea recta. Y AVISO
+                   EN ROJO: corrientes fuertes, oleaje y SIN
+                   socorrismo. Verificado antes de escribirlo.
 
 
-== 6. VALLE DE EL PALMAR - TENO ALTO, FICHA AMPLIADA ==
+== 3. FICHAS QUE DECIAN LO QUE NO ERAN ==
 
-  Como llegar y aparcar, Que se ve desde aqui, aviso del tiempo, como es
-  el recorrido y 6 preguntas frecuentes con marcado FAQPage.
+  Caldera Blanca   decia "Circular" y "rodea el crater por arriba".
+                   Es IDA Y VUELTA y sube a un punto del borde.
+  Circular Norte   el titulo tenia el orden mal (Bermeja antes que
+                   Las Conchas) y decia 146 m de altura maxima
+                   cuando son 70. No sube a la cima de Bermeja.
+  Ruta Sur         subia a Montana Amarilla. Ahora acaba en la
+                   Playa de la Cocina: 10 km llanos, Media -> FACIL.
+  Montana Amarilla decia 9,2 km. Son 12,9, y de esos 5,1 son llanos
+                   de costa antes de empezar a subir.
+  Las Grietas      solo hablaba de las grietas. No decia que es
+                   circular, ni que sube a la cima, ni donde aparcar.
+  Montana Tindaya  decia "Ascenso" y subir esta prohibido.
+  Risco de Famara  decia "bajada" y son 518 m de SUBIDA.
+  El Pijaral       decia +282 m. Son +508. Y necesita permiso.
 
 
-== 7. 216 ENCABEZADOS REPETIDOS ==
+== 4. TRES META DESCRIPTIONS CORTADAS A MEDIA PALABRA ==
+
+  Ruta Sur          acababa en "...hasta Montana Amari"
+  Montana Amarilla  acababa en "...los charcos naturales para snor"
+  Circular Norte    acababa en "...la mitad norte de la isla en una"
+
+  Cada una en 3 sitios: meta, Open Graph y schema. Google las
+  cortaba. Arregladas las nueve.
+  El schema de la Circular Norte decia "Media" y la ficha "Dificil".
+
+
+== 5. VALLE DE EL PALMAR - TENO ALTO, FICHA AMPLIADA ==
+
+  Como llegar y aparcar, que se ve, aviso del tiempo, como es el
+  recorrido y 6 preguntas frecuentes con marcado FAQPage.
+
+
+== 6. 216 ENCABEZADOS REPETIDOS ==
 
   216 de 343 fichas tenian dos <h2> identicos. Arreglado en todas.
 
 
 QUEDA PENDIENTE
 
-  - AVISO TEMPORAL POR LA BORRASCA: 29 fichas en zonas cerradas ahora
-    (Teide, Corona Forestal, Anaga, Teno, Masca, Barranco del Infierno,
-    y Jinama / Sabinosa / La Llania en El Hierro). Manana es el dia peor.
-  - 7 rutas promocionadas con el track roto: Ruta Sur Graciosa, Caldera
-    Blanca, Jedey, Montana Blanca-Las Grietas, Roque Nublo, Benchijigua,
-    Los Canarios
-  - Los correos a los Cabildos de La Palma y Gran Canaria
-  - Tindaya - Vallebron - Tefia (PR FV 9): 39 cortes
-  - El 2FA de GitHub
+  - Los correos a los Cabildos de La Palma y Gran Canaria.
+    63 fichas entre las dos islas.
+  - 11 fichas que se resuelven con geometria oficial de
+    OpenStreetMap (ya identificadas).
+  - La Graciosa norte: falta la cima de Montana Bermeja y decidir
+    si la "Ruta Norte por Agujas Grandes" existe o se funde.
+  - 173 rutas sin codigo oficial: hay que mirarlas una a una.
+  - El 2FA de GitHub.
+
+  NO hay aviso de borrasca: la alerta termino a las 08:00 del 12 de
+  noviembre. Habria caducado antes de que subieras el paquete.

@@ -582,12 +582,12 @@ var RUTAS = [
   // ── TIMANFAYA ──
   {
     id: "caldera-blanca-lanzarote",
-    nombre: "Caldera Blanca y Caldereta – Circular desde Mancha Blanca",
+    nombre: "Caldera Blanca y Caldereta – Ida y vuelta desde Mancha Blanca",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 11.5,
-    descripcion: "Circular de 11,5 km desde Mancha Blanca por el malpaís hasta el borde de la Caldera Blanca, uno de los mayores cráteres de Lanzarote. Acceso libre, sin guía ni reserva. El recorrido rodea el cráter por arriba: no se baja al fondo.",
+    duracion: "4-8 horas", distancia: 12.1,
+    descripcion: "Ida y vuelta de 12,1 km desde Mancha Blanca hasta el borde de la Caldera Blanca, uno de los mayores cráteres de Lanzarote.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/views",
-    lat: 29.04396, lng: -13.69194
+    lat: 29.04392, lng: -13.69194
   },
   {
     id: "timanfaya-ruta-volcanes",
@@ -697,10 +697,10 @@ var RUTAS = [
     id: "montana-blanca-grietas",
     nombre: "Montaña Blanca – Las Grietas",
     isla: "Lanzarote", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 8.6,
-    descripcion: "Sendero muy popular hasta Las Grietas, cañones volcánicos estrechos con paredes onduladas. Terreno resbaladizo, llevar calzado con grip.",
+    duracion: "2-4 horas", distancia: 8.4,
+    descripcion: "Circular de 8,4 km desde la ermita de María Auxiliadora: Las Grietas, cañones volcánicos estrechos, y la cima de Montaña Blanca.",
     enlace: "https://www.alltrails.com/es/spain/lanzarote/easy",
-    lat: 28.98729, lng: -13.63918
+    lat: 28.98722, lng: -13.63914
   },
   {
     id: "montana-roja-sur",
@@ -1437,11 +1437,11 @@ var RUTAS = [
   {
     id: "lagomera-benchijigua",
     nombre: "Benchijigua – Barranco Seco",
-    isla: "La Gomera", tipo: "Senderismo", dificultad: "Media",
-    duracion: "4-8 horas", distancia: 12.1,
-    descripcion: "Ruta por el corazón de La Gomera hasta Benchijigua, uno de los paisajes más dramáticos con roques basálticos y vegetación de medianías.",
+    isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
+    duracion: "4-8 horas", distancia: 12.8,
+    descripcion: "Bajada de 12,8 km por el corazón de La Gomera, del Mirador de los Roques a Playa de Santiago, pasando junto al Roque de Agando.",
     enlace: "https://es.wikiloc.com/rutas/senderismo/espana/canarias/alajeró",
-    lat: 28.10904, lng: -17.21442
+    lat: 28.10916, lng: -17.21457
   },
   {
     id: "kayak-gomera",
@@ -1878,21 +1878,21 @@ var RUTAS = [
 
   {
     id: "ruta-sur-graciosa",
-    nombre: "Ruta Sur – Caleta de Sebo – Montaña Amarilla",
-    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 10.3,
-    descripcion: "La ruta más popular de la isla. Bordea la costa sur desde Caleta de Sebo por Playa del Salado, Playa Francesa y Playa de la Cocina hasta Montaña Amarilla. Solo hay que seguir la costa.",
+    nombre: "Ruta Sur – Caleta de Sebo – Playa de la Cocina",
+    isla: "La Graciosa", tipo: "Senderismo", dificultad: "Fácil",
+    duracion: "2-4 horas", distancia: 10.0,
+    descripcion: "La ruta más popular de la isla, y la más fácil: bordea la costa sur desde Caleta de Sebo por Playa del Salado, Playa Francesa y Playa de la Cocina, al pie de Montaña Amarilla. Llana de principio a fin, solo hay que seguir la costa.",
     enlace: "https://www.visitlagraciosa.com/rutas-senderismo-la-graciosa/",
-    lat: 29.23015, lng: -13.50287
+    lat: 29.22999, lng: -13.50255
   },
   {
     id: "montana-amarilla-cima",
     nombre: "Montaña Amarilla – Subida a la Cima",
     isla: "La Graciosa", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 9.2,
-    descripcion: "Subida corta pero exigente a la cima de Montaña Amarilla. Vistas aéreas de la Playa de la Cocina, el Atlántico y los charcos naturales para snorkel.",
+    duracion: "2-4 horas", distancia: 12.9,
+    descripcion: "Subida a la cima de Montaña Amarilla desde Caleta de Sebo, por toda la costa sur y con una rampa final corta y exigente. Vistas aéreas de la Playa de la Cocina, el Atlántico y los charcos naturales para snorkel.",
     enlace: "https://www.alltrails.com/es/spain/la-graciosa",
-    lat: 29.23058, lng: -13.50507
+    lat: 29.22999, lng: -13.50255
   },
   {
     id: "ruta-norte-conchas-bermeja",
@@ -1959,12 +1959,12 @@ var RUTAS = [
   },
   {
     id: "circular-norte-graciosa",
-    nombre: "Circular Norte – Sebo, Bermeja, Conchas, Pedro Barba",
+    nombre: "Circular Norte – Sebo, Las Conchas, Bermeja y Pedro Barba",
     isla: "La Graciosa", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 18.7,
-    descripcion: "Circular por el norte: Caleta de Sebo, Montaña Bermeja, Playa Las Conchas y Pedro Barba. La mejor opción para conocer la mitad norte de la isla en una jornada.",
+    duracion: "4-8 horas", distancia: 22.5,
+    descripcion: "Circular de 22,5 km por el norte de La Graciosa: Playa de Las Conchas, La Lambra y Pedro Barba. La mejor opción para conocer la mitad norte de la isla en una jornada.",
     enlace: "https://www.alltrails.com/es/spain/la-graciosa",
-    lat: 29.23002, lng: -13.50277
+    lat: 29.23008, lng: -13.50266
   },
 
     {
