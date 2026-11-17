@@ -4,8 +4,8 @@
    Offline page para cuando no hay red
 ============================================================ */
 
-var CACHE_NAME   = 'aventuras-v20';
-var BASE         = '/aventurasencadapaso';
+var CACHE_NAME   = 'aventuras-v21';
+var BASE         = '';   // la web vive en la raiz del dominio, no en /aventurasencadapaso
 
 var CACHE_CORE = [
   BASE + '/',
