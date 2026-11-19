@@ -109,7 +109,18 @@ gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load', function(){
- navigator.serviceWorker.register('sw.js', {scope:'/aventurasencadapaso/'})
+ // limpieza: hasta el 18/11/2026 esta pagina registraba el service worker
+ // con scope '/aventurasencadapaso/', de cuando la web vivia en esa
+ // direccion. Ese registro no controla ninguna pagina y se queda zombi en
+ // el navegador de quien ya entro. Esto lo borra.
+ if(navigator.serviceWorker.getRegistrations){
+ navigator.serviceWorker.getRegistrations().then(function(rs){
+ rs.forEach(function(r){
+ if(r.scope && r.scope.indexOf('/aventurasencadapaso/') !== -1){ r.unregister(); }
+ });
+ });
+ }
+ navigator.serviceWorker.register('sw.js')
  .then(function(reg){
  console.log('SW registrado:', reg.scope);
  // Mostrar banner de instalación PWA
@@ -995,7 +1006,18 @@ gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
 <script>
 if('serviceWorker' in navigator){
  window.addEventListener('load', function(){
- navigator.serviceWorker.register('sw.js', {scope:'/aventurasencadapaso/'})
+ // limpieza: hasta el 18/11/2026 esta pagina registraba el service worker
+ // con scope '/aventurasencadapaso/', de cuando la web vivia en esa
+ // direccion. Ese registro no controla ninguna pagina y se queda zombi en
+ // el navegador de quien ya entro. Esto lo borra.
+ if(navigator.serviceWorker.getRegistrations){
+ navigator.serviceWorker.getRegistrations().then(function(rs){
+ rs.forEach(function(r){
+ if(r.scope && r.scope.indexOf('/aventurasencadapaso/') !== -1){ r.unregister(); }
+ });
+ });
+ }
+ navigator.serviceWorker.register('sw.js')
  .then(function(reg){
  console.log('SW registrado:', reg.scope);
  // Mostrar banner de instalación PWA
