@@ -1158,10 +1158,10 @@ var RUTAS = [
     id: "nacientes-marcos-cordero",
     nombre: "Nacientes de Marcos y Cordero – Túneles",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Difícil",
-    duracion: "4-8 horas", distancia: 14.6,
+    duracion: "4-8 horas", distancia: 12.5,
     descripcion: "Sendero PR-LP 6 por el canal con 13 túneles. El túnel 12 tiene una cascada interior. Laurisilva increíble en el descenso. Requiere frontal y chubasquero.",
     enlace: "https://guiaislascanarias.com/la-palma/rutas-senderos-la-palma/",
-    lat: 28.77243, lng: -17.81207
+    lat: 28.77254, lng: -17.81224
   },
   {
     id: "tazacorte-roque-muchachos",
@@ -1185,10 +1185,10 @@ var RUTAS = [
     id: "tilos-lapalma",
     nombre: "Ruta de Los Tilos – Bosque Sagrado",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 7.4,
+    duracion: "2-4 horas", distancia: 6.4,
     descripcion: "Bosque de laurisilva Reserva de la Biosfera con el Salto de los Tilos. Vegetación endémica exuberante y sonido del agua constante.",
     enlace: "https://sendaecoway.com/blog/rutas-la-palma-5-mejores-senderismo/",
-    lat: 28.79149, lng: -17.79933
+    lat: 28.79149, lng: -17.79936
   },
   
   {
@@ -1307,19 +1307,19 @@ var RUTAS = [
     id: "marcos-cordero-tuneles-lp",
     nombre: "Nacientes de Marcos y Cordero – 13 Túneles",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 9.5,
+    duracion: "2-4 horas", distancia: 9.4,
     descripcion: "El sendero PR-LP 6 más emblemático de La Palma. 13 túneles por canal de agua, cascada en el túnel 12. Requiere frontal y chubasquero. Reserva de aparcamiento.",
     enlace: "https://guiaislascanarias.com/la-palma/rutas-senderos-la-palma/",
-    lat: 28.77177, lng: -17.81254
+    lat: 28.77181, lng: -17.81263
   },
   {
     id: "barranco-los-tilos-lp",
     nombre: "Bosque de Los Tilos – Reserva",
     isla: "La Palma", tipo: "Senderismo", dificultad: "Media",
-    duracion: "2-4 horas", distancia: 2.7,
+    duracion: "2-4 horas", distancia: 2.6,
     descripcion: "Paseo por la Reserva de la Biosfera de Los Tilos. Laurisilva Patrimonio de la Humanidad con la cascada del Salto de los Tilos. Sendero llano y muy verde.",
     enlace: "https://visitlapalma.es/senderos-la-palma/",
-    lat: 28.79164, lng: -17.79951
+    lat: 28.79149, lng: -17.79936
   },
   {
     id: "puntalarga-fuencaliente-lp",
