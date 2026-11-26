@@ -20,7 +20,7 @@
                  "Día completo" | "Varios días"
    distancia   → número en km (pon 0 si no aplica)
    descripcion → texto corto, máximo 2 frases
-   enlace      → URL de Wikiloc/AllTrails o "" si no tienes
+   enlace       → URL externa opcional o "" (el track GPX va en gpx/<id>.gpx)
    lat / lng   → coordenadas GPS del inicio de la ruta
    ============================================================ */
 
@@ -1484,7 +1484,7 @@ var RUTAS = [
   },
   {
     id: "alajero-playa-santiago",
-    nombre: "Alajeró – Playa de Santiago (Ruta 7)",
+    nombre: "Alajeró – Playa de Santiago (Ruta 22)",
     isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 10.4,
     descripcion: "Camino Natural de la Costa desde Alajeró hasta Playa de Santiago. Barrancos, acantilados y caseríos históricos. El sur más salvaje de La Gomera.",
@@ -1584,7 +1584,7 @@ var RUTAS = [
   },
   {
     id: "chipude-valle-gran-rey",
-    nombre: "Chipude – Valle Gran Rey (GR-132)",
+    nombre: "Chipude – Valle Gran Rey (Ruta 15)",
     isla: "La Gomera", tipo: "Senderismo", dificultad: "Difícil",
     duracion: "4-8 horas", distancia: 10.0,
     descripcion: "Desde Chipude con vistas a La Fortaleza, bajada por La Matanza y El Cercado hasta el Barranco de Argaga y las playas de Valle Gran Rey.",
