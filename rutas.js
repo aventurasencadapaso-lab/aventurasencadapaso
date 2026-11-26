@@ -1556,7 +1556,7 @@ var RUTAS = [
   },
   {
     id: "san-sebastian-garajonay-gomera",
-    nombre: "San Sebastián – Garajonay (GR 132 tramo)",
+    nombre: "San Sebastián – Alto de Garajonay (GR 131)",
     isla: "La Gomera", tipo: "Senderismo", dificultad: "Extrema",
     duracion: "Día completo", distancia: 17.6,
     descripcion: "Ascenso desde la capital San Sebastián hasta el Parque Nacional de Garajonay por caminos históricos. Aldeas, bancales y bosques en el camino a las nubes.",
